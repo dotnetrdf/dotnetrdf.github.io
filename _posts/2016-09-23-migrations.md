@@ -28,5 +28,5 @@ and the NuGet package.
 
 Finally, I have also migrated the work Rob had started on dotNetRDF 2.0. This is an ambitious, complete re-write of dotNetRDF so it is something of a longer
 and more major transition but one which I hope we can move forwards on. If you are interested in what is planned with this new version of the library or are 
-considering contributing please take a look at [these pages on our wiki](#) that Rob wrote describing the 2.0 motivation and design notes.
+considering contributing please take a look at [the new design documentation](https://github.com/dotnetrdf/dotnetrdf/wiki/DeveloperGuide-Architecture-Design) that Rob wrote describing the 2.0 motivation and design notes.
 
