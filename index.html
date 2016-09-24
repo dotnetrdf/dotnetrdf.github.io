@@ -1,0 +1,52 @@
+---
+layout: page
+title: dotNetRDF
+subtitle: An Open Source .NET Library for RDF
+---
+
+<article>
+    <section>
+    <header>
+        <h1>dotNetRDF is...</h1>
+    </header>
+    <ul>
+        <li>A complete library for <a hreef="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Reading-RDF">parsing</a>, <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Working-With-Graphs">managing</a>, <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Querying-With-SPARQL">querying</a> and <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Writing-RDF">writing</a> RDF.</li>
+
+        <li>A common .NET API for <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Working-With-Triple-Stores">working with RDF triple stores</a> such as AllegroGraph, Jena, Stardog and Virtuoso.</li>
+
+        <li>A suite of <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Tools">command-line and GUI tools</a> for working with RDF under Windows</li>
+    
+        <li>Free (as in beer) and Open Source (as in freedom) under a permissive MIT license</li>
+    </ul>
+    </section>
+    <section>
+        <header><h1>Get Started</h1></header>
+        
+        <p>The core library is available via <a href="https://www.nuget.org/packages?q=dotnetrdf">NuGet</a> - this is the easiest, and recommended way to add dotNetRDF to your project.
+        Our <a href="https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Getting-Started">Getting Started Guide</a> will take you through writing your first lines of code.</p>
+
+    </section>
+    <section>
+        <header><h1>Join In</h1></header>
+
+        <p>Our source code is <a href="http://github.com/dotnetrddf/dotnetrdf">on GitHub</a>. 
+        If you find an issue you can fix, feel free to fork our repository and submit a pull request.
+        If you find a problem you can't fix, you can report it on the <a href="http://github.com/dotnetrdf/dotnetrdf/issues">issue tracker</a>.</p>
+    </section>
+    
+    <section>
+        <header>
+			<h1 class="logo-black">From the Blog</h1>
+		</header>
+				<div class="row">
+					{% for post in site.posts limit:2 %}
+						<div class="col-md-6">
+							<h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+							<p><span class="small">{{ post.date | date_to_long_string }}</span></p>
+							{{ post.excerpt }}
+							<p class="text-right"><a href="{{ post.url }}" title="{{ post.title }}">Read More...</a></p>
+						</div>
+					{% endfor %}
+				</div>
+    </section>
+</article>
