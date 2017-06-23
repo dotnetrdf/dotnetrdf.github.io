@@ -27,6 +27,23 @@ on the supported frameworks. The frameworks dropped are:
 ## NuGet Reorganisation
 
 
+## Behind The Scenes
+
+In addition to all this rearranging of stuff we have made a lot of changes to how the project
+is hosted, built and deployed. The most significant of these is the addition of continuous integration
+on Appveyor and the change to master-branch based development.
+
+You may have noticed that this "first" pre-release has the pre-release tag 7. The first 6 pre-releases 
+were sacrificial releases made to get the automatic deployment from Appveyor working properly - now that
+this is in place we hope that we have a much more robust and streamlined deployment process which should
+allow us to start pushing out new releases as the master branch is updated.
+
+This change to the CI environment goes hand in hand with the change to our branching strategy to merge
+features and PRs directly into master. This means that we can make much more responsive releases, especially
+during the pre-release cycle. This isn't a change to a "rolling release" model however - we are still driving 
+our releases off of manual tagging of the master branch; but what it should mean for those brave enough to build
+from source is that our master branch always holds the latest "release-ready" code (for some value of "release-ready" ;-)
+
 ## New Stuff
 
 
