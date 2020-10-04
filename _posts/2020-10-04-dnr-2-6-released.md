@@ -1,6 +1,6 @@
 ---
 layout: post
-title: dotNetRDF 2.5.0 and dotnNetRDF Toolkit 2.0 now available
+title: dotNetRDF 2.6.0 and dotnNetRDF Toolkit 2.1 now available
 tags: [dnr, releases]
 ---
 
