@@ -1,0 +1,1046 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ThreadSafeTripleCollection
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ThreadSafeTripleCollection
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.ThreadSafeTripleCollection">
+  
+  
+  <h1 id="VDS_RDF_ThreadSafeTripleCollection" data-uid="VDS.RDF.ThreadSafeTripleCollection" class="text-break">Class ThreadSafeTripleCollection
+  </h1>
+  <div class="markdown level0 summary"><p>Thread Safe decorator for triple collections.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.WrapperTripleCollection.html">WrapperTripleCollection</a></div>
+    <div class="level3"><span class="xref">ThreadSafeTripleCollection</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection__triples">WrapperTripleCollection._triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_System_Collections_IEnumerable_GetEnumerator">BaseTripleCollection.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_TripleAdded">BaseTripleCollection.TripleAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_TripleRemoved">BaseTripleCollection.TripleRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_RaiseTripleAdded_VDS_RDF_Triple_">BaseTripleCollection.RaiseTripleAdded(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_RaiseTripleRemoved_VDS_RDF_Triple_">BaseTripleCollection.RaiseTripleRemoved(Triple)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_ThreadSafeTripleCollection_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ThreadSafeTripleCollection : WrapperTripleCollection, IEnumerable&lt;Triple&gt;, IEnumerable, IDisposable</code></pre>
+  </div>
+  <h5 id="VDS_RDF_ThreadSafeTripleCollection_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Depending on the platform this either uses <span class="xref">System.Threading.ReaderWriterLockSlim</span> to provide MRSW concurrency or it uses <span class="xref">System.Threading.Monitor</span> to provide exclusive access concurrency, either way usage is thread safe.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L220">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection__ctor_" data-uid="VDS.RDF.ThreadSafeTripleCollection.#ctor*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection__ctor" data-uid="VDS.RDF.ThreadSafeTripleCollection.#ctor">ThreadSafeTripleCollection()</h4>
+  <div class="markdown level1 summary"><p>Creates a new thread safe triple collection which wraps a new instance of the default unindexed <a class="xref" href="VDS.RDF.TripleCollection.html">TripleCollection</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeTripleCollection()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection__ctor_VDS_RDF_BaseTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.%23ctor(VDS.RDF.BaseTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L227">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection__ctor_" data-uid="VDS.RDF.ThreadSafeTripleCollection.#ctor*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection__ctor_VDS_RDF_BaseTripleCollection_" data-uid="VDS.RDF.ThreadSafeTripleCollection.#ctor(VDS.RDF.BaseTripleCollection)">ThreadSafeTripleCollection(BaseTripleCollection)</h4>
+  <div class="markdown level1 summary"><p>Creates a new thread safe triple collection which wraps the provided triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeTripleCollection(BaseTripleCollection tripleCollection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></td>
+        <td><span class="parametername">tripleCollection</span></td>
+        <td><p>Triple Collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L302">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Count_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Count*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Count" data-uid="VDS.RDF.ThreadSafeTripleCollection.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the Number of Triples in the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Count">WrapperTripleCollection.Count</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Item_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Item(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L325">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Item_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Item*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Item_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Item(VDS.RDF.Triple)">Item[Triple]</h4>
+  <div class="markdown level1 summary"><p>Gets the original instance of a specific Triple from the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Triple this[Triple t] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Item_VDS_RDF_Triple_">WrapperTripleCollection.Item[Triple]</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_ObjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.ObjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L384">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_ObjectNodes_" data-uid="VDS.RDF.ThreadSafeTripleCollection.ObjectNodes*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_ObjectNodes" data-uid="VDS.RDF.ThreadSafeTripleCollection.ObjectNodes">ObjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the Nodes which are Objects of Triples in the Triple Collectio.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; ObjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_ObjectNodes">WrapperTripleCollection.ObjectNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_PredicateNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.PredicateNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L405">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_PredicateNodes_" data-uid="VDS.RDF.ThreadSafeTripleCollection.PredicateNodes*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_PredicateNodes" data-uid="VDS.RDF.ThreadSafeTripleCollection.PredicateNodes">PredicateNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the Nodes which are Predicates of Triples in the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; PredicateNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_PredicateNodes">WrapperTripleCollection.PredicateNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_SubjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.SubjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L426">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_SubjectNodes_" data-uid="VDS.RDF.ThreadSafeTripleCollection.SubjectNodes*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_SubjectNodes" data-uid="VDS.RDF.ThreadSafeTripleCollection.SubjectNodes">SubjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the Nodes which are Subjects of Triples in the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; SubjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_SubjectNodes">WrapperTripleCollection.SubjectNodes</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Add_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Add(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L266">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Add_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Add*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Add_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Add(VDS.RDF.Triple)">Add(Triple)</h4>
+  <div class="markdown level1 summary"><p>Adds a Triple to the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Add(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Add_VDS_RDF_Triple_">WrapperTripleCollection.Add(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Contains(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L284">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Contains_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Contains*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Contains_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Contains(VDS.RDF.Triple)">Contains(Triple)</h4>
+  <div class="markdown level1 summary"><p>Determines whether a given Triple is in the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Contains(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The Triple to test.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the Triple already exists in the Triple Collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Contains_VDS_RDF_Triple_">WrapperTripleCollection.Contains(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Delete_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Delete(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L349">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Delete_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Delete*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Delete_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Delete(VDS.RDF.Triple)">Delete(Triple)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Triple from the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Delete(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Delete_VDS_RDF_Triple_">WrapperTripleCollection.Delete(Triple)</a></div>
+  <h5 id="VDS_RDF_ThreadSafeTripleCollection_Delete_VDS_RDF_Triple__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Deleting something that doesn&apos;t exist has no effect and gives no error.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L570">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_Dispose_" data-uid="VDS.RDF.ThreadSafeTripleCollection.Dispose*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_Dispose" data-uid="VDS.RDF.ThreadSafeTripleCollection.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes of a Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_Dispose">WrapperTripleCollection.Dispose()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_EnterReadLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.EnterReadLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L249">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_EnterReadLock_" data-uid="VDS.RDF.ThreadSafeTripleCollection.EnterReadLock*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_EnterReadLock" data-uid="VDS.RDF.ThreadSafeTripleCollection.EnterReadLock">EnterReadLock()</h4>
+  <div class="markdown level1 summary"><p>Enters the read lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void EnterReadLock()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_EnterWriteLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.EnterWriteLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L233">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_EnterWriteLock_" data-uid="VDS.RDF.ThreadSafeTripleCollection.EnterWriteLock*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_EnterWriteLock" data-uid="VDS.RDF.ThreadSafeTripleCollection.EnterWriteLock">EnterWriteLock()</h4>
+  <div class="markdown level1 summary"><p>Enters the write lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void EnterWriteLock()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_ExitReadLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.ExitReadLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L257">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_ExitReadLock_" data-uid="VDS.RDF.ThreadSafeTripleCollection.ExitReadLock*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_ExitReadLock" data-uid="VDS.RDF.ThreadSafeTripleCollection.ExitReadLock">ExitReadLock()</h4>
+  <div class="markdown level1 summary"><p>Exists the read lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ExitReadLock()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_ExitWriteLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.ExitWriteLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L241">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_ExitWriteLock_" data-uid="VDS.RDF.ThreadSafeTripleCollection.ExitWriteLock*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_ExitWriteLock" data-uid="VDS.RDF.ThreadSafeTripleCollection.ExitWriteLock">ExitWriteLock()</h4>
+  <div class="markdown level1 summary"><p>Exists the write lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ExitWriteLock()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_GetEnumerator.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L366">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_GetEnumerator_" data-uid="VDS.RDF.ThreadSafeTripleCollection.GetEnumerator*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_GetEnumerator" data-uid="VDS.RDF.ThreadSafeTripleCollection.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Gets the Enumerator for the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerator&lt;Triple&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_GetEnumerator">WrapperTripleCollection.GetEnumerator()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L449">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithObject_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithObject*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithObject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithObject(VDS.RDF.INode)">WithObject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all triples with the given Object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithObject(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithObject_VDS_RDF_INode_">WrapperTripleCollection.WithObject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L469">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithPredicate_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithPredicate*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithPredicate(VDS.RDF.INode)">WithPredicate(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all triples with the given predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithPredicate(INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithPredicate_VDS_RDF_INode_">WrapperTripleCollection.WithPredicate(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L490">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithPredicateObject_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithPredicateObject*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">WithPredicateObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all triples with the given predicate object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithPredicateObject(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">WrapperTripleCollection.WithPredicateObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L510">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithSubject_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubject*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubject(VDS.RDF.INode)">WithSubject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the triples with the given subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubject(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithSubject_VDS_RDF_INode_">WrapperTripleCollection.WithSubject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L531">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithSubjectObject_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubjectObject*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the triples with the given subject and object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubjectObject(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">WrapperTripleCollection.WithSubjectObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection.WithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L552">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeTripleCollection_WithSubjectPredicate_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubjectPredicate*"></a>
+  <h4 id="VDS_RDF_ThreadSafeTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeTripleCollection.WithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectPredicate(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all triples with the given subject and predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubjectPredicate(INode subj, INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperTripleCollection.html#VDS_RDF_WrapperTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">WrapperTripleCollection.WithSubjectPredicate(INode, INode)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_IsDisjoint__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Extensions.IsDisjoint&lt;T&gt;(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithSubject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithSubject(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithPredicate_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithPredicate(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithObject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithObject(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/TripleCollection.cs/#L212" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

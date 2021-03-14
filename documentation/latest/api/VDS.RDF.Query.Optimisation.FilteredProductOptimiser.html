@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FilteredProductOptimiser
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FilteredProductOptimiser
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser">
+  
+  
+  <h1 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser" class="text-break">Class FilteredProductOptimiser
+  </h1>
+  <div class="markdown level0 summary"><p>An Algebra Optimiser which implements the Filtered Product optimisation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FilteredProductOptimiser</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Optimisation.html">VDS.RDF.Query.Optimisation</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FilteredProductOptimiser : IAlgebraOptimiser</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+A filtered product is implied by any query where there is a product over a join or within a BGP around which there is a Filter which contains variables from both sides of the product.  So rather than computing the entire product and then applying the filter we want to push filter application into the product computation.
+</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/FilteredProductOptimiser.cs/#L174">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable*"></a>
+  <h4 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)">IsApplicable(SparqlQuery)</h4>
+  <div class="markdown level1 summary"><p>Returns that this optimiser is applicable to all queries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlQuery q)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></td>
+        <td><span class="parametername">q</span></td>
+        <td><p>Query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/FilteredProductOptimiser.cs/#L184">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable*"></a>
+  <h4 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)">IsApplicable(SparqlUpdateCommandSet)</h4>
+  <div class="markdown level1 summary"><p>Returns that this optimiser is applicable to all updates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlUpdateCommandSet cmds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td><span class="parametername">cmds</span></td>
+        <td><p>Updates.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_FilteredProductOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.FilteredProductOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/FilteredProductOptimiser.cs/#L52">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_Optimise_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.Optimise*"></a>
+  <h4 id="VDS_RDF_Query_Optimisation_FilteredProductOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.FilteredProductOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)">Optimise(ISparqlAlgebra)</h4>
+  <div class="markdown level1 summary"><p>Optimises the Algebra to use implict joins where applicable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISparqlAlgebra Optimise(ISparqlAlgebra algebra)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">algebra</span></td>
+        <td><p>Algebra.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_FilteredProductOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.FilteredProductOptimiser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/FilteredProductOptimiser.cs/#L44" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

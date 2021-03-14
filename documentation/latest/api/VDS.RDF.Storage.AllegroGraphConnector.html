@@ -1,0 +1,1152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AllegroGraphConnector
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AllegroGraphConnector
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.AllegroGraphConnector">
+  
+  
+  <h1 id="VDS_RDF_Storage_AllegroGraphConnector" data-uid="VDS.RDF.Storage.AllegroGraphConnector" class="text-break">Class AllegroGraphConnector
+  </h1>
+  <div class="markdown level0 summary"><p>Class for connecting to an AllegroGraph Store.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html">BaseHttpConnector</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html">BaseAsyncHttpConnector</a></div>
+    <div class="level3"><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html">BaseSesameHttpProtocolConnector</a></div>
+    <div class="level4"><span class="xref">AllegroGraphConnector</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncUpdateableStorage.html">IAsyncUpdateableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncQueryableStorage.html">IAsyncQueryableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__baseUri">BaseSesameHttpProtocolConnector._baseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__store">BaseSesameHttpProtocolConnector._store</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__repositoriesPrefix">BaseSesameHttpProtocolConnector._repositoriesPrefix</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__queryPath">BaseSesameHttpProtocolConnector._queryPath</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__updatePath">BaseSesameHttpProtocolConnector._updatePath</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__fullContextEncoding">BaseSesameHttpProtocolConnector._fullContextEncoding</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__postAllQueries">BaseSesameHttpProtocolConnector._postAllQueries</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector__server">BaseSesameHttpProtocolConnector._server</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_BaseUri">BaseSesameHttpProtocolConnector.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_RepositoryName">BaseSesameHttpProtocolConnector.RepositoryName</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_IOBehaviour">BaseSesameHttpProtocolConnector.IOBehaviour</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_UpdateSupported">BaseSesameHttpProtocolConnector.UpdateSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_DeleteSupported">BaseSesameHttpProtocolConnector.DeleteSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_ListGraphsSupported">BaseSesameHttpProtocolConnector.ListGraphsSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_IsReady">BaseSesameHttpProtocolConnector.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_IsReadOnly">BaseSesameHttpProtocolConnector.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_ParentServer">BaseSesameHttpProtocolConnector.ParentServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_Query_System_String_">BaseSesameHttpProtocolConnector.Query(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">BaseSesameHttpProtocolConnector.Query(IRdfHandler, ISparqlResultsHandler, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_CreateRdfWriter">BaseSesameHttpProtocolConnector.CreateRdfWriter()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_">BaseSesameHttpProtocolConnector.LoadGraph(IGraph, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_">BaseSesameHttpProtocolConnector.LoadGraph(IRdfHandler, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_LoadGraph_VDS_RDF_IGraph_System_String_">BaseSesameHttpProtocolConnector.LoadGraph(IGraph, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_">BaseSesameHttpProtocolConnector.LoadGraph(IRdfHandler, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_SaveGraph_VDS_RDF_IGraph_">BaseSesameHttpProtocolConnector.SaveGraph(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">BaseSesameHttpProtocolConnector.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">BaseSesameHttpProtocolConnector.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_DeleteGraph_System_Uri_">BaseSesameHttpProtocolConnector.DeleteGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_DeleteGraph_System_String_">BaseSesameHttpProtocolConnector.DeleteGraph(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_ListGraphs">BaseSesameHttpProtocolConnector.ListGraphs()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_AsyncParentServer">BaseSesameHttpProtocolConnector.AsyncParentServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.SaveGraph(IGraph, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.LoadGraph(IRdfHandler, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.DeleteGraph(String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.Query(String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseSesameHttpProtocolConnector.Query(IRdfHandler, ISparqlResultsHandler, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_Dispose">BaseSesameHttpProtocolConnector.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.LoadGraph(IGraph, Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.LoadGraph(IGraph, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.LoadGraph(IRdfHandler, Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfHandler_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.LoadGraphAsync(HttpWebRequest, IRdfHandler, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.SaveGraphAsync(HttpWebRequest, IRdfWriter, IGraph, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.UpdateGraphAsync(HttpWebRequest, IRdfWriter, Uri, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.DeleteGraph(Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_HttpWebRequest_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.DeleteGraphAsync(HttpWebRequest, Boolean, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.ListGraphs(AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_MakeRequestSequence_System_Collections_Generic_IEnumerable_System_Net_HttpWebRequest__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncHttpConnector.MakeRequestSequence(IEnumerable&lt;HttpWebRequest&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_String_">BaseHttpConnector.SetProxy(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_Uri_">BaseHttpConnector.SetProxy(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Proxy">BaseHttpConnector.Proxy</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxy">BaseHttpConnector.ClearProxy()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ProxyCredentials">BaseHttpConnector.ProxyCredentials</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxyCredentials">BaseHttpConnector.ClearProxyCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Timeout">BaseHttpConnector.Timeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Username">BaseHttpConnector.Username</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Password">BaseHttpConnector.Password</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ApplyRequestOptions_System_Net_HttpWebRequest_">BaseHttpConnector.ApplyRequestOptions(HttpWebRequest)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SerializeStandardConfig_VDS_RDF_INode_VDS_RDF_Configuration_ConfigurationSerializationContext_">BaseHttpConnector.SerializeStandardConfig(INode, ConfigurationSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetCredentials_System_String_System_String_">BaseHttpConnector.SetCredentials(String, String)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.html">VDS.RDF.Storage</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Storage_AllegroGraphConnector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AllegroGraphConnector : BaseSesameHttpProtocolConnector, IConfigurationSerializable, IAsyncUpdateableStorage, IAsyncQueryableStorage, IAsyncStorageProvider, IUpdateableStorage, IQueryableStorage, IStorageProvider, IStorageCapabilities, IDisposable</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Storage_AllegroGraphConnector_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+Connection to AllegroGraph is based on their new HTTP Protocol which is an extension of the <a href="http://www.openrdf.org/doc/sesame2/system/ch08.html">Sesame 2.0 HTTP Protocol</a>.  The specification for the AllegroGraph protocol can be found. <a href="http://www.franz.com/agraph/support/documentation/current/new-http-server.html">here</a>
+</p>
+<p>
+If you wish to use a Store which is part of the Root Catalog on an AllegroGraph 4.x and higher server you can either use the constructor overloads that omit the <strong>catalogID</strong> parameter or pass in null as the value for that parameter.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L72">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String)">AllegroGraphConnector(String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store in the Root Catalog (AllegroGraph 4.x and higher).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string storeID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L130">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.Net.IWebProxy)">AllegroGraphConnector(String, String, IWebProxy)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store in the Root Catalog (AllegroGraph 4.x and higher).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string storeID, IWebProxy proxy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.IWebProxy</span></td>
+        <td><span class="parametername">proxy</span></td>
+        <td><p>Proxy Server.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L64">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String)">AllegroGraphConnector(String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string catalogID, string storeID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base URI for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">catalogID</span></td>
+        <td><p>Catalog ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L121">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String,System.Net.IWebProxy)">AllegroGraphConnector(String, String, String, IWebProxy)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string catalogID, string storeID, IWebProxy proxy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">catalogID</span></td>
+        <td><p>Catalog ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.IWebProxy</span></td>
+        <td><span class="parametername">proxy</span></td>
+        <td><p>Proxy Server.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L111">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String,System.String)">AllegroGraphConnector(String, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store in the Root Catalog (AllegroGraph 4.x and higher).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string storeID, string username, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password for connecting to the Store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L156">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String,System.String,System.Net.IWebProxy)">AllegroGraphConnector(String, String, String, String, IWebProxy)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store in the Root Catalog (AllegroGraph 4.x and higher).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string storeID, string username, string password, IWebProxy proxy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.IWebProxy</span></td>
+        <td><span class="parametername">proxy</span></td>
+        <td><p>Proxy Server.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L83">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String,System.String,System.String)">AllegroGraphConnector(String, String, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string catalogID, string storeID, string username, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">catalogID</span></td>
+        <td><p>Catalog ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password for connecting to the Store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L142">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector__ctor_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector__ctor_System_String_System_String_System_String_System_String_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.#ctor(System.String,System.String,System.String,System.String,System.String,System.Net.IWebProxy)">AllegroGraphConnector(String, String, String, String, String, IWebProxy)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Connection to an AllegroGraph store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllegroGraphConnector(string baseUri, string catalogID, string storeID, string username, string password, IWebProxy proxy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base Uri for the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">catalogID</span></td>
+        <td><p>Catalog ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storeID</span></td>
+        <td><p>Store ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password for connecting to the Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.IWebProxy</span></td>
+        <td><span class="parametername">proxy</span></td>
+        <td><p>Proxy Server.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_Catalog.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.Catalog%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L162">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_Catalog_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Catalog*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_Catalog" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Catalog">Catalog</h4>
+  <div class="markdown level1 summary"><p>Gets the Catalog under which the repository you are connected to is located.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Catalog { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_CreateRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.CreateRequest(System.String%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L298">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_CreateRequest_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.CreateRequest*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_CreateRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="VDS.RDF.Storage.AllegroGraphConnector.CreateRequest(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">CreateRequest(String, String, String, Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating HTTP Requests to the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override HttpWebRequest CreateRequest(string servicePath, string accept, string method, Dictionary&lt;string, string&gt; queryParams)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">servicePath</span></td>
+        <td><p>Path to the Service requested.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accept</span></td>
+        <td><p>Acceptable Content Types.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">method</span></td>
+        <td><p>HTTP Method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">queryParams</span></td>
+        <td><p>Querystring Parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_CreateRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__">BaseSesameHttpProtocolConnector.CreateRequest(String, String, String, Dictionary&lt;String, String&gt;)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_EscapeQuery_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.EscapeQuery(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L285">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_EscapeQuery_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.EscapeQuery*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_EscapeQuery_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.EscapeQuery(System.String)">EscapeQuery(String)</h4>
+  <div class="markdown level1 summary"><p>Does nothing as AllegroGraph does not require the same query escaping that Sesame does.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string EscapeQuery(string query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">query</span></td>
+        <td><p>Query to escape.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_EscapeQuery_System_String_">BaseSesameHttpProtocolConnector.EscapeQuery(String)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_GetSaveContentType.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.GetSaveContentType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L318">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_GetSaveContentType_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.GetSaveContentType*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_GetSaveContentType" data-uid="VDS.RDF.Storage.AllegroGraphConnector.GetSaveContentType">GetSaveContentType()</h4>
+  <div class="markdown level1 summary"><p>Gets the Content Type used to save data to the store i.e. the MIME type to use for the <strong>Content-Type</strong> header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string GetSaveContentType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_GetSaveContentType">BaseSesameHttpProtocolConnector.GetSaveContentType()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L341">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_SerializeConfiguration_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.SerializeConfiguration*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)">SerializeConfiguration(ConfigurationSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Serializes the connection&apos;s configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SerializeConfiguration(ConfigurationSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Configuration.ConfigurationSerializationContext.html">ConfigurationSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Configuration Serialization Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_">BaseSesameHttpProtocolConnector.SerializeConfiguration(ConfigurationSerializationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L328">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_ToString_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.ToString*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_ToString" data-uid="VDS.RDF.Storage.AllegroGraphConnector.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Gets a String which gives details of the Connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html#VDS_RDF_Storage_BaseSesameHttpProtocolConnector_ToString">BaseSesameHttpProtocolConnector.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_Update_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.Update(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L169">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_Update_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Update*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_Update_System_String_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Update(System.String)">Update(String)</h4>
+  <div class="markdown level1 summary"><p>Makes a SPARQL Update request to the Allegro Graph server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Update(string sparqlUpdate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlUpdate</span></td>
+        <td><p>SPARQL Update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector_Update_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector.Update(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L211">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_AllegroGraphConnector_Update_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Update*"></a>
+  <h4 id="VDS_RDF_Storage_AllegroGraphConnector_Update_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.AllegroGraphConnector.Update(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">Update(String, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Makes a SPARQL Update request to the Allegro Graph server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Update(string sparqlUpdate, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlUpdate</span></td>
+        <td><p>SPARQL Update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncUpdateableStorage.html">IAsyncUpdateableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncQueryableStorage.html">IAsyncQueryableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_AllegroGraphConnector.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.AllegroGraphConnector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/AllegroGraphConnector.cs/#L51" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

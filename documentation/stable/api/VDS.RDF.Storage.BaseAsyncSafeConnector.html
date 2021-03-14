@@ -1,0 +1,1338 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BaseAsyncSafeConnector
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BaseAsyncSafeConnector
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector">
+  
+  
+  <h1 id="VDS_RDF_Storage_BaseAsyncSafeConnector" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector" class="text-break">Class BaseAsyncSafeConnector
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract Base Class for <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> implementations for which it is safe to do the <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a> implementation simply by farming out calls to the synchronous methods onto background threads (i.e. non-HTTP based connectors).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BaseAsyncSafeConnector</span></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Storage.DatasetFileManager.html">DatasetFileManager</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Storage.InMemoryManager.html">InMemoryManager</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Storage.VirtuosoManager.html">VirtuosoManager</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.html">VDS.RDF.Storage</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Storage_BaseAsyncSafeConnector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseAsyncSafeConnector : IStorageProvider, IAsyncStorageProvider, IStorageCapabilities, IDisposable</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_AsyncParentServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.AsyncParentServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L53">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_AsyncParentServer_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.AsyncParentServer*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_AsyncParentServer" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.AsyncParentServer">AsyncParentServer</h4>
+  <div class="markdown level1 summary"><p>Gets the parent server (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IAsyncStorageServer AsyncParentServer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html">IAsyncStorageServer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L164">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteSupported_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteSupported" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteSupported">DeleteSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports Graph deletion via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_">DeleteGraph(Uri)</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool DeleteSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_IOBehaviour.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.IOBehaviour%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L148">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_IOBehaviour_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IOBehaviour*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_IOBehaviour" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IOBehaviour">IOBehaviour</h4>
+  <div class="markdown level1 summary"><p>Gets the IO Behaviour of the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IOBehaviour IOBehaviour { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.IOBehaviour.html">IOBehaviour</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_IsReadOnly.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L140">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_IsReadOnly_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IsReadOnly*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_IsReadOnly" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store is read only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_IsReady.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.IsReady%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L132">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_IsReady_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IsReady*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_IsReady" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.IsReady">IsReady</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the Store is ready to accept requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsReady { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphsSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphsSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L172">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphsSupported_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphsSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphsSupported" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphsSupported">ListGraphsSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports listing graphs via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs">ListGraphs()</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool ListGraphsSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_ParentServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.ParentServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L42">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_ParentServer_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ParentServer*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_ParentServer" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ParentServer">ParentServer</h4>
+  <div class="markdown level1 summary"><p>Gets the parent server (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IStorageServer ParentServer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html">IStorageServer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L156">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateSupported_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateSupported" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateSupported">UpdateSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports Triple level updates via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool UpdateSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L121">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_String_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.String)">DeleteGraph(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void DeleteGraph(string graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L287">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraph(String, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteGraph(string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L115">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.Uri)">DeleteGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void DeleteGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L276">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.DeleteGraph(System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraph(Uri, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteGraph(Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L180">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_Dispose_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.Dispose*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_Dispose" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Diposes of the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L127">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs">ListGraphs()</h4>
+  <div class="markdown level1 summary"><p>Lists the Graphs in the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IEnumerable&lt;Uri&gt; ListGraphs()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs(VDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L298">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.ListGraphs(VDS.RDF.Storage.AsyncStorageCallback,System.Object)">ListGraphs(AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Lists the Graphs in the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ListGraphs(AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L73">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph,System.String)">LoadGraph(IGraph, String)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void LoadGraph(IGraph g, string graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L201">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IGraph, String, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadGraph(IGraph g, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L66">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph,System.Uri)">LoadGraph(IGraph, Uri)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void LoadGraph(IGraph g, Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L189">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IGraph,System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IGraph, Uri, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadGraph(IGraph g, Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L87">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler,System.String)">LoadGraph(IRdfHandler, String)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void LoadGraph(IRdfHandler handler, string graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L226">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IRdfHandler, String, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadGraph(IRdfHandler handler, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L80">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler,System.Uri)">LoadGraph(IRdfHandler, Uri)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void LoadGraph(IRdfHandler handler, Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L214">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.LoadGraph(VDS.RDF.IRdfHandler,System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IRdfHandler, Uri, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadGraph(IRdfHandler handler, Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L93">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph(VDS.RDF.IGraph)">SaveGraph(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Saves a Graph to the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void SaveGraph(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph(VDS.RDF.IGraph%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L238">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.SaveGraph(VDS.RDF.IGraph,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">SaveGraph(IGraph, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Saves a Graph to the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveGraph(IGraph g, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.String%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L109">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.String,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void UpdateGraph(string graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.String%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L264">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.String,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store asychronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateGraph(string graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L101">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void UpdateGraph(Uri graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L251">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncSafeConnector.UpdateGraph(System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store asychronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateGraph(Uri graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncSafeConnector.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncSafeConnector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/BaseAsyncSafeConnector.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

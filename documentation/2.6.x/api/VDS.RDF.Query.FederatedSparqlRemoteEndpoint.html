@@ -1,0 +1,1044 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FederatedSparqlRemoteEndpoint
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FederatedSparqlRemoteEndpoint
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint">
+  
+  
+  <h1 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint" class="text-break">Class FederatedSparqlRemoteEndpoint
+  </h1>
+  <div class="markdown level0 summary"><p>A Class for connecting to multiple remote SPARQL Endpoints and federating queries over them with the data merging done locally.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseEndpoint.html">BaseEndpoint</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></div>
+    <div class="level3"><span class="xref">FederatedSparqlRemoteEndpoint</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_DefaultGraphs">SparqlRemoteEndpoint.DefaultGraphs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_NamedGraphs">SparqlRemoteEndpoint.NamedGraphs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_ResultsAcceptHeader">SparqlRemoteEndpoint.ResultsAcceptHeader</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_RdfAcceptHeader">SparqlRemoteEndpoint.RdfAcceptHeader</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultSet_System_String_VDS_RDF_SparqlResultsCallback_System_Object_">SparqlRemoteEndpoint.QueryWithResultSet(String, SparqlResultsCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultSet_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_QueryCallback_System_Object_">SparqlRemoteEndpoint.QueryWithResultSet(ISparqlResultsHandler, String, QueryCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultGraph_System_String_VDS_RDF_GraphCallback_System_Object_">SparqlRemoteEndpoint.QueryWithResultGraph(String, GraphCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_QueryCallback_System_Object_">SparqlRemoteEndpoint.QueryWithResultGraph(IRdfHandler, String, QueryCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_Uri">BaseEndpoint.Uri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_Credentials">BaseEndpoint.Credentials</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_UserAgent">BaseEndpoint.UserAgent</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_HttpMode">BaseEndpoint.HttpMode</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_Timeout">BaseEndpoint.Timeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetCredentials_System_String_System_String_">BaseEndpoint.SetCredentials(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetCredentials_System_String_System_String_System_String_">BaseEndpoint.SetCredentials(String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ClearCredentials">BaseEndpoint.ClearCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_UseCredentialsForProxy">BaseEndpoint.UseCredentialsForProxy</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetProxy_System_String_">BaseEndpoint.SetProxy(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetProxy_System_Uri_">BaseEndpoint.SetProxy(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_Proxy">BaseEndpoint.Proxy</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ClearProxy">BaseEndpoint.ClearProxy()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetProxyCredentials_System_String_System_String_">BaseEndpoint.SetProxyCredentials(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_SetProxyCredentials_System_String_System_String_System_String_">BaseEndpoint.SetProxyCredentials(String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ProxyCredentials">BaseEndpoint.ProxyCredentials</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ClearProxyCredentials">BaseEndpoint.ClearProxyCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ApplyRequestOptions_System_Net_HttpWebRequest_">BaseEndpoint.ApplyRequestOptions(HttpWebRequest)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseEndpoint.html#VDS_RDF_BaseEndpoint_ApplyCustomRequestOptions_System_Net_HttpWebRequest_">BaseEndpoint.ApplyCustomRequestOptions(HttpWebRequest)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.html">VDS.RDF.Query</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FederatedSparqlRemoteEndpoint : SparqlRemoteEndpoint, IConfigurationSerializable</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+Queries are federated by executing multiple requesting simultaneously and asynchronously against the endpoints in question with the data then merged locally.  The merging process does not attempt to remove duplicate data it just naively merges the data.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.%23ctor(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L86">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor(System.Collections.Generic.IEnumerable{System.Uri})">FederatedSparqlRemoteEndpoint(IEnumerable&lt;Uri&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Federated SPARQL Endpoint by creating a <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a> for each of the given URI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FederatedSparqlRemoteEndpoint(IEnumerable&lt;Uri&gt; endpointUris)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><span class="parametername">endpointUris</span></td>
+        <td><p>Endpoint URIs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlRemoteEndpoint__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.%23ctor(System.Collections.Generic.IEnumerable%7BVDS.RDF.Query.SparqlRemoteEndpoint%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L68">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlRemoteEndpoint__" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor(System.Collections.Generic.IEnumerable{VDS.RDF.Query.SparqlRemoteEndpoint})">FederatedSparqlRemoteEndpoint(IEnumerable&lt;SparqlRemoteEndpoint&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Federated SPARQL Endpoint using the given Endpoints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FederatedSparqlRemoteEndpoint(IEnumerable&lt;SparqlRemoteEndpoint&gt; endpoints)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a>&gt;</td>
+        <td><span class="parametername">endpoints</span></td>
+        <td><p>Endpoints.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.%23ctor(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L77">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_System_Uri_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor(System.Uri)">FederatedSparqlRemoteEndpoint(Uri)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Federated SPARQL Endpoint by creating a new <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a> for the given URI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FederatedSparqlRemoteEndpoint(Uri endpointUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">endpointUri</span></td>
+        <td><p>Endpoint URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.%23ctor(VDS.RDF.Query.SparqlRemoteEndpoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L59">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.#ctor(VDS.RDF.Query.SparqlRemoteEndpoint)">FederatedSparqlRemoteEndpoint(SparqlRemoteEndpoint)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Federated SPARQL Endpoint using a given Endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FederatedSparqlRemoteEndpoint(SparqlRemoteEndpoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td><p>Endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.IgnoreFailedRequests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L135">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.IgnoreFailedRequests*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.IgnoreFailedRequests">IgnoreFailedRequests</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether a failed request on one endpoint should cause the entire request to fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IgnoreFailedRequests { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+By default if a request on any of the endpoint fails or times out then the entire request will fail.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_MaxSimultaneousRequests.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.MaxSimultaneousRequests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L150">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_MaxSimultaneousRequests_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.MaxSimultaneousRequests*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_MaxSimultaneousRequests" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.MaxSimultaneousRequests">MaxSimultaneousRequests</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the maximum number of endpoints this endpoint will issue queries to at any one time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSimultaneousRequests { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L104">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_System_Uri_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint(System.Uri)">AddEndpoint(Uri)</h4>
+  <div class="markdown level1 summary"><p>Adds an additional endpoint to be used by this endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEndpoint(Uri endpointUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">endpointUri</span></td>
+        <td><p>Endpoint URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_VDS_RDF_Query_SparqlRemoteEndpoint_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint(VDS.RDF.Query.SparqlRemoteEndpoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L95">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_AddEndpoint_VDS_RDF_Query_SparqlRemoteEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.AddEndpoint(VDS.RDF.Query.SparqlRemoteEndpoint)">AddEndpoint(SparqlRemoteEndpoint)</h4>
+  <div class="markdown level1 summary"><p>Adds a additional endpoint to be used by this endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEndpoint(SparqlRemoteEndpoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td><p>Endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L171">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_System_String_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw(System.String)">QueryRaw(String)</h4>
+  <div class="markdown level1 summary"><p>Makes a Query to a Sparql Endpoint and returns the raw Response.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override HttpWebResponse QueryRaw(string sparqlQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>Sparql Query String.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryRaw_System_String_">SparqlRemoteEndpoint.QueryRaw(String)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>Thrown if more than one endpoint is in use since for any federated endpoint which used more than one endpoint there is no logical/sensible way to combine the result streams.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_System_String_System_String___.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw(System.String%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L187">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryRaw_System_String_System_String___" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryRaw(System.String,System.String[])">QueryRaw(String, String[])</h4>
+  <div class="markdown level1 summary"><p>Makes a Query to a Sparql Endpoint and returns the raw Response.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override HttpWebResponse QueryRaw(string sparqlQuery, string[] mimeTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>Sparql Query String.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">mimeTypes</span></td>
+        <td><p>MIME Types to use for the Accept Header.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryRaw_System_String_System_String___">SparqlRemoteEndpoint.QueryRaw(String, String[])</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>Thrown if more than one endpoint is in use since for any federated endpoint which used more than one endpoint there is no logical/sensible way to combine the result streams.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L211">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_System_String_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph(System.String)">QueryWithResultGraph(String)</h4>
+  <div class="markdown level1 summary"><p>Makes a Query where the expected Result is an RDF Graph ie. CONSTRUCT and DESCRIBE Queries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IGraph QueryWithResultGraph(string sparqlQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query String.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><p>RDF Graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultGraph_System_String_">SparqlRemoteEndpoint.QueryWithResultGraph(String)</a></div>
+  <h5 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+The query is executed by sending it federating it to all the endpoints this endpoint contains using simultaneous asychronous calls.  Once these calls complete the results are naivley merged together (no duplicate data removal) and returned as a single result.
+</p>
+<p>
+By default if any of the endpoints used return an error then the entire query will fail and an exception will be thrown, this behaviour can be overridden by setting the <a class="xref" href="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.html#VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests">IgnoreFailedRequests</a> property to be true in which case the result will be the merge of the results from all endpoints which successfully provided a result.
+</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown if any of the requests to the endpoints fail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryTimeoutException.html">RdfQueryTimeoutException</a></td>
+        <td><p>Thrown if not all the requests complete within the set timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_VDS_RDF_IRdfHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph(VDS.RDF.IRdfHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L226">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultGraph_VDS_RDF_IRdfHandler_System_String_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultGraph(VDS.RDF.IRdfHandler,System.String)">QueryWithResultGraph(IRdfHandler, String)</h4>
+  <div class="markdown level1 summary"><p>Makes a Query where the expected result is a Graph i.e. a CONSTRUCT or DESCRIBE query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void QueryWithResultGraph(IRdfHandler handler, string sparqlQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>RDF Handler to process the results.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultGraph_VDS_RDF_IRdfHandler_System_String_">SparqlRemoteEndpoint.QueryWithResultGraph(IRdfHandler, String)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L368">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_System_String_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet(System.String)">QueryWithResultSet(String)</h4>
+  <div class="markdown level1 summary"><p>Makes a Query where the expected Result is a SparqlResultSet ie. SELECT and ASK Queries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override SparqlResultSet QueryWithResultSet(string sparqlQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>Sparql Query String.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a></td>
+        <td><p>A Sparql Result Set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultSet_System_String_">SparqlRemoteEndpoint.QueryWithResultSet(String)</a></div>
+  <h5 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+The query is executed by sending it federating it to all the endpoints this endpoint contains using simultaneous asychronous calls.  Once these calls complete the results are naivley merged together (no duplicate data removal) and returned as a single result.
+</p>
+<p>
+By default if any of the endpoints used return an error then the entire query will fail and an exception will be thrown, this behaviour can be overridden by setting the <a class="xref" href="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.html#VDS_RDF_Query_FederatedSparqlRemoteEndpoint_IgnoreFailedRequests">IgnoreFailedRequests</a> property to be true in which case the result will be the merge of the results from all endpoints which successfully provided a result.
+</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown if any of the requests to the endpoints fail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryTimeoutException.html">RdfQueryTimeoutException</a></td>
+        <td><p>Thrown if not all the requests complete within the set timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_VDS_RDF_ISparqlResultsHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet(VDS.RDF.ISparqlResultsHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L386">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_QueryWithResultSet_VDS_RDF_ISparqlResultsHandler_System_String_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.QueryWithResultSet(VDS.RDF.ISparqlResultsHandler,System.String)">QueryWithResultSet(ISparqlResultsHandler, String)</h4>
+  <div class="markdown level1 summary"><p>Makes a Query where the expected Result is a SparqlResultSet ie. SELECT and ASK Queries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void QueryWithResultSet(ISparqlResultsHandler handler, string sparqlQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Results Handler to process the results.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query String.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_QueryWithResultSet_VDS_RDF_ISparqlResultsHandler_System_String_">SparqlRemoteEndpoint.QueryWithResultSet(ISparqlResultsHandler, String)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown if any of the requests to the endpoints fail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryTimeoutException.html">RdfQueryTimeoutException</a></td>
+        <td><p>Thrown if not all the requests complete within the set timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L122">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_System_Uri_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint(System.Uri)">RemoveEndpoint(Uri)</h4>
+  <div class="markdown level1 summary"><p>Removes all endpoints with the given URI from this endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEndpoint(Uri endpointUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">endpointUri</span></td>
+        <td><p>Endpoint URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_VDS_RDF_Query_SparqlRemoteEndpoint_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint(VDS.RDF.Query.SparqlRemoteEndpoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L113">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_RemoveEndpoint_VDS_RDF_Query_SparqlRemoteEndpoint_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.RemoveEndpoint(VDS.RDF.Query.SparqlRemoteEndpoint)">RemoveEndpoint(SparqlRemoteEndpoint)</h4>
+  <div class="markdown level1 summary"><p>Removes a given endpoint from this endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEndpoint(SparqlRemoteEndpoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td><p>Endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L519">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_SerializeConfiguration_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.SerializeConfiguration*"></a>
+  <h4 id="VDS_RDF_Query_FederatedSparqlRemoteEndpoint_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" data-uid="VDS.RDF.Query.FederatedSparqlRemoteEndpoint.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)">SerializeConfiguration(ConfigurationSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Serializes the Endpoint&apos;s Configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SerializeConfiguration(ConfigurationSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Configuration.ConfigurationSerializationContext.html">ConfigurationSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Configuration Serialization Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html#VDS_RDF_Query_SparqlRemoteEndpoint_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_">SparqlRemoteEndpoint.SerializeConfiguration(ConfigurationSerializationContext)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_FederatedSparqlRemoteEndpoint.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.FederatedSparqlRemoteEndpoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/FederatedSparqlRemoteEndpoint.cs/#L48" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
