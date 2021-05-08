@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Test Environment | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Test Environment | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="test-environment">Test Environment</h1>
+
+<p>For automated testing dotNetRDF uses a combination of NUnit based unit tests and manual test harnesses. We also do manual testing for the UI tools in our toolkit as we develop new features for those tools. This document details the various test harnesses available and how to run them.</p>
+<p>We use the free CI/CD hosting graciously provided by <a href="https://www.appveyor.com">AppVeyor</a> to host the <a href="https://ci.appveyor.com/project/dotNetRDFadmin/dotnetrdf">CI build and test of dotNetRDF</a>.</p>
+<h2 id="unit-tests">Unit Tests</h2>
+<p>The Unit Tests are contained in a project called <code>dotNetRDF.Test</code> found in the <code>Testing/unittest/</code> folder of our source code and within the solution when opened in Visual Studio. Before you can run the unit tests there is something you must do which is to configure the unit test environment.</p>
+<p>When you first build the unit tests from a source download/checkout it will generate a file called <code>UnitTestConfig.properties</code> in the <code>resources/</code> directory of the unit tests. This is based off of the <code>UnitTestConfig.template</code> file in the same directory.  This file can be edited to indicate whether the external features that some tests rely upon are actually available in your environment and configure them appropriately. This file uses a simple Java properties style format for defining settings so should be self explanatory to edit</p>
+<p>When you run tests those that require features marked as unavailable the tests will be marked as Ignored rather than Failed. This allows you to easily distinguish between tests that failed and tests that cannot be run in your environment.</p>
+<p>Assuming that you do not change the config from the template running the tests will yield approximately 200 or so ignored tests. The exact number may vary depending on your environment and whether you have configured any of the external features as available in your environment.</p>
+<h3 id="intermittent-failures">Intermittent Failures</h3>
+<p>You may find that a few tests fail, some of these may be genuine failures while a few are intermittent failures. We suggest attempting to run the failing tests again at least once because sometimes this will resolve intermittent failures.</p>
+<p>Some of these intermittent failures are down to tests that rely upon web based resources such as <a href="http://dbpedia.org">DBPedia</a> which may be temporarily unavailable or over capacity at the time of running the tests.  Others relate to timeout tests are may fail simply because your system is powerful enough to finish the tested task before the timeout is hit or conversely is too slow to run the test within the timeout.</p>
+<p>NOTE: Many of these tests that depended on having a remote endpoint have now been reimplemented to use WireMock.NET to mock a remote endpoint. Due to the additional dependencies and platform restrictions that WireMock.Net involves, these tests are implemented in a separate <code>dotNetRDF.MockServerTests</code> project that can also be found in the <code>Testing</code> folder.</p>
+<h3 id="genuine-failures">Genuine Failures</h3>
+<p>Depending on the current state of Trunk when you run the tests you may find that there are some genuine failures because there are tests in place for reported bugs that are unresolved or new features that are incomplete.  If you think you have encountered this check the recent commit messages or simply ask on the developer mailing list</p>
+<h2 id="bugs-tests-and-patches">Bugs, Tests and Patches</h2>
+<p>When you find a bug it makes it much easier for us to debug and fix if you can provide a unit test that illustrates this bug. When you create a unit test please try to follow our naming convention which a Pascal case style naming where names start with a term that refers to the general area the test applies to (e.g. Sparql) and then contain one or more terms further describing the specific functionality the test is testing.</p>
+<p>So an example name might be <code>SparqlDatasetDefaultGraphUnion</code></p>
+<p>If you also develop a patch you will likely want to run more tests than just the ones you created in order to validate that your patch did not cause regressions elsewhere. If the patch is fairly well isolated in relation to your bug then you should typically only need to run the general functional area tests e.g. if you are writing a patch for a parsing problem just run the tests whose names begin Parsing</p>
+<p>If your patch is not well isolated or you&#39;ve changed something where you aren&#39;t sure of the full ramifications of your change then you should run all the tests. If you see significant failures that aren&#39;t resolved by running the failing tests again (and thus ruling out intermittent failures) then you can still submit your patch but please clearly state that your patch may cause other failures. In some cases the other failures may be that other tests were silently assuming the existing bug without being aware of it but in other cases they may be due to a regression your patch introduces. If you can&#39;t figure out this yourself please tell us that this is the case so we can take a more detailed look.</p>
+<h2 id="sparql-dawg-testing">SPARQL DAWG Testing</h2>
+<p>There is a standalone executable that can be used to run the official SPARQL DAWG test suite to check for SPARQL compliance. It is important to run this anytime you make any change to the SPARQL engine or code related to it. This executable spits out two logs files detailing compliance with SPARQL 1.0 and SPARQL 1.1 - see the end of the file for a summary of the results.</p>
+<p>Currently there are 1 failures expected in the 1.0 suite which relate to URI normalization issues which we cannot workaround due to our use of the .Net <code>Uri</code> class and there should be no 1.1 failures.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/2.7.x/developer_guide/Test-Environment.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

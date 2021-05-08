@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Utility Methods | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Utility Methods | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="utility-methods">Utility Methods</h1>
+
+<p>The library provides a number of useful Utility Methods embodied in a single static <a class="xref" href="../api/VDS.RDF.Tools.html">VDS.RDF.Tools</a> class which is part of the <a class="xref" href="../api/VDS.RDF.html">VDS.RDF</a> namespace. Anywhere you reference <code>VDS.RDF</code> you&#39;ll be able to use the static methods described in this article.</p>
+<h2 id="copynode">CopyNode</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_CopyNode_VDS_RDF_INode_VDS_RDF_IGraph_">CopyNode()</a> method is designed to be use to copy nodes between graphs. As explained in the <a href="Library-Overview.html">Library Overview</a> when you create a triple all the nodes of that triple must come from the same graph. When you are working with multiple graphs and combining the information you may need to assert information from one graph into the other, the following example demonstrates this:</p>
+<pre><code class="lang-csharp">using System;
+using VDS.RDF;
+using VDS.RDF.Query;
+
+public class CopyNodeExample
+{
+    public static void Main(String[] args)
+    {
+        //First we load in the Graph we want to get information from
+        Graph g = new Graph();
+        UriLoader.Load(g, new Uri(&quot;http://example.org/animals&quot;));
+
+        //We&#39;re going to look for things that are carnivores from this Graph and make another Graph 
+        //which just lists the carnivores but we&#39;re going to class them simply as animals
+        //Need the Nodes for the lookup
+        IUriNode rdfType = g.CreateUriNode(&quot;rdf:type&quot;);
+        IUriNode carnivore = g.CreateUriNode(&quot;ex:Carnivore&quot;);
+
+        //Get the animals which are carnivores
+        HasPropertyValueSelector sel = new HasPropertyValueSelector(rdfType, carnivore);
+        IEnumerable&lt;Triple&gt; carnivores = g.GetTriples(sel);
+
+        //Now create our new Graph for listing them
+        Graph ourlist = new Graph();
+        ourlist.NamespaceMap.AddNamespace(&quot;ex&quot;,new Uri(&quot;http://example.org/&quot;));
+
+        //Create the Nodes for our new Graph
+        IUriNode rdfType2 = ourlist.CreateUriNode(&quot;rdf:type&quot;);
+        IUriNode animal = ourlist.CreateUriNode(&quot;ex:Animal&quot;);
+
+        //Now copy the data across
+        foreach (Triple t in carnivores)
+        {
+            //Have to copy the Subject since that&#39;s a node in the source Graph
+            ourlist.Assert(new Triple(Tools.CopyNode(t.Subject, ourlist), rdfType2, animal));
+        }
+    }
+}
+</code></pre><p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_CopyNode_VDS_RDF_INode_VDS_RDF_IGraph_System_Boolean_">CopyNode()</a> method may also be invoked with a third boolean parameter which indicates whether or not the Graph URI currently associated with the Node should be preserved. This can be useful if you&#39;re combining several sources of information and working with them in-memory and want to preserve the provenance of where each Node came from.</p>
+<h2 id="copytriple">CopyTriple</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_CopyTriple_VDS_RDF_Triple_VDS_RDF_IGraph_">CopyTriple()</a> method is similar to <code>CopyNode()</code> except it copies entire triples from one graph to another. Usage is functionally equivalent to the example for <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_CopyNode_VDS_RDF_INode_VDS_RDF_IGraph_">CopyNode()</a> shown above.</p>
+<p><strong>Note:</strong> Both of these methods have <a href="Extension-Methods.html">Extension Methods</a> defined which invoke them, in the above example the call to <code>Tools.CopyNode()</code> could be replaced with the following and still have the same meaning:</p>
+<pre><code class="lang-csharp">t.Subject.CopyNode(ourlist);
+</code></pre><h2 id="httpdebugrequest">HttpDebugRequest</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_HttpDebugRequest_System_Net_HttpWebRequest_">HttpDebugRequest(HttpWebRequest request)</a> method is a debugging method only available in debug builds that is used to do HTTP request debugging. It prints information about a HTTP request to the console standard out.</p>
+<h2 id="httpdebugresponse">HttpDebugResponse</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_HttpDebugResponse_System_Net_HttpWebResponse_">HttpDebugResponse(HttpWebResponse response)</a> method is a debugging method only available in debug builds that is used to do HTTP response debugging. It prints information about a HTTP response to the console standard out.</p>
+<h2 id="isvalidbaseuri">IsValidBaseUri</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_IsValidBaseUri_System_Uri_">IsValidBaseUri(Uri baseUri)</a> method is used to determine whether a URI is valid to be used as a Base URI for resolving relative URIs against. In practise this means that the URI must be absolute and not using the mailto scheme.</p>
+<p>Note that this method is only used when it is necessary to resolve a relative URI against a Base URI. It is perfectly acceptable to have a Base URI against which you cannot resolve relative URIs providing no relative URIs are used.</p>
+<h2 id="resolveqname">ResolveQName</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_ResolveQName_System_String_VDS_RDF_INamespaceMapper_System_Uri_">ResolveQName(String qname, INamespaceMapper nsmap, Uri baseUri)</a> function is used to resolve a prefixed name to a URI in the context of the given <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html">VDS.RDF.INamespaceMapper</a> and Base URI. This is primarily used internally in some of the Parsers and in <a class="xref" href="../api/VDS.RDF.IUriNode.html">IUriNode</a> creation.</p>
+<h2 id="resolveuri">ResolveUri</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_ResolveUri_System_String_System_String_">ResolveUri(String uriref, String baseUri)</a> method is used to resolve a URI Reference (a relative/absolute URI or a fragment identifier) against a a given Base URI. It is used internally by most of the Parsers.</p>
+<h2 id="resolveuriorqname">ResolveUriOrQName</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Tools.html#VDS_RDF_Tools_ResolveUriOrQName_VDS_RDF_Parsing_Tokens_IToken_VDS_RDF_INamespaceMapper_System_Uri_">ResolveUriOrQName(IToken t, INamespaceMapper nsmap, Uri baseUri)</a> method is used to resolve a <a class="xref" href="../api/VDS.RDF.Parsing.Tokens.UriToken.html">UriToken</a> or a <a class="xref" href="../api/VDS.RDF.Parsing.Tokens.QNameToken.html">QNameToken</a> into a URI in the context of the given <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html">INamespaceMapper</a> and Base URI. Again this method is used internally in some of the Parsers.</p>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Utility-Methods.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

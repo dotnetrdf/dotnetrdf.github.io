@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>rdfWebDeploy | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="rdfWebDeploy | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rdfwebdeploy">rdfWebDeploy</h1>
+
+<p>rdfWebDeploy is a command line utility for deploying <a href="ASPNET-Integration.html">ASP.Net Integration</a></p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="Tools.html">Toolkit</a></p>
+<h1 id="documentation">Documentation</h1>
+<p>Command usage is as follows:</p>
+<pre><code class="lang-dos">rdfWebDeploy.exe mode [options]
+</code></pre><p>For example to deploy an application:</p>
+<pre><code class="lang-dos">rdfWebDeploy.exe -deploy /demos config.ttl
+</code></pre><p>To verify dotNetRDF DLLs are present and correct:</p>
+<pre><code class="lang-dos">rdfWebDeploy.exe -dllverify /demos
+</code></pre><h2 id="notes">Notes</h2>
+<p>All modes which support the webapp parameter specify it as the virtual path for the parameter on your local IIS instance, if you don&#39;t have a local IIS instance specify a path to the root directory of your web application and specify the <code>-noiis</code> option as an additional command line argument</p>
+<h3 id="supported-modes">Supported Modes</h3>
+<h4 id="deploy">deploy</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -deploy webapp config.ttl [options]
+</code></pre><p>Automatically deploys the given configuration file to the given web applications by setting up it&#39;s <code>Web.Config</code> file appropriately and deploying necessary DLLs.</p>
+<h4 id="dllupdate">dllupdate</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -dllupdate webapp [options]
+</code></pre><p>Updates all the required DLLs in the applications bin directory to the versions in the toolkits directory.</p>
+<h4 id="dllverify">dllverify</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -dllverify webapp [options]
+</code></pre><p>Verifies whether the required DLLs are present in the applications <code>bin/</code> directory</p>
+<h4 id="help">help</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -help
+</code></pre><p>Shows a console version of this usage guide</p>
+<h4 id="list">list</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -list config.ttl
+</code></pre><p>Lists the Handlers in the given configuration file</p>
+<h4 id="test">test</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -test config.ttl
+</code></pre><p>Tests whether a configuration file parses and makes various tests for validity</p>
+<h4 id="vocab">vocab</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -vocab file.ttl
+</code></pre><p>Outputs the Configuration Vocabulary to the given file for use as a reference</p>
+<h4 id="xmldeploy">xmldeploy</h4>
+<pre><code class="lang-dos">rdfWebDeploy.exe -xmldeploy web.config config.ttl [options]
+</code></pre><p>Automatically deploys the given configuration file to the given web applications by setting up it&#39;s <code>Web.Config</code> file appropriately and deploying necessary DLLs</p>
+<h3 id="supported-options">Supported Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Supported Modes</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-nointreg</code></td>
+<td><code>deploy</code> and <code>xmldeploy</code></td>
+<td>If specified then Handlers will not be registered for IIS Integrated Mode</td>
+</tr>
+<tr>
+<td><code>-noclassicreg</code></td>
+<td><code>deploy</code> and <code>xmldeploy</code></td>
+<td>If specified then Handlers will not be registered for IIS Classic Mode</td>
+</tr>
+<tr>
+<td><code>-noiis</code></td>
+<td>All modes that take the webapp parameter</td>
+<td>If specified indicates that there is not a local IIS instance available or you wish to deploy to a web application which is not associated with your local IIS instance. Essentially forces <code>deploy</code> mode to switch to <code>xmldeploy</code> mode</td>
+</tr>
+<tr>
+<td><code>-site &quot;Site Name&quot;</code></td>
+<td>All modes that take the webapp parameter</td>
+<td>Specifies the IIS site in which the web application resides</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Tools-rdfWebDeploy.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

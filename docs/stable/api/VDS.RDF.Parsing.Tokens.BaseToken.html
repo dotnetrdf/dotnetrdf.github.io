@@ -1,0 +1,883 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BaseToken
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BaseToken
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Tokens.BaseToken">
+  
+  
+  <h1 id="VDS_RDF_Parsing_Tokens_BaseToken" data-uid="VDS.RDF.Parsing.Tokens.BaseToken" class="text-break">Class BaseToken
+  </h1>
+  <div class="markdown level0 summary"><p>Base Implementation of IToken used by all derived tokens for ease of implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BaseToken</span></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AbsKeywordToken.html">AbsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AddKeywordToken.html">AddKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AllKeywordToken.html">AllKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AllToken.html">AllToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AndToken.html">AndToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AscKeywordToken.html">AscKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AsKeywordToken.html">AsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AskKeywordToken.html">AskKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AssignmentToken.html">AssignmentToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ATToken.html">ATToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.AvgKeywordToken.html">AvgKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseDirectiveToken.html">BaseDirectiveToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BindingsKeywordToken.html">BindingsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BindKeywordToken.html">BindKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BitwiseOrToken.html">BitwiseOrToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BlankNodeCollectionToken.html">BlankNodeCollectionToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BlankNodeToken.html">BlankNodeToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BlankNodeWithIDToken.html">BlankNodeWithIDToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BNodeKeywordToken.html">BNodeKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BOFToken.html">BOFToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.BoundKeywordToken.html">BoundKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CallKeywordToken.html">CallKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CeilKeywordToken.html">CeilKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ClearKeywordToken.html">ClearKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CoalesceKeywordToken.html">CoalesceKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CommaToken.html">CommaToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CommentToken.html">CommentToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ConcatKeywordToken.html">ConcatKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ConstructKeywordToken.html">ConstructKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CopyKeywordToken.html">CopyKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CountKeywordToken.html">CountKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CreateKeywordToken.html">CreateKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CustomKeywordDefinitionToken.html">CustomKeywordDefinitionToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.CustomKeywordToken.html">CustomKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DataKeywordToken.html">DataKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DataTypeKeywordToken.html">DataTypeKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DataTypeToken.html">DataTypeToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DayKeywordToken.html">DayKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DefaultKeywordToken.html">DefaultKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DeleteKeywordToken.html">DeleteKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DescKeywordToken.html">DescKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DescribeKeywordToken.html">DescribeKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DistinctKeywordToken.html">DistinctKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DivideToken.html">DivideToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DotToken.html">DotToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.DropKeywordToken.html">DropKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.EncodeForUriKeywordToken.html">EncodeForUriKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.EOFToken.html">EOFToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.EOLToken.html">EOLToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.EqualityToken.html">EqualityToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ExclamationToken.html">ExclamationToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ExistsKeywordToken.html">ExistsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.FilterKeywordToken.html">FilterKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.FloorKeywordToken.html">FloorKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ForAllQuantifierToken.html">ForAllQuantifierToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ForSomeQuantifierToken.html">ForSomeQuantifierToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.FromKeywordToken.html">FromKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.FromNamedKeywordToken.html">FromNamedKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GraphKeywordToken.html">GraphKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GraphLiteralToken.html">GraphLiteralToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GreaterThanOrEqualToToken.html">GreaterThanOrEqualToToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GreaterThanToken.html">GreaterThanToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GroupByKeywordToken.html">GroupByKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.GroupConcatKeywordToken.html">GroupConcatKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.HashToken.html">HashToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.HatHatToken.html">HatHatToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.HatToken.html">HatToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.HavingKeywordToken.html">HavingKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.HoursKeywordToken.html">HoursKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IfKeywordToken.html">IfKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ImpliedByToken.html">ImpliedByToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ImpliesToken.html">ImpliesToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.InKeywordToken.html">InKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.InsertKeywordToken.html">InsertKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IntoKeywordToken.html">IntoKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IriKeywordToken.html">IriKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IsBlankKeywordToken.html">IsBlankKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IsIriKeywordToken.html">IsIriKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IsLiteralKeywordToken.html">IsLiteralKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IsNumericKeywordToken.html">IsNumericKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.IsUriKeywordToken.html">IsUriKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.KeywordAToken.html">KeywordAToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.KeywordDirectiveToken.html">KeywordDirectiveToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.KeywordIsToken.html">KeywordIsToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.KeywordOfToken.html">KeywordOfToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LangKeywordToken.html">LangKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LangMatchesKeywordToken.html">LangMatchesKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LanguageSpecifierToken.html">LanguageSpecifierToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LCaseKeywordToken.html">LCaseKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LeftBracketToken.html">LeftBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LeftCurlyBracketToken.html">LeftCurlyBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LeftSquareBracketToken.html">LeftSquareBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LengthKeywordToken.html">LengthKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LessThanOrEqualToToken.html">LessThanOrEqualToToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LessThanToken.html">LessThanToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LetKeywordToken.html">LetKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LimitKeywordToken.html">LimitKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LiteralToken.html">LiteralToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LiteralWithDataTypeToken.html">LiteralWithDataTypeToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LiteralWithLanguageSpecifierToken.html">LiteralWithLanguageSpecifierToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LoadKeywordToken.html">LoadKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.LongLiteralToken.html">LongLiteralToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MaxKeywordToken.html">MaxKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MD5KeywordToken.html">MD5KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MedianKeywordToken.html">MedianKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MinKeywordToken.html">MinKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MinusKeywordToken.html">MinusKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MinusToken.html">MinusToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MinutesKeywordToken.html">MinutesKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ModeKeywordToken.html">ModeKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MonthKeywordToken.html">MonthKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MoveKeywordToken.html">MoveKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.MultiplyToken.html">MultiplyToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NamedKeywordToken.html">NamedKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NegationToken.html">NegationToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NotEqualsToken.html">NotEqualsToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NotExistsKeywordToken.html">NotExistsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NotInKeywordToken.html">NotInKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NowKeywordToken.html">NowKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NumericMaxKeywordToken.html">NumericMaxKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.NumericMinKeywordToken.html">NumericMinKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.OffsetKeywordToken.html">OffsetKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.OptionalKeywordToken.html">OptionalKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.OrderByKeywordToken.html">OrderByKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.OrToken.html">OrToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.PathToken.html">PathToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.PlainLiteralToken.html">PlainLiteralToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.PlusToken.html">PlusToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.PrefixDirectiveToken.html">PrefixDirectiveToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.PrefixToken.html">PrefixToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.QNameToken.html">QNameToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.QuestionToken.html">QuestionToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RandKeywordToken.html">RandKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ReducedKeywordToken.html">ReducedKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RegexKeywordToken.html">RegexKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ReplaceKeywordToken.html">ReplaceKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RightBracketToken.html">RightBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RightCurlyBracketToken.html">RightCurlyBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RightSquareBracketToken.html">RightSquareBracketToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.RoundKeywordToken.html">RoundKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SameTermKeywordToken.html">SameTermKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SampleKeywordToken.html">SampleKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SecondsKeywordToken.html">SecondsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SelectKeywordToken.html">SelectKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SemicolonToken.html">SemicolonToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SeparatorKeywordToken.html">SeparatorKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ServiceKeywordToken.html">ServiceKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.Sha1KeywordToken.html">Sha1KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.Sha224KeywordToken.html">Sha224KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.Sha256KeywordToken.html">Sha256KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.Sha384KeywordToken.html">Sha384KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.Sha512KeywordToken.html">Sha512KeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SilentKeywordToken.html">SilentKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrAfterKeywordToken.html">StrAfterKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrBeforeKeywordToken.html">StrBeforeKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrContainsKeywordToken.html">StrContainsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrDtKeywordToken.html">StrDtKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrEndsKeywordToken.html">StrEndsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrKeywordToken.html">StrKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrLangKeywordToken.html">StrLangKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrLenKeywordToken.html">StrLenKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrStartsKeywordToken.html">StrStartsKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.StrUUIDKeywordToken.html">StrUUIDKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SubStrKeywordToken.html">SubStrKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.SumKeywordToken.html">SumKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.TabToken.html">TabToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.TimezoneKeywordToken.html">TimezoneKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ToKeywordToken.html">ToKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.TZKeywordToken.html">TZKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UCaseKeywordToken.html">UCaseKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UndefKeywordToken.html">UndefKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UnderscoreToken.html">UnderscoreToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UnionKeywordToken.html">UnionKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UnsaidKeywordToken.html">UnsaidKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UriKeywordToken.html">UriKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UriToken.html">UriToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UsingKeywordToken.html">UsingKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.UUIDKeywordToken.html">UUIDKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.ValuesKeywordToken.html">ValuesKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.VariableToken.html">VariableToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.WhereKeywordToken.html">WhereKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.WithKeywordToken.html">WithKeywordToken</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Tokens.YearKeywordToken.html">YearKeywordToken</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Tokens.html">VDS.RDF.Parsing.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Parsing_Tokens_BaseToken_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseToken : IToken</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__ctor_System_Int32_System_String_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.%23ctor(System.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L56">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken__ctor_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__ctor_System_Int32_System_String_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">BaseToken(Int32, String, Int32, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a Token and fills in its Values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseToken(int tokenType, string value, int startLine, int endLine, int startPos, int endPos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">tokenType</span></td>
+        <td><p>Integer denoting the Tokens Type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>String value that the Token represents (if any).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startLine</span></td>
+        <td><p>Line at which the Token starts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">endLine</span></td>
+        <td><p>Line at which the Token ends.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startPos</span></td>
+        <td><p>Column at which the Token starts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">endPos</span></td>
+        <td><p>Column at which the Token ends.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Parsing_Tokens_BaseToken__ctor_System_Int32_System_String_System_Int32_System_Int32_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>All the derived classes use this Constructor to fill in the basic values of a Token.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__endline.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._endline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L40">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__endline" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._endline">_endline</h4>
+  <div class="markdown level1 summary"><p>Variables for representing the Type and Position of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _endline</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__endpos.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._endpos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L40">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__endpos" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._endpos">_endpos</h4>
+  <div class="markdown level1 summary"><p>Variables for representing the Type and Position of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _endpos</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__startline.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._startline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L40">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__startline" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._startline">_startline</h4>
+  <div class="markdown level1 summary"><p>Variables for representing the Type and Position of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _startline</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__startpos.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._startpos%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L40">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__startpos" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._startpos">_startpos</h4>
+  <div class="markdown level1 summary"><p>Variables for representing the Type and Position of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _startpos</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__tokentype.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._tokentype%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L40">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__tokentype" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._tokentype">_tokentype</h4>
+  <div class="markdown level1 summary"><p>Variables for representing the Type and Position of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int _tokentype</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken__value.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken._value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L44">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken__value" data-uid="VDS.RDF.Parsing.Tokens.BaseToken._value">_value</h4>
+  <div class="markdown level1 summary"><p>Variable containg the value of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _value</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_EndLine.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.EndLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L102">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_EndLine_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.EndLine*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_EndLine" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.EndLine">EndLine</h4>
+  <div class="markdown level1 summary"><p>Gets the Line at which this Token Ends.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int EndLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_EndPosition.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.EndPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L124">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_EndPosition_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.EndPosition*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_EndPosition" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.EndPosition">EndPosition</h4>
+  <div class="markdown level1 summary"><p>Gets the Column at which this Token Ends.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int EndPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_Length.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L135">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_Length_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.Length*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_Length" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Gets the Length of the Tokens Value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_StartLine.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.StartLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L91">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_StartLine_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.StartLine*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_StartLine" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.StartLine">StartLine</h4>
+  <div class="markdown level1 summary"><p>Gets the Line at which this Token Starts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StartLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_StartPosition.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.StartPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L113">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_StartPosition_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.StartPosition*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_StartPosition" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.StartPosition">StartPosition</h4>
+  <div class="markdown level1 summary"><p>Gets the Column at which this Token Starts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StartPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_TokenType.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.TokenType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L69">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_TokenType_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.TokenType*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_TokenType" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.TokenType">TokenType</h4>
+  <div class="markdown level1 summary"><p>Gets an arbitrary integer which indicates the Type of the Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TokenType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_Value.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L80">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_Value_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.Value*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_Value" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.Value">Value</h4>
+  <div class="markdown level1 summary"><p>Gets the String Value which this Token represents (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Value { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_GetHashCode.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L156">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_GetHashCode_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.GetHashCode*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_GetHashCode" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Gets a Hash Code for a Token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L147">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_BaseToken_ToString_" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.ToString*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_BaseToken_ToString" data-uid="VDS.RDF.Parsing.Tokens.BaseToken.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Gets a String representation of the Token Type and Value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_BaseToken.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.BaseToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Tokens/BaseToken.cs/#L34" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

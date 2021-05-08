@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Stardog | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Stardog | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stardog">Stardog</h1>
+
+<p><a href="http://stardog.com">Stardog</a> the RDF database from Clark &amp; Parsia can be connected to via the <a class="xref" href="../api/VDS.RDF.Storage.StardogConnector.html">StardogConnector</a>.  This connector uses the Stardog HTTP interface so requires a running Stardog HTTP server.</p>
+<p>The <code>StardogConnector</code> assumes the latest version of Stardog is being used, currently these are the 3.x releases.  A <a class="xref" href="../api/VDS.RDF.Storage.StardogV1Connector.html">StardogV1Connector</a>, <a class="xref" href="../api/VDS.RDF.Storage.StardogV2Connector.html">StardogV2Connector</a> and <a class="xref" href="../api/VDS.RDF.Storage.StardogV3Connector.html">StardogV3Connector</a> are provided if you wish to be explicit about the version of Stardog you are connecting to.</p>
+<p>In terms of backwards compatibility the newer connectors may be able to talk to an older server but we can&#39;t guarantee this will work correctly, also newer connectors have support for newer Stardog features which will not work if used against an older server.</p>
+<h2 id="supported-capabilities">Supported Capabilities</h2>
+<ul>
+<li>Load, Save, Delete, Update and List Graphs</li>
+<li>SPARQL Query<ul>
+<li>Configurable query reasoning levels (for Stardog 1.x and 2.x)</li>
+</ul>
+</li>
+<li>SPARQL Update for Stardog 2.x and 3.x connections</li>
+<li>Transactions</li>
+</ul>
+<h2 id="creating-a-connection">Creating a Connection</h2>
+<p>Connecting to a Stardog database requires knowing the Base URI for the server, a database ID and user credentials if security is enabled e.g.</p>
+<pre><code class="lang-csharp">
+StardogConnector stardog = new StardogConnector(&quot;http://localhost:5820&quot;, &quot;example&quot;, &quot;username&quot;, &quot;password&quot;);
+</code></pre><h2 id="configurable-query-reasoning">Configurable Query Reasoning</h2>
+<p>Stardog 1.x and 2.x supports configurable reasoning levels on a per-query basis.  The current reasoning level is controlled by the <a class="xref" href="../api/VDS.RDF.Storage.BaseStardogConnector.html#VDS_RDF_Storage_BaseStardogConnector_Reasoning"><code>Reasoning</code></a> property and takes a value from the <a class="xref" href="../api/VDS.RDF.Storage.StardogReasoningMode.html">StardogReasoningMode</a> enum.</p>
+<p>Note that from Stardog 3.x the reasoning level is controlled at the database level and cannot be changed at the connection level.</p>
+<p>This may be changed any time you like and affects any subsequent queries made via the <code>Query()</code> method.</p>
+<h2 id="transactions">Transactions</h2>
+<p>Stardog is one of the few stores currently supported that support transactions, see the <a href="Storage-Transactions.html">Transactions API</a> page for an overview of those APIs.  If the Transaction APIs are not explicitly used each operation occurs in its own transaction which is auto-committed at the end of its operation.</p>
+<h1 id="managing-a-server">Managing a Server</h1>
+<p>We support managing a server via the <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogServer.html">StardogServer</a> class which implements our <a href="Storage-Servers.html">Servers API</a></p>
+<p>The <code>StardogServer</code> assumes the latest version of Stardog is being used, currently these are the 3.x releases.  A <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogV1Server.html">StardogV1Server</a>, <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogV2Server.html">StardogV2Server</a> and <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogV3Server.html">StardogV3Server</a> are provided if you wish to be explicit about the version of Stardog you are connecting to.</p>
+<p>A <code>StardogConnector</code> provides access to its associated server via the <a class="xref" href="../api/VDS.RDF.Storage.BaseStardogConnector.html#VDS_RDF_Storage_BaseStardogConnector_ParentServer"><code>ParentServer</code></a> or <a class="xref" href="../api/VDS.RDF.Storage.BaseStardogConnector.html#VDS_RDF_Storage_BaseStardogConnector_AsyncParentServer"><code>AsyncParentServer</code></a> property.</p>
+<h2 id="connecting-to-a-server">Connecting to a Server</h2>
+<p>You can also connect directly to a server by creating an instance of the <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogServer.html">StardogServer</a> class.  This requires you to know the Base URI of the server:</p>
+<pre><code class="lang-csharp">
+StardogServer server = new StardogServer(&quot;http://localhost:5822&quot;, &quot;username&quot;, &quot;password&quot;);
+</code></pre><h2 id="creating-stores">Creating Stores</h2>
+<p>When creating a store the <code>StardogServer</code> will provide templates from the following selection:</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.Management.Provisioning.Stardog.StardogDiskTemplate.html">StardogDiskTemplate</a></td>
+<td>Used to create a Stardog disk store</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.Management.Provisioning.Stardog.StardogMemTemplate.html">StardogMemTemplate</a></td>
+<td>Used to create a Stardog memory store</td>
+</tr>
+</tbody>
+</table>
+<p>Both of these derive from the <a class="xref" href="../api/VDS.RDF.Storage.Management.Provisioning.Stardog.BaseStardogTemplate.html">BaseStardogTemplate</a> which provides a large range of properties that can be used to configure Stardog database options.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/2.7.x/user_guide/Storage-Stardog.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

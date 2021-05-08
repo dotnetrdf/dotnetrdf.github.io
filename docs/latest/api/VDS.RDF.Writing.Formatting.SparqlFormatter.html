@@ -1,0 +1,1382 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SparqlFormatter
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SparqlFormatter
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter">
+  <h1 id="VDS_RDF_Writing_Formatting_SparqlFormatter" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter">Class SparqlFormatter
+  </h1>
+  <div class="markdown level0 summary"><p>Formatter for formatting Nodes for use in SPARQL and for formatting SPARQL Queries.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html">BaseFormatter</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Writing.Formatting.QNameFormatter.html">QNameFormatter</a></div>
+    <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html">TurtleFormatter</a></div>
+    <div class="level4"><span class="xref">SparqlFormatter</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter__longLitMustEscape">TurtleFormatter._longLitMustEscape</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter__litMustEscape">TurtleFormatter._litMustEscape</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">TurtleFormatter.FormatLiteralNode(ILiteralNode, Nullable&lt;TripleSegment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">TurtleFormatter.FormatBlankNode(IBlankNode, Nullable&lt;TripleSegment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.QNameFormatter.html#VDS_RDF_Writing_Formatting_QNameFormatter__qnameMapper">QNameFormatter._qnameMapper</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.QNameFormatter.html#VDS_RDF_Writing_Formatting_QNameFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">QNameFormatter.FormatUriNode(IUriNode, Nullable&lt;TripleSegment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatName">BaseFormatter.FormatName</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_INode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.Format(INode, Nullable&lt;TripleSegment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_INode_">BaseFormatter.Format(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Triple_">BaseFormatter.Format(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUri_System_String_">BaseFormatter.FormatUri(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUri_System_Uri_">BaseFormatter.FormatUri(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatGraphLiteralNode_VDS_RDF_IGraphLiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatGraphLiteralNode(IGraphLiteralNode, Nullable&lt;TripleSegment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatChar_System_Char_">BaseFormatter.FormatChar(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatChar_System_Char___">BaseFormatter.FormatChar(Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Escape_System_String_System_Collections_Generic_List_System_String____">BaseFormatter.Escape(String, List&lt;String[]&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_ToString">BaseFormatter.ToString()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.Formatting.html">VDS.RDF.Writing.Formatting</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_Writing_Formatting_SparqlFormatter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SparqlFormatter : TurtleFormatter, ITripleFormatter, ICharFormatter, INamespaceFormatter, IBaseUriFormatter, IQueryFormatter, INodeFormatter, IUriFormatter, IResultFormatter</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor" class="expander" data-toggle="collapse">SparqlFormatter()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new SPARQL Formatter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlFormatter()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.%23ctor(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_IGraph_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">SparqlFormatter(IGraph)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_IGraph_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new SPARQL Formatter using the given Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlFormatter(IGraph g)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_INamespaceMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.%23ctor(VDS.RDF.INamespaceMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L70" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_INamespaceMapper_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.#ctor(VDS.RDF.INamespaceMapper)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_INamespaceMapper_" class="expander" data-toggle="collapse">SparqlFormatter(INamespaceMapper)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter__ctor_VDS_RDF_INamespaceMapper_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new SPARQL Formatter using the given Namespace Map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlFormatter(INamespaceMapper nsmap)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></span>
+        <span class="parametername">nsmap</span>
+        <p><p>Namespace Map.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_GraphPattern_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.GraphPattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L288" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_GraphPattern_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.GraphPattern)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_GraphPattern_" class="expander" data-toggle="collapse">Format(GraphPattern)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_GraphPattern_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Graph Pattern in nicely formatted SPARQL syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Format(GraphPattern gp)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Patterns.GraphPattern.html">GraphPattern</a></span>
+        <span class="parametername">gp</span>
+        <p><p>Graph Pattern.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IQueryFormatter.html#VDS_RDF_Writing_Formatting_IQueryFormatter_Format_VDS_RDF_Query_Patterns_GraphPattern_">IQueryFormatter.Format(GraphPattern)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_ITriplePattern_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.ITriplePattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L469" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_ITriplePattern_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.ITriplePattern)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_ITriplePattern_" class="expander" data-toggle="collapse">Format(ITriplePattern)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_ITriplePattern_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Triple Pattern in nicely formatted SPARQL syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Format(ITriplePattern tp)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Patterns.ITriplePattern.html">ITriplePattern</a></span>
+        <span class="parametername">tp</span>
+        <p><p>Triple Pattern.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IQueryFormatter.html#VDS_RDF_Writing_Formatting_IQueryFormatter_Format_VDS_RDF_Query_Patterns_ITriplePattern_">IQueryFormatter.Format(ITriplePattern)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_PatternItem_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.PatternItem%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L568" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_PatternItem_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.Patterns.PatternItem,System.Nullable{VDS.RDF.Writing.TripleSegment})"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_PatternItem_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="expander" data-toggle="collapse">Format(PatternItem, Nullable&lt;TripleSegment&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_Patterns_PatternItem_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Pattern Item in nicely formatted SPARQL syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Format(PatternItem item, TripleSegment? segment)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Patterns.PatternItem.html">PatternItem</a></span>
+        <span class="parametername">item</span>
+        <p><p>Pattern Item.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</span>
+        <span class="parametername">segment</span>
+        <p><p>Triple Pattern Segment.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IQueryFormatter.html#VDS_RDF_Writing_Formatting_IQueryFormatter_Format_VDS_RDF_Query_Patterns_PatternItem_System_Nullable_VDS_RDF_Writing_TripleSegment__">IQueryFormatter.Format(PatternItem, Nullable&lt;TripleSegment&gt;)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L122" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">Format(SparqlQuery)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Query in nicely formatted SPARQL syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Format(SparqlQuery query)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
+        <span class="parametername">query</span>
+        <p><p>SPARQL Query.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IQueryFormatter.html#VDS_RDF_Writing_Formatting_IQueryFormatter_Format_VDS_RDF_Query_SparqlQuery_">IQueryFormatter.Format(SparqlQuery)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlResult_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.SparqlResult)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L1196" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlResult_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.Format(VDS.RDF.Query.SparqlResult)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlResult_" class="expander" data-toggle="collapse">Format(SparqlResult)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_Format_VDS_RDF_Query_SparqlResult_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL Result using this Formatter to format the Node values for each Variable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Format(SparqlResult result)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlResult.html">SparqlResult</a></span>
+        <span class="parametername">result</span>
+        <p><p>SPARQL Result.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Query_SparqlResult_">BaseFormatter.Format(SparqlResult)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html#VDS_RDF_Writing_Formatting_IResultFormatter_Format_VDS_RDF_Query_SparqlResult_">IResultFormatter.Format(SparqlResult)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatAggregate_VDS_RDF_Query_Aggregates_ISparqlAggregate_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatAggregate(VDS.RDF.Query.Aggregates.ISparqlAggregate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L888" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatAggregate_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatAggregate*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatAggregate_VDS_RDF_Query_Aggregates_ISparqlAggregate_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatAggregate(VDS.RDF.Query.Aggregates.ISparqlAggregate)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatAggregate_VDS_RDF_Query_Aggregates_ISparqlAggregate_" class="expander" data-toggle="collapse">FormatAggregate(ISparqlAggregate)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatAggregate_VDS_RDF_Query_Aggregates_ISparqlAggregate_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL Aggregate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatAggregate(ISparqlAggregate agg)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Aggregates.ISparqlAggregate.html">ISparqlAggregate</a></span>
+        <span class="parametername">agg</span>
+        <p><p>SPARQL Aggregate.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBaseUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBaseUri(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBaseUri_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBaseUri*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBaseUri_System_Uri_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBaseUri(System.Uri)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBaseUri_System_Uri_" class="expander" data-toggle="collapse">FormatBaseUri(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBaseUri_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Base URI Declaration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string FormatBaseUri(Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Base URI.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter_FormatBaseUri_System_Uri_">TurtleFormatter.FormatBaseUri(Uri)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBooleanResult_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBooleanResult(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L1206" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBooleanResult_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBooleanResult*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBooleanResult_System_Boolean_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatBooleanResult(System.Boolean)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBooleanResult_System_Boolean_" class="expander" data-toggle="collapse">FormatBooleanResult(Boolean)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatBooleanResult_System_Boolean_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Boolean Result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string FormatBooleanResult(bool result)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Boolean</span></span>
+        <span class="parametername">result</span>
+        <p><p>Boolean Result.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatBooleanResult_System_Boolean_">BaseFormatter.FormatBooleanResult(Boolean)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html#VDS_RDF_Writing_Formatting_IResultFormatter_FormatBooleanResult_System_Boolean_">IResultFormatter.FormatBooleanResult(Boolean)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatDescribeVariablesList_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatDescribeVariablesList(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L658" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatDescribeVariablesList_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatDescribeVariablesList*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatDescribeVariablesList_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatDescribeVariablesList(VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatDescribeVariablesList_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">FormatDescribeVariablesList(SparqlQuery)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatDescribeVariablesList_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats the Variable/QName/URI for a SPARQL DESCRIBE Query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatDescribeVariablesList(SparqlQuery q)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
+        <span class="parametername">q</span>
+        <p><p>SPARQL Query.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatExpression_VDS_RDF_Query_Expressions_ISparqlExpression_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatExpression(VDS.RDF.Query.Expressions.ISparqlExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L724" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatExpression_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatExpression*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatExpression(VDS.RDF.Query.Expressions.ISparqlExpression)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" class="expander" data-toggle="collapse">FormatExpression(ISparqlExpression)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL Expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatExpression(ISparqlExpression expr)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a></span>
+        <span class="parametername">expr</span>
+        <p><p>SPARQL Expression.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatGroupBy_VDS_RDF_Query_Grouping_ISparqlGroupBy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatGroupBy(VDS.RDF.Query.Grouping.ISparqlGroupBy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L1060" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatGroupBy_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatGroupBy*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatGroupBy_VDS_RDF_Query_Grouping_ISparqlGroupBy_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatGroupBy(VDS.RDF.Query.Grouping.ISparqlGroupBy)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatGroupBy_VDS_RDF_Query_Grouping_ISparqlGroupBy_" class="expander" data-toggle="collapse">FormatGroupBy(ISparqlGroupBy)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatGroupBy_VDS_RDF_Query_Grouping_ISparqlGroupBy_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL GROUP BY Clause.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatGroupBy(ISparqlGroupBy groupBy)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Grouping.ISparqlGroupBy.html">ISparqlGroupBy</a></span>
+        <span class="parametername">groupBy</span>
+        <p><p>GROUP BY Clause.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatInlineData_VDS_RDF_Query_Patterns_BindingsPattern_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatInlineData(VDS.RDF.Query.Patterns.BindingsPattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L1123" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatInlineData_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatInlineData*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatInlineData_VDS_RDF_Query_Patterns_BindingsPattern_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatInlineData(VDS.RDF.Query.Patterns.BindingsPattern)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatInlineData_VDS_RDF_Query_Patterns_BindingsPattern_" class="expander" data-toggle="collapse">FormatInlineData(BindingsPattern)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatInlineData_VDS_RDF_Query_Patterns_BindingsPattern_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats the Inline Data portion of a Query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatInlineData(BindingsPattern data)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Patterns.BindingsPattern.html">BindingsPattern</a></span>
+        <span class="parametername">data</span>
+        <p><p>Inline Data.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatNamespace_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatNamespace(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L100" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatNamespace_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatNamespace*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatNamespace_System_String_System_Uri_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatNamespace(System.String,System.Uri)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatNamespace_System_String_System_Uri_" class="expander" data-toggle="collapse">FormatNamespace(String, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatNamespace_System_String_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Namespace Declaration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string FormatNamespace(string prefix, Uri namespaceUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">prefix</span>
+        <p><p>Namespace Prefix.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">namespaceUri</span>
+        <p><p>Namespace URI.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html#VDS_RDF_Writing_Formatting_TurtleFormatter_FormatNamespace_System_String_System_Uri_">TurtleFormatter.FormatNamespace(String, Uri)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatOrderBy_VDS_RDF_Query_Ordering_ISparqlOrderBy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatOrderBy(VDS.RDF.Query.Ordering.ISparqlOrderBy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L1092" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatOrderBy_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatOrderBy*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatOrderBy_VDS_RDF_Query_Ordering_ISparqlOrderBy_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatOrderBy(VDS.RDF.Query.Ordering.ISparqlOrderBy)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatOrderBy_VDS_RDF_Query_Ordering_ISparqlOrderBy_" class="expander" data-toggle="collapse">FormatOrderBy(ISparqlOrderBy)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatOrderBy_VDS_RDF_Query_Ordering_ISparqlOrderBy_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL ORDER BY Clause.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatOrderBy(ISparqlOrderBy orderBy)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Ordering.ISparqlOrderBy.html">ISparqlOrderBy</a></span>
+        <span class="parametername">orderBy</span>
+        <p><p>ORDER BY Clause.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatPath_VDS_RDF_Query_Paths_ISparqlPath_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatPath(VDS.RDF.Query.Paths.ISparqlPath)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L930" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatPath_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatPath*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatPath_VDS_RDF_Query_Paths_ISparqlPath_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatPath(VDS.RDF.Query.Paths.ISparqlPath)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatPath_VDS_RDF_Query_Paths_ISparqlPath_" class="expander" data-toggle="collapse">FormatPath(ISparqlPath)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatPath_VDS_RDF_Query_Paths_ISparqlPath_" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a SPARQL Property Path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatPath(ISparqlPath path)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Paths.ISparqlPath.html">ISparqlPath</a></span>
+        <span class="parametername">path</span>
+        <p><p>SPARQL Property Path.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariableNode_VDS_RDF_IVariableNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariableNode(VDS.RDF.IVariableNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariableNode_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariableNode*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariableNode_VDS_RDF_IVariableNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariableNode(VDS.RDF.IVariableNode,System.Nullable{VDS.RDF.Writing.TripleSegment})"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariableNode_VDS_RDF_IVariableNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="expander" data-toggle="collapse">FormatVariableNode(IVariableNode, Nullable&lt;TripleSegment&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariableNode_VDS_RDF_IVariableNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats a Variable Node in SPARQL Syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string FormatVariableNode(IVariableNode v, TripleSegment? segment)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IVariableNode.html">IVariableNode</a></span>
+        <span class="parametername">v</span>
+        <p><p>Variable Node.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</span>
+        <span class="parametername">segment</span>
+        <p><p>Triple Segment.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatVariableNode_VDS_RDF_IVariableNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatVariableNode(IVariableNode, Nullable&lt;TripleSegment&gt;)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariablesList_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlVariable__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariablesList(System.Collections.Generic.IEnumerable%7BVDS.RDF.Query.SparqlVariable%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L605" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariablesList_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariablesList*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariablesList_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlVariable__" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.FormatVariablesList(System.Collections.Generic.IEnumerable{VDS.RDF.Query.SparqlVariable})"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariablesList_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlVariable__" class="expander" data-toggle="collapse">FormatVariablesList(IEnumerable&lt;SparqlVariable&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_FormatVariablesList_System_Collections_Generic_IEnumerable_VDS_RDF_Query_SparqlVariable__" class="collapse in">
+  <div class="markdown level1 summary"><p>Formats the Variable List for a SPARQL Query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatVariablesList(IEnumerable&lt;SparqlVariable&gt; vars)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.SparqlVariable.html">SparqlVariable</a>&gt;</span>
+        <span class="parametername">vars</span>
+        <p><p>Variables.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter_IsValidQName_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter.IsValidQName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_Formatting_SparqlFormatter_IsValidQName_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.IsValidQName*"></a>
+  
+  <h4 id="VDS_RDF_Writing_Formatting_SparqlFormatter_IsValidQName_System_String_" data-uid="VDS.RDF.Writing.Formatting.SparqlFormatter.IsValidQName(System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_IsValidQName_System_String_" class="expander" data-toggle="collapse">IsValidQName(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_Formatting_SparqlFormatter_IsValidQName_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Determines whether a QName is valid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsValidQName(string value)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">value</span>
+        <p><p>Value.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.QNameFormatter.html#VDS_RDF_Writing_Formatting_QNameFormatter_IsValidQName_System_String_">QNameFormatter.IsValidQName(String)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_SparqlFormatter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.SparqlFormatter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/SparqlFormatter.cs/#L48" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

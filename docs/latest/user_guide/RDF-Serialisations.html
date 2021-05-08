@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content=" | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>[[Home]] &gt; [[User Guide|UserGuide]] &gt; [[RDF Serialisations|RDF-Serialisations]]</p>
+<p>= RDF Serialisations</p>
+<p>This page serves as a reference of the RDF serialisations supported by dotNetRDF, this includes links to the specifications implemented.  How to choose between different variants of the specifications were supported and brief descriptions of the differences.  Since many of these variants are more recent standards we also note from which version onwards we support them or in some cases that they are not yet supported.</p>
+<p>Several of these serialisations have multiple variants of them with differing syntax rules.  Where multiple variants are supported dotNetRDF will default to accepting the most recent supported variant for input <strong>but</strong> will use the oldest supported variant for output.  This is <a href="http://en.wikipedia.org/wiki/Robustness_principle">Postel&#39;s Law</a> in action - we are liberal in what we accept and conservative in what we send.</p>
+<table>
+<thead>
+<tr>
+<th>Serialisation</th>
+<th>Known Variants</th>
+<th>Supported?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NTriples</td>
+<td><a href="http://www.w3.org/TR/2004/REC-rdf-testcases-20040210/#ntriples">RDF 1.0 Test Cases</a> and <a href="http://www.w3.org/TR/n-triples/">RDF 1.1 NTriples</a></td>
+<td>Yes and 1.0.4 onwards</td>
+</tr>
+<tr>
+<td>NQuads</td>
+<td><a href="http://sw.deri.org/2008/07/n-quads/">DERI NQuads</a> and <a href="http://www.w3.org/TR/n-quads/">RDF 1.1 NQuads</a></td>
+<td>Yes and 1.0.4 onwards</td>
+</tr>
+<tr>
+<td>Turtle</td>
+<td><a href="http://www.w3.org/TeamSubmission/turtle/">Dave Beckett specification</a> and <a href="http://www.w3.org/TR/turtle/">RDF 1.1 Turtle</a></td>
+<td>Yes and 1.0.0 onwards</td>
+</tr>
+</tbody>
+</table>
+<p>== NTriples</p>
+<p>NTriples is a simple line based format for encoding RDF triples, each line may either be blank, a comment or contain a triple.  The NTriples syntax uses no syntactic compressions of any sort so is useful as a canonical serialisation format.</p>
+<p>There are two variants of NTriples supported.</p>
+<p>=== Original</p>
+<p>The original NTriples syntax was defined as part of the RDF 1.0 Working Group defined in the <a href="http://www.w3.org/TR/2004/REC-rdf-testcases-20040210/#ntriples">RDF 1.0 Test Cases</a> published in 2004.  It is a purely ASCII encoded serialisation so any character outside the ASCII range has to be represented using a <code>\u</code> or <code>\U</code> escape.</p>
+<p>Prior to <strong>1.0.4</strong> this was the only NTriples syntax supported.</p>
+<p>When using the <code>NTriplesParser</code> or <code>NTriplesWriter</code> the <code>NTriplesSyntax.Original</code> enumeration value is used to indicate that this syntax should be used.</p>
+<p>=== RDF 1.1</p>
+<p>The RDF 1.1 specifications included a new format specification for NTriples which is <a href="http://www.w3.org/TR/n-triples/">RDF 1.1 NTriples</a> published in 2014.  The major difference between this and the previous syntax is that the RDF 1.1 variant uses UTF-8 encoding rather than ASCII.  This means that characters which previously had to be escaped can now be represented directly though they still be escaped if desired.</p>
+<p>This syntax has been supported from <strong>1.0.4</strong> onwards</p>
+<p>When using the <code>NTriplesParser</code> or <code>NTriplesWriter</code> the <code>NTriplesSyntax.Rdf11</code> enumeration value is used to indicate that this syntax should be used.</p>
+<p>== NQuads</p>
+<p>NQuads is a simple line based format for encoding RDF quads which is closely related to NTriples.  There are two variants of NQuads supported:</p>
+<p>=== Original</p>
+<p>NQuads was originally specified by researchers at DERI as <a href="http://sw.deri.org/2008/07/n-quads/">NQuads: Extending NTriples with Context</a> in 2008 and defines a simple extension to the original NTriples format that adds a fourth field to allow quads to be conveyed instead of triples.  It is a purely ASCII encoded serialisation so any character outside the ASCII range has to be represented using a <code>\u</code> or <code>\U</code> escape.</p>
+<p>When using the <code>NQuadsParser</code> or <code>NQuadsWriter</code> the <code>NQuadsSyntax.Original</code> enumeration value is used to indicate that this syntax should be used.</p>
+<p>=== RDF 1.1</p>
+<p>The RDF 1.1 specifications included a new specification for NQuads which is <a href="http://www.w3.org/TR/n-quads/">RDF 1.1 NQuads</a> published in 2014.  The major difference between this and the previous syntax is that the RDF 1.1 variant uses UTF-8 encoding rather than ASCII.  This means that characters which previously had to be escaped can now be represented directly though they still be escaped if desired.</p>
+<p>This syntax has been supported from <strong>1.0.4</strong> onwards</p>
+<p>When using the <code>NQuadsParser</code> or <code>NQuadsWriter</code> the <code>NQuadsSyntax.Rdf11</code> enumeration value is used to indicate that this syntax should be used.</p>
+<p>== Turtle</p>
+<p>Turtle (the name originally derived from Terse RDF Triples Language) is a simple text based language for encoding RDF.  It has some basic similarities to NTriples (and in fact any valid NTriples document is a valid Turtle document) however it supports a wide variety of syntactic compressions which make encoding RDF triples far more compact.</p>
+<p>There are two variants of Turtle supported:</p>
+<p>=== Original</p>
+<p>The original <a href="http://www.w3.org/TeamSubmission/turtle/">Terse RDF Triples Language</a> was specified by Dave Beckett in 2007 and later submitted to the W3C as a Team Submission in 2008.  The two versions of the specification are identical in technical content so are treated as a single syntax variant.</p>
+<p>When using the <code>TurtleParser</code> and any of the Turtle writers the <code>TurtleSyntax.Original</code> enumeration value is used to indicate that this syntax should be used.</p>
+<p>=== RDF 1.1</p>
+<p>The RDF 1.1 specifications included a new specification for Turtle which is <a href="http://www.w3.org/TR/turtle/">RDF 1.1 Turtle</a> published in 2014.  The main differences between this and the previous syntax is that the RDF 1.1 variant provides more permissive prefixed names (one of the major syntax compressions used) and provides better alignment with the SPARQL syntax.</p>
+<p>This syntax has been supported from <strong>1.0.0</strong> onwards.</p>
+<p>When using the <code>TurtleParser</code> and any of the Turtle writers the <code>TurtleSyntax.W3C</code> enumeration value is used to indicate that this syntax should be used.</p>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/RDF-Serialisations.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

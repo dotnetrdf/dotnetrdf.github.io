@@ -1,0 +1,842 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ThreadSafeGraphCollection
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ThreadSafeGraphCollection
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.ThreadSafeGraphCollection">
+  <h1 id="VDS_RDF_ThreadSafeGraphCollection" data-uid="VDS.RDF.ThreadSafeGraphCollection">Class ThreadSafeGraphCollection
+  </h1>
+  <div class="markdown level0 summary"><p>Thread Safe decorator around a Graph collection.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.WrapperGraphCollection.html">WrapperGraphCollection</a></div>
+    <div class="level3"><span class="xref">ThreadSafeGraphCollection</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection__graphs">WrapperGraphCollection._graphs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_System_Collections_IEnumerable_GetEnumerator">BaseGraphCollection.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_GraphAdded">BaseGraphCollection.GraphAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_GraphRemoved">BaseGraphCollection.GraphRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_RaiseGraphAdded_VDS_RDF_IGraph_">BaseGraphCollection.RaiseGraphAdded(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_RaiseGraphRemoved_VDS_RDF_IGraph_">BaseGraphCollection.RaiseGraphRemoved(IGraph)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_ThreadSafeGraphCollection_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ThreadSafeGraphCollection : WrapperGraphCollection, IEnumerable&lt;IGraph&gt;, IEnumerable, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 id="VDS_RDF_ThreadSafeGraphCollection_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Dependings on your platform this either provides MRSW concurrency via a <span class="xref">System.Threading.ReaderWriterLockSlim</span> or exclusive access concurrency via a <span class="xref">System.Threading.Monitor</span>.</p>
+</div>
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L206" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection__ctor_" data-uid="VDS.RDF.ThreadSafeGraphCollection.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection__ctor" data-uid="VDS.RDF.ThreadSafeGraphCollection.#ctor"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection__ctor" class="expander" data-toggle="collapse">ThreadSafeGraphCollection()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection__ctor" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Thread Safe decorator around the default <a class="xref" href="VDS.RDF.GraphCollection.html">GraphCollection</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeGraphCollection()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection__ctor_VDS_RDF_BaseGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.%23ctor(VDS.RDF.BaseGraphCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L213" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection__ctor_" data-uid="VDS.RDF.ThreadSafeGraphCollection.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" data-uid="VDS.RDF.ThreadSafeGraphCollection.#ctor(VDS.RDF.BaseGraphCollection)"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" class="expander" data-toggle="collapse">ThreadSafeGraphCollection(BaseGraphCollection)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Thread Safe decorator around the supplied graph collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeGraphCollection(BaseGraphCollection graphCollection)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a></span>
+        <span class="parametername">graphCollection</span>
+        <p><p>Graph Collection.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L308" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Count_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Count*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Count" data-uid="VDS.RDF.ThreadSafeGraphCollection.Count"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Count" class="expander" data-toggle="collapse">Count</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Count" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the number of Graphs in the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Count { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Count">WrapperGraphCollection.Count</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.GraphUris%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L348" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_GraphUris_" data-uid="VDS.RDF.ThreadSafeGraphCollection.GraphUris*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_GraphUris" data-uid="VDS.RDF.ThreadSafeGraphCollection.GraphUris"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_GraphUris" class="expander" data-toggle="collapse">GraphUris</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_GraphUris" class="collapse in">
+  <div class="markdown level1 summary"><p>Provides access to the Graph URIs of Graphs in the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_GraphUris">WrapperGraphCollection.GraphUris</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Item(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L371" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Item_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Item*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Item_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Item(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Item_System_Uri_" class="expander" data-toggle="collapse">Item[Uri]</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Item_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a Graph from the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IGraph this[Uri graphUri] { get; }</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>Graph Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Item_System_Uri_">WrapperGraphCollection.Item[Uri]</a></div>
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Add_VDS_RDF_IGraph_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Add(VDS.RDF.IGraph%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L275" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Add_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Add*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Add_VDS_RDF_IGraph_System_Boolean_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Add(VDS.RDF.IGraph,System.Boolean)"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Add_VDS_RDF_IGraph_System_Boolean_" class="expander" data-toggle="collapse">Add(IGraph, Boolean)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Add_VDS_RDF_IGraph_System_Boolean_" class="collapse in">
+  <div class="markdown level1 summary"><p>Adds a Graph to the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Add(IGraph g, bool mergeIfExists)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to add.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Boolean</span></span>
+        <span class="parametername">mergeIfExists</span>
+        <p><p>Sets whether the Graph should be merged with an existing Graph of the same Uri if present.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Add_VDS_RDF_IGraph_System_Boolean_">WrapperGraphCollection.Add(IGraph, Boolean)</a></div>
+  
+  
+  
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.RdfException.html">RdfException</a>
+        <p><p>Throws an RDF Exception if the Graph has no Base Uri or if the Graph already exists in the Collection and the <code data-dev-comment-type="paramref" class="paramref">mergeIfExists</code> parameter was not set to true.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Contains_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Contains(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L253" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Contains_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Contains*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Contains_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Contains(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Contains_System_Uri_" class="expander" data-toggle="collapse">Contains(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Contains_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Checks whether the Graph with the given Uri exists in this Graph Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Contains(Uri graphUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>Graph Uri to test.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Contains_System_Uri_">WrapperGraphCollection.Contains(Uri)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L393" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Dispose_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Dispose*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Dispose" data-uid="VDS.RDF.ThreadSafeGraphCollection.Dispose"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Dispose" class="expander" data-toggle="collapse">Dispose()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Dispose" class="collapse in">
+  <div class="markdown level1 summary"><p>Disposes of the Graph Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Dispose">WrapperGraphCollection.Dispose()</a></div>
+  
+  
+  <h5 id="VDS_RDF_ThreadSafeGraphCollection_Dispose_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invokes the <strong>Dispose()</strong> method of all Graphs contained in the Collection.</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_EnterReadLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.EnterReadLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L235" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_EnterReadLock_" data-uid="VDS.RDF.ThreadSafeGraphCollection.EnterReadLock*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_EnterReadLock" data-uid="VDS.RDF.ThreadSafeGraphCollection.EnterReadLock"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_EnterReadLock" class="expander" data-toggle="collapse">EnterReadLock()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_EnterReadLock" class="collapse in">
+  <div class="markdown level1 summary"><p>Enters the read lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void EnterReadLock()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_EnterWriteLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.EnterWriteLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L219" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_EnterWriteLock_" data-uid="VDS.RDF.ThreadSafeGraphCollection.EnterWriteLock*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_EnterWriteLock" data-uid="VDS.RDF.ThreadSafeGraphCollection.EnterWriteLock"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_EnterWriteLock" class="expander" data-toggle="collapse">EnterWriteLock()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_EnterWriteLock" class="collapse in">
+  <div class="markdown level1 summary"><p>Enters the write lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void EnterWriteLock()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_ExitReadLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.ExitReadLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L243" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_ExitReadLock_" data-uid="VDS.RDF.ThreadSafeGraphCollection.ExitReadLock*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_ExitReadLock" data-uid="VDS.RDF.ThreadSafeGraphCollection.ExitReadLock"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_ExitReadLock" class="expander" data-toggle="collapse">ExitReadLock()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_ExitReadLock" class="collapse in">
+  <div class="markdown level1 summary"><p>Exits the read lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ExitReadLock()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_ExitWriteLock.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.ExitWriteLock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L227" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_ExitWriteLock_" data-uid="VDS.RDF.ThreadSafeGraphCollection.ExitWriteLock*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_ExitWriteLock" data-uid="VDS.RDF.ThreadSafeGraphCollection.ExitWriteLock"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_ExitWriteLock" class="expander" data-toggle="collapse">ExitWriteLock()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_ExitWriteLock" class="collapse in">
+  <div class="markdown level1 summary"><p>Exits the write lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ExitWriteLock()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_GetEnumerator.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L330" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_GetEnumerator_" data-uid="VDS.RDF.ThreadSafeGraphCollection.GetEnumerator*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_GetEnumerator" data-uid="VDS.RDF.ThreadSafeGraphCollection.GetEnumerator"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_GetEnumerator" class="expander" data-toggle="collapse">GetEnumerator()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_GetEnumerator" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the Enumerator for the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerator&lt;IGraph&gt; GetEnumerator()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_GetEnumerator">WrapperGraphCollection.GetEnumerator()</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection_Remove_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection.Remove(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L292" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_ThreadSafeGraphCollection_Remove_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Remove*"></a>
+  
+  <h4 id="VDS_RDF_ThreadSafeGraphCollection_Remove_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraphCollection.Remove(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraphCollection_Remove_System_Uri_" class="expander" data-toggle="collapse">Remove(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_ThreadSafeGraphCollection_Remove_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Removes a Graph from the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Remove(Uri graphUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>Uri of the Graph to remove.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Remove_System_Uri_">WrapperGraphCollection.Remove(Uri)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_IsDisjoint__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Extensions.IsDisjoint&lt;T&gt;(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ChunkBy__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Extensions.ChunkBy&lt;T&gt;(IEnumerable&lt;T&gt;, Int32)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraphCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraphCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphCollection.cs/#L198" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

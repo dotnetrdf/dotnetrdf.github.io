@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>rdfServerGui | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="rdfServerGui | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rdfservergui">rdfServerGui</h1>
+
+<p>rdfServerGui is a basic GUI for working with <a href="Tools-rdfServer.html">rdfServer</a></p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="Tools.html">Toolkit</a></p>
+<h2 id="documentation">Documentation</h2>
+<p>rdfServerGui is a basic GUI that can be used to manage <a href="Tools-rdfServer.html">rdfServer</a> instances.  The basic UI looks like the following:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/rdfservergui.jpg|rdfServerGui}}</p>
+<p>As can be seen it provides three tabs:</p>
+<ul>
+<li>Create Server - Used to create a server using simple options</li>
+<li>Create Server Advanced - Used to create a server by providing command line options for rdfServer</li>
+<li>Running Servers - Used to monitor active servers</li>
+</ul>
+<h3 id="create-server">Create Server</h3>
+<p>The Create Server tab provides the easiest way to get a server up and running, fill out the options you are interested in and hit Create.  The following is a summary of the options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>localhost</td>
+<td>The hostname on which the server will listen for HTTP requests.</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>1986</td>
+<td>The port on which the server will listen for HTTP requests.</td>
+</tr>
+<tr>
+<td>Configuration File</td>
+<td>None</td>
+<td>Used to specify a RDF configuration file that will be used to configure rdfServer</td>
+</tr>
+<tr>
+<td>Enable Log File?</td>
+<td>Disabled</td>
+<td>If enabled will log HTTP requests to the file specified by the Log File option</td>
+</tr>
+<tr>
+<td>Log File</td>
+<td>log.txt</td>
+<td>Log file to log HTTP requests to, only used if Enable Log File? is enabled</td>
+</tr>
+<tr>
+<td>Log Format</td>
+<td>common</td>
+<td>Log format for HTTP request logging, use one of the provided defaults or enter an Apache mod_log style format string</td>
+</tr>
+<tr>
+<td>Base Directory</td>
+<td>None</td>
+<td>If set static content from the given directory can be served in addition to handling SPARQL requests</td>
+</tr>
+<tr>
+<td>Enable Verbose Mode</td>
+<td>Enabled</td>
+<td>If set additional output will be printed to the Console for monitoring.</td>
+</tr>
+<tr>
+<td>Enable Quiet Mode</td>
+<td>Disabled</td>
+<td>If set disables verbose mode if set and reduces console output level.</td>
+</tr>
+<tr>
+<td>Run as External Process</td>
+<td>Disabled</td>
+<td>Allows for the server to persist as a separate process beyond the life of the GUI, external processes have more limited management options.  When disabled the server runs in-process which means it pesists as long as the GUI is running, this provides more monitoring and management options.</td>
+</tr>
+<tr>
+<td>Start Server Automatically?</td>
+<td>Disabled</td>
+<td>If enabled the server will be started as soon as you hit the Create button.</td>
+</tr>
+</tbody>
+</table>
+<p>Let&#39;s assume we create a server like so:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/rdfservergui_create_simple.jpg|rdfServerGui}}</p>
+<p>The above creates an in-process server on the default host and port, with default logging enabled and verbose mode on.  After we hit create we can go to the Running Servers tab where we see the following:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/rdfservergui_running_simple_stopped.jpg|rdfServerGui}}</p>
+<p>After we hit the Start button we can go to our browser and make some requests against the server, these will be logged to the monitoring pane like so:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/rdfservergui_running_simple_monitoring.jpg|rdfServerGui}}</p>
+<h4 id="running-as-external-process">Running as External Process</h4>
+<p>If you run as an external process for your server you have more limited control, however they have the advantage that they persist beyond the life of the GUI.  So if you start an external server from the GUI and then close the GUI you can still access that server through your browser until such time as you kill the external process.</p>
+<p>If you restart the GUI you will be able to see running external servers but you will not be able to monitor them because it is not possible to connect to the console output of a process not created by the current process.</p>
+<h3 id="create-server-advanced">Create Server Advanced</h3>
+<p>Create Server Advanced simply allows you to create a server by specifying the same command line arguments as if you were starting <a href="Tools-rdfServer.html">rdfServer</a> directly.  Servers created this way always run as external servers and give you complete control over the options you pass to the server.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/user_guide/Tools-rdfServerGui.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

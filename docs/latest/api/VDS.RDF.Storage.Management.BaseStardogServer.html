@@ -1,0 +1,1577 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BaseStardogServer
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BaseStardogServer
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.Management.BaseStardogServer">
+  <h1 id="VDS_RDF_Storage_Management_BaseStardogServer" data-uid="VDS.RDF.Storage.Management.BaseStardogServer">Class BaseStardogServer
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract implementation of a management connection to a Stardog server using the HTTP protocol.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html">BaseHttpConnector</a></div>
+    <div class="level2"><span class="xref">BaseStardogServer</span></div>
+  </div>
+  
+      <div class="level3"><a class="xref" href="VDS.RDF.Storage.Management.StardogV1Server.html">StardogV1Server</a></div>
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_String_">BaseHttpConnector.SetProxy(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_Uri_">BaseHttpConnector.SetProxy(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Proxy">BaseHttpConnector.Proxy</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxy">BaseHttpConnector.ClearProxy()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ProxyCredentials">BaseHttpConnector.ProxyCredentials</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxyCredentials">BaseHttpConnector.ClearProxyCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Timeout">BaseHttpConnector.Timeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ApplyRequestOptions_System_Net_HttpWebRequest_">BaseHttpConnector.ApplyRequestOptions(HttpWebRequest)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SerializeStandardConfig_VDS_RDF_INode_VDS_RDF_Configuration_ConfigurationSerializationContext_">BaseHttpConnector.SerializeStandardConfig(INode, ConfigurationSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetCredentials_System_String_System_String_">BaseHttpConnector.SetCredentials(String, String)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.Management.html">VDS.RDF.Storage.Management</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_Storage_Management_BaseStardogServer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseStardogServer : BaseHttpConnector, IAsyncStorageServer, IConfigurationSerializable, IStorageServer, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L88" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor(System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_" class="expander" data-toggle="collapse">BaseStardogServer(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection to a Stardog Server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseStardogServer(string baseUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">baseUri</span>
+        <p><p>Base Uri of the Server.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.%23ctor(System.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L116" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor(System.String,System.Net.IWebProxy)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_Net_IWebProxy_" class="expander" data-toggle="collapse">BaseStardogServer(String, IWebProxy)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_Net_IWebProxy_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection to a Stardog Server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseStardogServer(string baseUri, IWebProxy proxy)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">baseUri</span>
+        <p><p>Base Uri of the Server.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Net.IWebProxy</span></span>
+        <span class="parametername">proxy</span>
+        <p><p>Proxy Server.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.%23ctor(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L99" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor(System.String,System.String,System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_" class="expander" data-toggle="collapse">BaseStardogServer(String, String, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection to a Stardog Server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseStardogServer(string baseUri, string username, string password)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">baseUri</span>
+        <p><p>Base Uri of the Server.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">username</span>
+        <p><p>Username.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">password</span>
+        <p><p>Password.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_System_Net_IWebProxy_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.Net.IWebProxy)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L128" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_System_Net_IWebProxy_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.#ctor(System.String,System.String,System.String,System.Net.IWebProxy)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_System_Net_IWebProxy_" class="expander" data-toggle="collapse">BaseStardogServer(String, String, String, IWebProxy)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer__ctor_System_String_System_String_System_String_System_Net_IWebProxy_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection to a Stardog Server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseStardogServer(string baseUri, string username, string password, IWebProxy proxy)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">baseUri</span>
+        <p><p>Base Uri of the Server.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">username</span>
+        <p><p>Username.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">password</span>
+        <p><p>Password.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Net.IWebProxy</span></span>
+        <span class="parametername">proxy</span>
+        <p><p>Proxy Server.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_AdminUri.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.AdminUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_AdminUri" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.AdminUri"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_AdminUri" class="expander" data-toggle="collapse">AdminUri</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_AdminUri" class="collapse in">
+  <div class="markdown level1 summary"><p>The URI of the admin API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly string AdminUri</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_BaseUri.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.BaseUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_BaseUri" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.BaseUri"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_BaseUri" class="expander" data-toggle="collapse">BaseUri</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_BaseUri" class="collapse in">
+  <div class="markdown level1 summary"><p>The base URI of the Stardog server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly string BaseUri</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_HasCredentials.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.HasCredentials%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_HasCredentials" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.HasCredentials"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_HasCredentials" class="expander" data-toggle="collapse">HasCredentials</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_HasCredentials" class="collapse in">
+  <div class="markdown level1 summary"><p>True if a user name and password are specified, false otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly bool HasCredentials</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_Password.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.Password%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_Password" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.Password"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Password" class="expander" data-toggle="collapse">Password</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Password" class="collapse in">
+  <div class="markdown level1 summary"><p>The password to use for the connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly string Password</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_Username.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.Username%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_Username" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.Username"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Username" class="expander" data-toggle="collapse">Username</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Username" class="collapse in">
+  <div class="markdown level1 summary"><p>The username to use for the connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly string Username</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_IOBehaviour.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.IOBehaviour%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L137" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_IOBehaviour_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.IOBehaviour*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_IOBehaviour" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.IOBehaviour"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_IOBehaviour" class="expander" data-toggle="collapse">IOBehaviour</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_IOBehaviour" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the IO Behaviour of the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IOBehaviour IOBehaviour { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.Storage.IOBehaviour.html">IOBehaviour</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_IOBehaviour">IAsyncStorageServer.IOBehaviour</a></div>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_IOBehaviour">IStorageServer.IOBehaviour</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_CreateAdminRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.CreateAdminRequest(System.String%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L590" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_CreateAdminRequest_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateAdminRequest*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_CreateAdminRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateAdminRequest(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateAdminRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" class="expander" data-toggle="collapse">CreateAdminRequest(String, String, String, Dictionary&lt;String, String&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateAdminRequest_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" class="collapse in">
+  <div class="markdown level1 summary"><p>Create a request to the Stardog server&apos;s Admin API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual HttpWebRequest CreateAdminRequest(string servicePath, string accept, string method, Dictionary&lt;string, string&gt; requestParams)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">servicePath</span>
+        <p><p>The admin API service path.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">accept</span>
+        <p><p>Accept header content.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">method</span>
+        <p><p>HTTP method to use.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</span>
+        <span class="parametername">requestParams</span>
+        <p><p>Additional request parameters.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Net.HttpWebRequest</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.CreateStore(VDS.RDF.Storage.Management.Provisioning.IStoreTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L231" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateStore(VDS.RDF.Storage.Management.Provisioning.IStoreTemplate)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_" class="expander" data-toggle="collapse">CreateStore(IStoreTemplate)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Store based off the given template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CreateStore(IStoreTemplate template)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.Management.Provisioning.IStoreTemplate.html">IStoreTemplate</a></span>
+        <span class="parametername">template</span>
+        <p><p>Template.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_">IStorageServer.CreateStore(IStoreTemplate)</a></div>
+  
+  <h5 id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Templates must inherit from <a class="xref" href="VDS.RDF.Storage.Management.Provisioning.Stardog.BaseStardogTemplate.html">BaseStardogTemplate</a>.
+</p>
+<p>
+Uses some code based off on answers <a href="http://stackoverflow.com/questions/566462/upload-files-with-httpwebrequest-multipart-form-data">here</a> to help do the multipart form data request.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.CreateStore(VDS.RDF.Storage.Management.Provisioning.IStoreTemplate%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L435" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.CreateStore(VDS.RDF.Storage.Management.Provisioning.IStoreTemplate,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">CreateStore(IStoreTemplate, AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new store based on the given template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateStore(IStoreTemplate template, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.Management.Provisioning.IStoreTemplate.html">IStoreTemplate</a></span>
+        <span class="parametername">template</span>
+        <p><p>Template.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.CreateStore(IStoreTemplate, AsyncStorageCallback, Object)</a></div>
+  
+  <h5 id="VDS_RDF_Storage_Management_BaseStardogServer_CreateStore_VDS_RDF_Storage_Management_Provisioning_IStoreTemplate_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Template must inherit from <a class="xref" href="VDS.RDF.Storage.Management.Provisioning.Stardog.BaseStardogTemplate.html">BaseStardogTemplate</a>.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L293" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore(System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_" class="expander" data-toggle="collapse">DeleteStore(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Deletes a Store with the given ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteStore(string storeID)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">storeID</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_DeleteStore_System_String_">IStorageServer.DeleteStore(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L531" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.DeleteStore(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">DeleteStore(String, AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_DeleteStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Deletes a database from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteStore(string storeID, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">storeID</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_DeleteStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.DeleteStore(String, AsyncStorageCallback, Object)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L648" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_Dispose_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.Dispose*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_Dispose" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.Dispose"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Dispose" class="expander" data-toggle="collapse">Dispose()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_Dispose" class="collapse in">
+  <div class="markdown level1 summary"><p>Disposes of the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><span class="xref">System.IDisposable.Dispose()</span></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L200" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates(System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_" class="expander" data-toggle="collapse">GetAvailableTemplates(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets all available templates for creating a new Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;IStoreTemplate&gt; GetAvailableTemplates(string id)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">id</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Storage.Management.Provisioning.IStoreTemplate.html">IStoreTemplate</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_GetAvailableTemplates_System_String_">IStorageServer.GetAvailableTemplates(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L406" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetAvailableTemplates(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">GetAvailableTemplates(String, AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetAvailableTemplates_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets all available templates for creating a new Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void GetAvailableTemplates(string id, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">id</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_GetAvailableTemplates_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.GetAvailableTemplates(String, AsyncStorageCallback, Object)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L190" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate(System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_" class="expander" data-toggle="collapse">GetDefaultTemplate(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a default template for creating a new Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IStoreTemplate GetDefaultTemplate(string id)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">id</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.Storage.Management.Provisioning.IStoreTemplate.html">IStoreTemplate</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_GetDefaultTemplate_System_String_">IStorageServer.GetDefaultTemplate(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L394" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetDefaultTemplate(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">GetDefaultTemplate(String, AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetDefaultTemplate_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a default template for creating a new Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void GetDefaultTemplate(string id, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">id</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_GetDefaultTemplate_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.GetDefaultTemplate(String, AsyncStorageCallback, Object)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetStore(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L321" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetStore(System.String)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_" class="expander" data-toggle="collapse">GetStore(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a provider for the Store with the given ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IStorageProvider GetStore(string storeID)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">storeID</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_GetStore_System_String_">IStorageServer.GetStore(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.GetStore(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L578" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_GetStore_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetStore*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.GetStore(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">GetStore(String, AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_GetStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a database from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void GetStore(string storeID, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">storeID</span>
+        <p><p>Store ID.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_GetStore_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.GetStore(String, AsyncStorageCallback, Object)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_ListStores.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.ListStores%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L148" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_ListStores_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.ListStores*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_ListStores" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.ListStores"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_ListStores" class="expander" data-toggle="collapse">ListStores()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_ListStores" class="collapse in">
+  <div class="markdown level1 summary"><p>Lists the database available on the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;string&gt; ListStores()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html#VDS_RDF_Storage_Management_IStorageServer_ListStores">IStorageServer.ListStores()</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_ListStores_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.ListStores(VDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L332" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_ListStores_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.ListStores*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_ListStores_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.ListStores(VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_ListStores_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">ListStores(AsyncStorageCallback, Object)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_ListStores_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <div class="markdown level1 summary"><p>Lists all databases available on the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ListStores(AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
+        <span class="parametername">callback</span>
+        <p><p>Callback.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="parametername">state</span>
+        <p><p>State to pass to the callback.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html#VDS_RDF_Storage_Management_IAsyncStorageServer_ListStores_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageServer.ListStores(AsyncStorageCallback, Object)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L657" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_Management_BaseStardogServer_SerializeConfiguration_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.SerializeConfiguration*"></a>
+  
+  <h4 id="VDS_RDF_Storage_Management_BaseStardogServer_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" data-uid="VDS.RDF.Storage.Management.BaseStardogServer.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)"><a href="#collapsible-VDS_RDF_Storage_Management_BaseStardogServer_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" class="expander" data-toggle="collapse">SerializeConfiguration(ConfigurationSerializationContext)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_Management_BaseStardogServer_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" class="collapse in">
+  <div class="markdown level1 summary"><p>Serializes the connection&apos;s configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SerializeConfiguration(ConfigurationSerializationContext context)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Configuration.ConfigurationSerializationContext.html">ConfigurationSerializationContext</a></span>
+        <span class="parametername">context</span>
+        <p><p>Configuration Serialization Context.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html#VDS_RDF_Configuration_IConfigurationSerializable_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_">IConfigurationSerializable.SerializeConfiguration(ConfigurationSerializationContext)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Management_BaseStardogServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Management.BaseStardogServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Management/StardogServer.cs/#L46" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

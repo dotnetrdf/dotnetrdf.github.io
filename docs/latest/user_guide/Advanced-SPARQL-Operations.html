@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Advanced SPARQL Operations | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Advanced SPARQL Operations | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="advanced-sparql-operations">Advanced SPARQL Operations</h1>
+
+<p>This article details advanced features of our of SPARQL implementation, if you are just interesting in using basic SPARQL see <a href="Querying-With-SPARQL.html">Querying with SPARQL</a> and <a href="Updating-With-SPARQL.html">Updating with SPARQL</a>.</p>
+<p>On this page we cover the following features:</p>
+<ul>
+<li>Custom Optimisers</li>
+<li>Thread-Safety</li>
+<li>Transactions</li>
+</ul>
+<div class="WARNING"><h5>Warning</h5><p>The functionality described here is implementation specific to dotNetRDF i.e. there are no guarantees that other implementations will support these features or handle the features detailed here in the same way.</p>
+</div>
+<h1 id="custom-optimisers">Custom Optimisers</h1>
+<p>As discussed on the SPARQL Optimisation page our Leviathan SPARQL Engine has a fairly powerful optimiser built into it which aims to optimise queries as far as possible. Despite this you may sometimes want to control query optimisation yourself by injecting custom optimisers into the engine. There are two kinds of optimiser supported - Query Optimisers and Algebra Optimisers - and you can customise both if desired.</p>
+<h2 id="query-optimisers">Query Optimisers</h2>
+<p>Query Optimisers are applied to queries at the end of parsing, a Query Optimiser reorders triple patterns and places filters and assignments to try and optimise queries. A single query optimiser is applied, while you can apply subsequent optimisers this is not recommended and may cause unexpected results. The optimiser that is applied can be changed globally or locally.</p>
+<p>The library includes three different query optimisers:</p>
+<table>
+<thead>
+<tr>
+<th>Optimizer</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.DefaultOptimiser.html"><code>DefaultOptimiser</code></a></td>
+<td>The default optimiser which does reordering based on simple rules and places <code>FILTER</code> and assignments</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.NoReorderOptimiser.html"><code>NoReorderOptimiser</code></a></td>
+<td>An optimiser which doesn&#39;t reorder triple patterns but still places <code>FILTER</code> and assignments</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.WeightedOptimiser.html"><code>WeightedOptimiser</code></a></td>
+<td>An optimiser which does the reordering based on weighting calculated from provided statistics about the data, also places <code>FILTER</code> and assignments</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-query-optimiser">Global Query Optimiser</h3>
+<p>The global optimiser setting is changed by setting the <code>QueryOptimiser</code> property of the <a class="xref" href="../api/VDS.RDF.Query.Optimisation.SparqlOptimiser.html"><code>SparqlOptimiser</code></a> static class. This optimiser is used by all <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html"><code>SparqlQueryParser</code></a> instances unless changed locally.</p>
+<h3 id="local-query-optimiser">Local Query Optimiser</h3>
+<p>The local optimiser setting is controlled by setting the <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html#VDS_RDF_Parsing_SparqlQueryParser_QueryOptimiser"><code>QueryOptimiser</code></a> property of a <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html"><code>SparqlQueryParser</code></a> instance. The local setting always overrides the global setting.</p>
+<h3 id="http-handler-configuration">HTTP Handler Configuration</h3>
+<p>If you are configuring a SPARQL endpoint via our <a href="Configuration-API.html">Configuration API</a> you can configure the Query Optimiser to use via the <code>dnr:queryOptimiser</code> property. See <a href="Configuration-HTTP-Handlers.html">HTTP Handlers</a> and <a href="Configuration-SPARQL-Optimisers.html">Configuration API - Optimizers</a> for details on how to do this.</p>
+<h2 id="algebra-optimisers">Algebra Optimisers</h2>
+<p>Algebra Optimisers are applied to queries when they are transformed into SPARQL Algebra and aim to replace the standard operators with optimised forms where possible. Multiple optimisers may be applied to the initial Algebra transformation of a query. Algebra Optimisers can be registered both globally and locally but local optimisers are applied ahead of global optimisers.</p>
+<p>The library includes the following algebra optimisers which are automatically registered globally and applied in the following order:</p>
+<table>
+<thead>
+<tr>
+<th>Optimizer</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.AskBgpOptimiser.html"><code>AskBgpOptimiser</code></a></td>
+<td>An optimiser which optimises the algebra form for <code>ASK</code> queries to use the special operators where possible. These are operators designed to find the first possible solution and then return as that is sufficient for <code>ASK</code> queries.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.LazyBgpOptimiser.html"><code>LazyBgpOptimiser</code></a></td>
+<td>An optimiser which optimises queries with <code>LIMIT</code> clauses to use the special operators where possible. These are operators designed to find the requisite number of solutions and then return in order to minimise the work done.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.StrictAlgebraOptimiser.html"><code>StrictAlgebraOptimiser</code></a></td>
+<td>Transforms the basic generated algebra into the strict form as far as possible. This makes the algebra easier to traverse for subsequent optimisers.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.IdentityFilterOptimiser.html"><code>IdentityFilterOptimiser</code></a></td>
+<td>Optimises filters of the form <code>FILTER(?x = ex:constant)</code> for more efficient evaluation.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.ImplicitJoinOptimiser.html"><code>ImplicitJoinOptimiser</code></a></td>
+<td>Optimises queries where a <code>FILTER</code> embodies an implict join e.g. <code>FILTER(?x = ?y)</code> or <code>FILTER(SAMETERM(?x, ?y))</code> which can significantly improve performance.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.FilteredProductOptimiser.html"><code>FilteredProductOptimiser</code></a></td>
+<td>Optimisers queries where a <code>FILTER</code> occurs over a cross product to evaluate the filter as part of the cross product to improve performance.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-algebra-optimisers">Global Algebra Optimisers</h3>
+<p>The global optimisers are changed by using the <code>AddOptimiser()</code> and <code>RemoveOptimiser()</code> methods of the <code>SparqlOptimiser</code> static class. These optimisers are used when transforming any query into its Algebra form for evaluation.</p>
+<h3 id="local-algebra-optimisers">Local Algebra Optimisers</h3>
+<p>The local optimisers are changed by setting the <code>AlgebraOptimisers</code> property on a <code>SparqlQuery</code> instance. These optimisers are used when transforming the query into the Algebra form and apply ahead of any global optimisers.</p>
+<h3 id="http-handler-configuration-1">HTTP Handler Configuration</h3>
+<p>If you are configuring a SPARQL endpoint via our <a href="Configuration-API.html">Configuration API</a> you can configure the Algebra Optimisers to use via the <code>dnr:algebraOptimiser</code> property. See [Configuration API - HTTP Handlers](UserGuide/Configuration/HTTP Handlers.md) and <a href="Configuration-SPARQL-Optimisers.html">Configuration API - Optimizers</a> for details on how to do this.</p>
+<h1 id="thread-safety">Thread-Safety</h1>
+<p>Firstly our Leviathan SPARQL Engine which is used for all in-memory queries within the library ensures that Queries and Updates are thread-safe operations as far as possible. This thread-safety is MRSW (Multiple Reader Single Writer) so you can have either many queries running at one time or a single update running. Locking is all handled automatically so there should be no need to manage this yourself.</p>
+<h2 id="when-thread-safety-applies">When Thread-Safety applies</h2>
+<p>If the <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> you are using also implements the <a class="xref" href="../api/VDS.RDF.Query.Datasets.IThreadSafeDataset.html"><code>IThreadSafeDataset</code></a> interface then that dataset will be globally thread safe however many times you reuse it.</p>
+<p>If it does not then the use of the dataset is thread safe only when used via a single Query/Update processor.</p>
+<h2 id="breaking-thread-safety">Breaking Thread-Safety</h2>
+<p>While in principle queries and updates are thread safe it is possible to write code that will allow you to break this e.g. wrapping the same <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a> in multiple <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> instances. We strongly recommend that you avoid doing this as behaviour in such cases is unpredictable.</p>
+<h1 id="transactions">Transactions</h1>
+<p>Transactions are an advanced non-standard feature of our SPARQL Update implementation. Transactions track the sequence of actions that a <a class="xref" href="../api/VDS.RDF.Update.SparqlUpdateCommandSet.html"><code>SparqlUpdateCommandSet</code></a> performs and only commit/rollback the changes at the end of processing a command set. By default if you process commands individually (i.e. by calling the relevant <code>ProcessXCommand()</code> method directly) these are auto-committed unless you change the <code>AutoCommit</code> property for the <a class="xref" href="../api/VDS.RDF.Update.LeviathanUpdateProcessor.html"><code>LeviathanUpdateProcessor</code></a> you are using.</p>
+<p>Like thread-safety you do not need to do anything special to use transactions unless you want to control them in detail. Calling the <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_Flush"><code>Flush()</code></a> or <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_Discard"><code>Discard()</code></a> method on a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> that supports transactions will have the effect of committing or rolling back the current Transaction (if any)</p>
+<p>For example if you tried to process the following commands an error would be thrown and any temporary changes made to the state of the dataset would be rolled back:</p>
+<pre><code>CREATE GRAPH &lt;http://example.org/graph&gt;;
+CREATE GRAPH &lt;http://example.org/graph&gt;
+</code></pre><h2 id="when-transactions-apply">When Transactions apply</h2>
+<p>Transactions apply when using a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> implementation which derives from <a class="xref" href="../api/VDS.RDF.Query.Datasets.BaseTransactionalDataset.html"><code>BaseTransactionalDataset</code></a> or <a class="xref" href="../api/VDS.RDF.Query.Datasets.BaseTransactionalQuadDataset.html"><code>BaseTranscationalQuadDataset</code></a>. Note that 3rd party implementations may implement transactions without using this base class.</p>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Advanced-SPARQL-Operations.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

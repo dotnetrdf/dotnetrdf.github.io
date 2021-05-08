@@ -1,0 +1,1164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ReadWriteSparqlConnector
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ReadWriteSparqlConnector
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector">
+  <h1 id="VDS_RDF_Storage_ReadWriteSparqlConnector" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector">Class ReadWriteSparqlConnector
+  </h1>
+  <div class="markdown level0 summary"><p>Class for connecting to any SPARQL server that provides both a query and update endpoint.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html">SparqlConnector</a></div>
+    <div class="level2"><span class="xref">ReadWriteSparqlConnector</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector__endpoint">SparqlConnector._endpoint</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector__mode">SparqlConnector._mode</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector__skipLocalParsing">SparqlConnector._skipLocalParsing</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector__timeout">SparqlConnector._timeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_ParentServer">SparqlConnector.ParentServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_SkipLocalParsing">SparqlConnector.SkipLocalParsing</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_Endpoint">SparqlConnector.Endpoint</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_Query_System_String_">SparqlConnector.Query(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">SparqlConnector.Query(IRdfHandler, ISparqlResultsHandler, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_">SparqlConnector.LoadGraph(IGraph, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_">SparqlConnector.LoadGraph(IRdfHandler, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_LoadGraph_VDS_RDF_IGraph_System_String_">SparqlConnector.LoadGraph(IGraph, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_">SparqlConnector.LoadGraph(IRdfHandler, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_ListGraphs">SparqlConnector.ListGraphs()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_ListGraphsSupported">SparqlConnector.ListGraphsSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_IsReady">SparqlConnector.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_Dispose">SparqlConnector.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.html">VDS.RDF.Storage</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_Storage_ReadWriteSparqlConnector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ReadWriteSparqlConnector : SparqlConnector, IConfigurationSerializable, IUpdateableStorage, IQueryableStorage, IStorageProvider, IStorageCapabilities, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 id="VDS_RDF_Storage_ReadWriteSparqlConnector_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+This class is a wrapper around a <a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a> and a <a class="xref" href="VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a>.  The former is used for the query functionality while the latter is used for the update functionality.  As updates happen via SPARQL the behaviour with respects to adding and removing blank nodes will be somewhat up to the underlying SPARQL implementation.  This connector is <strong>not</strong> able to carry out <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a> operations which attempt to delete blank nodes and cannot guarantee that added blank nodes bear any relation to existing blank nodes in the store.
+</p>
+<p>
+Unlike other HTTP based connectors this connector does not derive from <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html">BaseAsyncHttpConnector</a> - if you need to specify proxy information you should do so on the SPARQL Endpoint you are wrapping either by providing endpoint instance pre-configured with the proxy settings or by accessing the endpoint via the <a class="xref" href="VDS.RDF.Storage.ReadWriteSparqlConnector.html">ReadWriteSparqlConnector</a> and <a class="xref" href="VDS.RDF.Storage.ReadWriteSparqlConnector.html#VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint">UpdateEndpoint</a> properties and programmatically adding the settings.
+</p>
+</div>
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.%23ctor(System.Uri%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L627" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor(System.Uri,System.Uri)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_" class="expander" data-toggle="collapse">ReadWriteSparqlConnector(Uri, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadWriteSparqlConnector(Uri queryEndpoint, Uri updateEndpoint)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">queryEndpoint</span>
+        <p><p>Query Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">updateEndpoint</span>
+        <p><p>Update Endpoint.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_VDS_RDF_Storage_SparqlConnectorLoadMethod_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.%23ctor(System.Uri%2CSystem.Uri%2CVDS.RDF.Storage.SparqlConnectorLoadMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L619" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_VDS_RDF_Storage_SparqlConnectorLoadMethod_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor(System.Uri,System.Uri,VDS.RDF.Storage.SparqlConnectorLoadMethod)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_VDS_RDF_Storage_SparqlConnectorLoadMethod_" class="expander" data-toggle="collapse">ReadWriteSparqlConnector(Uri, Uri, SparqlConnectorLoadMethod)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_System_Uri_System_Uri_VDS_RDF_Storage_SparqlConnectorLoadMethod_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadWriteSparqlConnector(Uri queryEndpoint, Uri updateEndpoint, SparqlConnectorLoadMethod mode)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">queryEndpoint</span>
+        <p><p>Query Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">updateEndpoint</span>
+        <p><p>Update Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.SparqlConnectorLoadMethod.html">SparqlConnectorLoadMethod</a></span>
+        <span class="parametername">mode</span>
+        <p><p>Method for loading graphs.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.%23ctor(VDS.RDF.Query.SparqlRemoteEndpoint%2CVDS.RDF.Update.SparqlRemoteUpdateEndpoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L610" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor(VDS.RDF.Query.SparqlRemoteEndpoint,VDS.RDF.Update.SparqlRemoteUpdateEndpoint)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_" class="expander" data-toggle="collapse">ReadWriteSparqlConnector(SparqlRemoteEndpoint, SparqlRemoteUpdateEndpoint)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadWriteSparqlConnector(SparqlRemoteEndpoint queryEndpoint, SparqlRemoteUpdateEndpoint updateEndpoint)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></span>
+        <span class="parametername">queryEndpoint</span>
+        <p><p>Query Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a></span>
+        <span class="parametername">updateEndpoint</span>
+        <p><p>Update Endpoint.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_VDS_RDF_Storage_SparqlConnectorLoadMethod_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.%23ctor(VDS.RDF.Query.SparqlRemoteEndpoint%2CVDS.RDF.Update.SparqlRemoteUpdateEndpoint%2CVDS.RDF.Storage.SparqlConnectorLoadMethod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L599" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_VDS_RDF_Storage_SparqlConnectorLoadMethod_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.#ctor(VDS.RDF.Query.SparqlRemoteEndpoint,VDS.RDF.Update.SparqlRemoteUpdateEndpoint,VDS.RDF.Storage.SparqlConnectorLoadMethod)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_VDS_RDF_Storage_SparqlConnectorLoadMethod_" class="expander" data-toggle="collapse">ReadWriteSparqlConnector(SparqlRemoteEndpoint, SparqlRemoteUpdateEndpoint, SparqlConnectorLoadMethod)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector__ctor_VDS_RDF_Query_SparqlRemoteEndpoint_VDS_RDF_Update_SparqlRemoteUpdateEndpoint_VDS_RDF_Storage_SparqlConnectorLoadMethod_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadWriteSparqlConnector(SparqlRemoteEndpoint queryEndpoint, SparqlRemoteUpdateEndpoint updateEndpoint, SparqlConnectorLoadMethod mode)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a></span>
+        <span class="parametername">queryEndpoint</span>
+        <p><p>Query Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a></span>
+        <span class="parametername">updateEndpoint</span>
+        <p><p>Update Endpoint.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.SparqlConnectorLoadMethod.html">SparqlConnectorLoadMethod</a></span>
+        <span class="parametername">mode</span>
+        <p><p>Method for loading graphs.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L662" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteSupported_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteSupported*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteSupported" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteSupported"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteSupported" class="expander" data-toggle="collapse">DeleteSupported</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteSupported" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets that deleting graphs is supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool DeleteSupported { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_DeleteSupported">SparqlConnector.DeleteSupported</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_DeleteSupported">IStorageCapabilities.DeleteSupported</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_IOBehaviour.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.IOBehaviour%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L684" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_IOBehaviour_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.IOBehaviour*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_IOBehaviour" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.IOBehaviour"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_IOBehaviour" class="expander" data-toggle="collapse">IOBehaviour</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_IOBehaviour" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the IO behaviour for the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IOBehaviour IOBehaviour { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.Storage.IOBehaviour.html">IOBehaviour</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_IOBehaviour">SparqlConnector.IOBehaviour</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IOBehaviour">IStorageCapabilities.IOBehaviour</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_IsReadOnly.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L673" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_IsReadOnly_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.IsReadOnly*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_IsReadOnly" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.IsReadOnly"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_IsReadOnly" class="expander" data-toggle="collapse">IsReadOnly</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_IsReadOnly" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets that the store is not read-only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsReadOnly { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_IsReadOnly">SparqlConnector.IsReadOnly</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReadOnly">IStorageCapabilities.IsReadOnly</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_Timeout.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.Timeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L645" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_Timeout_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.Timeout*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_Timeout" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.Timeout"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_Timeout" class="expander" data-toggle="collapse">Timeout</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_Timeout" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets/Sets the HTTP Timeout in milliseconds used for communicating with the SPARQL Endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Timeout { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_Timeout">SparqlConnector.Timeout</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateEndpoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L633" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateEndpoint*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateEndpoint"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint" class="expander" data-toggle="collapse">UpdateEndpoint</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateEndpoint" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the underlying <a class="xref" href="VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a> which this class is a wrapper around.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverter(typeof(ExpandableObjectConverter))]
+public SparqlRemoteUpdateEndpoint UpdateEndpoint { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateSupported%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L695" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateSupported_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateSupported*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateSupported" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateSupported"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateSupported" class="expander" data-toggle="collapse">UpdateSupported</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateSupported" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets that triple level updates are supported, see the remarks section of the <a class="xref" href="VDS.RDF.Storage.ReadWriteSparqlConnector.html">ReadWriteSparqlConnector</a> for exactly what is and isn&apos;t supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool UpdateSupported { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_UpdateSupported">SparqlConnector.UpdateSupported</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_UpdateSupported">IStorageCapabilities.UpdateSupported</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L707" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_String_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph(System.String)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_String_" class="expander" data-toggle="collapse">DeleteGraph(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Deletes a graph from the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DeleteGraph(string graphUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>URI of the graph to delete.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_DeleteGraph_System_String_">SparqlConnector.DeleteGraph(String)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_DeleteGraph_System_String_">IStorageProvider.DeleteGraph(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L716" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_Uri_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.DeleteGraph(System.Uri)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_Uri_" class="expander" data-toggle="collapse">DeleteGraph(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_DeleteGraph_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Deletes a graph from the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DeleteGraph(Uri graphUri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>URI of the graph to delete.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_DeleteGraph_System_Uri_">SparqlConnector.DeleteGraph(Uri)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_DeleteGraph_System_Uri_">IStorageProvider.DeleteGraph(Uri)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_SaveGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.SaveGraph(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L732" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_SaveGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.SaveGraph*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_SaveGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.SaveGraph(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_SaveGraph_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">SaveGraph(IGraph)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_SaveGraph_VDS_RDF_IGraph_" class="collapse in">
+  <div class="markdown level1 summary"><p>Saves a graph to the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SaveGraph(IGraph g)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to save.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_SaveGraph_VDS_RDF_IGraph_">SparqlConnector.SaveGraph(IGraph)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_SaveGraph_VDS_RDF_IGraph_">IStorageProvider.SaveGraph(IGraph)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L882" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_SerializeConfiguration_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.SerializeConfiguration*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" class="expander" data-toggle="collapse">SerializeConfiguration(ConfigurationSerializationContext)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" class="collapse in">
+  <div class="markdown level1 summary"><p>Serializes the connection&apos;s configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SerializeConfiguration(ConfigurationSerializationContext context)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Configuration.ConfigurationSerializationContext.html">ConfigurationSerializationContext</a></span>
+        <span class="parametername">context</span>
+        <p><p>Configuration Serialization Context.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_">SparqlConnector.SerializeConfiguration(ConfigurationSerializationContext)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L873" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_ToString_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.ToString*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_ToString" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.ToString"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_ToString" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets a String which gives details of the Connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_ToString">SparqlConnector.ToString()</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_Update_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.Update(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L851" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_Update_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.Update*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_Update_System_String_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.Update(System.String)"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_Update_System_String_" class="expander" data-toggle="collapse">Update(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_Update_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Makes a SPARQL Update against the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update(string sparqlUpdate)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">sparqlUpdate</span>
+        <p><p>SPARQL Update.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html#VDS_RDF_Storage_IUpdateableStorage_Update_System_String_">IUpdateableStorage.Update(String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph(System.String%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L774" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph(System.String,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple})"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="expander" data-toggle="collapse">UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="collapse in">
+  <div class="markdown level1 summary"><p>Updates a graph in the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateGraph(string graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>URI of the graph to update.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
+        <span class="parametername">additions</span>
+        <p><p>Triples to add.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
+        <span class="parametername">removals</span>
+        <p><p>Triples to remove.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">SparqlConnector.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">IStorageProvider.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph(System.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L785" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph*"></a>
+  
+  <h4 id="VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.Storage.ReadWriteSparqlConnector.UpdateGraph(System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple})"><a href="#collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="expander" data-toggle="collapse">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Storage_ReadWriteSparqlConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="collapse in">
+  <div class="markdown level1 summary"><p>Updates a graph in the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateGraph(Uri graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">graphUri</span>
+        <p><p>URI of the graph to update.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
+        <span class="parametername">additions</span>
+        <p><p>Triples to add.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
+        <span class="parametername">removals</span>
+        <p><p>Triples to remove.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.SparqlConnector.html#VDS_RDF_Storage_SparqlConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">SparqlConnector.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></div>
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">IStorageProvider.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_ReadWriteSparqlConnector.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.ReadWriteSparqlConnector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/SparqlConnector.cs/#L587" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1682 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IInMemoryQueryableStore
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IInMemoryQueryableStore
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.IInMemoryQueryableStore">
+  <h1 id="VDS_RDF_IInMemoryQueryableStore" data-uid="VDS.RDF.IInMemoryQueryableStore">Interface IInMemoryQueryableStore
+  </h1>
+  <div class="markdown level0 summary"><p>Interface for Triple Stores which can be queried in memory using method calls or the SPARQL implementation contained in this library.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_IsEmpty">ITripleStore.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Graphs">ITripleStore.Graphs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Triples">ITripleStore.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_">ITripleStore.Add(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_System_Boolean_">ITripleStore.Add(IGraph, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_">ITripleStore.AddFromUri(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_">ITripleStore.AddFromUri(Uri, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_System_Uri_">ITripleStore.Remove(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_System_Uri_">ITripleStore.HasGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_System_Uri_">ITripleStore.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphAdded">ITripleStore.GraphAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphRemoved">ITripleStore.GraphRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphChanged">ITripleStore.GraphChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphCleared">ITripleStore.GraphCleared</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphMerged">ITripleStore.GraphMerged</a>
+    </div>
+    <div>
+      <span class="xref">System.IDisposable.Dispose()</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IInMemoryQueryableStore : ITripleStore, IDisposable</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
+</p>
+<p>
+All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
+</p>
+</div>
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.Contains(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L178" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_Contains_" data-uid="VDS.RDF.IInMemoryQueryableStore.Contains*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_" data-uid="VDS.RDF.IInMemoryQueryableStore.Contains(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_" class="expander" data-toggle="collapse">Contains(Triple)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns whether a given Triple is contained anywhere in the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Contains(Triple t)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
+        <span class="parametername">t</span>
+        <p><p>Triple to check for existence of.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L347" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_System_String_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(System.String)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_System_String_" class="expander" data-toggle="collapse">ExecuteQuery(String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Executes a SPARQL Query on the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method of making queries is often error prone due to misconceptions about what data is being queries and we recommend using an ISparqlQueryProcessor instead, see remarks for more discussion&quot;)]
+object ExecuteQuery(string query)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">query</span>
+        <p><p>SPARQL Query as an unparsed string.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Object</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method of making queries often leads to no results because of misconceptions about what data is being queries.  dotNetRDF&apos;s SPARQL engine only queries the default unnamed graph of the triple store (the graph added with a null URI) by default unless your query uses FROM clauses to change the default graph or you use GRAPH clauses to access named graphs in the store.  Therefore a common mistake is to add a single graph to the store and then query the store which typically results in no results because usually the added graph is named and so is not queried.
+</p>
+<p>
+We recommend using a <a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> instead for making queries over in-memory data since using our standard implementation (<a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>) affords you much more explicit control over which graphs are queried.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.IRdfHandler%2CVDS.RDF.ISparqlResultsHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L381" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.IRdfHandler,VDS.RDF.ISparqlResultsHandler,System.String)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_" class="expander" data-toggle="collapse">ExecuteQuery(IRdfHandler, ISparqlResultsHandler, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Executes a SPARQL Query on the Triple Store processing the results with an appropriate handler from those provided.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method of making queries is often error prone due to misconceptions about what data is being queries and we recommend using an ISparqlQueryProcessor instead, see remarks for more discussion&quot;)]
+void ExecuteQuery(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, string query)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
+        <span class="parametername">rdfHandler</span>
+        <p><p>RDF Handler.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></span>
+        <span class="parametername">resultsHandler</span>
+        <p><p>Results Handler.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">query</span>
+        <p><p>SPARQL Query as an unparsed string.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method of making queries often leads to no results because of misconceptions about what data is being queries.  dotNetRDF&apos;s SPARQL engine only queries the default unnamed graph of the triple store (the graph added with a null URI) by default unless your query uses FROM clauses to change the default graph or you use GRAPH clauses to access named graphs in the store.  Therefore a common mistake is to add a single graph to the store and then query the store which typically results in no results because usually the added graph is named and so is not queried.
+</p>
+<p>
+We recommend using a <a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> instead for making queries over in-memory data since using our standard implementation (<a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>) affords you much more explicit control over which graphs are queried.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.IRdfHandler%2CVDS.RDF.ISparqlResultsHandler%2CVDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L399" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.IRdfHandler,VDS.RDF.ISparqlResultsHandler,VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">ExecuteQuery(IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <div class="markdown level1 summary"><p>Executes a SPARQL Query on the Triple Store processing the results with an appropriate handler from those provided.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method of making queries is often error prone due to misconceptions about what data is being queries and we recommend using an ISparqlQueryProcessor instead, see remarks for more discussion&quot;)]
+void ExecuteQuery(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
+        <span class="parametername">rdfHandler</span>
+        <p><p>RDF Handler.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></span>
+        <span class="parametername">resultsHandler</span>
+        <p><p>Results Handler.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
+        <span class="parametername">query</span>
+        <p><p>Parsed SPARQL Query.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method of making queries often leads to no results because of misconceptions about what data is being queries.  dotNetRDF&apos;s SPARQL engine only queries the default unnamed graph of the triple store (the graph added with a null URI) by default unless your query uses FROM clauses to change the default graph or you use GRAPH clauses to access named graphs in the store.  Therefore a common mistake is to add a single graph to the store and then query the store which typically results in no results because usually the added graph is named and so is not queried.
+</p>
+<p>
+We recommend using a <a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> instead for making queries over in-memory data since using our standard implementation (<a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>) affords you much more explicit control over which graphs are queried.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L363" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.IInMemoryQueryableStore.ExecuteQuery(VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">ExecuteQuery(SparqlQuery)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <div class="markdown level1 summary"><p>Executes a SPARQL Query on the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method of making queries is often error prone due to misconceptions about what data is being queries and we recommend using an ISparqlQueryProcessor instead, see remarks for more discussion&quot;)]
+object ExecuteQuery(SparqlQuery query)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
+        <span class="parametername">query</span>
+        <p><p>SPARQL Query as a <a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a> instance.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Object</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_IInMemoryQueryableStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method of making queries often leads to no results because of misconceptions about what data is being queries.  dotNetRDF&apos;s SPARQL engine only queries the default unnamed graph of the triple store (the graph added with a null URI) by default unless your query uses FROM clauses to change the default graph or you use GRAPH clauses to access named graphs in the store.  Therefore a common mistake is to add a single graph to the store and then query the store which typically results in no results because usually the added graph is named and so is not queried.
+</p>
+<p>
+We recommend using a <a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> instead for making queries over in-memory data since using our standard implementation (<a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>) affords you much more explicit control over which graphs are queried.
+</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L272" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{System.Uri},System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_" class="expander" data-toggle="collapse">GetTriples(List&lt;Uri&gt;, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples which have a Uri Node with the given Uri from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, Uri uri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">uri</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L280" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriples(List&lt;Uri&gt;, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples which contain the given Node from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L187" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_" class="expander" data-toggle="collapse">GetTriples(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples which have a Uri Node with the given Uri from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(Uri uri)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">uri</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L194" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriples(INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples which contain the given Node from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L288" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{System.Uri},System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithObject(List&lt;Uri&gt;, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Object is a Uri Node with the given Uri from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L296" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithObject(List&lt;Uri&gt;, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Object is a given Node from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L201" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithObject(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Object is a Uri Node with the given Uri from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L208" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithObject(INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Object is a given Node from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L312" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{System.Uri},System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(List&lt;Uri&gt;, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Predicate is a Uri Node with the given Uri from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L304" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(List&lt;Uri&gt;, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Predicate is a given Node from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L222" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Predicate is a Uri Node with the given Uri from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L215" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Predicate is a given Node from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L252" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithPredicateObject(INode, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all the Triples with the given Predicate-Object pair from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicateObject(INode pred, INode obj)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">pred</span>
+        <p><p>Predicate.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">obj</span>
+        <p><p>Object.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L328" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{System.Uri},System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithSubject(List&lt;Uri&gt;, Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Subject is a Uri Node with the given Uri from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L320" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithSubject(List&lt;Uri&gt;, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Subject is a given Node from a Subset of Graphs in the Triple Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Uri</span>&gt;</span>
+        <span class="parametername">graphUris</span>
+        <p><p>List of the Graph URIs of Graphs you want to select over.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L236" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Uri)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithSubject(Uri)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Subject is a Uri Node with the given Uri from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(Uri u)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="parametername">u</span>
+        <p><p>Uri.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L229" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithSubject(INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all Triples where the Subject is a given Node from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(INode n)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">n</span>
+        <p><p>Node.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L260" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithSubjectObject(INode, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all the Triples with the given Subject-Object pair from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubjectObject(INode subj, INode obj)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">subj</span>
+        <p><p>Subject.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">obj</span>
+        <p><p>Object.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L244" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate*"></a>
+  
+  <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithSubjectPredicate(INode, INode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" class="collapse in">
+  <div class="markdown level1 summary"><p>Selects all the Triples with the given Subject-Predicate pair from all the Query Triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubjectPredicate(INode subj, INode pred)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">subj</span>
+        <p><p>Subject.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
+        <span class="parametername">pred</span>
+        <p><p>Predicate.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, String, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromFile(ITripleStore, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, String, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromString(ITripleStore, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, String, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, String, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, String)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L170" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Store Manager | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Store Manager | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="store-manager">Store Manager</h1>
+
+<p>The Store Manager is a utility which allows you to use a simple GUI interface to view and manage the contents of Triple Stores. You can work with any of the supported native Triple Stores, see <a href="Storage-Providers.html">Storage Providers</a> for the list of currently supported stores.</p>
+<p>Functionality differs depending on the type of store and the capabilities of the given store (or more specifically of our integration with that store).</p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="Tools.html">Toolkit</a></p>
+<h2 id="documentation">Documentation</h2>
+<h3 id="getting-started">Getting Started</h3>
+<p>Firstly when you start up the application you&#39;ll see the following Start Page:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_startpage.jpg|Store Manager - Start Page}}</p>
+<p>If you&#39;ve used the tool previously you will see Recent and Favourite Connections here and can double click to instantly start working with one of those connections. If you&#39;d like to modify an existing connection click once to select it then right click and hit <code>Edit Connection</code> - if you always want to edit connections before using them you can select that option at the bottom of the start page and then just double click to edit a connection.</p>
+<p>To make a new connection select <code>Connect to a Triple Store</code> to open the New Connection dialogue.</p>
+<p>You can work with multiple connections at a time and can always get back to this Start Page by going to <code>File &gt; Show Start Page</code>, to just make a new connection go to <code>File &gt; New Connection</code>:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_menu.jpg|Store Manager - File Menu}}</p>
+<h3 id="connecting-to-a-store">Connecting to a Store</h3>
+<p>When you&#39;ve chosen to create a New Connection either via the File Menu or the Start Page you&#39;ll see the following dialogue:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_newconnection.jpg|Store Manager - New Connection}}</p>
+<p>Available stores are any store which we provide support in any of our publicly released libraries or for which you have a <a href="Tools-Store-Manager-Plugins.html">Store Plugin</a> available in your <code>plugins/</code> folder.</p>
+<h3 id="graph-list">Graph List</h3>
+<p>If your chosen Store supports named Graphs and can return the Graph list in response to an appropriate SPARQL query then you will see a list of graphs on the main screen.</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_graphlist.jpg|Store Manager - Graph List}}</p>
+<h3 id="querying-with-sparql">Querying with SPARQL</h3>
+<p>Provided your chosen store supports SPARQL you can query against it using the SPARQL tab as shown in the screenshot below:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_improved_editor.png|Store Manager - SPARQL Query}}</p>
+<p>As with the <a href="Tools-SparqlGui.html">SparqlGui</a> you can save and load queries to text files as desired. </p>
+<p>Results are displayed in the same window like so, results from multiple queries are presented as tabs that can be switched between. You can hit the detach button to open a set of results in a separate window if you prefer that:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_inline_results1.png|Store Manager - Results View}}</p>
+<p>The Graph viewer presents a list of all the Triples in the Graph. You can export the Graph in the format of your choice using the Export Data button which displays the following dialogue:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_exportgraph.jpg|Store Manager - Export Results}}</p>
+<p>The dialogue allows you to save to a file in the format of your choice using the desired options for the writer.</p>
+<p>You may also visualise the Graph using GraphViz (if you have it installed on your system), even if it isn&#39;t installed you can use the Visualise button to access a dialogue which will let you save your Graph in DOT format so you can process it with GraphViz at a later date. If GraphViz is installed you can generate a PNG/SVG image of the Graph using this feature.</p>
+<h3 id="tasks-view">Tasks View</h3>
+<p>When connecting to a store all actions performed on that store are treated as distinct tasks and run in the background. This allows you to carry out multiple operations simultaneously while the GUI remains responsive and lets you monitor the progress of any Task. Tasks can be monitored from the Tasks view shown below:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/storemanager_tasks.jpg|Store Manager - Tasks View}}</p>
+<p>Right clicking on a task will give you access to more information about it.</p>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Tools-Store-Manager.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1369 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WrapperDataset
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WrapperDataset
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Datasets.WrapperDataset">
+  
+  
+  <h1 id="VDS_RDF_Query_Datasets_WrapperDataset" data-uid="VDS.RDF.Query.Datasets.WrapperDataset" class="text-break">Class WrapperDataset
+  </h1>
+  <div class="markdown level0 summary"><p>An abstract dataset wrapper that can be used to wrap another dataset and just modify some functionality i.e. provides a decorator over an existing dataset.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">WrapperDataset</span></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Query.Datasets.BaseDemandDataset.html">BaseDemandDataset</a></div>
+      <div class="level2"><a class="xref" href="VDS.RDF.Query.Datasets.FullTextIndexedDataset.html">FullTextIndexedDataset</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Datasets.html">VDS.RDF.Query.Datasets</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Query_Datasets_WrapperDataset_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class WrapperDataset : IConfigurationSerializable, IThreadSafeDataset, ISparqlDataset</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.%23ctor(VDS.RDF.Query.Datasets.ISparqlDataset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L53">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.#ctor(VDS.RDF.Query.Datasets.ISparqlDataset)">WrapperDataset(ISparqlDataset)</h4>
+  <div class="markdown level1 summary"><p>Creates a new wrapped dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WrapperDataset(ISparqlDataset dataset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>Dataset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset__dataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset._dataset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L47">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset__dataset" data-uid="VDS.RDF.Query.Datasets.WrapperDataset._dataset">_dataset</h4>
+  <div class="markdown level1 summary"><p>Underlying Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ISparqlDataset _dataset</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_ActiveGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.ActiveGraphUris%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L156">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_ActiveGraphUris_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ActiveGraphUris*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_ActiveGraphUris" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ActiveGraphUris">ActiveGraphUris</h4>
+  <div class="markdown level1 summary"><p>Gets the Active Graph URIs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Uri&gt; ActiveGraphUris { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_DefaultGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.DefaultGraphUris%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L145">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_DefaultGraphUris_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.DefaultGraphUris*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_DefaultGraphUris" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.DefaultGraphUris">DefaultGraphUris</h4>
+  <div class="markdown level1 summary"><p>Gets the Default Graph URIs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Uri&gt; DefaultGraphUris { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Graphs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L206">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Graphs_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Graphs*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Graphs" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Graphs">Graphs</h4>
+  <div class="markdown level1 summary"><p>Gets the Graphs in the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;IGraph&gt; Graphs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GraphUris%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L217">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GraphUris_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GraphUris*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GraphUris" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GraphUris">GraphUris</h4>
+  <div class="markdown level1 summary"><p>Gets the URIs of Graphs in the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_HasTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.HasTriples%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L251">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_HasTriples_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.HasTriples*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_HasTriples" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.HasTriples">HasTriples</h4>
+  <div class="markdown level1 summary"><p>Gets whether the dataset has any triples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool HasTriples { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Item(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L230">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Item_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Item*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Item_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Item(System.Uri)">Item[Uri]</h4>
+  <div class="markdown level1 summary"><p>Gets a Graph from the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IGraph this[Uri graphUri] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Lock.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Lock%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L62">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Lock_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Lock*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Lock" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Lock">Lock</h4>
+  <div class="markdown level1 summary"><p>Gets the Lock used to ensure MRSW concurrency on the dataset when available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReaderWriterLockSlim Lock { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Triples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Triples%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L272">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Triples_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Triples*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Triples" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Triples">Triples</h4>
+  <div class="markdown level1 summary"><p>Gets all triples from the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; Triples { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_UnderlyingDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.UnderlyingDataset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L80">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_UnderlyingDataset_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.UnderlyingDataset*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_UnderlyingDataset" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.UnderlyingDataset">UnderlyingDataset</h4>
+  <div class="markdown level1 summary"><p>Gets the underlying dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISparqlDataset UnderlyingDataset { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_UsesUnionDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.UsesUnionDefaultGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L167">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_UsesUnionDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.UsesUnionDefaultGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_UsesUnionDefaultGraph" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.UsesUnionDefaultGraph">UsesUnionDefaultGraph</h4>
+  <div class="markdown level1 summary"><p>Gets whether the default graph is the union of all graphs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool UsesUnionDefaultGraph { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_AddGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.AddGraph(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L179">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_AddGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.AddGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_AddGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.AddGraph(VDS.RDF.IGraph)">AddGraph(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Adds a Graph to the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool AddGraph(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_ContainsTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.ContainsTriple(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L264">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_ContainsTriple_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ContainsTriple*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_ContainsTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ContainsTriple(VDS.RDF.Triple)">ContainsTriple(Triple)</h4>
+  <div class="markdown level1 summary"><p>Gets whether the dataset contains a given triple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ContainsTriple(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Discard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L354">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Discard_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Discard*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Discard" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Discard">Discard()</h4>
+  <div class="markdown level1 summary"><p>Discards any changes to the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Discard()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L346">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_Flush_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Flush*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_Flush" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.Flush">Flush()</h4>
+  <div class="markdown level1 summary"><p>Flushes any changes to the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Flush()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetModifiableGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetModifiableGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L243">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetModifiableGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetModifiableGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetModifiableGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetModifiableGraph(System.Uri)">GetModifiableGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Gets a modifiable graph from the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IGraph GetModifiableGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L305">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithObject_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithObject(VDS.RDF.INode)">GetTriplesWithObject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithObject(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L295">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicate_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicate(VDS.RDF.INode)">GetTriplesWithPredicate(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L338">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicateObject_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicateObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithPredicateObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given predicate and object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithPredicateObject(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L285">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubject_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubject(VDS.RDF.INode)">GetTriplesWithSubject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithSubject(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L327">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectObject_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given subject and object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithSubjectObject(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L316">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectPredicate_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.GetTriplesWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectPredicate(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets triples with a given subject and predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Triple&gt; GetTriplesWithSubjectPredicate(INode subj, INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.HasGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L198">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_HasGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.HasGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_HasGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.HasGraph(System.Uri)">HasGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Gets whether the dataset contains a given Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool HasGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_RemoveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.RemoveGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L188">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_RemoveGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.RemoveGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_RemoveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.RemoveGraph(System.Uri)">RemoveGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Removes a Graph from the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool RemoveGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_ResetActiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.ResetActiveGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L129">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_ResetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ResetActiveGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_ResetActiveGraph" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ResetActiveGraph">ResetActiveGraph()</h4>
+  <div class="markdown level1 summary"><p>Resets the Active Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ResetActiveGraph()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_ResetDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.ResetDefaultGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L137">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_ResetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ResetDefaultGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_ResetDefaultGraph" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.ResetDefaultGraph">ResetDefaultGraph()</h4>
+  <div class="markdown level1 summary"><p>Resets the Default Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ResetDefaultGraph()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L365">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_SerializeConfiguration_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SerializeConfiguration*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SerializeConfiguration(VDS.RDF.Configuration.ConfigurationSerializationContext)">SerializeConfiguration(ConfigurationSerializationContext)</h4>
+  <div class="markdown level1 summary"><p>Serializes the Configuration of the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SerializeConfiguration(ConfigurationSerializationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Configuration.ConfigurationSerializationContext.html">ConfigurationSerializationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Serialization Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L94">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetActiveGraph(IEnumerable&lt;Uri&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the Active Graph for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetActiveGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><span class="parametername">graphUris</span></td>
+        <td><p>Graph URIs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L103">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetActiveGraph(System.Uri)">SetActiveGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Sets the Active Graph for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetActiveGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L121">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetDefaultGraph(IEnumerable&lt;Uri&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the Default Graph for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetDefaultGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><span class="parametername">graphUris</span></td>
+        <td><p>Graph URIs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L112">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.WrapperDataset.SetDefaultGraph(System.Uri)">SetDefaultGraph(Uri)</h4>
+  <div class="markdown level1 summary"><p>Sets the Default Graph for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetDefaultGraph(Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WrapperDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WrapperDataset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WrapperDataset.cs/#L39" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
