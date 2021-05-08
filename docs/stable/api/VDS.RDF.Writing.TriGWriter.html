@@ -1,0 +1,539 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TriGWriter
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TriGWriter
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.TriGWriter">
+  
+  
+  <h1 id="VDS_RDF_Writing_TriGWriter" data-uid="VDS.RDF.Writing.TriGWriter" class="text-break">Class TriGWriter
+  </h1>
+  <div class="markdown level0 summary"><p>Class for writing a Triple Store in named Graph TriG syntax to a file/stream.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TriGWriter</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IStoreWriter.html">IStoreWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IHighSpeedWriter.html">IHighSpeedWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html">ICompressingWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IMultiThreadedWriter.html">IMultiThreadedWriter</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.html">VDS.RDF.Writing</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Writing_TriGWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TriGWriter : IStoreWriter, IHighSpeedWriter, IPrettyPrintingWriter, ICompressingWriter, IMultiThreadedWriter</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Writing_TriGWriter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+For efficiency the TriG Writer splits it&apos;s writing over several threads (currently 4), these threads share a reference to a Context object which gives Global writing context eg. the target <span class="xref">System.IO.TextWriter</span> being written to.  Each thread generates temporary local writing contexts as it goes along, each of these is scoped to writing a specific Graph.  Graphs are written to a <a class="xref" href="VDS.RDF.Writing.StringWriter.html">StringWriter</a> so the output for each Graph is built completely and then written in one go to the <span class="xref">System.IO.TextWriter</span> specified as the target of the writing in the global context.
+</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_CompressionLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.CompressionLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L94">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_CompressionLevel_" data-uid="VDS.RDF.Writing.TriGWriter.CompressionLevel*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_CompressionLevel" data-uid="VDS.RDF.Writing.TriGWriter.CompressionLevel">CompressionLevel</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the Compression Level for the writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompressionLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_HighSpeedModePermitted.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.HighSpeedModePermitted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L64">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_HighSpeedModePermitted_" data-uid="VDS.RDF.Writing.TriGWriter.HighSpeedModePermitted*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_HighSpeedModePermitted" data-uid="VDS.RDF.Writing.TriGWriter.HighSpeedModePermitted">HighSpeedModePermitted</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether High Speed Write Mode is permitted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HighSpeedModePermitted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_N3CompatabilityMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.N3CompatabilityMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L112">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_N3CompatabilityMode_" data-uid="VDS.RDF.Writing.TriGWriter.N3CompatabilityMode*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_N3CompatabilityMode" data-uid="VDS.RDF.Writing.TriGWriter.N3CompatabilityMode">N3CompatabilityMode</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether N3 Compatability Mode is used, in this mode an = is written after Graph Names so an N3 parser can read the TriG file correctly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool N3CompatabilityMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Writing_TriGWriter_N3CompatabilityMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Defaults to <strong>false</strong> from the 0.4.1 release onwards.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L79">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_PrettyPrintMode_" data-uid="VDS.RDF.Writing.TriGWriter.PrettyPrintMode*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.TriGWriter.PrettyPrintMode">PrettyPrintMode</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether Pretty Printing is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrettyPrintMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_UseMultiThreadedWriting.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.UseMultiThreadedWriting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L127">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_UseMultiThreadedWriting_" data-uid="VDS.RDF.Writing.TriGWriter.UseMultiThreadedWriting*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_UseMultiThreadedWriting" data-uid="VDS.RDF.Writing.TriGWriter.UseMultiThreadedWriting">UseMultiThreadedWriting</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether multi-threaded writing will be used to generate output faster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseMultiThreadedWriting { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore%2CSystem.IO.TextWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L158">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_Save_" data-uid="VDS.RDF.Writing.TriGWriter.Save*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_" data-uid="VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore,System.IO.TextWriter)">Save(ITripleStore, TextWriter)</h4>
+  <div class="markdown level1 summary"><p>Saves a Store in TriG (Turtle with Named Graphs) format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, TextWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Store to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>Writer to save to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore%2CSystem.IO.TextWriter%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L169">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_Save_" data-uid="VDS.RDF.Writing.TriGWriter.Save*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_" data-uid="VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore,System.IO.TextWriter,System.Boolean)">Save(ITripleStore, TextWriter, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Saves a Store in TriG (Turtle with Named Graphs) format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, TextWriter writer, bool leaveOpen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Store to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>Writer to save to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Boolean flag indicating if <code data-dev-comment-type="paramref" class="paramref">writer</code> should be left open after the store is saved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L144">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_Save_" data-uid="VDS.RDF.Writing.TriGWriter.Save*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_Save_VDS_RDF_ITripleStore_System_String_" data-uid="VDS.RDF.Writing.TriGWriter.Save(VDS.RDF.ITripleStore,System.String)">Save(ITripleStore, String)</h4>
+  <div class="markdown level1 summary"><p>Saves a Store in TriG (Turtle with Named Graphs) format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, string filename)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Store to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filename</span></td>
+        <td><p>File to save to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L544">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_TriGWriter_ToString_" data-uid="VDS.RDF.Writing.TriGWriter.ToString*"></a>
+  <h4 id="VDS_RDF_Writing_TriGWriter_ToString" data-uid="VDS.RDF.Writing.TriGWriter.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Gets the String representation of the writer which is a description of the syntax it produces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L525">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Writing_TriGWriter_Warning" data-uid="VDS.RDF.Writing.TriGWriter.Warning">Warning</h4>
+  <div class="markdown level1 summary"><p>Event which is raised when there is an issue with the Graphs being serialized that doesn&apos;t prevent serialization but the user should be aware of</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event StoreWriterWarning Warning</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.StoreWriterWarning.html">StoreWriterWarning</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IStoreWriter.html">IStoreWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IHighSpeedWriter.html">IHighSpeedWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html">ICompressingWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IMultiThreadedWriter.html">IMultiThreadedWriter</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_TriGWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.TriGWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/TriGWriter.cs/#L50" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

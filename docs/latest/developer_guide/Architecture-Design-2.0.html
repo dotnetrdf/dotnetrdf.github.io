@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>dotNetRDF 2.0 Design | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="dotNetRDF 2.0 Design | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>[[Home]] &gt; [[Developer Guide|DeveloperGuide]] &gt; [[Architecture|DeveloperGuide-Architecture]] &gt; [[Design|DeveloperGuide-Architecture-Design]] &gt; [[dotNetRDF 2.0 Design|DeveloperGuide-Architecture-Design-2.0]]</p>
+<h1 id="dotnetrdf-20-design">dotNetRDF 2.0 Design</h1>
+<p>Now we have reached dotNetRDF 1.0 we have been thinking a lot about the state of the API and what we would really like to change if we were able to introduce more significant refactors and breaking changes.  This thinking so far forms the basis for this design document, the idea is that we would make a number of significant and breaking changes in the 2.0 API in order to clean up, simplify and modularize the API better.</p>
+<p>It is proposed that an initial version of this revised API be published as a transitional 1.9 release so that users can use the new API and provide feedback as it is developed.  Parallel to that we will continue to support the 1.0 release with bug fixes, it is expected that an initial 1.9 will not be ready until around the same time as 1.1.0 is released.</p>
+<h2 id="api-modularization">API Modularization</h2>
+<p>Currently the Core API has become quite bloated and it would make sense to divide some features out into their own separate libraries, the rough proposal is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>APIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dotNetRDF.dll</td>
+<td>Core data model, Configuration and Formatting APIs</td>
+</tr>
+<tr>
+<td>dotNetRDF.IO.dll</td>
+<td>Parsing and Writing APIs</td>
+</tr>
+<tr>
+<td>dotNetRDF.IO.Json.dll</td>
+<td>Parsing and Writing implementations that require Json.Net</td>
+</tr>
+<tr>
+<td>dotNetRDF.IO.RdfA.dll</td>
+<td>Parsing and Writing implementations that require HtmlAgilityPack to support RDFa</td>
+</tr>
+<tr>
+<td>dotNetRDF.Sparql.dll</td>
+<td>SPARQL Query and Update engine</td>
+</tr>
+<tr>
+<td>dotNetRDF.Sparql.FullText.dll</td>
+<td>dotNetRDF.Query.FullText renamed</td>
+</tr>
+<tr>
+<td>dotNetRDF.Ontology.dll</td>
+<td>Ontology API, likely expanded</td>
+</tr>
+<tr>
+<td>dotNetRDF.Storage.dll</td>
+<td>Storage API</td>
+</tr>
+<tr>
+<td>dotNetRDF.Storage.Virtuoso.dll</td>
+<td>dotNetRDF.Data.virtuoso renamed</td>
+</tr>
+<tr>
+<td>dotNetRDF.Web.dll</td>
+<td>Web API, abstractions of current ASP.Net support</td>
+</tr>
+<tr>
+<td>dotNetRDF.Web.Asp.dll</td>
+<td>ASP.Net implementation of Web API</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-refactors">API Refactors</h2>
+<p>There are a number of API refactors we wish to make as part of a 2.0 release and these are detailed here, they range from minor clean up to fairly significant refactors.</p>
+<h3 id="data-model-refactor">Data Model Refactor</h3>
+<p>The core data model has become somewhat large and in places overly complex with multiple ways of achieving the same thing, not to mention confusing and misleading interface names in many places.  There are a variety of refactors we are proposing all of which aim to simplify the API and in some cases reduce the memory footprint and complexity of their usage.</p>
+<h4 id="nodes-refactor">Nodes Refactor</h4>
+<p>I propose that we refactor the Nodes API as follows:</p>
+<ol>
+<li>Remove the tight coupling between a Node and the Graph it originated from</li>
+<li>Allow for free moving of Nodes between different Graphs</li>
+<li>Identify Blank Nodes in a way that allows the above</li>
+<li>Don&#39;t require any work to create Node values to be done in Nodes</li>
+<li>Move all Node classes to the Nodes namespace</li>
+<li>Consolidate nodes into a single interface</li>
+</ol>
+<p>The first point means removing the <code>Graph</code> and <code>GraphUri</code> properties from the <code>INode</code> interface, doing so removes the coupling between a Node and its originating Graph.  This has particular benefits for things like creating wrappers around factories and graphs since it will eliminate some of the current issues we can encounter involving Graph reference mismatches.</p>
+<p>Once this is done point 2 becomes easy because we can now freely copy Nodes around because they just represent node values provided we fix point 3.  As a result the existing <code>CopyNode()</code> methods can all be deprecated and ultimately removed.</p>
+<p>Point 5 is primarily just a clean up activity to better organize the code going forward.</p>
+<p>Point 6 is likely the most significant, rather than having a separate interface for each Node type all the relevant methods will be directly on <code>INode</code>.  The contract will be that trying to access something that doesn&#39;t make sense for the relevant <code>NodeType</code> will result in a <code>NodeValueException</code>.  Making this change avoids the needs for lots of casting throughout the code base and should make code substantially easier to read and write.</p>
+<h5 id="blank-node-identification">Blank Node Identification</h5>
+<p>Point 3 is somewhat trickier, currently we use user defined/auto-assigned string labels to identify blank nodes.  This has proved to be a poor implementation decision requiring tons of hacks and workarounds to have blank nodes be properly scoped and avoid collisions.  My initial though was to identify blank nodes by a combination of two Guids, one is the Node ID identifier and one the Factory identifier.  This means that Blank Nodes don&#39;t strictly meet point 1 because this means it is tied to the factory, in practice this is likely not necessary.</p>
+<p>Thus it will depend on whether we allow users to create Blank Nodes using an explicit Guid, if we do then we might need the Factory ID to ensure correct scoping.  If we don&#39;t allow this we can likely get away with a single Guid since it is for all intents and purposes a unique identifier so will also provide inherent scoping.  However the current consensus in the community is that a blank node can span multiple graphs and be the same node, it is only the serialization of that node which is scoped to a specific graph and in the case of dataset formats scoped to the dataset.</p>
+<p>One thing we may want to do in making this change is still allow users to create blank nodes by human readable label and simply map these consistently to Guids internally (within the scope of a factory).  However a better solution might be to push this responsibility off on parsers which removes the need for graphs and node factories to track this.  Ultimately this will reduce memory usage within the system as this mapping will then be temporary for the life of a parser, there are techniques which can make this mapping extremely memory efficient which Jena already uses and we should look at adopting those in our parsers.</p>
+<h4 id="node-creation">Node Creation</h4>
+<p>Point 4 refers to the fact that internally some nodes are creating by passing a Graph reference and having them call back to the graph to get data such as new Blank Node ID or resolving the Prefixed Name.  This again was a poor design decision and so we will remove the relevant constructors and instead require the Node Factory creating the Node to provide us with the Blank Node ID or resolved URI.</p>
+<h3 id="triple-refactor">Triple refactor</h3>
+<p>In light of the Nodes refactor we will make some similar changes to the Triple API:</p>
+<ul>
+<li>Remove reference to the Graph on a Triple</li>
+<li>Remove the rarely used <code>Context</code> parameter on a Triple</li>
+</ul>
+<p>This is intended to simplify the <code>Triple</code> class, reduce it&#39;s memory footprint and get to a data model where it purely represents a triple.  It also simplifies the constructor for <code>Triple</code> since we no longer need to validate that the Nodes originate from the same Graph.  Removing the <code>Context</code> parameter only really affects the rarely used N3 function contexts which is a feature we don&#39;t truly support anyway and so I would prefer to remove support for.</p>
+<p>With the removal of the <code>Graph</code> property we need to introduce a proper <code>Quad</code> class to represent Quads, the <code>Quad</code> class will have essentially the same API as a Triple but with the addition of a <code>Graph</code> property which will return a <code>INode</code></p>
+<p><strong>Note:</strong> We wish to make the <code>Graph</code> property return a <code>INode</code> to support non-URI names for graphs though this goes beyond standard RDF, however it is common across other APIs and we should aim to be as broad and extensible as possible.</p>
+<p>Implementation wise I intend to make <code>Quad</code> a standalone class not an extension because we don&#39;t want to allow implicit casting of <code>Quad</code> to <code>Triple</code>. Users should always be aware that this is a lossy operation, an <code>AsTriple()</code> method will be provided to do this explicitly.  Conversely <code>Triple</code> will likely provide an <code>AsQuad(Uri graphUri)</code> and <code>AsQuad(INode graphNode)</code> methods.  This decision also means we can implement <code>Quad</code> as a decorator over a <code>Triple</code> allowing us to reduce memory footprint further.</p>
+<h3 id="igraph-refactor">IGraph Refactor</h3>
+<p>The Nodes refactor will result in a couple of minor changes to the <code>IGraph</code> API as it currently stands:</p>
+<ul>
+<li>There will no longer need to be a two argument form of <code>Merge()</code> since Nodes don&#39;t have a reference to their Graph URI to be preserve</li>
+<li><code>GetNextBlankNodeID()</code> becomes obsolete and eventually removed</li>
+<li>Remove all defunct <code>GetXNode()</code> methods</li>
+</ul>
+<p>As a result of this and the Nodes refactor there will be some implementation benefits for <code>IGraph</code>.  For example <code>Merge()</code> becomes super simple, just <code>Assert()</code> the triples from one graph into the other since there is no need to worry about mapping Blank Node IDs, this is particularly true since we will be explicitly allowing for blank node sharing across graphs.</p>
+<p>The more significant changes we propose for the <code>IGraph</code> API are as follows:</p>
+<ol>
+<li>Remove the <code>BaseUri</code> property entirely, the current name is a misnomer and generally used as the graph name.  It would be better to have no name associated with an <code>IGraph</code> directly because it is purely a set of triples, graph names would be a property of a storage implementation for sets of graphs.</li>
+<li>Add a <code>Quads</code> property to retrieve the Triple&#39;s in <code>Quad</code> form</li>
+<li>Make <code>Triples</code> property return a <code>IEnumerable&lt;Triple&gt;</code> instead of <code>BaseTripleCollection</code></li>
+<li>Simplify the set of <code>GetTriplesWithXY()</code> methods into a single <code>Find(INode s, INode p, INode o)</code> method where any/all may be null to signify matching anything.</li>
+<li>Add convenience <code>RetractWhere()</code> method so that internally implementations can avoid materializing deletion candidates where possible</li>
+<li>Remove other defunct selection related methods</li>
+<li>Add <code>Edges</code> property which returns <code>INode</code> instances used in the predicate position</li>
+<li>Rename <code>Nodes</code> property to <code>Vertices</code> to more accurately reflect what is returned</li>
+</ol>
+<p>The 3rd change is the most significant but also the most important, it hides internal implementation details of how triples (more than it is already) are stored and makes it much easier to implement Graphs that don&#39;t have any direct in-memory storage if desired.</p>
+<h3 id="itriplestoreisparqldataset-refactor">ITripleStore/ISparqlDataset Refactor</h3>
+<p>The <code>ITripleStore</code> interface is both poorly named and a messy API, it also overlaps heavily with the <code>ISparqlDataset</code> API.  I suggest consolidating the functionality of the two APIs (while removing irrelevant functionality) into a single <code>IGraphStore</code> API.  The new name more accurately reflects the purpose and would have a cleaner API, excerpts of the proposed API are given below:</p>
+<pre><code class="lang-csharp">    interface IGraphStore
+    {
+      IEnumerable&lt;Uri&gt; GraphUris { get; }
+
+      IEnumerable&lt;IGraph&gt; Graphs { get; }
+
+      IGraph this[Uri u] { get; }
+
+      bool HasGraph(Uri u);
+
+      bool Add(IGraph g);
+
+      bool Add(IGraph g, Uri graphUri);
+
+      bool AddTriple(Uri graphUri, Triple t);
+
+      bool AddQuad(Quad q);
+
+      bool Copy(Uri srcUri, Uri destUri);
+
+      bool Move(Uri srcUri, Uri destUri);
+
+      bool Remove(Uri u);
+
+      //Get all Triples in the Store
+      IEnumerable&lt;Triple&gt; Triples { get; }
+
+      //Find matching triples
+      IEnumerable&lt;Triple&gt; Find(INode subj, INode pred, INode obj);
+
+      //Get all Quads in the store
+      IEnumerable&lt;Quad&gt; Quads { get; } 
+
+      //Find all matching quads
+      IEnumerable&lt;Quad&gt; Find(INode graph, INode subj, INode pred, INode obj)
+
+      //Is a Triple found anywhere in the store
+      bool ContainsTriple(Triple t);
+
+      //Is the Triple contained in the given Graphs
+      bool ContainsTriple(IEnumerable&lt;Uri&gt; graphUris, Triple t);
+
+      //Does a Quad exist in the store
+      bool ContainsQuad(Quad q);
+    }
+</code></pre><p>Note that while this interface outline is by no means complete it does not include the active and default graph management portions of the <code>ISparqlDataset</code> API.  It is proposed that the burden of tracking what constitutes those graphs is the job of the query engine.  Likely we will introduce custom algebra to cover this or manage it purely in the query processors.</p>
+<p>There will also be no <code>Graphs</code> property exposing a <code>BaseGraphCollection</code>, that will instead become purely the standard backing implementation for our in-memory implementations of this interface.</p>
+<p>With this interface in place we will need to introduce new implementations of this which cover our existing key implementations:</p>
+<ul>
+<li>An in-memory implementation</li>
+<li>A storage backed implementation</li>
+</ul>
+<h3 id="io-apis-refactor">IO APIs Refactor</h3>
+<p>The Data Model refactors outlined above will facilitate some refactoring and streamlining of the existing IO APIs particularly in the Parsing namespace.  I propose to remove the <code>IStoreReader</code> interface and generalize the <code>IRdfReader</code> interface so we a RDF parser can pass into a <code>IGraph</code>/<code>IGraphStore</code>.  This will mean adding overloads of the <code>Load()</code> method which take a <code>IGraphStore</code> instead.</p>
+<p>Since there will be no longer a <code>BaseUri</code> property on graphs it will also be useful to provide a Base URI to readers and writers for the purposes of parsing and serialization so appropriate overloads will be required for this.</p>
+<p>As a side effect of the above the <code>IRdfHandler</code> interface will need to be expanded to add a <code>HandleQuad()</code> method, parsers will call either <code>HandleTriple()</code> or <code>HandleQuad()</code> depending on the data they produce.  This also allows for handlers to handle triples and quads differently if they so desire.</p>
+<h4 id="formatting-api-improvements">Formatting API Improvements</h4>
+<p>On the writing side we will introduce a <code>IQuadFormatter</code> which provides a <code>Format(Quad q)</code> method in a similar way to the existing <code>ITripleFormatter</code> method.  Similar to the changes on the parsing side we will replace the <code>IStoreWriter</code> interface with an expanded <code>IRdfWriter</code> interface.</p>
+<p>We may also expand the formatting APIs to allow them to be passed a <code>TextWriter</code> directly in order to eliminate some of the overheads of generating and then writing a string.  The existing overloads that return strings can be rewritten in terms of <code>StringWriter</code> to minimize code duplication.</p>
+<h3 id="query-apis-refactor">Query APIs Refactor</h3>
+<p>As a result of other refactors there will be some changes required in the Query API, most notably that it needs to reflect the fact that queries will now operate over a <code>IGraphStore</code> instance and must track the default/active graphs themselves.</p>
+<p>The mechanism by which we will track the default/active graphs is yet to be determined.</p>
+<h4 id="query-parser-and-ast">Query Parser and AST</h4>
+<p>While the current query parser and AST give us full conformance with the SPARQL specification their code is quite ugly and hacky in some respects.  We propose to replace the parser with a new parser either hand-written or using a parser generator with good .Net support like SableCC.  As part of this rewrite we would change the AST representation to align more closely with that used by ARQ as that would allow us to eliminate some of the  ugly code we currently have.</p>
+<h4 id="query-results">Query Results</h4>
+<p>Currently methods that can take any type of query return an <code>Object</code> and the user must cast to an appropriate <code>IGraph</code> or <code>SparqlResultSet</code>, this has proved to be a less than ideal decision and so I would like to introduce a general <code>QueryResult</code> class like so:</p>
+<pre><code class="lang-csharp">
+    class QueryResult
+    {
+      bool IsResultSet { get; }
+
+      bool IsGraph { get; }
+
+      bool IsBoolean { get; }
+
+      SparqlResultSet Results { get; }
+
+      IGraph Graph { get; }
+
+      bool BooleanResult { get; }
+    }
+</code></pre><p>Doing this makes peoples code simpler since they don&#39;t need to cast and it also allows us to expand result returns in the future to include additional information e.g. execution time.</p>
+<p>We also intend to abstract <code>SparqlResultSet</code> into an interface and refactor it somewhat to support true streaming of results rather than having to buffer the entire results set into memory.</p>
+<h4 id="query-processor-refactor">Query Processor Refactor</h4>
+<p>Currently <code>LeviathanQueryProcessor</code> is visitor-like in it&#39;s implementation but most of the real implementation is hidden inside the algebra classes.  I would like to move all implementation into the query processor itself.  This makes the code easier to maintain since it&#39;s all in one place and much easier for people to override specific parts of the implementation.</p>
+<p>Some more thoughts on how the query processors can be refactored to support a new streaming engine can be found in the [[Medusa Query Engine|DeveloperGuide-Architecture-Design-Medusa]] design document.</p>
+<h4 id="isparqlexpression-refactor">ISparqlExpression Refactor</h4>
+<p>Right now to evaluate an expression you need to pass in the entire query context, realistically all you actually need is the <code>ISet</code> you are applying the expression on and possibly some limited context.  Making this refactor has a couple of blockers right now:</p>
+<ul>
+<li>Some expressions like <code>EXISTS</code> have semantics somewhat at odds with most other functions</li>
+<li>We should implement <code>IEquatable&lt;ISparqlExpression&gt;</code> so that we can more easily perform expression manipulations</li>
+</ul>
+<p>With equality in place it then becomes relatively easy to scan the expression tree to find aggregates and replace them with temporary variables (or their assigned variables) in the same way that ARQ does.  In the spirit of the Query Processor Refactor and to make this easier we should also consider refactoring <code>IExpressionTransformer</code> into a visitor interface as part of these changes.</p>
+<p>If we make this refactor it also paves the way for writing a true streaming engine that does not to process the query in blocks like Leviathan does but rather operates more in the manner of ARQ.</p>
+<h4 id="optimizer-refactor">Optimizer Refactor</h4>
+<p>As with other proposed refactors changing <code>IAlgebraOptimiser</code> to be a visitor would make it easier to use and extend going forward.</p>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/developer_guide/Architecture-Design-2.0.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

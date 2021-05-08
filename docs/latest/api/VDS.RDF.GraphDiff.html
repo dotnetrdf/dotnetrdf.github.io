@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GraphDiff
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GraphDiff
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.GraphDiff">
+  <h1 id="VDS_RDF_GraphDiff" data-uid="VDS.RDF.GraphDiff">Class GraphDiff
+  </h1>
+  <div class="markdown level0 summary"><p>Implementation of a Graph Difference algorithm for RDF Graphs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">GraphDiff</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_GraphDiff_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GraphDiff</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 id="VDS_RDF_GraphDiff_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+This algorithm is broadly based upon the methodology fror computing differences in RDF Graphs described in the <a href="http://www.springerlink.com/index/lq65211003774313.pdf">RDFSync</a> paper by Tummarello et al.  This is an implementation purely of a difference algorithm and not the synchronisation aspects described in their paper.  Main difference between their algorithm and mine is that mine does not make the input Graphs lean as it is concerned with showing the raw differences between the Graphs and does not concern itself with whether the differences may be semantically irrelevant.
+</p>
+<p>
+To understand this consider the following Graphs:
+</p>
+<h2>Graph A</h2>
+<pre><code>_:autos1 rdfs:label &quot;Rob&quot; .</code></pre>
+<h2>Graph B</h2>
+<pre><code>_:autos1 rdfs:label &quot;Rob&quot; .
+_:autos2 rdfs:label &quot;Rob&quot; .</code></pre>
+<p>
+Given these Graphs computing the Graph Difference between A and B would report an Added MSG (Minimal Spanning Graph) when in fact the 2nd Graph is non-lean and could be reduced to the same as the 1st Graph.
+</p>
+</div>
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphDiff_ComputeMSGs_VDS_RDF_IGraph_System_Collections_Generic_HashSet_VDS_RDF_Triple__System_Collections_Generic_List_VDS_RDF_IGraph__.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphDiff.ComputeMSGs(VDS.RDF.IGraph%2CSystem.Collections.Generic.HashSet%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.List%7BVDS.RDF.IGraph%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphDiff.cs/#L248" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_GraphDiff_ComputeMSGs_" data-uid="VDS.RDF.GraphDiff.ComputeMSGs*"></a>
+  
+  <h4 id="VDS_RDF_GraphDiff_ComputeMSGs_VDS_RDF_IGraph_System_Collections_Generic_HashSet_VDS_RDF_Triple__System_Collections_Generic_List_VDS_RDF_IGraph__" data-uid="VDS.RDF.GraphDiff.ComputeMSGs(VDS.RDF.IGraph,System.Collections.Generic.HashSet{VDS.RDF.Triple},System.Collections.Generic.List{VDS.RDF.IGraph})"><a href="#collapsible-VDS_RDF_GraphDiff_ComputeMSGs_VDS_RDF_IGraph_System_Collections_Generic_HashSet_VDS_RDF_Triple__System_Collections_Generic_List_VDS_RDF_IGraph__" class="expander" data-toggle="collapse">ComputeMSGs(IGraph, HashSet&lt;Triple&gt;, List&lt;IGraph&gt;)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_GraphDiff_ComputeMSGs_VDS_RDF_IGraph_System_Collections_Generic_HashSet_VDS_RDF_Triple__System_Collections_Generic_List_VDS_RDF_IGraph__" class="collapse in">
+  <div class="markdown level1 summary"><p>Computes MSGs for a Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ComputeMSGs(IGraph g, HashSet&lt;Triple&gt; unassigned, List&lt;IGraph&gt; msgs)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.HashSet</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
+        <span class="parametername">unassigned</span>
+        <p><p>Triples that need assigning to MSGs.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</span>
+        <span class="parametername">msgs</span>
+        <p><p>MSGs list to populate.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphDiff_Difference_VDS_RDF_IGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphDiff.Difference(VDS.RDF.IGraph%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphDiff.cs/#L70" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_GraphDiff_Difference_" data-uid="VDS.RDF.GraphDiff.Difference*"></a>
+  
+  <h4 id="VDS_RDF_GraphDiff_Difference_VDS_RDF_IGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.GraphDiff.Difference(VDS.RDF.IGraph,VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_GraphDiff_Difference_VDS_RDF_IGraph_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">Difference(IGraph, IGraph)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_GraphDiff_Difference_VDS_RDF_IGraph_VDS_RDF_IGraph_" class="collapse in">
+  <div class="markdown level1 summary"><p>Calculates the Difference between the two Graphs i.e. the changes required to get from the 1st Graph to the 2nd Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GraphDiffReport Difference(IGraph a, IGraph b)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">a</span>
+        <p><p>First Graph.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">b</span>
+        <p><p>Second Graph.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.GraphDiffReport.html">GraphDiffReport</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphDiff.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphDiff%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphDiff.cs/#L57" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

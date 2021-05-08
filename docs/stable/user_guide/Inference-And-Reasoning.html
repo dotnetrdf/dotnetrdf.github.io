@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Inference and Reasoning | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Inference and Reasoning | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="inference-and-reasoning">Inference and Reasoning</h1>
+
+<p>Inference and Reasoning are mechanisms whereby an application can discover additional information that is not explicitly stated in the initial data. There are various scenarios when you might want to use this and having this capability in the library provides a powerful feature to end users. Inference and reasoning in dotNetRDF is currently based on the <a class="xref" href="../api/VDS.RDF.Query.Inference.IInferenceEngine.html"><code>IInferenceEngine</code></a> interface which allows for both static and dynamic reasoners i.e. those that use a fixed set of rules and those that create their rules dynamically based on the input data.</p>
+<h1 id="the-iinferenceengine-interface">The IInferenceEngine interface</h1>
+<p>The <a class="xref" href="../api/VDS.RDF.Query.Inference.IInferenceEngine.html"><code>IInferenceEngine</code></a> interface has two main methods which implementers need to implement in order to integrate your own reasoners into dotNetRDF. The first of these is the <a class="xref" href="../api/VDS.RDF.Query.Inference.IInferenceEngine.html#VDS_RDF_Query_Inference_IInferenceEngine_Initialise_VDS_RDF_IGraph_"><code>Initialise(IGraph g)</code></a> method which is used to input graphs to the reasoner which define the schema/rules that the reasoner should follow. The reasoner can process and interpret this Graph in any way it wishes in order to generate the rules that it will use when actually applying inference to a Graph.</p>
+<p>The second method is the <a class="xref" href="../api/VDS.RDF.Query.Inference.IInferenceEngine.html#VDS_RDF_Query_Inference_IInferenceEngine_Apply_VDS_RDF_IGraph_"><code>Apply()</code></a> method which applies inference to a Graph outputting the inferred triples into either the same graph or to another graph. For implementers this method is where the core logic of the reasoner will be located (or at least called from).</p>
+<h2 id="existing-implementations">Existing Implementations</h2>
+<p>As part of the library three types of reasoners are provided currently - an RDFS reasoner, a SKOS reasoner and a simple N3 Rules reasoner.</p>
+<h3 id="rdfs-reasoner">RDFS Reasoner</h3>
+<p>RDFS is an RDF vocabulary for expressing schemas for RDF data specified by the W3C. It allows for the definition of class and property hierarchies and specifying things like the domains and ranges of properties. We provide both a <a class="xref" href="../api/VDS.RDF.Query.Inference.StaticRdfsReasoner.html"><code>StaticRdfsReasoner</code></a> which has to be initialised with one/more schemas and uses only those to make inferences and a <a class="xref" href="../api/VDS.RDF.Query.Inference.RdfsReasoner.html"><code>RdfsReasoner</code></a> which is dynamic in that every Graph you apply reasoning to can extend the set of rules that the reasoner uses.</p>
+<p>The RDFS reasoner does not apply the full range of possible RDFS based inferencing but does do the following:</p>
+<ul>
+<li>Asserts additional type triples for anything which has a type which is a sub-class of another type</li>
+<li>Asserts additional triples where the property (predicate) is a sub-property of another property</li>
+<li>Asserts additional type triples based on the domain and range of properties</li>
+</ul>
+<p>Consider the following example schema (schema.ttl):</p>
+<pre><code>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix : &lt;http://example.org/vehicles/&gt; .
+
+:Vehicle a rdfs:Class .
+:Car rdfs:subClassOf :Vehicle .
+:SportsCar rdfs:subClassOf :Car .
+</code></pre><p>And the following example data (data.ttl):</p>
+<pre><code>@prefix ex: &lt;http://example.org/vehicles/&gt; .
+@prefix : &lt;http://myvehicledata.com/&gt; .
+
+:FordFiesta a ex:Car .
+:AudiA8 a ex:Car .
+:FerrariEnzo a ex:SportsCar .
+</code></pre><p>If you were to add the data into a graph and ask it for things which are cars then it would only give you back <code>:FordFiesta</code> and <code>:AudiA8</code> despite the fact that <code>:FerrariEnzo</code> is also a car. If we apply an RDFS reasoner to the data using the schema given and then ask the same question we&#39;d get back all three things e.g.</p>
+<pre><code class="lang-csharp">
+using System;
+using VDS.RDF;
+using VDS.RDF.Query.Parsing;
+using VDS.RDF.Query.Inference;
+
+public class RdfsReasoningExample
+{
+    public static void Main(String[] args)
+    {
+        //First we want to load our data and schema into Graphs
+        Graph data = new Graph();
+        FileLoader.Load(data, &quot;data.ttl&quot;);
+        Graph schema = new Graph();
+        FileLoader.Load(schema, &quot;schema.ttl&quot;);
+
+        //Now we ask for things which are cars from our data Graph
+        IUriNode rdfType = data.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
+        IUriNode car = data.CreateUriNode(&quot;ex:Car&quot;);
+        foreach (Triple t in data.GetTriplesWithPredicateObject(rdfType, car))
+        {
+            Console.WriteLine(t.ToString());
+        }
+        //This will result in the triples defining the type for :FordFiesta
+        //and :AudiA8 being printed
+        //BUT without inference we don&#39;t know that :FerrariEnzo is a car
+
+        //So now we&#39;ll go ahead and apply inference
+        StaticRdfsReasoner reasoner = new StaticRdfsReasoner();
+        reasoner.Initialise(schema);
+        reasoner.Apply(data);
+
+        //Now we ask for things which are cars again
+        foreach (Triple t in data.GetTriplesWithPredicateObject(rdfType, car))
+        {
+            Console.WriteLine(t.ToString());
+        }
+        //This time it will have printed :FerrariEnzo as well as it will have inferred that anything
+        //which is of type ex:SportsCar is also of type ex:Car
+    }
+}
+</code></pre><h3 id="skos-reasoner">SKOS Reasoner</h3>
+<p>SKOS is another RDF vocabulary specified by the W3C which is intended for use in defining taxonomies for classifying data. The SKOS reasoner included in the library is a simple concept hierarchy reasoner which can infer additional triples where the subject has an object which is a <code>skos:Concept</code> in the taxonomy by following <code>skos:narrower</code> and <code>skos:broader</code> links as appropriate.</p>
+<p>As with RDFS there is a <a class="xref" href="../api/VDS.RDF.Query.Inference.StaticSkosReasoner.html"><code>StaticSkosReasoner</code></a> and a dynamic variant called <a class="xref" href="../api/VDS.RDF.Query.Inference.SkosReasoner.html"><code>SkosReasoner</code></a>.</p>
+<p>Consider the following classification of vehicles based on the earlier examples (taxonomy.ttl):</p>
+<pre><code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+@prefix : &lt;http://example.org/vehicles/&gt; .
+
+:Vehicle a skos:Concept .
+:Vehicle skos:narrower :Car .
+:Car skos:narrower :SportsCar .
+</code></pre><p>And the following data (data2.ttl):</p>
+<pre><code>@prefix ex: &lt;http://example.org/vehicles/&gt; .
+@prefix : &lt;http://myvehicledata.com/&gt; .
+
+:FordFiesta ex:vehicleType ex:Car .
+:AudiA8 ex:vehicleType ex:Car .
+:FerrariEnzo ex:vehicleType ex:SportsCar .
+</code></pre><p>As seen in the RDFS example without inference we don&#39;t automatically know that anything which stated it was related to the concept <code>:SportsCar</code> is also related to the concept :Car but by applying SKOS concept hierarchy reasoning we can do this.</p>
+<h3 id="simple-n3-rules-reasoner">Simple N3 Rules Reasoner</h3>
+<p>The <a class="xref" href="../api/VDS.RDF.Query.Inference.SimpleN3RulesReasoner.html"><code>SimpleN3RulesReasoner</code></a> is a reasoner that is able to apply simple N3 Rules. The reasoner must be initialised with a Graph that has been parsed from an input N3 file in order to contain any rules. A simple rule is expressed as follows:</p>
+<pre><code>{ ?x a ex:Car } =&gt; { ?x a ex:Vehicle }
+</code></pre><p>The above rule would match anything that is a ex:Car and assert that it is also a ex:Vehicle.</p>
+<p>Any rule which is composed of two graph literals and connected via =&gt; or &lt;= can be processed and applied. Note that nested graph literals are not currently supported.</p>
+<p>Additionally if you use <code>@forsome</code> or <code>@forall</code> to define tokens as being variables these will be processed e.g.</p>
+<pre><code>@forall :x .
+{ :x a ex:Car } =&gt; { :x a ex:Vehicle }
+</code></pre><p>The above is equivalent to the previous example since we&#39;ve used a <code>@forall</code> directive to specify that :x is a variable.  Generally speaking specifying variables directly is always preferred.</p>
+<div class="NOTE"><h5>Note</h5><p>The current N3 reasoner implementation only supports the implication operation (<code>http://www.w3.org/2000/10/swap/log#implies</code>). Other N3 logic operations, string functions and math functions are not currently implemented by the reasoner.</p>
+</div>
+<h1 id="using-inference-with-triple-stores">Using Inference with Triple Stores</h1>
+<p>The library also provides an <a class="xref" href="../api/VDS.RDF.IInferencingTripleStore.html"><code>IInferencingTripleStore</code></a> interface which extends the basic <a class="xref" href="../api/VDS.RDF.ITripleStore.html"><code>ITripleStore</code></a> interface with methods which allow for the attachment of reasoners (instances of <a class="xref" href="../api/VDS.RDF.Query.Inference.IInferenceEngine.html"><code>IInferenceEngine</code></a> implementations) to a Triple Store. Reasoning when used in this sense is static in that inference is applied only at certain points:</p>
+<ul>
+<li>When you add a reasoner the <code>IInferencingTripleStore</code> the implementations in the library will apply the reasoner to all existing Graphs in the Store</li>
+<li>When you add a new Graph to the Store the reasoner will be applied to that Graph</li>
+</ul>
+<p>Current implementations store the inferred information in a special Graph inside the Triple Store so that the existing Graphs are not themselves altered - there is no guarantee/requirement that 3rd party implementations of this interface will do this. Also there is a limitation in that inferences will not be made when a graph changes or is removed so you can have some data over which no inferences have been made or some data which is inferred from data you&#39;ve removed from your Store.</p>
+<h1 id="native-stores-and-inferencing">Native Stores and Inferencing</h1>
+<p>Currently there is no formal API support in the library for using inference with 3rd party stores, primarily because this feature is not available in many stores and there is not currently a standardised mechanism for specifying that you wish to use inference with a store.</p>
+<p>However some stores such as <a href="http://stardog.com">StarDog</a> do support reasoning when making queries, see <a href="Triple-Store-Integration.html">Triple Store Integration</a> for more information.</p>
+<h1 id="reasoners-and-sparql-endpoints">Reasoners and SPARQL Endpoints</h1>
+<p>Please see <a href="Configuration-Reasoners.html">Configuration API - Reasoners</a> for information on how to specify reasoner configuration and how to attach them to HTTP Handlers.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/user_guide/Inference-And-Reasoning.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

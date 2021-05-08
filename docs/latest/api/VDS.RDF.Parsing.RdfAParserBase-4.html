@@ -1,0 +1,2061 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RdfAParserBase&lt;THtmlDocument, TElement, TNode, TAttribute&gt;
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RdfAParserBase&lt;THtmlDocument, TElement, TNode, TAttribute&gt;
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.RdfAParserBase`4">
+  <h1 id="VDS_RDF_Parsing_RdfAParserBase_4" data-uid="VDS.RDF.Parsing.RdfAParserBase`4">Class RdfAParserBase&lt;THtmlDocument, TElement, TNode, TAttribute&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Base class for the framework-specific RDFa parser implementations.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RdfAParserBase&lt;THtmlDocument, TElement, TNode, TAttribute&gt;</span></div>
+  </div>
+  
+      <div class="level2"><a class="xref" href="VDS.RDF.Parsing.RdfAParser.html">RdfAParser</a></div>
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.html">VDS.RDF.Parsing</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_Parsing_RdfAParserBase_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class RdfAParserBase&lt;THtmlDocument, TElement, TNode, TAttribute&gt; : IRdfReader where TElement : class, TNode</code></pre>
+  </div>
+  
+  
+  
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="parametername">THtmlDocument</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TElement</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TNode</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="parametername">TAttribute</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L80" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4__ctor_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4__ctor" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.#ctor"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4__ctor" class="expander" data-toggle="collapse">RdfAParserBase()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4__ctor" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new RDFa Parser which will auto-detect which RDFa version to use (assumes 1.1 if none explicitly specified).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected RdfAParserBase()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4__ctor_VDS_RDF_Parsing_RdfASyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.%23ctor(VDS.RDF.Parsing.RdfASyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4__ctor_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4__ctor_VDS_RDF_Parsing_RdfASyntax_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.#ctor(VDS.RDF.Parsing.RdfASyntax)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4__ctor_VDS_RDF_Parsing_RdfASyntax_" class="expander" data-toggle="collapse">RdfAParserBase(RdfASyntax)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4__ctor_VDS_RDF_Parsing_RdfASyntax_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new RDFa Parser which will use the specified RDFa syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected RdfAParserBase(RdfASyntax syntax)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.RdfASyntax.html">RdfASyntax</a></span>
+        <span class="parametername">syntax</span>
+        <p><p>RDFa Syntax Version.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA10Version.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.HtmlPlusRdfA10Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA10Version" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HtmlPlusRdfA10Version"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA10Version" class="expander" data-toggle="collapse">HtmlPlusRdfA10Version</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA10Version" class="collapse in">
+  <div class="markdown level1 summary"><p>RDFa Version Constants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HtmlPlusRdfA10Version = &quot;HTML+RDFa 1.0&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA11Version.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.HtmlPlusRdfA11Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA11Version" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HtmlPlusRdfA11Version"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA11Version" class="expander" data-toggle="collapse">HtmlPlusRdfA11Version</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HtmlPlusRdfA11Version" class="collapse in">
+  <div class="markdown level1 summary"><p>RDFa Version Constants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HtmlPlusRdfA11Version = &quot;HTML+RDFa 1.1&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_RdfANamespace.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.RdfANamespace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L65" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_RdfANamespace" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.RdfANamespace"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_RdfANamespace" class="expander" data-toggle="collapse">RdfANamespace</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_RdfANamespace" class="collapse in">
+  <div class="markdown level1 summary"><p>Namespace URI for RDFa.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RdfANamespace = &quot;http://www.w3.org/ns/rdfa#&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_XHtmlNamespace.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.XHtmlNamespace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L61" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_XHtmlNamespace" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.XHtmlNamespace"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlNamespace" class="expander" data-toggle="collapse">XHtmlNamespace</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlNamespace" class="collapse in">
+  <div class="markdown level1 summary"><p>Namespace URI for XHTML.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string XHtmlNamespace = &quot;http://www.w3.org/1999/xhtml#&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA10Version.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.XHtmlPlusRdfA10Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L72" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA10Version" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.XHtmlPlusRdfA10Version"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA10Version" class="expander" data-toggle="collapse">XHtmlPlusRdfA10Version</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA10Version" class="collapse in">
+  <div class="markdown level1 summary"><p>RDFa Version Constants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string XHtmlPlusRdfA10Version = &quot;XHTML+RDFa 1.0&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA11Version.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.XHtmlPlusRdfA11Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L70" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA11Version" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.XHtmlPlusRdfA11Version"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA11Version" class="expander" data-toggle="collapse">XHtmlPlusRdfA11Version</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfA11Version" class="collapse in">
+  <div class="markdown level1 summary"><p>RDFa Version Constants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string XHtmlPlusRdfA11Version = &quot;XHTML+RDFa 1.1&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfADoctype.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.XHtmlPlusRdfADoctype%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfADoctype" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.XHtmlPlusRdfADoctype"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfADoctype" class="expander" data-toggle="collapse">XHtmlPlusRdfADoctype</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlPlusRdfADoctype" class="collapse in">
+  <div class="markdown level1 summary"><p>URI for the XHTML+RDFa DTD.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string XHtmlPlusRdfADoctype = &quot;http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_XHtmlVocabNamespace.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.XHtmlVocabNamespace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_XHtmlVocabNamespace" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.XHtmlVocabNamespace"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlVocabNamespace" class="expander" data-toggle="collapse">XHtmlVocabNamespace</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_XHtmlVocabNamespace" class="collapse in">
+  <div class="markdown level1 summary"><p>XHTML Vocab Namespace.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string XHtmlVocabNamespace = &quot;http://www.w3.org/1999/xhtml/vocab#&quot;</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetAttribute__1_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetAttribute(%601%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L204" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttribute_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttribute*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttribute__1_System_String_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttribute(`1,System.String)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttribute__1_System_String_" class="expander" data-toggle="collapse">GetAttribute(TElement, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttribute__1_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the value of a particular attribute of an element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetAttribute(TElement element, string attributeName)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p><p>The element.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">attributeName</span>
+        <p><p>The name of the attribute on the element.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p><p>The value of the attribute.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeName__3_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetAttributeName(%603)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L254" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeName_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributeName*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeName__3_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributeName(`3)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeName__3_" class="expander" data-toggle="collapse">GetAttributeName(TAttribute)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeName__3_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the name of an attribute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetAttributeName(TAttribute attribute)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TAttribute</span></span>
+        <span class="parametername">attribute</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetAttributes__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetAttributes(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L247" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributes_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributes*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributes__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributes(`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributes__1_" class="expander" data-toggle="collapse">GetAttributes(TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributes__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get all attributes of an element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract IEnumerable&lt;TAttribute&gt; GetAttributes(TElement element)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TAttribute&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeValue__3_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetAttributeValue(%603)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L261" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeValue_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributeValue*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeValue__3_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetAttributeValue(`3)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeValue__3_" class="expander" data-toggle="collapse">GetAttributeValue(TAttribute)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetAttributeValue__3_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the value of an attribute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetAttributeValue(TAttribute attribute)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TAttribute</span></span>
+        <span class="parametername">attribute</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetBaseElement__0_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetBaseElement(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L219" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetBaseElement_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetBaseElement*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetBaseElement__0_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetBaseElement(`0)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetBaseElement__0_" class="expander" data-toggle="collapse">GetBaseElement(THtmlDocument)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetBaseElement__0_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the base element of the specified document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TElement GetBaseElement(THtmlDocument document)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">THtmlDocument</span></span>
+        <span class="parametername">document</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">TElement</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetChildren__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetChildren(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L275" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetChildren_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetChildren*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetChildren__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetChildren(`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetChildren__1_" class="expander" data-toggle="collapse">GetChildren(TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetChildren__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Return the children of an element (in order).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract IEnumerable&lt;TNode&gt; GetChildren(TElement element)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TNode&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetElementName__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetElementName(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L268" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetElementName_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetElementName*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetElementName__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetElementName(`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetElementName__1_" class="expander" data-toggle="collapse">GetElementName(TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetElementName__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the name of an element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetElementName(TElement element)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetHtmlElement__0_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetHtmlElement(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L233" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetHtmlElement_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetHtmlElement*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetHtmlElement__0_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetHtmlElement(`0)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetHtmlElement__0_" class="expander" data-toggle="collapse">GetHtmlElement(THtmlDocument)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetHtmlElement__0_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the html element of the document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TElement GetHtmlElement(THtmlDocument document)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">THtmlDocument</span></span>
+        <span class="parametername">document</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">TElement</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetInnerHtml__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetInnerHtml(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L289" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetInnerHtml_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetInnerHtml*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetInnerHtml__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetInnerHtml(`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetInnerHtml__1_" class="expander" data-toggle="collapse">GetInnerHtml(TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetInnerHtml__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the HTML contained within an element as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetInnerHtml(TElement element)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GetInnerText__2_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GetInnerText(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L282" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GetInnerText_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetInnerText*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GetInnerText__2_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GetInnerText(`2)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetInnerText__2_" class="expander" data-toggle="collapse">GetInnerText(TNode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GetInnerText__2_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the inner text of an element or a text node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string GetInnerText(TNode node)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TNode</span></span>
+        <span class="parametername">node</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_GrabText_System_Text_StringBuilder__2_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.GrabText(System.Text.StringBuilder%2C%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L1445" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_GrabText_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GrabText*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_GrabText_System_Text_StringBuilder__2_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.GrabText(System.Text.StringBuilder,`2)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GrabText_System_Text_StringBuilder__2_" class="expander" data-toggle="collapse">GrabText(StringBuilder, TNode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_GrabText_System_Text_StringBuilder__2_" class="collapse in">
+  <div class="markdown level1 summary"><p>Get the text content of a node and add it to the provided output buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void GrabText(StringBuilder output, TNode node)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Text.StringBuilder</span></span>
+        <span class="parametername">output</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TNode</span></span>
+        <span class="parametername">node</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_HasAttribute__1_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.HasAttribute(%601%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L196" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_HasAttribute_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HasAttribute*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_HasAttribute__1_System_String_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HasAttribute(`1,System.String)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HasAttribute__1_System_String_" class="expander" data-toggle="collapse">HasAttribute(TElement, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HasAttribute__1_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Determine if an element has a particular attribute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool HasAttribute(TElement element, string attributeName)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p><p>The element to check.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">attributeName</span>
+        <p><p>The name of the attribute to check for.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p><p>True if the element has an attribute named <code data-dev-comment-type="paramref" class="paramref">attributeName</code>, false otherwise.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_HasChildren__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.HasChildren(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L296" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_HasChildren_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HasChildren*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_HasChildren__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.HasChildren(`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HasChildren__1_" class="expander" data-toggle="collapse">HasChildren(TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_HasChildren__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Determine if an element has children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool HasChildren(TElement element)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p><p>True if the element has children, false otherwise.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_IsTextNode__2_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.IsTextNode(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L303" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_IsTextNode_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.IsTextNode*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_IsTextNode__2_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.IsTextNode(`2)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_IsTextNode__2_" class="expander" data-toggle="collapse">IsTextNode(TNode)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_IsTextNode__2_" class="collapse in">
+  <div class="markdown level1 summary"><p>Determine if a node in the parsed Html document tree is a text node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool IsTextNode(TNode node)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TNode</span></span>
+        <span class="parametername">node</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p><p>True if <code data-dev-comment-type="paramref" class="paramref">node</code> is a text node, false otherwise.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_IsXmlBaseIsPermissible__0_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.IsXmlBaseIsPermissible(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L226" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_IsXmlBaseIsPermissible_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.IsXmlBaseIsPermissible*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_IsXmlBaseIsPermissible__0_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.IsXmlBaseIsPermissible(`0)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_IsXmlBaseIsPermissible__0_" class="expander" data-toggle="collapse">IsXmlBaseIsPermissible(THtmlDocument)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_IsXmlBaseIsPermissible__0_" class="collapse in">
+  <div class="markdown level1 summary"><p>Deterine if the HTML document can have an xml:base element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool IsXmlBaseIsPermissible(THtmlDocument document)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">THtmlDocument</span></span>
+        <span class="parametername">document</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_StreamReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IGraph%2CSystem.IO.StreamReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L99" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_StreamReader_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IGraph,System.IO.StreamReader)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_StreamReader_" class="expander" data-toggle="collapse">Load(IGraph, StreamReader)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_StreamReader_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IGraph g, StreamReader input)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to load into.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.StreamReader</span></span>
+        <span class="parametername">input</span>
+        <p><p>Stream to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IGraph_System_IO_StreamReader_">IRdfReader.Load(IGraph, StreamReader)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_TextReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IGraph%2CSystem.IO.TextReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_TextReader_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IGraph,System.IO.TextReader)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_TextReader_" class="expander" data-toggle="collapse">Load(IGraph, TextReader)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_IO_TextReader_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IGraph g, TextReader input)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to load into.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.TextReader</span></span>
+        <span class="parametername">input</span>
+        <p><p>Input to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IGraph_System_IO_TextReader_">IRdfReader.Load(IGraph, TextReader)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L121" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IGraph,System.String)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_String_" class="expander" data-toggle="collapse">Load(IGraph, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IGraph_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IGraph g, string filename)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to load into.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">filename</span>
+        <p><p>File to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IGraph_System_String_">IRdfReader.Load(IGraph, String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_StreamReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IRdfHandler%2CSystem.IO.StreamReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L133" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_StreamReader_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IRdfHandler,System.IO.StreamReader)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_StreamReader_" class="expander" data-toggle="collapse">Load(IRdfHandler, StreamReader)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_StreamReader_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IRdfHandler handler, StreamReader input)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
+        <span class="parametername">handler</span>
+        <p><p>RDF Handler to use.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.StreamReader</span></span>
+        <span class="parametername">input</span>
+        <p><p>Stream to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IRdfHandler_System_IO_StreamReader_">IRdfReader.Load(IRdfHandler, StreamReader)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_TextReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IRdfHandler%2CSystem.IO.TextReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L145" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_TextReader_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IRdfHandler,System.IO.TextReader)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_TextReader_" class="expander" data-toggle="collapse">Load(IRdfHandler, TextReader)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_IO_TextReader_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IRdfHandler handler, TextReader input)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
+        <span class="parametername">handler</span>
+        <p><p>RDF Handler to use.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.TextReader</span></span>
+        <span class="parametername">input</span>
+        <p><p>Input to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IRdfHandler_System_IO_TextReader_">IRdfReader.Load(IRdfHandler, TextReader)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Load(VDS.RDF.IRdfHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L176" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_Load_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_String_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Load(VDS.RDF.IRdfHandler,System.String)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_String_" class="expander" data-toggle="collapse">Load(IRdfHandler, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Load_VDS_RDF_IRdfHandler_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parses RDFa by extracting it from the HTML from the given input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IRdfHandler handler, string filename)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
+        <span class="parametername">handler</span>
+        <p><p>RDF Handler to use.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">filename</span>
+        <p><p>File to read from.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Load_VDS_RDF_IRdfHandler_System_String_">IRdfReader.Load(IRdfHandler, String)</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_LoadAndParse_System_IO_TextReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.LoadAndParse(System.IO.TextReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L188" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_LoadAndParse_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.LoadAndParse*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_LoadAndParse_System_IO_TextReader_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.LoadAndParse(System.IO.TextReader)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_LoadAndParse_System_IO_TextReader_" class="expander" data-toggle="collapse">LoadAndParse(TextReader)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_LoadAndParse_System_IO_TextReader_" class="collapse in">
+  <div class="markdown level1 summary"><p>Parse the input stream as an HTML document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract THtmlDocument LoadAndParse(TextReader input)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.TextReader</span></span>
+        <span class="parametername">input</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">THtmlDocument</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_ProcessDocument_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.ProcessDocument(VDS.RDF.Parsing.Contexts.RdfAParserContext%7B%600%7D%2CVDS.RDF.Parsing.Contexts.RdfAEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L240" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_ProcessDocument_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.ProcessDocument*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_ProcessDocument_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.ProcessDocument(VDS.RDF.Parsing.Contexts.RdfAParserContext{`0},VDS.RDF.Parsing.Contexts.RdfAEvaluationContext)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_ProcessDocument_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext_" class="expander" data-toggle="collapse">ProcessDocument(RdfAParserContext&lt;THtmlDocument&gt;, RdfAEvaluationContext)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_ProcessDocument_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext_" class="collapse in">
+  <div class="markdown level1 summary"><p>Process the content of an HTML document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void ProcessDocument(RdfAParserContext&lt;THtmlDocument&gt; context, RdfAEvaluationContext evalContext)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.Contexts.RdfAParserContext-1.html">RdfAParserContext</a>&lt;THtmlDocument&gt;</span>
+        <span class="parametername">context</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.Contexts.RdfAEvaluationContext.html">RdfAEvaluationContext</a></span>
+        <span class="parametername">evalContext</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_ProcessElement_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.ProcessElement(VDS.RDF.Parsing.Contexts.RdfAParserContext%7B%600%7D%2CVDS.RDF.Parsing.Contexts.RdfAEvaluationContext%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L415" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_ProcessElement_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.ProcessElement*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_ProcessElement_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext__1_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.ProcessElement(VDS.RDF.Parsing.Contexts.RdfAParserContext{`0},VDS.RDF.Parsing.Contexts.RdfAEvaluationContext,`1)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_ProcessElement_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext__1_" class="expander" data-toggle="collapse">ProcessElement(RdfAParserContext&lt;THtmlDocument&gt;, RdfAEvaluationContext, TElement)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_ProcessElement_VDS_RDF_Parsing_Contexts_RdfAParserContext__0__VDS_RDF_Parsing_Contexts_RdfAEvaluationContext__1_" class="collapse in">
+  <div class="markdown level1 summary"><p>Process the content of an element of the document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ProcessElement(RdfAParserContext&lt;THtmlDocument&gt; context, RdfAEvaluationContext evalContext, TElement currElement)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.Contexts.RdfAParserContext-1.html">RdfAParserContext</a>&lt;THtmlDocument&gt;</span>
+        <span class="parametername">context</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.Contexts.RdfAEvaluationContext.html">RdfAEvaluationContext</a></span>
+        <span class="parametername">evalContext</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">currElement</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_SetAttribute__1_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.SetAttribute(%601%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L212" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Parsing_RdfAParserBase_4_SetAttribute_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.SetAttribute*"></a>
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_SetAttribute__1_System_String_System_String_" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.SetAttribute(`1,System.String,System.String)"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_SetAttribute__1_System_String_System_String_" class="expander" data-toggle="collapse">SetAttribute(TElement, String, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_SetAttribute__1_System_String_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Set the value of a particular attribute of an element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void SetAttribute(TElement element, string attributeName, string value)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">TElement</span></span>
+        <span class="parametername">element</span>
+        <p><p>The element.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">attributeName</span>
+        <p><p>The name of the attribute to set/update.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">value</span>
+        <p><p>The new value for the attribute.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L1529" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Parsing_RdfAParserBase_4_Warning" data-uid="VDS.RDF.Parsing.RdfAParserBase`4.Warning"><a href="#collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Warning" class="expander" data-toggle="collapse">Warning</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Parsing_RdfAParserBase_4_Warning" class="collapse in">
+  <div class="markdown level1 summary"><p>Event which is raised when there is a non-fatal error with the input being read</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event RdfReaderWarning Warning</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h5 class="eventType">Event Type</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.RdfReaderWarning.html">RdfReaderWarning</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.IRdfReader.html#VDS_RDF_IRdfReader_Warning">IRdfReader.Warning</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_RdfAParserBase_4.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAParserBase%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/RdfAParserBase.cs/#L47" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

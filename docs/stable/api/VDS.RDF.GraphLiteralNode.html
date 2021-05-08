@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GraphLiteralNode
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GraphLiteralNode
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.GraphLiteralNode">
+  
+  
+  <h1 id="VDS_RDF_GraphLiteralNode" data-uid="VDS.RDF.GraphLiteralNode" class="text-break">Class GraphLiteralNode
+  </h1>
+  <div class="markdown level0 summary"><p>Class for representing Graph Literal Nodes which are supported in highly expressive RDF syntaxes like Notation 3.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseNode.html">BaseNode</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html">BaseGraphLiteralNode</a></div>
+    <div class="level3"><span class="xref">GraphLiteralNode</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a></div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html">BaseGraphLiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html">BaseGraphLiteralNode</a>&gt;</div>
+    <div><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></div>
+    <div><a class="xref" href="VDS.RDF.INode.html">INode</a></div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.IVariableNode.html">IVariableNode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IVariableNode.html">IVariableNode</a>&gt;</div>
+    <div><span class="xref">System.Runtime.Serialization.ISerializable</span></div>
+    <div><span class="xref">System.Xml.Serialization.IXmlSerializable</span></div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.GraphLiteralNode.html">GraphLiteralNode</a>&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="VDS.RDF.GraphLiteralNode.html">GraphLiteralNode</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_SubGraph">BaseGraphLiteralNode.SubGraph</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_System_Object_">BaseGraphLiteralNode.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_INode_">BaseGraphLiteralNode.Equals(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_IBlankNode_">BaseGraphLiteralNode.Equals(IBlankNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_IGraphLiteralNode_">BaseGraphLiteralNode.Equals(IGraphLiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_ILiteralNode_">BaseGraphLiteralNode.Equals(ILiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_IUriNode_">BaseGraphLiteralNode.Equals(IUriNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_IVariableNode_">BaseGraphLiteralNode.Equals(IVariableNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_Equals_VDS_RDF_BaseGraphLiteralNode_">BaseGraphLiteralNode.Equals(BaseGraphLiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_ToString">BaseGraphLiteralNode.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_INode_">BaseGraphLiteralNode.CompareTo(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_IBlankNode_">BaseGraphLiteralNode.CompareTo(IBlankNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_IGraphLiteralNode_">BaseGraphLiteralNode.CompareTo(IGraphLiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_ILiteralNode_">BaseGraphLiteralNode.CompareTo(ILiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_IUriNode_">BaseGraphLiteralNode.CompareTo(IUriNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_IVariableNode_">BaseGraphLiteralNode.CompareTo(IVariableNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_CompareTo_VDS_RDF_BaseGraphLiteralNode_">BaseGraphLiteralNode.CompareTo(BaseGraphLiteralNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_">BaseGraphLiteralNode.GetObjectData(SerializationInfo, StreamingContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_ReadXml_System_Xml_XmlReader_">BaseGraphLiteralNode.ReadXml(XmlReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_WriteXml_System_Xml_XmlWriter_">BaseGraphLiteralNode.WriteXml(XmlWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsString">BaseGraphLiteralNode.AsString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsInteger">BaseGraphLiteralNode.AsInteger()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsDecimal">BaseGraphLiteralNode.AsDecimal()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsFloat">BaseGraphLiteralNode.AsFloat()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsDouble">BaseGraphLiteralNode.AsDouble()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsBoolean">BaseGraphLiteralNode.AsBoolean()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsDateTime">BaseGraphLiteralNode.AsDateTime()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsDateTimeOffset">BaseGraphLiteralNode.AsDateTimeOffset()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_AsTimeSpan">BaseGraphLiteralNode.AsTimeSpan()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_EffectiveType">BaseGraphLiteralNode.EffectiveType</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraphLiteralNode.html#VDS_RDF_BaseGraphLiteralNode_NumericType">BaseGraphLiteralNode.NumericType</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode__graph">BaseNode._graph</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode__graphUri">BaseNode._graphUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode__nodetype">BaseNode._nodetype</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode__hashcode">BaseNode._hashcode</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_NodeType">BaseNode.NodeType</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_Graph">BaseNode.Graph</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_GraphUri">BaseNode.GraphUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_ToString_VDS_RDF_Writing_Formatting_INodeFormatter_">BaseNode.ToString(INodeFormatter)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_ToString_VDS_RDF_Writing_Formatting_INodeFormatter_VDS_RDF_Writing_TripleSegment_">BaseNode.ToString(INodeFormatter, TripleSegment)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_GetHashCode">BaseNode.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseNode.html#VDS_RDF_BaseNode_GetSchema">BaseNode.GetSchema()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_GraphLiteralNode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class GraphLiteralNode : BaseGraphLiteralNode, IGraphLiteralNode, IEquatable&lt;BaseGraphLiteralNode&gt;, IComparable&lt;BaseGraphLiteralNode&gt;, IValuedNode, INode, IComparable&lt;INode&gt;, IComparable&lt;IBlankNode&gt;, IComparable&lt;IGraphLiteralNode&gt;, IComparable&lt;ILiteralNode&gt;, IComparable&lt;IUriNode&gt;, IComparable&lt;IVariableNode&gt;, IEquatable&lt;INode&gt;, IEquatable&lt;IBlankNode&gt;, IEquatable&lt;IGraphLiteralNode&gt;, IEquatable&lt;ILiteralNode&gt;, IEquatable&lt;IUriNode&gt;, IEquatable&lt;IVariableNode&gt;, ISerializable, IXmlSerializable, IEquatable&lt;GraphLiteralNode&gt;, IComparable&lt;GraphLiteralNode&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L527">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode__ctor_" data-uid="VDS.RDF.GraphLiteralNode.#ctor*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode__ctor" data-uid="VDS.RDF.GraphLiteralNode.#ctor">GraphLiteralNode()</h4>
+  <div class="markdown level1 summary"><p>Deserialization Only Constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GraphLiteralNode()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.%23ctor(System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L521">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode__ctor_" data-uid="VDS.RDF.GraphLiteralNode.#ctor*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_" data-uid="VDS.RDF.GraphLiteralNode.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">GraphLiteralNode(SerializationInfo, StreamingContext)</h4>
+  <div class="markdown level1 summary"><p>Deserialization Constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GraphLiteralNode(SerializationInfo info, StreamingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.SerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Serialization Information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.StreamingContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Streaming Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode__ctor_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.%23ctor(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L504">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode__ctor_" data-uid="VDS.RDF.GraphLiteralNode.#ctor*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode__ctor_VDS_RDF_IGraph_" data-uid="VDS.RDF.GraphLiteralNode.#ctor(VDS.RDF.IGraph)">GraphLiteralNode(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Graph Literal Node in the given Graph which represents the given Subgraph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GraphLiteralNode(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph this node is in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode__ctor_VDS_RDF_IGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.%23ctor(VDS.RDF.IGraph%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L512">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode__ctor_" data-uid="VDS.RDF.GraphLiteralNode.#ctor*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode__ctor_VDS_RDF_IGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.GraphLiteralNode.#ctor(VDS.RDF.IGraph,VDS.RDF.IGraph)">GraphLiteralNode(IGraph, IGraph)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Graph Literal Node whose value is an empty Subgraph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GraphLiteralNode(IGraph g, IGraph subgraph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph this node is in.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">subgraph</span></td>
+        <td><p>Sub-graph this node represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode_CompareTo_VDS_RDF_GraphLiteralNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.CompareTo(VDS.RDF.GraphLiteralNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L538">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode_CompareTo_" data-uid="VDS.RDF.GraphLiteralNode.CompareTo*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode_CompareTo_VDS_RDF_GraphLiteralNode_" data-uid="VDS.RDF.GraphLiteralNode.CompareTo(VDS.RDF.GraphLiteralNode)">CompareTo(GraphLiteralNode)</h4>
+  <div class="markdown level1 summary"><p>Implementation of Compare To for Graph Literal Nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(GraphLiteralNode other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.GraphLiteralNode.html">GraphLiteralNode</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Graph Literal Node to Compare To.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_GraphLiteralNode_CompareTo_VDS_RDF_GraphLiteralNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Simply invokes the more general implementation of this method.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode_Equals_VDS_RDF_GraphLiteralNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode.Equals(VDS.RDF.GraphLiteralNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L548">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphLiteralNode_Equals_" data-uid="VDS.RDF.GraphLiteralNode.Equals*"></a>
+  <h4 id="VDS_RDF_GraphLiteralNode_Equals_VDS_RDF_GraphLiteralNode_" data-uid="VDS.RDF.GraphLiteralNode.Equals(VDS.RDF.GraphLiteralNode)">Equals(GraphLiteralNode)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this Node is equal to a Graph Literal Node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(GraphLiteralNode other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.GraphLiteralNode.html">GraphLiteralNode</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Graph Literal Node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INode.html">INode</a>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Runtime.Serialization.ISerializable</span>
+  </div>
+  <div>
+      <span class="xref">System.Xml.Serialization.IXmlSerializable</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_IsListRoot_VDS_RDF_INode_VDS_RDF_IGraph_">Extensions.IsListRoot(INode, IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_CopyNode_VDS_RDF_INode_VDS_RDF_IGraph_">Extensions.CopyNode(INode, IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_CopyNode_VDS_RDF_INode_VDS_RDF_IGraph_System_Boolean_">Extensions.CopyNode(INode, IGraph, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_INode_System_Uri_">DynamicExtensions.AsDynamic(INode, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Nodes.ValuedNodeExtensions.html#VDS_RDF_Nodes_ValuedNodeExtensions_AsValuedNode_VDS_RDF_INode_">ValuedNodeExtensions.AsValuedNode(INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Nodes.ValuedNodeExtensions.html#VDS_RDF_Nodes_ValuedNodeExtensions_AsSafeBoolean_VDS_RDF_Nodes_IValuedNode_">ValuedNodeExtensions.AsSafeBoolean(IValuedNode)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_GraphLiteralNode.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphLiteralNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphLiteralNode.cs/#L495" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

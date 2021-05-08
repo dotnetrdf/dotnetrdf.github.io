@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dynamic API | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Dynamic API | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dynamic-api">Dynamic API</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>The Dynamic API allows developers to access and update RDF graphs and SPARQL results sets as a collection of C# dynamic objects. The API is capable of mapping between known literal datatypes and .NET datatypes and uses triple predicates to define properties on C# dynamic objects.</p>
+<h2 id="accessing-the-dynamic-api">Accessing the Dynamic API</h2>
+<p>The extension method <a class="xref" href="../api/VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_"><code>IGraph.AsDynamic()</code></a> (found in <a class="xref" href="../api/VDS.RDF.Dynamic.DynamicExtensions.html"><code>VDS.RDF.Dynamic.DynamicExtensions</code></a>) allows a dotNetRDF graph to be accessed as a dynamic collection. This method accepts two optional parameters:</p>
+<ul>
+<li><code>subjectBaseUri</code> - a base URI that will be used to resolve relative subject URI references in dynamic API calls. If not defined, this defaults to the base URI of the graph that is being accessed.</li>
+<li><code>predicateBaseUri</code> - a base URI that will be used to resolve relative predicate URI references in dynamic API calls. If not defined, this defaults to the <code>subjectBaseUri</code> (or to the graph base URI if <code>subjectBaseUri</code> is also undefined).</li>
+</ul>
+<h3 id="accessing-the-nodes-of-a-graph">Accessing the nodes of a Graph</h3>
+<p>The graph dynamic collection is a dynamic object whose properties are the subject nodes in the RDF graph. These nodes can be accessed using index notation or property notation on the dynamic object. As a simple example:</p>
+<pre><code class="lang-c#">// This creates the graph that we will access as a dynamic collection
+var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+
+// Create the dynamic collection wrapper for the graph, with an overridden base URI for the subject nodes
+var d = g.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+
+// Access a the &lt;urn:s&gt; subject node as a property of the dynamic collection
+var s = d.s; // s will be an INode instance, the property name &quot;s&quot; is treated as a relative URI
+
+// Access the &lt;urn:s&gt; subject node as an indexed member of the dynamic collection
+s = d[&quot;s&quot;]; // d[&quot;urn:s&quot;] also works
+</code></pre><p>The API allows new data to be added to the graph just as easily. The following creates an equivalent graph to
+the one loaded in the previous example.</p>
+<pre><code class="lang-c#">var graph = new Graph();
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+d[&quot;s&quot;] = new { p = &quot;o&quot; }; // String property value becomes an RDF string literal
+</code></pre><p>To add more properties to an existing node, you can use the Add method instead:</p>
+<pre><code class="lang-c#">// This creates the graph that we will access as a dynamic collection
+var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+d[&quot;s&quot;].Add(new { p = &quot;o2&quot; });
+</code></pre><p>If a subject node does not exist, it will be created as needed, and then you can use the Add method of the subject node.</p>
+<pre><code class="lang-c#">var graph = new Graph();
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+var s = d.s; // A new subject node &lt;urn:s&gt;
+s.Add({ p = &quot;o&quot; };) // Add a property to the subject node
+</code></pre><p>You can just as easily remove a subject node from the graph:</p>
+<pre><code class="lang-c#">// This creates the graph that we will access as a dynamic collection
+var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+d.Remove(&quot;s&quot;);
+// Graph is now empty
+</code></pre><h3 id="accessing-nodes">Accessing nodes</h3>
+<p>The properties of a node returned by the Dynamic API can be accessed as properties of the node dynamic object:</p>
+<pre><code class="lang-c#">var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+var s = d.s; // s is a dynamic node object
+var o = s.p; // == &quot;o&quot;; s[&quot;p&quot;] also works as does s[&quot;urn:p&quot;]
+</code></pre><p>Setting a node property is supported through direct assignment:</p>
+<pre><code class="lang-c#">var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+var s = d.s;
+s[&quot;p&quot;] = &quot;o2&quot;;
+// Graph content is now &lt;urn:s&gt; &lt;urn:p&gt; &quot;o2&quot;
+</code></pre><p>Add and remove is also supported and node property values can be collections of values:</p>
+<pre><code class="lang-c#">var g = new Graph();
+g.LoadFromString(@&quot;&lt;urn:s&gt; &lt;urn:p&gt; &quot;&quot;o&quot;&quot; .&quot;);
+var d = graph.AsDynamic(UriFactory.Create(&quot;urn:&quot;));
+var s = d.s;
+s.p.Add(&quot;o2&quot;); // or s[&quot;p&quot;].Add(&quot;o2&quot;), or s.Add(&quot;p&quot;, &quot;o2&quot;)
+// Graph content is now two triples:
+// &lt;urn:s&gt; &lt;urn:p&gt; &quot;o&quot; .
+// &lt;urn:s&gt; &lt;urn:p&gt; &quot;o2&quot; .
+var objectCount = s.p.Count(); // == 2
+</code></pre><h2 id="nodes-as-dictionaries">Nodes as dictionaries</h2>
+<ul>
+<li><a href="#simple">Simple</a></li>
+<li><a href="#resource-node-recursion">Resource node recursion</a></li>
+<li><a href="#literal-node-translation">Literal node translation</a></li>
+<li><a href="#dictionary-key-conversion">Dictionary key conversion</a></li>
+<li><a href="#querying-node-dictionaries">Querying node dictionaries</a></li>
+</ul>
+<h3 id="simple">Simple</h3>
+<p>Nodes in a graph can be thought of as dictionaries (maps, hashes) where keys are predicates of outgoing statements (where given node is subject) and values are collections of objects of those statements.</p>
+<p>For example the following graph</p>
+<pre><code class="lang-turtle">@prefix : &lt;http://example.com/&gt; .
+
+:s
+  :p1
+    :o1 ,  # t1
+    &quot;o2&quot; , # t2
+    [] ;   # t3
+  :p2
+    :o4 ,  # t4
+    &quot;o5&quot; , # t5
+    [] .   # t6
+</code></pre><p><img src="../../images/dynamic_api/1.svg" alt="image of graph"></p>
+<p>is eqivalent to this dictionary:</p>
+<pre><code class="lang-csharp">var f = new NodeFactory();
+var p1 = f.CreateUriNode(new Uri(&quot;http://example.com/p1&quot;));
+var o1 = f.CreateUriNode(new Uri(&quot;http://example.com/o1&quot;);
+var o2 = f.CreateLiteralNode(&quot;o2&quot;);
+var o3 = f.CreateBlankNode();
+var p2 = f.CreateUriNode(new Uri(&quot;http://example.com/p2&quot;));
+var o4 = f.CreateUriNode(new Uri(&quot;http://example.com/o4&quot;);
+var o5 = f.CreateLiteralNode(&quot;o5&quot;);
+var o6 = f.CreateBlankNode();
+
+var s = new Dictionary&lt;INode, ICollection&lt;INode&gt;&gt;
+{
+  {
+    p1,
+    new INode[]
+    {
+      o1, // t1
+      o2, // t2
+      o3, // t3
+    }
+  },
+  {
+    p2,
+    new INode[]
+    {
+      o4, // t4
+      o5, // t5
+      o6, // t6
+    }
+  },
+};
+</code></pre><p><a href="#nodes-as-dictionaries">top</a></p>
+<h3 id="resource-node-recursion">Resource node recursion</h3>
+<p>In the case of resource objects (IRI or blank nodes, not literals), the process can be repeated recursively, i.e. items in the value collection are dictionaries themselves.</p>
+<p>For example the following graph</p>
+<pre><code class="lang-turtle">@prefix : &lt;http://example.com/&gt; .
+
+:s1
+  :p
+    :s2 ,  # t1
+    _:s3 . # t2
+
+:s2
+  :p
+    &quot;o1&quot; . # t3
+
+_:s3
+  :p
+    &quot;o2&quot; . # t4
+</code></pre><p><img src="../../images/dynamic_api/2.svg" alt="image of graph"></p>
+<p>is eqivalent to this dictionary:</p>
+<pre><code class="lang-csharp">var f = new NodeFactory();
+var p = f.CreateUriNode(new Uri(&quot;http://example.com/p&quot;));
+var o1 = f.CreateLiteralNode(&quot;o1&quot;);
+var o2 = f.CreateLiteralNode(&quot;o2&quot;);
+
+var s1 = new Dictionary&lt;INode, ICollection&lt;object&gt;&gt;
+{
+  {
+    p,
+    new object[]
+    {
+      new Dictionary&lt;INode, ICollection&lt;object&gt;&gt; // t1
+      {
+        p,
+        new INode[]
+        {
+          o1,                                    // t3
+        }
+      },
+      new Dictionary&lt;INode, ICollection&lt;object&gt;&gt; // t2
+      {
+        p,
+        new INode[]
+        {
+          o2,                                    // t4
+        }
+      }
+    }
+  },
+};
+</code></pre><p><a href="#nodes-as-dictionaries">top</a></p>
+<h3 id="literal-node-translation">Literal node translation</h3>
+<p>Literal objects on the other hand can be translated to their corresponding primitive types.</p>
+<p>For example the following graph</p>
+<pre><code class="lang-turtle">@prefix : &lt;http://example.com/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:s
+  :p
+    &quot;o&quot; ,                                              # t1
+    true ,                                             # t2
+    9223372036854775807 ,                              # t3
+    1.79769313486232E+308 ,                            # t4
+    &quot;255&quot;^^xsd:unsignedByte ,                          # t5
+    &quot;9999-12-31T23:59:59.999999+00:00&quot;^^xsd:dateTime , # t6
+    &quot;79228162514264337593543950335&quot;^^xsd:decimal ,     # t7
+    &quot;3.402823E+38&quot;^^xsd:float ,                        # t8
+    &quot;P10675199DT2H48M5.4775807S&quot;^^xsd:duration .       # t9
+</code></pre><p><img src="../../images/dynamic_api3.svg" alt="image of graph"></p>
+<p>is eqivalent to this dictionary:</p>
+<pre><code class="lang-csharp">var f = new NodeFactory();
+var p = f.CreateUriNode(new Uri(&quot;http://example.com/p&quot;));
+
+var s = new Dictionary&lt;INode, ICollection&lt;object&gt;&gt;
+{
+  {
+    p,
+    new object[]
+    {
+      &quot;o&quot;,                     // t1
+      true,                    // t2
+      long.MaxValue,           // t3
+      double.MaxValue,         // t4
+      byte.MaxValue,           // t5
+      DateTimeOffset.MaxValue, // t6
+      decimal.MaxValue,        // t7
+      float.MaxValue,          // t8
+      TimeSpan.MaxValue        // t9
+    }
+  },
+};
+</code></pre><p><a href="#nodes-as-dictionaries">top</a></p>
+<h3 id="dictionary-key-conversion">Dictionary key conversion</h3>
+<p>When looking at nodes as dictionaries, keys represent statement predicates, and so they are ultimately Uri nodes.</p>
+<pre><code class="lang-csharp">var key = f.CreateUriNode(new Uri(&quot;http://example.com/p&quot;));
+</code></pre><p>But it&#39;s safe to assume that plain Uris used as node dictionary keys also correspond to statement predicates, so they can be automatically converted to Uri nodes.</p>
+<pre><code class="lang-csharp">var key = new Uri(&quot;http://example.com/p&quot;);
+</code></pre><p>Furthermore, plain strings used as node dictionary keys can be safely assumed to be Uri strings of statement predicate nodes, so they can also be automatically converted.</p>
+<pre><code class="lang-csharp">var key = &quot;http://example.com/p&quot;;
+</code></pre><p>Assuming a base Uri, relative Uris can also be used as node dictionary indices.</p>
+<pre><code class="lang-csharp">// assuming @base &lt;http://example.com/&gt;
+var key = new Uri(&quot;p&quot;, UriKind.Relative);
+</code></pre><p>Again assuming a base Uri, node dictionary key strings that are not absolute Uris can be interpreted as relative Uris of predicate nodes.</p>
+<pre><code class="lang-csharp">// assuming @base &lt;http://example.com/&gt;
+var key = &quot;p&quot;;
+</code></pre><p>Finally, string keys that look like QNames can be expanded against a graph&#39;s namespace manager.</p>
+<pre><code class="lang-csharp">// assuming @prefix ex: &lt;http://example.com/&gt;
+var key = &quot;ex:p&quot;;
+</code></pre><p>The QName notation also works for the default (empty) prefix.</p>
+<pre><code class="lang-csharp">// assuming @prefix : &lt;http://example.com/&gt;
+var key = &quot;:p&quot;;
+</code></pre><p>To summarise, the following graph</p>
+<pre><code class="lang-turtle">@prefix : &lt;http://example.com/&gt; .
+@prefix ex: &lt;http://example.com/&gt; .
+@base &lt;http://example.com/&gt; .
+
+&lt;s&gt; &lt;p&gt; &quot;o&quot; .
+</code></pre><p><img src="../../images/dynamic_api4.svg" alt="image of graph"></p>
+<p>is equivalent to all of these dictionaries:</p>
+<pre><code class="lang-csharp">var objects = new [] { &quot;o&quot; };
+
+// Uri node
+var s = new Dictionary&lt;INode, ICollection&lt;object&gt;&gt; { {
+  f.CreateUriNode(new Uri(&quot;http://example.com/p&quot;)),
+  objects } };
+
+// Absolute Uri
+var s = new Dictionary&lt;Uri, ICollection&lt;object&gt;&gt; { {
+  new Uri(&quot;http://example.com/p&quot;),
+  objects } };
+
+// Relative Uri
+var s = new Dictionary&lt;Uri, ICollection&lt;object&gt;&gt; { {
+  new Uri(&quot;p&quot;, UriKind.Relative), 
+  objects } };
+
+// Absolute Uri string
+var s = new Dictionary&lt;string, ICollection&lt;object&gt;&gt; { {
+  &quot;http://example.com/p&quot;, 
+  objects } };
+
+// Relative Uri string
+var s = new Dictionary&lt;string, ICollection&lt;object&gt;&gt; { {
+  &quot;p&quot;, 
+  objects } };
+
+// QName
+var s = new Dictionary&lt;string, ICollection&lt;object&gt;&gt; { {
+  &quot;ex:p&quot;, 
+  objects } };
+
+// QName with default (empty) prefix
+var s = new Dictionary&lt;string, ICollection&lt;object&gt;&gt; { {
+  &quot;:p&quot;, 
+  objects } };
+</code></pre><p><a href="#nodes-as-dictionaries">top</a></p>
+<h3 id="querying-node-dictionaries">Querying node dictionaries</h3>
+<p>Assuming the following graph</p>
+<pre><code class="lang-turtle">:s1
+  :p1
+    &quot;o1&quot; ;     # t1
+    :s2 ,      # t2
+    [          # t3
+      :p2
+        &quot;o2&quot;   # t4
+    ] .
+
+:s2 :p3 &quot;o3&quot; . # t5
+</code></pre><p><img src="../../images/dynamic_api5.svg" alt="image of graph"></p>
+<p>one could get the values of the literal objects at <code>t1</code>, <code>t4</code> and <code>t5</code> like so:</p>
+<pre><code class="lang-csharp">var o1 = s1.Graph
+  .GetTriplesWithSubjectPredicate(s1, s1.Graph.CreateUriNode(new Uri(&quot;http://example.com/p1&quot;)))
+  .Select(t =&gt; t.Object)
+  .First()
+  .AsValuedNode()
+  .AsString();
+
+var o3 = s1.Graph
+  .GetTriplesWithSubjectPredicate(s1, s1.Graph.CreateUriNode(new Uri(&quot;http://example.com/p1&quot;)))
+  .Skip(1)
+  .SelectMany(o =&gt; s1.Graph
+    .GetTriplesWithSubjectPredicate(t.Object, s1.Graph.CreateUriNode(new Uri(&quot;http://example.com/p3&quot;)))
+    .Select(t =&gt; t.Object))
+  .Single()
+  .AsValuedNode()
+  .AsString();
+
+var o3 = g
+  .GetTriplesWithSubjectPredicate(s1, s1.Graph.CreateUriNode(new Uri(&quot;http://example.com/p1&quot;)))
+  .Last()
+  .SelectMany(o =&gt; s1.Graph
+    .GetTriplesWithSubjectPredicate(t.Object, s1.Graph.CreateUriNode(new Uri(&quot;http://example.com/p2&quot;)))
+    .Select(t =&gt; t.Object))
+  .Single()
+  .AsValuedNode()
+  .AsString();
+</code></pre><p>Looking at the same graph as a dictionary, we can obtain the same values like so:</p>
+<pre><code class="lang-csharp">var o1 = s1[&quot;p1&quot;].First();                // t1
+var o3 = s1[&quot;p1&quot;].Skip(1)[&quot;p3&quot;].Single(); // t2 &amp; t5
+var o2 = s1[&quot;p1&quot;].Last()[&quot;p2&quot;].Single();  // t3 &amp; t4
+</code></pre><p><a href="#nodes-as-dictionaries">top</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/user_guide/Dynamic-API.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FAQs | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="FAQs | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="faqs">FAQs</h1>
+
+<p>This page details common problems</p>
+<h2 id="platform">Platform</h2>
+<h3 id="what-platforms-does-dotnetrdf-run-on">What platforms does dotNetRDF run on?</h3>
+<p>dotNetRDF runs on .Net 4.0 Framework and higher, builds are provided for various framework profiles on the different versions of the framework. Exact supported features depend on the build used, see <a href="../user_guide/Getting-Started.html">Getting Started</a> for more details on the builds. The core library targets the following frameworks: .NET 4.0, .NET 4.0 Client Profile; and .NET Standard 2.0. Some features of the library may not be available for .NET 4.0 and particularly for the Client Profile.</p>
+<h2 id="compilationruntime-errors">Compilation/Runtime Errors</h2>
+<h3 id="how-do-i-compile-dotnetrdf-myself">How do I compile dotNetRDF myself?</h3>
+<p>Firstly check out the source from the <a href="https://github.com/dotnetrdf/dotnetrdf">GitHub repository</a>. Once downloaded you can either open the solution in Visual Studio 2019 or build on the command-line using the dotnet build command.</p>
+<p>See documentation under <code>Build/</code> in the source-code tree for more information.</p>
+<h3 id="my-code-wont-compile-because-a-namespace-or-class-from-dotnetrdf-was-not-found">My code won&#39;t compile because a namespace or class from dotNetRDF was not found?</h3>
+<p>There are a number of possible causes of this type of error, please check you have done all of the following.</p>
+<p>Have you added dotNetRDF as a reference to your project? See Getting Started for help with this</p>
+<p>Is the version of dotNetRDF referenced the correct version for the target framework version of your project? dotNetRDF comes in builds for a variety of different versions of the .Net framework, using the wrong build will lead to compile errors - see Getting Started</p>
+<p>Are you using the latest version of the library? Check the Project Status page and compare the build and version number with that shown in your editor</p>
+<p>Have you added the appropriate using declarations to your code? Check the Intellisense API to see what namespace different classes are in</p>
+<p>Are you trying to use deprecated/removed code? We have a clear <a href="../developer_guide/Deprecation-Policy.html">Deprecation Policy</a> and we actively obsolete and deprecate old APIs over time. If you upgrade your version over time you will see warnings ahead of time but if you jump several versions in one go you may encounter problems with missing APIs. See the ChangeLog.txt file in the release see what may have changed. </p>
+<h3 id="i-get-a-no-overload-for-method-x-takes-y-arguments-error-or-similar">I get a &quot;No overload for method X takes Y arguments&quot; error or similar</h3>
+<p>Some features are not available across all builds of the library because they cannot be supported on the platform (e.g. anything using synchronous HTTP is not supported under Silverlight or Windows Phone)</p>
+<p>This means that some methods shown in the documentation will not be available. Use your editors auto-complete functions to see alternative overloads for the method which are supported with the chosen build of dotNetRDF.</p>
+<h3 id="i-get-a-the-namespace-uri-for-the-given-prefix-http-is-not-known-by-the-in-scope-namespacemapper">I get a &quot;The Namespace URI for the given Prefix &#39;http&#39; is not known by the in-scope NamespaceMapper&quot;</h3>
+<p>This error occurs because you have tried to use the version of CreateUriNode() that expects a Prefixed Name e.g. rdf:type instead of the method that expects a Uri</p>
+<p>Ensure you call the version of the method that takes a Uri instance instead.</p>
+<h2 id="data-errors">Data Errors</h2>
+<h3 id="the-data-returned-from-a-remote-service-is-not-in-the-format-i-expected">The data returned from a remote service is not in the format I expected?</h3>
+<p>When you use any class that talks to some remote service to retrieve data whether it be the UriLoader or some triple store connector like the FusekiConnector the data returned will be dictated by the service you are accessing.</p>
+<p>All dotNetRDF is responsible for is sending the request to the remote service and parsing the data returned into the relevant .Net objects for you to work with. If some piece of data comes back as a <code>ILiteralNode</code> and you expected a <code>IUriNode</code> then that is nothing to with dotNetRDF - it is the remote service that returned the data in that format.</p>
+<h3 id="my-query-returned-no-results">My query returned no results?</h3>
+<p>Depending on how you make a query it is either being evaluated by dotNetRDF itself or passed off to some external service to do the query processing. There can be a number of reasons why a query did not return, check the following.</p>
+<p>Is there a typo in your query? Are you sure the query you wrote is actually correct, minor mistakes in namespace declarations can make your query syntactically correct but fail to match anything. Did you misspell a namespace or Prefixed Name?</p>
+<p>Are you using literals in triple patterns in your query? Literals in triple patterns are matched strictly in SPARQL so things that look very similar are not considered equal e.g. <code>&quot;1&quot;^^xsd:integer != &quot;1&quot;^^xsd:decimal</code> . If you are using Literals you may be better using a variable combined with a <code>FILTER</code> clause because the equality in filter expressions is value based equality so would match something like the above where triple pattern matching would not.</p>
+<p>Are there named graphs involved? If so does your query actually query the appropriate named graphs?  Please see <a href="../user_guide/SPARQL-Datasets.html">SPARQL Datasets</a> for help with this.</p>
+<p>Does the data being queried actually contain the triples you are trying to match?</p>
+<p>You can try debugging your query by following the instructions on [Debugging SPARQL Queries](../howto/Debug-SPARQL Queries.md)</p>
+<p>If you still have problems then you may wish to ask for <a href="../support/index.html">Support</a> - bear in mind that for many query able data sources such as 3rd party triple stores you are likely better off asking the people behind the store for help rather than us because we may just be sending a query and receiving a result in which case the lack of results is outside of our control.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/faq/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

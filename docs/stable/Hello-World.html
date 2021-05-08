@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hello World with dotNetRDF | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hello World with dotNetRDF | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hello-world-with-dotnetrdf">Hello World with dotNetRDF</h1>
+
+<p>So now we&#39;re going to go ahead and build a simple Hello World application using dotNetRDF. We&#39;ll start with an outline class as follows. The rest of the code in this example will be placed inside the <code>Main()</code> method</p>
+<pre><code class="lang-csharp">
+using System;
+using System.Collections.Generic;
+using VDS.RDF;
+using VDS.RDF.Writing;
+
+public class HelloWorld 
+{
+    public static void Main(String[] args) 
+    {
+        //Fill in the code shown on this page here to build your hello world application
+    }
+}
+</code></pre><p>First thing we want to do is create a graph in which we do as follows:</p>
+<pre><code class="lang-csharp">IGraph g = new Graph();
+</code></pre><p>We&#39;re using the Graph class here which is the most commonly used implementation of the <code>IGraph</code> interface.</p>
+<p>Next we want to create some Nodes and assert some Triples in the Graph like so:</p>
+<pre><code class="lang-csharp">IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create(&quot;http://www.dotnetrdf.org&quot;));
+IUriNode says = g.CreateUriNode(UriFactory.Create(&quot;http://example.org/says&quot;));
+ILiteralNode helloWorld = g.CreateLiteralNode(&quot;Hello World&quot;);
+ILiteralNode bonjourMonde = g.CreateLiteralNode(&quot;Bonjour tout le Monde&quot;, &quot;fr&quot;);
+
+g.Assert(new Triple(dotNetRDF, says, helloWorld));
+g.Assert(new Triple(dotNetRDF, says, bonjourMonde));
+</code></pre><p>As noted in the Library Overview we use the <code>Create()</code> method of the <code>UriFactory</code> class to create URIs since this will intern URIs for us which both reduces memory usage and speeds up equality comparisons.</p>
+<p>Once we&#39;ve done this we can output this to the console to see the Triples:</p>
+<pre><code class="lang-csharp">foreach (Triple t in g.Triples) 
+{
+    Console.WriteLine(t.ToString());
+}
+Console.ReadLine();
+</code></pre><p>This will give us output like the following:</p>
+<pre><code>http://www.dotnetrdf.org , http://example.org/says , Hello World
+http://www.dotnetrdf.org , http://example.org/says , Bonjour tout le Monde@fr
+</code></pre><p>Those of you who know RDF will notice that the above is not a valid RDF syntax - this is just an ultra simple representation of the Triples and is primarily intended for debugging. If we want to actually output RDF syntax then we need to use one of the classes from the <code>VDS.RDF.Writing</code> namespace. First we&#39;ll output the above in NTriples syntax:</p>
+<pre><code class="lang-csharp">NTriplesWriter ntwriter = new NTriplesWriter();
+ntwriter.Save(g, &quot;HelloWorld.nt&quot;);
+</code></pre><p>This will save the contents of the Graph to the file <code>HelloWorld.nt</code> using NTriples syntax, this gives us output like the following:</p>
+<pre><code>&lt;http://www.dotnetrdf.org&gt; &lt;http://example.org/says&gt; &quot;Hello World&quot;.
+&lt;http://www.dotnetrdf.org&gt; &lt;http://example.org/says&gt; &quot;Bonjour tout le Monde&quot;@fr.
+</code></pre><p>If we want to save the Graph to another RDF syntax we could do that as well e.g.</p>
+<pre><code class="lang-csharp">RdfXmlWriter rdfxmlwriter = new RdfXmlWriter();
+rdfxmlwriter.Save(g, &quot;HelloWorld.rdf&quot;);
+</code></pre><p>This will result in something like the following output:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE rdf:RDF[
+    &lt;!ENTITY rdf &#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#&#39;&gt;
+    &lt;!ENTITY rdfs &#39;http://www.w3.org/2000/01/rdf-schema#&#39;&gt;
+    &lt;!ENTITY xsd &#39;http://www.w3.org/2001/XMLSchema#&#39;&gt;
+]&gt;
+&lt;rdf:RDF xmlns:rdf=&quot;&amp;rdf;&quot; xmlns:rdfs=&quot;&amp;rdfs;&quot; xmlns:xsd=&quot;&amp;xsd;&quot; xmlns:ns0=&quot;http://example.org/&quot;&gt;
+    &lt;rdf:Description rdf:about=&quot;http://www.dotnetrdf.org/&quot;&gt;
+        &lt;ns0:says&gt;Hello World&lt;/ns0:says&gt;
+        &lt;ns0:says xml:lang=&quot;fr&quot;&gt;Bonjour tout le Monde&lt;/ns0:says&gt;
+    &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre><p>Notice that the RDF/XML Writer already knew about the RDF, RDFS and XML Schema Namespaces. These Namespaces are provided by default for most implementations of <code>IGraph</code>. The Writer also generates temporary namespaces of the form <code>nsX</code> for URIs that it otherwise couldn&#39;t represent in RDF/XML.</p>
+<p>Here&#39;s the complete class:</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using VDS.RDF;
+using VDS.RDF.Writing;
+
+public class HelloWorld 
+{
+    public static void Main(String[] args) 
+    {
+    //Fill in the code shown on this page here to build your hello world application
+        Graph g = new Graph();
+
+        IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create(&quot;http://www.dotnetrdf.org&quot;));
+        IUriNode says = g.CreateUriNode(UriFactory.Create(&quot;http://example.org/says&quot;));
+        ILiteralNode helloWorld = g.CreateLiteralNode(&quot;Hello World&quot;);
+        ILiteralNode bonjourMonde = g.CreateLiteralNode(&quot;Bonjour tout le Monde&quot;, &quot;fr&quot;);
+
+        g.Assert(new Triple(dotNetRDF, says, helloWorld));
+        g.Assert(new Triple(dotNetRDF, says, bonjourMonde));
+
+        foreach (Triple t in g.Triples)
+        {
+            Console.WriteLine(t.ToString());
+        }
+
+        NTriplesWriter ntwriter = new NTriplesWriter();
+        ntwriter.Save(g, &quot;HelloWorld.nt&quot;);
+
+        RdfXmlWriter rdfxmlwriter = new RdfXmlWriter();
+        rdfxmlwriter.Save(g, &quot;HelloWorld.rdf&quot;);
+
+        Console.ReadLine();
+    }
+}
+</code></pre><h2 id="compilerruntime-errors">Compiler/Runtime Errors</h2>
+<p>If the simple example above gives you compiler/runtime errors then it is likely you haven&#39;t set up your environment correctly. Please refer to the <a href="Getting-Started.html">Getting Started</a> document for more detail but the main thing to watch out for is that the default build of dotNetRDF targets .Net 4.0 Full while VS2010 will default most new projects to .Net 4.0 Client Profile. If you got dotNetRDF via NuGet then you should get the correct version though NuGet doesn&#39;t always properly cope with you changing the target framework version after you have installed a package.</p>
+<p>If you really can&#39;t get this working you can ask for [Support]] but please try the obvious things first.</p>
+<hr>
+<h1 id="tutorial-navigation">Tutorial Navigation</h1>
+<p>The next topic in the tutorial is [<a href="Reading-RDF.html">Reading RDF</a>, the previous topic was the <a href="Library-Overview.html">Library Overview</a>.</p>
+<p>Users who wish to learn more may wish to jump straight to the following topics:</p>
+<ul>
+<li><a href="Working-With-Graphs.html">Working with Graphs</a></li>
+<li><a href="Writing-RDF.html">Writing RDF</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/Hello-World.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

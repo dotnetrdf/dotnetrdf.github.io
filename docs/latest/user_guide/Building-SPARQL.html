@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Building SPARQL | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Building SPARQL | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="building-sparql">Building SPARQL</h1>
+
+<p>SPARQL is the standard query language for the Semantic Web and can be used to query large volumes of RDF data. <a href="https://www.w3.org/TR/2013/REC-sparql11-query-20130321">SPARQL Query Language Specification</a> defines the syntax and semantics of the language and explains SPARQL query buildling with numerous examples. SPARQL standard is drafted and maintained by <a href="https://www.w3.org/Consortium/">W3C</a>.</p>
+<p>dotNetRDF facilitates SPARQL construction with a set of APIs under <a href="http://www.dotnetrdf.org/api/html/N_VDS_RDF_Query_Builder.htm"><code>VDS.RDF.Query.Builder</code> namespace</a>. We&#39;ll look at some of the common queries patterns you can construct using dotnetRDF.</p>
+<h2 id="hello-world">Hello World</h2>
+<p>Constructing a simple &quot;Hello World&quot; SPARQL. This query fetches all users whose last name is &quot;John Smith&quot;</p>
+<pre><code class="lang-SPARQL"> SELECT ?x
+ WHERE { ?x &lt;http://www.w3.org/2001/vcard-rdf/3.0#FN&gt;  &quot;John Smith&quot; }
+</code></pre><pre><code class="lang-C#">using System;
+using VDS.RDF.Query.Builder;
+
+static void HelloWorld()
+{
+    string x = &quot;x&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { x })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(x)
+                    .PredicateUri(new Uri(&quot;http://www.w3.org/2001/vcard-rdf/3.0#FN&quot;))
+                    .Object(&quot;John Smith&quot;);
+            });
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="prefix-with-multiple-triples"><code>PREFIX</code> with multiple triples</h2>
+<p>The query fetches given names for the family name &quot;Smith&quot;.</p>
+<pre><code class="lang-SPARQL">PREFIX vcard:      &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;
+
+SELECT ?givenName
+WHERE
+{ 
+    ?y vcard:Family &quot;Smith&quot; .
+    ?y vcard:Given ?givenName .
+}
+</code></pre><pre><code class="lang-C#">using System;
+using VDS.RDF;
+using VDS.RDF.Query;
+using VDS.RDF.Query.Builder;
+
+static void WithPrefix()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;vcard&quot;, new Uri(&quot;http://www.w3.org/2001/vcard-rdf/3.0#&quot;));
+
+    string y = &quot;y&quot;;
+    var givenName = new SparqlVariable(&quot;givenName&quot;);
+    var queryBuilder =
+        QueryBuilder
+        .Select(new SparqlVariable[] { givenName })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(y)
+                    .PredicateUri(&quot;vcard:Family&quot;)
+                    .Object(&quot;Smith&quot;);
+                triplePatternBuilder
+                    .Subject(y)
+                    .PredicateUri(&quot;vcard:Given&quot;)
+                    .Object(givenName);
+            });
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="numeric-filter">Numeric <code>FILTER</code></h2>
+<p>This query filters resources above 24 years of age.</p>
+<pre><code class="lang-SPARQL">PREFIX info: &lt; http://somewhere/peopleInfo#&gt;
+
+SELECT ?resource
+WHERE
+{
+    ?resource info:age ?age .
+    FILTER(?age &gt;= 24)
+}
+</code></pre><pre><code class="lang-C#">using System;
+using VDS.RDF;
+using VDS.RDF.Query;
+using VDS.RDF.Query.Builder;
+
+static void WithNumericFilter()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;info&quot;, new Uri(&quot;http://somewhere/peopleInfo#&quot;));
+
+    string resource = &quot;resource&quot;;
+    string age = &quot;age&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { resource })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(resource)
+                    .PredicateUri($&quot;info:{age}&quot;)
+                    .Object(age);
+            })
+        .Filter((builder) =&gt; builder.Variable(age) &gt; 24);
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="regex-filter">Regex <code>FILTER</code></h2>
+<p>This query filters given names based on a case-insensitive regex comparison.</p>
+<pre><code class="lang-SPARQL">PREFIX vcard: &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;
+
+SELECT ?g
+WHERE
+{
+    ?y vcard:Given ?g .
+    FILTER regex(?g, &quot;sarah&quot;, &quot;i&quot;)
+}
+</code></pre><pre><code class="lang-C#">using System;
+using VDS.RDF;
+using VDS.RDF.Query;
+using VDS.RDF.Query.Builder;
+
+static void WithRegexFilter()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;vcard&quot;, new Uri(&quot;http://www.w3.org/2001/vcard-rdf/3.0#&quot;));
+
+    var givenName = new SparqlVariable(&quot;givenName&quot;);
+    var queryBuilder =
+        QueryBuilder
+        .Select(new SparqlVariable[] { givenName })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(&quot;y&quot;)
+                    .PredicateUri(&quot;vcard:Given&quot;)
+                    .Object(givenName);
+            })
+        .Filter((builder) =&gt; builder.Regex(builder.Variable(&quot;givenName&quot;), &quot;sarah&quot;, &quot;i&quot;));
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="optional-clause-with-filter"><code>OPTIONAL</code> clause with <code>FILTER</code></h2>
+<p>This query fetches name and optional age above 42.</p>
+<pre><code class="lang-SPARQL">PREFIX info:        &lt;http://somewhere/peopleInfo#&gt;
+PREFIX vcard:      &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;
+
+SELECT ?name ?age
+WHERE
+{
+    ?person vcard:FN  ?name .
+    OPTIONAL { ?person info:age ?age . FILTER ( ?age &gt; 42 ) }
+}
+</code></pre><pre><code class="lang-C#">static void WithOptionalAndFilter()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;info&quot;, new Uri(&quot;http://somewhere/peopleInfo#&quot;));
+    prefixes.AddNamespace(&quot;vcard&quot;, new Uri(&quot;http://www.w3.org/2001/vcard-rdf/3.0#&quot;));
+
+    string name = &quot;name&quot;;
+    string age = &quot;age&quot;;
+    string person = &quot;person&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { name, age })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(person)
+                    .PredicateUri(&quot;vcard:FN&quot;)
+                    .Object(name);
+            })
+        .Optional(
+            (optionalBuilder) =&gt;
+            {
+                optionalBuilder.Where(
+                    (triplePatternBuilder) =&gt;
+                    {
+                        triplePatternBuilder
+                            .Subject(person)
+                            .PredicateUri($&quot;info:{age}&quot;)
+                            .Object(age);
+                    });
+
+                optionalBuilder.Filter((b) =&gt; b.Variable(age) &gt; 42);
+            });
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+</code></pre><h2 id="union"><code>UNION</code></h2>
+<p>This query unions two triple patterns.</p>
+<pre><code class="lang-SPARQL">PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX vcard: &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;
+
+SELECT ?name
+WHERE
+{
+   { [] foaf:name ?name } UNION { [] vcard:FN ?name }
+}
+</code></pre><pre><code class="lang-C#">public static void WithUnion()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;foaf&quot;, new Uri(&quot;http://xmlns.com/foaf/0.1/&quot;));
+    prefixes.AddNamespace(&quot;vcard&quot;, new Uri(&quot;http://www.w3.org/2001/vcard-rdf/3.0#&quot;));
+
+    string name = &quot;name&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { name })
+        .GetQueryBuilder();
+
+    queryBuilder
+        .Union(
+            (unionBuilder) =&gt;
+            {
+                unionBuilder.Where(
+                    (tripleBuilder) =&gt;
+                {
+                    tripleBuilder
+                    .Subject&lt;IBlankNode&gt;(&quot;abc&quot;)
+                    .PredicateUri($&quot;foaf:{name}&quot;)
+                    .Object(name);
+                });
+            },
+            (unionBuilder) =&gt;
+            {
+                unionBuilder.Where(
+                    c =&gt;
+                    {
+                        c
+                        .Subject&lt;IBlankNode&gt;(&quot;abc&quot;)
+                        .PredicateUri(&quot;vcard:FN&quot;)
+                        .Object(name);
+                    });
+            });
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="order-by"><code>ORDER BY</code></h2>
+<p>This query orders by name.</p>
+<pre><code class="lang-SPARQL">PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
+
+SELECT ?name
+WHERE { ?x foaf:name ?name }
+ORDER BY ?name
+</code></pre><pre><code class="lang-C#">static void WithOrderBy()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;foaf&quot;, new Uri(&quot;http://xmlns.com/foaf/0.1/&quot;));
+
+    string name = &quot;name&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { name })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(&quot;x&quot;)
+                    .PredicateUri($&quot;foaf:{name}&quot;)
+                    .Object(name);
+            })
+        .OrderBy(name);
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="distinct"><code>DISTINCT</code></h2>
+<p>This query enforces distinctness on names.</p>
+<pre><code class="lang-SPARQL">PREFIX foaf:   &lt; http://xmlns.com/foaf/0.1/&gt;
+SELECT DISTINCT ?name WHERE { ?x foaf:name? name }
+</code></pre><pre><code class="lang-C#">static void WithDistinct()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;foaf&quot;, new Uri(&quot;http://xmlns.com/foaf/0.1/&quot;));
+
+    string name = &quot;name&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { name })
+        .Distinct()
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(&quot;x&quot;)
+                    .PredicateUri($&quot;foaf:{name}&quot;)
+                    .Object(name);
+            });
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="limit"><code>LIMIT</code></h2>
+<p>This query limits the result set to 20.</p>
+<pre><code class="lang-SPARQL">PREFIX foaf:    &lt;http://xmlns.com/foaf/0.1/&gt;
+
+SELECT ?name
+WHERE { ?x foaf:name ?name }
+LIMIT 20
+</code></pre><pre><code class="lang-C#">static void WithLimit()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;foaf&quot;, new Uri(&quot;http://xmlns.com/foaf/0.1/&quot;));
+
+    string name = &quot;name&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { name })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(&quot;x&quot;)
+                    .PredicateUri($&quot;foaf:{name}&quot;)
+                    .Object(name);
+            })
+        .Limit(20);
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="bind"><code>BIND</code></h2>
+<p>This query creates a computed column with an alias using <code>BIND</code>.</p>
+<pre><code class="lang-SPARQL">PREFIX  dc:  &lt;http://purl.org/dc/elements/1.1/&gt;
+PREFIX  ns:  &lt;http://example.org/ns#&gt;
+
+SELECT  ?price
+WHERE
+{  ?x ns:price ?p .
+   ?x ns:discount ?discount
+   BIND (?p*(1-?discount) AS ?price)
+}
+</code></pre><pre><code class="lang-C#">static void WithBind()
+{
+    var prefixes = new NamespaceMapper(true);
+    prefixes.AddNamespace(&quot;dc&quot;, new Uri(&quot;http://purl.org/dc/elements/1.1/&quot;));
+    prefixes.AddNamespace(&quot;ns&quot;, new Uri(&quot;http://example.org/ns#&quot;));
+
+    string p = &quot;p&quot;;
+    string x = &quot;x&quot;;
+    string discount = &quot;discount&quot;;
+    string price = &quot;price&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(price)
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(x)
+                    .PredicateUri($&quot;ns:{price}&quot;)
+                    .Object(p);
+                triplePatternBuilder
+                    .Subject(x)
+                    .PredicateUri($&quot;ns:{discount}&quot;)
+                    .Object(discount);
+            })
+        .Bind((builder) =&gt; builder.Variable(p) * (1 - builder.Variable(discount)))
+            .As(price);
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h2 id="term-constraints">Term Constraints</h2>
+<p>This query demonstrates enforcing type constraints on terms.</p>
+<pre><code class="lang-SPARQL">PREFIX info: &lt; http://somewhere/peopleInfo#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?resource
+WHERE
+  {
+    ?resource info:bornafter ?bornafter .
+    FILTER(?bornafter &gt;= &quot;1970-01-01T00:00:00.000000&quot;^^xsd:dateTime)
+  }
+</code></pre><pre><code class="lang-C#">static void WithTermConstraints()
+{
+    var prefixes = new NamespaceMapper(false);
+    prefixes.AddNamespace(&quot;info&quot;, new Uri(&quot;http://somewhere/peopleInfo#&quot;));
+
+    string resource = &quot;resource&quot;;
+    string bornafter = &quot;bornafter&quot;;
+    var queryBuilder =
+        QueryBuilder
+        .Select(new string[] { resource })
+        .Where(
+            (triplePatternBuilder) =&gt;
+            {
+                triplePatternBuilder
+                    .Subject(resource)
+                    .PredicateUri($&quot;info:{bornafter}&quot;)
+                    .Object(bornafter);
+            })
+        .Filter((builder) =&gt; builder.Variable(bornafter) &gt;= builder.Constant(new DateTime(1970, 1, 1)));
+    queryBuilder.Prefixes = prefixes;
+
+    Console.WriteLine(queryBuilder.BuildQuery().ToString());
+}
+</code></pre><h1 id="tutorial-navigation">Tutorial Navigation</h1>
+<p>The previous topic was <a href="Working-With-Triple-Stores.html">Working with Triple Stores</a>, the next topic is <a href="Querying-With-SPARQL.html">Querying with SPARQL</a></p>
+<p>Users wishing to learn more may wish to jump to the following topic:</p>
+<ul>
+<li><a href="Advanced-SPARQL.html">Advanced SPARQL</a></li>
+</ul>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Building-SPARQL.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1971 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExplainQueryProcessor
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExplainQueryProcessor
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.ExplainQueryProcessor">
+  
+  
+  <h1 id="VDS_RDF_Query_ExplainQueryProcessor" data-uid="VDS.RDF.Query.ExplainQueryProcessor" class="text-break">Class ExplainQueryProcessor
+  </h1>
+  <div class="markdown level0 summary"><p>A Query Processor which evaluates queries while printing explanations to any/all of Debug, Trace, Console Standard Output and Console Standard Error.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a></div>
+    <div class="level2"><span class="xref">ExplainQueryProcessor</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.ISparqlQueryAlgebraProcessor-2.html">ISparqlQueryAlgebraProcessor</a>&lt;<a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a>, <a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessQuery_VDS_RDF_Query_SparqlQuery_">LeviathanQueryProcessor.ProcessQuery(SparqlQuery)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">LeviathanQueryProcessor.ProcessQuery(IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessQuery_VDS_RDF_Query_SparqlQuery_VDS_RDF_GraphCallback_VDS_RDF_SparqlResultsCallback_System_Object_">LeviathanQueryProcessor.ProcessQuery(SparqlQuery, GraphCallback, SparqlResultsCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_VDS_RDF_QueryCallback_System_Object_">LeviathanQueryProcessor.ProcessQuery(IRdfHandler, ISparqlResultsHandler, SparqlQuery, QueryCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_GetContext">LeviathanQueryProcessor.GetContext()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessAlgebra(ISparqlAlgebra, SparqlEvaluationContext)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.html">VDS.RDF.Query</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  <h5 id="VDS_RDF_Query_ExplainQueryProcessor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ExplainQueryProcessor : LeviathanQueryProcessor, ISparqlQueryProcessor, ISparqlQueryAlgebraProcessor&lt;BaseMultiset, SparqlEvaluationContext&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_IInMemoryQueryableStore_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.%23ctor(VDS.RDF.IInMemoryQueryableStore)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L243">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor__ctor_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_IInMemoryQueryableStore_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor(VDS.RDF.IInMemoryQueryableStore)">ExplainQueryProcessor(IInMemoryQueryableStore)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Explain Query Processor that will use the Default Explanation Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExplainQueryProcessor(IInMemoryQueryableStore store)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Triple Store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_IInMemoryQueryableStore_VDS_RDF_Query_ExplanationLevel_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.%23ctor(VDS.RDF.IInMemoryQueryableStore%2CVDS.RDF.Query.ExplanationLevel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L251">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor__ctor_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_IInMemoryQueryableStore_VDS_RDF_Query_ExplanationLevel_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor(VDS.RDF.IInMemoryQueryableStore,VDS.RDF.Query.ExplanationLevel)">ExplainQueryProcessor(IInMemoryQueryableStore, ExplanationLevel)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Explain Query Processor with the desired Explanation Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExplainQueryProcessor(IInMemoryQueryableStore store, ExplanationLevel level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Triple Store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.ExplanationLevel.html">ExplanationLevel</a></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>Explanation Level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.%23ctor(VDS.RDF.Query.Datasets.ISparqlDataset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L217">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor__ctor_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor(VDS.RDF.Query.Datasets.ISparqlDataset)">ExplainQueryProcessor(ISparqlDataset)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Explain Query Processor that will use the Default Explanation Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExplainQueryProcessor(ISparqlDataset dataset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>Dataset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_VDS_RDF_Query_ExplanationLevel_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.%23ctor(VDS.RDF.Query.Datasets.ISparqlDataset%2CVDS.RDF.Query.ExplanationLevel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L233">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor__ctor_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_VDS_RDF_Query_ExplanationLevel_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.#ctor(VDS.RDF.Query.Datasets.ISparqlDataset,VDS.RDF.Query.ExplanationLevel)">ExplainQueryProcessor(ISparqlDataset, ExplanationLevel)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Explain Query Processor with the desired Explanation Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExplainQueryProcessor(ISparqlDataset dataset, ExplanationLevel level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>Dataset.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.ExplanationLevel.html">ExplanationLevel</a></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>Explanation Level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ExplanationLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ExplanationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L257">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ExplanationLevel_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ExplanationLevel*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ExplanationLevel" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ExplanationLevel">ExplanationLevel</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the Explanation Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExplanationLevel ExplanationLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.ExplanationLevel.html">ExplanationLevel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessAsk_VDS_RDF_Query_Algebra_Ask_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessAsk(VDS.RDF.Query.Algebra.Ask%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L661">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessAsk_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessAsk*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessAsk_VDS_RDF_Query_Algebra_Ask_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessAsk(VDS.RDF.Query.Algebra.Ask,VDS.RDF.Query.SparqlEvaluationContext)">ProcessAsk(Ask, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes an Ask.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessAsk(Ask ask, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Ask.html">Ask</a></td>
+        <td><span class="parametername">ask</span></td>
+        <td><p>Ask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessAsk_VDS_RDF_Query_Algebra_Ask_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessAsk(Ask, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessBgp_VDS_RDF_Query_Algebra_IBgp_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessBgp(VDS.RDF.Query.Algebra.IBgp%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L671">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessBgp_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessBgp*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessBgp_VDS_RDF_Query_Algebra_IBgp_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessBgp(VDS.RDF.Query.Algebra.IBgp,VDS.RDF.Query.SparqlEvaluationContext)">ProcessBgp(IBgp, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a BGP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessBgp(IBgp bgp, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IBgp.html">IBgp</a></td>
+        <td><span class="parametername">bgp</span></td>
+        <td><p>BGP.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessBgp_VDS_RDF_Query_Algebra_IBgp_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessBgp(IBgp, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessBindings_VDS_RDF_Query_Algebra_Bindings_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessBindings(VDS.RDF.Query.Algebra.Bindings%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L681">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessBindings_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessBindings*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessBindings_VDS_RDF_Query_Algebra_Bindings_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessBindings(VDS.RDF.Query.Algebra.Bindings,VDS.RDF.Query.SparqlEvaluationContext)">ProcessBindings(Bindings, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Bindings modifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessBindings(Bindings b, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Bindings.html">Bindings</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>Bindings.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessBindings_VDS_RDF_Query_Algebra_Bindings_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessBindings(Bindings, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessDistinct_VDS_RDF_Query_Algebra_Distinct_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessDistinct(VDS.RDF.Query.Algebra.Distinct%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L691">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessDistinct_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessDistinct*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessDistinct_VDS_RDF_Query_Algebra_Distinct_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessDistinct(VDS.RDF.Query.Algebra.Distinct,VDS.RDF.Query.SparqlEvaluationContext)">ProcessDistinct(Distinct, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Distinct modifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessDistinct(Distinct distinct, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Distinct.html">Distinct</a></td>
+        <td><span class="parametername">distinct</span></td>
+        <td><p>Distinct modifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessDistinct_VDS_RDF_Query_Algebra_Distinct_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessDistinct(Distinct, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessExistsJoin_VDS_RDF_Query_Algebra_IExistsJoin_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessExistsJoin(VDS.RDF.Query.Algebra.IExistsJoin%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L701">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessExistsJoin_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessExistsJoin*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessExistsJoin_VDS_RDF_Query_Algebra_IExistsJoin_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessExistsJoin(VDS.RDF.Query.Algebra.IExistsJoin,VDS.RDF.Query.SparqlEvaluationContext)">ProcessExistsJoin(IExistsJoin, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes an Exists Join.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessExistsJoin(IExistsJoin existsJoin, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IExistsJoin.html">IExistsJoin</a></td>
+        <td><span class="parametername">existsJoin</span></td>
+        <td><p>Exists Join.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessExistsJoin_VDS_RDF_Query_Algebra_IExistsJoin_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessExistsJoin(IExistsJoin, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessExtend_VDS_RDF_Query_Algebra_Extend_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessExtend(VDS.RDF.Query.Algebra.Extend%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L711">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessExtend_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessExtend*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessExtend_VDS_RDF_Query_Algebra_Extend_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessExtend(VDS.RDF.Query.Algebra.Extend,VDS.RDF.Query.SparqlEvaluationContext)">ProcessExtend(Extend, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes an Extend.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessExtend(Extend extend, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Extend.html">Extend</a></td>
+        <td><span class="parametername">extend</span></td>
+        <td><p>Extend.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessExtend_VDS_RDF_Query_Algebra_Extend_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessExtend(Extend, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessFilter_VDS_RDF_Query_Algebra_IFilter_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessFilter(VDS.RDF.Query.Algebra.IFilter%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L721">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessFilter_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessFilter*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessFilter_VDS_RDF_Query_Algebra_IFilter_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessFilter(VDS.RDF.Query.Algebra.IFilter,VDS.RDF.Query.SparqlEvaluationContext)">ProcessFilter(IFilter, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessFilter(IFilter filter, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IFilter.html">IFilter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessFilter_VDS_RDF_Query_Algebra_IFilter_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessFilter(IFilter, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessGraph_VDS_RDF_Query_Algebra_Graph_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessGraph(VDS.RDF.Query.Algebra.Graph%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L731">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessGraph_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessGraph*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessGraph_VDS_RDF_Query_Algebra_Graph_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessGraph(VDS.RDF.Query.Algebra.Graph,VDS.RDF.Query.SparqlEvaluationContext)">ProcessGraph(Graph, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessGraph(Graph graph, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Graph.html">Graph</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessGraph_VDS_RDF_Query_Algebra_Graph_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessGraph(Graph, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessGroupBy_VDS_RDF_Query_Algebra_GroupBy_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessGroupBy(VDS.RDF.Query.Algebra.GroupBy%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L741">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessGroupBy_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessGroupBy*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessGroupBy_VDS_RDF_Query_Algebra_GroupBy_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessGroupBy(VDS.RDF.Query.Algebra.GroupBy,VDS.RDF.Query.SparqlEvaluationContext)">ProcessGroupBy(GroupBy, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Group By.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessGroupBy(GroupBy groupBy, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.GroupBy.html">GroupBy</a></td>
+        <td><span class="parametername">groupBy</span></td>
+        <td><p>Group By.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessGroupBy_VDS_RDF_Query_Algebra_GroupBy_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessGroupBy(GroupBy, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessHaving_VDS_RDF_Query_Algebra_Having_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessHaving(VDS.RDF.Query.Algebra.Having%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L751">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessHaving_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessHaving*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessHaving_VDS_RDF_Query_Algebra_Having_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessHaving(VDS.RDF.Query.Algebra.Having,VDS.RDF.Query.SparqlEvaluationContext)">ProcessHaving(Having, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Having.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessHaving(Having having, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Having.html">Having</a></td>
+        <td><span class="parametername">having</span></td>
+        <td><p>Having.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessHaving_VDS_RDF_Query_Algebra_Having_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessHaving(Having, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessJoin_VDS_RDF_Query_Algebra_IJoin_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessJoin(VDS.RDF.Query.Algebra.IJoin%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L761">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessJoin_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessJoin*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessJoin_VDS_RDF_Query_Algebra_IJoin_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessJoin(VDS.RDF.Query.Algebra.IJoin,VDS.RDF.Query.SparqlEvaluationContext)">ProcessJoin(IJoin, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Join.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessJoin(IJoin join, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IJoin.html">IJoin</a></td>
+        <td><span class="parametername">join</span></td>
+        <td><p>Join.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessJoin_VDS_RDF_Query_Algebra_IJoin_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessJoin(IJoin, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessLeftJoin_VDS_RDF_Query_Algebra_ILeftJoin_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessLeftJoin(VDS.RDF.Query.Algebra.ILeftJoin%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L771">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessLeftJoin_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessLeftJoin*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessLeftJoin_VDS_RDF_Query_Algebra_ILeftJoin_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessLeftJoin(VDS.RDF.Query.Algebra.ILeftJoin,VDS.RDF.Query.SparqlEvaluationContext)">ProcessLeftJoin(ILeftJoin, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a LeftJoin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessLeftJoin(ILeftJoin leftJoin, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ILeftJoin.html">ILeftJoin</a></td>
+        <td><span class="parametername">leftJoin</span></td>
+        <td><p>Left Join.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessLeftJoin_VDS_RDF_Query_Algebra_ILeftJoin_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessLeftJoin(ILeftJoin, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessMinus_VDS_RDF_Query_Algebra_IMinus_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessMinus(VDS.RDF.Query.Algebra.IMinus%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L781">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessMinus_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessMinus*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessMinus_VDS_RDF_Query_Algebra_IMinus_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessMinus(VDS.RDF.Query.Algebra.IMinus,VDS.RDF.Query.SparqlEvaluationContext)">ProcessMinus(IMinus, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Minus.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessMinus(IMinus minus, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IMinus.html">IMinus</a></td>
+        <td><span class="parametername">minus</span></td>
+        <td><p>Minus.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessMinus_VDS_RDF_Query_Algebra_IMinus_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessMinus(IMinus, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessNegatedPropertySet_VDS_RDF_Query_Algebra_NegatedPropertySet_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessNegatedPropertySet(VDS.RDF.Query.Algebra.NegatedPropertySet%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L792">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessNegatedPropertySet_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessNegatedPropertySet*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessNegatedPropertySet_VDS_RDF_Query_Algebra_NegatedPropertySet_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessNegatedPropertySet(VDS.RDF.Query.Algebra.NegatedPropertySet,VDS.RDF.Query.SparqlEvaluationContext)">ProcessNegatedPropertySet(NegatedPropertySet, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Negated Property Set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessNegatedPropertySet(NegatedPropertySet negPropSet, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.NegatedPropertySet.html">NegatedPropertySet</a></td>
+        <td><span class="parametername">negPropSet</span></td>
+        <td><p>Negated Property Set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessNegatedPropertySet_VDS_RDF_Query_Algebra_NegatedPropertySet_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessNegatedPropertySet(NegatedPropertySet, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessNullOperator_VDS_RDF_Query_Algebra_NullOperator_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessNullOperator(VDS.RDF.Query.Algebra.NullOperator%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L803">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessNullOperator_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessNullOperator*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessNullOperator_VDS_RDF_Query_Algebra_NullOperator_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessNullOperator(VDS.RDF.Query.Algebra.NullOperator,VDS.RDF.Query.SparqlEvaluationContext)">ProcessNullOperator(NullOperator, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Null Operator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessNullOperator(NullOperator nullOp, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.NullOperator.html">NullOperator</a></td>
+        <td><span class="parametername">nullOp</span></td>
+        <td><p>Null Operator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessNullOperator_VDS_RDF_Query_Algebra_NullOperator_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessNullOperator(NullOperator, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessOneOrMorePath_VDS_RDF_Query_Algebra_OneOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessOneOrMorePath(VDS.RDF.Query.Algebra.OneOrMorePath%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L814">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessOneOrMorePath_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessOneOrMorePath*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessOneOrMorePath_VDS_RDF_Query_Algebra_OneOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessOneOrMorePath(VDS.RDF.Query.Algebra.OneOrMorePath,VDS.RDF.Query.SparqlEvaluationContext)">ProcessOneOrMorePath(OneOrMorePath, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a One or More Path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessOneOrMorePath(OneOrMorePath path, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.OneOrMorePath.html">OneOrMorePath</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessOneOrMorePath_VDS_RDF_Query_Algebra_OneOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessOneOrMorePath(OneOrMorePath, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessOrderBy_VDS_RDF_Query_Algebra_OrderBy_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessOrderBy(VDS.RDF.Query.Algebra.OrderBy%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L824">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessOrderBy_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessOrderBy*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessOrderBy_VDS_RDF_Query_Algebra_OrderBy_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessOrderBy(VDS.RDF.Query.Algebra.OrderBy,VDS.RDF.Query.SparqlEvaluationContext)">ProcessOrderBy(OrderBy, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes an Order By.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessOrderBy(OrderBy orderBy, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.OrderBy.html">OrderBy</a></td>
+        <td><span class="parametername">orderBy</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessOrderBy_VDS_RDF_Query_Algebra_OrderBy_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessOrderBy(OrderBy, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessPropertyPath_VDS_RDF_Query_Algebra_PropertyPath_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessPropertyPath(VDS.RDF.Query.Algebra.PropertyPath%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L835">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessPropertyPath_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessPropertyPath*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessPropertyPath_VDS_RDF_Query_Algebra_PropertyPath_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessPropertyPath(VDS.RDF.Query.Algebra.PropertyPath,VDS.RDF.Query.SparqlEvaluationContext)">ProcessPropertyPath(PropertyPath, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Property Path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessPropertyPath(PropertyPath path, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.PropertyPath.html">PropertyPath</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessPropertyPath_VDS_RDF_Query_Algebra_PropertyPath_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessPropertyPath(PropertyPath, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessReduced_VDS_RDF_Query_Algebra_Reduced_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessReduced(VDS.RDF.Query.Algebra.Reduced%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L845">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessReduced_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessReduced*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessReduced_VDS_RDF_Query_Algebra_Reduced_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessReduced(VDS.RDF.Query.Algebra.Reduced,VDS.RDF.Query.SparqlEvaluationContext)">ProcessReduced(Reduced, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Reduced modifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessReduced(Reduced reduced, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Reduced.html">Reduced</a></td>
+        <td><span class="parametername">reduced</span></td>
+        <td><p>Reduced modifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessReduced_VDS_RDF_Query_Algebra_Reduced_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessReduced(Reduced, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessSelect_VDS_RDF_Query_Algebra_Select_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessSelect(VDS.RDF.Query.Algebra.Select%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L855">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSelect_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSelect*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSelect_VDS_RDF_Query_Algebra_Select_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSelect(VDS.RDF.Query.Algebra.Select,VDS.RDF.Query.SparqlEvaluationContext)">ProcessSelect(Select, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Select.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessSelect(Select select, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Select.html">Select</a></td>
+        <td><span class="parametername">select</span></td>
+        <td><p>Select.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessSelect_VDS_RDF_Query_Algebra_Select_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessSelect(Select, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessSelectDistinctGraphs_VDS_RDF_Query_Algebra_SelectDistinctGraphs_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessSelectDistinctGraphs(VDS.RDF.Query.Algebra.SelectDistinctGraphs%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L865">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSelectDistinctGraphs_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSelectDistinctGraphs*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSelectDistinctGraphs_VDS_RDF_Query_Algebra_SelectDistinctGraphs_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSelectDistinctGraphs(VDS.RDF.Query.Algebra.SelectDistinctGraphs,VDS.RDF.Query.SparqlEvaluationContext)">ProcessSelectDistinctGraphs(SelectDistinctGraphs, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Select Distinct Graphs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessSelectDistinctGraphs(SelectDistinctGraphs selDistGraphs, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.SelectDistinctGraphs.html">SelectDistinctGraphs</a></td>
+        <td><span class="parametername">selDistGraphs</span></td>
+        <td><p>Select Distinct Graphs.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessSelectDistinctGraphs_VDS_RDF_Query_Algebra_SelectDistinctGraphs_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessSelectDistinctGraphs(SelectDistinctGraphs, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessService_VDS_RDF_Query_Algebra_Service_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessService(VDS.RDF.Query.Algebra.Service%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L875">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessService_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessService*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessService_VDS_RDF_Query_Algebra_Service_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessService(VDS.RDF.Query.Algebra.Service,VDS.RDF.Query.SparqlEvaluationContext)">ProcessService(Service, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessService(Service service, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Service.html">Service</a></td>
+        <td><span class="parametername">service</span></td>
+        <td><p>Service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessService_VDS_RDF_Query_Algebra_Service_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessService(Service, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessSlice_VDS_RDF_Query_Algebra_Slice_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessSlice(VDS.RDF.Query.Algebra.Slice%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L885">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSlice_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSlice*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSlice_VDS_RDF_Query_Algebra_Slice_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSlice(VDS.RDF.Query.Algebra.Slice,VDS.RDF.Query.SparqlEvaluationContext)">ProcessSlice(Slice, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Slice modifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessSlice(Slice slice, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.Slice.html">Slice</a></td>
+        <td><span class="parametername">slice</span></td>
+        <td><p>Slice modifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessSlice_VDS_RDF_Query_Algebra_Slice_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessSlice(Slice, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessSubQuery_VDS_RDF_Query_Algebra_SubQuery_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessSubQuery(VDS.RDF.Query.Algebra.SubQuery%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L896">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSubQuery_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSubQuery*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessSubQuery_VDS_RDF_Query_Algebra_SubQuery_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessSubQuery(VDS.RDF.Query.Algebra.SubQuery,VDS.RDF.Query.SparqlEvaluationContext)">ProcessSubQuery(SubQuery, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Subquery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessSubQuery(SubQuery subquery, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.SubQuery.html">SubQuery</a></td>
+        <td><span class="parametername">subquery</span></td>
+        <td><p>Subquery.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessSubQuery_VDS_RDF_Query_Algebra_SubQuery_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessSubQuery(SubQuery, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessUnion_VDS_RDF_Query_Algebra_IUnion_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessUnion(VDS.RDF.Query.Algebra.IUnion%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L906">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessUnion_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessUnion*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessUnion_VDS_RDF_Query_Algebra_IUnion_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessUnion(VDS.RDF.Query.Algebra.IUnion,VDS.RDF.Query.SparqlEvaluationContext)">ProcessUnion(IUnion, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Union.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessUnion(IUnion union, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.IUnion.html">IUnion</a></td>
+        <td><span class="parametername">union</span></td>
+        <td><p>Union.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessUnion_VDS_RDF_Query_Algebra_IUnion_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessUnion(IUnion, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessUnknownOperator_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessUnknownOperator(VDS.RDF.Query.Algebra.ISparqlAlgebra%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L916">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessUnknownOperator_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessUnknownOperator*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessUnknownOperator_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessUnknownOperator(VDS.RDF.Query.Algebra.ISparqlAlgebra,VDS.RDF.Query.SparqlEvaluationContext)">ProcessUnknownOperator(ISparqlAlgebra, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Unknown Operator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessUnknownOperator(ISparqlAlgebra algebra, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">algebra</span></td>
+        <td><p>Unknown Operator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessUnknownOperator_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessUnknownOperator(ISparqlAlgebra, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroLengthPath_VDS_RDF_Query_Algebra_ZeroLengthPath_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroLengthPath(VDS.RDF.Query.Algebra.ZeroLengthPath%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L927">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroLengthPath_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroLengthPath*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroLengthPath_VDS_RDF_Query_Algebra_ZeroLengthPath_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroLengthPath(VDS.RDF.Query.Algebra.ZeroLengthPath,VDS.RDF.Query.SparqlEvaluationContext)">ProcessZeroLengthPath(ZeroLengthPath, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Zero Length Path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessZeroLengthPath(ZeroLengthPath path, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ZeroLengthPath.html">ZeroLengthPath</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessZeroLengthPath_VDS_RDF_Query_Algebra_ZeroLengthPath_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessZeroLengthPath(ZeroLengthPath, SparqlEvaluationContext)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroOrMorePath_VDS_RDF_Query_Algebra_ZeroOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroOrMorePath(VDS.RDF.Query.Algebra.ZeroOrMorePath%2CVDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L938">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroOrMorePath_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroOrMorePath*"></a>
+  <h4 id="VDS_RDF_Query_ExplainQueryProcessor_ProcessZeroOrMorePath_VDS_RDF_Query_Algebra_ZeroOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.ExplainQueryProcessor.ProcessZeroOrMorePath(VDS.RDF.Query.Algebra.ZeroOrMorePath,VDS.RDF.Query.SparqlEvaluationContext)">ProcessZeroOrMorePath(ZeroOrMorePath, SparqlEvaluationContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a Zero or More Path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BaseMultiset ProcessZeroOrMorePath(ZeroOrMorePath path, SparqlEvaluationContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ZeroOrMorePath.html">ZeroOrMorePath</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>SPARQL Evaluation Context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html#VDS_RDF_Query_LeviathanQueryProcessor_ProcessZeroOrMorePath_VDS_RDF_Query_Algebra_ZeroOrMorePath_VDS_RDF_Query_SparqlEvaluationContext_">LeviathanQueryProcessor.ProcessZeroOrMorePath(ZeroOrMorePath, SparqlEvaluationContext)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.ISparqlQueryAlgebraProcessor-2.html">ISparqlQueryAlgebraProcessor&lt;TResult, TContext&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_ExplainQueryProcessor.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.ExplainQueryProcessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/ExplainQueryProcessor.cs/#L205" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

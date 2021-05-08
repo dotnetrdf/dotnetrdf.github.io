@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Global Options | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Global Options | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="global-options">Global Options</h1>
+
+<p>dotNetRDF has a set of global static options provided by the <a class="xref" href="../api/VDS.RDF.Options.html"><code>Options</code></a> class.  These are used to configure various aspects of dotNetRDF behaviour, some act as defaults for certain functionality while others toggle functionality/features on/off as desired.</p>
+<p>Here are the available options:</p>
+<h2 id="core-options">Core Options</h2>
+<h3 id="fulltripleindexing">FullTripleIndexing</h3>
+<p>Controls whether implementations of <a class="xref" href="../api/VDS.RDF.BaseTripleCollection.html"><code>BaseTripleCollection</code></a> that support indexing will create full triple indexes, defaults to <code>true</code>.  See <a href="../howto/Minimize-Memory-Usage.html">Minimizing Memory Usage</a> for more discussions on triple indexing.</p>
+<h3 id="internuris">InternUris</h3>
+<p>Controls the <a href="../developer_guide/URI-Interning.html">URI Interning</a> feature of the library which is used to speed up URI equality checks and reduce memory usage.  However depending on your usage of the library it may actually inflate memory usage, see the linked page for more discussion of this option.</p>
+<h2 id="literal-options">Literal Options</h2>
+<h3 id="literalequalitymode">LiteralEqualityMode</h3>
+<p>Controls the behaviour when you call <code>Equals()</code> on instances of <a class="xref" href="../api/VDS.RDF.ILiteralNode.html"><code>ILiteralNode</code></a>.  This takes a value from the <a class="xref" href="../api/VDS.RDF.LiteralEqualityMode.html"><code>LiteralEqualityMode</code></a> enumeration, the default is <code>Strict</code>.  In <code>Strict</code> mode literal equality follows RDF term equality semantics i.e. the lexical values must be exactly equal and so must the language tag/datatype URI if present.</p>
+<p>If you set this to <code>Loose</code> instead then value equality semantics are used i.e. if the literals represent the same value then they are considered equal.</p>
+<p>Please see <a href="Equality-And-Comparison.html">Equality and Comparison</a> for more information.</p>
+<h3 id="literalvaluenormalization">LiteralValueNormalization</h3>
+<p>Controls whether literal values have Unicode normalization applied to them when they are created, this defaults to <code>false</code>.  May be useful to enable if you are ingesting non-normalized data though may increase data load times.</p>
+<h3 id="defaultculture">DefaultCulture</h3>
+<p>Controls the culture used for comparing the lexical values of literals when lexical sorting is used.  The default is to use the invariant culture to preserve behavioural compatibility with past releases.  It may be useful to customize this setting if you want to more naturally sort string data.</p>
+<h3 id="comparisonoptions">ComparisonOptions</h3>
+<p>Controls how the lexical values of literals are compared when lexical sorting is used.  The default is to use Ordinal comparison which preserves behavioural compatibility with past releases.  It may be useful to customize this setting if you want to more naturally sort string data.</p>
+<h2 id="http-options">HTTP Options</h2>
+<h3 id="forcehttpbasicauth">ForceHttpBasicAuth</h3>
+<p>Controls whether to always send HTTP Basic Authentication headers in HTTP requests when appropriate, defaults to <code>false</code>.</p>
+<p>Normally dotNetRDF relies on the standard .Net HTTP support which uses the standard HTTP challenge response pattern for establishing authenticated connections.  However some badly behaved servers may not carry out the challenge response correctly in which case it may be necessary to enable this option.  This only works for servers that use HTTP Basic Authentication, other authentication types cannot be forced.</p>
+<h3 id="httpdebugging">HttpDebugging</h3>
+<p>Controls whether to print debug information about HTTP requests and responses to the console, defaults to <code>false</code>.  See <a href="../howto/Debug-HTTP-Communication.html">Debugging HTTP Communication</a> for more information.</p>
+<h3 id="httpfulldebugging">HttpFullDebugging</h3>
+<p>Controls whether the full response stream for HTTP responses is printed to the console for debugging, defaults to <code>false</code>.  See <a href="../howto/Debug-HTTP-Communication.html">Debugging HTTP Communication</a> for more information.</p>
+<h2 id="parsing-options">Parsing Options</h2>
+<h3 id="forceblockingio">ForceBlockingIO</h3>
+<p>Controls whether parsers will rely on fully blocking buffered IO to read in data, defaults to <code>false</code>.</p>
+<p>Normally the library chooses whether to use this based on the type of data being read and avoids fully blocking buffered IO when possible.  However they may be occasions where the chosen option is incorrect if you use an unusual data source or the data source is wrapped.  Therefore sometimes it may be necessary to enforce blocking IO by setting this option.</p>
+<h3 id="uriloadercaching">UriLoaderCaching</h3>
+<p>Controls whether dotNetRDF will maintain a cache of RDF retrieved from files for future use, defaults to <code>true</code>.  This cache can speed up subsequent loads from the web but may not be desirable if the retrieved data is being auto-generated or frequently update.  Thus in some cases you may wish to disable this functionality.</p>
+<h3 id="uriloadertimeout">UriLoaderTimeout</h3>
+<p>Sets the timeout for retrieving RDF data from the web in milliseconds, defaults to <code>15,000</code> i.e. 15 seconds.  This timeout reflects the time to establish a connection to the HTTP server, it is not a timeout on how long parsing the retrieved data takes.</p>
+<p>It may be useful to increase this if you have a slow internet connection or are accessing RDF from a slow service.</p>
+<h2 id="query-options">Query Options</h2>
+<h3 id="queryexecutiontimeout">QueryExecutionTimeout</h3>
+<p>Global timeout setting for in-memory query execution given in milliseconds, defaults to <code>180,000</code> i.e. 3 minutes.  This setting has no-effect for other forms of query execution.</p>
+<p>This can be overridden as a per-query level by the <a class="xref" href="../api/VDS.RDF.Query.SparqlQuery.html#VDS_RDF_Query_SparqlQuery_Timeout"><code>Timeout</code></a> property of a <a class="xref" href="../api/VDS.RDF.Query.SparqlQuery.html"><code>SparqlQuery</code></a> instance.</p>
+<h3 id="queryoptimisation">QueryOptimisation</h3>
+<p>Controls whether query pattern optimization is applied, defaults to <code>true</code>.  May be useful to disable if the default optimizer is optimizing your query poorly.</p>
+<h3 id="algebraoptimisation">AlgebraOptimisation</h3>
+<p>Controls whether query algebra optimization is applied, defaults to <code>true</code>.  May be useful to disable if the standard optimizers are optimizing your query poorly or if you want to execute the basic algebra only.</p>
+<h3 id="unsafeoptimisation">UnsafeOptimisation</h3>
+<p>Controls whether certain optimizations which <code>may</code> make queries run faster but change the semantics of the query can be applied, defaults to <code>false</code>.</p>
+<h3 id="querydefaultsyntax">QueryDefaultSyntax</h3>
+<p>Sets the default syntax used for parsing SPARQL queries, takes a value from the <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQuerySyntax.html"><code>SparqlQuerySyntax</code></a> enumeration.  Defaults to <code>Sparql_1_1</code> i.e. SPARQL 1.1</p>
+<h3 id="queryallowunknownfunctions">QueryAllowUnknownFunctions</h3>
+<p>Controls whether unknown SPARQL extension functions should be allowed, defaults to <code>true</code>.  When enabled unknown extension functions are simply treated as functions that return unbound for every input.  When disabled an unknown extension function will give a parser error.</p>
+<h3 id="rigorousevaluation">RigorousEvaluation</h3>
+<p>Controls whether the in-memory SPARQL engine rigorously checks the provided matches from the underlying <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a>, defaults to <code>false</code> as this is usually unnecessary.</p>
+<p>You may need to enable this if your <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> implementation cannot guarantee that a call to <code>GetTriplesWithX()</code> only returns triples matching the given arguments.</p>
+<h3 id="strictoperations">StrictOperations</h3>
+<p>Controls whether SPARQL operators are restricted to only the implementations required by the SPARQL specifications, defaults to <code>false</code>.</p>
+<p>When disabled certain additional operators will be permitted such as date time computations.  See <a href="../developer_guide/SPARQL-Operators.html">SPARQL Operators</a> for discussion of this feature.</p>
+<h3 id="useplinqevaluation">UsePLinqEvaluation</h3>
+<p>Controls whether the in-memory SPARQL engine uses PLINQ evaluation to improve SPARQL performance, defaults to <code>true</code>.  This is only available on platforms that support PLINQ i.e. .Net 4.0 non-Silverlight builds.</p>
+<p>May be useful to disable if you have a multi-core machine but only want to use a single core for query evaluation.</p>
+<h2 id="update-options">Update Options</h2>
+<h3 id="updateexecutiontimeout">UpdateExecutionTimeout</h3>
+<p>Sets the timeout used for in-memory update execution in milliseconds, defaults to <code>180,000</code> i.e. 3 minutes.  This setting has no-effect for other forms of update execution.</p>
+<p>This can be overridden as a per-update level by the <code>Timeout</code> property of a <a class="xref" href="../api/VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a> instance.</p>
+<h2 id="writing-options">Writing Options</h2>
+<h3 id="allowmultithreadedwriting">AllowMultiThreadedWriting</h3>
+<p>Controls whether writers that support multi-threading writing will use this to improve write performance, defaults to <code>false</code>.  This is disabled by default because while it can improve performance it may cause error information to propagate incorrectly resulting in a failed write with no user indication of this.</p>
+<h3 id="defaultcompressionlevel">DefaultCompressionLevel</h3>
+<p>Sets the default compression level that writers will use if they support varying compression levels.</p>
+<h3 id="usebomforutf8">UseBomForUtf8</h3>
+<p>Controls whether the optional UTF-8 BOM is included in UTF-8 output, defaults to <code>false</code>.</p>
+<p>Generally speaking it is best to leave this setting untouched since creating files with UTF-8 BOM may render those files unusable by non .Net tools since most UTF-8 aware tools don&#39;t expect to see the optional BOM.</p>
+<h3 id="usedtd">UseDtd</h3>
+<p>Controls whether writers that may use DTDs in their output will actually use a DTD, defaults to <code>false</code>.</p>
+<p>Many places have restrictions on the use of DTDs in documents because these can be used to do DoS attacks.  Enable this option only if using dotNetRDF as part of a system where all components are trusted to exchange data containing DTDs.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/user_guide/Global-Options.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

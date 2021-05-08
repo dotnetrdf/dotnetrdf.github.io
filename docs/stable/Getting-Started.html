@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started with dotNetRDF | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started with dotNetRDF | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started-with-dotnetrdf">Getting Started with dotNetRDF</h1>
+
+<p>This page serves as a quick reference on how to add dotNetRDF to your projects and what features are found in which libraries. If you&#39;ve done this already you can jump ahead to the <a href="Library-Overview.html">Library Overview</a> which will introduce you to the Core APIs in dotNetRDF.</p>
+<h2 id="add-dotnetrdf-to-your-projectsolution">Add dotNetRDF to your Project/Solution</h2>
+<p>Firstly you need to add dotNetRDF to your project/solution, you can do this using NuGet or manually yourself.</p>
+<h3 id="using-nuget">Using NuGet</h3>
+<p>Using NuGet is our preferred and recommended way to manage dotNetRDF since it will ensure you install the correct version and all required dependencies.</p>
+<p>To do this you will need to have the NuGet Package Manager extension to Visual Studio installed. Then you can right click on your project and select Manage NuGet Packages, search the online gallery for dotNetRDF and install the libraries you want.</p>
+<h3 id="adding-manually-to-your-projectsolution">Adding manually to your Project/Solution</h3>
+<p>If you prefer to install dotNetRDF manually you can do so by following these instructions, if you haven&#39;t done so already go ahead and download the dotNetRDF Libraries from <a href="https://dotnetrdf.codeplex.com/">our CodePlex project page</a>.  This will give you a zip file which when unzipped contains the following directory structure:</p>
+<ul>
+<li><code>Core</code> Contains the builds of the Core Library</li>
+<li><code>Data</code> Contains the builds of the Data Libraries<ul>
+<li><code>Virtuoso</code> Contains the Data.Virtuoso Library</li>
+</ul>
+</li>
+<li><code>Query</code> Contains the builds of the Query Libraries<ul>
+<li><code>FullText</code> Contains the Query.FullText Library</li>
+</ul>
+</li>
+</ul>
+<p>The first thing you&#39;ll notice is that under each of these directories are a bunch of sub-directories. These represent builds of the library targeting specific .Net framework versions and profiles. For reference the directory names correspond as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Target .Net Framework Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>net35</code></td>
+<td>.Net 3.5 Full</td>
+</tr>
+<tr>
+<td><code>net35-client</code></td>
+<td>.Net 3.5 Client Profile</td>
+</tr>
+<tr>
+<td><code>net40</code></td>
+<td>.Net 4.0 Full</td>
+</tr>
+<tr>
+<td><code>net40-client</code></td>
+<td>.Net 4.0 Client Profile</td>
+</tr>
+<tr>
+<td><code>sl4</code></td>
+<td>Silverlight 4.0</td>
+</tr>
+<tr>
+<td><code>sl4-wp</code></td>
+<td>Silverlight 4.0 for Windows Phone 7</td>
+</tr>
+</tbody>
+</table>
+<p>One of the most important things you need to do when adding dotNetRDF as a reference to your project is ensure you select the correct version that matches the target framework version and profile your project uses. If you don&#39;t do this you will run into all sorts of compiler errors!</p>
+<p>If you aren&#39;t sure what version you need right click on your project and select Properties, then on the Build tab look at the value stated in the Target Framework drop down.  Use this and the above list to determine which version you need to install.</p>
+<p>To add dotNetRDF to your project right click on your project and click Add Reference, then browse to the directory containing the appropriate version of the library you want and select all the files in that directory. This will add both the dotNetRDF and its dependencies to your project ensuring that all features will work correctly. While you can add just dotNetRDF on its own if you then attempt to use certain features which rely on the dependent libraries you&#39;ll run into problems.</p>
+<h2 id="the-libraries">The Libraries</h2>
+<p>So as you&#39;ve already seen above the standard distribution of dotNetRDF comes with a variety of different libraries. This section details what features can be found in each library.</p>
+<h3 id="core">Core</h3>
+<p>The Core library provides all the core RDF and SPARQL infrastructure of dotNetRDF. It includes all the classes for reading and writing RDF, manipulating it in memory and a SPARQL 1.1 implementation. It also includes support for a variety of popular 3rd party triple stores as detailed in Triple Store Integration.</p>
+<p>The Core library depends on <a href="http://htmlagilitypack.codeplex.com">HtmlAgilityPack</a>, <a href="http://json.codeplex.com">Json.Net</a> and <a href="http://bitbucket.org/rvesse/vds-common">VDS.Common</a>.</p>
+<h3 id="datavirtuoso">Data.Virtuoso</h3>
+<p>The Data.Virtuoso library provides for integration with <a href="http://virtuoso.openlinksw.com">OpenLink Virtuoso</a> a popular open source/commercial triple store. It is separate from the Core library unlike some other connectors because it requires additional dependencies in the form of the Virtuoso ADO.Net provider</p>
+<h3 id="queryfulltext">Query.FullText</h3>
+<p>The Query.FullText library provides full text querying extensions to SPARQL based on top of <a href="http://lucenenet.apache.org">Lucene.Net</a>. See Full Text Querying with SPARQL for more details on this functionality.</p>
+<hr>
+<h1 id="tutorial-navigation">Tutorial Navigation</h1>
+<p>The next topic in the tutorial is the <a href="Library-Overview.html">Library Overview</a></p>
+<p>Users interested in learning more may wish to jump straight to one of the following topics:</p>
+<ul>
+<li><a href="../user_guide/Full-Text-Querying-With-SPARQL.md">Full Text Querying with SPARQL</a> </li>
+<li><a href="../user_guide/Triple-Store-Integration.md">Triple Store Integration</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/stable/Getting-Started.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

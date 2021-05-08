@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Implementing Extension Functions | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Implementing Extension Functions | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implementing-extension-functions">Implementing Extension Functions</h1>
+
+<p>Extension Functions are a standardised extension point provided by the <a href="http://www.w3.org/TR/sparql11-query/#extensionFunctions">SPARQL Specification</a> which allows you to introduce new functions by naming them with URIs.  dotNetRDF includes full support for this functionality and includes a whole range of extension functions described on the <a href="SPARQL-Function-Libraries.html">Function Libraries</a> page.  This page covers how to add your own extension functions.</p>
+<p>Adding an extension function requires implementing two interfaces:</p>
+<ul>
+<li><a class="xref" href="../api/VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a></li>
+<li><a class="xref" href="../api/VDS.RDF.Query.Expressions.ISparqlCustomExpressionFactory.html">ISparqlCustomExpressionFactory</a></li>
+</ul>
+<p>Note that by default the library allows unknown extension functions and just treats them as always producing an error, you can change this behaviour to disallow unknown extension functions by setting the <code>Options.QueryAllowUnknownFunctions</code> property to <code>false</code></p>
+<h2 id="implement-isparqlexpression">Implement ISparqlExpression</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a> interface implements the actual function logic, there are a variety of abstract implementations that may be relevant depending on the kind of function you wish to implement.  You may find it easiest to start by copying the code from a similar existing function or extending the same base class as a similar existing function.</p>
+<p>Let&#39;s take a look at an example implementation from dotNetRDF itself:</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using VDS.RDF.Nodes;
+
+namespace VDS.RDF.Query.Expressions.Functions.Arq
+{
+    /// &lt;summary&gt;
+    /// Represents the ARQ namespace() function
+    /// &lt;/summary&gt;
+    public class NamespaceFunction
+        : BaseUnaryExpression
+    {
+        /// &lt;summary&gt;
+        /// Creates a new ARQ Namespace function
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;expr&quot;&gt;Expression&lt;/param&gt;
+        public NamespaceFunction(ISparqlExpression expr)
+            : base(expr) { }
+
+        /// &lt;summary&gt;
+        /// Gets the value of the function in the given Evaluation Context for the given Binding ID
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;context&quot;&gt;Evaluation Context&lt;/param&gt;
+        /// &lt;param name=&quot;bindingID&quot;&gt;Binding ID&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public override IValuedNode Evaluate(SparqlEvaluationContext context, int bindingID)
+        {
+            INode temp = this._expr.Evaluate(context, bindingID);
+            if (temp != null)
+            {
+                if (temp.NodeType == NodeType.Uri)
+                {
+                    IUriNode u = (IUriNode)temp;
+                    if (!u.Uri.Fragment.Equals(String.Empty))
+                    {
+                        return new StringNode(null, u.Uri.AbsoluteUri.Substring(0, u.Uri.AbsoluteUri.LastIndexOf(&#39;#&#39;) + 1));
+                    }
+                    else
+                    {
+                        return new StringNode(null, u.Uri.AbsoluteUri.Substring(0, u.Uri.AbsoluteUri.LastIndexOf(&#39;/&#39;) + 1));
+                    }
+                }
+                else
+                {
+                    throw new RdfQueryException(&quot;Cannot find the Local Name for a non-URI Node&quot;);
+                }
+            }
+            else
+            {
+                throw new RdfQueryException(&quot;Cannot find the Local Name for a null&quot;);
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the String representation of the function
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public override string ToString()
+        {
+            return &quot;&lt;&quot; + ArqFunctionFactory.ArqFunctionsNamespace + ArqFunctionFactory.Namespace + &quot;&gt;(&quot; + this._expr.ToString() + &quot;)&quot;;
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the Type of the Expression
+        /// &lt;/summary&gt;
+        public override SparqlExpressionType Type
+        {
+            get
+            {
+                return SparqlExpressionType.Function;
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the Functor of the Expression
+        /// &lt;/summary&gt;
+        public override string Functor
+        {
+            get
+            {
+                return ArqFunctionFactory.ArqFunctionsNamespace + ArqFunctionFactory.Namespace;
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Transforms the Expression using the given Transformer
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;transformer&quot;&gt;Expression Transformer&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public override ISparqlExpression Transform(IExpressionTransformer transformer)
+        {
+            return new NamespaceFunction(transformer.Transform(this._expr));
+        }
+    }
+}
+</code></pre><p>Here we are attempting to split URIs (and only URIs) to determine a suitable namespace to use for them.  As you can see we extend <code>VDS.RDF.Query.Expressions.BaseUnaryExpression</code> which means we don&#39;t have to implement that much ourselves.</p>
+<p>The main method of interest is the <code>Evaluate()</code> method which is where the actual function evaluation is done.  The usual pattern is to first evaluate the child expressions and then attempt to apply the function on the result, if the function cannot be applied due to type mismatches or any other error then a <code>RdfQueryException</code> <strong>must</strong> be thrown.  If the function succeeds then it should return an appropriate <code>VDS.RDF.Nodes.IValuedNode</code> instance which represents the result of the function.</p>
+<p>The remaining methods and properties are primarily around having the expression play nice with other APIs such as query serialisation and optimisation.</p>
+<h2 id="implements-isparqlcustomexpressionfactory">Implements ISparqlCustomExpressionFactory</h2>
+<p>The <a class="xref" href="../api/VDS.RDF.Query.Expressions.ISparqlCustomExpressionFactory.html">ISparqlCustomExpressionFactory</a> interface provides a factory for your custom expressions, each factory can potentially produce many different extension functions depending on how you&#39;ve implemented it.</p>
+<p>Let&#39;s take a look at an example from the dotNetRDF code:</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using VDS.RDF.Parsing;
+using VDS.RDF.Query.Expressions.Functions.Arq;
+
+namespace VDS.RDF.Query.Expressions
+{
+    /// &lt;summary&gt;
+    /// Expression Factory which generates ARQ Function expressions
+    /// &lt;/summary&gt;
+    /// &lt;remarks&gt;
+    /// &lt;para&gt;
+    /// Designed to help provide feature parity with the ARQ query engine contained in Jena
+    /// &lt;/para&gt;
+    /// &lt;/remarks&gt;
+    public class ArqFunctionFactory : ISparqlCustomExpressionFactory
+    {
+        /// &lt;summary&gt;
+        /// ARQ Function Namespace
+        /// &lt;/summary&gt;
+        public const String ArqFunctionsNamespace = &quot;http://jena.hpl.hp.com/ARQ/function#&quot;;
+
+        /// &lt;summary&gt;
+        /// Constants for ARQ Numeric functions
+        /// &lt;/summary&gt;
+        public const String Max = &quot;max&quot;,
+                            Min = &quot;min&quot;,
+                            Pi = &quot;pi&quot;,
+                            E = &quot;e&quot;;
+
+        /// &lt;summary&gt;
+        /// Constants for ARQ Graph functions
+        /// &lt;/summary&gt;
+        public const String BNode = &quot;bnode&quot;,
+                            LocalName = &quot;localname&quot;,
+                            Namespace = &quot;namespace&quot;;
+
+        /// &lt;summary&gt;
+        /// Constants for ARQ String functions
+        /// &lt;/summary&gt;
+        public const String Substr = &quot;substr&quot;,
+                            Substring = &quot;substring&quot;,
+                            StrJoin = &quot;strjoin&quot;;
+
+        /// &lt;summary&gt;
+        /// Constants for ARQ Miscellaneous functions
+        /// &lt;/summary&gt;
+        public const String Sha1Sum = &quot;sha1sum&quot;,
+                            Now = &quot;now&quot;;
+
+        /// &lt;summary&gt;
+        /// Array of Extension Function URIs
+        /// &lt;/summary&gt;
+        private String[] FunctionUris = {
+                                            Max,
+                                            Min,
+                                            Pi,
+                                            E,
+                                            BNode,
+                                            LocalName,
+                                            Namespace,
+                                            Substr,
+                                            Substring,
+                                            StrJoin,
+                                            Sha1Sum,
+                                            Now
+                                        };
+
+        /// &lt;summary&gt;
+        /// Tries to create an ARQ Function expression if the function Uri correseponds to a supported ARQ Function
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;u&quot;&gt;Function Uri&lt;/param&gt;
+        /// &lt;param name=&quot;args&quot;&gt;Function Arguments&lt;/param&gt;
+        /// &lt;param name=&quot;scalarArgs&quot;&gt;Scalar Arguments&lt;/param&gt;
+        /// &lt;param name=&quot;expr&quot;&gt;Generated Expression&lt;/param&gt;
+        /// &lt;returns&gt;Whether an expression was successfully generated&lt;/returns&gt;
+        public bool TryCreateExpression(Uri u, List&lt;ISparqlExpression&gt; args, Dictionary&lt;String,ISparqlExpression&gt; scalarArgs, out ISparqlExpression expr)
+        {
+            //If any Scalar Arguments are present then can&#39;t possibly be an ARQ Function
+            if (scalarArgs.Count &gt; 0)
+            {
+                expr = null;
+                return false;
+            }
+
+            String func = u.AbsoluteUri;
+            if (func.StartsWith(ArqFunctionFactory.ArqFunctionsNamespace))
+            {
+                func = func.Substring(ArqFunctionFactory.ArqFunctionsNamespace.Length);
+                ISparqlExpression arqFunc = null;
+
+                switch (func)
+                {
+                    case ArqFunctionFactory.BNode:
+                        if (args.Count == 1)
+                        {
+                            arqFunc = new BNodeFunction(args.First());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ bnode() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.E:
+                        if (args.Count == 0)
+                        {
+                            arqFunc = new EFunction();
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ e() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.LocalName:
+                        if (args.Count == 1)
+                        {
+                            arqFunc = new LocalNameFunction(args.First());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ localname() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Max:
+                        if (args.Count == 2)
+                        {
+                            arqFunc = new MaxFunction(args.First(), args.Last());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ max() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Min:
+                        if (args.Count == 2)
+                        {
+                            arqFunc = new MinFunction(args.First(), args.Last());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ min() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Namespace:
+                        if (args.Count == 1)
+                        {
+                            arqFunc = new NamespaceFunction(args.First());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ namespace() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Now:
+                        if (args.Count == 0)
+                        {
+                            arqFunc = new NowFunction();
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ now() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Pi:
+                        if (args.Count == 0)
+                        {
+                            arqFunc = new PiFunction();
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ pi() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Sha1Sum:
+                        if (args.Count == 1)
+                        {
+                            arqFunc = new Sha1Function(args.First());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ sha1sum() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.StrJoin:
+                        if (args.Count &gt;= 2)
+                        {
+                            arqFunc = new StringJoinFunction(args.First(), args.Skip(1));
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ strjoing() function&quot;);
+                        }
+                        break;
+                    case ArqFunctionFactory.Substr:
+                    case ArqFunctionFactory.Substring:
+                        if (args.Count == 2)
+                        {
+                            arqFunc = new SubstringFunction(args.First(), args.Last());
+                        }
+                        else if (args.Count == 3)
+                        {
+                            arqFunc = new SubstringFunction(args.First(), args[1], args.Last());
+                        }
+                        else
+                        {
+                            throw new RdfParseException(&quot;Incorrect number of arguments for the ARQ &quot; + func + &quot;() function&quot;);
+                        }
+                        break;
+                }
+
+                if (arqFunc != null)
+                {
+                    expr = arqFunc;
+                    return true;
+                }
+            }
+            expr = null;
+            return false;  
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the Extension Function URIs supported by this Factory
+        /// &lt;/summary&gt;
+        public IEnumerable&lt;Uri&gt; AvailableExtensionFunctions
+        {
+            get
+            {
+                return (from u in FunctionUris
+                        select UriFactory.Create(ArqFunctionsNamespace + u));
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the Extension Aggregate URIs supported by this Factory
+        /// &lt;/summary&gt;
+        public IEnumerable&lt;Uri&gt; AvailableExtensionAggregates
+        {
+            get
+            {
+                return Enumerable.Empty&lt;Uri&gt;();
+            }
+        }
+    }
+}
+</code></pre><p>This is the factory corresponding to our earlier example as well as some other functions.  You can see that the key method is the <code>TryCreateExpression</code> function which tries to create an extension function returning true if it succeeds.  In the case where the factory sees a function URI it recognises but an incorrect number of arguments it throws a <code>RdfParseException</code></p>
+<h3 id="registering-factories">Registering Factories</h3>
+<p>In order for your factories to be used they have to be registered, factories can be registered in several places depending on the scope you want them to have.</p>
+<p>If you want your factory to have global scope and apply to all queries and updates then you can register it with the <a class="xref" href="../api/VDS.RDF.Query.Expressions.SparqlExpressionFactory.html">SparqlExpressionFactory</a> class like so:</p>
+<pre><code class="lang-csharp">SparqlExpressionFactory.AddCustomFactory(new MyCustomFactory());
+</code></pre><p>If you want your factory to have local scope and apply only to queries/updates produced by a specific parser then you can do this by setting the <code>ExpressionFactories</code> properties on a parser instance like so:</p>
+<pre><code class="lang-csharp">SparqlQueryParser parser = new SparqlQueryParser();
+parser.ExpressionFactories = new ISparqlCustomExpressionFactory[] { new MyCustomFactory(); }
+</code></pre><p>Once registered all subsequent queries and updates may now use your newly registered extension functions.</p>
+<p>When integrating with ASP.Net applications or using the <a href="../user_guide/Configuration-API.html">Configuration API</a> then you can configure custom expression factories as detailed on the <a href="../user_guide/Configuration-SPARQL-Expression-Factories.html">Configuring SPARQL Expression Factories</a> page.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/2.7.x/developer_guide/SPARQL-Extension-Functions.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

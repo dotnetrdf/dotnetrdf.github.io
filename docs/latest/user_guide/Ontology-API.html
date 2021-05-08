@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ontology API | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Ontology API | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ontology-api">Ontology API</h1>
+
+<p>The Ontology API part of dotNetRDF provides a number of abstractions over graphs, triples and nodes that allow users who don&#39;t want to work at the levels of triples to create and manipulate ontologies and schemas. In general anything that uses RDFS and OWL classes and properties and expresses relationships between them may be more easily manipulated using the Ontology API than directly using the core graph and triple APIs.</p>
+<h2 id="basic-example">Basic Example</h2>
+<p>The following provides a basic example of the differences between the Ontology API and the Graph and Triple APIs. In this first code sample we use the Ontology API to enumerate the super and sub classes of a given class:</p>
+<pre><code class="lang-csharp">
+using System;
+using System.Linq;
+using VDS.RDF;
+using VDS.RDF.Ontology;
+using VDS.RDF.Parsing;
+
+public class OntologyGraphExample()
+{
+    public static void Main(String[] args)
+    {
+        //First create an OntologyGraph and load in some data
+        //Here we use an imaginary example file Ontology.rdf - substitute in an appropriate filename
+        OntologyGraph g = new OntologyGraph();
+        FileLoader.Load(g, &quot;Ontology.rdf&quot;);
+
+        //Get the class of interest
+        //Again we use an imaginary class URI, substitute in an appropriate URI
+        OntologyClass someClass = g.CreateOntologyClass(new Uri(&quot;http://example.org/someClass&quot;));
+
+        //Write out Super Classes
+        foreach (OntologyClass c in someClass.SuperClasses)
+        {
+            Console.WriteLine(&quot;Super Class: &quot; + c.Resource.ToString());
+        }
+        //Write out Sub Classes
+        foreach (OntologyClass c in someClass.SubClasses)
+        {
+            Console.WriteLine(&quot;Sub Class: &quot; + c.Resource.ToString());
+        }
+    }
+}
+</code></pre><p>Now we&#39;ll show code to achieve the same thing using the Graph and Triple APIs:</p>
+<pre><code class="lang-csharp">
+using System;
+using System.Linq;
+using VDS.RDF;
+using VDS.RDF.Parsing;
+
+public class GraphExample()
+{
+    public static void Main(String[] args)
+    {
+        //First get a Graph and load in our data
+        //Here we use an imaginary example file Ontology.rdf - substitute in an appropriate filename
+        IGraph g = new Graph();
+        FileLoader.Load(g, &quot;Ontology.rdf&quot;);
+
+        //Get the Node representing the class of Interest
+        //Again we use an imaginary class URI, substitute in an appropriate URI
+        INode someClass = g.GetUriNode(new Uri(&quot;http://example.org/someClass&quot;));
+
+        //Note - GetUriNode returns null if no such URI exists, make sure to check for this or use
+        //CreateUriNode instead
+        if (someClass == null) return;
+
+        //Write out the Super Classes
+        INode subClassOf = g.CreateUriNode(new Uri(NamespaceMapper.RDFS + &quot;subClassOf&quot;));
+        foreach (Triple t in g.GetTriplesWithSubjectPredicate(someClass, subClassOf))
+        {
+            Console.WriteLine(&quot;Super Class: &quot; + t.Object.ToString());
+        }
+        //Write out the Sub Classes
+        foreach (Triple t in g.GetTriplesWithPredicateObject(subClassOf, someClass))
+        {
+            Console.WriteLine(&quot;Sub Class: &quot; + t.Subject.ToString());
+        }
+    }
+}
+</code></pre><p>While the 2nd example may not seem like much more code it requires the end user to understand how the RDF is structured at the triple level in order to retrieve the data.</p>
+<p>An additional advantage of the Ontology API approach is that it will automatically traverse the class hierarchy for you so using the 1st method you get all super and sub classes regardless of distance from the original class while using the 2nd method you only get direct super and sub classes. Getting all super and sub classes in the class hierarchy using the 2nd method would require significantly more code or the application of an RDFS reasoner.</p>
+<h1 id="concepts">Concepts</h1>
+<p>The API provides the following concepts which are wrappers over graphs, triples and nodes:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.OntologyGraph.html">OntologyGraph</a></td>
+<td>Represents a graph whose ontology elements may be accessed</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.Ontology.html">Ontology</a></td>
+<td>Represents information about an ontology</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.OntologyResource.html">OntologyResource</a></td>
+<td>Represents a resource in the ontology, specific sub-classes expand the basic capabilities further</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.OntologyClass.html">OntologyClass</a></td>
+<td>Represents a class in an ontology</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.OntologyProperty.html">OntologyProperty</a></td>
+<td>Represents a property in an ontology</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Ontology.Individual.html">Individual</a></td>
+<td>Represents an instance of a class in an ontology</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Ontology-API.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Configuring SPARQL Endpoints | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Configuring SPARQL Endpoints | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configuring-sparql-endpoints">Configuring SPARQL Endpoints</h1>
+
+<p>SPARQL Endpoints are classes that provide access to remote SPARQL Query or Update endpoints.</p>
+<p>The library provides 2 concrete implementations for query endpoints which are <a class="xref" href="../api/VDS.RDF.Query.SparqlRemoteEndpoint.html"><code>SparqlRemoteEndpoint</code></a> and <a class="xref" href="../api/VDS.RDF.Query.FederatedSparqlRemoteEndpoint.html"><code>FederatedSparqlRemoteEndpoint</code></a>. The latter of these can be used to federate the query across multiple endpoints and merge the results together.  There is also a <a class="xref" href="../api/VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html"><code>SparqlRemoteUpdateEndpoint</code></a> which represents update endpoints.</p>
+<h2 id="simple-query-endpoints">Simple Query Endpoints</h2>
+<p>Simple query endpoints are endpoints that use a single remote endpoint for queries. These can be specified relatively simply as follows:</p>
+<pre><code class="lang-turtle">
+@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:endpoint a dnr:SparqlQueryEndpoint ;
+  dnr:type &quot;VDS.RDF.Query.SparqlRemoteEndpoint&quot; ;
+  dnr:queryEndpointUri &lt;http://example.org/sparql&gt; ;
+  dnr:defaultGraphUri &quot;http://example.org/defaultGraph&quot; ;
+  dnr:namedGraphUri &quot;http://example.org/namedGraph&quot; .
+</code></pre><p>Any number of <code>dnr:defaultGraphUri</code> and <code>dnr:namedGraphUri</code> properties can be used to specify multiple default and named graphs to be used for requests to the endpoint</p>
+<h3 id="user-credentials">User Credentials</h3>
+<p>If your SPARQL endpoint requires a username and password this can be added using the <code>dnr:user</code> and dnr:password properties or by using the dnr:credentials property to point to an object of type <code>dnr:User</code> e.g.</p>
+<pre><code class="lang-turtle">
+@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:endpoint a dnr:SparqlQueryEndpoint ;
+  dnr:type &quot;VDS.RDF.Query.SparqlRemoteEndpoint&quot; ;
+  dnr:queryEndpointUri &lt;http://example.org/sparql&gt; ;
+  dnr:user &quot;username&quot; ;
+  dnr:password &quot;password&quot; .
+</code></pre><h3 id="proxy-settings">Proxy Settings</h3>
+<p>You can also specify settings for a proxy server which must be used for requests using the dnr:proxy property to point to an object of type <code>dnr:Proxy</code>. See <a href="Configuration-Proxy-Servers.html">Configuration API - Proxies</a> for how to configure proxies.</p>
+<p>Note that if the user credentials for the endpoint also apply to the proxy you can omit specifying them on the proxy object and use the <code>dnr:useCredentialsForProxy</code> property to state that the same credentials are used for the proxy.</p>
+<h2 id="federated-query-endpoints">Federated Query Endpoints</h2>
+<p>Federated Endpoints are endpoints that make queries across multiple remote endpoints and combine the results together before returning them. A Federated Endpoint is specified as follows:</p>
+<pre><code class="lang-turtle">
+@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:fed a dnr:SparqlQueryEndpoint ;
+  dnr:type &quot;VDS.RDF.Query.FederatedSparqlRemoteEndpoint&quot; ;
+  dnr:queryEndpoint &lt;http://sparql.org/books&gt; ;
+  dnr:queryEndpoint _:dbpedia .
+
+&lt;http://sparql.org/books&gt; a dnr:SparqlQueryEndpoint ;
+  dnr:type &quot;VDS.RDF.Query.SparqlRemoteEndpoint&quot; ;
+  dnr:queryEndpointUri &lt;http://sparql.org/books&gt; .
+
+_:dbpedia a dnr:SparqlQueryEndpoint ;
+  dnr:type &quot;VDS.RDF.Query.SparqlRemoteEndpoint&quot; ;
+  dnr:queryEndpointUri &lt;http://dbpedia.org/sparql&gt; .
+</code></pre><p>The above configures a Federated Endpoint which sends the query to <a href="http://dbpedia.org/sparql">DBPedia&#39;s SPARQL endpoint</a> and the <a href="http://sparql.org/books/sparql">Books endpoint</a> at <a href="http://sparql.org">http://sparql.org</a></p>
+<h2 id="update-endpoints">Update Endpoints</h2>
+<p>Updates endpoints are endpoints used to make updates against, an update endpoint is specified as follows:</p>
+<pre><code class="lang-turtle">
+@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:endpoint a dnr:SparqlUpdateEndpoint ;
+  dnr:type &quot;VDS.RDF.Update.SparqlRemoteUpdateEndpoint&quot; ;
+  dnr:updateEndpointUri &lt;http://example.org/update&gt; ;
+  dnr:user &quot;username&quot; ;
+  dnr:password &quot;password&quot; .
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/2.7.x/user_guide/Configuration-SPARQL-Endpoints.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

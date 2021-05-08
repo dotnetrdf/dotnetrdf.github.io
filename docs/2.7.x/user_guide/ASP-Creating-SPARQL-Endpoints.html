@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Creating SPARQL Endpoints | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Creating SPARQL Endpoints | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="creating-sparql-endpoints">Creating SPARQL Endpoints</h1>
+
+<p>dotNetRDF provides a set of HTTP Handlers that can be used to deploy various forms of RDF and SPARQL endpoints as part of your ASP.Net website.</p>
+<h2 id="automated-configuration">Automated Configuration</h2>
+<p><a href="Configuration-HTTP-Handlers.html">Configuration API - HTTP Handlers</a> gives a guide to the available handlers and <a href="ASP-Deploying-With-rdfWebDeploy.html">Deploying with rdfWebDeploy</a> walks you through the automated process of deploying them.</p>
+<h2 id="manual-configuration">Manual Configuration</h2>
+<p>Continue reading for information on how to manually set up your <code>Web.config</code> file without using rdfWebDeploy</p>
+<h3 id="configuration-settings">Configuration Settings</h3>
+<p>All Handlers are configured by using <code>Web.config</code> to register them in your web application, the library supports registering multiple handlers in a single application each of which can have different settings. Each HTTP Handler registered in your <code>Web.config</code> file must have corresponding configuration information stored in your Configuration Graph.</p>
+<p>Your Configuration Graph is registered using the <code>&lt;appSettings&gt;</code> section of your <code>Web.config</code> file like so:</p>
+<pre><code class="lang-xml">
+&lt;appSettings&gt;
+  &lt;add key=&quot;dotNetRDFConfig&quot; value=&quot;~/App_Data/config.ttl&quot; /&gt;
+&lt;/appSettings&gt;
+</code></pre><p>Each Handler is associated with some Configuration data in your Configuration Graph by using special URIs of the form <code>&lt;dotnetrdf:/path&gt;</code> as described in <a href="Configuration-HTTP-Handlers.html">Configuration API - HTTP Handlers</a></p>
+<h3 id="handler-registration">Handler Registration</h3>
+<h4 id="iis-5x">IIS 5x</h4>
+<p>Under IIS 5x you cannot map arbitrary paths so you&#39;ll have to define a custom extension (we recommend you define <code>.sparql</code>) which is done as follows:</p>
+<ol>
+<li>Open IIS Manager</li>
+<li>Browse to your website/virtual directory and right click, select Properties</li>
+<li>On to the Virtual Directory tab click the Configuration button</li>
+<li>Click the Add button in the Application Configuration dialog that appears</li>
+<li>Click the Browse button and browse to and select aspnet_isapi.dll which is typically located in <code>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\</code></li>
+<li>In the extension box type <code>.sparql</code> (you must include the dot at the start!), uncheck the Check that file exists box</li>
+<li>Click OK to add the mapping (if the OK button is not enabled try clicking in the Executable box to get Windows to expand the path and then try to click OK)</li>
+</ol>
+<p>You&#39;ve now configured IIS to route any request for a file with the <code>.sparql</code> extension through ASP.Net which means any HTTP Handlers you define will be applied correctly. You can now configure a ASP.Net Handler by adding a line to the <code>&lt;httpHandlers&gt;</code> section of the <code>&lt;system.web&gt;</code> section of your <code>Web.config</code> file:</p>
+<pre><code class="lang-xml">
+&lt;add verb=&quot;*&quot; path=&quot;/query.sparql&quot; validate=&quot;false&quot; type=&quot;VDS.RDF.Web.QueryHandler&quot; /&gt;
+</code></pre><p>Then provided you have entered all the relevant configuration settings for your Handler in your Configuration Graph you can access the endpoint by pointing your browser to <code>http://www.yourdomain.com/query.sparql</code></p>
+<h4 id="iis-6x">IIS 6x</h4>
+<p>On IIS 6x you configure a ASP.Net Handler by adding a line to the <code>&lt;httpHandlers&gt;</code> section of the <code>&lt;system.web&gt;</code> section of your <code>Web.config</code> file:</p>
+<pre><code class="lang-xml">&lt;add verb=&quot;*&quot; path=&quot;/sparql&quot; validate=&quot;false&quot; type=&quot;VDS.RDF.Web.QueryHandler&quot; /&gt;
+</code></pre><p>Then provided you have entered all the relevant configuration settings for your Handler in your Configuration Graph you can access the endpoint by pointing your browser to <code>http://www.yourdomain.com/sparql</code></p>
+<p>Under IIS 6x you will need to get IIS to serve the request even when the physical file doesn&#39;t exist. To do this you can either create a dummy file/folder with the appropriate name or use the IIS 5x configuration approach (see <a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/4c840252-fab7-427e-a197-7facb6649106.mspx?mfr=true">Microsoft TechNet article</a> for IIS 6x)</p>
+<div class="NOTE"><h5>Note</h5><p>In theory it should be possible to configure under IIS 6 without the previous step but I don&#39;t currently have access to an appropriate machine to verify this.</p>
+</div>
+<h4 id="iis-7x">IIS 7x</h4>
+<p>Configuring a SPARQL Endpoint under IIS 7x is very easy if you are using ASP.Net&#39;s integrated pipeline mode (if not follow the instructions for IIS 6x). Simply add a line like the following to the <code>&lt;handlers&gt;</code> section of the <code>&lt;system.webServer&gt;</code> section of your <code>Web.config</code> file:</p>
+<pre><code class="lang-xml">
+&lt;add name=&quot;/sparql&quot; verb=&quot;*&quot; path=&quot;/sparql&quot; type=&quot;VDS.RDF.Web.QueryHandler&quot; /&gt;
+</code></pre><p>Then provided you have entered all the relevant configuration settings for your Handler in your Configuration Graph you can access the endpoint by pointing your browser to <code>http://www.yourdomain.com/sparql</code></p>
+<h3 id="other-webconfig-tweaks">Other Web.config tweaks</h3>
+<p>You may need to make some additional changes to <code>Web.config</code> in order to get handlers working correctly.</p>
+<p>If you are creating SPARQL endpoints you may need to add the following to the <code>&lt;system.web&gt;</code> section of your config if you are using .Net 4.0+ as otherwise the ASP.Net engine may reject queries and updates as potentially dangerous requests:</p>
+<pre><code class="lang-xml">&lt;httpRuntime requestValidationMode=&quot;2.0&quot; /&gt;
+</code></pre><p>You may also need to add the following to your <code>&lt;system.webServer&gt;</code> configuration to get your <code>Web.config</code> to be loaded:</p>
+<pre><code class="lang-xml">&lt;validation validateIntegratedModeConfiguration=&quot;false&quot; /&gt;
+</code></pre><h1 id="general-iis-configuration">General IIS Configuration</h1>
+<p>As a general rule it is advisable to register the following MIME types with IIS server to ensure that it serves responses correctly:</p>
+<ul>
+<li>text/turtle (*.ttl)</li>
+<li>application/rdf+xml (*.rdf)</li>
+<li>text/n3 (*.n3)</li>
+<li>text/plain (*.nt)</li>
+<li>application/rdf+json (*.rj)</li>
+<li>application/sparql-results+xml (*.srx)</li>
+<li>application/sparql-json+xml (*.srj)</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/docs/blob/main/src/2.7.x/user_guide/ASP-Creating-SPARQL-Endpoints.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

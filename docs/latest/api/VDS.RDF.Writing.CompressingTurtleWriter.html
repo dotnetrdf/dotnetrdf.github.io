@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CompressingTurtleWriter
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CompressingTurtleWriter
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.CompressingTurtleWriter">
+  <h1 id="VDS_RDF_Writing_CompressingTurtleWriter" data-uid="VDS.RDF.Writing.CompressingTurtleWriter">Class CompressingTurtleWriter
+  </h1>
+  <div class="markdown level0 summary"><p>Class for generating Turtle Concrete RDF Syntax which provides varying levels of Syntax Compression.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html">BaseRdfWriter</a></div>
+    <div class="level2"><span class="xref">CompressingTurtleWriter</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_IO_TextWriter_">BaseRdfWriter.Save(IGraph, TextWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_IO_TextWriter_System_Boolean_">BaseRdfWriter.Save(IGraph, TextWriter, Boolean)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.html">VDS.RDF.Writing</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
+  
+  <h5 id="VDS_RDF_Writing_CompressingTurtleWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CompressingTurtleWriter : BaseRdfWriter, IRdfWriter, IPrettyPrintingWriter, IHighSpeedWriter, ICompressingWriter, INamespaceWriter, IFormatterBasedWriter</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 id="VDS_RDF_Writing_CompressingTurtleWriter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Similar in speed to the standard <a class="xref" href="VDS.RDF.Writing.TurtleWriter.html">TurtleWriter</a> but capable of using more syntax compressions depending on the Compression level set.</p>
+</div>
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor" class="expander" data-toggle="collapse">CompressingTurtleWriter()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Compressing Turtle Writer which uses the Default Compression Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressingTurtleWriter()</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor(System.Int32)"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_" class="expander" data-toggle="collapse">CompressingTurtleWriter(Int32)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Compressing Turtle Writer which uses the given Compression Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressingTurtleWriter(int compressionLevel)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Int32</span></span>
+        <span class="parametername">compressionLevel</span>
+        <p><p>Desired Compression Level.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>See Remarks for this classes <a class="xref" href="VDS.RDF.Writing.CompressingTurtleWriter.html#VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel">CompressionLevel</a> property to see what effect different compression levels have.</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_VDS_RDF_Parsing_TurtleSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.%23ctor(System.Int32%2CVDS.RDF.Parsing.TurtleSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L88" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_VDS_RDF_Parsing_TurtleSyntax_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor(System.Int32,VDS.RDF.Parsing.TurtleSyntax)"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_VDS_RDF_Parsing_TurtleSyntax_" class="expander" data-toggle="collapse">CompressingTurtleWriter(Int32, TurtleSyntax)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_VDS_RDF_Parsing_TurtleSyntax_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new Compressing Turtle Writer which uses the given Compression Level and Syntax Level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressingTurtleWriter(int compressionLevel, TurtleSyntax syntax)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Int32</span></span>
+        <span class="parametername">compressionLevel</span>
+        <p><p>Desired Compression Level.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.TurtleSyntax.html">TurtleSyntax</a></span>
+        <span class="parametername">syntax</span>
+        <p><p>Syntax Level.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_System_Int32_VDS_RDF_Parsing_TurtleSyntax__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>See Remarks for this classes <a class="xref" href="VDS.RDF.Writing.CompressingTurtleWriter.html#VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel">CompressionLevel</a> property to see what effect different compression levels have.</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter__ctor_VDS_RDF_Parsing_TurtleSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.%23ctor(VDS.RDF.Parsing.TurtleSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L77" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter__ctor_VDS_RDF_Parsing_TurtleSyntax_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.#ctor(VDS.RDF.Parsing.TurtleSyntax)"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_VDS_RDF_Parsing_TurtleSyntax_" class="expander" data-toggle="collapse">CompressingTurtleWriter(TurtleSyntax)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter__ctor_VDS_RDF_Parsing_TurtleSyntax_" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates a new compressing Turtle writer using the given syntax level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressingTurtleWriter(TurtleSyntax syntax)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.TurtleSyntax.html">TurtleSyntax</a></span>
+        <span class="parametername">syntax</span>
+        <p><p>Syntax Level.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.CompressionLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L137" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.CompressionLevel*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.CompressionLevel"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel" class="expander" data-toggle="collapse">CompressionLevel</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets/Sets the Compression Level to be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompressionLevel { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html#VDS_RDF_Writing_ICompressingWriter_CompressionLevel">ICompressingWriter.CompressionLevel</a></div>
+  
+  <h5 id="VDS_RDF_Writing_CompressingTurtleWriter_CompressionLevel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If the Compression Level is set to <a class="xref" href="VDS.RDF.Writing.WriterCompressionLevel.html#VDS_RDF_Writing_WriterCompressionLevel_None">None</a> then High Speed mode will always be used regardless of the input Graph and the <a class="xref" href="VDS.RDF.Writing.CompressingTurtleWriter.html#VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted">HighSpeedModePermitted</a> property.
+</p>
+<p>
+If the Compression Level is set to <a class="xref" href="VDS.RDF.Writing.WriterCompressionLevel.html#VDS_RDF_Writing_WriterCompressionLevel_Minimal">Minimal</a> or above then full Predicate Object lists will be used for Triples.
+</p>
+<p>
+If the Compression Level is set to <a class="xref" href="VDS.RDF.Writing.WriterCompressionLevel.html#VDS_RDF_Writing_WriterCompressionLevel_More">More</a> or above then Blank Node Collections and Collection syntax will be used if the Graph contains Triples that can be compressed in that way.</p>
+</div>
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_DefaultNamespaces.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.DefaultNamespaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L152" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_DefaultNamespaces_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.DefaultNamespaces*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_DefaultNamespaces" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.DefaultNamespaces"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_DefaultNamespaces" class="expander" data-toggle="collapse">DefaultNamespaces</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_DefaultNamespaces" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets/Sets the Default Namespaces that are always available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public INamespaceMapper DefaultNamespaces { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.INamespaceWriter.html#VDS_RDF_Writing_INamespaceWriter_DefaultNamespaces">INamespaceWriter.DefaultNamespaces</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.HighSpeedModePermitted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L112" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.HighSpeedModePermitted*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.HighSpeedModePermitted"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted" class="expander" data-toggle="collapse">HighSpeedModePermitted</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_HighSpeedModePermitted" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets/Sets whether High Speed Write Mode should be allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HighSpeedModePermitted { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.IHighSpeedWriter.html#VDS_RDF_Writing_IHighSpeedWriter_HighSpeedModePermitted">IHighSpeedWriter.HighSpeedModePermitted</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L97" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_PrettyPrintMode_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.PrettyPrintMode*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.PrettyPrintMode"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_PrettyPrintMode" class="expander" data-toggle="collapse">PrettyPrintMode</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_PrettyPrintMode" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets/Sets whether Pretty Printing is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrettyPrintMode { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html#VDS_RDF_Writing_IPrettyPrintingWriter_PrettyPrintMode">IPrettyPrintingWriter.PrettyPrintMode</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_TripleFormatterType.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.TripleFormatterType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L167" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_TripleFormatterType_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.TripleFormatterType*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_TripleFormatterType" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.TripleFormatterType"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_TripleFormatterType" class="expander" data-toggle="collapse">TripleFormatterType</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_TripleFormatterType" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the type of the Triple Formatter used by the writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type TripleFormatterType { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Type</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html#VDS_RDF_Writing_IFormatterBasedWriter_TripleFormatterType">IFormatterBasedWriter.TripleFormatterType</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_Save_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.Save(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L180" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_Save_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.Save*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_Save_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.Save(VDS.RDF.IGraph,System.String)"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_Save_VDS_RDF_IGraph_System_String_" class="expander" data-toggle="collapse">Save(IGraph, String)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_Save_VDS_RDF_IGraph_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Saves a Graph to a file using Turtle Syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Save(IGraph g, string filename)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to save.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">filename</span>
+        <p><p>File to save to.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_String_">BaseRdfWriter.Save(IGraph, String)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.SaveInternal(VDS.RDF.IGraph%2CSystem.IO.TextWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L193" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_SaveInternal_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.SaveInternal*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.SaveInternal(VDS.RDF.IGraph,System.IO.TextWriter)"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" class="expander" data-toggle="collapse">SaveInternal(IGraph, TextWriter)</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" class="collapse in">
+  <div class="markdown level1 summary"><p>Saves a Graph to the given Stream using Turtle Syntax.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SaveInternal(IGraph g, TextWriter output)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
+        <span class="parametername">g</span>
+        <p><p>Graph to save.</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.IO.TextWriter</span></span>
+        <span class="parametername">output</span>
+        <p><p>Stream to save to.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_">BaseRdfWriter.SaveInternal(IGraph, TextWriter)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L488" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="VDS_RDF_Writing_CompressingTurtleWriter_ToString_" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.ToString*"></a>
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_ToString" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.ToString"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_ToString" class="collapse in">
+  <div class="markdown level1 summary"><p>Gets the String representation of the writer which is a description of the syntax it produces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L482" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="VDS_RDF_Writing_CompressingTurtleWriter_Warning" data-uid="VDS.RDF.Writing.CompressingTurtleWriter.Warning"><a href="#collapsible-VDS_RDF_Writing_CompressingTurtleWriter_Warning" class="expander" data-toggle="collapse">Warning</a></h4>
+  
+  <div id="collapsible-VDS_RDF_Writing_CompressingTurtleWriter_Warning" class="collapse in">
+  <div class="markdown level1 summary"><p>Event which is raised when there is a non-fatal issue with the Graph being written</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override event RdfWriterWarning Warning</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h5 class="eventType">Event Type</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="VDS.RDF.RdfWriterWarning.html">RdfWriterWarning</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Warning">BaseRdfWriter.Warning</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_CompressingTurtleWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.CompressingTurtleWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/CompressingTurtleWriter.cs/#L46" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
