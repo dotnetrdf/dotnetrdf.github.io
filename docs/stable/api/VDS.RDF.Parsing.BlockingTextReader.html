@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BlockingTextReader
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="VDS_RDF_Parsing_BlockingTextReader" data-uid="VDS.RDF.Parsing.BlockingTextReader" class="text-break">Class BlockingTextReader
   </h1>
-  <div class="markdown level0 summary"><p>The BlockingTextReader is an implementation of a <a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html">BufferedTextReader</a> designed to wrap other readers which may or may not have high latency and thus ensures that premature end of input bug is not experienced.</p>
+  <div class="markdown level0 summary">
+The BlockingTextReader is an implementation of a <a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html">BufferedTextReader</a> designed to wrap other readers which may or may not have high latency and thus ensures that premature end of input bug is not experienced.
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -219,7 +220,8 @@
     <pre><code class="lang-csharp hljs">public sealed class BlockingTextReader : BufferedTextReader, IDisposable</code></pre>
   </div>
   <h5 id="VDS_RDF_Parsing_BlockingTextReader_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>
+  <div class="markdown level0 remarks">
+<p>
 This is designed to avoid premature detection of end of input when the input has high latency and the consumer tries to read from the input faster than it can return data.  This derives from <a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html">BufferedTextReader</a> and ensures the buffer is filled by calling the <span class="xref">System.IO.TextReader.ReadBlock(System.Char[], System.Int32, System.Int32)</span> method of the underlying <span class="xref">System.IO.TextReader</span> thus avoiding the scenario where input appears to end prematurely.
 </p>
 </div>
@@ -227,14 +229,15 @@ This is designed to avoid premature detection of end of input when the input has
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_BlockingTextReader_FillBuffer.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.BlockingTextReader.FillBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Parsing_BlockingTextReader_FillBuffer.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.BlockingTextReader.FillBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L429">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L429">View Source</a>
   </span>
   <a id="VDS_RDF_Parsing_BlockingTextReader_FillBuffer_" data-uid="VDS.RDF.Parsing.BlockingTextReader.FillBuffer*"></a>
   <h4 id="VDS_RDF_Parsing_BlockingTextReader_FillBuffer" data-uid="VDS.RDF.Parsing.BlockingTextReader.FillBuffer">FillBuffer()</h4>
-  <div class="markdown level1 summary"><p>Fills the Buffer.</p>
+  <div class="markdown level1 summary">
+Fills the Buffer.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -259,10 +262,10 @@ This is designed to avoid premature detection of end of input when the input has
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_BlockingTextReader.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.BlockingTextReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Parsing_BlockingTextReader.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.BlockingTextReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L393" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L393" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
