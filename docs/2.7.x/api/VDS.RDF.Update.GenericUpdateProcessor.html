@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class GenericUpdateProcessor
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="VDS_RDF_Update_GenericUpdateProcessor" data-uid="VDS.RDF.Update.GenericUpdateProcessor" class="text-break">Class GenericUpdateProcessor
   </h1>
-  <div class="markdown level0 summary"><p>SPARQL Update Processor which processes commands against a generic underlying store represented by an <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> implementation.</p>
+  <div class="markdown level0 summary">
+SPARQL Update Processor which processes commands against a generic underlying store represented by an <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> implementation.
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -116,7 +117,8 @@
     <pre><code class="lang-csharp hljs">public class GenericUpdateProcessor : ISparqlUpdateProcessor</code></pre>
   </div>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>
+  <div class="markdown level0 remarks">
+<p>
 If the provided manager also implements the <a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a> interface then the managers native SPARQL Update implementation will be used for the non-type specific calls i.e. <a class="xref" href="VDS.RDF.Update.GenericUpdateProcessor.html#VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_VDS_RDF_Update_SparqlUpdateCommand_">ProcessCommand(SparqlUpdateCommand)</a> and <a class="xref" href="VDS.RDF.Update.GenericUpdateProcessor.html#VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_VDS_RDF_Update_SparqlUpdateCommandSet_">ProcessCommandSet(SparqlUpdateCommandSet)</a>.  At all other times the SPARQL Update commands will be processed by approximating their behaviour through calls to <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_SaveGraph_VDS_RDF_IGraph_">SaveGraph(IGraph)</a>, <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_LoadGraph_VDS_RDF_IGraph_System_Uri_">LoadGraph(IGraph, Uri)</a> and <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a> in addition to local in-memory manipulation of the data.  Some commands such as INSERT and DELETE can only be processed when the manager is also a <a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> since they rely on making a query and performing actions based on the results of that query.
 </p>
 <p>
@@ -127,14 +129,15 @@ The performance of this processor is somewhat dependent on the underlying <a cla
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor__ctor_VDS_RDF_Storage_IStorageProvider_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.%23ctor(VDS.RDF.Storage.IStorageProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor__ctor_VDS_RDF_Storage_IStorageProvider_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.%23ctor(VDS.RDF.Storage.IStorageProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L61">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L61">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor__ctor_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.#ctor*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor__ctor_VDS_RDF_Storage_IStorageProvider_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.#ctor(VDS.RDF.Storage.IStorageProvider)">GenericUpdateProcessor(IStorageProvider)</h4>
-  <div class="markdown level1 summary"><p>Creates a new Generic Update Processor.</p>
+  <div class="markdown level1 summary">
+Creates a new Generic Update Processor.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -154,8 +157,7 @@ The performance of this processor is somewhat dependent on the underlying <a cla
       <tr>
         <td><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a></td>
         <td><span class="parametername">manager</span></td>
-        <td><p>Generic IO Manager.</p>
-</td>
+        <td>Generic IO Manager.</td>
       </tr>
     </tbody>
   </table>
@@ -163,14 +165,15 @@ The performance of this processor is somewhat dependent on the underlying <a cla
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.Discard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.Discard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L70">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L70">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_Discard_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.Discard*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_Discard" data-uid="VDS.RDF.Update.GenericUpdateProcessor.Discard">Discard()</h4>
-  <div class="markdown level1 summary"><p>Discards any outstanding changes.</p>
+  <div class="markdown level1 summary">
+Discards any outstanding changes.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,14 +182,15 @@ The performance of this processor is somewhat dependent on the underlying <a cla
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L78">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L78">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_Flush_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.Flush*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_Flush" data-uid="VDS.RDF.Update.GenericUpdateProcessor.Flush">Flush()</h4>
-  <div class="markdown level1 summary"><p>Flushes any outstanding changes to the underlying store.</p>
+  <div class="markdown level1 summary">
+Flushes any outstanding changes to the underlying store.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -195,14 +199,15 @@ The performance of this processor is somewhat dependent on the underlying <a cla
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessAddCommand_VDS_RDF_Update_Commands_AddCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessAddCommand(VDS.RDF.Update.Commands.AddCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessAddCommand_VDS_RDF_Update_Commands_AddCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessAddCommand(VDS.RDF.Update.Commands.AddCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L87">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L87">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessAddCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessAddCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessAddCommand_VDS_RDF_Update_Commands_AddCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessAddCommand(VDS.RDF.Update.Commands.AddCommand)">ProcessAddCommand(AddCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes an ADD command.</p>
+  <div class="markdown level1 summary">
+Processes an ADD command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -222,21 +227,21 @@ The performance of this processor is somewhat dependent on the underlying <a cla
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.AddCommand.html">AddCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Add Command.</p>
-</td>
+        <td>Add Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessClearCommand_VDS_RDF_Update_Commands_ClearCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessClearCommand(VDS.RDF.Update.Commands.ClearCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessClearCommand_VDS_RDF_Update_Commands_ClearCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessClearCommand(VDS.RDF.Update.Commands.ClearCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L136">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L136">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessClearCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessClearCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessClearCommand_VDS_RDF_Update_Commands_ClearCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessClearCommand(VDS.RDF.Update.Commands.ClearCommand)">ProcessClearCommand(ClearCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a CLEAR command.</p>
+  <div class="markdown level1 summary">
+Processes a CLEAR command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -256,24 +261,25 @@ The performance of this processor is somewhat dependent on the underlying <a cla
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.ClearCommand.html">ClearCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Clear Command.</p>
-</td>
+        <td>Clear Command.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessClearCommand_VDS_RDF_Update_Commands_ClearCommand__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Implemented by replacing the Graph with an empty Graph.</p>
+  <div class="markdown level1 remarks">
+Implemented by replacing the Graph with an empty Graph.
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_VDS_RDF_Update_SparqlUpdateCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCommand(VDS.RDF.Update.SparqlUpdateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_VDS_RDF_Update_SparqlUpdateCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCommand(VDS.RDF.Update.SparqlUpdateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L323">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L323">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_VDS_RDF_Update_SparqlUpdateCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCommand(VDS.RDF.Update.SparqlUpdateCommand)">ProcessCommand(SparqlUpdateCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a command.</p>
+  <div class="markdown level1 summary">
+Processes a command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -293,26 +299,27 @@ The performance of this processor is somewhat dependent on the underlying <a cla
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommand.html">SparqlUpdateCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Command.</p>
-</td>
+        <td>Command.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommand_VDS_RDF_Update_SparqlUpdateCommand__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
+  <div class="markdown level1 remarks">
+<p>
 If the provided manager also implements the <a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a> interface then the managers native SPARQL Update implementation will be used.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCommandSet(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCommandSet(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L384">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L384">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCommandSet*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCommandSet(VDS.RDF.Update.SparqlUpdateCommandSet)">ProcessCommandSet(SparqlUpdateCommandSet)</h4>
-  <div class="markdown level1 summary"><p>Processes a command set.</p>
+  <div class="markdown level1 summary">
+Processes a command set.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -332,26 +339,27 @@ If the provided manager also implements the <a class="xref" href="VDS.RDF.Storag
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
         <td><span class="parametername">commands</span></td>
-        <td><p>Command Set.</p>
-</td>
+        <td>Command Set.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCommandSet_VDS_RDF_Update_SparqlUpdateCommandSet__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
+  <div class="markdown level1 remarks">
+<p>
 If the provided manager also implements the <a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a> interface then the managers native SPARQL Update implementation will be used.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCopyCommand_VDS_RDF_Update_Commands_CopyCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCopyCommand(VDS.RDF.Update.Commands.CopyCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCopyCommand_VDS_RDF_Update_Commands_CopyCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCopyCommand(VDS.RDF.Update.Commands.CopyCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L223">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L223">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCopyCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCopyCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCopyCommand_VDS_RDF_Update_Commands_CopyCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCopyCommand(VDS.RDF.Update.Commands.CopyCommand)">ProcessCopyCommand(CopyCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a COPY command.</p>
+  <div class="markdown level1 summary">
+Processes a COPY command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -371,21 +379,21 @@ If the provided manager also implements the <a class="xref" href="VDS.RDF.Storag
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.CopyCommand.html">CopyCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Copy Command.</p>
-</td>
+        <td>Copy Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCreateCommand_VDS_RDF_Update_Commands_CreateCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCreateCommand(VDS.RDF.Update.Commands.CreateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessCreateCommand_VDS_RDF_Update_Commands_CreateCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessCreateCommand(VDS.RDF.Update.Commands.CreateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L290">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L290">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCreateCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCreateCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCreateCommand_VDS_RDF_Update_Commands_CreateCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessCreateCommand(VDS.RDF.Update.Commands.CreateCommand)">ProcessCreateCommand(CreateCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a CREATE command.</p>
+  <div class="markdown level1 summary">
+Processes a CREATE command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -405,13 +413,13 @@ If the provided manager also implements the <a class="xref" href="VDS.RDF.Storag
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.CreateCommand.html">CreateCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Create Command.</p>
-</td>
+        <td>Create Command.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessCreateCommand_VDS_RDF_Update_Commands_CreateCommand__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
+  <div class="markdown level1 remarks">
+<p>
 Implemented by adding an empty Graph to the Store.
 </p>
 <p>
@@ -420,14 +428,15 @@ Implemented by adding an empty Graph to the Store.
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteCommand_VDS_RDF_Update_Commands_DeleteCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteCommand(VDS.RDF.Update.Commands.DeleteCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteCommand_VDS_RDF_Update_Commands_DeleteCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteCommand(VDS.RDF.Update.Commands.DeleteCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L418">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L418">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteCommand_VDS_RDF_Update_Commands_DeleteCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteCommand(VDS.RDF.Update.Commands.DeleteCommand)">ProcessDeleteCommand(DeleteCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a DELETE command.</p>
+  <div class="markdown level1 summary">
+Processes a DELETE command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -447,26 +456,27 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.DeleteCommand.html">DeleteCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Delete Command.</p>
-</td>
+        <td>Delete Command.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteCommand_VDS_RDF_Update_Commands_DeleteCommand__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
+  <div class="markdown level1 remarks">
+<p>
 <strong>Note:</strong> The underlying manager must implement the <a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> interface in order for DELETE commands to be processed.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteDataCommand_VDS_RDF_Update_Commands_DeleteDataCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteDataCommand(VDS.RDF.Update.Commands.DeleteDataCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteDataCommand_VDS_RDF_Update_Commands_DeleteDataCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteDataCommand(VDS.RDF.Update.Commands.DeleteDataCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L603">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L603">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteDataCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteDataCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDeleteDataCommand_VDS_RDF_Update_Commands_DeleteDataCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDeleteDataCommand(VDS.RDF.Update.Commands.DeleteDataCommand)">ProcessDeleteDataCommand(DeleteDataCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a DELETE DATA command.</p>
+  <div class="markdown level1 summary">
+Processes a DELETE DATA command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -486,21 +496,21 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.DeleteDataCommand.html">DeleteDataCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>DELETE Data Command.</p>
-</td>
+        <td>DELETE Data Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDropCommand_VDS_RDF_Update_Commands_DropCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDropCommand(VDS.RDF.Update.Commands.DropCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessDropCommand_VDS_RDF_Update_Commands_DropCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessDropCommand(VDS.RDF.Update.Commands.DropCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L720">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L720">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDropCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDropCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessDropCommand_VDS_RDF_Update_Commands_DropCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessDropCommand(VDS.RDF.Update.Commands.DropCommand)">ProcessDropCommand(DropCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a DROP command.</p>
+  <div class="markdown level1 summary">
+Processes a DROP command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -520,21 +530,21 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.DropCommand.html">DropCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Drop Command.</p>
-</td>
+        <td>Drop Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertCommand_VDS_RDF_Update_Commands_InsertCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertCommand(VDS.RDF.Update.Commands.InsertCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertCommand_VDS_RDF_Update_Commands_InsertCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertCommand(VDS.RDF.Update.Commands.InsertCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L813">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L813">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertCommand_VDS_RDF_Update_Commands_InsertCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertCommand(VDS.RDF.Update.Commands.InsertCommand)">ProcessInsertCommand(InsertCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes an INSERT command.</p>
+  <div class="markdown level1 summary">
+Processes an INSERT command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -554,26 +564,27 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.InsertCommand.html">InsertCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Insert Command.</p>
-</td>
+        <td>Insert Command.</td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertCommand_VDS_RDF_Update_Commands_InsertCommand__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
+  <div class="markdown level1 remarks">
+<p>
 <strong>Note:</strong> The underlying manager must implement the <a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> interface in order for INSERT commands to be processed.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertDataCommand_VDS_RDF_Update_Commands_InsertDataCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertDataCommand(VDS.RDF.Update.Commands.InsertDataCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertDataCommand_VDS_RDF_Update_Commands_InsertDataCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertDataCommand(VDS.RDF.Update.Commands.InsertDataCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L998">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L998">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertDataCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertDataCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessInsertDataCommand_VDS_RDF_Update_Commands_InsertDataCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessInsertDataCommand(VDS.RDF.Update.Commands.InsertDataCommand)">ProcessInsertDataCommand(InsertDataCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes an INSERT DATA command.</p>
+  <div class="markdown level1 summary">
+Processes an INSERT DATA command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -593,21 +604,21 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.InsertDataCommand.html">InsertDataCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Insert Data Command.</p>
-</td>
+        <td>Insert Data Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessLoadCommand_VDS_RDF_Update_Commands_LoadCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessLoadCommand(VDS.RDF.Update.Commands.LoadCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessLoadCommand_VDS_RDF_Update_Commands_LoadCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessLoadCommand(VDS.RDF.Update.Commands.LoadCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1096">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1096">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessLoadCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessLoadCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessLoadCommand_VDS_RDF_Update_Commands_LoadCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessLoadCommand(VDS.RDF.Update.Commands.LoadCommand)">ProcessLoadCommand(LoadCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a LOAD command.</p>
+  <div class="markdown level1 summary">
+Processes a LOAD command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -627,21 +638,21 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.LoadCommand.html">LoadCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Load Command.</p>
-</td>
+        <td>Load Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessModifyCommand_VDS_RDF_Update_Commands_ModifyCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessModifyCommand(VDS.RDF.Update.Commands.ModifyCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessModifyCommand_VDS_RDF_Update_Commands_ModifyCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessModifyCommand(VDS.RDF.Update.Commands.ModifyCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1147">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1147">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessModifyCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessModifyCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessModifyCommand_VDS_RDF_Update_Commands_ModifyCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessModifyCommand(VDS.RDF.Update.Commands.ModifyCommand)">ProcessModifyCommand(ModifyCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes an INSERT/DELETE command.</p>
+  <div class="markdown level1 summary">
+Processes an INSERT/DELETE command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -661,21 +672,21 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.ModifyCommand.html">ModifyCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Insert/Delete Command.</p>
-</td>
+        <td>Insert/Delete Command.</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessMoveCommand_VDS_RDF_Update_Commands_MoveCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessMoveCommand(VDS.RDF.Update.Commands.MoveCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor_ProcessMoveCommand_VDS_RDF_Update_Commands_MoveCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor.ProcessMoveCommand(VDS.RDF.Update.Commands.MoveCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1453">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L1453">View Source</a>
   </span>
   <a id="VDS_RDF_Update_GenericUpdateProcessor_ProcessMoveCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessMoveCommand*"></a>
   <h4 id="VDS_RDF_Update_GenericUpdateProcessor_ProcessMoveCommand_VDS_RDF_Update_Commands_MoveCommand_" data-uid="VDS.RDF.Update.GenericUpdateProcessor.ProcessMoveCommand(VDS.RDF.Update.Commands.MoveCommand)">ProcessMoveCommand(MoveCommand)</h4>
-  <div class="markdown level1 summary"><p>Processes a MOVE command.</p>
+  <div class="markdown level1 summary">
+Processes a MOVE command.
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -695,8 +706,7 @@ Implemented by adding an empty Graph to the Store.
       <tr>
         <td><a class="xref" href="VDS.RDF.Update.Commands.MoveCommand.html">MoveCommand</a></td>
         <td><span class="parametername">cmd</span></td>
-        <td><p>Move Command.</p>
-</td>
+        <td>Move Command.</td>
       </tr>
     </tbody>
   </table>
@@ -716,10 +726,10 @@ Implemented by adding an empty Graph to the Store.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Update_GenericUpdateProcessor.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.GenericUpdateProcessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L52" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF/Update/GenericUpdateProcessor.cs/#L52" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SparqlServer
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,8 @@
   
   <h1 id="VDS_RDF_Web_SparqlServer" data-uid="VDS.RDF.Web.SparqlServer" class="text-break">Class SparqlServer
   </h1>
-  <div class="markdown level0 summary"><p>HTTP Handler for adding SPARQL Servers to ASP.Net applications - SPARQL Servers provide combined Query, Update and Graph Store HTTP Protocol for RDF Graph Management endpoints</p>
+  <div class="markdown level0 summary">
+HTTP Handler for adding SPARQL Servers to ASP.Net applications - SPARQL Servers provide combined Query, Update and Graph Store HTTP Protocol for RDF Graph Management endpoints
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -143,14 +144,15 @@
     <pre><code class="lang-csharp hljs">public class SparqlServer : BaseSparqlServer</code></pre>
   </div>
   <h5 id="VDS_RDF_Web_SparqlServer_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>
+  <div class="markdown level0 remarks">
+<p>
 Used to create a SPARQL Server with a base URI where any URI under this URI is handled by this Server
 </p>
 <p>
-For example given a Base URI of <strong><a href="http://example.org/server/">http://example.org/server/</a></strong> then the Handler would treat requests to <strong><a href="http://example.org/server/query">http://example.org/server/query</a></strong> as SPARQL Query requests, requests to <strong><a href="http://example.org/server/update">http://example.org/server/update</a></strong> as SPARQL Update requests and requests to any other URL covered by this base URL as SPARQL Graph Store HTTP Protocol requests
+For example given a Base URI of <strong>http://example.org/server/</strong> then the Handler would treat requests to <strong>http://example.org/server/query</strong> as SPARQL Query requests, requests to <strong>http://example.org/server/update</strong> as SPARQL Update requests and requests to any other URL covered by this base URL as SPARQL Graph Store HTTP Protocol requests
 </p>
 <p>
-This Handler is configured using the new Configuration API introduced in the 0.3.0 release.  This requires just one setting to be defined in the &lt;appSettings&gt; section of your Web.config file which points to a Configuration Graph like so:
+This Handler is configured using the new Configuration API introduced in the 0.3.0 release.  This requires just one setting to be defined in the &lt;appSettings> section of your Web.config file which points to a Configuration Graph like so:
 <pre><code>&lt;add key=&quot;dotNetRDFConfig&quot; value=&quot;~/App_Data/config.ttl&quot; /></code></pre>
 The Configuration Graph must then contain Triples like the following to specify a Update Endpoint:
 <pre><code>&lt;dotnetrdf:/folder/server/*> a dnr:HttpHandler ;
@@ -179,14 +181,15 @@ _:store a dnr:TripleStore ;
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Web_SparqlServer_LoadConfig_HttpContext_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer.LoadConfig(HttpContext%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Web_SparqlServer_LoadConfig_HttpContext_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer.LoadConfig(HttpContext%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Web/SparqlServer.cs/#L84">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF.Web/SparqlServer.cs/#L84">View Source</a>
   </span>
   <a id="VDS_RDF_Web_SparqlServer_LoadConfig_" data-uid="VDS.RDF.Web.SparqlServer.LoadConfig*"></a>
   <h4 id="VDS_RDF_Web_SparqlServer_LoadConfig_HttpContext_System_String__" data-uid="VDS.RDF.Web.SparqlServer.LoadConfig(HttpContext,System.String@)">LoadConfig(HttpContext, out String)</h4>
-  <div class="markdown level1 summary"><p>Loads the Handler Configuration</p>
+  <div class="markdown level1 summary">
+Loads the Handler Configuration
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -206,14 +209,12 @@ _:store a dnr:TripleStore ;
       <tr>
         <td><span class="xref">HttpContext</span></td>
         <td><span class="parametername">context</span></td>
-        <td><p>HTTP Context</p>
-</td>
+        <td>HTTP Context</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">basePath</span></td>
-        <td><p>Base Path for the Server</p>
-</td>
+        <td>Base Path for the Server</td>
       </tr>
     </tbody>
   </table>
@@ -234,14 +235,15 @@ _:store a dnr:TripleStore ;
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Web_SparqlServer_UpdateConfig_HttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer.UpdateConfig(HttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Web_SparqlServer_UpdateConfig_HttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer.UpdateConfig(HttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Web/SparqlServer.cs/#L130">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF.Web/SparqlServer.cs/#L130">View Source</a>
   </span>
   <a id="VDS_RDF_Web_SparqlServer_UpdateConfig_" data-uid="VDS.RDF.Web.SparqlServer.UpdateConfig*"></a>
   <h4 id="VDS_RDF_Web_SparqlServer_UpdateConfig_HttpContext_" data-uid="VDS.RDF.Web.SparqlServer.UpdateConfig(HttpContext)">UpdateConfig(HttpContext)</h4>
-  <div class="markdown level1 summary"><p>Updates the Handler Configuration</p>
+  <div class="markdown level1 summary">
+Updates the Handler Configuration
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -261,8 +263,7 @@ _:store a dnr:TripleStore ;
       <tr>
         <td><span class="xref">HttpContext</span></td>
         <td><span class="parametername">context</span></td>
-        <td><p>HTTP Context</p>
-</td>
+        <td>HTTP Context</td>
       </tr>
     </tbody>
   </table>
@@ -280,10 +281,10 @@ _:store a dnr:TripleStore ;
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Web_SparqlServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/maintenance/2.x/apiSpec/new?filename=VDS_RDF_Web_SparqlServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Web.SparqlServer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Web/SparqlServer.cs/#L74" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/maintenance/2.x/Libraries/dotNetRDF.Web/SparqlServer.cs/#L74" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
