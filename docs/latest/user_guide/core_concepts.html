@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Core Concepts | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Core Concepts | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="core-concepts">Core Concepts</h1>
+
+<p>The core classes of the Library can be found in the <a class="xref" href="../api/VDS.RDF.html">VDS.RDF</a> namespace. All of the core classes are based either on interfaces or abstract classes to make the library as extensible as possible. These key interfaces are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.INode.html">INode</a></td>
+<td>Represents a node in a RDF Graph, represents the value of a RDF term</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IGraph.html">IGraph</a></td>
+<td>Interface for Graphs, an RDF document forms a Graph in the mathematical sense - see <a href="http://www.w3.org/TR/rdf-concepts/">RDF Concepts and Abstract Syntax (W3C Specification)</a> - so we represents sets of Triples as Graphs</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+<td>A Triple Store is a collection of one/more Graphs</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE"><h5>Note</h5><p>All code examples presented in this section require you to add the <code>using VDS.RDF;</code> statement to the start of your code file.</p>
+</div>
+<h2 id="graphs">Graphs</h2>
+<p>An RDF Document can be considered to form a mathematical graph and so we represent sets of RDF triples as graphs. All graphs in the library are implementations of the <a class="xref" href="../api/VDS.RDF.IGraph.html">IGraph</a> interface and generally derive from the abstract <a class="xref" href="../api/VDS.RDF.BaseGraph.html">BaseGraph</a> class which implements some of the core methods of the interface allowing specific implementations to concentrate on specifics such as persistence to storage/thread safety.</p>
+<p>An <a class="xref" href="../api/VDS.RDF.IGraph.html">IGraph</a> implementation is an in-memory representation of an RDF document.</p>
+<p>The most commonly used <code>IGraph</code> implementation is the <a class="xref" href="../api/VDS.RDF.Graph.html">Graph</a> class. It can be used as follows:</p>
+<pre><code class="lang-csharp">// Create an unamed Graph
+IGraph g = new Graph();
+
+//Create a named Graph
+IGraph h = new Graph(new UriNode(UriFactory.Create(&quot;http://example.org/&quot;)));
+</code></pre><div class="WARNING"><h5>Warning</h5><p>Prior to 3.0, the BaseUri property was used both as the graph name and as a base URI for relative URI resolution.
+With the 3.0 release the graph name is now specified in the constructor as shown in the example above
+When migrating code from a previous release, you will need to ensure that code that was previously setting the BaseUri property to set the graph name is changed to pass the graph name as a new <code>UriNode</code> into the <code>Graph</code> constructor.</p>
+</div>
+<p>Triples can be added to a Graph using the <code>Assert(...)</code> method, the method takes a single Triple or an array/list/enumerable of Triples. Examples of using this method are given in the section of this page on Triples.</p>
+<p>Once your Graph contains some data you can enumerate through it using a foreach loop:</p>
+<pre><code class="lang-csharp">//Loop through Triples
+foreach (Triple t in g.Triples)
+{
+    Console.WriteLine(t.ToString());
+}
+</code></pre><p>Any <code>IGraph</code> implements <code>IEnumerable&lt;Triple&gt;</code> and so can be used with all the LINQ extension methods for <code>IEnumerable&lt;T&gt;</code>.</p>
+<h2 id="nodes">Nodes</h2>
+<p>An <a class="xref" href="../api/VDS.RDF.INode.html">INode</a> represents a node in a RDF graph, this is sometimes referred to as a RDF term.  The interface is quite sparse providing primarily information about the type of the node and the graph it is associated with.  There are then a number of specialized interfaces which extend the basic interface to provide node type specific information:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Node Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+<td>Blank Node, an anonymous node</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+<td>Literal Node, a node with a textual value and optionally a datatype or language tag</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IUriNode.html">IUriNode</a></td>
+<td>URI Node</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IRefNode.html">IRefNode</a></td>
+<td>Reference node, a common base interface for the types of node that can be used to name a graph (<code>IBlankNode</code> and <code>IUriNode</code>)</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.ITripleNode.html">ITripleNode</a></td>
+<td>Triple Node, represents a quoted triple in an RDF-Star graph</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a></td>
+<td>Graph Literal Node, represents a sub-graph</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.IVariableNode.html">IVariableNode</a></td>
+<td>Variable Node, represents a variable</td>
+</tr>
+</tbody>
+</table>
+<p><em>NB</em> The latter two go beyond the basic RDF model and are rarely used.</p>
+<p>As stated each RDF term can be treated as a node in a graph. As such all RDF terms are modeled as concrete implementations of the <code>INode</code> interface and of a relevant sub-interface from the list above e.g. <code>IUriNode</code>.</p>
+<p>Nodes can be created directly by constructing instances of an implementing type, but it is both more efficient and more convenient to use an <a class="xref" href="../api/VDS.RDF.INodeFactory.html">INodeFactory</a> instance to create nodes.
+More convenient, because you don&#39;t have to worry about which implementing class to use; and more efficient because the factory can track the nodes created so far and avoid creating duplicates.</p>
+<p>All <code>IGraph</code> instances also implement <code>INodeFactory</code> and by default an in-memory <code>Graph()</code> instance has its own factory scoped to that graph. However under more advanced scenarios it is possible to pass the factory instance to use to a <code>Graph</code> when it is constructed - potentially allowing multiple graphs to all share the same set of nodes.</p>
+<div class="NOTE"><h5>Note</h5><p><code>INode</code> instances are immutable, so can be freely shared between graphs.</p>
+</div>
+<div class="WARNING"><h5>Warning</h5><p>Prior to dotNetRDF 3.0, <code>INode</code> instances could only be created through the <code>INodeFactory</code> mehtods exposed by an <code>IGraph</code> and could not be used across multiple graphs.
+When updating code written for a previous version of the library, this pattern should still work but it is worth being aware of the possibility of using a common <code>INodeFactory</code> if your code is sharing a lot of nodes between multiple graphs.</p>
+</div>
+<p>Currently all nodes are scoped to a particular graph and so must be created through a <a class="xref" href="../api/VDS.RDF.INodeFactory.html">INodeFactory</a>, an <code>IGraph</code> is by definition an <code>INodeFactory</code>.</p>
+<h3 id="uri-nodes">URI Nodes</h3>
+<p>The core of RDF is the use of URIs to refer to resources so you will find that you use the <a class="xref" href="../api/VDS.RDF.IUriNode.html">IUriNode</a> interface the majority of the time.</p>
+<p>An URI node can be constructed in several ways as follows:</p>
+<pre><code class="lang-csharp">// Create a UriN    ode using its public constructor:
+IUriNode exampleOrg = new UriNode(UriFactory.Create(&quot;http://example.org/&quot;));
+
+// Create an unamed graph with a non-null BaseUri
+IGraph g = new Graph() { BaseUri = UriFactory.Create(&quot;http://example.org/&quot;) };
+
+//Create a URI Node that refers to the Base URI of the Graph
+//Only valid when the Graph has a non-null Base URI
+IUriNode thisGraph = g.CreateUriNode();
+
+//Create a URI Node that refers to some specific URI
+IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create(&quot;http://www.dotnetrdf.org&quot;));
+
+// Create a URI Node using a relative IRI
+// Only valid when the graph has a non-null BaseUri
+IUriNode resolvedRelative = g.CreateUriNode(new Uri(&quot;relative/path&quot;, UriKind.Relative));
+// Reulting URI is http://example.org/relative/path
+
+//Create a URI Node using a Prefixed Name
+//Need to define a Namespace first
+g.NamespaceMap.AddNamespace(&quot;ex&quot;, UriFactory.Create(&quot;http://example.org/namespace/&quot;));
+IUriNode pname = g.CreateUriNode(&quot;ex:demo&quot;);
+//Resulting URI is http://example.org/namespace/demo
+</code></pre><p>Note that because we use the standard .Net <code>Uri</code> class to store URIs .Net will automatically normalise URIs for us ensuring that equivalent URIs are equal.</p>
+<div class="NOTE"><h5>Note</h5><p>Notice that we use the <a class="xref" href="../api/VDS.RDF.UriFactory.html#VDS_RDF_UriFactory_Create_System_String_">Create()</a> method of the <a class="xref" href="../api/VDS.RDF.UriFactory.html">UriFactory</a> class to create URIs since this takes advantage of dotNetRDF&#39;s URI interning feature to reduce memory usage and speed up equality comparisons on URIs.</p>
+</div>
+<h3 id="blank-nodes">Blank Nodes</h3>
+<p>Blank Nodes are used to refer to anonymous resources or to resources where it is unnecessary to assign a URI to identify some resource. Blank Nodes may either have an automatically assigned ID (truly anonymous) or may be given a user assigned ID.</p>
+<p>A <a class="xref" href="../api/VDS.RDF.IBlankNode.html">IBlankNode</a> may be constructed as follows:</p>
+<pre><code class="lang-csharp">
+// Create a blank node with an ID using the public constructor
+IBlankNode bnode = new BlankNode(&quot;ID&quot;);
+
+//Other options require a Graph/NodeFactory first
+IGraph g = new Graph();
+
+//Create an anonymous Blank Node
+//Each call to this method generates a Blank Node with a new unique identifier within the NodeFactory
+IBlankNode anon = g.CreateBlankNode();
+
+//Create a named Blank Node
+//Reusing the same ID results in the same Blank Node within the NodeFactory
+//Note that if the ID refers to an automatically assigned ID that is already in use the returned
+//Blank Node will be given an alternative ID
+IBlankNode named = g.CreateBlankNode(&quot;ID&quot;);
+</code></pre><div class="NOTE"><h5>Note</h5><p>Be careful of the above proviso about ID collisions between automatically assigned Blank Node IDs (those created with <code>CreateBlankNode()</code>) and those created with an explicit ID. If you try and create a Blank Node with the same explicit ID as an automatically assigned ID you will get back a different Blank Node ID. If you create an anonymous Blank Node you need to hold onto the reference to it as long as you want to use that Blank Node. You can get around this by using <code>GetBlankNode(String id)</code> to return the Blank Node with the given ID provided it exists in the Graph</p>
+</div>
+<h3 id="literal-nodes">Literal Nodes</h3>
+<p>Literal Nodes are used to refer to actual data values. Values may be plain, language specific or typed. A plain literal is simply textual content while a language specific literal is textual content with a language specified in the form of a country code eg. en-GB, en-US, fr. Finally a typed literal is textual content associated with a Data Type URI which indicates the type of the data represented by the literal. Note that a typed literals Data Type does not guarantee that the content of that literal will be of that type.</p>
+<p>A <a class="xref" href="../api/VDS.RDF.ILiteralNode.html">ILiteralNode</a> is constructed as follows:</p>
+<pre><code class="lang-csharp">// Standalone plain literal
+ILiteralNode simple = new LiteralNode(&quot;simple&quot;);
+
+// Standalone language-specified literal
+ILiteralNode hello = new LiteralNode(&quot;hello&quot;,&quot;en&quot;);
+ILiteralNode bonjour = new LiteralNode(&quot;bonjour&quot;,&quot;fr&quot;);
+
+// Standalone datatyped literals
+//You&#39;ll need to be using the VDS.RDF.Parsing namespace to reference the constants used here
+ILiteralNode one = g.CreateLiteralNode(&quot;1&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeInteger));
+ILiteralNode t = g.CreateLiteralNode(&quot;true&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeBoolean));
+
+// Other options require a Graph/NodeFactory
+IGraph g = new Graph();
+
+//Create a Plain Literal
+ILiteralNode plain = g.CreateLiteralNode(&quot;some value&quot;);
+
+//Create some Language Specified Literal
+ILiteralNode goodbye = g.CreateLiteralNode(&quot;goodbye&quot;,&quot;en&quot;);
+ILiteralNode aurevoir = g.CreateLiteralNode(&quot;au revior&quot;,&quot;fr&quot;);
+
+//Create some typed Literals
+ILiteralNode two = g.CreateLiteralNode(&quot;2&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeInteger));
+ILiteralNode f = g.CreateLiteralNode(&quot;false&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeBoolean));
+</code></pre><h3 id="triple-nodes">Triple Nodes</h3>
+<p>Triple Nodes are used in RDF-Star graphs to refer to an RDF statement. 
+The value of a Triple Node is a triple (see below for more guidance on creating triples).</p>
+<p>A <a class="xref" href="../api/VDS.RDF.ITripleNode.html">ITripleNode</a> can be constructed as follows:</p>
+<pre><code class="lang-csharp">// Assuming that `triple` is a variable of type Triple
+
+// Create standalone triple node with the public constructor:
+var standalone = new TripleNode(triple);
+
+// Create a triple node with a NodeFactory
+IGraph g = new Graph();
+var tn = g.CreateTripleNode(triple);
+</code></pre><h2 id="triples">Triples</h2>
+<p>A Triple is the basic unit of RDF data, nodes on their own have no meaning but used in a Triple form a statement which asserts some knowledge. A Triple is formed of a Subject, Predicate and Object. It is interpreted as stating that some Subject is related to some Object by a relationship specified by the Predicate. The components of the Triple class are Nodes which means that any of the Node classes discussed in the previous section can be used in any of the positions.</p>
+<p>In practice the RDF specification restricts which types of Node can appear in which position but since some advanced RDF syntaxes like Notation 3 extend the specification and relax these rules so we allow for any Node type in any position, except for <code>ITripleNode</code> which can only appear as the subject or object of a triple.</p>
+<p>A <a class="xref" href="../api/VDS.RDF.Triple.html">Triple</a> can be constructed and asserted into a Graph as follows:</p>
+<pre><code class="lang-csharp">
+//Need a Graph first
+IGraph g = new Graph();
+
+//Create some Nodes
+IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create(&quot;http://www.dotnetrdf.org&quot;));
+IUriNode createdBy = g.CreateUriNode(UriFactory.Create(&quot;http://example.org/createdBy&quot;));
+ILiteralNode robVesse = g.CreateLiteralNode(&quot;Rob Vesse&quot;);
+
+//Assert this Triple
+Triple t = new Triple(dotNetRDF, createdBy, robVesse);
+g.Assert(t);
+</code></pre><div class="NOTE"><h5>Note</h5><p>Prior to version 3.0, a triple had to be created using nodes from the same graph.
+From version 3.0 onwards a triple can be created with nodes from any Graph or NodeFactory and can be asserted on any Graph regardless of the original source of the nodes.</p>
+</div>
+<p>If you wish to remove a Triple from a Graph you create it in the same manner shown above and call the <code>Retract(...)</code> method which like the <code>Assert(...)</code> method takes a single Triple or an enumerable of Triples.</p>
+<p>Triples also have a property named <code>Context</code> which can be used to store arbitrary application specific data in a class which implements the <a class="xref" href="../api/VDS.RDF.ITripleContext.html">ITripleContext</a> interface.</p>
+<div class="WARNING"><h5>Warning</h5><p>Prior to version 3.0 a triple also had a <code>Graph</code> property which referenced the Graph that it was created for.
+This value was not necessarily always the same as the reference to the <code>Graph</code> that the triple was asserted in, but some old code may make that assumption.
+The property has been removed in 3.0 and code making use of this property should be updated to track the source graph of a triple by other means.</p>
+</div>
+<h2 id="triple-store">Triple Store</h2>
+<p>A Triple Store represents a collection of Graphs and is used to work with larger quantities of RDF. Triple Stores are designed to be less tangible than Graphs in terms of their interface and implementations. While a specific implementation may represent some Triple Store it does not necessarily provide direct access to all the data in that Store i.e. a Triple Store is not necessarily in-memory.</p>
+<p>Triple Stores are actually based on several interfaces, the base interface for them is <a class="xref" href="../api/VDS.RDF.ITripleStore.html">ITripleStore</a>. This interface defines properties and methods relating to adding &amp; removing Graphs and the retrieval of Graphs and Triples contained in the Store.</p>
+<p>If you have a Store that is partially/fully in-memory then it will implement the <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a> interface which is an extension of <a class="xref" href="../api/VDS.RDF.ITripleStore.html">ITripleStore</a>. The <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a> interface defines a swathe of additional methods which provide for various forms of selection of Triples from the Store, it also provides two query methods which allow for executing SPARQL queries on the Triple Store using the libraries in-memory SPARQL implementation. The library contains a class called <a class="xref" href="../api/VDS.RDF.TripleStore.html">TripleStore</a> which is the basic implementation of this interface.</p>
+<p>If you have a Store which is a representation of some backing Store which provides its own SPARQL implementation and where the data will not be loaded in-memory (by dotNetRDF at least) then it will implement the <a class="xref" href="../api/VDS.RDF.INativelyQueryableStore.html">INativelyQueryableStore</a> interface. This interface also extends <a class="xref" href="../api/VDS.RDF.ITripleStore.html">ITripleStore</a> but it only provides a single query method for executing SPARQL queries on the Store.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/core_concepts.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>3.0 Change Notes | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="3.0 Change Notes | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="30-change-notes">3.0 Change Notes</h1>
+
+<p>This document describes the main changes made between version 2.x and version 3.0 of dotNetRDF.</p>
+<h2 id="removed-global-options">Removed Global Options</h2>
+<p>The global Options class has been removed and options are now specified closer to where they are used or in some cases removed entirely</p>
+<h3 id="usebomforutf8">UseBomForUtf8</h3>
+<p>This option has been replaced with a constructor-injected option to specify the precise text encoding to be used in all writers. For backwards compatibility, the default text encoding used is UTF-8 with <strong>no BOM</strong> (as the default value for this option was <code>false</code>)</p>
+<h3 id="forcehttpbasicauth">ForceHttpBasicAuth</h3>
+<p>This option has been removed completely and not implemented as a constructor-injected option. This will be reviewed once the codebase is moved over to the .NET HttpClient APIs.</p>
+<div class="WARNING"><h5>Warning</h5><p>Changing this property has no effect on HTTP requests made by the library at this point in time, and so the use of this obsolete API will result in a compiler error. This will be reviewed once the HTTP client part of the codebase is moved over to the .NET HttpClient APIs.</p>
+</div>
+<h3 id="forceblockingio">ForceBlockingIO</h3>
+<p>This option has been removed. To force use of blocking IO you must now explicitly wrap the source stream/text reader by calling ParsingTextReader.CreateBlocking(TextReader) / ParsingTextReader.CreateBlocking(TextReader, int). By default all parsers will wrap streams other than memory or file streams in a blocking text reader, so this step should only be necessary in rare circumstances of unexpected latency in file or memory IO. </p>
+<div class="WARNING"><h5>Warning</h5><p>Setting this property to <code>true</code> will not change the use of blocking IO by the parsers. You must wrap the stream you wish to use blocking IO on as described above. As this is a breaking change, the use of these obsolete API will result in a compiler error.</p>
+</div>
+<h3 id="validateiris">ValidateIris</h3>
+<p>This option to force validation of parsed IRIs was only used in the Turtle parsers and can now be specified in the constructor of those parsers.</p>
+<h3 id="internuris">InternUris</h3>
+<p>This option has been moved to the UriFactory static class. Interning is enabled by default and can be disabled by setting UriFactory.InternUris to false.</p>
+<h3 id="usedtd">UseDtd</h3>
+<p>This option should be set explicitly when creating a writer. All writer instances that support the use of a DTD provide a UseDtd property (through the IDtdWriter interface) which can be used to change this option after the writer is created. The MimeTypesHelper methods for creating writers also provide an optional parameter for setting this option.</p>
+<h3 id="defaultcompressionlevel">DefaultCompressionLevel</h3>
+<p>The compression level desited for a writer should be set explicitly when creating a writer. All writer instances that support compression also provide a CompressionLevel property (through the ICompressingWriter interface) which may be used to change the compression level after the writer is created. The MimeTypesHelper methods for creating writers also provide an optional parameter for setting this option.</p>
+<h3 id="defaulttokenqueuemode">DefaultTokenQueueMode</h3>
+<p>The token queue mode for tokenizing parsers should be set explicitly when creating a parser. All parsers that implement the <code>ITokenisingParser</code> interface provide a <code>TokenQueueMode</code> property which may be used to change the mode after the parser is created. The MimeTypesHelper methods for creating parsers also provides an optional parameter for setting this option.</p>
+<h3 id="httpdebugging-httpfulldebugging">HttpDebugging, HttpFullDebugging</h3>
+<p>Console logging of HTTP requests and responses has been removed. Please use the standard .NET HttpClient logging facility instead.</p>
+<div class="WARNING"><h5>Warning</h5><p> As these APIs do not have a direct replacement in the library, the use of these APIs will result in a compile-time error.</p>
+</div>
+<h3 id="defaultculture-defaultcomparison">DefaultCulture, DefaultComparison</h3>
+<p>The desired culture and comparison options for node collation should be set explicitly when creating an <code>INodeComparer</code> instance. The node comparer to be used in SPARQL queries can be specified as an option when creating a <code>LeviathanQueryProcessor</code> using the new optional <code>options</code> callback parameter on the <code>LeviathanQueryProcessor</code> constructor. The default settings result in ordering that conforms to the SPARQL 1.1 specification. NOTE: The default comparison option for a <code>SparqlNodeComparere</code> is <code>Ordinal</code>, so to get culture-specific ordering you must both specify the desired culture <em>and</em> set the <code>CompareOptions</code> property to a value such as <code>CompareOptions.None</code> or <code>CompareOptions.IgnoreCase</code> depending on how you want strings to be compared.</p>
+<h3 id="fulltripleindexing">FullTripleIndexing</h3>
+<p>The desired level of indexing can be specified when creating a new <code>TreeIndexedTripleCollection</code>. For classes that use a <code>TreeIndexedTripleCollection</code> such as the in-memory <code>Graph</code> class, the default behaviour remains to create a fully indexed triple collection (this matches the default behaviour in dotNetRDF 2.x), however all of these classes also provide overloaded operators that allow a triple collection with the desired level of indexing to be injected at construction time. </p>
+<h3 id="uriloadercaching">UriLoaderCaching</h3>
+<p>This option is moved to UriLoader.CacheEnabled. This is still a static property at present as the UriLoader is currently implemented as a static class.</p>
+<h3 id="uriloadertimeout">UriLoaderTimeout</h3>
+<p>This option is moved to UriLoader.Timeout. This is still a static property at present as the UriLoader is currently implemented as a static class.</p>
+<h3 id="queryexecutiontimeout-algebraoptimisation-strictoperators-rigorousevaluation-useplinqevaluation">QueryExecutionTimeout, AlgebraOptimisation. StrictOperators, RigorousEvaluation, UsePLinqEvaluation</h3>
+<p>These options can be set when creating a new <code>LeviathanQueryProcessor</code> using the new optional <code>options</code> callback parameter on the <code>LeviathanQueryProcessor</code> constructor.</p>
+<h3 id="queryoptimisation">QueryOptimisation</h3>
+<p>By default queries and SPARQL update commands will be optimised by the query parser. To disable this behaviour, use the <code>QueryOptimisation</code> property on the <code>SparqlQueryParser</code> class (or the same property on the <code>SparqlUpdateParser</code> class for SPARQL update commands). NOTE: The default behaviour of optimising queries matches the previous default behaviour of dotNetRDF.</p>
+<h3 id="unsafeoptimisation">UnsafeOptimisation</h3>
+<p>To use the unsafe optimisation option in the <code>ImplictJoinOptimiser</code> retrieve the instance of the optimiser from <code>SparqlOptimisers.AlgebraOptimisers</code> and set its UnsafeOptimisation property to true. The <code>IAlgebraOptimiser</code> interface has been extended to add this property for all optimisers although currently only the <code>ImplictJoinOptimiser</code> operates on it.</p>
+<div class="WARNING"><h5>Warning</h5><p>Changing the static <code>Options.UnsafeOptimisation</code> property at runtime will not change the behaviour of the optimiser as it has already been instantiated. For this reason, the Obsolete warning for this property has been set to generate a compile-time error rather than a warning.</p>
+</div>
+<h3 id="querydefaultsyntax">QueryDefaultSyntax</h3>
+<p>The desired SPARQL syntax can be set directly on all relevant classes - the most commonly used one being <code>SparqlQueryParser</code>, either by a constructor parameter or a property setting or in most cases both. 
+The default syntax library-wide is SPARQL 1.1 (<code>SparqlQuerySyntax.SPARQL_1_1</code>).</p>
+<h3 id="queryallowunknownfunctions">QueryAllowUnknownFunctions</h3>
+<p>This option can now be set through the <code>AllowUnknownFunctions</code> property of <code>SparqlQueryParser</code> and <code>SparqlUpdateParser</code>.</p>
+<h3 id="updateexecutiontimeout">UpdateExecutionTimeout</h3>
+<p>This option can be set when creating a new <code>LeviathanUpdateProcessor</code> using the new optional <code>options</code> callback parameter on the <code>LeviathanUpdateProcessor</code> constructor.</p>
+<h3 id="normalizeliteralvalues">NormalizeLiteralValues</h3>
+<p>This option can now be set on any implementation of <code>INodeFactory</code>. This includes <code>Graph</code> and other related classes and will affect calls made to <code>CreateLiteralNode</code> on those classes.</p>
+<h3 id="literalequalitymode">LiteralEqualityMode</h3>
+<p>This option has moved to the <code>EqualityHelper</code> static class. </p>
+<h2 id="net-serialization-support-has-been-removed">.NET serialization support has been removed</h2>
+<p>We recommend instead using one of the supported RDF/SPARQL syntaxes to serialize/deserialize triples, graphs, stores or SPARQL results.</p>
+<h2 id="the-static-uriloader-class-has-a-new-non-static-replacement">The static UriLoader class has a new non-static replacement</h2>
+<p>The new <code>VDS.RDF.Parsing.Loader</code> class provides similar functionality to the <code>VDS.RDF.Parsing.UriLoader</code> class but uses the more modern <code>System.Net.Http</code> library for its HTTP connections. Making the class non-static allows you to create multiple loader instances configured with different <code>HttpClient</code> instances. The main &quot;missing&quot; feature of the new <code>Loader</code> class is caching, which can (and should) be handled at the HttpClient layer.</p>
+<h2 id="node-construction-changes">Node construction changes</h2>
+<p>There are some significant changes to the way that nodes can be created. At the heart of these changes is that nodes are no longer scoped to a specific graph. A node can be used to assert triples in many different graphs without having to be copied between the graphs. Much of this copying was handled internally by the implementations of the <code>INodeFactory</code> interface (an interface which was implemented by the <code>Graph</code> class amongst others).</p>
+<p>From dotNetRDF 3.0, nodes can be directly created using public constructors on the relevant classes. However the <code>INodeFactory</code> class remains as it provides a number of convenient functions:</p>
+<pre><code>* It allows the specification of a `BaseUri` that can be used to create `UriNode`s using relative URIs.
+* It has an `INamespaceMapper` which can be used to resolve QNames to URIs when creating `UriNode`s.
+* It can be used to create auto-assigned blank node identifiers.
+</code></pre><p>The <code>Graph</code> class now has a <code>NodeFactory</code> property that allows the node factory for a graph to be accessed directly and it implements the <code>INodeFactory</code> interface by delegating all calls to the <code>NodeFactory</code> member. The <code>NodeFactory</code> property is read-only, but can be specified in the <code>Graph</code> constructor. </p>
+<div class="NOTE"><h5>Note</h5><p>The way that these changes have been implemented ensures that all existing code that creates nodes and triples in graphs will compile cleanly and continue to behave as expected. There is one significant exception though as noted in the section below.</p>
+</div>
+<h2 id="breaking-graph-names-are-now-specified-using-the-name-property-not-baseuri">BREAKING: Graph Names are now specified using the <code>Name</code> property, not <code>BaseUri</code></h2>
+<p>Prior to this release of dotNetRDF, the <code>BaseUri</code> property of an <code>Graph</code> served a dual purpose - it provided a base URI that could be used to resolve relative URI references (e.g. when creating new <code>UriNode</code>s in the graph); and it served as the name of the graph in an RDF dataset.</p>
+<p>With 3.0, the name of the graph can now be either an <code>IUriNode</code> or an <code>IBlankNode</code> (matching the definition of graph names in the 1.1 version of the RDF specification). This is accessed through the <code>Name</code> property of the <code>IGraph</code> interface. This property is <em>read-only</em> as a graph name should be immutable (especially when it is used to index that graph in collections such as an RDF dataset) - so it can only be set as a constructor parameter. The <code>BaseUri</code> property remains on the <code>IGraph</code> interface, but it is actually now inherited from the <code>INodeFactory</code> interface (which <code>IGraph</code> extends) and is used only to resolve relative URIs when creating a new <code>UriNode</code>. <code>BaseUri</code> is a read-write property as you can (and may want to) change the effective base URI depending on the sources of RDF you are parsing to load the graph with data.</p>
+<p>This is an important breaking change for code that deals with named graphs. The change is relatively simple but it does require having access to the graph name at the time that the graph is constructed. Old code that set the graph <code>BaseUri</code> to give the graph a name looked like this:</p>
+<pre><code>var graph = new Graph();
+// ... maybe some intervening code
+graph.BaseUri = new Uri(&quot;http://example.org/graph1&quot;);
+</code></pre><p>From dotNetRDF 3.0, the code above <strong>does not change the name of the graph</strong>! To set the graph name, it must now be passed as an <code>IUriNode</code> or <code>IBlankNode</code> constructor parameter:</p>
+<pre><code>var graph = new Graph(new UriNode(new Uri(&quot;http://example.org/graph1&quot;)));
+</code></pre><p>Of course if you want a URI to be both the name and the base URI of the graph, that is still possible too:</p>
+<pre><code>var graph = new Graph(new UriNode(new Uri(&quot;http://example.org/graph1&quot;))) {
+   BaseUri = new Uri(&quot;http://example.org/graph1&quot;)
+};
+</code></pre><h2 id="there-is-now-more-control-over-the-interning-of-uris">There is now more control over the interning of URIs</h2>
+<p>Prior to this release, the UriFactory static class provided a way to construct URIs in a way that interns the URI, providing the same System.Net.Uri instance for the same URI string. This can drastically reduce memory usage in some scenarios, but in other scenarios where you are dealing with a lot of data or simply a lot of variance in URIs, the interned map of URIs can actually become a memory-hog itself.</p>
+<p>In this release we introduce the concept of a hierarchical structure of URI factories each of which has its own interned set of URIs and which can also delegate lookups to a parent factory. This gives you a lot more control over how long interned URIs are kept for. For example in a server you may choose to only intern URIs on a per request basis, or create a session-scoped factory so that the interned URIs are kept just within a single session.</p>
+<p>To support this we introduce a new IUriFactory interface and a default implementation (CachingUriFactory). The static UriFactory class now has a static Root (which is an instance of CachingUriFactory) and the static Create and Clear methods just delegate to Root.Create and Root.Clear. In addition there is a lot of restructuring of APIs to add the option to pass a UriFactory or configure a UriFactory to use - for example the IRdfReader interface now has overrides that accept an IUriFactory parameter. In all cases, if the parameter is optional and you don&#39;t specify an IUriFactory instance for these parameters, the default is to use the static UriFactory.Root instance, so existing code should not be affected by this change.</p>
+<h2 id="breaking-added-isparqlresultset-interface-and-changed-sparqlresults-to-implement-ienumerableisparqlresultset-rather-than-ienumerablesparqlresultset">BREAKING: Added ISparqlResultSet interface and changed SparqlResults to implement IEnumerable<isparqlresultset> rather than IEnumerable<sparqlresultset></sparqlresultset></isparqlresultset></h2>
+<p>The ISparqlResultSet interface has been added to allow a more clean separation between results generated by the Leviathan engine and those generated by other engines or as the result of SPARQL result set parsing. This will cause compile-time implicit type conversion errors where code is receiving values into a variable typed as SparqlResultSet. Changing such variables to ISparqlResultSet should enable clean compilation.</p>
+<h2 id="autoconfiguresparqloperators-method-has-moved">AutoConfigureSparqlOperators method has moved</h2>
+<p>The method is now a static method of VDS.RDF.Configuration.SparqlConfigurationLoader so calls to <code>ConfigurationLoader.AutoConfigureSparqlOperators</code> will need to be changed to <code>SparqlConfigurationLoader.AutoConfigureSparqlOperators</code></p>
+<h2 id="mime-types-for-sparql-query-and-update-are-no-longer-registered-by-default">MIME types for SPARQL Query and Update are no longer registered by default</h2>
+<p>Because the parsers for SPARQL Query and Update are now in a separate assembly from the core assembly containing the MIME type registry, these parsers need to be registered. The static method <code>VDS.RDF.SparqlMimeTypeExtensions.RegisterSparqlMimeTypes()</code>
+will perform this registration.</p>
+<p>This change will break existing code that uses the MimeTypesHelper class to retrieve SPARQL query or update parsers.</p>
+<h2 id="triple-and-irdfhandler-changes">Triple and IRdfHandler changes</h2>
+<p>The <code>Triple</code> class no longer has a <code>Graph</code> property. This property was used in dotNetRDF 2.x to reference the <code>IGraph</code> instance that the triple was created in and not necessarily the graph that the triple existed in, which could lead to some confusion.
+Because <code>Triple</code> has been changed to remove this property, the <code>IRdfHandler</code> interface has been extended to add a new <code>HandleQuad</code> method which receives a <code>Triple</code> and a <code>IRefNode</code> as arguments. 
+This method is invoked when handling a triple that is asserted in a graph, with the name of the graph as the <code>IRefNode</code> argument.
+When updating your implementations of <code>IRdfHandler</code>, please be aware that some parsers (especially those that support graphs as part of their syntax) may report triples in the default graph by invoking <code>HandleQuad</code> with a null value for the <code>IRefNode</code> argument, rather than by invoking <code>HandleTriple</code>.
+You should therefore ensure that you provide an implementation of <code>HandleQuad</code> even if your handler does not handle triples in a named graph. In your handler you can then decide whether to treat a non-null <code>IRefNode</code> argument as an error or to handle it in some other way (e.g. by ignoring the graph component, or by ignoring the whole quad).</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/3_0_changelog.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

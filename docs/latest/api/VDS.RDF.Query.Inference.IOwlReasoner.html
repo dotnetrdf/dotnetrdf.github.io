@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IOwlReasoner
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,26 +69,19 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Inference.IOwlReasoner">
-  <h1 id="VDS_RDF_Query_Inference_IOwlReasoner" data-uid="VDS.RDF.Query.Inference.IOwlReasoner">Interface IOwlReasoner
+  
+  
+  <h1 id="VDS_RDF_Query_Inference_IOwlReasoner" data-uid="VDS.RDF.Query.Inference.IOwlReasoner" class="text-break">Interface IOwlReasoner
   </h1>
   <div class="markdown level0 summary"><p>Proposed interface for OWL Reasoners - currently incomplete.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Inference.html">VDS.RDF.Query.Inference</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.Inferencing.dll</h6>
   <h5 id="VDS_RDF_Query_Inference_IOwlReasoner_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IOwlReasoner</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Inference_IOwlReasoner_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 <strong>Important:</strong> This interface is specifically designed so that it does not require the provision of a Graph to methods unless the method does not make sense without taking an <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a> as a parameter.  This is because we envisage the use of this interface for connecting to reasoners which have their own access to the data over which they are reasoning and do not need it providing explicitly to them.
@@ -97,568 +90,534 @@
 Reasoner implementations may throw <span class="xref">System.NotSupportedException</span> for operations they don&apos;t support and may throw any other appropriate exceptions as appropriate for operations that encounter errors.
 </p>
 </div>
-  
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Unsatisfiable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Unsatisfiable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L121" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L121">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Unsatisfiable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Unsatisfiable"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable" class="expander" data-toggle="collapse">Unsatisfiable</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Unsatisfiable" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Unsatisfiable">Unsatisfiable</h4>
   <div class="markdown level1 summary"><p>Returns the enumeration of unsatisfiable classes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IEnumerable&lt;OntologyResource&gt; Unsatisfiable { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Ontology.OntologyResource.html">OntologyResource</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Ontology.OntologyResource.html">OntologyResource</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Add(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Add(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L56">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Add_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Add*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Add(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">Add(IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Add(VDS.RDF.IGraph)">Add(IGraph)</h4>
   <div class="markdown level1 summary"><p>Adds a Graph to the reasoners knowledge base.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Add(IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Inference_IOwlReasoner_Add_VDS_RDF_IGraph__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 A reasoner may choose to do nothing in this method if that reasoner especially if it operates using some pre-defined, remote or otherwise immutable knowledge base.
 </p>
 </div>
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Classify.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Classify%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Classify.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Classify%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L93" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L93">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Classify_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Classify*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Classify" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Classify"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Classify" class="expander" data-toggle="collapse">Classify()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Classify" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Classify" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Classify">Classify()</h4>
   <div class="markdown level1 summary"><p>Extracts the triples which comprise the class hierarchy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; Classify()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L86" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L86">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.Collections.Generic.IEnumerable{System.String})"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__" class="expander" data-toggle="collapse">Extract(IEnumerable&lt;String&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.Collections.Generic.IEnumerable{System.String})">Extract(IEnumerable&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Extracts all possible triples using the given extraction modes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; Extract(IEnumerable&lt;string&gt; modes)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</span>
-        <span class="parametername">modes</span>
-        <p><p>Extraction Modes.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">modes</span></td>
+        <td><p>Extraction Modes.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_Collections_Generic_IEnumerable_System_String___remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">modes</code> permits for the specification of an extraction mode for reasoners that can extract specific subsets of reasoning.  Where this is not supported the reasoner should simply extract all triples that can be inferred by reasoning.</p>
 </div>
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L75" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L75">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.String)"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_" class="expander" data-toggle="collapse">Extract(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(System.String)">Extract(String)</h4>
   <div class="markdown level1 summary"><p>Extracts all possible triples using the given extraction mode.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; Extract(string mode)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">mode</span>
-        <p><p>Extraction Mode.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>Extraction Mode.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">mode</code> permits for the specification of an extraction mode for reasoners that can extract specific subsets of reasoning.  Where this is not supported the reasoner should simply extract all triples that can be inferred by reasoning.</p>
 </div>
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(VDS.RDF.IGraph%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Extract(VDS.RDF.IGraph%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L64">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(VDS.RDF.IGraph,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_" class="expander" data-toggle="collapse">Extract(IGraph, INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Extract_VDS_RDF_IGraph_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Extract(VDS.RDF.IGraph,VDS.RDF.INode)">Extract(IGraph, INode)</h4>
   <div class="markdown level1 summary"><p>Extract a reasoning enhanced sub-graph from the given Graph rooted at the given Node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IGraph Extract(IGraph g, INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>Root Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>Root Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L107" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L107">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent" class="expander" data-toggle="collapse">IsConsistent()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent">IsConsistent()</h4>
   <div class="markdown level1 summary"><p>Returns whether the underlying knowledge base is consistent.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool IsConsistent()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L115" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L115">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">IsConsistent(IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_IsConsistent_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.IsConsistent(VDS.RDF.IGraph)">IsConsistent(IGraph)</h4>
   <div class="markdown level1 summary"><p>Returns whether the given Graph is consistent with the underlying knowledge base.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool IsConsistent(IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Realize.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Realize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner_Realize.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner.Realize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L100" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L100">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Inference_IOwlReasoner_Realize_" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Realize*"></a>
-  
-  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Realize" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Realize"><a href="#collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Realize" class="expander" data-toggle="collapse">Realize()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Inference_IOwlReasoner_Realize" class="collapse in">
+  <h4 id="VDS_RDF_Query_Inference_IOwlReasoner_Realize" data-uid="VDS.RDF.Query.Inference.IOwlReasoner.Realize">Realize()</h4>
   <div class="markdown level1 summary"><p>Extracts the triples which comprise the class hierarchy and individuals of those classes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; Realize()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.NotSupportedException</span>
-        <p><p>May be thrown if the Reasoner does not support such an operation.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p>May be thrown if the Reasoner does not support such an operation.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Inference/IOwlReasoner.cs/#L44" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Inference_IOwlReasoner.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Inference.IOwlReasoner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/Query/Inference/IOwlReasoner.cs/#L44" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

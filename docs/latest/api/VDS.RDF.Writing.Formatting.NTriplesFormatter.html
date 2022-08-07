@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NTriplesFormatter
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,23 +69,31 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter">
-  <h1 id="VDS_RDF_Writing_Formatting_NTriplesFormatter" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter">Class NTriplesFormatter
+  
+  
+  <h1 id="VDS_RDF_Writing_Formatting_NTriplesFormatter" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter" class="text-break">Class NTriplesFormatter
   </h1>
   <div class="markdown level0 summary"><p>Formatter for formatting as NTriples.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html">BaseFormatter</a></div>
     <div class="level2"><span class="xref">NTriplesFormatter</span></div>
-  </div>
-  
       <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.NQuadsFormatter.html">NQuadsFormatter</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.NTriples11Formatter.html">NTriples11Formatter</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.UncompressedTurtleFormatter.html">UncompressedTurtleFormatter</a></div>
-  
+      <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.UncompressedTurtleStarFormatter.html">UncompressedTurtleStarFormatter</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.INodeFormatter.html">INodeFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.ITripleFormatter.html">ITripleFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.IUriFormatter.html">IUriFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.ICharFormatter.html">ICharFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html">IResultFormatter</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -107,7 +115,7 @@
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatGraphLiteralNode_VDS_RDF_IGraphLiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatGraphLiteralNode(IGraphLiteralNode, Nullable&lt;TripleSegment&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Query_SparqlResult_">BaseFormatter.Format(SparqlResult)</a>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Query_ISparqlResult_">BaseFormatter.Format(ISparqlResult)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatBooleanResult_System_Boolean_">BaseFormatter.FormatBooleanResult(Boolean)</a>
@@ -137,690 +145,785 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.Formatting.html">VDS.RDF.Writing.Formatting</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class NTriplesFormatter : BaseFormatter, INodeFormatter, ITripleFormatter, IUriFormatter, ICharFormatter, IResultFormatter</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L84" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L84">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor" class="expander" data-toggle="collapse">NTriplesFormatter()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor">NTriplesFormatter()</h4>
   <div class="markdown level1 summary"><p>Creates a new NTriples Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NTriplesFormatter()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L91" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L91">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_" class="expander" data-toggle="collapse">NTriplesFormatter(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(System.String)">NTriplesFormatter(String)</h4>
   <div class="markdown level1 summary"><p>Creates a new NTriples Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected NTriplesFormatter(string formatName)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(VDS.RDF.Parsing.NTriplesSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(VDS.RDF.Parsing.NTriplesSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L78">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(VDS.RDF.Parsing.NTriplesSyntax)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_" class="expander" data-toggle="collapse">NTriplesFormatter(NTriplesSyntax)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(VDS.RDF.Parsing.NTriplesSyntax)">NTriplesFormatter(NTriplesSyntax)</h4>
   <div class="markdown level1 summary"><p>Creates a new NTriples Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NTriplesFormatter(NTriplesSyntax syntax)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a></span>
-        <span class="parametername">syntax</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a></td>
+        <td><span class="parametername">syntax</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(VDS.RDF.Parsing.NTriplesSyntax%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.%23ctor(VDS.RDF.Parsing.NTriplesSyntax%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L60">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(VDS.RDF.Parsing.NTriplesSyntax,System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_" class="expander" data-toggle="collapse">NTriplesFormatter(NTriplesSyntax, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__ctor_VDS_RDF_Parsing_NTriplesSyntax_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.#ctor(VDS.RDF.Parsing.NTriplesSyntax,System.String)">NTriplesFormatter(NTriplesSyntax, String)</h4>
   <div class="markdown level1 summary"><p>Creates a new NTriples formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NTriplesFormatter(NTriplesSyntax syntax, string formatName)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a></span>
-        <span class="parametername">syntax</span>
-        <p><p>NTriples syntax to output.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a></td>
+        <td><span class="parametername">syntax</span></td>
+        <td><p>NTriples syntax to output.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter__litEscapes.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter._litEscapes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L46">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter__litEscapes" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter._litEscapes">_litEscapes</h4>
+  <div class="markdown level1 summary"><p>Set of characters which must be escaped in Literals.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly List&lt;string[]&gt; _litEscapes</code></pre>
   </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.Syntax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.Syntax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L108" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L110">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.Syntax*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.Syntax"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax" class="expander" data-toggle="collapse">Syntax</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_Syntax" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.Syntax">Syntax</h4>
   <div class="markdown level1 summary"><p>Gets the NTriples syntax being used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NTriplesSyntax Syntax { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.NTriplesSyntax.html">NTriplesSyntax</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatBlankNode(VDS.RDF.IBlankNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_Format_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.Format(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L216" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L113">View Source</a>
   </span>
-  
+  <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_Format_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.Format*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_Format_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.Format(VDS.RDF.Triple,VDS.RDF.IRefNode)">Format(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Formats a triple in the context of a graph as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Format(Triple t, IRefNode graph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The triple.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseFormatter.Format(Triple, IRefNode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatBlankNode(VDS.RDF.IBlankNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L256">View Source</a>
+  </span>
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatBlankNode*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatBlankNode(VDS.RDF.IBlankNode,System.Nullable{VDS.RDF.Writing.TripleSegment})"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="expander" data-toggle="collapse">FormatBlankNode(IBlankNode, Nullable&lt;TripleSegment&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatBlankNode(VDS.RDF.IBlankNode,System.Nullable{VDS.RDF.Writing.TripleSegment})">FormatBlankNode(IBlankNode, Nullable&lt;TripleSegment&gt;)</h4>
   <div class="markdown level1 summary"><p>Formats a Blank Node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override string FormatBlankNode(IBlankNode b, TripleSegment? segment)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></span>
-        <span class="parametername">b</span>
-        <p><p>Blank Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</span>
-        <span class="parametername">segment</span>
-        <p><p>Triple Segment.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>Blank Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</td>
+        <td><span class="parametername">segment</span></td>
+        <td><p>Triple Segment.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatBlankNode_VDS_RDF_IBlankNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatBlankNode(IBlankNode, Nullable&lt;TripleSegment&gt;)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L162" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L202">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_" class="expander" data-toggle="collapse">FormatChar(Char)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char)">FormatChar(Char)</h4>
   <div class="markdown level1 summary"><p>Formats a Character.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This form of the FormatChar() method is considered obsolete as it is inefficient&quot;, false)]
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This form of the FormatChar() method is considered obsolete as it is inefficient&quot;, true)]
 public override string FormatChar(char c)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Char</span></span>
-        <span class="parametername">c</span>
-        <p><p>Character.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>Character.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatChar_System_Char_">BaseFormatter.FormatChar(Char)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L180" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L220">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char[])"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___" class="expander" data-toggle="collapse">FormatChar(Char[])</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatChar_System_Char___" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatChar(System.Char[])">FormatChar(Char[])</h4>
   <div class="markdown level1 summary"><p>Formats a sequence of characters as a String.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string FormatChar(char[] cs)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Char</span>[]</span>
-        <span class="parametername">cs</span>
-        <p><p>Characters.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">cs</span></td>
+        <td><p>Characters.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p><p>String.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>String.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatChar_System_Char___">BaseFormatter.FormatChar(Char[])</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatDatatype_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatDatatype(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L168">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatDatatype_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatDatatype*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatDatatype_System_Uri_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatDatatype(System.Uri)">FormatDatatype(Uri)</h4>
+  <div class="markdown level1 summary"><p>Format the datatype specification for a literal value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string FormatDatatype(Uri datatypeUri)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">datatypeUri</span></td>
+        <td><p>The datatype URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatLiteralNode(VDS.RDF.ILiteralNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatLiteralNode(VDS.RDF.ILiteralNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L132" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L140">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatLiteralNode*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatLiteralNode(VDS.RDF.ILiteralNode,System.Nullable{VDS.RDF.Writing.TripleSegment})"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="expander" data-toggle="collapse">FormatLiteralNode(ILiteralNode, Nullable&lt;TripleSegment&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatLiteralNode(VDS.RDF.ILiteralNode,System.Nullable{VDS.RDF.Writing.TripleSegment})">FormatLiteralNode(ILiteralNode, Nullable&lt;TripleSegment&gt;)</h4>
   <div class="markdown level1 summary"><p>Formats a Literal Node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override string FormatLiteralNode(ILiteralNode l, TripleSegment? segment)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></span>
-        <span class="parametername">l</span>
-        <p><p>Literal Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</span>
-        <span class="parametername">segment</span>
-        <p><p>Triple Segment.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td><span class="parametername">l</span></td>
+        <td><p>Literal Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</td>
+        <td><span class="parametername">segment</span></td>
+        <td><p>Triple Segment.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatLiteralNode_VDS_RDF_ILiteralNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatLiteralNode(ILiteralNode, Nullable&lt;TripleSegment&gt;)</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatTripleNode(VDS.RDF.ITripleNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L179">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatTripleNode_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatTripleNode*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatTripleNode(VDS.RDF.ITripleNode,System.Nullable{VDS.RDF.Writing.TripleSegment})">FormatTripleNode(ITripleNode, Nullable&lt;TripleSegment&gt;)</h4>
+  <div class="markdown level1 summary"><p>Formats a triple node a a string for the given format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string FormatTripleNode(ITripleNode t, TripleSegment? segment)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleNode.html">ITripleNode</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</td>
+        <td><span class="parametername">segment</span></td>
+        <td><p>Triple segment being written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatTripleNode(ITripleNode, Nullable&lt;TripleSegment&gt;)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L238" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L278">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_" class="expander" data-toggle="collapse">FormatUri(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_String_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.String)">FormatUri(String)</h4>
   <div class="markdown level1 summary"><p>Formats a URI as a String for full Output.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string FormatUri(string u)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">u</span>
-        <p><p>URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUri_System_String_">BaseFormatter.FormatUri(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L222" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L262">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.Uri)"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_" class="expander" data-toggle="collapse">FormatUri(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUri_System_Uri_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUri(System.Uri)">FormatUri(Uri)</h4>
   <div class="markdown level1 summary"><p>Formats a URI as a String for full Output.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string FormatUri(Uri u)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">u</span>
-        <p><p>URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUri_System_Uri_">BaseFormatter.FormatUri(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUriNode(VDS.RDF.IUriNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUriNode(VDS.RDF.IUriNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L116" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L124">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUriNode*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUriNode(VDS.RDF.IUriNode,System.Nullable{VDS.RDF.Writing.TripleSegment})"><a href="#collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="expander" data-toggle="collapse">FormatUriNode(IUriNode, Nullable&lt;TripleSegment&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_NTriplesFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.NTriplesFormatter.FormatUriNode(VDS.RDF.IUriNode,System.Nullable{VDS.RDF.Writing.TripleSegment})">FormatUriNode(IUriNode, Nullable&lt;TripleSegment&gt;)</h4>
   <div class="markdown level1 summary"><p>Formats a URI Node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override string FormatUriNode(IUriNode u, TripleSegment? segment)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></span>
-        <span class="parametername">u</span>
-        <p><p>URI Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</span>
-        <span class="parametername">segment</span>
-        <p><p>Triple Segment.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>URI Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</td>
+        <td><span class="parametername">segment</span></td>
+        <td><p>Triple Segment.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUriNode_VDS_RDF_IUriNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatUriNode(IUriNode, Nullable&lt;TripleSegment&gt;)</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.INodeFormatter.html">INodeFormatter</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.ITripleFormatter.html">ITripleFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.IUriFormatter.html">IUriFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.ICharFormatter.html">ICharFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html">IResultFormatter</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/NTriplesFormatter.cs/#L38" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_NTriplesFormatter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.NTriplesFormatter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/NTriplesFormatter.cs/#L38" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

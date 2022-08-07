@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IUpdateableTripleStore
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,14 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.IUpdateableTripleStore">
-  <h1 id="VDS_RDF_IUpdateableTripleStore" data-uid="VDS.RDF.IUpdateableTripleStore">Interface IUpdateableTripleStore
+  
+  
+  <h1 id="VDS_RDF_IUpdateableTripleStore" data-uid="VDS.RDF.IUpdateableTripleStore" class="text-break">Interface IUpdateableTripleStore
   </h1>
   <div class="markdown level0 summary"><p>Interface for Triple Stores which support SPARQL Update as per the SPARQL 1.1 specifications.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -87,6 +86,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Triples">ITripleStore.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_UriFactory">ITripleStore.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_">ITripleStore.Add(IGraph)</a>
@@ -101,13 +103,25 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_">ITripleStore.AddFromUri(Uri, Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_VDS_RDF_Parsing_Loader_">ITripleStore.AddFromUri(Uri, Boolean, Loader)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_System_Uri_">ITripleStore.Remove(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_VDS_RDF_IRefNode_">ITripleStore.Remove(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_System_Uri_">ITripleStore.HasGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_VDS_RDF_IRefNode_">ITripleStore.HasGraph(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_System_Uri_">ITripleStore.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_VDS_RDF_IRefNode_">ITripleStore.Item[IRefNode]</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphAdded">ITripleStore.GraphAdded</a>
@@ -128,18 +142,12 @@
       <span class="xref">System.IDisposable.Dispose()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_IUpdateableTripleStore_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IUpdateableTripleStore : ITripleStore, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_IUpdateableTripleStore_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 A Store which supports this may implement various access control mechanisms which limit what operations are actually permitted.
@@ -148,154 +156,51 @@ A Store which supports this may implement various access control mechanisms whic
 It is the responsibility of the Store class to ensure that commands are permissible before invoking them.
 </p>
 </div>
-  
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L454" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/IUpdateableTripleStore.cs/#L51">View Source</a>
   </span>
-  
   <a id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate*"></a>
-  
-  <h4 id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(System.String)"><a href="#collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_" class="expander" data-toggle="collapse">ExecuteUpdate(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(System.String)">ExecuteUpdate(String)</h4>
   <div class="markdown level1 summary"><p>Executes an Update against the Triple Store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ExecuteUpdate(string update)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">update</span>
-        <p><p>SPARQL Update Command(s).</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">update</span></td>
+        <td><p>SPARQL Update Command(s).</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>As per the SPARQL 1.1 Update specification the command string may be a sequence of commands.</p>
 </div>
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommand_.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L460" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate*"></a>
-  
-  <h4 id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommand_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommand)"><a href="#collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommand_" class="expander" data-toggle="collapse">ExecuteUpdate(SparqlUpdateCommand)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommand_" class="collapse in">
-  <div class="markdown level1 summary"><p>Executes a single Update Command against the Triple Store.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ExecuteUpdate(SparqlUpdateCommand update)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommand.html">SparqlUpdateCommand</a></span>
-        <span class="parametername">update</span>
-        <p><p>SPARQL Update Command.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L466" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate*"></a>
-  
-  <h4 id="VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.IUpdateableTripleStore.ExecuteUpdate(VDS.RDF.Update.SparqlUpdateCommandSet)"><a href="#collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommandSet_" class="expander" data-toggle="collapse">ExecuteUpdate(SparqlUpdateCommandSet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IUpdateableTripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommandSet_" class="collapse in">
-  <div class="markdown level1 summary"><p>Executes a set of Update Commands against the Triple Store.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ExecuteUpdate(SparqlUpdateCommandSet updates)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></span>
-        <span class="parametername">updates</span>
-        <p><p>SPARQL Update Command Set.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, String, IStoreReader)</a>
@@ -308,6 +213,9 @@ It is the responsibility of the Store class to ensure that commands are permissi
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, String, IStoreReader)</a>
@@ -327,17 +235,24 @@ It is the responsibility of the Store class to ensure that commands are permissi
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, String)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L444" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IUpdateableTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IUpdateableTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/IUpdateableTripleStore.cs/#L41" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SparqlGui | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="SparqlGui | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sparqlgui">SparqlGui</h1>
+
+<p>The SparqlGUI is a Windows GUI tool for testing out SPARQL queries on arbitrary datasets which you create by loading in RDF from files and/or remote URIs. Additionally you may set an option so that the query can load graphs on demand from the web where they are specified in <code>FROM</code>, <code>FROM NAMED</code> or <code>GRAPH</code> clauses in the query.</p>
+<p>It will also run under Mono though user experience for Windows Forms based GUIs is less than optimal with Mono.</p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="index.html">Toolkit</a></p>
+<h2 id="documentation">Documentation</h2>
+<p>As a GUI tool SparqlGui is fairly self-explanatory, here we primarily cover the various options you can configure to tune the behaviour of the tool.</p>
+<h3 id="syntax-options">Syntax Options</h3>
+<p>The <code>Syntax Options</code> panel lets you set which SPARQL syntax should be used for parsing your queries, this allows you to test whether a query is valid for a given SPARQL specification. If you try and use syntax in your query that is not supported by your chosen syntax then a parsing error will occur and a message will be displayed when you attempt to make your query.</p>
+<p>SPARQL 1.0 and 1.1 represent the standards, SPARQL 1.1 Extended is the SPARQL 1.1 standard plus some custom extensions - namely LET assignment, additional aggregates and some keyword synonyms.</p>
+<h3 id="sparql-results-format">SPARQL Results Format</h3>
+<p>Selects the format that you want the results of SELECT/ASK queries presenting to you in. This only applies when the <code>View Results and Graphs in Application</code> option is disabled.</p>
+<h3 id="graph-format">Graph Format</h3>
+<p>Selects the format that you want the results of CONSTRUCT/DESCRIBE queries presenting to you in.  This only applies when the <code>View Results and Graphs in Application</code> option is disabled.</p>
+<h3 id="query-options">Query Options</h3>
+<p>Query Options lets you set options for how queries are executed and parsed.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timeout</td>
+<td>10,000 ms</td>
+<td>Sets the timeout for query execution</td>
+</tr>
+<tr>
+<td>Partial Results on Timeout</td>
+<td>Disabled</td>
+<td>Controls whether any results should be returned in the event of a timeout.</td>
+</tr>
+<tr>
+<td>Allowing Graphs to be loaded &#39;on demand&#39; from the web</td>
+<td>Disabled</td>
+<td>Controls the behaviour when queries that specify graph URIs in <code>FROM</code>, <code>FROM NAMED</code> or <code>GRAPH</code> clauses if the Graphs aren&#39;t already present in the dataset.  When enabled the tool will attempt to retrieve them from the web.</td>
+</tr>
+<tr>
+<td>Permit Unknown Function URIs</td>
+<td>Enabled</td>
+<td>When enabled if a function is invoked by URI and dotNetRDF does not know about that function it treats it as a function that returns an error for any input. If this option is not set when an unknown function is encountered a parser error will occur.</td>
+</tr>
+<tr>
+<td>Optimise Queries</td>
+<td>Enabled</td>
+<td>Controls whether query pattern optimization is used.</td>
+</tr>
+<tr>
+<td>Optimise Query Algebra</td>
+<td>Enabled</td>
+<td>Controls whether algebra optimisation are used.</td>
+</tr>
+<tr>
+<td>Enable Parallel Query Evaluation</td>
+<td>Enabled</td>
+<td>Controls whether parallel query evaluation is used to boost performance.</td>
+</tr>
+<tr>
+<td>Default Graph is union of all graphs</td>
+<td>Disabled</td>
+<td>Controls whether queries that parts of a query that don&#39;t specify a graph to query will query all graphs rather than only the unnamed default graph</td>
+</tr>
+<tr>
+<td>View Results and Graphs in Applications</td>
+<td>Enabled</td>
+<td>When enabled results are shown in the in application viewer, when disabled the results/graph are written to a file and a separate process launched to open that file.  This will cause the file to open in the default viewer application configured for that file type on your system.</td>
+</tr>
+<tr>
+<td>Log Query Explanations</td>
+<td>Disabled</td>
+<td>When enabled query execution will likely be slower but explanations will be logged to the log file allowing you to understand why a query does/doesn&#39;t return results.</td>
+</tr>
+<tr>
+<td>Enable Full Text Indexing</td>
+<td>Disabled</td>
+<td>When enabled you can use our full text search extensions as detailed on the <a href="../user_guide/full_text_querying_with_sparql.html">Full Text Querying with SPARQL</a> page.</td>
+</tr>
+<tr>
+<td>Allow Unsafe Optimisations</td>
+<td>Disabled</td>
+<td>Controls whether certain optimizations that are considered potentially unsafe i.e. may change the semantics and thus the results of the queries may be used.  You can experiment with this if you want but it affects very few queries and often gives worse performance than normal optimizations.</td>
+</tr>
+<tr>
+<td>Use BOM for UTF-8 Output</td>
+<td>Disabled</td>
+<td>Controls whether data exported to files in UTF-8 formats includes a UTF-8 BOM. Disable this option if the data you export will be used with Linux/Unix/Java tools as these sometimes have trouble with the UTF-8 BOM as they don&#39;t expect it (whereas Windows does).</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE"><h5>Note</h5><p>We recommend never changing the Optimise Queries/Optimiser Query Algebra settings unless a query is giving unexpected/slow results and you suspect it may be the result of bad optimisation. If you do encounter a query which does this please let us know (see <a href="../support/index.md">Support</a>) so that we can try and fix this for future releases.</p>
+</div>
+<p>Other Features</p>
+<p>If you try and make a query without loading any data first you will receive a warning about this, you can either abort the query, retry to run the query anyway or ignore to run the query and suppress the warning for that session.</p>
+<p>You can save and load queries to text files using the Load Query and Save Query buttons.</p>
+<h2 id="screenshots">Screenshots</h2>
+<p>The main interface looks like the following:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/sparqlgui_main1.jpg|SparqlGui - Interface}}</p>
+<p>Using the top of the form you can import RDF from local files and remote URIs as required. Once some RDF is loaded the status bar will show the number of Graphs and Triples in the dataset as seen in this screenshot:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/sparqlgui_main2.jpg|SparqlGui - Interface with Data Loaded}}</p>
+<h3 id="query-results">Query Results</h3>
+<p>Query results are displayed by default inside a new window in the program like so:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/sparqlgui_results.jpg|SparqlGui - Results View}}</p>
+<p>From this window you can choose to export the SPARQL Results/RDF Graph if you wish to.</p>
+<p>You can disable this to use the alternative behaviour of opening the results directly in the relevant program for the produced output type by unchecking the <code>View Results and Graphs in the Application</code> in the Options panel</p>
+<h3 id="query-inspector">Query Inspector</h3>
+<p>The utility includes a Query Inspector function which allows you to see how dotNetRDF interprets your query i.e. explicit nesting and triple pattern reordering and the resulting SPARQL Algebra for your query as seen in the following screenshot:</p>
+<p>{{http://www.dotnetrdf.org/images/screenshots/sparqlgui_inspector.jpg|SparqlGui - Query Inspector}}</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/tools/sparqlGui.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

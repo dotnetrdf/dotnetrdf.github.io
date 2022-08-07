@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RdfXmlWriter
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,22 +69,36 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.RdfXmlWriter">
-  <h1 id="VDS_RDF_Writing_RdfXmlWriter" data-uid="VDS.RDF.Writing.RdfXmlWriter">Class RdfXmlWriter
+  
+  
+  <h1 id="VDS_RDF_Writing_RdfXmlWriter" data-uid="VDS.RDF.Writing.RdfXmlWriter" class="text-break">Class RdfXmlWriter
   </h1>
   <div class="markdown level0 summary"><p>Class for generating RDF/XML Concrete Syntax.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html">BaseRdfWriter</a></div>
     <div class="level2"><span class="xref">RdfXmlWriter</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html">ICompressingWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IDtdWriter.html">IDtdWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.INamespaceWriter.html">INamespaceWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html">IFormatterBasedWriter</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_String_">BaseRdfWriter.Save(IGraph, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_String_System_Text_Encoding_">BaseRdfWriter.Save(IGraph, String, Encoding)</a>
+    </div>
     <div>
       <a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_IO_TextWriter_">BaseRdfWriter.Save(IGraph, TextWriter)</a>
     </div>
@@ -110,18 +124,12 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.html">VDS.RDF.Writing</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Writing_RdfXmlWriter_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class RdfXmlWriter : BaseRdfWriter, IRdfWriter, IPrettyPrintingWriter, ICompressingWriter, IDtdWriter, INamespaceWriter, IFormatterBasedWriter</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Writing_RdfXmlWriter_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 This is a fast writer based on the fast writing technique used in the other non-RDF/XML Writers.
@@ -130,604 +138,415 @@ This is a fast writer based on the fast writing technique used in the other non-
 <strong>Note:</strong> If the Graph to be serialized makes heavy use of collections it may result in a StackOverflowException.  To address this set the <a class="xref" href="VDS.RDF.Writing.RdfXmlWriter.html#VDS_RDF_Writing_RdfXmlWriter_CompressionLevel">CompressionLevel</a> property to &lt; 5.
 </p>
 </div>
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L61" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L57">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter__ctor_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor" class="expander" data-toggle="collapse">RdfXmlWriter()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor">RdfXmlWriter()</h4>
   <div class="markdown level1 summary"><p>Creates a new RDF/XML Writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public RdfXmlWriter()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L70" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L66">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter__ctor_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor(System.Int32)"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_" class="expander" data-toggle="collapse">RdfXmlWriter(Int32)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor(System.Int32)">RdfXmlWriter(Int32)</h4>
   <div class="markdown level1 summary"><p>Creates a new RDF/XML Writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public RdfXmlWriter(int compressionLevel)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">compressionLevel</span>
-        <p><p>Compression Level.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">compressionLevel</span></td>
+        <td><p>Compression Level.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.%23ctor(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L81" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L77">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter__ctor_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor(System.Int32,System.Boolean)"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_" class="expander" data-toggle="collapse">RdfXmlWriter(Int32, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter__ctor_System_Int32_System_Boolean_" data-uid="VDS.RDF.Writing.RdfXmlWriter.#ctor(System.Int32,System.Boolean)">RdfXmlWriter(Int32, Boolean)</h4>
   <div class="markdown level1 summary"><p>Creates a new RDF/XML Writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public RdfXmlWriter(int compressionLevel, bool useDtd)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">compressionLevel</span>
-        <p><p>Compression Level.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">useDtd</span>
-        <p><p>Whether to use DTDs to further compress output.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">compressionLevel</span></td>
+        <td><p>Compression Level.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">useDtd</span></td>
+        <td><p>Whether to use DTDs to further compress output.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_CompressionLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.CompressionLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_CompressionLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.CompressionLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L96">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_CompressionLevel_" data-uid="VDS.RDF.Writing.RdfXmlWriter.CompressionLevel*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_CompressionLevel" data-uid="VDS.RDF.Writing.RdfXmlWriter.CompressionLevel"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_CompressionLevel" class="expander" data-toggle="collapse">CompressionLevel</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_CompressionLevel" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_CompressionLevel" data-uid="VDS.RDF.Writing.RdfXmlWriter.CompressionLevel">CompressionLevel</h4>
   <div class="markdown level1 summary"><p>Gets/Sets the Compression Level in use.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int CompressionLevel { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html#VDS_RDF_Writing_ICompressingWriter_CompressionLevel">ICompressingWriter.CompressionLevel</a></div>
-  
   <h5 id="VDS_RDF_Writing_RdfXmlWriter_CompressionLevel_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 Compression Level defaults to <a class="xref" href="VDS.RDF.Writing.WriterCompressionLevel.html#VDS_RDF_Writing_WriterCompressionLevel_High">High</a> - if Compression Level is set to below <a class="xref" href="VDS.RDF.Writing.WriterCompressionLevel.html#VDS_RDF_Writing_WriterCompressionLevel_More">More</a> i.e. &lt; 5 then Collections will not be compressed into more compact syntax.
 </p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.DefaultNamespaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.DefaultNamespaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L140" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L108">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces_" data-uid="VDS.RDF.Writing.RdfXmlWriter.DefaultNamespaces*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces" data-uid="VDS.RDF.Writing.RdfXmlWriter.DefaultNamespaces"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces" class="expander" data-toggle="collapse">DefaultNamespaces</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_DefaultNamespaces" data-uid="VDS.RDF.Writing.RdfXmlWriter.DefaultNamespaces">DefaultNamespaces</h4>
   <div class="markdown level1 summary"><p>Gets/Sets the Default Namespaces that are always available.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public INamespaceMapper DefaultNamespaces { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.INamespaceWriter.html#VDS_RDF_Writing_INamespaceWriter_DefaultNamespaces">INamespaceWriter.DefaultNamespaces</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L86">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode_" data-uid="VDS.RDF.Writing.RdfXmlWriter.PrettyPrintMode*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.RdfXmlWriter.PrettyPrintMode"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode" class="expander" data-toggle="collapse">PrettyPrintMode</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.RdfXmlWriter.PrettyPrintMode">PrettyPrintMode</h4>
   <div class="markdown level1 summary"><p>Gets/Sets Pretty Print Mode for the Writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool PrettyPrintMode { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html#VDS_RDF_Writing_IPrettyPrintingWriter_PrettyPrintMode">IPrettyPrintingWriter.PrettyPrintMode</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.TripleFormatterType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.TripleFormatterType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L155" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L113">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType_" data-uid="VDS.RDF.Writing.RdfXmlWriter.TripleFormatterType*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType" data-uid="VDS.RDF.Writing.RdfXmlWriter.TripleFormatterType"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType" class="expander" data-toggle="collapse">TripleFormatterType</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_TripleFormatterType" data-uid="VDS.RDF.Writing.RdfXmlWriter.TripleFormatterType">TripleFormatterType</h4>
   <div class="markdown level1 summary"><p>Gets the type of the Triple Formatter used by this writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Type TripleFormatterType { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Type</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html#VDS_RDF_Writing_IFormatterBasedWriter_TripleFormatterType">IFormatterBasedWriter.TripleFormatterType</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_UseDtd.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.UseDtd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_UseDtd.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.UseDtd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L102">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_UseDtd_" data-uid="VDS.RDF.Writing.RdfXmlWriter.UseDtd*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_UseDtd" data-uid="VDS.RDF.Writing.RdfXmlWriter.UseDtd"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_UseDtd" class="expander" data-toggle="collapse">UseDtd</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_UseDtd" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_UseDtd" data-uid="VDS.RDF.Writing.RdfXmlWriter.UseDtd">UseDtd</h4>
   <div class="markdown level1 summary"><p>Gets/Sets whether DTDs are used in the output.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool UseDtd { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IDtdWriter.html#VDS_RDF_Writing_IDtdWriter_UseDtd">IDtdWriter.UseDtd</a></div>
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_Save_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.Save(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.SaveInternal(VDS.RDF.IGraph%2CSystem.IO.TextWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L168" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L121">View Source</a>
   </span>
-  
-  <a id="VDS_RDF_Writing_RdfXmlWriter_Save_" data-uid="VDS.RDF.Writing.RdfXmlWriter.Save*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_Save_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.Writing.RdfXmlWriter.Save(VDS.RDF.IGraph,System.String)"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_Save_VDS_RDF_IGraph_System_String_" class="expander" data-toggle="collapse">Save(IGraph, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_Save_VDS_RDF_IGraph_System_String_" class="collapse in">
-  <div class="markdown level1 summary"><p>Saves a Graph in RDF/XML syntax to the given File.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Save(IGraph g, string filename)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to save.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filename</span>
-        <p><p>Filename to save to.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Save_VDS_RDF_IGraph_System_String_">BaseRdfWriter.Save(IGraph, String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.SaveInternal(VDS.RDF.IGraph%2CSystem.IO.TextWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L181" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_SaveInternal_" data-uid="VDS.RDF.Writing.RdfXmlWriter.SaveInternal*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" data-uid="VDS.RDF.Writing.RdfXmlWriter.SaveInternal(VDS.RDF.IGraph,System.IO.TextWriter)"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" class="expander" data-toggle="collapse">SaveInternal(IGraph, TextWriter)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_" data-uid="VDS.RDF.Writing.RdfXmlWriter.SaveInternal(VDS.RDF.IGraph,System.IO.TextWriter)">SaveInternal(IGraph, TextWriter)</h4>
   <div class="markdown level1 summary"><p>Saves a Graph to an arbitrary output stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void SaveInternal(IGraph g, TextWriter output)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to save.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.IO.TextWriter</span></span>
-        <span class="parametername">output</span>
-        <p><p>Stream to save to.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Stream to save to.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_SaveInternal_VDS_RDF_IGraph_System_IO_TextWriter_">BaseRdfWriter.SaveInternal(IGraph, TextWriter)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L889" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L827">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_RdfXmlWriter_ToString_" data-uid="VDS.RDF.Writing.RdfXmlWriter.ToString*"></a>
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_ToString" data-uid="VDS.RDF.Writing.RdfXmlWriter.ToString"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_ToString" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_ToString" data-uid="VDS.RDF.Writing.RdfXmlWriter.ToString">ToString()</h4>
   <div class="markdown level1 summary"><p>Gets the String representation of the writer which is a description of the syntax it produces.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.Object.ToString()</span></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="events">Events
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L883" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L821">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Writing_RdfXmlWriter_Warning" data-uid="VDS.RDF.Writing.RdfXmlWriter.Warning"><a href="#collapsible-VDS_RDF_Writing_RdfXmlWriter_Warning" class="expander" data-toggle="collapse">Warning</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_RdfXmlWriter_Warning" class="collapse in">
+  <h4 id="VDS_RDF_Writing_RdfXmlWriter_Warning" data-uid="VDS.RDF.Writing.RdfXmlWriter.Warning">Warning</h4>
   <div class="markdown level1 summary"><p>Event which is raised when there is a non-fatal issue with the RDF being output</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override event RdfWriterWarning Warning</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
   <h5 class="eventType">Event Type</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.RdfWriterWarning.html">RdfWriterWarning</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.RdfWriterWarning.html">RdfWriterWarning</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.BaseRdfWriter.html#VDS_RDF_Writing_BaseRdfWriter_Warning">BaseRdfWriter.Warning</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html">ICompressingWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IDtdWriter.html">IDtdWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.INamespaceWriter.html">INamespaceWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html">IFormatterBasedWriter</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/RdfXmlWriter.cs/#L50" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_RdfXmlWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.RdfXmlWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/RdfXmlWriter.cs/#L51" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

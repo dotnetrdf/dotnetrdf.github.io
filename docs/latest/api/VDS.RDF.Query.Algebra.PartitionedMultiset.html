@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PartitionedMultiset
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,20 +69,19 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset">
-  <h1 id="VDS_RDF_Query_Algebra_PartitionedMultiset" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset">Class PartitionedMultiset
+  
+  
+  <h1 id="VDS_RDF_Query_Algebra_PartitionedMultiset" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset" class="text-break">Class PartitionedMultiset
   </h1>
   <div class="markdown level0 summary"><p>Implementation of a multiset which is suitable for multiple threads to write to in parallel, useful for parallelizing certain operations.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></div>
     <div class="level2"><span class="xref">PartitionedMultiset</span></div>
   </div>
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -92,10 +91,13 @@
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_VirtualCount">BaseMultiset.VirtualCount</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_UsePLinqEvaluation">BaseMultiset.UsePLinqEvaluation</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Join_VDS_RDF_Query_Algebra_BaseMultiset_">BaseMultiset.Join(BaseMultiset)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_LeftJoin_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Expressions_ISparqlExpression_">BaseMultiset.LeftJoin(BaseMultiset, ISparqlExpression)</a>
+      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_LeftJoin_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Expressions_ISparqlExpression_VDS_RDF_Query_SparqlEvaluationContext_VDS_RDF_Query_ISparqlExpressionProcessor_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Query_SparqlEvaluationContext_System_Int32__">BaseMultiset.LeftJoin(BaseMultiset, ISparqlExpression, SparqlEvaluationContext, ISparqlExpressionProcessor&lt;IValuedNode, SparqlEvaluationContext, Int32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_ExistsJoin_VDS_RDF_Query_Algebra_BaseMultiset_System_Boolean_">BaseMultiset.ExistsJoin(BaseMultiset, Boolean)</a>
@@ -134,944 +136,792 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Algebra.html">VDS.RDF.Query.Algebra</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Algebra_PartitionedMultiset_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class PartitionedMultiset : BaseMultiset</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L54">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.#ctor(System.Int32,System.Int32)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_" class="expander" data-toggle="collapse">PartitionedMultiset(Int32, Int32)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset__ctor_System_Int32_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.#ctor(System.Int32,System.Int32)">PartitionedMultiset(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Creates a new Partionted Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public PartitionedMultiset(int numPartitions, int partitionSize)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">numPartitions</span>
-        <p><p>Number of partitions.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">partitionSize</span>
-        <p><p>Partition Size.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numPartitions</span></td>
+        <td><p>Number of partitions.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">partitionSize</span></td>
+        <td><p>Partition Size.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L240" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L245">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Count_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Count*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Count" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Count"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Count" class="expander" data-toggle="collapse">Count</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Count" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Count" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Count">Count</h4>
   <div class="markdown level1 summary"><p>Gets the number of sets in the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int Count { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Count">BaseMultiset.Count</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.IsEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.IsEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L229" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L234">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsEmpty*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsEmpty"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty" class="expander" data-toggle="collapse">IsEmpty</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsEmpty" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsEmpty">IsEmpty</h4>
   <div class="markdown level1 summary"><p>Gets whether the multiset is empty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool IsEmpty { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_IsEmpty">BaseMultiset.IsEmpty</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L315" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L320">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Item_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Item*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Item(System.Int32)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_" class="expander" data-toggle="collapse">Item[Int32]</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Item_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Item(System.Int32)">Item[Int32]</h4>
   <div class="markdown level1 summary"><p>Gets a Set from the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ISet this[int id] { get; }</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">id</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Item_System_Int32_">BaseMultiset.Item[Int32]</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.SetIDs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.SetIDs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L293" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L298">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetIDs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetIDs"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs" class="expander" data-toggle="collapse">SetIDs</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetIDs" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetIDs">SetIDs</h4>
   <div class="markdown level1 summary"><p>Gets the Set IDs in the mutliset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;int&gt; SetIDs { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Int32</span>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_SetIDs">BaseMultiset.SetIDs</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Sets.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Sets%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Sets.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Sets%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L272" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L277">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Sets_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Sets*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Sets" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Sets"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Sets" class="expander" data-toggle="collapse">Sets</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Sets" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Sets" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Sets">Sets</h4>
   <div class="markdown level1 summary"><p>Gets the sets in the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;ISet&gt; Sets { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Sets">BaseMultiset.Sets</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Variables.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Variables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Variables.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Variables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L251" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L256">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Variables_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Variables*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Variables" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Variables"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Variables" class="expander" data-toggle="collapse">Variables</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Variables" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Variables" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Variables">Variables</h4>
   <div class="markdown level1 summary"><p>Gets the variables in the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;string&gt; Variables { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Variables">BaseMultiset.Variables</a></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Add(VDS.RDF.Query.Algebra.ISet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Add(VDS.RDF.Query.Algebra.ISet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L161" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L166">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Add_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Add*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Add(VDS.RDF.Query.Algebra.ISet)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_" class="expander" data-toggle="collapse">Add(ISet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Add(VDS.RDF.Query.Algebra.ISet)">Add(ISet)</h4>
   <div class="markdown level1 summary"><p>Adds a Set to the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Add(ISet s)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a></span>
-        <span class="parametername">s</span>
-        <p><p>Set.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>Set.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Add_VDS_RDF_Query_Algebra_ISet_">BaseMultiset.Add(ISet)</a></div>
-  
-  
   <h5 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Add_VDS_RDF_Query_Algebra_ISet__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Assumes the caller has set the ID of the set appropriately and will use this to determine which partition to add to.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.AddVariable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.AddVariable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L178" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L183">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.AddVariable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.AddVariable(System.String)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_" class="expander" data-toggle="collapse">AddVariable(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_AddVariable_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.AddVariable(System.String)">AddVariable(String)</h4>
   <div class="markdown level1 summary"><p>Adds a Variable to the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void AddVariable(string variable)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">variable</span>
-        <p><p>Variable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">variable</span></td>
+        <td><p>Variable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_AddVariable_System_String_">BaseMultiset.AddVariable(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsValue(System.String%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsValue(System.String%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L110">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsValue*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsValue(System.String,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_" class="expander" data-toggle="collapse">ContainsValue(String, INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsValue_System_String_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsValue(System.String,VDS.RDF.INode)">ContainsValue(String, INode)</h4>
   <div class="markdown level1 summary"><p>Determines whether a given Value is present for a given Variable in any Set in this Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool ContainsValue(string var, INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">var</span>
-        <p><p>Variable.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>Value.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">var</span></td>
+        <td><p>Variable.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>Value.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_ContainsValue_System_String_VDS_RDF_INode_">BaseMultiset.ContainsValue(String, INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L137" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L137">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariable(System.String)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_" class="expander" data-toggle="collapse">ContainsVariable(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariable_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariable(System.String)">ContainsVariable(String)</h4>
   <div class="markdown level1 summary"><p>Returns whether a given Variable is present in any Set in this Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool ContainsVariable(string var)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">var</span>
-        <p><p>Variable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">var</span></td>
+        <td><p>Variable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_ContainsVariable_System_String_">BaseMultiset.ContainsVariable(String)</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariables_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariables(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L142">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariables_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariables*"></a>
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_ContainsVariables_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.ContainsVariables(System.Collections.Generic.IEnumerable{System.String})">ContainsVariables(IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ContainsVariables(IEnumerable&lt;string&gt; vars)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">vars</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_ContainsVariables_System_Collections_Generic_IEnumerable_System_String__">BaseMultiset.ContainsVariables(IEnumerable&lt;String&gt;)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.GetNextBaseID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.GetNextBaseID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L67" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L67">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.GetNextBaseID*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.GetNextBaseID"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID" class="expander" data-toggle="collapse">GetNextBaseID()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_GetNextBaseID" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.GetNextBaseID">GetNextBaseID()</h4>
   <div class="markdown level1 summary"><p>Gets the next Base ID to be used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int GetNextBaseID()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.IsDisjointWith(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.IsDisjointWith(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L147" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L152">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsDisjointWith*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsDisjointWith(VDS.RDF.Query.Algebra.BaseMultiset)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_" class="expander" data-toggle="collapse">IsDisjointWith(BaseMultiset)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.IsDisjointWith(VDS.RDF.Query.Algebra.BaseMultiset)">IsDisjointWith(BaseMultiset)</h4>
   <div class="markdown level1 summary"><p>Determines whether this Multiset is disjoint with another Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool IsDisjointWith(BaseMultiset other)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></span>
-        <span class="parametername">other</span>
-        <p><p>Other Multiset.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Other Multiset.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_">BaseMultiset.IsDisjointWith(BaseMultiset)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Remove(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Remove(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L215" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L220">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Remove*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Remove(System.Int32)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_" class="expander" data-toggle="collapse">Remove(Int32)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Remove_System_Int32_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Remove(System.Int32)">Remove(Int32)</h4>
   <div class="markdown level1 summary"><p>Removes a Set from the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Remove(int id)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">id</span>
-        <p><p>Set ID.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>Set ID.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Remove_System_Int32_">BaseMultiset.Remove(Int32)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.SetVariableOrder(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.SetVariableOrder(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L190" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L195">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetVariableOrder*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetVariableOrder(System.Collections.Generic.IEnumerable{System.String})"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__" class="expander" data-toggle="collapse">SetVariableOrder(IEnumerable&lt;String&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.SetVariableOrder(System.Collections.Generic.IEnumerable{System.String})">SetVariableOrder(IEnumerable&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Sets the variable ordering for the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void SetVariableOrder(IEnumerable&lt;string&gt; variables)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</span>
-        <span class="parametername">variables</span>
-        <p><p>Variable Ordering.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">variables</span></td>
+        <td><p>Variable Ordering.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_SetVariableOrder_System_Collections_Generic_IEnumerable_System_String__">BaseMultiset.SetVariableOrder(IEnumerable&lt;String&gt;)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Trim.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Trim%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Trim.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Trim%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L342" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L347">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Trim" class="expander" data-toggle="collapse">Trim()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Trim" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim">Trim()</h4>
   <div class="markdown level1 summary"><p>Removes temporary variables from all sets the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Trim()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Trim">BaseMultiset.Trim()</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Trim(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Trim(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L383" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L388">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim(System.String)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_" class="expander" data-toggle="collapse">Trim(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Trim_System_String_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Trim(System.String)">Trim(String)</h4>
   <div class="markdown level1 summary"><p>Removes a specific variable from all sets in the multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Trim(string variable)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">variable</span>
-        <p><p>Variable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">variable</span></td>
+        <td><p>Variable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Trim_System_String_">BaseMultiset.Trim(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Union(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset.Union(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L86" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L86">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_PartitionedMultiset_Union_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Union*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Union(VDS.RDF.Query.Algebra.BaseMultiset)"><a href="#collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_" class="expander" data-toggle="collapse">Union(BaseMultiset)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_PartitionedMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.PartitionedMultiset.Union(VDS.RDF.Query.Algebra.BaseMultiset)">Union(BaseMultiset)</h4>
   <div class="markdown level1 summary"><p>Does a Union of this Multiset and another Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override BaseMultiset Union(BaseMultiset other)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></span>
-        <span class="parametername">other</span>
-        <p><p>Other Multiset.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Other Multiset.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Union_VDS_RDF_Query_Algebra_BaseMultiset_">BaseMultiset.Union(BaseMultiset)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+  <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.AlgebraExtensions.html#VDS_RDF_Query_Algebra_AlgebraExtensions_ProductWithTimeout_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Algebra_BaseMultiset_System_Int64_">AlgebraExtensions.ProductWithTimeout(BaseMultiset, BaseMultiset, Int64)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/PartitionedMultiset.cs/#L38" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_PartitionedMultiset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.PartitionedMultiset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/PartitionedMultiset.cs/#L38" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

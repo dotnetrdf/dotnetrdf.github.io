@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NQuadsWriter
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,21 +69,38 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.NQuadsWriter">
-  <h1 id="VDS_RDF_Writing_NQuadsWriter" data-uid="VDS.RDF.Writing.NQuadsWriter">Class NQuadsWriter
+  
+  
+  <h1 id="VDS_RDF_Writing_NQuadsWriter" data-uid="VDS.RDF.Writing.NQuadsWriter" class="text-break">Class NQuadsWriter
   </h1>
   <div class="markdown level0 summary"><p>Class for serializing a Triple Store in the NQuads (NTriples plus context) syntax.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">NQuadsWriter</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html">BaseStoreWriter</a></div>
+    <div class="level2"><span class="xref">NQuadsWriter</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IStoreWriter.html">IStoreWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html">IFormatterBasedWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IMultiThreadedWriter.html">IMultiThreadedWriter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.IRdfStarCapableWriter.html">IRdfStarCapableWriter</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html#VDS_RDF_Writing_BaseStoreWriter_Save_VDS_RDF_ITripleStore_System_String_">BaseStoreWriter.Save(ITripleStore, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html#VDS_RDF_Writing_BaseStoreWriter_Save_VDS_RDF_ITripleStore_System_String_System_Text_Encoding_">BaseStoreWriter.Save(ITripleStore, String, Encoding)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html#VDS_RDF_Writing_BaseStoreWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_">BaseStoreWriter.Save(ITripleStore, TextWriter)</a>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -103,576 +120,382 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.html">VDS.RDF.Writing</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Writing_NQuadsWriter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NQuadsWriter : IStoreWriter, IPrettyPrintingWriter, IFormatterBasedWriter, IMultiThreadedWriter</code></pre>
+    <pre><code class="lang-csharp hljs">public class NQuadsWriter : BaseStoreWriter, IStoreWriter, IPrettyPrintingWriter, IFormatterBasedWriter, IMultiThreadedWriter, IRdfStarCapableWriter</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L50">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter__ctor_" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter__ctor" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter__ctor" class="expander" data-toggle="collapse">NQuadsWriter()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter__ctor" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor">NQuadsWriter()</h4>
   <div class="markdown level1 summary"><p>Creates a new writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NQuadsWriter()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.%23ctor(VDS.RDF.Parsing.NQuadsSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.%23ctor(VDS.RDF.Parsing.NQuadsSyntax)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L59" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L57">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter__ctor_" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor(VDS.RDF.Parsing.NQuadsSyntax)"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_" class="expander" data-toggle="collapse">NQuadsWriter(NQuadsSyntax)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter__ctor_VDS_RDF_Parsing_NQuadsSyntax_" data-uid="VDS.RDF.Writing.NQuadsWriter.#ctor(VDS.RDF.Parsing.NQuadsSyntax)">NQuadsWriter(NQuadsSyntax)</h4>
   <div class="markdown level1 summary"><p>Creates a new writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NQuadsWriter(NQuadsSyntax syntax)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Parsing.NQuadsSyntax.html">NQuadsSyntax</a></span>
-        <span class="parametername">syntax</span>
-        <p><p>NQuads Syntax mode to use.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.NQuadsSyntax.html">NQuadsSyntax</a></td>
+        <td><span class="parametername">syntax</span></td>
+        <td><p>NQuads Syntax mode to use.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_CanWriteTripleNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.CanWriteTripleNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L72" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L91">View Source</a>
   </span>
-  
+  <a id="VDS_RDF_Writing_NQuadsWriter_CanWriteTripleNodes_" data-uid="VDS.RDF.Writing.NQuadsWriter.CanWriteTripleNodes*"></a>
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_CanWriteTripleNodes" data-uid="VDS.RDF.Writing.NQuadsWriter.CanWriteTripleNodes">CanWriteTripleNodes</h4>
+  <div class="markdown level1 summary"><p>Gets whether the current syntax mode supports writing RDF-Star triple nodes or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanWriteTripleNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.PrettyPrintMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L69">View Source</a>
+  </span>
   <a id="VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode_" data-uid="VDS.RDF.Writing.NQuadsWriter.PrettyPrintMode*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.NQuadsWriter.PrettyPrintMode"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode" class="expander" data-toggle="collapse">PrettyPrintMode</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode" data-uid="VDS.RDF.Writing.NQuadsWriter.PrettyPrintMode">PrettyPrintMode</h4>
   <div class="markdown level1 summary"><p>Controls whether Pretty Printing is used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool PrettyPrintMode { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html#VDS_RDF_Writing_IPrettyPrintingWriter_PrettyPrintMode">IPrettyPrintingWriter.PrettyPrintMode</a></div>
-  
   <h5 id="VDS_RDF_Writing_NQuadsWriter_PrettyPrintMode_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>For NQuads this simply means that Graphs in the output are separated with Whitespace and comments used before each Graph.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Syntax.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Syntax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Syntax.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Syntax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L93" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L86">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter_Syntax_" data-uid="VDS.RDF.Writing.NQuadsWriter.Syntax*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_Syntax" data-uid="VDS.RDF.Writing.NQuadsWriter.Syntax"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_Syntax" class="expander" data-toggle="collapse">Syntax</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_Syntax" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_Syntax" data-uid="VDS.RDF.Writing.NQuadsWriter.Syntax">Syntax</h4>
   <div class="markdown level1 summary"><p>Gets/Sets the NQuads syntax mode.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NQuadsSyntax Syntax { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.NQuadsSyntax.html">NQuadsSyntax</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.NQuadsSyntax.html">NQuadsSyntax</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_TripleFormatterType.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.TripleFormatterType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_TripleFormatterType.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.TripleFormatterType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L82" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L81">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter_TripleFormatterType_" data-uid="VDS.RDF.Writing.NQuadsWriter.TripleFormatterType*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_TripleFormatterType" data-uid="VDS.RDF.Writing.NQuadsWriter.TripleFormatterType"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_TripleFormatterType" class="expander" data-toggle="collapse">TripleFormatterType</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_TripleFormatterType" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_TripleFormatterType" data-uid="VDS.RDF.Writing.NQuadsWriter.TripleFormatterType">TripleFormatterType</h4>
   <div class="markdown level1 summary"><p>Gets the type of the Triple Formatter used by this writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Type TripleFormatterType { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Type</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html#VDS_RDF_Writing_IFormatterBasedWriter_TripleFormatterType">IFormatterBasedWriter.TripleFormatterType</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.UseMultiThreadedWriting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.UseMultiThreadedWriting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L77" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L75">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting_" data-uid="VDS.RDF.Writing.NQuadsWriter.UseMultiThreadedWriting*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting" data-uid="VDS.RDF.Writing.NQuadsWriter.UseMultiThreadedWriting"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting" class="expander" data-toggle="collapse">UseMultiThreadedWriting</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_UseMultiThreadedWriting" data-uid="VDS.RDF.Writing.NQuadsWriter.UseMultiThreadedWriting">UseMultiThreadedWriting</h4>
   <div class="markdown level1 summary"><p>Gets/Sets whether Multi-Threaded Writing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool UseMultiThreadedWriting { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Writing.IMultiThreadedWriter.html#VDS_RDF_Writing_IMultiThreadedWriter_UseMultiThreadedWriting">IMultiThreadedWriter.UseMultiThreadedWriting</a></div>
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore%2CSystem.IO.TextWriter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore%2CSystem.IO.TextWriter%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L114" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L99">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter_Save_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore,System.IO.TextWriter)"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_" class="expander" data-toggle="collapse">Save(ITripleStore, TextWriter)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore,System.IO.TextWriter,System.Boolean)">Save(ITripleStore, TextWriter, Boolean)</h4>
   <div class="markdown level1 summary"><p>Saves a Store in NQuads format.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, TextWriter writer)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Save(ITripleStore store, TextWriter writer, bool leaveOpen)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></span>
-        <span class="parametername">store</span>
-        <p><p>Store to save.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.IO.TextWriter</span></span>
-        <span class="parametername">writer</span>
-        <p><p>Writer to save to.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Store to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>Writer to save to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Boolean flag indicating if <code data-dev-comment-type="paramref" class="paramref">writer</code> should be left open after the store is written.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IStoreWriter.html#VDS_RDF_IStoreWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_">IStoreWriter.Save(ITripleStore, TextWriter)</a></div>
-  
-  
-  
-  
-  </div>
-  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html#VDS_RDF_Writing_BaseStoreWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_">BaseStoreWriter.Save(ITripleStore, TextWriter, Boolean)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore%2CSystem.IO.TextWriter%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L327">View Source</a>
   </span>
-  
-  <a id="VDS_RDF_Writing_NQuadsWriter_Save_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore,System.IO.TextWriter,System.Boolean)"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_" class="expander" data-toggle="collapse">Save(ITripleStore, TextWriter, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_" class="collapse in">
-  <div class="markdown level1 summary"><p>Saves a Store in NQuads format.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, TextWriter writer, bool leaveOpen)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></span>
-        <span class="parametername">store</span>
-        <p><p>Store to save.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.IO.TextWriter</span></span>
-        <span class="parametername">writer</span>
-        <p><p>Writer to save to.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">leaveOpen</span>
-        <p><p>Boolean flag indicating if <code data-dev-comment-type="paramref" class="paramref">writer</code> should be left open after the store is written.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IStoreWriter.html#VDS_RDF_IStoreWriter_Save_VDS_RDF_ITripleStore_System_IO_TextWriter_System_Boolean_">IStoreWriter.Save(ITripleStore, TextWriter, Boolean)</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L100" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Writing_NQuadsWriter_Save_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_String_" data-uid="VDS.RDF.Writing.NQuadsWriter.Save(VDS.RDF.ITripleStore,System.String)"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_String_" class="expander" data-toggle="collapse">Save(ITripleStore, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_Save_VDS_RDF_ITripleStore_System_String_" class="collapse in">
-  <div class="markdown level1 summary"><p>Saves a Store in NQuads format.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Save(ITripleStore store, string filename)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></span>
-        <span class="parametername">store</span>
-        <p><p>Store to save.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filename</span>
-        <p><p>File to save to.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IStoreWriter.html#VDS_RDF_IStoreWriter_Save_VDS_RDF_ITripleStore_System_String_">IStoreWriter.Save(ITripleStore, String)</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L346" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
   <a id="VDS_RDF_Writing_NQuadsWriter_ToString_" data-uid="VDS.RDF.Writing.NQuadsWriter.ToString*"></a>
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_ToString" data-uid="VDS.RDF.Writing.NQuadsWriter.ToString"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_ToString" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_ToString" data-uid="VDS.RDF.Writing.NQuadsWriter.ToString">ToString()</h4>
   <div class="markdown level1 summary"><p>Gets the String representation of the writer which is a description of the syntax it produces.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.Object.ToString()</span></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="events">Events
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter.Warning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L331" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L312">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Writing_NQuadsWriter_Warning" data-uid="VDS.RDF.Writing.NQuadsWriter.Warning"><a href="#collapsible-VDS_RDF_Writing_NQuadsWriter_Warning" class="expander" data-toggle="collapse">Warning</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_NQuadsWriter_Warning" class="collapse in">
+  <h4 id="VDS_RDF_Writing_NQuadsWriter_Warning" data-uid="VDS.RDF.Writing.NQuadsWriter.Warning">Warning</h4>
   <div class="markdown level1 summary"><p>Event which is raised when there is an issue with the Graphs being serialized that doesn&apos;t prevent serialization but the user should be aware of</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event StoreWriterWarning Warning</code></pre>
+    <pre><code class="lang-csharp hljs">public override event StoreWriterWarning Warning</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
   <h5 class="eventType">Event Type</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.StoreWriterWarning.html">StoreWriterWarning</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.StoreWriterWarning.html">StoreWriterWarning</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IStoreWriter.html#VDS_RDF_IStoreWriter_Warning">IStoreWriter.Warning</a></div>
-  
-  
-  
-  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.BaseStoreWriter.html#VDS_RDF_Writing_BaseStoreWriter_Warning">BaseStoreWriter.Warning</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IStoreWriter.html">IStoreWriter</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IPrettyPrintingWriter.html">IPrettyPrintingWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IFormatterBasedWriter.html">IFormatterBasedWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IMultiThreadedWriter.html">IMultiThreadedWriter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.IRdfStarCapableWriter.html">IRdfStarCapableWriter</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/NQuadsWriter.cs/#L44" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_NQuadsWriter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.NQuadsWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/NQuadsWriter.cs/#L42" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

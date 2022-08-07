@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class GroupMultiset
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Algebra.GroupMultiset">
-  <h1 id="VDS_RDF_Query_Algebra_GroupMultiset" data-uid="VDS.RDF.Query.Algebra.GroupMultiset">Class GroupMultiset
+  
+  
+  <h1 id="VDS_RDF_Query_Algebra_GroupMultiset" data-uid="VDS.RDF.Query.Algebra.GroupMultiset" class="text-break">Class GroupMultiset
   </h1>
   <div class="markdown level0 summary"><p>Multiset which represents a Grouping of Sets from another Multiset.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,8 +83,6 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Query.Algebra.Multiset.html">Multiset</a></div>
     <div class="level3"><span class="xref">GroupMultiset</span></div>
   </div>
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -100,6 +99,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.Multiset.html#VDS_RDF_Query_Algebra_Multiset_ContainsVariable_System_String_">Multiset.ContainsVariable(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Multiset.html#VDS_RDF_Query_Algebra_Multiset_ContainsVariables_System_Collections_Generic_IEnumerable_System_String__">Multiset.ContainsVariables(IEnumerable&lt;String&gt;)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.Multiset.html#VDS_RDF_Query_Algebra_Multiset_IsDisjointWith_VDS_RDF_Query_Algebra_BaseMultiset_">Multiset.IsDisjointWith(BaseMultiset)</a>
@@ -144,10 +146,13 @@
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_VirtualCount">BaseMultiset.VirtualCount</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_UsePLinqEvaluation">BaseMultiset.UsePLinqEvaluation</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_Join_VDS_RDF_Query_Algebra_BaseMultiset_">BaseMultiset.Join(BaseMultiset)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_LeftJoin_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Expressions_ISparqlExpression_">BaseMultiset.LeftJoin(BaseMultiset, ISparqlExpression)</a>
+      <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_LeftJoin_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Expressions_ISparqlExpression_VDS_RDF_Query_SparqlEvaluationContext_VDS_RDF_Query_ISparqlExpressionProcessor_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Query_SparqlEvaluationContext_System_Int32__">BaseMultiset.LeftJoin(BaseMultiset, ISparqlExpression, SparqlEvaluationContext, ISparqlExpressionProcessor&lt;IValuedNode, SparqlEvaluationContext, Int32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html#VDS_RDF_Query_Algebra_BaseMultiset_ExistsJoin_VDS_RDF_Query_Algebra_BaseMultiset_System_Boolean_">BaseMultiset.ExistsJoin(BaseMultiset, Boolean)</a>
@@ -189,391 +194,325 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Algebra.html">VDS.RDF.Query.Algebra</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Algebra_GroupMultiset_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class GroupMultiset : Multiset</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.%23ctor(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.%23ctor(VDS.RDF.Query.Algebra.BaseMultiset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L45" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L45">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset__ctor_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.#ctor(VDS.RDF.Query.Algebra.BaseMultiset)"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_" class="expander" data-toggle="collapse">GroupMultiset(BaseMultiset)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset__ctor_VDS_RDF_Query_Algebra_BaseMultiset_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.#ctor(VDS.RDF.Query.Algebra.BaseMultiset)">GroupMultiset(BaseMultiset)</h4>
   <div class="markdown level1 summary"><p>Creates a new Group Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public GroupMultiset(BaseMultiset contents)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></span>
-        <span class="parametername">contents</span>
-        <p><p>Multiset which contains the sets that are being grouped.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td><span class="parametername">contents</span></td>
+        <td><p>Multiset which contains the sets that are being grouped.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Contents.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Contents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Contents.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Contents%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L109" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L109">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_Contents_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Contents*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Contents" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Contents"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Contents" class="expander" data-toggle="collapse">Contents</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Contents" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Contents" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Contents">Contents</h4>
   <div class="markdown level1 summary"><p>Gets the Multiset which contains the Sets who are the members of the Groups this Multiset represents.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public BaseMultiset Contents { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Groups.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Groups%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Groups.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Groups%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L53">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_Groups_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Groups*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Groups" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Groups"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Groups" class="expander" data-toggle="collapse">Groups</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Groups" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Groups" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Groups">Groups</h4>
   <div class="markdown level1 summary"><p>Gets the enumeration of the Groups in the Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;BindingGroup&gt; Groups { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Add(VDS.RDF.Query.Algebra.ISet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Add(VDS.RDF.Query.Algebra.ISet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L101" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L101">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_Add_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Add*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Add(VDS.RDF.Query.Algebra.ISet)"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_" class="expander" data-toggle="collapse">Add(ISet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Add_VDS_RDF_Query_Algebra_ISet_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Add(VDS.RDF.Query.Algebra.ISet)">Add(ISet)</h4>
   <div class="markdown level1 summary"><p>Adds a Set to the Group Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Add(ISet s)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a></span>
-        <span class="parametername">s</span>
-        <p><p>Set.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISet.html">ISet</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>Set.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Algebra.Multiset.html#VDS_RDF_Query_Algebra_Multiset_Add_VDS_RDF_Query_Algebra_ISet_">Multiset.Add(ISet)</a></div>
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a>
-        <p><p>Thrown since this action is invalid on a Group Multiset.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown since this action is invalid on a Group Multiset.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.AddGroup(VDS.RDF.Query.BindingGroup)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.AddGroup(VDS.RDF.Query.BindingGroup)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L85" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L85">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.AddGroup*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.AddGroup(VDS.RDF.Query.BindingGroup)"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_" class="expander" data-toggle="collapse">AddGroup(BindingGroup)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_AddGroup_VDS_RDF_Query_BindingGroup_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.AddGroup(VDS.RDF.Query.BindingGroup)">AddGroup(BindingGroup)</h4>
   <div class="markdown level1 summary"><p>Adds a Group to the Multiset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void AddGroup(BindingGroup group)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a></span>
-        <span class="parametername">group</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a></td>
+        <td><span class="parametername">group</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Group(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.Group(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L76" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L76">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_Group_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Group*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Group(System.Int32)"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_" class="expander" data-toggle="collapse">Group(Int32)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_Group_System_Int32_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.Group(System.Int32)">Group(Int32)</h4>
   <div class="markdown level1 summary"><p>Gets the Group with the given ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public BindingGroup Group(int id)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">id</span>
-        <p><p>Group ID.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>Group ID.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.BindingGroup.html">BindingGroup</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.GroupSetIDs(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset.GroupSetIDs(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L66" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L66">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.GroupSetIDs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.GroupSetIDs(System.Int32)"><a href="#collapsible-VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_" class="expander" data-toggle="collapse">GroupSetIDs(Int32)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_GroupMultiset_GroupSetIDs_System_Int32_" data-uid="VDS.RDF.Query.Algebra.GroupMultiset.GroupSetIDs(System.Int32)">GroupSetIDs(Int32)</h4>
   <div class="markdown level1 summary"><p>Gets the enumeration of the IDs of Sets in the group with the given ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; GroupSetIDs(int id)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">id</span>
-        <p><p>Group ID.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>Group ID.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Int32</span>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+  <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.AlgebraExtensions.html#VDS_RDF_Query_Algebra_AlgebraExtensions_ProductWithTimeout_VDS_RDF_Query_Algebra_BaseMultiset_VDS_RDF_Query_Algebra_BaseMultiset_System_Int64_">AlgebraExtensions.ProductWithTimeout(BaseMultiset, BaseMultiset, Int64)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/GroupMultiset.cs/#L35" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_GroupMultiset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.GroupMultiset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/GroupMultiset.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

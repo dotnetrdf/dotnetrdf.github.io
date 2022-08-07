@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Configuring Full Text Query | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Configuring Full Text Query | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configuring-full-text-query">Configuring Full Text Query</h1>
+
+<p>Full Text Query is a non-standard SPARQL extension provided by the <strong>dotNetRDF.Query.FullText.dll</strong> library, please see <a href="../full_text_querying_with_sparql.html">Full Text Querying with SPARQL</a> for general details on its usage.</p>
+<p>You can use the <a href="index.html">Configuration API</a> to attach full text query functionality to a SPARQL Endpoint.
+To do this you will need to specify configuration for one of several ancillary objects.</p>
+<p>As the Full Text Query functionality is an additional feature it uses a separate <a href="http://www.dotnetrdf.org/configuration/fulltext#">Full Text Configuration Vocabulary</a> to specify the additional vocabulary used in configuring these objects.</p>
+<p>Note that all types specified by the <code>dnr:type</code> property that refer to classes in this library must have the assembly name <code>dotNetRDF.Query.FullText</code> included and all types that refer to classes from Lucene.Net must include <code>Lucene.Net</code></p>
+<h1 id="basic-configuration">Basic Configuration</h1>
+<p>For all Full Text Configuration you&#39;ll need to add the additional prefix declaration like so:</p>
+<pre><code class="lang-turtle">
+@prefix dnr-ft: &lt;http://www.dotnetrdf.org/configuration/fulltext#&gt; .
+</code></pre><p>You will also need to declare the following:</p>
+<pre><code class="lang-turtle">
+_:fulltextFactory a dnr:ObjectFactory ;
+  dnr:type &quot;VDS.RDF.Configuration.FullTextObjectFactory, dotNetRDF.Query.FullText&quot; .
+</code></pre><h2 id="index-schema">Index Schema</h2>
+<p>Index Schemas are specified as follows, this example shows the <a class="xref" href="../../api/VDS.RDF.Query.FullText.Schema.DefaultIndexSchema.html"><code>DefaultIndexSchema</code></a> which is the only schema included currently (advanced users can create their own schemas):</p>
+<pre><code class="lang-turtle">
+_:schema a dnr-ft:Schema ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Schema.DefaultIndexSchema, dotNetRDF.Query.FullText&quot; .
+</code></pre><h2 id="indexes">Indexes</h2>
+<p>Indexes represent the actual indexed data, currently this means Lucene.Net directories. Their configuration looks like the following, this example shows a file system based index being used:</p>
+<pre><code class="lang-turtle">
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.FSDirectory, Lucene.Net&quot; ;
+  dnr:fromFile &quot;~/App_Data/index/&quot; ;
+  dnr-ft:ensureIndex true .
+</code></pre><p>Here the <code>dnr:fromFile</code> property is used to point to the directory where the index resides.</p>
+<p>The optional <code>dnr-ft:ensureIndex</code> property is used to ensure that the index is ready for use, this is useful if you are creating a non-persistent index such as a Lucene.Net <code>RAMDirectory</code>.</p>
+<h2 id="analyzers">Analyzers</h2>
+<p>Analyzers are required for Lucene.Net to do the analysis for both indexing and querying. Their configuration looks like the following, any Analyzer instance that has a unparameterized constructor or takes a single Lucene.Net Version parameter can be loaded this way:</p>
+<pre><code class="lang-turtle">
+_:analyzer a dnr-ft:Analyzer ;
+  dnr:type &quot;Lucene.Net.Analysis.Standard.StandardAnalayzer&quot; ;
+  dnr-ft:version 2900 .
+</code></pre><p>The optional <code>dnr-ft:version</code> property is used to specify the version of the analyzer to be used, if none is specified 3000 i.e. Lucene.Net 3.0 is assumed</p>
+<h2 id="indexers">Indexers</h2>
+<p>Indexers are classes that implement the <a class="xref" href="../../api/VDS.RDF.Query.FullText.Indexing.IFullTextIndexer.html"><code>IFullTextIndexer</code></a> interface and can perform indexing. Their configuration looks like the following:</p>
+<pre><code class="lang-turtle">
+_:indexer a dnr-ft:Indexer ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Indexing.Lucene.LuceneObjectsIndexer, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index .
+
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.FSDirectory, Lucene.Net&quot; ;
+  dnr:fromFile &quot;~/App_Data/index/&quot; .
+</code></pre><p>The <code>dnr-ft:index</code> property is used to point to the index being used and is a required property.</p>
+<p>You may optionally specify the <code>dnr-ft:analyzer</code> property to point to an analyzer, if not specified the Lucene.Net <code>StandardAnalyzer</code> is used.</p>
+<p>Also you may optionally specify the <code>dnr-ft:schema</code> property to point to a Index Schema, if not specified the <code>DefaultIndexSchema</code> is used.</p>
+<h2 id="search-providers">Search Providers</h2>
+<p>A Search Provider provides the actual full text query capability, currently only one implementation <a class="xref" href="../../api/VDS.RDF.Query.FullText.Search.Lucene.LuceneSearchProvider.html"><code>LuceneSearchProvider</code></a> is available and it is configured as follows:</p>
+<pre><code class="lang-turtle">
+_:searcher a dnr-ft:Searcher ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Search.Lucene.LuceneSearchProvider, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index .
+
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.FSDirectory, Lucene.Net&quot; ;
+  dnr:fromFile &quot;~/App_Data/index/&quot; ;
+  dnr-ft:ensureIndex true .
+</code></pre><p>As with Indexers the <code>dnr-ft:index</code> property is required and points to the index being used. Again the <code>dnr-ft:analyzer</code> and <code>dnr-ft:schema</code> properties are optional and the same defaults as for Indexers are used if they are not specified.</p>
+<h3 id="auto-indexing">Auto-indexing</h3>
+<p>When you specify a Search Provider you can also state that it should auto-index some data sources to build the index it operates over. This is useful if you want to create non-persistent indexes over small amounts of data in a SPARQL endpoint for example.</p>
+<p>This can be done using the <code>dnr-ft:buildIndexFor</code> and <code>dnr-ft:buildIndexWith</code> properties which specify data sources and an Indexer respectively.</p>
+<p>An example of this is shown below:</p>
+<pre><code class="lang-turtle">
+_:searcher a dnr-ft:Searcher ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Search.Lucene.LuceneSearchProvider, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index ;
+  dnr-ft:buildIndexWith _:indexer ;
+  dnr-ft:buildIndexFor _:graph .
+
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.RAMDirectory, Lucene.Net&quot; ;
+  dnr-ft:ensureIndex true .
+
+_:indexer a dnr-ft:Indexer ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Indexing.Lucene.LuceneObjectsIndexer, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index .
+
+_:graph a dnr:Graph ;
+  dnr:fromFile &quot;example.rdf&quot; .
+</code></pre><h2 id="full-text-optimiser">Full Text Optimiser</h2>
+<p>The <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.FullTextOptimiser.html"><code>FullTextOptimiser</code></a> is the only optimiser provided by the Full Text library and is used to enable actual full text query support. It is configured as follows:</p>
+<pre><code class="lang-turtle">
+_:optimiser a dnr:AlgebraOptimiser ;
+  dnr:type &quot;VDS.RDF.Query.Optimisation.FullTextOptimiser, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:searcher _:searcher .
+
+_:searcher a dnr-ft:Searcher ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Search.Lucene.LuceneSearchProvider, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index .
+
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.FSDirectory, Lucene.Net&quot; ;
+  dnr:fromFile &quot;~/App_Data/index/&quot; ;
+  dnr-ft:ensureIndex true .
+</code></pre><p>For details on how to attach this algebra optimiser to a HTTP Handler please see <a href="http_handlers.html">Configuration API - HTTP Handlers</a></p>
+<h2 id="datasets">Datasets</h2>
+<p>You can use the <a class="xref" href="../../api/VDS.RDF.Query.Datasets.FullTextIndexedDataset.html"><code>FullTextIndexedDataset</code></a> as a decorator over another dataset to automatically keep an index in sync with a dataset as that dataset changes.</p>
+<p>It is configured as follows:</p>
+<pre><code class="lang-turtle">
+_:ftDataset a dnr:SparqlDataset ;
+  dnr:type &quot;VDS.RDF.Query.Dataset.FullTextIndexedDataset, dotNetRDF.Query.FullText&quot; ;
+  dnr:usingDataset _:dataset ;
+  dnr-ft:indexer _:indexer ;
+  dnr-ft:indexNow true .
+
+_:indexer a dnr-ft:Indexer ;
+  dnr:type &quot;VDS.RDF.Query.FullText.Indexing.Lucene.LuceneObjectsIndexer, dotNetRDF.Query.FullText&quot; ;
+  dnr-ft:index _:index .
+
+_:index a dnr-ft:Index ;
+  dnr:type &quot;Lucene.Net.Store.FSDirectory, Lucene.Net&quot; ;
+  dnr:fromFile &quot;~/App_Data/index/&quot; .
+
+_:dataset a dnr:SparqlDataset ;
+  dnr:type &quot;VDS.RDF.Query.Dataset.InMemoryDataset&quot; .
+</code></pre><p>The <code>dnr-ft:indexNow</code> property is used to set whether the wrapped dataset should be indexed at initialization time, if you have a pre-built index you should set this to false but for non-persistent datasets you load up on demand it is generally useful to set to true.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/full_text_query.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

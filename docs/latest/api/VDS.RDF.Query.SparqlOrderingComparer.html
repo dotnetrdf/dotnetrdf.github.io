@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SparqlOrderingComparer
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,22 +69,39 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.SparqlOrderingComparer">
-  <h1 id="VDS_RDF_Query_SparqlOrderingComparer" data-uid="VDS.RDF.Query.SparqlOrderingComparer">Class SparqlOrderingComparer
+  
+  
+  <h1 id="VDS_RDF_Query_SparqlOrderingComparer" data-uid="VDS.RDF.Query.SparqlOrderingComparer" class="text-break">Class SparqlOrderingComparer
   </h1>
   <div class="markdown level0 summary"><p>Comparer class for use in SPARQL ORDER BY - implements the Semantics broadly similar to the relational operator but instead of erroring using Node/Lexical ordering where an error would occur it makes an appropriate decision.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html">SparqlNodeComparer</a></div>
     <div class="level2"><span class="xref">SparqlOrderingComparer</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.ISparqlNodeComparer.html">ISparqlNodeComparer</a></div>
+    <div><span class="xref">System.Collections.Generic.IComparer</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IComparer</span>&lt;<a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a>&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Culture">SparqlNodeComparer.Culture</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Options">SparqlNodeComparer.Options</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_TryCompare_VDS_RDF_INode_VDS_RDF_INode_System_Int32__">SparqlNodeComparer.TryCompare(INode, INode, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_TryCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_System_Int32__">SparqlNodeComparer.TryCompare(IValuedNode, IValuedNode, Int32)</a>
+    </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_NumericCompare_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_Query_Expressions_SparqlNumericType_">SparqlNodeComparer.NumericCompare(INode, INode, SparqlNumericType)</a>
     </div>
@@ -99,6 +116,12 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_DateCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_">SparqlNodeComparer.DateCompare(IValuedNode, IValuedNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_BooleanCompare_VDS_RDF_INode_VDS_RDF_INode_">SparqlNodeComparer.BooleanCompare(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_BooleanCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_">SparqlNodeComparer.BooleanCompare(IValuedNode, IValuedNode)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -122,232 +145,296 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.html">VDS.RDF.Query</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_SparqlOrderingComparer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SparqlOrderingComparer : SparqlNodeComparer, IComparer&lt;INode&gt;, IComparer&lt;IValuedNode&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class SparqlOrderingComparer : SparqlNodeComparer, ISparqlNodeComparer, IComparer&lt;INode&gt;, IComparer&lt;IValuedNode&gt;</code></pre>
   </div>
-  
-  
-  
-  
-  
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer__ctor_System_Globalization_CultureInfo_System_Globalization_CompareOptions_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.%23ctor(System.Globalization.CultureInfo%2CSystem.Globalization.CompareOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L583">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_SparqlOrderingComparer__ctor_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_SparqlOrderingComparer__ctor_System_Globalization_CultureInfo_System_Globalization_CompareOptions_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.#ctor(System.Globalization.CultureInfo,System.Globalization.CompareOptions)">SparqlOrderingComparer(CultureInfo, CompareOptions)</h4>
+  <div class="markdown level1 summary"><p>Create a  new comparer that uses the specified culture and options when comparing string literals.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlOrderingComparer(CultureInfo culture, CompareOptions options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Globalization.CultureInfo</span></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>The culture to use for string literal comparison.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Globalization.CompareOptions</span></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The string comparison options to apply to string literal comparison.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer__ctor_VDS_RDF_Query_ISparqlNodeComparer_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.%23ctor(VDS.RDF.Query.ISparqlNodeComparer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L576">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_SparqlOrderingComparer__ctor_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_SparqlOrderingComparer__ctor_VDS_RDF_Query_ISparqlNodeComparer_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.#ctor(VDS.RDF.Query.ISparqlNodeComparer)">SparqlOrderingComparer(ISparqlNodeComparer)</h4>
+  <div class="markdown level1 summary"><p>Create a new comparer that uses the same culture and comparison options as the specified node comparer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlOrderingComparer(ISparqlNodeComparer nodeComparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.ISparqlNodeComparer.html">ISparqlNodeComparer</a></td>
+        <td><span class="parametername">nodeComparer</span></td>
+        <td><p>The node comparer whose culture and comparison options are to be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/SparqlNodeComparer.cs/#L463" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L594">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_SparqlOrderingComparer_Compare_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare*"></a>
-  
-  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.INode,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_" class="expander" data-toggle="collapse">Compare(INode, INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.INode,VDS.RDF.INode)">Compare(INode, INode)</h4>
   <div class="markdown level1 summary"><p>Compares two Nodes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int Compare(INode x, INode y)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">x</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">y</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Compare_VDS_RDF_INode_VDS_RDF_INode_">SparqlNodeComparer.Compare(INode, INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.Nodes.IValuedNode%2CVDS.RDF.Nodes.IValuedNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.Nodes.IValuedNode%2CVDS.RDF.Nodes.IValuedNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/SparqlNodeComparer.cs/#L603" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L756">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_SparqlOrderingComparer_Compare_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare*"></a>
-  
-  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.Nodes.IValuedNode,VDS.RDF.Nodes.IValuedNode)"><a href="#collapsible-VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" class="expander" data-toggle="collapse">Compare(IValuedNode, IValuedNode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.Compare(VDS.RDF.Nodes.IValuedNode,VDS.RDF.Nodes.IValuedNode)">Compare(IValuedNode, IValuedNode)</h4>
   <div class="markdown level1 summary"><p>Compares two Nodes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int Compare(IValuedNode x, IValuedNode y)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></span>
-        <span class="parametername">x</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></span>
-        <span class="parametername">y</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Compare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_">SparqlNodeComparer.Compare(IValuedNode, IValuedNode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.DateTimeCompare(VDS.RDF.Nodes.IValuedNode%2CVDS.RDF.Nodes.IValuedNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer.DateTimeCompare(VDS.RDF.Nodes.IValuedNode%2CVDS.RDF.Nodes.IValuedNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/SparqlNodeComparer.cs/#L739" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L911">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.DateTimeCompare*"></a>
-  
-  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.DateTimeCompare(VDS.RDF.Nodes.IValuedNode,VDS.RDF.Nodes.IValuedNode)"><a href="#collapsible-VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" class="expander" data-toggle="collapse">DateTimeCompare(IValuedNode, IValuedNode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_SparqlOrderingComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_" data-uid="VDS.RDF.Query.SparqlOrderingComparer.DateTimeCompare(VDS.RDF.Nodes.IValuedNode,VDS.RDF.Nodes.IValuedNode)">DateTimeCompare(IValuedNode, IValuedNode)</h4>
   <div class="markdown level1 summary"><p>Compares two Date Times for Date Time ordering.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override int DateTimeCompare(IValuedNode x, IValuedNode y)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></span>
-        <span class="parametername">x</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></span>
-        <span class="parametername">y</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Nodes.IValuedNode.html">IValuedNode</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_DateTimeCompare_VDS_RDF_Nodes_IValuedNode_VDS_RDF_Nodes_IValuedNode_">SparqlNodeComparer.DateTimeCompare(IValuedNode, IValuedNode)</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.ISparqlNodeComparer.html">ISparqlNodeComparer</a>
   </div>
-  
+  <div>
+      <span class="xref">System.Collections.Generic.IComparer&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IComparer&lt;T&gt;</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/SparqlNodeComparer.cs/#L454" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_SparqlOrderingComparer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.SparqlOrderingComparer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/SparqlNodeComparer.cs/#L569" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

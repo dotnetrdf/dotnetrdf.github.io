@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TurtleW3CFormatter
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter">
-  <h1 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter">Class TurtleW3CFormatter
+  
+  
+  <h1 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter" class="text-break">Class TurtleW3CFormatter
   </h1>
   <div class="markdown level0 summary"><p>Formatter which formats Turtle with QName compression using the newer W3C syntax which permits a wider range of valid QNames.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -83,8 +84,16 @@
     <div class="level3"><a class="xref" href="VDS.RDF.Writing.Formatting.TurtleFormatter.html">TurtleFormatter</a></div>
     <div class="level4"><span class="xref">TurtleW3CFormatter</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.INodeFormatter.html">INodeFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.ITripleFormatter.html">ITripleFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.IUriFormatter.html">IUriFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.ICharFormatter.html">ICharFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html">IResultFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.INamespaceFormatter.html">INamespaceFormatter</a></div>
+    <div><a class="xref" href="VDS.RDF.Writing.Formatting.IBaseUriFormatter.html">IBaseUriFormatter</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -124,6 +133,9 @@
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Triple_">BaseFormatter.Format(Triple)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseFormatter.Format(Triple, IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatUri_System_String_">BaseFormatter.FormatUri(String)</a>
     </div>
     <div>
@@ -142,7 +154,7 @@
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatChar_System_Char___">BaseFormatter.FormatChar(Char[])</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Query_SparqlResult_">BaseFormatter.Format(SparqlResult)</a>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_Format_VDS_RDF_Query_ISparqlResult_">BaseFormatter.Format(ISparqlResult)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatBooleanResult_System_Boolean_">BaseFormatter.FormatBooleanResult(Boolean)</a>
@@ -172,477 +184,606 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Writing.Formatting.html">VDS.RDF.Writing.Formatting</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class TurtleW3CFormatter : TurtleFormatter, INodeFormatter, ITripleFormatter, IUriFormatter, ICharFormatter, IResultFormatter, INamespaceFormatter, IBaseUriFormatter</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L284" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L315">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor" class="expander" data-toggle="collapse">TurtleW3CFormatter()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor">TurtleW3CFormatter()</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TurtleW3CFormatter()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L312" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L358">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_" class="expander" data-toggle="collapse">TurtleW3CFormatter(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String)">TurtleW3CFormatter(String)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L320" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L374">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">TurtleW3CFormatter(String, IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IGraph_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.IGraph)">TurtleW3CFormatter(String, IGraph)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName, IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.INamespaceMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.INamespaceMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L328" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L382">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.INamespaceMapper)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_" class="expander" data-toggle="collapse">TurtleW3CFormatter(String, INamespaceMapper)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.INamespaceMapper)">TurtleW3CFormatter(String, INamespaceMapper)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName, INamespaceMapper nsmap)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></span>
-        <span class="parametername">nsmap</span>
-        <p><p>Namespace Map.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td><span class="parametername">nsmap</span></td>
+        <td><p>Namespace Map.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.QNameOutputMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.INamespaceMapper%2CVDS.RDF.IUriFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L336" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L391">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.QNameOutputMapper)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_" class="expander" data-toggle="collapse">TurtleW3CFormatter(String, QNameOutputMapper)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_INamespaceMapper_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.INamespaceMapper,VDS.RDF.IUriFactory)">TurtleW3CFormatter(String, INamespaceMapper, IUriFactory)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName, INamespaceMapper nsmap, IUriFactory uriFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td><span class="parametername">nsmap</span></td>
+        <td><p>Namespace Map.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating new Uri instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.IUriFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L366">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.IUriFactory)">TurtleW3CFormatter(String, IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName, IUriFactory uriFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating new Uri instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(System.String%2CVDS.RDF.QNameOutputMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L399">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_System_String_VDS_RDF_QNameOutputMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(System.String,VDS.RDF.QNameOutputMapper)">TurtleW3CFormatter(String, QNameOutputMapper)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected TurtleW3CFormatter(string formatName, QNameOutputMapper qnameMapper)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">formatName</span>
-        <p><p>Format Name.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.QNameOutputMapper.html">QNameOutputMapper</a></span>
-        <span class="parametername">qnameMapper</span>
-        <p><p>QName Map.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formatName</span></td>
+        <td><p>Format Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.QNameOutputMapper.html">QNameOutputMapper</a></td>
+        <td><span class="parametername">qnameMapper</span></td>
+        <td><p>QName Map.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L298" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L336">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">TurtleW3CFormatter(IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IGraph_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.IGraph)">TurtleW3CFormatter(IGraph)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter for the given Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TurtleW3CFormatter(IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.INamespaceMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.INamespaceMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L305" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L343">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.INamespaceMapper)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_" class="expander" data-toggle="collapse">TurtleW3CFormatter(INamespaceMapper)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.INamespaceMapper)">TurtleW3CFormatter(INamespaceMapper)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter for the given Namespace Map.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TurtleW3CFormatter(INamespaceMapper nsmap)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></span>
-        <span class="parametername">nsmap</span>
-        <p><p>Namespace Map.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td><span class="parametername">nsmap</span></td>
+        <td><p>Namespace Map.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.QNameOutputMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.INamespaceMapper%2CVDS.RDF.IUriFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L291" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L351">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.QNameOutputMapper)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_" class="expander" data-toggle="collapse">TurtleW3CFormatter(QNameOutputMapper)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_INamespaceMapper_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.INamespaceMapper,VDS.RDF.IUriFactory)">TurtleW3CFormatter(INamespaceMapper, IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Turtle Formatter for the given Namespace Map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TurtleW3CFormatter(INamespaceMapper nsmap, IUriFactory uriFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td><span class="parametername">nsmap</span></td>
+        <td><p>Namespace Map.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating new Uri instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.IUriFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L322">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.IUriFactory)">TurtleW3CFormatter(IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Turtle Formatter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TurtleW3CFormatter(IUriFactory uriFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating new Uri instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.%23ctor(VDS.RDF.QNameOutputMapper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L329">View Source</a>
+  </span>
+  <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter__ctor_VDS_RDF_QNameOutputMapper_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.#ctor(VDS.RDF.QNameOutputMapper)">TurtleW3CFormatter(QNameOutputMapper)</h4>
   <div class="markdown level1 summary"><p>Creates a new Turtle Formatter that uses the given QName mapper.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TurtleW3CFormatter(QNameOutputMapper qnameMapper)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.QNameOutputMapper.html">QNameOutputMapper</a></span>
-        <span class="parametername">qnameMapper</span>
-        <p><p>QName Mapper.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.QNameOutputMapper.html">QNameOutputMapper</a></td>
+        <td><span class="parametername">qnameMapper</span></td>
+        <td><p>QName Mapper.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.IsValidQName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.FormatTripleNode(VDS.RDF.ITripleNode%2CSystem.Nullable%7BVDS.RDF.Writing.TripleSegment%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L344" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L413">View Source</a>
   </span>
-  
+  <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_FormatTripleNode_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.FormatTripleNode*"></a>
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.FormatTripleNode(VDS.RDF.ITripleNode,System.Nullable{VDS.RDF.Writing.TripleSegment})">FormatTripleNode(ITripleNode, Nullable&lt;TripleSegment&gt;)</h4>
+  <div class="markdown level1 summary"><p>Formats a triple node a a string for the given format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string FormatTripleNode(ITripleNode t, TripleSegment? segment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleNode.html">ITripleNode</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="VDS.RDF.Writing.TripleSegment.html">TripleSegment</a>&gt;</td>
+        <td><span class="parametername">segment</span></td>
+        <td><p>Triple segment being written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Writing.Formatting.BaseFormatter.html#VDS_RDF_Writing_Formatting_BaseFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment__">BaseFormatter.FormatTripleNode(ITripleNode, Nullable&lt;TripleSegment&gt;)</a></div>
+  <h5 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_FormatTripleNode_VDS_RDF_ITripleNode_System_Nullable_VDS_RDF_Writing_TripleSegment___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method should be overridden in formatters that support serializing <a class="xref" href="VDS.RDF.ITripleNode.html">ITripleNode</a>s.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter.IsValidQName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L407">View Source</a>
+  </span>
   <a id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.IsValidQName*"></a>
-  
-  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.IsValidQName(System.String)"><a href="#collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_" class="expander" data-toggle="collapse">IsValidQName(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Writing_Formatting_TurtleW3CFormatter_IsValidQName_System_String_" data-uid="VDS.RDF.Writing.Formatting.TurtleW3CFormatter.IsValidQName(System.String)">IsValidQName(String)</h4>
   <div class="markdown level1 summary"><p>Gets whether a QName is valid in Turtle as specified by the W3C.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool IsValidQName(string value)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">value</span>
-        <p><p>QName.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>QName.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Writing.Formatting.QNameFormatter.html#VDS_RDF_Writing_Formatting_QNameFormatter_IsValidQName_System_String_">QNameFormatter.IsValidQName(String)</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.INodeFormatter.html">INodeFormatter</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.ITripleFormatter.html">ITripleFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.IUriFormatter.html">IUriFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.ICharFormatter.html">ICharFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.IResultFormatter.html">IResultFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.INamespaceFormatter.html">INamespaceFormatter</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Writing.Formatting.IBaseUriFormatter.html">IBaseUriFormatter</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Writing/Formatting/TurtleFormatter.cs/#L278" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Writing_Formatting_TurtleW3CFormatter.md&amp;value=---%0Auid%3A%20VDS.RDF.Writing.Formatting.TurtleW3CFormatter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Writing/Formatting/TurtleFormatter.cs/#L309" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

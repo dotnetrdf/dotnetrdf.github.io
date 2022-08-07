@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IVirtualRdfProvider&lt;TNodeID, TGraphID&gt;
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,43 +69,40 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2">
-  <h1 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2">Interface IVirtualRdfProvider&lt;TNodeID, TGraphID&gt;
+  
+  
+  <h1 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2" class="text-break">Interface IVirtualRdfProvider&lt;TNodeID, TGraphID&gt;
   </h1>
   <div class="markdown level0 summary"><p>A Virtual RDF Provider is a provider that transforms materialised values into virtual ID values.  These virtual values can be used to do much faster term equality checking and to minimise memory usage when accessing out of memory data.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.Virtualisation.html">VDS.RDF.Storage.Virtualisation</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IVirtualRdfProvider&lt;TNodeID, TGraphID&gt;</code></pre>
   </div>
-  
-  
-  
   <h5 class="typeParameters">Type Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="parametername">TNodeID</span>
-        <p><p>Node ID Type.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="parametername">TGraphID</span>
-        <p><p>Graph ID Type.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNodeID</span></td>
+        <td><p>Node ID Type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TGraphID</span></td>
+        <td><p>Graph ID Type.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 An implementation of this is typically in addition to a more general RDF store implementation (such as an <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a>) and was originally designed and intended for use in creating <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> instances which allow out of memory data to be queried more efficiently.
@@ -118,727 +115,638 @@ It is expected that most implementations will use a cache to ensure that repeate
 In order for code that uses this class to function correctly it must be ensured that IDs issued for Blank Nodes are graph scoped, as such a specific method for converting Blank Nodes into Virtual Node IDs is given.
 </p>
 </div>
-  
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.NullID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.NullID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L139" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L139">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.NullID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.NullID"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID" class="expander" data-toggle="collapse">NullID</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_NullID" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.NullID">NullID</h4>
   <div class="markdown level1 summary"><p>Gets the Node ID that is used to indicate that a Node does not exist in the underlying storage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TNodeID NullID { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TNodeID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetBlankNodeID(VDS.RDF.IBlankNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetBlankNodeID(VDS.RDF.IBlankNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L134" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L134">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID(VDS.RDF.IBlankNode)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_" class="expander" data-toggle="collapse">GetBlankNodeID(IBlankNode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID(VDS.RDF.IBlankNode)">GetBlankNodeID(IBlankNode)</h4>
   <div class="markdown level1 summary"><p>Given a Blank Node returns a Graph scoped Node ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TNodeID GetBlankNodeID(IBlankNode value)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></span>
-        <span class="parametername">value</span>
-        <p><p>Blank Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Blank Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TNodeID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Should function as equivalent to the two argument version with the <strong>createIfNotExists</strong> parameter set to false.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetBlankNodeID(VDS.RDF.IBlankNode%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetBlankNodeID(VDS.RDF.IBlankNode%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L124" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L124">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID(VDS.RDF.IBlankNode,System.Boolean)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_" class="expander" data-toggle="collapse">GetBlankNodeID(IBlankNode, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetBlankNodeID_VDS_RDF_IBlankNode_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetBlankNodeID(VDS.RDF.IBlankNode,System.Boolean)">GetBlankNodeID(IBlankNode, Boolean)</h4>
   <div class="markdown level1 summary"><p>Given a Blank Node returns a Graph scoped Node ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TNodeID GetBlankNodeID(IBlankNode value, bool createIfNotExists)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></span>
-        <span class="parametername">value</span>
-        <p><p>Blank Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">createIfNotExists</span>
-        <p><p>Determines whether to create a new Node ID if there is not already one for the given value.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Blank Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">createIfNotExists</span></td>
+        <td><p>Determines whether to create a new Node ID if there is not already one for the given value.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TNodeID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L100" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L100">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(System.Uri)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_" class="expander" data-toggle="collapse">GetGraphID(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(System.Uri)">GetGraphID(Uri)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph ID for a Graph URI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TGraphID GetGraphID(Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TGraphID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TGraphID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Should function as equivalent to the two argument version with the <strong>createIfNotExists</strong> parameter set to false.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(System.Uri%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(System.Uri%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L108" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L108">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(System.Uri,System.Boolean)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_" class="expander" data-toggle="collapse">GetGraphID(Uri, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_System_Uri_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(System.Uri,System.Boolean)">GetGraphID(Uri, Boolean)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph ID for a Graph URI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TGraphID GetGraphID(Uri graphUri, bool createIfNotExists)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">createIfNotExists</span>
-        <p><p>Determines whether to create a new Graph ID if there is not already one for the given Graph URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">createIfNotExists</span></td>
+        <td><p>Determines whether to create a new Graph ID if there is not already one for the given Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TGraphID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TGraphID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L82" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L82">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">GetGraphID(IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(VDS.RDF.IGraph)">GetGraphID(IGraph)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph ID for a Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TGraphID GetGraphID(IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TGraphID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TGraphID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Should function as equivalent to the two argument version with the <strong>createIfNotExists</strong> parameter set to false.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(VDS.RDF.IGraph%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphID(VDS.RDF.IGraph%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L90">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(VDS.RDF.IGraph,System.Boolean)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_" class="expander" data-toggle="collapse">GetGraphID(IGraph, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphID_VDS_RDF_IGraph_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphID(VDS.RDF.IGraph,System.Boolean)">GetGraphID(IGraph, Boolean)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph ID for a Graph creating it if necessary.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TGraphID GetGraphID(IGraph g, bool createIfNotExists)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">createIfNotExists</span>
-        <p><p>Determines whether to create a new Graph ID if there is not already one for the given Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">createIfNotExists</span></td>
+        <td><p>Determines whether to create a new Graph ID if there is not already one for the given Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TGraphID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TGraphID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphUri(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetGraphUri(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L63">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphUri*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphUri(`1)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_" class="expander" data-toggle="collapse">GetGraphUri(TGraphID)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetGraphUri__1_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetGraphUri(`1)">GetGraphUri(TGraphID)</h4>
   <div class="markdown level1 summary"><p>Given a Graph ID returns the value of the Graph URI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">Uri GetGraphUri(TGraphID id)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">TGraphID</span></span>
-        <span class="parametername">id</span>
-        <p><p>Graph ID.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TGraphID</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>Graph ID.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Uri</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetID(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetID(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L72" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L72">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetID(INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID(VDS.RDF.INode)">GetID(INode)</h4>
   <div class="markdown level1 summary"><p>Given a non-blank Node returns the Node ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TNodeID GetID(INode value)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">value</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TNodeID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Should function as equivalent to the two argument version with the <strong>createIfNotExists</strong> parameter set to false.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetID(VDS.RDF.INode%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetID(VDS.RDF.INode%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L116" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L116">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID(VDS.RDF.INode,System.Boolean)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_" class="expander" data-toggle="collapse">GetID(INode, Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetID_VDS_RDF_INode_System_Boolean_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetID(VDS.RDF.INode,System.Boolean)">GetID(INode, Boolean)</h4>
   <div class="markdown level1 summary"><p>Given a non-blank Node returns the Node ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TNodeID GetID(INode value, bool createIfNotExists)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">value</span>
-        <p><p>Node.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">createIfNotExists</span>
-        <p><p>Determines whether to create a new Node ID if there is not already one for the given value.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">createIfNotExists</span></td>
+        <td><p>Determines whether to create a new Node ID if there is not already one for the given value.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">TNodeID</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetValue(VDS.RDF.IGraph%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.GetValue(VDS.RDF.IGraph%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L56">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetValue*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetValue(VDS.RDF.IGraph,`0)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_" class="expander" data-toggle="collapse">GetValue(IGraph, TNodeID)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_GetValue_VDS_RDF_IGraph__0_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.GetValue(VDS.RDF.IGraph,`0)">GetValue(IGraph, TNodeID)</h4>
   <div class="markdown level1 summary"><p>Given a Node ID returns the materialised value in the given Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">INode GetValue(IGraph g, TNodeID id)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to create the Node in.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">TNodeID</span></span>
-        <span class="parametername">id</span>
-        <p><p>Node ID.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to create the Node in.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TNodeID</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>Node ID.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.INode.html">INode</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.LoadGraphVirtual(VDS.RDF.IGraph%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602.LoadGraphVirtual(VDS.RDF.IGraph%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L149" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L149">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.LoadGraphVirtual*"></a>
-  
-  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.LoadGraphVirtual(VDS.RDF.IGraph,System.Uri)"><a href="#collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_" class="expander" data-toggle="collapse">LoadGraphVirtual(IGraph, Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2_LoadGraphVirtual_VDS_RDF_IGraph_System_Uri_" data-uid="VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider`2.LoadGraphVirtual(VDS.RDF.IGraph,System.Uri)">LoadGraphVirtual(IGraph, Uri)</h4>
   <div class="markdown level1 summary"><p>Loads a Graph creating all the Triples with virtual node values.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void LoadGraphVirtual(IGraph g, Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to load into.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>URI of the Graph to load.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/Virtualisation/IVirtualRdfProvider.cs/#L48" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_Virtualisation_IVirtualRdfProvider_2.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.Virtualisation.IVirtualRdfProvider%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/Virtualisation/IVirtualRdfProvider.cs/#L48" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

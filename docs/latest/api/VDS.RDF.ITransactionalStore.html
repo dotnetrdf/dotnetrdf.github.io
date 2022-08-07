@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ITransactionalStore
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,14 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.ITransactionalStore">
-  <h1 id="VDS_RDF_ITransactionalStore" data-uid="VDS.RDF.ITransactionalStore">Interface ITransactionalStore
+  
+  
+  <h1 id="VDS_RDF_ITransactionalStore" data-uid="VDS.RDF.ITransactionalStore" class="text-break">Interface ITransactionalStore
   </h1>
   <div class="markdown level0 summary"><p>Interface for Triple Stores which are backed by some storage layer that may delay persistence and thus require flushing to ensure changes are persisted to the backing store, as a by product such stores will typically have some notion of transactionality.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -87,6 +86,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Triples">ITripleStore.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_UriFactory">ITripleStore.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_">ITripleStore.Add(IGraph)</a>
@@ -101,13 +103,25 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_">ITripleStore.AddFromUri(Uri, Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_VDS_RDF_Parsing_Loader_">ITripleStore.AddFromUri(Uri, Boolean, Loader)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_System_Uri_">ITripleStore.Remove(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_VDS_RDF_IRefNode_">ITripleStore.Remove(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_System_Uri_">ITripleStore.HasGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_VDS_RDF_IRefNode_">ITripleStore.HasGraph(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_System_Uri_">ITripleStore.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_VDS_RDF_IRefNode_">ITripleStore.Item[IRefNode]</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphAdded">ITripleStore.GraphAdded</a>
@@ -128,95 +142,52 @@
       <span class="xref">System.IDisposable.Dispose()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_ITransactionalStore_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ITransactionalStore : ITripleStore, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ITransactionalStore_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore.Discard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ITransactionalStore_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore.Discard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L516" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ITransactionalStore.cs/#L42">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ITransactionalStore_Discard_" data-uid="VDS.RDF.ITransactionalStore.Discard*"></a>
-  
-  <h4 id="VDS_RDF_ITransactionalStore_Discard" data-uid="VDS.RDF.ITransactionalStore.Discard"><a href="#collapsible-VDS_RDF_ITransactionalStore_Discard" class="expander" data-toggle="collapse">Discard()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ITransactionalStore_Discard" class="collapse in">
+  <h4 id="VDS_RDF_ITransactionalStore_Discard" data-uid="VDS.RDF.ITransactionalStore.Discard">Discard()</h4>
   <div class="markdown level1 summary"><p>Discards any outstanding changes to the underlying store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Discard()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ITransactionalStore_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ITransactionalStore_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L511" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ITransactionalStore.cs/#L37">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ITransactionalStore_Flush_" data-uid="VDS.RDF.ITransactionalStore.Flush*"></a>
-  
-  <h4 id="VDS_RDF_ITransactionalStore_Flush" data-uid="VDS.RDF.ITransactionalStore.Flush"><a href="#collapsible-VDS_RDF_ITransactionalStore_Flush" class="expander" data-toggle="collapse">Flush()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ITransactionalStore_Flush" class="collapse in">
+  <h4 id="VDS_RDF_ITransactionalStore_Flush" data-uid="VDS.RDF.ITransactionalStore.Flush">Flush()</h4>
   <div class="markdown level1 summary"><p>Flushes any outstanding changes to the underlying store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Flush()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, String, IStoreReader)</a>
@@ -229,6 +200,9 @@
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, String, IStoreReader)</a>
@@ -248,17 +222,24 @@
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, String)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ITransactionalStore.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L505" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ITransactionalStore.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ITransactionalStore.cs/#L31" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

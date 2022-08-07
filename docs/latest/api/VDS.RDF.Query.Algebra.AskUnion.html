@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AskUnion
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,21 +69,56 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Algebra.AskUnion">
-  <h1 id="VDS_RDF_Query_Algebra_AskUnion" data-uid="VDS.RDF.Query.Algebra.AskUnion">Class AskUnion
+  
+  
+  <h1 id="VDS_RDF_Query_Algebra_AskUnion" data-uid="VDS.RDF.Query.Algebra.AskUnion" class="text-break">Class AskUnion
   </h1>
   <div class="markdown level0 summary"><p>Represents a Union.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">AskUnion</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Query.Algebra.Union.html">Union</a></div>
+    <div class="level2"><span class="xref">AskUnion</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Algebra.IUnion.html">IUnion</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html">IAbstractJoin</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.IVisitable.html">IVisitable</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.IProcessable.html">IProcessable</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Variables">Union.Variables</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_FloatingVariables">Union.FloatingVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_FixedVariables">Union.FixedVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Lhs">Union.Lhs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Rhs">Union.Rhs</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Accept__2_VDS_RDF_Query_ISparqlQueryAlgebraProcessor___0___1____1_">Union.Accept&lt;TResult, TContext&gt;(ISparqlQueryAlgebraProcessor&lt;TResult, TContext&gt;, TContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Accept__1_VDS_RDF_Query_ISparqlAlgebraVisitor___0__">Union.Accept&lt;T&gt;(ISparqlAlgebraVisitor&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_ToQuery">Union.ToQuery()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_ToGraphPattern">Union.ToGraphPattern()</a>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -103,696 +138,288 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Algebra.html">VDS.RDF.Query.Algebra</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Algebra_AskUnion_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AskUnion : IUnion, IAbstractJoin, ISparqlAlgebra</code></pre>
+    <pre><code class="lang-csharp hljs">public class AskUnion : Union, IUnion, IAbstractJoin, ISparqlAlgebra, IVisitable, IProcessable</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Algebra_AskUnion_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 An Ask Union differs from a standard Union in that if it finds a solution on the LHS it has no need to evaluate the RHS.
 </p>
 </div>
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.%23ctor(VDS.RDF.Query.Algebra.ISparqlAlgebra%2CVDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.%23ctor(VDS.RDF.Query.Algebra.ISparqlAlgebra%2CVDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L420" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L51">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_AskUnion__ctor_" data-uid="VDS.RDF.Query.Algebra.AskUnion.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Algebra.AskUnion.#ctor(VDS.RDF.Query.Algebra.ISparqlAlgebra,VDS.RDF.Query.Algebra.ISparqlAlgebra)"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="expander" data-toggle="collapse">AskUnion(ISparqlAlgebra, ISparqlAlgebra)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_AskUnion__ctor_VDS_RDF_Query_Algebra_ISparqlAlgebra_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Algebra.AskUnion.#ctor(VDS.RDF.Query.Algebra.ISparqlAlgebra,VDS.RDF.Query.Algebra.ISparqlAlgebra)">AskUnion(ISparqlAlgebra, ISparqlAlgebra)</h4>
   <div class="markdown level1 summary"><p>Creates a new Ask Union.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AskUnion(ISparqlAlgebra lhs, ISparqlAlgebra rhs)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></span>
-        <span class="parametername">lhs</span>
-        <p><p>LHS Pattern.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></span>
-        <span class="parametername">rhs</span>
-        <p><p>RHS Pattern.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">lhs</span></td>
+        <td><p>LHS Pattern.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">rhs</span></td>
+        <td><p>RHS Pattern.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  <h3 id="properties">Properties
-  </h3>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_FixedVariables.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.FixedVariables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L486" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_FixedVariables_" data-uid="VDS.RDF.Query.Algebra.AskUnion.FixedVariables*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_FixedVariables" data-uid="VDS.RDF.Query.Algebra.AskUnion.FixedVariables"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_FixedVariables" class="expander" data-toggle="collapse">FixedVariables</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_FixedVariables" class="collapse in">
-  <div class="markdown level1 summary"><p>Gets the enumeration of fixed variables in the algebra i.e. variables that are guaranteed to have a bound value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; FixedVariables { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_FixedVariables">ISparqlAlgebra.FixedVariables</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_FloatingVariables.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.FloatingVariables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L473" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_FloatingVariables_" data-uid="VDS.RDF.Query.Algebra.AskUnion.FloatingVariables*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_FloatingVariables" data-uid="VDS.RDF.Query.Algebra.AskUnion.FloatingVariables"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_FloatingVariables" class="expander" data-toggle="collapse">FloatingVariables</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_FloatingVariables" class="collapse in">
-  <div class="markdown level1 summary"><p>Gets the enumeration of floating variables in the algebra i.e. variables that are not guaranteed to have a bound value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; FloatingVariables { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_FloatingVariables">ISparqlAlgebra.FloatingVariables</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Lhs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Lhs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L498" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_Lhs_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Lhs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Lhs" data-uid="VDS.RDF.Query.Algebra.AskUnion.Lhs"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_Lhs" class="expander" data-toggle="collapse">Lhs</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_Lhs" class="collapse in">
-  <div class="markdown level1 summary"><p>Gets the LHS of the Join.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISparqlAlgebra Lhs { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html#VDS_RDF_Query_Algebra_IAbstractJoin_Lhs">IAbstractJoin.Lhs</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Rhs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Rhs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L509" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_Rhs_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Rhs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Rhs" data-uid="VDS.RDF.Query.Algebra.AskUnion.Rhs"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_Rhs" class="expander" data-toggle="collapse">Rhs</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_Rhs" class="collapse in">
-  <div class="markdown level1 summary"><p>Gets the RHS of the Join.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISparqlAlgebra Rhs { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html#VDS_RDF_Query_Algebra_IAbstractJoin_Rhs">IAbstractJoin.Rhs</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Variables.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Variables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L462" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_Variables_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Variables*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Variables" data-uid="VDS.RDF.Query.Algebra.AskUnion.Variables"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_Variables" class="expander" data-toggle="collapse">Variables</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_Variables" class="collapse in">
-  <div class="markdown level1 summary"><p>Gets the Variables used in the Algebra.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Variables { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_Variables">ISparqlAlgebra.Variables</a></div>
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Evaluate(VDS.RDF.Query.SparqlEvaluationContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L431" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L62">View Source</a>
   </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_Evaluate_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Evaluate*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Evaluate(VDS.RDF.Query.SparqlEvaluationContext)"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_" class="expander" data-toggle="collapse">Evaluate(SparqlEvaluationContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_" class="collapse in">
-  <div class="markdown level1 summary"><p>Evaluates the Ask Union.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseMultiset Evaluate(SparqlEvaluationContext context)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlEvaluationContext.html">SparqlEvaluationContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>Evaluation Context.</p>
-</p>
-      </td>
-    </tr>
-  </table>
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.BaseMultiset.html">BaseMultiset</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_">ISparqlAlgebra.Evaluate(SparqlEvaluationContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_ToGraphPattern.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.ToGraphPattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L542" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_ToGraphPattern_" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToGraphPattern*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_ToGraphPattern" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToGraphPattern"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_ToGraphPattern" class="expander" data-toggle="collapse">ToGraphPattern()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_ToGraphPattern" class="collapse in">
-  <div class="markdown level1 summary"><p>Converts the Union back to Graph Patterns.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GraphPattern ToGraphPattern()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Patterns.GraphPattern.html">GraphPattern</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_ToGraphPattern">ISparqlAlgebra.ToGraphPattern()</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_ToQuery.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.ToQuery%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L530" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="VDS_RDF_Query_Algebra_AskUnion_ToQuery_" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToQuery*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_ToQuery" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToQuery"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_ToQuery" class="expander" data-toggle="collapse">ToQuery()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_ToQuery" class="collapse in">
-  <div class="markdown level1 summary"><p>Converts the Algebra back to a SPARQL Query.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SparqlQuery ToQuery()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_ToQuery">ISparqlAlgebra.ToQuery()</a></div>
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L521" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
   <a id="VDS_RDF_Query_Algebra_AskUnion_ToString_" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToString*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_ToString" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToString"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_ToString" class="expander" data-toggle="collapse">ToString()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_ToString" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_AskUnion_ToString" data-uid="VDS.RDF.Query.Algebra.AskUnion.ToString">ToString()</h4>
   <div class="markdown level1 summary"><p>Gets the String representation of the Algebra.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.ToString()</span></div>
-  
-  
-  
-  
-  
-  </div>
-  
+  <div><a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_ToString">Union.ToString()</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L556" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L73">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_AskUnion_Transform_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Transform*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="expander" data-toggle="collapse">Transform(IAlgebraOptimiser)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_AskUnion_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)">Transform(IAlgebraOptimiser)</h4>
   <div class="markdown level1 summary"><p>Transforms both sides of the Join using the given Optimiser.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISparqlAlgebra Transform(IAlgebraOptimiser optimiser)</code></pre>
+    <pre><code class="lang-csharp hljs">public override ISparqlAlgebra Transform(IAlgebraOptimiser optimiser)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></span>
-        <span class="parametername">optimiser</span>
-        <p><p>Optimser.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></td>
+        <td><span class="parametername">optimiser</span></td>
+        <td><p>Optimser.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html#VDS_RDF_Query_Algebra_IAbstractJoin_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">IAbstractJoin.Transform(IAlgebraOptimiser)</a></div>
-  
-  
-  
-  
-  </div>
-  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">Union.Transform(IAlgebraOptimiser)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.TransformLhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.TransformLhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L566" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L83">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_AskUnion_TransformLhs_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformLhs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformLhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="expander" data-toggle="collapse">TransformLhs(IAlgebraOptimiser)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_AskUnion_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformLhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)">TransformLhs(IAlgebraOptimiser)</h4>
   <div class="markdown level1 summary"><p>Transforms the LHS of the Join using the given Optimiser.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISparqlAlgebra TransformLhs(IAlgebraOptimiser optimiser)</code></pre>
+    <pre><code class="lang-csharp hljs">public override ISparqlAlgebra TransformLhs(IAlgebraOptimiser optimiser)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></span>
-        <span class="parametername">optimiser</span>
-        <p><p>Optimser.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></td>
+        <td><span class="parametername">optimiser</span></td>
+        <td><p>Optimser.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html#VDS_RDF_Query_Algebra_IAbstractJoin_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">IAbstractJoin.TransformLhs(IAlgebraOptimiser)</a></div>
-  
-  
-  
-  
-  </div>
-  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_TransformLhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">Union.TransformLhs(IAlgebraOptimiser)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.TransformRhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion.TransformRhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L576" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L93">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_AskUnion_TransformRhs_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformRhs*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformRhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)"><a href="#collapsible-VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="expander" data-toggle="collapse">TransformRhs(IAlgebraOptimiser)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_AskUnion_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.AskUnion.TransformRhs(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)">TransformRhs(IAlgebraOptimiser)</h4>
   <div class="markdown level1 summary"><p>Transforms the RHS of the Join using the given Optimiser.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISparqlAlgebra TransformRhs(IAlgebraOptimiser optimiser)</code></pre>
+    <pre><code class="lang-csharp hljs">public override ISparqlAlgebra TransformRhs(IAlgebraOptimiser optimiser)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></span>
-        <span class="parametername">optimiser</span>
-        <p><p>Optimser.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></td>
+        <td><span class="parametername">optimiser</span></td>
+        <td><p>Optimser.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html#VDS_RDF_Query_Algebra_IAbstractJoin_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">IAbstractJoin.TransformRhs(IAlgebraOptimiser)</a></div>
-  
-  
-  
-  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Algebra.Union.html#VDS_RDF_Query_Algebra_Union_TransformRhs_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_">Union.TransformRhs(IAlgebraOptimiser)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.IUnion.html">IUnion</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.IAbstractJoin.html">IAbstractJoin</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.IVisitable.html">IVisitable</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.IProcessable.html">IProcessable</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/AskBgp.cs/#L411" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_AskUnion.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.AskUnion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/AskUnion.cs/#L42" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class StoreCountHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler">
-  <h1 id="VDS_RDF_Parsing_Handlers_StoreCountHandler" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler">Class StoreCountHandler
+  
+  
+  <h1 id="VDS_RDF_Parsing_Handlers_StoreCountHandler" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler" class="text-break">Class StoreCountHandler
   </h1>
   <div class="markdown level0 summary"><p>A RDF Handler which simply counts the Triples and Graphs.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,8 +83,11 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html">BaseRdfHandler</a></div>
     <div class="level3"><span class="xref">StoreCountHandler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -111,7 +115,25 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_">BaseRdfHandler.HandleTriple(Triple)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuad(Triple, IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -138,7 +160,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -165,292 +196,268 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Handlers.html">VDS.RDF.Parsing.Handlers</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class StoreCountHandler : BaseRdfHandler, IRdfHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L42">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.#ctor"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor" class="expander" data-toggle="collapse">StoreCountHandler()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler__ctor" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.#ctor">StoreCountHandler()</h4>
   <div class="markdown level1 summary"><p>Creates a new Store Count Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public StoreCountHandler()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L92" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L92">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.AcceptsAll*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.AcceptsAll"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll" class="expander" data-toggle="collapse">AcceptsAll</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.AcceptsAll">AcceptsAll</h4>
   <div class="markdown level1 summary"><p>Gets that this Handler accepts all Triples.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool AcceptsAll { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll">BaseRdfHandler.AcceptsAll</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.GraphCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.GraphCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L81" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L87">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.GraphCount*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.GraphCount"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount" class="expander" data-toggle="collapse">GraphCount</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_GraphCount" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.GraphCount">GraphCount</h4>
   <div class="markdown level1 summary"><p>Gets the count of distinct Graph URIs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int GraphCount { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.TripleCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.TripleCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L70" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L82">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.TripleCount*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.TripleCount"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount" class="expander" data-toggle="collapse">TripleCount</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_TripleCount" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.TripleCount">TripleCount</h4>
   <div class="markdown level1 summary"><p>Gets the count of Triples.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int TripleCount { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleQuadInternal(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L72">View Source</a>
   </span>
-  
-  <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_" class="expander" data-toggle="collapse">HandleTripleInternal(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_" class="collapse in">
+  <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleQuadInternal_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleQuadInternal*"></a>
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleQuadInternal(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuadInternal(Triple, IRefNode)</h4>
   <div class="markdown level1 summary"><p>Handles Triples/Quads by counting the Triples and distinct Graph URIs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool HandleQuadInternal(Triple t, IRefNode graph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuadInternal(Triple, IRefNode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L59">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal*"></a>
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.HandleTripleInternal(VDS.RDF.Triple)">HandleTripleInternal(Triple)</h4>
+  <div class="markdown level1 summary"><p>Handles Triples/Quads by counting the Triples and distinct Graph URIs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleTripleInternal(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_">BaseRdfHandler.HandleTripleInternal(Triple)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L48">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal_" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.StartRdfInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.StartRdfInternal"><a href="#collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal" class="expander" data-toggle="collapse">StartRdfInternal()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal" class="collapse in">
-  <div class="markdown level1 summary"><p>Starts RDF Handling by reseting the counters.</p>
+  <h4 id="VDS_RDF_Parsing_Handlers_StoreCountHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.StoreCountHandler.StartRdfInternal">StartRdfInternal()</h4>
+  <div class="markdown level1 summary"><p>Starts RDF Handling by resetting the counters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void StartRdfInternal()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal">BaseRdfHandler.StartRdfInternal()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_VDS_RDF_IGraph_">HandlerExtensions.Apply(IRdfHandler, IGraph)</a>
@@ -458,17 +465,24 @@
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">HandlerExtensions.Apply(IRdfHandler, IEnumerable&lt;Triple&gt;)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/StoreCountHandler.cs/#L35" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_StoreCountHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.StoreCountHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/StoreCountHandler.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

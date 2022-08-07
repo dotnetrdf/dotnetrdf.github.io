@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FileGraphPersistenceWrapper
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,20 +69,28 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.FileGraphPersistenceWrapper">
-  <h1 id="VDS_RDF_FileGraphPersistenceWrapper" data-uid="VDS.RDF.FileGraphPersistenceWrapper">Class FileGraphPersistenceWrapper
+  
+  
+  <h1 id="VDS_RDF_FileGraphPersistenceWrapper" data-uid="VDS.RDF.FileGraphPersistenceWrapper" class="text-break">Class FileGraphPersistenceWrapper
   </h1>
-  <div class="markdown level0 summary"><p>The File Graph Persistence Wrapper is a wrapper around antoher Graph that will be persisted to a file.</p>
+  <div class="markdown level0 summary"><p>The File Graph Persistence Wrapper is a wrapper around another Graph that will be persisted to a file.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html">GraphPersistenceWrapper</a></div>
     <div class="level2"><span class="xref">FileGraphPersistenceWrapper</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.ITransactionalGraph.html">ITransactionalGraph</a></div>
+    <div><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -92,10 +100,16 @@
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_BaseUri">GraphPersistenceWrapper.BaseUri</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Name">GraphPersistenceWrapper.Name</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_IsEmpty">GraphPersistenceWrapper.IsEmpty</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_NamespaceMap">GraphPersistenceWrapper.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_UriFactory">GraphPersistenceWrapper.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Nodes">GraphPersistenceWrapper.Nodes</a>
@@ -104,7 +118,16 @@
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_AllNodes">GraphPersistenceWrapper.AllNodes</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_QuotedNodes">GraphPersistenceWrapper.QuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_AllQuotedNodes">GraphPersistenceWrapper.AllQuotedNodes</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Triples">GraphPersistenceWrapper.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_QuotedTriples">GraphPersistenceWrapper.QuotedTriples</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Assert_VDS_RDF_Triple_">GraphPersistenceWrapper.Assert(Triple)</a>
@@ -120,6 +143,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Clear">GraphPersistenceWrapper.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_NormalizeLiteralValues">GraphPersistenceWrapper.NormalizeLiteralValues</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_CreateBlankNode_System_String_">GraphPersistenceWrapper.CreateBlankNode(String)</a>
@@ -156,6 +182,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_CreateVariableNode_System_String_">GraphPersistenceWrapper.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_CreateTripleNode_VDS_RDF_Triple_">GraphPersistenceWrapper.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetBlankNode_System_String_">GraphPersistenceWrapper.GetBlankNode(String)</a>
@@ -203,13 +232,52 @@
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">GraphPersistenceWrapper.GetTriplesWithPredicateObject(INode, INode)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuoted_System_Uri_">GraphPersistenceWrapper.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuoted_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithObject_System_Uri_">GraphPersistenceWrapper.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithObject_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithPredicate_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithPredicate_System_Uri_">GraphPersistenceWrapper.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithSubject_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithSubject_System_Uri_">GraphPersistenceWrapper.GetQuotedWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">GraphPersistenceWrapper.GetQuotedWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetUriNode_System_String_">GraphPersistenceWrapper.GetUriNode(String)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetUriNode_System_Uri_">GraphPersistenceWrapper.GetUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetTripleNode_VDS_RDF_Triple_">GraphPersistenceWrapper.GetTripleNode(Triple)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_ContainsTriple_VDS_RDF_Triple_">GraphPersistenceWrapper.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_ContainsQuotedTriple_VDS_RDF_Triple_">GraphPersistenceWrapper.ContainsQuotedTriple(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Merge_VDS_RDF_IGraph_">GraphPersistenceWrapper.Merge(IGraph)</a>
@@ -218,7 +286,7 @@
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Merge_VDS_RDF_IGraph_System_Boolean_">GraphPersistenceWrapper.Merge(IGraph, Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Equals_System_Object_">GraphPersistenceWrapper.Equals(Object)</a>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Equals_VDS_RDF_IGraph_">GraphPersistenceWrapper.Equals(IGraph)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">GraphPersistenceWrapper.Equals(IGraph, Dictionary&lt;INode, INode&gt;)</a>
@@ -237,6 +305,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Difference_VDS_RDF_IGraph_">GraphPersistenceWrapper.Difference(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Unstar">GraphPersistenceWrapper.Unstar()</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_ResolveQName_System_String_">GraphPersistenceWrapper.ResolveQName(String)</a>
@@ -323,16 +394,7 @@
       <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_Dispose_System_Boolean_">GraphPersistenceWrapper.Dispose(Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_">GraphPersistenceWrapper.GetObjectData(SerializationInfo, StreamingContext)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_GetSchema">GraphPersistenceWrapper.GetSchema()</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_ReadXml_System_Xml_XmlReader_">GraphPersistenceWrapper.ReadXml(XmlReader)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_WriteXml_System_Xml_XmlWriter_">GraphPersistenceWrapper.WriteXml(XmlWriter)</a>
+      <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
@@ -353,213 +415,169 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_FileGraphPersistenceWrapper_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FileGraphPersistenceWrapper : GraphPersistenceWrapper, ITransactionalGraph, IGraph, INodeFactory, IDisposable, IXmlSerializable</code></pre>
+    <pre><code class="lang-csharp hljs">public class FileGraphPersistenceWrapper : GraphPersistenceWrapper, ITransactionalGraph, IGraph, INodeFactory, IDisposable, ITripleIndex, IEquatable&lt;IGraph&gt;</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphPersistenceWrapper.cs/#L1415" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/FileGraphPersistenceWrapper.cs/#L58">View Source</a>
   </span>
-  
   <a id="VDS_RDF_FileGraphPersistenceWrapper__ctor_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor(System.String)"><a href="#collapsible-VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_" class="expander" data-toggle="collapse">FileGraphPersistenceWrapper(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor(System.String)">FileGraphPersistenceWrapper(String)</h4>
   <div class="markdown level1 summary"><p>Creates a new File Graph Persistence Wrapper around a new emtpy Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FileGraphPersistenceWrapper(string filename)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filename</span>
-        <p><p>File to persist to.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filename</span></td>
+        <td><p>File to persist to.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_FileGraphPersistenceWrapper__ctor_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>If the given file already exists then the Graph will be loaded from that file.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.%23ctor(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.%23ctor(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphPersistenceWrapper.cs/#L1401" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/FileGraphPersistenceWrapper.cs/#L45">View Source</a>
   </span>
-  
   <a id="VDS_RDF_FileGraphPersistenceWrapper__ctor_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor(VDS.RDF.IGraph,System.String)"><a href="#collapsible-VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_" class="expander" data-toggle="collapse">FileGraphPersistenceWrapper(IGraph, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_FileGraphPersistenceWrapper__ctor_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.#ctor(VDS.RDF.IGraph,System.String)">FileGraphPersistenceWrapper(IGraph, String)</h4>
   <div class="markdown level1 summary"><p>Creates a new File Graph Persistence Wrapper around the given Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public FileGraphPersistenceWrapper(IGraph g, string filename)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">filename</span>
-        <p><p>File to persist to.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filename</span></td>
+        <td><p>File to persist to.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.SupportsTriplePersistence%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.SupportsTriplePersistence%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphPersistenceWrapper.cs/#L1429" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/FileGraphPersistenceWrapper.cs/#L72">View Source</a>
   </span>
-  
   <a id="VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.SupportsTriplePersistence*"></a>
-  
-  <h4 id="VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence" data-uid="VDS.RDF.FileGraphPersistenceWrapper.SupportsTriplePersistence"><a href="#collapsible-VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence" class="expander" data-toggle="collapse">SupportsTriplePersistence</a></h4>
-  
-  <div id="collapsible-VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence" class="collapse in">
+  <h4 id="VDS_RDF_FileGraphPersistenceWrapper_SupportsTriplePersistence" data-uid="VDS.RDF.FileGraphPersistenceWrapper.SupportsTriplePersistence">SupportsTriplePersistence</h4>
   <div class="markdown level1 summary"><p>Returns that Triple persistence is not supported.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool SupportsTriplePersistence { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_SupportsTriplePersistence">GraphPersistenceWrapper.SupportsTriplePersistence</a></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper_PersistGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.PersistGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper_PersistGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper.PersistGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphPersistenceWrapper.cs/#L1434" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/FileGraphPersistenceWrapper.cs/#L77">View Source</a>
   </span>
-  
   <a id="VDS_RDF_FileGraphPersistenceWrapper_PersistGraph_" data-uid="VDS.RDF.FileGraphPersistenceWrapper.PersistGraph*"></a>
-  
-  <h4 id="VDS_RDF_FileGraphPersistenceWrapper_PersistGraph" data-uid="VDS.RDF.FileGraphPersistenceWrapper.PersistGraph"><a href="#collapsible-VDS_RDF_FileGraphPersistenceWrapper_PersistGraph" class="expander" data-toggle="collapse">PersistGraph()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_FileGraphPersistenceWrapper_PersistGraph" class="collapse in">
+  <h4 id="VDS_RDF_FileGraphPersistenceWrapper_PersistGraph" data-uid="VDS.RDF.FileGraphPersistenceWrapper.PersistGraph">PersistGraph()</h4>
   <div class="markdown level1 summary"><p>Persists the entire Graph to a File.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void PersistGraph()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.GraphPersistenceWrapper.html#VDS_RDF_GraphPersistenceWrapper_PersistGraph">GraphPersistenceWrapper.PersistGraph()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.ITransactionalGraph.html">ITransactionalGraph</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+  </div>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
@@ -606,22 +624,7 @@
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.RemoveFromList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">GraphExtensions.ExecuteQuery(IGraph, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">GraphExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">GraphExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromFile(IGraph, String, IRdfReader)</a>
@@ -630,10 +633,10 @@
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromFile(IGraph, String)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader, Loader)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_">GraphExtensions.LoadFromUri(IGraph, Uri)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromString(IGraph, String, IRdfReader)</a>
@@ -666,22 +669,47 @@
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_String_System_IO_TextWriter_">GraphExtensions.SaveToStream(IGraph, String, TextWriter)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_GetETag_VDS_RDF_IGraph_">GraphExtensions.GetETag(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.Data.DataTables.GraphExtensions.html#VDS_RDF_Data_DataTables_GraphExtensions_ToDataTable_VDS_RDF_IGraph_">GraphExtensions.ToDataTable(IGraph)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/GraphPersistenceWrapper.cs/#L1391" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_FileGraphPersistenceWrapper.md&amp;value=---%0Auid%3A%20VDS.RDF.FileGraphPersistenceWrapper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/FileGraphPersistenceWrapper.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

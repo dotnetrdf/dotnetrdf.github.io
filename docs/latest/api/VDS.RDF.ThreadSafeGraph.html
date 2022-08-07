@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ThreadSafeGraph
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,24 +69,39 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.ThreadSafeGraph">
-  <h1 id="VDS_RDF_ThreadSafeGraph" data-uid="VDS.RDF.ThreadSafeGraph">Class ThreadSafeGraph
+  
+  
+  <h1 id="VDS_RDF_ThreadSafeGraph" data-uid="VDS.RDF.ThreadSafeGraph" class="text-break">Class ThreadSafeGraph
   </h1>
   <div class="markdown level0 summary"><p>A Thread Safe version of the <a class="xref" href="VDS.RDF.Graph.html">Graph</a> class.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.BaseGraph.html">BaseGraph</a></div>
     <div class="level2"><a class="xref" href="VDS.RDF.Graph.html">Graph</a></div>
     <div class="level3"><span class="xref">ThreadSafeGraph</span></div>
-  </div>
-  
       <div class="level4"><a class="xref" href="VDS.RDF.NonIndexedThreadSafeGraph.html">NonIndexedThreadSafeGraph</a></div>
-  
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.Graph.html">Graph</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="VDS.RDF.ThreadSafeGraph.html">ThreadSafeGraph</a>&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Equals_VDS_RDF_Graph_">Graph.Equals(Graph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTripleNode_VDS_RDF_Triple_">Graph.GetTripleNode(Triple)</a>
+    </div>
     <div>
       <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithSubjectPredicate(INode, INode)</a>
     </div>
@@ -97,13 +112,37 @@
       <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithPredicateObject(INode, INode)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuoted_VDS_RDF_INode_">Graph.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithObject_VDS_RDF_INode_">Graph.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicate_VDS_RDF_INode_">Graph.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubject_VDS_RDF_INode_">Graph.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__triples">BaseGraph._triples</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__nsmapper">BaseGraph._nsmapper</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NodeFactory">BaseGraph.NodeFactory</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__baseuri">BaseGraph._baseuri</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_UriFactory">BaseGraph.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__name">BaseGraph._name</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__bnodemapper">BaseGraph._bnodemapper</a>
@@ -112,10 +151,19 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Triples">BaseGraph.Triples</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedTriples">BaseGraph.QuotedTriples</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Nodes">BaseGraph.Nodes</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllNodes">BaseGraph.AllNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedNodes">BaseGraph.QuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllQuotedNodes">BaseGraph.AllQuotedNodes</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NamespaceMap">BaseGraph.NamespaceMap</a>
@@ -124,7 +172,13 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_BaseUri">BaseGraph.BaseUri</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Name">BaseGraph.Name</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsEmpty">BaseGraph.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NormalizeLiteralValues">BaseGraph.NormalizeLiteralValues</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Clear">BaseGraph.Clear()</a>
@@ -136,16 +190,19 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateBlankNode_System_String_">BaseGraph.CreateBlankNode(String)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_">BaseGraph.CreateLiteralNode(String)</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode">BaseGraph.CreateGraphLiteralNode()</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_String_">BaseGraph.CreateLiteralNode(String, String)</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode_VDS_RDF_IGraph_">BaseGraph.CreateGraphLiteralNode(IGraph)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_Uri_">BaseGraph.CreateLiteralNode(String, Uri)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode">BaseGraph.CreateUriNode()</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_">BaseGraph.CreateLiteralNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_String_">BaseGraph.CreateLiteralNode(String, String)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_Uri_">BaseGraph.CreateUriNode(Uri)</a>
@@ -154,16 +211,31 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_String_">BaseGraph.CreateUriNode(String)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode">BaseGraph.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateVariableNode_System_String_">BaseGraph.CreateVariableNode(String)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode">BaseGraph.CreateGraphLiteralNode()</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode_VDS_RDF_IGraph_">BaseGraph.CreateGraphLiteralNode(IGraph)</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateTripleNode_VDS_RDF_Triple_">BaseGraph.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsTriple_VDS_RDF_Triple_">BaseGraph.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsQuotedTriple_VDS_RDF_Triple_">BaseGraph.ContainsQuotedTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuoted_System_Uri_">BaseGraph.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithObject_System_Uri_">BaseGraph.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithPredicate_System_Uri_">BaseGraph.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithSubject_System_Uri_">BaseGraph.GetQuotedWithSubject(Uri)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_">BaseGraph.Merge(IGraph)</a>
@@ -172,7 +244,10 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_System_Boolean_">BaseGraph.Merge(IGraph, Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_System_Object_">BaseGraph.Equals(Object)</a>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Unstar">BaseGraph.Unstar()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_">BaseGraph.Equals(IGraph)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.Equals(IGraph, Dictionary&lt;INode, INode&gt;)</a>
@@ -259,16 +334,7 @@
       <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_DetachEventHandlers_VDS_RDF_BaseTripleCollection_">BaseGraph.DetachEventHandlers(BaseTripleCollection)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_">BaseGraph.GetObjectData(SerializationInfo, StreamingContext)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetSchema">BaseGraph.GetSchema()</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ReadXml_System_Xml_XmlReader_">BaseGraph.ReadXml(XmlReader)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_WriteXml_System_Xml_XmlWriter_">BaseGraph.WriteXml(XmlWriter)</a>
+      <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
@@ -289,1342 +355,1324 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_ThreadSafeGraph_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ThreadSafeGraph : Graph, IGraph, INodeFactory, IDisposable, IXmlSerializable, ISerializable</code></pre>
+    <pre><code class="lang-csharp hljs">public class ThreadSafeGraph : Graph, IGraph, INodeFactory, IDisposable, ITripleIndex, IEquatable&lt;IGraph&gt;, IEquatable&lt;Graph&gt;, IEquatable&lt;ThreadSafeGraph&gt;</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_ThreadSafeGraph_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Performance will be marginally worse than a normal <a class="xref" href="VDS.RDF.Graph.html">Graph</a> but in multi-threaded scenarios this will likely be offset by the benefits of multi-threading.</p>
 </div>
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L50">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph__ctor" data-uid="VDS.RDF.ThreadSafeGraph.#ctor"><a href="#collapsible-VDS_RDF_ThreadSafeGraph__ctor" class="expander" data-toggle="collapse">ThreadSafeGraph()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph__ctor" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor" data-uid="VDS.RDF.ThreadSafeGraph.#ctor">ThreadSafeGraph()</h4>
   <div class="markdown level1 summary"><p>Creates a new Thread Safe Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ThreadSafeGraph()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.BaseTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.BaseTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L57">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.BaseTripleCollection)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_" class="expander" data-toggle="collapse">ThreadSafeGraph(BaseTripleCollection)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_BaseTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.BaseTripleCollection)">ThreadSafeGraph(BaseTripleCollection)</h4>
   <div class="markdown level1 summary"><p>Creates a new Thread Safe graph using the given Triple Collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ThreadSafeGraph(BaseTripleCollection tripleCollection)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></span>
-        <span class="parametername">tripleCollection</span>
-        <p><p>Triple Collection.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></td>
+        <td><span class="parametername">tripleCollection</span></td>
+        <td><p>Triple Collection.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.ThreadSafeTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L71">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.ThreadSafeTripleCollection)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_" class="expander" data-toggle="collapse">ThreadSafeGraph(ThreadSafeTripleCollection)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.IRefNode)">ThreadSafeGraph(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Creates a new named thread-safe graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeGraph(IRefNode name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_VDS_RDF_BaseTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.IRefNode%2CVDS.RDF.BaseTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L80">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_VDS_RDF_BaseTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.IRefNode,VDS.RDF.BaseTripleCollection)">ThreadSafeGraph(IRefNode, BaseTripleCollection)</h4>
+  <div class="markdown level1 summary"><p>Creates a new named thread-safe graph using the given triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeGraph(IRefNode name, BaseTripleCollection tripleCollection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></td>
+        <td><span class="parametername">tripleCollection</span></td>
+        <td><p>The triple collection that the graph contains.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_VDS_RDF_BaseTripleCollection__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">tripleCollection</code> will be wrapped as a <a class="xref" href="VDS.RDF.ThreadSafeTripleCollection.html">ThreadSafeTripleCollection</a> by this constructor.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_VDS_RDF_ThreadSafeTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.IRefNode%2CVDS.RDF.ThreadSafeTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L88">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_IRefNode_VDS_RDF_ThreadSafeTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.IRefNode,VDS.RDF.ThreadSafeTripleCollection)">ThreadSafeGraph(IRefNode, ThreadSafeTripleCollection)</h4>
+  <div class="markdown level1 summary"><p>Creates a new named thread-safe graph using a thread-safe triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThreadSafeGraph(IRefNode name, ThreadSafeTripleCollection tripleCollection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ThreadSafeTripleCollection.html">ThreadSafeTripleCollection</a></td>
+        <td><span class="parametername">tripleCollection</span></td>
+        <td><p>The thread-safe triple collection that the graph contains.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.%23ctor(VDS.RDF.ThreadSafeTripleCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L64">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeGraph__ctor_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor*"></a>
+  <h4 id="VDS_RDF_ThreadSafeGraph__ctor_VDS_RDF_ThreadSafeTripleCollection_" data-uid="VDS.RDF.ThreadSafeGraph.#ctor(VDS.RDF.ThreadSafeTripleCollection)">ThreadSafeGraph(ThreadSafeTripleCollection)</h4>
   <div class="markdown level1 summary"><p>Creates a new Thread Safe graph using a Thread Safe triple collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ThreadSafeGraph(ThreadSafeTripleCollection tripleCollection)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ThreadSafeTripleCollection.html">ThreadSafeTripleCollection</a></span>
-        <span class="parametername">tripleCollection</span>
-        <p><p>Thread Safe triple collection.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ThreadSafeTripleCollection.html">ThreadSafeTripleCollection</a></td>
+        <td><span class="parametername">tripleCollection</span></td>
+        <td><p>Thread Safe triple collection.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="fields">Fields
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__lockManager.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph._lockManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph__lockManager.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph._lockManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L45" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L45">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph__lockManager" data-uid="VDS.RDF.ThreadSafeGraph._lockManager"><a href="#collapsible-VDS_RDF_ThreadSafeGraph__lockManager" class="expander" data-toggle="collapse">_lockManager</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph__lockManager" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph__lockManager" data-uid="VDS.RDF.ThreadSafeGraph._lockManager">_lockManager</h4>
   <div class="markdown level1 summary"><p>Locking Manager for the Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected ReaderWriterLockSlim _lockManager</code></pre>
   </div>
-  
-  
-  
-  
   <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Threading.ReaderWriterLockSlim</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Assert(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Assert(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L124">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_Assert_" data-uid="VDS.RDF.ThreadSafeGraph.Assert*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.ThreadSafeGraph.Assert(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="expander" data-toggle="collapse">Assert(IEnumerable&lt;Triple&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.ThreadSafeGraph.Assert(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">Assert(IEnumerable&lt;Triple&gt;)</h4>
   <div class="markdown level1 summary"><p>Asserts a List of Triples in the graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Assert(IEnumerable&lt;Triple&gt; ts)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
-        <span class="parametername">ts</span>
-        <p><p>List of Triples in the form of an IEnumerable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">ts</span></td>
+        <td><p>List of Triples in the form of an IEnumerable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Assert(IEnumerable&lt;Triple&gt;)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Assert(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Assert(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L107">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_Assert_" data-uid="VDS.RDF.ThreadSafeGraph.Assert*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeGraph.Assert(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_" class="expander" data-toggle="collapse">Assert(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_Assert_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeGraph.Assert(VDS.RDF.Triple)">Assert(Triple)</h4>
   <div class="markdown level1 summary"><p>Asserts a Triple in the Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Assert(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>The Triple to add to the Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The Triple to add to the Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_VDS_RDF_Triple_">Graph.Assert(Triple)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L166" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L200">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_Dispose_" data-uid="VDS.RDF.ThreadSafeGraph.Dispose*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_Dispose" data-uid="VDS.RDF.ThreadSafeGraph.Dispose"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_Dispose" class="expander" data-toggle="collapse">Dispose()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_Dispose" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_Dispose" data-uid="VDS.RDF.ThreadSafeGraph.Dispose">Dispose()</h4>
   <div class="markdown level1 summary"><p>Disposes of a Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Dispose">BaseGraph.Dispose()</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Equals_VDS_RDF_ThreadSafeGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Equals(VDS.RDF.ThreadSafeGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L96">View Source</a>
+  </span>
+  <a id="VDS_RDF_ThreadSafeGraph_Equals_" data-uid="VDS.RDF.ThreadSafeGraph.Equals*"></a>
+  <h4 id="VDS_RDF_ThreadSafeGraph_Equals_VDS_RDF_ThreadSafeGraph_" data-uid="VDS.RDF.ThreadSafeGraph.Equals(VDS.RDF.ThreadSafeGraph)">Equals(ThreadSafeGraph)</h4>
+  <div class="markdown level1 summary"><p>Implements equality testing between <a class="xref" href="VDS.RDF.ThreadSafeGraph.html">ThreadSafeGraph</a> instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ThreadSafeGraph other)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ThreadSafeGraph.html">ThreadSafeGraph</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetBlankNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetBlankNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L179" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L213">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetBlankNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetBlankNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetBlankNode(System.String)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_" class="expander" data-toggle="collapse">GetBlankNode(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetBlankNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetBlankNode(System.String)">GetBlankNode(String)</h4>
   <div class="markdown level1 summary"><p>Returns the Blank Node with the given Identifier.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IBlankNode GetBlankNode(string nodeId)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">nodeId</span>
-        <p><p>The Identifier of the Blank Node to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td><p>The Identifier of the Blank Node to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a>
-        <p><p>Either the Blank Node or null if no Node with the given Identifier exists.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td><p>Either the Blank Node or null if no Node with the given Identifier exists.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetBlankNode_System_String_">Graph.GetBlankNode(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L200" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L234">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_" class="expander" data-toggle="collapse">GetLiteralNode(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String)">GetLiteralNode(String)</h4>
   <div class="markdown level1 summary"><p>Returns the LiteralNode with the given Value if it exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ILiteralNode GetLiteralNode(string literal)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">literal</span>
-        <p><p>The literal value of the Node to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>The literal value of the Node to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a>
-        <p><p>Either the LiteralNode Or null if no Node with the given Value exists.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td><p>Either the LiteralNode Or null if no Node with the given Value exists.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_">Graph.GetLiteralNode(String)</a></div>
-  
-  
   <h5 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The LiteralNode in the Graph must have no Language or DataType set.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L221" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L255">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String,System.String)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_" class="expander" data-toggle="collapse">GetLiteralNode(String, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String,System.String)">GetLiteralNode(String, String)</h4>
   <div class="markdown level1 summary"><p>Returns the LiteralNode with the given Value in the given Language if it exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ILiteralNode GetLiteralNode(string literal, string langspec)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">literal</span>
-        <p><p>The literal value of the Node to select.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">langspec</span>
-        <p><p>The Language Specifier for the Node to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>The literal value of the Node to select.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">langspec</span></td>
+        <td><p>The Language Specifier for the Node to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a>
-        <p><p>Either the LiteralNode Or null if no Node with the given Value and Language Specifier exists.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td><p>Either the LiteralNode Or null if no Node with the given Value and Language Specifier exists.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_String_">Graph.GetLiteralNode(String, String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L242" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L276">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String,System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_" class="expander" data-toggle="collapse">GetLiteralNode(String, Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetLiteralNode_System_String_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetLiteralNode(System.String,System.Uri)">GetLiteralNode(String, Uri)</h4>
   <div class="markdown level1 summary"><p>Returns the LiteralNode with the given Value and given Data Type if it exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ILiteralNode GetLiteralNode(string literal, Uri datatype)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">literal</span>
-        <p><p>The literal value of the Node to select.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">datatype</span>
-        <p><p>The Uri for the Data Type of the Literal to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>The literal value of the Node to select.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">datatype</span></td>
+        <td><p>The Uri for the Data Type of the Literal to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a>
-        <p><p>Either the LiteralNode Or null if no Node with the given Value and Data Type exists.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td><p>Either the LiteralNode Or null if no Node with the given Value and Data Type exists.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_Uri_">Graph.GetLiteralNode(String, Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetNextBlankNodeID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetNextBlankNodeID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L144" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L178">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID_" data-uid="VDS.RDF.ThreadSafeGraph.GetNextBlankNodeID*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID" data-uid="VDS.RDF.ThreadSafeGraph.GetNextBlankNodeID"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID" class="expander" data-toggle="collapse">GetNextBlankNodeID()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetNextBlankNodeID" data-uid="VDS.RDF.ThreadSafeGraph.GetNextBlankNodeID">GetNextBlankNodeID()</h4>
   <div class="markdown level1 summary"><p>Creates a new Blank Node ID and returns it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string GetNextBlankNodeID()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetNextBlankNodeID">BaseGraph.GetNextBlankNodeID()</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriples(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriples(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L326" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L360">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriples_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_" class="expander" data-toggle="collapse">GetTriples(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriples_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples(System.Uri)">GetTriples(Uri)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples involving the given Uri.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriples(Uri uri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">uri</span>
-        <p><p>The Uri to find Triples involving.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">uri</span></td>
+        <td><p>The Uri to find Triples involving.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_System_Uri_">Graph.GetTriples(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriples(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriples(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L306" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L340">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriples_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriples(INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriples_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriples(VDS.RDF.INode)">GetTriples(INode)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples involving the given Node.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriples(INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>The Node to find Triples involving.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The Node to find Triples involving.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_VDS_RDF_INode_">Graph.GetTriples(INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L366" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L400">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithObject(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(System.Uri)">GetTriplesWithObject(Uri)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Uri as the Object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithObject(Uri u)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">u</span>
-        <p><p>The Uri to find Triples with it as the Object.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>The Uri to find Triples with it as the Object.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_System_Uri_">Graph.GetTriplesWithObject(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L346" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L380">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithObject(INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithObject(VDS.RDF.INode)">GetTriplesWithObject(INode)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Node as the Object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithObject(INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>The Node to find Triples with it as the Object.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The Node to find Triples with it as the Object.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_VDS_RDF_INode_">Graph.GetTriplesWithObject(INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L406" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L440">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(System.Uri)">GetTriplesWithPredicate(Uri)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Uri as the Predicate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(Uri u)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">u</span>
-        <p><p>The Uri to find Triples with it as the Predicate.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>The Uri to find Triples with it as the Predicate.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_System_Uri_">Graph.GetTriplesWithPredicate(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L386" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L420">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithPredicate(INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithPredicate(VDS.RDF.INode)">GetTriplesWithPredicate(INode)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Node as the Predicate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>The Node to find Triples with it as the Predicate.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The Node to find Triples with it as the Predicate.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_VDS_RDF_INode_">Graph.GetTriplesWithPredicate(INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L446" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L480">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_" class="expander" data-toggle="collapse">GetTriplesWithSubject(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(System.Uri)">GetTriplesWithSubject(Uri)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Uri as the Subject.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithSubject(Uri u)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">u</span>
-        <p><p>The Uri to find Triples with it as the Subject.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">u</span></td>
+        <td><p>The Uri to find Triples with it as the Subject.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_System_Uri_">Graph.GetTriplesWithSubject(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L426" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L460">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_" class="expander" data-toggle="collapse">GetTriplesWithSubject(INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetTriplesWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.ThreadSafeGraph.GetTriplesWithSubject(VDS.RDF.INode)">GetTriplesWithSubject(INode)</h4>
   <div class="markdown level1 summary"><p>Gets all the Triples with the given Node as the Subject.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetTriplesWithSubject(INode n)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">n</span>
-        <p><p>The Node to find Triples with it as the Subject.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The Node to find Triples with it as the Subject.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;
-        <p><p>Zero/More Triples.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Zero/More Triples.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_VDS_RDF_INode_">Graph.GetTriplesWithSubject(INode)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetUriNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetUriNode(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L262" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L296">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetUriNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode(System.String)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_" class="expander" data-toggle="collapse">GetUriNode(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetUriNode_System_String_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode(System.String)">GetUriNode(String)</h4>
   <div class="markdown level1 summary"><p>Returns the UriNode with the given QName if it exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IUriNode GetUriNode(string qname)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">qname</span>
-        <p><p>The QName of the Node to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">qname</span></td>
+        <td><p>The QName of the Node to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_String_">Graph.GetUriNode(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetUriNode(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.GetUriNode(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L282" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L316">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_GetUriNode_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode(System.Uri)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_" class="expander" data-toggle="collapse">GetUriNode(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_GetUriNode_System_Uri_" data-uid="VDS.RDF.ThreadSafeGraph.GetUriNode(System.Uri)">GetUriNode(Uri)</h4>
   <div class="markdown level1 summary"><p>Returns the UriNode with the given Uri if it exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IUriNode GetUriNode(Uri uri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">uri</span>
-        <p><p>The Uri of the Node to select.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">uri</span></td>
+        <td><p>The Uri of the Node to select.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a>
-        <p><p>Either the UriNode Or null if no Node with the given Uri exists.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td><p>Either the UriNode Or null if no Node with the given Uri exists.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_Uri_">Graph.GetUriNode(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Retract(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Retract(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L159">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_Retract_" data-uid="VDS.RDF.ThreadSafeGraph.Retract*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.ThreadSafeGraph.Retract(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="expander" data-toggle="collapse">Retract(IEnumerable&lt;Triple&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.ThreadSafeGraph.Retract(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">Retract(IEnumerable&lt;Triple&gt;)</h4>
   <div class="markdown level1 summary"><p>Retracts a enumeration of Triples from the graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Retract(IEnumerable&lt;Triple&gt; ts)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</span>
-        <span class="parametername">ts</span>
-        <p><p>Enumeration of Triples to retract.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">ts</span></td>
+        <td><p>Enumeration of Triples to retract.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Retract(IEnumerable&lt;Triple&gt;)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Retract(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph.Retract(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L108" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L142">View Source</a>
   </span>
-  
   <a id="VDS_RDF_ThreadSafeGraph_Retract_" data-uid="VDS.RDF.ThreadSafeGraph.Retract*"></a>
-  
-  <h4 id="VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeGraph.Retract(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_" class="expander" data-toggle="collapse">Retract(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple_" data-uid="VDS.RDF.ThreadSafeGraph.Retract(VDS.RDF.Triple)">Retract(Triple)</h4>
   <div class="markdown level1 summary"><p>Retracts a Triple from the Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool Retract(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple to Retract.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to Retract.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_VDS_RDF_Triple_">Graph.Retract(Triple)</a></div>
-  
-  
   <h5 id="VDS_RDF_ThreadSafeGraph_Retract_VDS_RDF_Triple__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Current implementation may have some defunct Nodes left in the Graph as only the Triple is retracted.</p>
 </div>
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+  </div>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
@@ -1671,22 +1719,7 @@
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.RemoveFromList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">GraphExtensions.ExecuteQuery(IGraph, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">GraphExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">GraphExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">GraphExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromFile(IGraph, String, IRdfReader)</a>
@@ -1695,10 +1728,10 @@
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromFile(IGraph, String)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader, Loader)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_">GraphExtensions.LoadFromUri(IGraph, Uri)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromString(IGraph, String, IRdfReader)</a>
@@ -1731,22 +1764,47 @@
       <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_String_System_IO_TextWriter_">GraphExtensions.SaveToStream(IGraph, String, TextWriter)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_GetETag_VDS_RDF_IGraph_">GraphExtensions.GetETag(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.Data.DataTables.GraphExtensions.html#VDS_RDF_Data_DataTables_GraphExtensions_ToDataTable_VDS_RDF_IGraph_">GraphExtensions.ToDataTable(IGraph)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ThreadSafeGraph.cs/#L39" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_ThreadSafeGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeGraph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/ThreadSafeGraph.cs/#L39" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

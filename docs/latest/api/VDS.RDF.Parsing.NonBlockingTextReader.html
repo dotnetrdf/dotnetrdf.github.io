@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NonBlockingTextReader
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.NonBlockingTextReader">
-  <h1 id="VDS_RDF_Parsing_NonBlockingTextReader" data-uid="VDS.RDF.Parsing.NonBlockingTextReader">Class NonBlockingTextReader
+  
+  
+  <h1 id="VDS_RDF_Parsing_NonBlockingTextReader" data-uid="VDS.RDF.Parsing.NonBlockingTextReader" class="text-break">Class NonBlockingTextReader
   </h1>
   <div class="markdown level0 summary"><p>The NonBlockingTextReader is an implementation of a <a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html">BufferedTextReader</a> designed to wrap other readers where latency is known not to be a problem and we don&apos;t expect to ever have an empty read occur before the actual end of the stream.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -84,8 +85,10 @@
     <div class="level4"><a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html">BufferedTextReader</a></div>
     <div class="level5"><span class="xref">NonBlockingTextReader</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -209,77 +212,66 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.html">VDS.RDF.Parsing</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_NonBlockingTextReader_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class NonBlockingTextReader : BufferedTextReader, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Parsing_NonBlockingTextReader_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Currently we only use this for file and network streams, you can force this to never be used with the global static <a class="xref" href="VDS.RDF.Options.html#VDS_RDF_Options_ForceBlockingIO">ForceBlockingIO</a> option.</p>
+  <div class="markdown level0 remarks"><p>By default, dotNetRDF parsers will wrap a <span class="xref">System.IO.MemoryStream</span> or <span class="xref">System.IO.FileStream</span> (or a <span class="xref">System.IO.TextReader</span> that uses such a stream) in a <a class="xref" href="VDS.RDF.Parsing.NonBlockingTextReader.html">NonBlockingTextReader</a>, and all other types of <span class="xref">System.IO.Stream</span> or <span class="xref">System.IO.TextReader</span>
+in a <a class="xref" href="VDS.RDF.Parsing.BlockingTextReader.html">BlockingTextReader</a> to handle potential latency issues. In some rare cases you may find that non-blocking IO leads to incorrect parsing errors being thrown (typically a premature end-of-input detected due to latency in reading from the
+underlying stream. In such cases it is recommended to use <a class="xref" href="VDS.RDF.Parsing.ParsingTextReader.html#VDS_RDF_Parsing_ParsingTextReader_CreateBlocking_System_IO_TextReader_">CreateBlocking(TextReader)</a> or <a class="xref" href="VDS.RDF.Parsing.ParsingTextReader.html#VDS_RDF_Parsing_ParsingTextReader_CreateBlocking_System_IO_TextReader_System_Int32_">CreateBlocking(TextReader, Int32)</a> to force the use of blocking IO.</p>
 </div>
-  
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.NonBlockingTextReader.FillBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.NonBlockingTextReader.FillBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L468" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/BlockingTextReader.cs/#L472">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer_" data-uid="VDS.RDF.Parsing.NonBlockingTextReader.FillBuffer*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer" data-uid="VDS.RDF.Parsing.NonBlockingTextReader.FillBuffer"><a href="#collapsible-VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer" class="expander" data-toggle="collapse">FillBuffer()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_NonBlockingTextReader_FillBuffer" data-uid="VDS.RDF.Parsing.NonBlockingTextReader.FillBuffer">FillBuffer()</h4>
   <div class="markdown level1 summary"><p>Fills the buffer in a non-blocking manner.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void FillBuffer()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.BufferedTextReader.html#VDS_RDF_Parsing_BufferedTextReader_FillBuffer">BufferedTextReader.FillBuffer()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
   </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_NonBlockingTextReader.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.NonBlockingTextReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/BlockingTextReader.cs/#L450" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_NonBlockingTextReader.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.NonBlockingTextReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/BlockingTextReader.cs/#L454" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

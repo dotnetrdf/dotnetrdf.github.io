@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MergingResultSetHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler">
-  <h1 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler">Class MergingResultSetHandler
+  
+  
+  <h1 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler" class="text-break">Class MergingResultSetHandler
   </h1>
   <div class="markdown level0 summary"><p>A SPARQL Results Handler which allows you to load multiple Result Sets into a single <a class="xref" href="VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a> which the standard <a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html">ResultSetHandler</a> does not permit.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -83,8 +84,11 @@
     <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html">ResultSetHandler</a></div>
     <div class="level4"><span class="xref">MergingResultSetHandler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -94,7 +98,7 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html#VDS_RDF_Parsing_Handlers_ResultSetHandler_HandleVariableInternal_System_String_">ResultSetHandler.HandleVariableInternal(String)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html#VDS_RDF_Parsing_Handlers_ResultSetHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_">ResultSetHandler.HandleResultInternal(SparqlResult)</a>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html#VDS_RDF_Parsing_Handlers_ResultSetHandler_HandleResultInternal_VDS_RDF_Query_ISparqlResult_">ResultSetHandler.HandleResultInternal(ISparqlResult)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_StartResults">BaseResultsHandler.StartResults()</a>
@@ -112,10 +116,25 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleVariable_System_String_">BaseResultsHandler.HandleVariable(String)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResult_VDS_RDF_Query_SparqlResult_">BaseResultsHandler.HandleResult(SparqlResult)</a>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResult_VDS_RDF_Query_ISparqlResult_">BaseResultsHandler.HandleResult(ISparqlResult)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -142,7 +161,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -169,125 +197,103 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Handlers.html">VDS.RDF.Parsing.Handlers</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class MergingResultSetHandler : ResultSetHandler, ISparqlResultsHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler.%23ctor(VDS.RDF.Query.SparqlResultSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler.%23ctor(VDS.RDF.Query.SparqlResultSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ResultSetHandler.cs/#L104" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ResultSetHandler.cs/#L104">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.#ctor(VDS.RDF.Query.SparqlResultSet)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_" class="expander" data-toggle="collapse">MergingResultSetHandler(SparqlResultSet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler__ctor_VDS_RDF_Query_SparqlResultSet_" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.#ctor(VDS.RDF.Query.SparqlResultSet)">MergingResultSetHandler(SparqlResultSet)</h4>
   <div class="markdown level1 summary"><p>Creates a new Merging Result Set Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public MergingResultSetHandler(SparqlResultSet results)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a></span>
-        <span class="parametername">results</span>
-        <p><p>Result Set.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a></td>
+        <td><span class="parametername">results</span></td>
+        <td><p>Result Set.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler.StartResultsInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler.StartResultsInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ResultSetHandler.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ResultSetHandler.cs/#L110">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal_" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.StartResultsInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.StartResultsInternal"><a href="#collapsible-VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal" class="expander" data-toggle="collapse">StartResultsInternal()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_MergingResultSetHandler_StartResultsInternal" data-uid="VDS.RDF.Parsing.Handlers.MergingResultSetHandler.StartResultsInternal">StartResultsInternal()</h4>
   <div class="markdown level1 summary"><p>Overrides the base classes logic to avoid the empty check on the Result Set thus allowing multiple result sets to be merged.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void StartResultsInternal()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.ResultSetHandler.html#VDS_RDF_Parsing_Handlers_ResultSetHandler_StartResultsInternal">ResultSetHandler.StartResultsInternal()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+  <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlResultSet_">HandlerExtensions.Apply(ISparqlResultsHandler, SparqlResultSet)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ResultSetHandler.cs/#L97" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_MergingResultSetHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.MergingResultSetHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ResultSetHandler.cs/#L97" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

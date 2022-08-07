@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Allegro Graph | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Allegro Graph | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="allegro-graph">Allegro Graph</h1>
+
+<p>dotNetRDF supports <a href="http://www.franz.com/agraph/">Franz AllegroGraph</a> 3.x and 4.x via the <a class="xref" href="../api/VDS.RDF.Storage.AllegroGraphConnector.html">AllegroGraphConnector</a> class.</p>
+<h2 id="supported-capabilities">Supported Capabilities</h2>
+<p>Currently the connector supports the following capabilities:</p>
+<ul>
+<li>Load, Save, Update, Delete and List Graphs</li>
+<li>SPARQL Query</li>
+<li>SPARQL Update (if using dotNetRDF 1.0.0 and higher)</li>
+</ul>
+<h2 id="creating-a-connection">Creating a Connection</h2>
+<p>To connect to Allegro Graph you will need to know the Base URI of your server, the catalog and store ID.  Optionally you can also provide HTTP authentication credentials and a HTTP proxy.</p>
+<p>For 3.x you can create a connection like so:</p>
+<pre><code class="lang-csharp">
+//Create an unauthenticated connection
+AllegroGraphConnector agraph = new AllegroGraphConnector(&quot;http://localhost:9875&quot;, &quot;catalog&quot;, &quot;store&quot;);
+</code></pre><p>Or provide authentication credentials like so:</p>
+<pre><code class="lang-csharp">
+//Create an authenticated connection
+AllegroGraphConnector agraph = new AllegroGraphConnector(&quot;http://localhost:9875&quot;, &quot;catalog&quot;, &quot;store&quot;, &quot;user&quot;, &quot;password&quot;);
+</code></pre><p>The 4.x release introduced the notion of a root catalog which allows you to omit the Catalog ID for stores in this catalog, you can either set the catalog to <code>null</code> or use the constructors which omit the argument e.g.</p>
+<pre><code class="lang-csharp">
+//Create an unauthenticated connection to a store in the root catalog
+AllegroGraphConnector agraph = new AllegroGraphConnector(&quot;http://localhost:9875&quot;,  &quot;store&quot;);
+</code></pre><h1 id="managing-a-server">Managing a Server</h1>
+<p>We support managing a server via the <a class="xref" href="../api/VDS.RDF.Storage.Management.AllegroGraphServer.html">AllegroGraphServer</a> class which implements our <a href="storage_servers.html">Servers API</a></p>
+<p>Managing a server allows you to manage a single catalog at a time, a <code>AllegroGraphConnector</code> provides access to its associated server via the <code>ParentServer</code> or <code>AsyncParentServer</code> property.</p>
+<h2 id="connecting-to-a-server">Connecting to a Server</h2>
+<p>You can also create connect directly to a server by creating an instance of the <a class="xref" href="../api/VDS.RDF.Storage.Management.AllegroGraphServer.html">AllegroGraphServer</a> class.  This requires you to know the Base URI and catalog ID you want to manage.</p>
+<p>For 3.x you will always need the catalog ID:</p>
+<pre><code class="lang-csharp">
+//Create an unauthenticated connection
+AllegroGraphServer agraph = new AllegroGraphServer(&quot;http://localhost:9875&quot;, &quot;catalog&quot;);
+</code></pre><p>For 4.x you can manage the root catalog like so:</p>
+<pre><code class="lang-csharp">
+//Create an unauthenticated connection to the root catalog
+AllegroGraphServer agraph = new AllegroGraphServer(&quot;http://localhost:9875&quot;);
+</code></pre><h2 id="creating-stores">Creating Stores</h2>
+<p>When creating a store the <code>AllegroGraphServer</code> will provide only simple <a class="xref" href="../api/VDS.RDF.Storage.Management.Provisioning.StoreTemplate.html">StoreTemplate</a> instances as templates.
+No extra settings may currently be configured when creating stores on a Allegro Graph server.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/storage_allegrograph.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

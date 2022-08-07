@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IInferencingTripleStore
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,14 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.IInferencingTripleStore">
-  <h1 id="VDS_RDF_IInferencingTripleStore" data-uid="VDS.RDF.IInferencingTripleStore">Interface IInferencingTripleStore
+  
+  
+  <h1 id="VDS_RDF_IInferencingTripleStore" data-uid="VDS.RDF.IInferencingTripleStore" class="text-break">Interface IInferencingTripleStore
   </h1>
   <div class="markdown level0 summary"><p>Interface for Triple Stores which can have a <a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a> attached to them.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -87,6 +86,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Triples">ITripleStore.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_UriFactory">ITripleStore.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_">ITripleStore.Add(IGraph)</a>
@@ -101,13 +103,25 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_">ITripleStore.AddFromUri(Uri, Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_AddFromUri_System_Uri_System_Boolean_VDS_RDF_Parsing_Loader_">ITripleStore.AddFromUri(Uri, Boolean, Loader)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_System_Uri_">ITripleStore.Remove(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_VDS_RDF_IRefNode_">ITripleStore.Remove(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_System_Uri_">ITripleStore.HasGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_HasGraph_VDS_RDF_IRefNode_">ITripleStore.HasGraph(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_System_Uri_">ITripleStore.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_VDS_RDF_IRefNode_">ITripleStore.Item[IRefNode]</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphAdded">ITripleStore.GraphAdded</a>
@@ -128,243 +142,160 @@
       <span class="xref">System.IDisposable.Dispose()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.Inferencing.dll</h6>
   <h5 id="VDS_RDF_IInferencingTripleStore_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IInferencingTripleStore : ITripleStore, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.AddInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.AddInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L479" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/IInferencingTripleStore.cs/#L40">View Source</a>
   </span>
-  
   <a id="VDS_RDF_IInferencingTripleStore_AddInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.AddInferenceEngine*"></a>
-  
-  <h4 id="VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.AddInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)"><a href="#collapsible-VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" class="expander" data-toggle="collapse">AddInferenceEngine(IInferenceEngine)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" class="collapse in">
+  <h4 id="VDS_RDF_IInferencingTripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.AddInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)">AddInferenceEngine(IInferenceEngine)</h4>
   <div class="markdown level1 summary"><p>Adds an Inference Engine to the Triple Store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void AddInferenceEngine(IInferenceEngine reasoner)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a></span>
-        <span class="parametername">reasoner</span>
-        <p><p>Reasoner to add.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a></td>
+        <td><span class="parametername">reasoner</span></td>
+        <td><p>Reasoner to add.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.ApplyInference(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.ApplyInference(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L499" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/IInferencingTripleStore.cs/#L60">View Source</a>
   </span>
-  
   <a id="VDS_RDF_IInferencingTripleStore_ApplyInference_" data-uid="VDS.RDF.IInferencingTripleStore.ApplyInference*"></a>
-  
-  <h4 id="VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_" data-uid="VDS.RDF.IInferencingTripleStore.ApplyInference(VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">ApplyInference(IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph_" data-uid="VDS.RDF.IInferencingTripleStore.ApplyInference(VDS.RDF.IGraph)">ApplyInference(IGraph)</h4>
   <div class="markdown level1 summary"><p>Applies Inference to the given Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ApplyInference(IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to apply inference to.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to apply inference to.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_IInferencingTripleStore_ApplyInference_VDS_RDF_IGraph__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Allows you to apply Inference to a Graph even if you&apos;re not putting that Graph into the Store.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_ClearInferenceEngines.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.ClearInferenceEngines%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_ClearInferenceEngines.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.ClearInferenceEngines%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L490" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/IInferencingTripleStore.cs/#L51">View Source</a>
   </span>
-  
   <a id="VDS_RDF_IInferencingTripleStore_ClearInferenceEngines_" data-uid="VDS.RDF.IInferencingTripleStore.ClearInferenceEngines*"></a>
-  
-  <h4 id="VDS_RDF_IInferencingTripleStore_ClearInferenceEngines" data-uid="VDS.RDF.IInferencingTripleStore.ClearInferenceEngines"><a href="#collapsible-VDS_RDF_IInferencingTripleStore_ClearInferenceEngines" class="expander" data-toggle="collapse">ClearInferenceEngines()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IInferencingTripleStore_ClearInferenceEngines" class="collapse in">
+  <h4 id="VDS_RDF_IInferencingTripleStore_ClearInferenceEngines" data-uid="VDS.RDF.IInferencingTripleStore.ClearInferenceEngines">ClearInferenceEngines()</h4>
   <div class="markdown level1 summary"><p>Clears all Inference Engines from the Triple Store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ClearInferenceEngines()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.RemoveInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore.RemoveInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L485" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/IInferencingTripleStore.cs/#L46">View Source</a>
   </span>
-  
   <a id="VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.RemoveInferenceEngine*"></a>
-  
-  <h4 id="VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.RemoveInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)"><a href="#collapsible-VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" class="expander" data-toggle="collapse">RemoveInferenceEngine(IInferenceEngine)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" class="collapse in">
+  <h4 id="VDS_RDF_IInferencingTripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_" data-uid="VDS.RDF.IInferencingTripleStore.RemoveInferenceEngine(VDS.RDF.Query.Inference.IInferenceEngine)">RemoveInferenceEngine(IInferenceEngine)</h4>
   <div class="markdown level1 summary"><p>Removes an Inference Engine from the Triple Store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void RemoveInferenceEngine(IInferenceEngine reasoner)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a></span>
-        <span class="parametername">reasoner</span>
-        <p><p>Reasoner to remove.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a></td>
+        <td><span class="parametername">reasoner</span></td>
+        <td><p>Reasoner to remove.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, String, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromFile(ITripleStore, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, String, IStoreReader)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromString(ITripleStore, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, String, IStoreReader)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, String)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, String, IStoreWriter)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, String)</a>
-  </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/ITripleStore.cs/#L472" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_IInferencingTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IInferencingTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Inferencing/IInferencingTripleStore.cs/#L33" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

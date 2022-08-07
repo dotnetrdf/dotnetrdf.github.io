@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DataTableHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Data.DataTables.DataTableHandler">
-  <h1 id="VDS_RDF_Data_DataTables_DataTableHandler" data-uid="VDS.RDF.Data.DataTables.DataTableHandler">Class DataTableHandler
+  
+  
+  <h1 id="VDS_RDF_Data_DataTables_DataTableHandler" data-uid="VDS.RDF.Data.DataTables.DataTableHandler" class="text-break">Class DataTableHandler
   </h1>
   <div class="markdown level0 summary"><p>RDF Handler which turns triples into rows in a Data Table</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,8 +83,11 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html">BaseRdfHandler</a></div>
     <div class="level3"><span class="xref">DataTableHandler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -114,7 +118,25 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_">BaseRdfHandler.HandleTriple(Triple)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuad(Triple, IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -141,7 +163,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -168,437 +199,422 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Data.DataTables.html">VDS.RDF.Data.DataTables</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.Data.DataTables.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.Data.DataTables.dll</h6>
   <h5 id="VDS_RDF_Data_DataTables_DataTableHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class DataTableHandler : BaseRdfHandler, IRdfHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.%23ctor(System.Data.DataTable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.%23ctor(System.Data.DataTable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L72">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor(System.Data.DataTable)"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_" class="expander" data-toggle="collapse">DataTableHandler(DataTable)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor(System.Data.DataTable)">DataTableHandler(DataTable)</h4>
   <div class="markdown level1 summary"><p>Creates a new Handler for a given Data Table using the default column names</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DataTableHandler(DataTable table)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Data.DataTable</span></span>
-        <span class="parametername">table</span>
-        <p><p>Data Table</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">table</span></td>
+        <td><p>Data Table</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.%23ctor(System.Data.DataTable%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.%23ctor(System.Data.DataTable%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L59" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L60">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor(System.Data.DataTable,System.String,System.String,System.String)"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_" class="expander" data-toggle="collapse">DataTableHandler(DataTable, String, String, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__ctor_System_Data_DataTable_System_String_System_String_System_String_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.#ctor(System.Data.DataTable,System.String,System.String,System.String)">DataTableHandler(DataTable, String, String, String)</h4>
   <div class="markdown level1 summary"><p>Creates a new Handler for a given Data Table with custom column names</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DataTableHandler(DataTable table, string subjColName, string predColName, string objColName)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Data.DataTable</span></span>
-        <span class="parametername">table</span>
-        <p><p>Data Table</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">subjColName</span>
-        <p><p>Subject Column Name</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">predColName</span>
-        <p><p>Predicate Column Name</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">objColName</span>
-        <p><p>Object Column Name</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">table</span></td>
+        <td><p>Data Table</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">subjColName</span></td>
+        <td><p>Subject Column Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">predColName</span></td>
+        <td><p>Predicate Column Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">objColName</span></td>
+        <td><p>Object Column Name</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="fields">Fields
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__table.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler._table%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler__table.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler._table%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L50">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__table" data-uid="VDS.RDF.Data.DataTables.DataTableHandler._table"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler__table" class="expander" data-toggle="collapse">_table</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler__table" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler__table" data-uid="VDS.RDF.Data.DataTables.DataTableHandler._table">_table</h4>
   <div class="markdown level1 summary"><p>Data Table into which Triples will be converted to rows</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected DataTable _table</code></pre>
   </div>
-  
-  
-  
-  
   <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Data.DataTable</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultObjectColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultObjectColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L45">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultObjectColumn"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn" class="expander" data-toggle="collapse">DefaultObjectColumn</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultObjectColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultObjectColumn">DefaultObjectColumn</h4>
   <div class="markdown level1 summary"><p>Constants for Default Column Names</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DefaultObjectColumn = &quot;Object&quot;</code></pre>
   </div>
-  
-  
-  
-  
   <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultPredicateColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultPredicateColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L44">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultPredicateColumn"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn" class="expander" data-toggle="collapse">DefaultPredicateColumn</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultPredicateColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultPredicateColumn">DefaultPredicateColumn</h4>
   <div class="markdown level1 summary"><p>Constants for Default Column Names</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DefaultPredicateColumn = &quot;Predicate&quot;</code></pre>
   </div>
-  
-  
-  
-  
   <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultSubjectColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.DefaultSubjectColumn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L42" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L43">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultSubjectColumn"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn" class="expander" data-toggle="collapse">DefaultSubjectColumn</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_DefaultSubjectColumn" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.DefaultSubjectColumn">DefaultSubjectColumn</h4>
   <div class="markdown level1 summary"><p>Constants for Default Column Names</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DefaultSubjectColumn = &quot;Subject&quot;</code></pre>
   </div>
-  
-  
-  
-  
   <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L95" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L112">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.AcceptsAll*"></a>
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.AcceptsAll"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll" class="expander" data-toggle="collapse">AcceptsAll</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_AcceptsAll" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.AcceptsAll">AcceptsAll</h4>
   <div class="markdown level1 summary"><p>Indicates that the Handler accepts all triples</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool AcceptsAll { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll">BaseRdfHandler.AcceptsAll</a></div>
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.HandleQuadInternal(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L82" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L104">View Source</a>
   </span>
-  
+  <a id="VDS_RDF_Data_DataTables_DataTableHandler_HandleQuadInternal_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.HandleQuadInternal*"></a>
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.HandleQuadInternal(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuadInternal(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Handles a quad by turning it into a row in the Data Table</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool HandleQuadInternal(Triple t, IRefNode graph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The name of the graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuadInternal(Triple, IRefNode)</a></div>
+  <h5 id="VDS_RDF_Data_DataTables_DataTableHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This implementation does not support handling triples in any graph other than the default graph. 
+To customize how a Triple is converted into a row in the table derive from this class and override this method</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a></td>
+        <td><p>Raised if <code data-dev-comment-type="paramref" class="paramref">graph</code> is not null, as this implementation only supports triples in the default graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L83">View Source</a>
+  </span>
   <a id="VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.HandleTripleInternal*"></a>
-  
-  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.HandleTripleInternal(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_" class="expander" data-toggle="collapse">HandleTripleInternal(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Data.DataTables.DataTableHandler.HandleTripleInternal(VDS.RDF.Triple)">HandleTripleInternal(Triple)</h4>
   <div class="markdown level1 summary"><p>Handles a Triple by turning it into a row in the Data Table</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleTripleInternal(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_">BaseRdfHandler.HandleTripleInternal(Triple)</a></div>
-  
-  
   <h5 id="VDS_RDF_Data_DataTables_DataTableHandler_HandleTripleInternal_VDS_RDF_Triple__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>To customize how a Triple is converted into a row in the table derive from this class and override this method</p>
 </div>
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF.Data.DataTables/DataTableHandler.cs/#L36" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Data_DataTables_DataTableHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Data.DataTables.DataTableHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.DataTables/DataTableHandler.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

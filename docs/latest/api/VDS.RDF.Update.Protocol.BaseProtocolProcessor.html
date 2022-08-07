@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseProtocolProcessor
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,876 +69,795 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor">
-  <h1 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor">Class BaseProtocolProcessor
+  
+  
+  <h1 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor" class="text-break">Class BaseProtocolProcessor
   </h1>
   <div class="markdown level0 summary"><p>Abstract Base class for SPARQL Graph Store HTTP Protocol for Graph Management implementations.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">BaseProtocolProcessor</span></div>
-  </div>
-  
       <div class="level2"><a class="xref" href="VDS.RDF.Update.Protocol.GenericProtocolProcessor.html">GenericProtocolProcessor</a></div>
       <div class="level2"><a class="xref" href="VDS.RDF.Update.Protocol.ProtocolToUpdateProcessor.html">ProtocolToUpdateProcessor</a></div>
-  
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
   </div>
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html">ISparqlHttpProtocolProcessor</a></div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Update.Protocol.html">VDS.RDF.Update.Protocol</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.AspNet.dll</h6>
   <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseProtocolProcessor : ISparqlHttpProtocolProcessor</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BaseProtocolProcessor : object, ISparqlHttpProtocolProcessor</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultParameterPattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor__ctor_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.%23ctor(VDS.RDF.IUriFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L45" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L62">View Source</a>
   </span>
-  
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultParameterPattern"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern" class="expander" data-toggle="collapse">DefaultParameterPattern</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern" class="collapse in">
-  <div class="markdown level1 summary"><p>This is the Pattern that is used to check whether ?default is present in the querystring.  This is needed since IIS does not recognise ?default as being a valid querystring key unless it ends in a = which the specification does not mandate so cannot be assumed.</p>
+  <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor__ctor_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.#ctor*"></a>
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor__ctor_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.#ctor(VDS.RDF.IUriFactory)">BaseProtocolProcessor(IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Initialise a new BaseProtocolProcessor instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string DefaultParameterPattern = &quot;^default$|^default&amp;|&amp;default&amp;|&amp;default$&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseProtocolProcessor(IUriFactory uriFactory = null)</code></pre>
   </div>
-  
-  
-  
-  
-  <h5 class="fieldValue">Field Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory object to use when creating URI instances. If not specified, defaults to <a class="xref" href="VDS.RDF.UriFactory.html#VDS_RDF_UriFactory_Root">Root</a>.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultParameterPattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L46">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultParameterPattern" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultParameterPattern">DefaultParameterPattern</h4>
+  <div class="markdown level1 summary"><p>This is the Pattern that is used to check whether ?default is present in the querystring.  This is needed since IIS does not recognize ?default as being a valid querystring key unless it ends in a = which the specification does not mandate so cannot be assumed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DefaultParameterPattern = null</code></pre>
   </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_UriFactory.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.UriFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L56">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_UriFactory" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.UriFactory">UriFactory</h4>
+  <div class="markdown level1 summary"><p>Get the factory to use when creating / interning URI instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IUriFactory UriFactory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultCompressionLevel.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultCompressionLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L51">View Source</a>
+  </span>
+  <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultCompressionLevel_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultCompressionLevel*"></a>
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_DefaultCompressionLevel" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.DefaultCompressionLevel">DefaultCompressionLevel</h4>
+  <div class="markdown level1 summary"><p>Get or set the default compression to use when serializing a response using a writer that implements the <a class="xref" href="VDS.RDF.Writing.ICompressingWriter.html">ICompressingWriter</a> interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DefaultCompressionLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.GetGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.GetGraph(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L274" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L294">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.GetGraph*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_System_Uri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.GetGraph(System.Uri)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_System_Uri_" class="expander" data-toggle="collapse">GetGraph(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_Uri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.GetGraph(Uri)">GetGraph(Uri)</h4>
   <div class="markdown level1 summary"><p>Retrieves the Graph with the given URI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract IGraph GetGraph(Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_System_Uri__remarks">Remarks</h5>
+  <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_GetGraph_Uri__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 Helper method intended for use by the <a class="xref" href="VDS.RDF.Update.Protocol.BaseProtocolProcessor.html#VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_">ProcessGet(IHttpContext)</a> and <a class="xref" href="VDS.RDF.Update.Protocol.BaseProtocolProcessor.html#VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_">ProcessHead(IHttpContext)</a> methods.
 </p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.HasGraph(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.HasGraph(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L281" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L301">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.HasGraph*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_System_Uri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.HasGraph(System.Uri)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_System_Uri_" class="expander" data-toggle="collapse">HasGraph(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_HasGraph_Uri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.HasGraph(Uri)">HasGraph(Uri)</h4>
   <div class="markdown level1 summary"><p>Determines whether a Graph with the given URI exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract bool HasGraph(Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.MintGraphUri(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.MintGraphUri(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L183" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L203">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.MintGraphUri*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.MintGraphUri(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">MintGraphUri(IHttpContext, IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.MintGraphUri(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)">MintGraphUri(IHttpContext, IGraph)</h4>
   <div class="markdown level1 summary"><p>Generates a new Graph URI that should be used to create a new Graph in the Store in conjunction with the <a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_">ProcessPostCreate(IHttpContext)</a> operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual Uri MintGraphUri(IHttpContext context, IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph parsed from the request body.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph parsed from the request body.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Uri</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_MintGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Default behaviour is to mint a URI based on a hash of the Request IP and Date Time.  Implementations can override this method to control URI creation as they desire.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ParsePayload(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ParsePayload(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L211" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L231">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ParsePayload*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ParsePayload(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ParsePayload(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ParsePayload(VDS.RDF.Web.IHttpContext)">ParsePayload(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph which can be parsed from the request body.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected IGraph ParsePayload(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ParsePayload_VDS_RDF_Web_IHttpContext__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>In the event that there is no request body a null will be returned.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessDelete(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessDelete(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L80" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L100">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessDelete*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessDelete(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessDelete(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessDelete(VDS.RDF.Web.IHttpContext)">ProcessDelete(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a DELETE operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessDelete(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessDelete_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessDelete(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessGet(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessGet(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L71">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessGet*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessGet(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessGet(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessGet(VDS.RDF.Web.IHttpContext)">ProcessGet(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a GET operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessGet(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessGet_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessGet(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessHead(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessHead(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L86" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L106">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessHead*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessHead(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessHead(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessHead(VDS.RDF.Web.IHttpContext)">ProcessHead(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a HEAD operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessHead(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessHead_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessHead(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPatch(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPatch(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L92" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L112">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPatch*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPatch(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessPatch(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPatch(VDS.RDF.Web.IHttpContext)">ProcessPatch(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a PATCH operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessPatch(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessPatch_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessPatch(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPost(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPost(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L77">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPost*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPost(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessPost(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPost(VDS.RDF.Web.IHttpContext)">ProcessPost(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a POST operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessPost(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessPost_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessPost(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPostCreate(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPostCreate(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L88">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPostCreate*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPostCreate(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessPostCreate(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPostCreate(VDS.RDF.Web.IHttpContext)">ProcessPostCreate(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a POST operation which adds triples to a new Graph in the Store and returns the URI of the newly created Graph.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessPostCreate(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessPostCreate(IHttpContext)</a></div>
-  
   <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPostCreate_VDS_RDF_Web_IHttpContext__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 This operation allows clients to POST data to an endpoint and have it create a Graph and assign a URI for them.
 </p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPut(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPut(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L74" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L94">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPut*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPut(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ProcessPut(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ProcessPut(VDS.RDF.Web.IHttpContext)">ProcessPut(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Processes a PUT operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract void ProcessPut(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html#VDS_RDF_Update_Protocol_ISparqlHttpProtocolProcessor_ProcessPut_VDS_RDF_Web_IHttpContext_">ISparqlHttpProtocolProcessor.ProcessPut(IHttpContext)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L99" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L119">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_" class="expander" data-toggle="collapse">ResolveGraphUri(IHttpContext)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext)">ResolveGraphUri(IHttpContext)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph URI that the request should affect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Uri ResolveGraphUri(IHttpContext context)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Uri</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L138" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L158">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">ResolveGraphUri(IHttpContext, IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.ResolveGraphUri(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)">ResolveGraphUri(IHttpContext, IGraph)</h4>
   <div class="markdown level1 summary"><p>Gets the Graph URI that the request should affect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected Uri ResolveGraphUri(IHttpContext context, IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph parsed from the request body.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph parsed from the request body.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Uri</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_ResolveGraphUri_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The Graph parameter may be null in which case the other overload of this method will be invoked.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.SendResultsToClient(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor.SendResultsToClient(VDS.RDF.Web.IHttpContext%2CVDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L228" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L248">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.SendResultsToClient*"></a>
-  
-  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.SendResultsToClient(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)"><a href="#collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="expander" data-toggle="collapse">SendResultsToClient(IHttpContext, IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" class="collapse in">
+  <h4 id="VDS_RDF_Update_Protocol_BaseProtocolProcessor_SendResultsToClient_VDS_RDF_Web_IHttpContext_VDS_RDF_IGraph_" data-uid="VDS.RDF.Update.Protocol.BaseProtocolProcessor.SendResultsToClient(VDS.RDF.Web.IHttpContext,VDS.RDF.IGraph)">SendResultsToClient(IHttpContext, IGraph)</h4>
   <div class="markdown level1 summary"><p>Sends the given Graph to the Client via the HTTP Response.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected void SendResultsToClient(IHttpContext context, IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></span>
-        <span class="parametername">context</span>
-        <p><p>HTTP Context.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph to send.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Web.IHttpContext.html">IHttpContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>HTTP Context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to send.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Update.Protocol.ISparqlHttpProtocolProcessor.html">ISparqlHttpProtocolProcessor</a>
   </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Update/Protocol/BaseProtocolProcessor.cs/#L39" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Update_Protocol_BaseProtocolProcessor.md&amp;value=---%0Auid%3A%20VDS.RDF.Update.Protocol.BaseProtocolProcessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.AspNet/Update/Protocol/BaseProtocolProcessor.cs/#L40" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

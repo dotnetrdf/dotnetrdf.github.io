@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DiskDemandTripleStore
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.DiskDemandTripleStore">
-  <h1 id="VDS_RDF_DiskDemandTripleStore" data-uid="VDS.RDF.DiskDemandTripleStore">Class DiskDemandTripleStore
+  
+  
+  <h1 id="VDS_RDF_DiskDemandTripleStore" data-uid="VDS.RDF.DiskDemandTripleStore" class="text-break">Class DiskDemandTripleStore
   </h1>
   <div class="markdown level0 summary"><p>Class for representing Triple Stores which are collections of RDF Graphs.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,18 +83,24 @@
     <div class="level2"><a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a></div>
     <div class="level3"><span class="xref">DiskDemandTripleStore</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></div>
+    <div><a class="xref" href="VDS.RDF.ISparqlUpdateTripleStore.html">ISparqlUpdateTripleStore</a></div>
+    <div><a class="xref" href="VDS.RDF.IUpdateableTripleStore.html">IUpdateableTripleStore</a></div>
+    <div><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore__reasoners">TripleStore._reasoners</a>
-    </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore__storeInferencesExternally">TripleStore._storeInferencesExternally</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore__inferenceGraphUri">TripleStore._inferenceGraphUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_UriFactory">TripleStore.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_Contains_VDS_RDF_Triple_">TripleStore.Contains(Triple)</a>
@@ -138,10 +145,22 @@
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_">TripleStore.GetTriples(List&lt;Uri&gt;, INode)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_">TripleStore.GetTriples(List&lt;IRefNode&gt;, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_">TripleStore.GetTriples(List&lt;IRefNode&gt;, INode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_">TripleStore.GetTriplesWithObject(List&lt;Uri&gt;, Uri)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_">TripleStore.GetTriplesWithObject(List&lt;Uri&gt;, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_">TripleStore.GetTriplesWithObject(List&lt;IRefNode&gt;, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_">TripleStore.GetTriplesWithObject(List&lt;IRefNode&gt;, INode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_">TripleStore.GetTriplesWithPredicate(List&lt;Uri&gt;, INode)</a>
@@ -150,34 +169,22 @@
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_">TripleStore.GetTriplesWithPredicate(List&lt;Uri&gt;, Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_">TripleStore.GetTriplesWithPredicate(List&lt;IRefNode&gt;, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_">TripleStore.GetTriplesWithPredicate(List&lt;IRefNode&gt;, INode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_">TripleStore.GetTriplesWithSubject(List&lt;Uri&gt;, INode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_">TripleStore.GetTriplesWithSubject(List&lt;Uri&gt;, Uri)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ExecuteQuery_System_String_">TripleStore.ExecuteQuery(String)</a>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_">TripleStore.GetTriplesWithSubject(List&lt;IRefNode&gt;, Uri)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ExecuteQuery_VDS_RDF_Query_SparqlQuery_">TripleStore.ExecuteQuery(SparqlQuery)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">TripleStore.ExecuteQuery(IRdfHandler, ISparqlResultsHandler, String)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">TripleStore.ExecuteQuery(IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ApplyInference_VDS_RDF_IGraph_">TripleStore.ApplyInference(IGraph)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_AddInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_">TripleStore.AddInferenceEngine(IInferenceEngine)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_RemoveInferenceEngine_VDS_RDF_Query_Inference_IInferenceEngine_">TripleStore.RemoveInferenceEngine(IInferenceEngine)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ClearInferenceEngines">TripleStore.ClearInferenceEngines()</a>
+      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_">TripleStore.GetTriplesWithSubject(List&lt;IRefNode&gt;, INode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_Dispose">TripleStore.Dispose()</a>
@@ -190,9 +197,6 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_ExecuteUpdate_VDS_RDF_Update_SparqlUpdateCommandSet_">TripleStore.ExecuteUpdate(SparqlUpdateCommandSet)</a>
-    </div>
-    <div>
-      <a class="xref" href="VDS.RDF.TripleStore.html#VDS_RDF_TripleStore_OnGraphAdded_System_Object_VDS_RDF_GraphEventArgs_">TripleStore.OnGraphAdded(Object, GraphEventArgs)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore__graphs">BaseTripleStore._graphs</a>
@@ -219,13 +223,25 @@
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_AddFromUri_System_Uri_System_Boolean_">BaseTripleStore.AddFromUri(Uri, Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_AddFromUri_System_Uri_System_Boolean_VDS_RDF_Parsing_Loader_">BaseTripleStore.AddFromUri(Uri, Boolean, Loader)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Remove_System_Uri_">BaseTripleStore.Remove(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Remove_VDS_RDF_IRefNode_">BaseTripleStore.Remove(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_HasGraph_System_Uri_">BaseTripleStore.HasGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_HasGraph_VDS_RDF_IRefNode_">BaseTripleStore.HasGraph(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Item_System_Uri_">BaseTripleStore.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Item_VDS_RDF_IRefNode_">BaseTripleStore.Item[IRefNode]</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_GraphAdded">BaseTripleStore.GraphAdded</a>
@@ -247,6 +263,9 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_RaiseGraphAdded_VDS_RDF_GraphEventArgs_">BaseTripleStore.RaiseGraphAdded(GraphEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_OnGraphAdded_System_Object_VDS_RDF_GraphEventArgs_">BaseTripleStore.OnGraphAdded(Object, GraphEventArgs)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_RaiseGraphRemoved_VDS_RDF_IGraph_">BaseTripleStore.RaiseGraphRemoved(IGraph)</a>
@@ -306,63 +325,55 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_DiskDemandTripleStore_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DiskDemandTripleStore : TripleStore, IInMemoryQueryableStore, IInferencingTripleStore, IUpdateableTripleStore, ITripleStore, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class DiskDemandTripleStore : TripleStore, IInMemoryQueryableStore, ISparqlUpdateTripleStore, IUpdateableTripleStore, ITripleStore, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_DiskDemandTripleStore_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>The &apos;Disk Demand&apos; Triple Store is a Triple Store which automatically retrieves Graphs from the Disk based on the URIs of Graphs that you ask it for when those URIs are file:/// URIs.</p>
 </div>
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_DiskDemandTripleStore__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.DiskDemandTripleStore.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_DiskDemandTripleStore__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.DiskDemandTripleStore.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/DiskDemandTripleStore.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/DiskDemandTripleStore.cs/#L41">View Source</a>
   </span>
-  
   <a id="VDS_RDF_DiskDemandTripleStore__ctor_" data-uid="VDS.RDF.DiskDemandTripleStore.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_DiskDemandTripleStore__ctor" data-uid="VDS.RDF.DiskDemandTripleStore.#ctor"><a href="#collapsible-VDS_RDF_DiskDemandTripleStore__ctor" class="expander" data-toggle="collapse">DiskDemandTripleStore()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_DiskDemandTripleStore__ctor" class="collapse in">
+  <h4 id="VDS_RDF_DiskDemandTripleStore__ctor" data-uid="VDS.RDF.DiskDemandTripleStore.#ctor">DiskDemandTripleStore()</h4>
   <div class="markdown level1 summary"><p>Creates a new Disk Demand Triple Store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DiskDemandTripleStore()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.ISparqlUpdateTripleStore.html">ISparqlUpdateTripleStore</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.IUpdateableTripleStore.html">IUpdateableTripleStore</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, String, IStoreReader)</a>
@@ -375,6 +386,9 @@
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, String, IStoreReader)</a>
@@ -394,17 +408,24 @@
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, String)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_DiskDemandTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.DiskDemandTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/DiskDemandTripleStore.cs/#L35" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_DiskDemandTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.DiskDemandTripleStore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/DiskDemandTripleStore.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

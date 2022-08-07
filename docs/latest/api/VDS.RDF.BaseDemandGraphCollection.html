@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseDemandGraphCollection
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,23 +69,28 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.BaseDemandGraphCollection">
-  <h1 id="VDS_RDF_BaseDemandGraphCollection" data-uid="VDS.RDF.BaseDemandGraphCollection">Class BaseDemandGraphCollection
+  
+  
+  <h1 id="VDS_RDF_BaseDemandGraphCollection" data-uid="VDS.RDF.BaseDemandGraphCollection" class="text-break">Class BaseDemandGraphCollection
   </h1>
   <div class="markdown level0 summary"><p>A decorator for graph collections that allows for graphs to be loaded on demand if they don&apos;t exist in the underlying graph collection.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a></div>
     <div class="level2"><a class="xref" href="VDS.RDF.WrapperGraphCollection.html">WrapperGraphCollection</a></div>
     <div class="level3"><span class="xref">BaseDemandGraphCollection</span></div>
-  </div>
-  
       <div class="level4"><a class="xref" href="VDS.RDF.DiskDemandGraphCollection.html">DiskDemandGraphCollection</a></div>
       <div class="level4"><a class="xref" href="VDS.RDF.WebDemandGraphCollection.html">WebDemandGraphCollection</a></div>
-  
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -107,10 +112,19 @@
       <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_GraphUris">WrapperGraphCollection.GraphUris</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_GraphNames">WrapperGraphCollection.GraphNames</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Remove_System_Uri_">WrapperGraphCollection.Remove(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Remove_VDS_RDF_IRefNode_">WrapperGraphCollection.Remove(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Item_System_Uri_">WrapperGraphCollection.Item[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Item_VDS_RDF_IRefNode_">WrapperGraphCollection.Item[IRefNode]</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseGraphCollection.html#VDS_RDF_BaseGraphCollection_System_Collections_IEnumerable_GetEnumerator">BaseGraphCollection.IEnumerable.GetEnumerator()</a>
@@ -149,218 +163,233 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.html">VDS.RDF</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_BaseDemandGraphCollection_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class BaseDemandGraphCollection : WrapperGraphCollection, IEnumerable&lt;IGraph&gt;, IEnumerable, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/BaseDemandGraphCollection.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L42">View Source</a>
   </span>
-  
   <a id="VDS_RDF_BaseDemandGraphCollection__ctor_" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_BaseDemandGraphCollection__ctor" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor"><a href="#collapsible-VDS_RDF_BaseDemandGraphCollection__ctor" class="expander" data-toggle="collapse">BaseDemandGraphCollection()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_BaseDemandGraphCollection__ctor" class="collapse in">
+  <h4 id="VDS_RDF_BaseDemandGraphCollection__ctor" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor">BaseDemandGraphCollection()</h4>
   <div class="markdown level1 summary"><p>Creates a new decorator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseDemandGraphCollection()</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseDemandGraphCollection()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.%23ctor(VDS.RDF.BaseGraphCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.%23ctor(VDS.RDF.BaseGraphCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/BaseDemandGraphCollection.cs/#L48" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L49">View Source</a>
   </span>
-  
   <a id="VDS_RDF_BaseDemandGraphCollection__ctor_" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor(VDS.RDF.BaseGraphCollection)"><a href="#collapsible-VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" class="expander" data-toggle="collapse">BaseDemandGraphCollection(BaseGraphCollection)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" class="collapse in">
+  <h4 id="VDS_RDF_BaseDemandGraphCollection__ctor_VDS_RDF_BaseGraphCollection_" data-uid="VDS.RDF.BaseDemandGraphCollection.#ctor(VDS.RDF.BaseGraphCollection)">BaseDemandGraphCollection(BaseGraphCollection)</h4>
   <div class="markdown level1 summary"><p>Creates a new decorator over the given graph collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseDemandGraphCollection(BaseGraphCollection collection)</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseDemandGraphCollection(BaseGraphCollection collection)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a></span>
-        <span class="parametername">collection</span>
-        <p><p>Graph Collection.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>Graph Collection.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.Contains(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.Contains(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/BaseDemandGraphCollection.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L57">View Source</a>
   </span>
-  
   <a id="VDS_RDF_BaseDemandGraphCollection_Contains_" data-uid="VDS.RDF.BaseDemandGraphCollection.Contains*"></a>
-  
-  <h4 id="VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_" data-uid="VDS.RDF.BaseDemandGraphCollection.Contains(System.Uri)"><a href="#collapsible-VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_" class="expander" data-toggle="collapse">Contains(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_BaseDemandGraphCollection_Contains_System_Uri_" data-uid="VDS.RDF.BaseDemandGraphCollection.Contains(System.Uri)">Contains(Uri)</h4>
   <div class="markdown level1 summary"><p>Checks whether the collection contains a Graph invoking an on-demand load if not present in the underlying collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Contains(Uri graphUri)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete]
+public override bool Contains(Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Contains_System_Uri_">WrapperGraphCollection.Contains(Uri)</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection_Contains_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.Contains(VDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L91">View Source</a>
+  </span>
+  <a id="VDS_RDF_BaseDemandGraphCollection_Contains_" data-uid="VDS.RDF.BaseDemandGraphCollection.Contains*"></a>
+  <h4 id="VDS_RDF_BaseDemandGraphCollection_Contains_VDS_RDF_IRefNode_" data-uid="VDS.RDF.BaseDemandGraphCollection.Contains(VDS.RDF.IRefNode)">Contains(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Checks whether the graph with the given name exists in this graph collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Contains(IRefNode graphName)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Graph name to test for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if a graph with the specified name is in the collection, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.WrapperGraphCollection.html#VDS_RDF_WrapperGraphCollection_Contains_VDS_RDF_IRefNode_">WrapperGraphCollection.Contains(IRefNode)</a></div>
+  <h5 id="VDS_RDF_BaseDemandGraphCollection_Contains_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The null value is used to reference the default (unnamed) graph.</p>
+</div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.LoadOnDemand(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection.LoadOnDemand(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/BaseDemandGraphCollection.cs/#L88" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L126">View Source</a>
   </span>
-  
   <a id="VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_" data-uid="VDS.RDF.BaseDemandGraphCollection.LoadOnDemand*"></a>
-  
-  <h4 id="VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_" data-uid="VDS.RDF.BaseDemandGraphCollection.LoadOnDemand(System.Uri)"><a href="#collapsible-VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_" class="expander" data-toggle="collapse">LoadOnDemand(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_BaseDemandGraphCollection_LoadOnDemand_System_Uri_" data-uid="VDS.RDF.BaseDemandGraphCollection.LoadOnDemand(System.Uri)">LoadOnDemand(Uri)</h4>
   <div class="markdown level1 summary"><p>Loads a Graph on demand.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract IGraph LoadOnDemand(Uri graphUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>URI of the Graph to load.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
-        <p><p>A Graph if it could be loaded and throws an error otherwise.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><p>A Graph if it could be loaded and throws an error otherwise.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
   </div>
-  
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
@@ -371,17 +400,27 @@
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ChunkBy__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Extensions.ChunkBy&lt;T&gt;(IEnumerable&lt;T&gt;, Int32)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Core/BaseDemandGraphCollection.cs/#L35" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_BaseDemandGraphCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.BaseDemandGraphCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Core/BaseDemandGraphCollection.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

@@ -8,7 +8,7 @@
     <title>Exceptions | DotNetRDF Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Exceptions | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,8 +69,10 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="exceptions">Exceptions</h1>
 
-<p>The Library defines a number of custom exception classes that are used to communicate error information about errors in working with RDF.</p>
-<p>All exceptions classes are derived from the standard .Net BCL (Base Class Library) <code>Exception</code> class, the top level exception class within our library is <code>RdfException</code>. All other exceptions classes in our library derive from this like so:</p>
+<p>The dotNetRDF library defines a number of custom exception classes that are used to communicate error information about errors in working with RDF.</p>
+<p>All exceptions classes are derived from the standard .Net <code>Exception</code> class. 
+The top level exception class within our library is <code>RdfException</code>.
+All other exceptions classes in our library derive from this like so:</p>
 <ul>
 <li><a class="xref" href="../api/VDS.RDF.RdfException.html">VDS.RDF.RdfException</a><ul>
 <li><a class="xref" href="../api/VDS.RDF.Configuration.DotNetRdfConfigurationException.html">VDS.RDF.Configuration.DotNetRdfConfigurationException</a></li>
@@ -92,11 +94,12 @@
 </li>
 </ul>
 <p>Most of our exceptions may contain Inner Exceptions where appropriate.</p>
-<p><strong>Note:</strong> There are more exceptions than just those listed here but this covers the ones you are most likely to encounter.</p>
+<div class="NOTE"><h5>Note</h5><p>There are more exceptions than just those listed here but this covers the ones you are most likely to encounter.</p>
+</div>
 <h1 id="rdfexception">RdfException</h1>
 <p>The <a class="xref" href="../api/VDS.RDF.RdfException.html">RdfException</a> is the most general exception class and is used to represent general errors in usage of the Library such as using an invalid prefixed name, trying to create a Triple with Nodes from different Graphs etc.</p>
 <h2 id="dotnetrdfconfigurationexception">DotNetRdfConfigurationException</h2>
-<p>The <a class="xref" href="../api/VDS.RDF.Configuration.DotNetRdfConfigurationException.html">DotNetRdfConfigurationException</a> is an exception that may occur when utilizing the <a href="Configuration-API.html">Configuration API</a>.  Typically it occurs due to malformed configuration information.</p>
+<p>The <a class="xref" href="../api/VDS.RDF.Configuration.DotNetRdfConfigurationException.html">DotNetRdfConfigurationException</a> is an exception that may occur when utilizing the <a href="configuration/index.html">Configuration API</a>.  Typically it occurs due to malformed configuration information.</p>
 <h2 id="rdfparseexception">RdfParseException</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a> is an exception that occurs during the parsing of RDF data when the parser is unable to continue parsing for any reason. Parsing exceptions typically contain a description of the issue which may include Tokeniser data about where the error occurred.</p>
 <h3 id="rdfparserselectionexception">RdfParserSelectionException</h3>
@@ -115,13 +118,19 @@
 <p>The <a class="xref" href="../api/VDS.RDF.Writing.RdfWriterSelectionException.html">RdfWriterSelectionException</a> is an exception that occurs when the library is unable to select a writer for the data being output.  This may be due to an unknown file extension or MIME type.</p>
 </article>
           </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/docs/blob/feature/docfx/src/latest/user_guide/Exceptions.md/#L1" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-          </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/exceptions.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

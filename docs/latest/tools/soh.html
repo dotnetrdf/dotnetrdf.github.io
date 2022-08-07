@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SPARQL over HTTP (soh) | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="SPARQL over HTTP (soh) | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sparql-over-http-soh">SPARQL over HTTP (soh)</h1>
+
+<p>A command line utility for accessing SPARQL servers</p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="index.html">Toolkit</a></p>
+<h2 id="documentation">Documentation</h2>
+<p>soh operates in one of three modes:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>Makes SPARQL Queries</td>
+</tr>
+<tr>
+<td>update</td>
+<td>Makes SPARQL Updates</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>Makes SPARQL Graph Store protocol requests</td>
+</tr>
+</tbody>
+</table>
+<p>The mode must always be specified as the first argument to the tool.</p>
+<h3 id="query-mode">Query Mode</h3>
+<p>Command Usage is:</p>
+<pre><code class="lang-dos">soh.exe query [options]
+</code></pre><p>e.g. Query a endpoint with the query specified at the command line </p>
+<pre><code class="lang-dos">soh.exe query --service http://dbpedia.org/sparql &quot;SELECT * WHERE {?s a ?type} LIMIT 10&quot;
+</code></pre><p>e.g. Query an endpoint with the query taken from a file</p>
+<pre><code class="lang-dos">soh.exe query --service http://dbpedia.org/sparql --query query.rq
+</code></pre><h4 id="supported-options">Supported Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--service URI</code> or <code>--server URI</code></td>
+<td>Either argument can be used to set the SPARQL endpoint to which the query is sent</td>
+</tr>
+<tr>
+<td><code>--query QUERY</code> or <code>--file FILE</code></td>
+<td>Either of these arguments may be used to specify that the query should be taken from a file rather than the 1st anonymous argument. <code>--query</code> has precedence if both are specified</td>
+</tr>
+<tr>
+<td><code>--accept mime/type</code></td>
+<td>Used to specify the Mime Type you&#39;d like the query results in</td>
+</tr>
+<tr>
+<td><code>--v</code> or <code>--verbose</code></td>
+<td>Used to enable Verbose mode</td>
+</tr>
+<tr>
+<td><code>--nobom</code></td>
+<td>Used to disable the use of BOM for UTF-8 output</td>
+</tr>
+<tr>
+<td>#--version##</td>
+<td>Displays the version and quits</td>
+</tr>
+<tr>
+<td><code>--h</code> or <code>--help</code></td>
+<td>Displays the help and quits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="update-mode">Update Mode</h3>
+<p>Command Usage is:</p>
+<pre><code class="lang-dos">soh.exe update [options]
+</code></pre><p>e.g. Update an endpoint specifying the update at the command line</p>
+<pre><code class="lang-dos">soh.exe update service http://example.org/update &quot;LOAD &lt;http://dbpedia.org/resource/Ilkeston&gt;&quot;
+</code></pre><p>e.g. Update an endpoint specifying the update using a file.</p>
+<pre><code class="lang-dos">soh.exe update service http://example.org/update --update update.ru
+</code></pre><h4 id="supported-options-1">Supported Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--service URI</code> or <code>--server URI</code></td>
+<td>Either argument can be used to set the SPARQL endpoint to which the update is sent</td>
+</tr>
+<tr>
+<td><code>--update UPDATE</code> or <code>--file FILE</code></td>
+<td>Either of these arguments may be used to specify that the update should be taken from a file rather than the 1st anonymous argument. <code>--update</code> has precedence if both are specified</td>
+</tr>
+<tr>
+<td><code>--v</code> or <code>--verbose</code></td>
+<td>Used to enable Verbose mode</td>
+</tr>
+<tr>
+<td><code>--nobom</code></td>
+<td>Used to disable the use of BOM for UTF-8 output</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Displays the version and quits</td>
+</tr>
+<tr>
+<td><code>--h</code> or <code>--help</code></td>
+<td>Displays the help and quits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="protocol-mode">Protocol Mode</h3>
+<p>Command Usage is:</p>
+<pre><code class="lang-dos">soh.exe protocol [head|get|post|put|delete] datasetURI graph [file] [options]
+</code></pre><p>e.g. Upload a RDF file to the default graoh</p>
+<pre><code class="lang-dos">soh.exe protocol put http://example.org/dataset/data default example.rdf
+</code></pre><p>e.g. Delete a given graph</p>
+<pre><code class="lang-dos">soh.exe protocol delete http://example.org/dataset/data http://example.org/someGraph
+</code></pre><h4 id="note">Note</h4>
+<ul>
+<li>The 2nd argument must be a supported HTTP method (case insensitive).</li>
+<li>The 3rd argument must be a SPARQL Uniform HTTP Protocol server endpoint URI</li>
+<li>The 4th argument must be either a Graph URI or default to indicate that either a Named Graph or the Default Graph should be affected</li>
+<li>The <code>file</code> argument is required only for the put and post methods. Using it with any other method will cause an error</li>
+</ul>
+<h4 id="supported-options-2">Supported Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--accept mime/type</code></td>
+<td>Used to specify the MIME Type you&#39;d like to GET graphs in</td>
+</tr>
+<tr>
+<td><code>--v</code> or <code>--verbose</code></td>
+<td>Used to enable Verbose mode</td>
+</tr>
+<tr>
+<td><code>--nobom</code></td>
+<td>Used to disable the use of BOM for UTF-8 output</td>
+</tr>
+<tr>
+<td><code>--nocache</code></td>
+<td>Disables the use of GET request caching so data retrieved is always fresh data</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Displays the version and quits</td>
+</tr>
+<tr>
+<td><code>--h</code> or <code>--help</code></td>
+<td>Displays the help and quits</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/tools/soh.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

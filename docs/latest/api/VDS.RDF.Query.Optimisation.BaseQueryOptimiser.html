@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseQueryOptimiser
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,22 +69,25 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser">
-  <h1 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser">Class BaseQueryOptimiser
+  
+  
+  <h1 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser" class="text-break">Class BaseQueryOptimiser
   </h1>
   <div class="markdown level0 summary"><p>A basic abstract implementation of a Query Optimiser.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">BaseQueryOptimiser</span></div>
-  </div>
-  
       <div class="level2"><a class="xref" href="VDS.RDF.Query.Optimisation.DefaultOptimiser.html">DefaultOptimiser</a></div>
       <div class="level2"><a class="xref" href="VDS.RDF.Query.Optimisation.NoReorderOptimiser.html">NoReorderOptimiser</a></div>
       <div class="level2"><a class="xref" href="VDS.RDF.Query.Optimisation.WeightedOptimiser.html">WeightedOptimiser</a></div>
-  
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -109,207 +112,152 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Optimisation.html">VDS.RDF.Query.Optimisation</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class BaseQueryOptimiser : IQueryOptimiser</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 Derived implementations may use override the virtual properties to control what forms of optimisation are used.  Derived implementations must override the <a class="xref" href="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.html#VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer">GetRankingComparer()</a> method, optimisers which do not wish to change the order of Triple Patterns should return the <a class="xref" href="VDS.RDF.Query.Optimisation.NoReorderComparer.html">NoReorderComparer</a> in their implementation as a basic sort of Triple Patterns is done even if <a class="xref" href="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.html#VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder">ShouldReorder</a> is overridden to return false.
 </p>
 </div>
-  
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceAssignments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceAssignments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L279" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L279">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceAssignments*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceAssignments"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments" class="expander" data-toggle="collapse">ShouldPlaceAssignments</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceAssignments">ShouldPlaceAssignments</h4>
   <div class="markdown level1 summary"><p>Controls whether the Optimiser will place Assignments.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool ShouldPlaceAssignments { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceAssignments_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>It is recommended that derived classes do not change this setting as this may hurt performance.  If you want to control the optimisation process in detail we suggest you implement <a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a> directly in your own class and not derive from this implementation.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L265" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L265">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceFilters*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceFilters"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters" class="expander" data-toggle="collapse">ShouldPlaceFilters</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldPlaceFilters">ShouldPlaceFilters</h4>
   <div class="markdown level1 summary"><p>Controls whether the Optimiser will place Filters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool ShouldPlaceFilters { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldPlaceFilters_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>It is recommended that derived classes do not change this setting as this may hurt performance.  If you want to control the optimisation process in detail we suggest you implement <a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a> directly in your own class and not derive from this implementation.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldReorder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldReorder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L232" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L232">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldReorder*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldReorder"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder" class="expander" data-toggle="collapse">ShouldReorder</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldReorder">ShouldReorder</h4>
   <div class="markdown level1 summary"><p>Controls whether the Optimiser will attempt to reorder Triple Patterns.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool ShouldReorder { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldReorder_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>It is recommended that derived classes do not change this setting as this may hurt performance.  If you want to control the optimisation process in detail we suggest you implement <a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a> directly in your own class and not derive from this implementation.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldSplitFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldSplitFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L251" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L251">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldSplitFilters*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldSplitFilters"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters" class="expander" data-toggle="collapse">ShouldSplitFilters</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.ShouldSplitFilters">ShouldSplitFilters</h4>
   <div class="markdown level1 summary"><p>Controls whether the Optimiser will split Filters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool ShouldSplitFilters { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_ShouldSplitFilters_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 If a Filter contains an and expression it may be split into its constituent parts and applied separately.  This option only applies if filter placement also applies.
@@ -318,131 +266,111 @@ If a Filter contains an and expression it may be split into its constituent part
 Defaults to false since it is unclear if this actually benefits performance.
 </p>
 </div>
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.GetRankingComparer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.GetRankingComparer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L224" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L224">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.GetRankingComparer*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.GetRankingComparer"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer" class="expander" data-toggle="collapse">GetRankingComparer()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.GetRankingComparer">GetRankingComparer()</h4>
   <div class="markdown level1 summary"><p>Gets a comparer on Triple Patterns that is used to rank Triple Patterns.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract IComparer&lt;ITriplePattern&gt; GetRankingComparer()</code></pre>
   </div>
-  
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IComparer</span>&lt;<a class="xref" href="VDS.RDF.Query.Patterns.ITriplePattern.html">ITriplePattern</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IComparer</span>&lt;<a class="xref" href="VDS.RDF.Query.Patterns.ITriplePattern.html">ITriplePattern</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_GetRankingComparer_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>By overriding this in derived classes you can change how the Optimiser weights different patterns and thus the resultant ordering of Triple Patterns.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.Optimise(VDS.RDF.Query.Patterns.GraphPattern%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser.Optimise(VDS.RDF.Query.Patterns.GraphPattern%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L52">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.Optimise*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.Optimise(VDS.RDF.Query.Patterns.GraphPattern,System.Collections.Generic.IEnumerable{System.String})"><a href="#collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__" class="expander" data-toggle="collapse">Optimise(GraphPattern, IEnumerable&lt;String&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_BaseQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Query.Optimisation.BaseQueryOptimiser.Optimise(VDS.RDF.Query.Patterns.GraphPattern,System.Collections.Generic.IEnumerable{System.String})">Optimise(GraphPattern, IEnumerable&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Causes the Graph Pattern to be optimised if it isn&apos;t already.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Optimise(GraphPattern gp, IEnumerable&lt;string&gt; variables)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Patterns.GraphPattern.html">GraphPattern</a></span>
-        <span class="parametername">gp</span>
-        <p><p>Graph Pattern.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</span>
-        <span class="parametername">variables</span>
-        <p><p>Variables that have occurred prior to this Pattern.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Patterns.GraphPattern.html">GraphPattern</a></td>
+        <td><span class="parametername">gp</span></td>
+        <td><p>Graph Pattern.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">variables</span></td>
+        <td><p>Variables that have occurred prior to this Pattern.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html#VDS_RDF_Query_Optimisation_IQueryOptimiser_Optimise_VDS_RDF_Query_Patterns_GraphPattern_System_Collections_Generic_IEnumerable_System_String__">IQueryOptimiser.Optimise(GraphPattern, IEnumerable&lt;String&gt;)</a></div>
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a>
   </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/BaseQueryOptimiser.cs/#L44" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_BaseQueryOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.BaseQueryOptimiser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/BaseQueryOptimiser.cs/#L44" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

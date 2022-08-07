@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>rdfConvert | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="rdfConvert | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rdfconvert">rdfConvert</h1>
+
+<p>rdfConvert is a command line utility for converting RDF between different formats.</p>
+<h2 id="download">Download</h2>
+<p>You can download this tool as part of our <a href="index.html">Toolkit</a></p>
+<h2 id="documentation">Documentation</h2>
+<p>Command usage is as follows:</p>
+<pre><code class="lang-dos">rdfConvert.exe input1 [input2 [input3 [...]]] (-out:filename.ext | -outformat:mime/type) [options]
+</code></pre><p>e.g. Convert a RDF/XML file to Turtle</p>
+<pre><code class="lang-dos">rdfConvert.exe input.rdf -out:output.ttl
+</code></pre><p>e.g. Convert multiple files into HTML</p>
+<pre><code class="lang-dos">rdfConvert.exe input1.rdf input2.ttl input3.n3 -format:text/html
+</code></pre><p>e.g. Convert a RDF/XML file into N3</p>
+<pre><code class="lang-dos">rdfConvert.exe input.rdf -ext:n3
+</code></pre><p>You can use URIs as input just by stating URIs (anything with a :// in it will be assumed to be a URI) e.g. </p>
+<pre><code class="lang-dos">rdfConvert.exe http://example.org/something -out:something.rdf
+</code></pre><h3 id="notes">Notes</h3>
+<p>rdfConvert may be used to convert between Dataset (NQuads, TriG and TriX) formats as well as Graph formats</p>
+<h3 id="supported-options">Supported Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-best</code></td>
+<td>Causes the utility to attempt the best conversion it can (i.e. most compressed syntax) taking into account other options like compression level. May cause conversions to be slower and require more memory</td>
+</tr>
+<tr>
+<td><code>c[:integer]</code></td>
+<td>Sets the Compression Level used by compressing writers, if specified without an integer parameter then defaults to default compression. Specify <code>-best</code> to ensure the setting is respected</td>
+</tr>
+<tr>
+<td><code>-debug</code></td>
+<td>Prints more detailed error messages if errors occur</td>
+</tr>
+<tr>
+<td><code>-ext:ext</code></td>
+<td>Overrides the default file extension which will be automatically determined based on the <code>-out</code>/<code>-format</code> option. Must occur after the <code>-out</code>/<code>-format</code> option or it may be ignored</td>
+</tr>
+<tr>
+<td><code>-format:format</code></td>
+<td>Specifies an output format in terms of a MIME Type or a file extension, if the MIME type/file extension does not correspond to a supported RDF Graph/Dataset format then the utility aborts.</td>
+</tr>
+<tr>
+<td><code>-help</code></td>
+<td>Prints a usage summary if it is the only argument, otherwise ignored</td>
+</tr>
+<tr>
+<td><code>-hs[:boolean]</code></td>
+<td>Enables/Disables High Speed write mode, if specified without a boolean parameter then defaults to enabled</td>
+</tr>
+<tr>
+<td><code>-nobom</code></td>
+<td>Specifies that no BOM should be used for UTF-8 Output</td>
+</tr>
+<tr>
+<td><code>-nocache</code></td>
+<td>Specifies that caching of input URIs is disabled i.e. forces the RDF to be retrieved directly from the URI bypassing any locally cached copy</td>
+</tr>
+<tr>
+<td><code>-out:filename.ext</code> or <code>-output:filename.ext</code></td>
+<td>Specifies a specific file to output to (assuming only 1 input), if more than one input is specified then this parameter sets the base filename for outputs (extension ignored in this case)</td>
+</tr>
+<tr>
+<td><code>-overwrite</code></td>
+<td>Specifies that the utility can overwrite existing files</td>
+</tr>
+<tr>
+<td><code>-pp[:boolean]</code></td>
+<td>Enables/Disables Pretty Printing, if specified without a boolean parameter then defaults to enabled</td>
+</tr>
+<tr>
+<td><code>-rapper</code></td>
+<td>Runs rdfConvert in <a href="http://librdf.org/raptor/rapper.html">rapper</a> compatibility mode, type <code>rdfConvert.exe -rapper -h</code> for further information. Must be the first argument or ignored</td>
+</tr>
+<tr>
+<td><code>-warnings</code></td>
+<td>Shows Warning Messages output by Parsers and Serializers</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/tools/rdfConvert.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

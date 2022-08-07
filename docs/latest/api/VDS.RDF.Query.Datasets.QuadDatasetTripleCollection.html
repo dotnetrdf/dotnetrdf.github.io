@@ -1,0 +1,1617 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class QuadDatasetTripleCollection
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class QuadDatasetTripleCollection
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection">
+  
+  
+  <h1 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection" class="text-break">Class QuadDatasetTripleCollection
+  </h1>
+  <div class="markdown level0 summary"><p>A Triple Collection which is a thin wrapper around a <a class="xref" href="VDS.RDF.Query.Datasets.BaseQuadDataset.html">BaseQuadDataset</a> to reduce much of the complexity for <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> implementors around returning of Graphs.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a></div>
+    <div class="level2"><span class="xref">QuadDatasetTripleCollection</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_System_Collections_IEnumerable_GetEnumerator">BaseTripleCollection.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_TripleAdded">BaseTripleCollection.TripleAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_TripleRemoved">BaseTripleCollection.TripleRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_RaiseTripleAdded_VDS_RDF_Triple_">BaseTripleCollection.RaiseTripleAdded(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_RaiseTripleRemoved_VDS_RDF_Triple_">BaseTripleCollection.RaiseTripleRemoved(Triple)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Datasets.html">VDS.RDF.Query.Datasets</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class QuadDatasetTripleCollection : BaseTripleCollection, IEnumerable&lt;Triple&gt;, IEnumerable, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_VDS_RDF_Query_Datasets_BaseQuadDataset_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.%23ctor(VDS.RDF.Query.Datasets.BaseQuadDataset%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L47">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_VDS_RDF_Query_Datasets_BaseQuadDataset_System_Uri_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.#ctor(VDS.RDF.Query.Datasets.BaseQuadDataset,System.Uri)">QuadDatasetTripleCollection(BaseQuadDataset, Uri)</h4>
+  <div class="markdown level1 summary"><p>Create a new triple collection that exposes a single named graph in a quad dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Replaced by QuadDatasetTripleCollection(BaseQuadDataset, IRefNode)&quot;)]
+public QuadDatasetTripleCollection(BaseQuadDataset dataset, Uri graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.BaseQuadDataset.html">BaseQuadDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>The dataset to wrap.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>The URI of the graph to expose through this interface.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_VDS_RDF_Query_Datasets_BaseQuadDataset_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.%23ctor(VDS.RDF.Query.Datasets.BaseQuadDataset%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L55">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection__ctor_VDS_RDF_Query_Datasets_BaseQuadDataset_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.#ctor(VDS.RDF.Query.Datasets.BaseQuadDataset,VDS.RDF.IRefNode)">QuadDatasetTripleCollection(BaseQuadDataset, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Create a new triple collection that exposes a single named graph in a quad dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuadDatasetTripleCollection(BaseQuadDataset dataset, IRefNode graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.BaseQuadDataset.html">BaseQuadDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>The dataset to wrap.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>The URI of the graph to expose through this interface.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Asserted.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Asserted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L166">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Asserted_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Asserted*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Asserted" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Asserted">Asserted</h4>
+  <div class="markdown level1 summary"><p>Gets the triples that are asserted in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; Asserted { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Asserted">BaseTripleCollection.Asserted</a></div>
+  <h5 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Asserted_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This returns the same set of triples as the enumerator on this class, but as an <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> instance.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L81">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Count_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Count*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Count" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of asserted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Count">BaseTripleCollection.Count</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Item_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Item(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L99">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Item_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Item*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Item_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Item(VDS.RDF.Triple)">Item[Triple]</h4>
+  <div class="markdown level1 summary"><p>Gets the given triple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Triple this[Triple t] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to retrieve.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Item_VDS_RDF_Triple_">BaseTripleCollection.Item[Triple]</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyNotFoundException</span></td>
+        <td><p>Thrown if the given Triple doesn&apos;t exist.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ObjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ObjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L115">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ObjectNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ObjectNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ObjectNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ObjectNodes">ObjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are objects of asserted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; ObjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_ObjectNodes">BaseTripleCollection.ObjectNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_PredicateNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.PredicateNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L124">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_PredicateNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.PredicateNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_PredicateNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.PredicateNodes">PredicateNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are predicates of asserted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; PredicateNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_PredicateNodes">BaseTripleCollection.PredicateNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Quoted.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Quoted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L169">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Quoted_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Quoted*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Quoted" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Quoted">Quoted</h4>
+  <div class="markdown level1 summary"><p>Gets the triples that are quoted in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; Quoted { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Quoted">BaseTripleCollection.Quoted</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedCount.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L90">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedCount_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedCount*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedCount" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedCount">QuotedCount</h4>
+  <div class="markdown level1 summary"><p>Gets the number of quoted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int QuotedCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedCount">BaseTripleCollection.QuotedCount</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedObjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedObjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L142">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedObjectNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedObjectNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedObjectNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedObjectNodes">QuotedObjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are subjects of quoted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; QuotedObjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedObjectNodes">BaseTripleCollection.QuotedObjectNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedPredicateNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedPredicateNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L146">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedPredicateNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedPredicateNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedPredicateNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedPredicateNodes">QuotedPredicateNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are predicates of quoted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; QuotedPredicateNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedPredicateNodes">BaseTripleCollection.QuotedPredicateNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedSubjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedSubjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L150">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedSubjectNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedSubjectNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedSubjectNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedSubjectNodes">QuotedSubjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are objects of quoted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; QuotedSubjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedSubjectNodes">BaseTripleCollection.QuotedSubjectNodes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_SubjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.SubjectNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L133">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_SubjectNodes_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.SubjectNodes*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_SubjectNodes" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.SubjectNodes">SubjectNodes</h4>
+  <div class="markdown level1 summary"><p>Gets all the nodes which are subjects of asserted triples in the triple collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; SubjectNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_SubjectNodes">BaseTripleCollection.SubjectNodes</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Add_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Add(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L63">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Add_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Add*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Add_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Add(VDS.RDF.Triple)">Add(Triple)</h4>
+  <div class="markdown level1 summary"><p>Adds a Triple to the Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Add(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Add_VDS_RDF_Triple_">BaseTripleCollection.Add(Triple)</a></div>
+  <h5 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Add_VDS_RDF_Triple__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Adding a Triple that already exists should be permitted though it is not necessary to persist the duplicate to underlying storage.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Contains(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L69">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Contains_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Contains*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Contains_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Contains(VDS.RDF.Triple)">Contains(Triple)</h4>
+  <div class="markdown level1 summary"><p>Determines whether a given Triple is asserted in the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Contains(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The Triple to test.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the triple exists as an asserted triple in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Contains_VDS_RDF_Triple_">BaseTripleCollection.Contains(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ContainsQuoted_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ContainsQuoted(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L75">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ContainsQuoted_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ContainsQuoted*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_ContainsQuoted_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.ContainsQuoted(VDS.RDF.Triple)">ContainsQuoted(Triple)</h4>
+  <div class="markdown level1 summary"><p>Determines whether a given triple is quoted by a triple node of a triple in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ContainsQuoted(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The triple to test.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the triple is quoted in the triple collection, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_ContainsQuoted_VDS_RDF_Triple_">BaseTripleCollection.ContainsQuoted(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Delete_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Delete(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L93">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Delete_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Delete*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Delete_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Delete(VDS.RDF.Triple)">Delete(Triple)</h4>
+  <div class="markdown level1 summary"><p>Deletes an asserted triple from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool Delete(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the operation removed an asserted triple from the collection, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Delete_VDS_RDF_Triple_">BaseTripleCollection.Delete(Triple)</a></div>
+  <h5 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Delete_VDS_RDF_Triple__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Deleting a triple that is not asserted in the collection should have no effect and give no error.
+Quoted triples cannot be removed from the collection via this method - instead they should be automatically removed when
+all asserted triples that reference them are removed.
+Deleting a triple that is both asserted and quoted will remove the assertion of the triple (and return true), but
+the triple will remain in the collection as a quoted triples.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L154">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Dispose_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Dispose*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_Dispose" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes of a Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Dispose">BaseTripleCollection.Dispose()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_GetEnumerator.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L160">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_GetEnumerator_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.GetEnumerator*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_GetEnumerator" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Gets the typed Enumerator for the Triple Collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerator&lt;Triple&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>An enumerator over the asserted triples in the triple collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_GetEnumerator">BaseTripleCollection.GetEnumerator()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L209">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithObject(VDS.RDF.INode)">QuotedWithObject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the quoted triples with the given Object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithObject(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithObject_VDS_RDF_INode_">BaseTripleCollection.QuotedWithObject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L215">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicate_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicate(VDS.RDF.INode)">QuotedWithPredicate(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the quoted triples with the given Predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithPredicate(INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithPredicate_VDS_RDF_INode_">BaseTripleCollection.QuotedWithPredicate(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L221">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicateObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicateObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">QuotedWithPredicateObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the quoted triples with the given Predicate Object pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithPredicateObject(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.QuotedWithPredicateObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L227">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubject(VDS.RDF.INode)">QuotedWithSubject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all quoted triples with the given subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithSubject(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithSubject_VDS_RDF_INode_">BaseTripleCollection.QuotedWithSubject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L233">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">QuotedWithSubjectObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the quoted triples with the given Subject Object pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithSubjectObject(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.QuotedWithSubjectObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L239">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectPredicate_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_QuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.QuotedWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">QuotedWithSubjectPredicate(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the quoted triples with the given Subject Predicate pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedWithSubjectPredicate(INode subj, INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.QuotedWithSubjectPredicate(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithObject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L173">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithObject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithObject(VDS.RDF.INode)">WithObject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the asserted triples with the given object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithObject(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithObject_VDS_RDF_INode_">BaseTripleCollection.WithObject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicate(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L179">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicate_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicate(VDS.RDF.INode)">WithPredicate(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the asserted triples with the given predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithPredicate(INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithPredicate_VDS_RDF_INode_">BaseTripleCollection.WithPredicate(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L185">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicateObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicateObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">WithPredicateObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples with the given Predicate Object pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithPredicateObject(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.WithPredicateObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubject(VDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L191">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubject(VDS.RDF.INode)">WithSubject(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the asserted triples with the given subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubject(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithSubject_VDS_RDF_INode_">BaseTripleCollection.WithSubject(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L197">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectObject_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectObject*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples with the given Subject Object pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubjectObject(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.WithSubjectObject(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L203">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectPredicate_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectPredicate*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_QuadDatasetTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.QuadDatasetTripleCollection.WithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectPredicate(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the asserted triples with the given subject/predicate pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; WithSubjectPredicate(INode subj, INode pred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject to lookup.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate to lookup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.WithSubjectPredicate(INode, INode)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_IsDisjoint__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Extensions.IsDisjoint&lt;T&gt;(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ChunkBy__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Extensions.ChunkBy&lt;T&gt;(IEnumerable&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithSubject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithSubject(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithPredicate_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithPredicate(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithObject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_">Extensions.WithObject(IEnumerable&lt;Triple&gt;, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.LiteralExtensions.html#VDS_RDF_LiteralExtensions_ToTripleCollection_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Boolean_">LiteralExtensions.ToTripleCollection(IEnumerable&lt;Triple&gt;, Boolean)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_QuadDatasetTripleCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.QuadDatasetTripleCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/QuadDatasetTripleCollection.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

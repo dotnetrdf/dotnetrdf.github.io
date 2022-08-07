@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ParallelEvaluationOptimiser
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,19 +69,22 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser">
-  <h1 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser">Class ParallelEvaluationOptimiser
+  
+  
+  <h1 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser" class="text-break">Class ParallelEvaluationOptimiser
   </h1>
   <div class="markdown level0 summary"><p>An Algebra Optimiser which looks for unions and joins that can be evaluated in parallel to improve query evaluation speed in some cases.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ParallelEvaluationOptimiser</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -106,18 +109,12 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Optimisation.html">VDS.RDF.Query.Optimisation</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class ParallelEvaluationOptimiser : IAlgebraOptimiser</code></pre>
   </div>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
 Using this feature allows you to use experimental parallel SPARQL evaluation optimisations which may improve query evaluation speed for some queries.  A query must either use UNION or have joins which are disjoint in order for any parallel evaluation to take place.
@@ -129,196 +126,217 @@ Users should be aware that using this optimiser may actually increase evaluation
 Also note that while use of this optimiser should not cause queries to return incorrect results as it does not change the semantics of the evaluation as it only parallelises independent operators we cannot guarantee that all parallelised queries will return identical results to their non-parallelised counterparts.  If you find a query that you believe is giving incorrect results when used with this optimiser please test without the optimiser enabled to check that the apparent incorrect result is not an artifact of this optimisation.
 </p>
 </div>
-  
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_UnsafeOptimisation.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.UnsafeOptimisation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L50">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_UnsafeOptimisation_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.UnsafeOptimisation*"></a>
+  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_UnsafeOptimisation" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.UnsafeOptimisation">UnsafeOptimisation</h4>
+  <div class="markdown level1 summary"><p>Determines whether an Optimiser will perform algebra optimizations that are potentially unsafe at execution time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UnsafeOptimisation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L95" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L98">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">IsApplicable(SparqlQuery)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)">IsApplicable(SparqlQuery)</h4>
   <div class="markdown level1 summary"><p>Returns that the optimser is applicable to all queries.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlQuery q)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
-        <span class="parametername">q</span>
-        <p><p>Query.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></td>
+        <td><span class="parametername">q</span></td>
+        <td><p>Query.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_">IAlgebraOptimiser.IsApplicable(SparqlQuery)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L105" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L108">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)"><a href="#collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" class="expander" data-toggle="collapse">IsApplicable(SparqlUpdateCommandSet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)">IsApplicable(SparqlUpdateCommandSet)</h4>
   <div class="markdown level1 summary"><p>Returns that the optimiser is not applicable to updates.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlUpdateCommandSet cmds)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></span>
-        <span class="parametername">cmds</span>
-        <p><p>Updates.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td><span class="parametername">cmds</span></td>
+        <td><p>Updates.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_">IAlgebraOptimiser.IsApplicable(SparqlUpdateCommandSet)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L57">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.Optimise*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)"><a href="#collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="expander" data-toggle="collapse">Optimise(ISparqlAlgebra)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)">Optimise(ISparqlAlgebra)</h4>
   <div class="markdown level1 summary"><p>Optimises the algebra to use parallelised variants of <a class="xref" href="VDS.RDF.Query.Algebra.Join.html">Join</a> and <a class="xref" href="VDS.RDF.Query.Algebra.Union.html">Union</a> where possible.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISparqlAlgebra Optimise(ISparqlAlgebra algebra)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></span>
-        <span class="parametername">algebra</span>
-        <p><p>Algebra.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">algebra</span></td>
+        <td><p>Algebra.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_">IAlgebraOptimiser.Optimise(ISparqlAlgebra)</a></div>
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a>
   </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L46" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_ParallelEvaluationOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.ParallelEvaluationOptimiser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/ParallelEvaluationOptimiser.cs/#L46" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

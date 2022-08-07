@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IUnaryOperator
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,19 +69,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator">
-  <h1 id="VDS_RDF_Query_Algebra_IUnaryOperator" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator">Interface IUnaryOperator
+  
+  
+  <h1 id="VDS_RDF_Query_Algebra_IUnaryOperator" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator" class="text-break">Interface IUnaryOperator
   </h1>
   <div class="markdown level0 summary"><p>Interface for SPARQL Algebra constructs which are unary operators i.e. they apply over a single inner Algebra.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_Evaluate_VDS_RDF_Query_SparqlEvaluationContext_">ISparqlAlgebra.Evaluate(SparqlEvaluationContext)</a>
-    </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_Variables">ISparqlAlgebra.Variables</a>
     </div>
@@ -97,142 +93,131 @@
     <div>
       <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html#VDS_RDF_Query_Algebra_ISparqlAlgebra_ToGraphPattern">ISparqlAlgebra.ToGraphPattern()</a>
     </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.IVisitable.html#VDS_RDF_Query_IVisitable_Accept__1_VDS_RDF_Query_ISparqlAlgebraVisitor___0__">IVisitable.Accept&lt;T&gt;(ISparqlAlgebraVisitor&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.IProcessable.html#VDS_RDF_Query_IProcessable_Accept__2_VDS_RDF_Query_ISparqlQueryAlgebraProcessor___0___1____1_">IProcessable.Accept&lt;TResult, TContext&gt;(ISparqlQueryAlgebraProcessor&lt;TResult, TContext&gt;, TContext)</a>
+    </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Algebra.html">VDS.RDF.Query.Algebra</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Algebra_IUnaryOperator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IUnaryOperator : ISparqlAlgebra</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IUnaryOperator : ISparqlAlgebra, IVisitable, IProcessable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator.InnerAlgebra%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator.InnerAlgebra%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/ISparqlAlgebra.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/ISparqlAlgebra.cs/#L90">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra_" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.InnerAlgebra*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.InnerAlgebra"><a href="#collapsible-VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra" class="expander" data-toggle="collapse">InnerAlgebra</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_IUnaryOperator_InnerAlgebra" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.InnerAlgebra">InnerAlgebra</h4>
   <div class="markdown level1 summary"><p>Gets the Inner Algebra.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">ISparqlAlgebra InnerAlgebra { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/ISparqlAlgebra.cs/#L102" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/ISparqlAlgebra.cs/#L103">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Algebra_IUnaryOperator_Transform_" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.Transform*"></a>
-  
-  <h4 id="VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)"><a href="#collapsible-VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="expander" data-toggle="collapse">Transform(IAlgebraOptimiser)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser_" data-uid="VDS.RDF.Query.Algebra.IUnaryOperator.Transform(VDS.RDF.Query.Optimisation.IAlgebraOptimiser)">Transform(IAlgebraOptimiser)</h4>
   <div class="markdown level1 summary"><p>Transforms the Inner Algebra using the given Optimiser.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">ISparqlAlgebra Transform(IAlgebraOptimiser optimiser)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></span>
-        <span class="parametername">optimiser</span>
-        <p><p>Optimiser.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></td>
+        <td><span class="parametername">optimiser</span></td>
+        <td><p>Optimiser.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Algebra_IUnaryOperator_Transform_VDS_RDF_Query_Optimisation_IAlgebraOptimiser__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The operator should retain all it&apos;s existing properties and just return a new version of itself with the inner algebra having had the given optimiser applied to it.</p>
 </div>
-  
-  
-  
-  </div>
-  
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Algebra/ISparqlAlgebra.cs/#L83" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Algebra_IUnaryOperator.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Algebra.IUnaryOperator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Algebra/ISparqlAlgebra.cs/#L84" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

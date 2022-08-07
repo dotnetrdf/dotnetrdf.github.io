@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class WebDemandDataset
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset">
-  <h1 id="VDS_RDF_Query_Datasets_WebDemandDataset" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset">Class WebDemandDataset
+  
+  
+  <h1 id="VDS_RDF_Query_Datasets_WebDemandDataset" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset" class="text-break">Class WebDemandDataset
   </h1>
   <div class="markdown level0 summary"><p>Implementation of a dataset wrapper which can load additional graphs from the web on demand.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,12 +83,20 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Query.Datasets.BaseDemandDataset.html">BaseDemandDataset</a></div>
     <div class="level3"><span class="xref">WebDemandDataset</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.BaseDemandDataset.html#VDS_RDF_Query_Datasets_BaseDemandDataset_HasGraph_System_Uri_">BaseDemandDataset.HasGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDemandDataset.html#VDS_RDF_Query_Datasets_BaseDemandDataset_HasGraph_VDS_RDF_IRefNode_">BaseDemandDataset.HasGraph(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset__dataset">WrapperDataset._dataset</a>
@@ -105,10 +114,22 @@
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Uri_">WrapperDataset.SetActiveGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_VDS_RDF_IRefNode_">WrapperDataset.SetActiveGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__">WrapperDataset.SetActiveGraph(IList&lt;IRefNode&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Uri_">WrapperDataset.SetDefaultGraph(Uri)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__">WrapperDataset.SetDefaultGraph(IEnumerable&lt;Uri&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_VDS_RDF_IRefNode_">WrapperDataset.SetDefaultGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__">WrapperDataset.SetDefaultGraph(IList&lt;IRefNode&gt;)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_ResetActiveGraph">WrapperDataset.ResetActiveGraph()</a>
@@ -123,6 +144,12 @@
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_ActiveGraphUris">WrapperDataset.ActiveGraphUris</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_DefaultGraphNames">WrapperDataset.DefaultGraphNames</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_ActiveGraphNames">WrapperDataset.ActiveGraphNames</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_UsesUnionDefaultGraph">WrapperDataset.UsesUnionDefaultGraph</a>
     </div>
     <div>
@@ -132,16 +159,28 @@
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_RemoveGraph_System_Uri_">WrapperDataset.RemoveGraph(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_RemoveGraph_VDS_RDF_IRefNode_">WrapperDataset.RemoveGraph(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_Graphs">WrapperDataset.Graphs</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GraphUris">WrapperDataset.GraphUris</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GraphNames">WrapperDataset.GraphNames</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_Item_System_Uri_">WrapperDataset.Item[Uri]</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_Item_VDS_RDF_IRefNode_">WrapperDataset.Item[IRefNode]</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetModifiableGraph_System_Uri_">WrapperDataset.GetModifiableGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetModifiableGraph_VDS_RDF_IRefNode_">WrapperDataset.GetModifiableGraph(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_HasTriples">WrapperDataset.HasTriples</a>
@@ -150,13 +189,34 @@
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_ContainsTriple_VDS_RDF_Triple_">WrapperDataset.ContainsTriple(Triple)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_QuotedTriples">WrapperDataset.QuotedTriples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_ContainsQuotedTriple_VDS_RDF_Triple_">WrapperDataset.ContainsQuotedTriple(Triple)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_Triples">WrapperDataset.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicate_System_Uri_">WrapperDataset.GetTriplesWithPredicate(Uri)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubject_VDS_RDF_INode_">WrapperDataset.GetTriplesWithSubject(INode)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithSubject_System_Uri_">WrapperDataset.GetTriplesWithSubject(Uri)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicate_VDS_RDF_INode_">WrapperDataset.GetTriplesWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriples_System_Uri_">WrapperDataset.GetTriples(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriples_VDS_RDF_INode_">WrapperDataset.GetTriples(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithObject_System_Uri_">WrapperDataset.GetTriplesWithObject(Uri)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithObject_VDS_RDF_INode_">WrapperDataset.GetTriplesWithObject(INode)</a>
@@ -169,6 +229,39 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">WrapperDataset.GetTriplesWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuoted_System_Uri_">WrapperDataset.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuoted_VDS_RDF_INode_">WrapperDataset.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithObject_System_Uri_">WrapperDataset.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithObject_VDS_RDF_INode_">WrapperDataset.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithPredicate_VDS_RDF_INode_">WrapperDataset.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithPredicate_System_Uri_">WrapperDataset.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithSubject_VDS_RDF_INode_">WrapperDataset.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithSubject_System_Uri_">WrapperDataset.GetQuotedWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">WrapperDataset.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">WrapperDataset.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">WrapperDataset.GetQuotedWithPredicateObject(INode, INode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Query.Datasets.WrapperDataset.html#VDS_RDF_Query_Datasets_WrapperDataset_Flush">WrapperDataset.Flush()</a>
@@ -201,150 +294,145 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Datasets.html">VDS.RDF.Query.Datasets</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Datasets_WebDemandDataset_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WebDemandDataset : BaseDemandDataset, IConfigurationSerializable, IThreadSafeDataset, ISparqlDataset</code></pre>
+    <pre><code class="lang-csharp hljs">public class WebDemandDataset : BaseDemandDataset, IConfigurationSerializable, IThreadSafeDataset, ISparqlDataset, ITripleIndex</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset.%23ctor(VDS.RDF.Query.Datasets.ISparqlDataset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset.%23ctor(VDS.RDF.Query.Datasets.ISparqlDataset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WebDemandDataset.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/WebDemandDataset.cs/#L41">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Datasets_WebDemandDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.#ctor(VDS.RDF.Query.Datasets.ISparqlDataset)"><a href="#collapsible-VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" class="expander" data-toggle="collapse">WebDemandDataset(ISparqlDataset)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Datasets_WebDemandDataset__ctor_VDS_RDF_Query_Datasets_ISparqlDataset_" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.#ctor(VDS.RDF.Query.Datasets.ISparqlDataset)">WebDemandDataset(ISparqlDataset)</h4>
   <div class="markdown level1 summary"><p>Creates a new Web Demand Dataset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public WebDemandDataset(ISparqlDataset dataset)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></span>
-        <span class="parametername">dataset</span>
-        <p><p>Underlying Dataset.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>Underlying Dataset.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset.TryLoadGraph(System.Uri%2CVDS.RDF.IGraph%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset.TryLoadGraph(System.Uri%2CVDS.RDF.IGraph%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WebDemandDataset.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/WebDemandDataset.cs/#L50">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.TryLoadGraph*"></a>
-  
-  <h4 id="VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.TryLoadGraph(System.Uri,VDS.RDF.IGraph@)"><a href="#collapsible-VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__" class="expander" data-toggle="collapse">TryLoadGraph(Uri, out IGraph)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__" class="collapse in">
+  <h4 id="VDS_RDF_Query_Datasets_WebDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__" data-uid="VDS.RDF.Query.Datasets.WebDemandDataset.TryLoadGraph(System.Uri,VDS.RDF.IGraph@)">TryLoadGraph(Uri, out IGraph)</h4>
   <div class="markdown level1 summary"><p>Tries to load graphs from the web.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool TryLoadGraph(Uri graphUri, out IGraph g)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">graphUri</span>
-        <p><p>Graph URI.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></span>
-        <span class="parametername">g</span>
-        <p><p>Graph.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDemandDataset.html#VDS_RDF_Query_Datasets_BaseDemandDataset_TryLoadGraph_System_Uri_VDS_RDF_IGraph__">BaseDemandDataset.TryLoadGraph(Uri, out IGraph)</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Datasets/WebDemandDataset.cs/#L34" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Datasets_WebDemandDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.WebDemandDataset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Datasets/WebDemandDataset.cs/#L34" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

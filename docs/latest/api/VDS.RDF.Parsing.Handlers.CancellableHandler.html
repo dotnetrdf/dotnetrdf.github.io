@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CancellableHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler">
-  <h1 id="VDS_RDF_Parsing_Handlers_CancellableHandler" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler">Class CancellableHandler
+  
+  
+  <h1 id="VDS_RDF_Parsing_Handlers_CancellableHandler" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler" class="text-break">Class CancellableHandler
   </h1>
   <div class="markdown level0 summary"><p>A RDF Handler which wraps another Handler allowing handling to be cancelled.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,8 +83,12 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html">BaseRdfHandler</a></div>
     <div class="level3"><span class="xref">CancellableHandler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IWrappingRdfHandler.html">IWrappingRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -102,7 +107,25 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_">BaseRdfHandler.HandleTriple(Triple)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuad(Triple, IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -129,7 +152,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -156,467 +188,417 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Handlers.html">VDS.RDF.Parsing.Handlers</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_Handlers_CancellableHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class CancellableHandler : BaseRdfHandler, IWrappingRdfHandler, IRdfHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.%23ctor(VDS.RDF.IRdfHandler)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.%23ctor(VDS.RDF.IRdfHandler)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L44">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.#ctor(VDS.RDF.IRdfHandler)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_" class="expander" data-toggle="collapse">CancellableHandler(IRdfHandler)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler__ctor_VDS_RDF_IRdfHandler_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.#ctor(VDS.RDF.IRdfHandler)">CancellableHandler(IRdfHandler)</h4>
   <div class="markdown level1 summary"><p>Creates a new Cancellable Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CancellableHandler(IRdfHandler handler)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
-        <span class="parametername">handler</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L126">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.AcceptsAll*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.AcceptsAll"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll" class="expander" data-toggle="collapse">AcceptsAll</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.AcceptsAll">AcceptsAll</h4>
   <div class="markdown level1 summary"><p>Gets that this Handler does not accept all Triples.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool AcceptsAll { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll">BaseRdfHandler.AcceptsAll</a></div>
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_AcceptsAll">IRdfHandler.AcceptsAll</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.InnerHandlers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.InnerHandlers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L52">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.InnerHandlers*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.InnerHandlers"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers" class="expander" data-toggle="collapse">InnerHandlers</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_InnerHandlers" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.InnerHandlers">InnerHandlers</h4>
   <div class="markdown level1 summary"><p>Gets the Inner Handler wrapped by this Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;IRdfHandler&gt; InnerHandlers { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IWrappingRdfHandler.html#VDS_RDF_IWrappingRdfHandler_InnerHandlers">IWrappingRdfHandler.InnerHandlers</a></div>
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.Cancel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.Cancel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L130" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L137">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.Cancel*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.Cancel"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel" class="expander" data-toggle="collapse">Cancel()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_Cancel" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.Cancel">Cancel()</h4>
   <div class="markdown level1 summary"><p>Informs the Handler that it should cancel handling at the next point possible assuming handling has not already completed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Cancel()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.EndRdfInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.EndRdfInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L76" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L75">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.EndRdfInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.EndRdfInternal(System.Boolean)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_" class="expander" data-toggle="collapse">EndRdfInternal(Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_EndRdfInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.EndRdfInternal(System.Boolean)">EndRdfInternal(Boolean)</h4>
   <div class="markdown level1 summary"><p>Ends RDF Handling on the inner Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void EndRdfInternal(bool ok)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">ok</span>
-        <p><p>Indicates whether parsing completed without error.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ok</span></td>
+        <td><p>Indicates whether parsing completed without error.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_">BaseRdfHandler.EndRdfInternal(Boolean)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleBaseUriInternal(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleBaseUriInternal(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L87" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L86">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleBaseUriInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleBaseUriInternal(System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_" class="expander" data-toggle="collapse">HandleBaseUriInternal(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleBaseUriInternal_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleBaseUriInternal(System.Uri)">HandleBaseUriInternal(Uri)</h4>
   <div class="markdown level1 summary"><p>Handles Base URIs by passing them to the inner handler and cancelling handling if it has been requested.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleBaseUriInternal(Uri baseUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">baseUri</span>
-        <p><p>Base URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_">BaseRdfHandler.HandleBaseUriInternal(Uri)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleNamespaceInternal(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleNamespaceInternal(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L99" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L97">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleNamespaceInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleNamespaceInternal(System.String,System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_" class="expander" data-toggle="collapse">HandleNamespaceInternal(String, Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleNamespaceInternal_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleNamespaceInternal(System.String,System.Uri)">HandleNamespaceInternal(String, Uri)</h4>
   <div class="markdown level1 summary"><p>Handles Namespace Declarations by passing them to the inner handler and cancelling handling if it has been requested.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleNamespaceInternal(string prefix, Uri namespaceUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">prefix</span>
-        <p><p>Namespace Prefix.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">namespaceUri</span>
-        <p><p>Namespace URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">prefix</span></td>
+        <td><p>Namespace Prefix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">namespaceUri</span></td>
+        <td><p>Namespace URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_">BaseRdfHandler.HandleNamespaceInternal(String, Uri)</a></div>
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleQuadInternal(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L118">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleQuadInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleQuadInternal*"></a>
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleQuadInternal(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuadInternal(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Handles Quads by passing them to the inner handler and cancelling handling if it has been requested.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool HandleQuadInternal(Triple t, IRefNode graph)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The name of the graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_">BaseRdfHandler.HandleQuadInternal(Triple, IRefNode)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L107">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleTripleInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleTripleInternal(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_" class="expander" data-toggle="collapse">HandleTripleInternal(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.HandleTripleInternal(VDS.RDF.Triple)">HandleTripleInternal(Triple)</h4>
   <div class="markdown level1 summary"><p>Handles Triples by passing them to the inner handler and cancelling handling if it has been requested.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleTripleInternal(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_">BaseRdfHandler.HandleTripleInternal(Triple)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L63">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal_" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.StartRdfInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.StartRdfInternal"><a href="#collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal" class="expander" data-toggle="collapse">StartRdfInternal()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_CancellableHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.CancellableHandler.StartRdfInternal">StartRdfInternal()</h4>
   <div class="markdown level1 summary"><p>Starts RDF Handling on the inner Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void StartRdfInternal()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseRdfHandler.html#VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal">BaseRdfHandler.StartRdfInternal()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IWrappingRdfHandler.html">IWrappingRdfHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_VDS_RDF_IGraph_">HandlerExtensions.Apply(IRdfHandler, IGraph)</a>
@@ -624,17 +606,24 @@
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">HandlerExtensions.Apply(IRdfHandler, IEnumerable&lt;Triple&gt;)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/CancellableHandler.cs/#L35" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_CancellableHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.CancellableHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/CancellableHandler.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

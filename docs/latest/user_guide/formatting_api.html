@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Formatting API | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Formatting API | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="formatting-api">Formatting API</h1>
+
+<p>The Formatting API is an collection of APIs found in the <a class="xref" href="../api/VDS.RDF.Writing.Formatting.html"><code>VDS.RDF.Writing.Formatting</code></a> namespace, it is concerned with turning objects like nodes, triples and SPARQL results into strings for display.  The formatting API underpins the writers already seen in the basic tutorial on the <a href="writing_rdf.html">Writing RDF</a> page.</p>
+<p>The API consists of a number of interfaces:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Formatting Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.ICharFormatter.html"><code>ICharFormatter</code></a></td>
+<td>Formats individual characters</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.IUriFormatter.html"><code>IUriFormatter</code></a></td>
+<td>Formats URIs</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.IBaseUriFormatter.html"><code>IBaseUriFormatter</code></a></td>
+<td>Formats Base URI declarations</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.INamespaceFormatter.html"><code>INamespaceFormatter</code></a></td>
+<td>Formats namespace declarations</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.INodeFormatter.html"><code>INodeFormatter</code></a></td>
+<td>Formats <a class="xref" href="../api/VDS.RDF.INode.html">INode</a> instances</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.ITripleFormatter.html"><code>ITripleFormatter</code></a></td>
+<td>Formats <a class="xref" href="../api/VDS.RDF.Triple.html">Triple</a> instances</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.IResultFormatter.html"><code>IResultFormatter</code></a></td>
+<td>Formats <a class="xref" href="../api/VDS.RDF.Query.SparqlResult.html">SparqlResult</a> instances</td>
+</tr>
+</tbody>
+</table>
+<h1 id="basic-usage">Basic Usage</h1>
+<p>Generally you will only want to use one of the higher level interfaces such as <a class="xref" href="../api/VDS.RDF.Writing.Formatting.INodeFormatter.html"><code>INodeFormatter</code></a> or <a class="xref" href="../api/VDS.RDF.Writing.Formatting.ITripleFormatter.html"><code>ITripleFormatter</code></a>.  Both these interfaces define <code>Format(…)</code> methods which take either a <code>Triple</code> or an <code>INode</code> and return a string representation of them. You can also call <code>ToString(…)</code> overloads on <code>Triple</code> and <code>INode</code> which take in a formatter and return the String representation as formatted by that formatter.</p>
+<p>In general any formatter usually provides one or more <code>Format()</code> or <code>FormatX()</code> methods which are used to format specific things.  These methods take the thing to be formatted and return a string.</p>
+<h2 id="example-1">Example 1</h2>
+<p>For example we can format specific nodes:</p>
+<pre><code class="lang-csharp">
+//Assumes that we already have a Graph in the variable g
+NTriplesFormatter formatter = new NTriplesFormatter();
+
+//Want to get only the triples defining types - assumes rdf: prefix is appropriately defined for this Graph
+UriNode rdfType = g.CreateUriNode(&quot;rdf:type&quot;);
+
+//This prints only the subjects of the Triples we find with
+//the predicate rdf:type using NTriples formatting
+foreach (Triple t in g.GetTriplesWithPredicate(rdfType))
+{
+    Console.WriteLine(t.Subject.ToString(formatter));
+}
+</code></pre><h2 id="standard-implementations">Standard Implementations</h2>
+<p>Currently the library has the following formatters available but you can easily define your own:</p>
+<table>
+<thead>
+<tr>
+<th>Formatter</th>
+<th>Format Produced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.CsvFormatter.html"><code>CsvFormatter</code></a></td>
+<td>CSV</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.Notation3Formatter.html"><code>Notation3Formatter</code></a></td>
+<td>Notation 3</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.NQuadsFormatter.html"><code>NQuadsFormatter</code></a></td>
+<td>NQuads</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.NTriplesFormatter.html"><code>NTriplesFormatter</code></a></td>
+<td>NTriples</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.SparqlFormatter.html"><code>SparqlFormatter</code></a></td>
+<td>SPARQL style, can also format queries</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.TsvFormatter.html"><code>TsvFormatter</code></a></td>
+<td>TSV</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.TurtleFormatter.html"><code>TurtleFormatter</code></a></td>
+<td>Turtle</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.UncompressedNotation3Formatter.html"><code>UncompressedNotation3Formatter</code></a></td>
+<td>Uncompressed Notation 3</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Formatting.UncompressedTurtleFormatter.html"><code>UncompressedTurtleFormatter</code></a></td>
+<td>Uncompressed Turtle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-2">Example 2</h2>
+<p>Here&#39;s another example of formatting Triples for display on the console:</p>
+<pre><code class="lang-csharp">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using VDS.RDF;
+using VDS.RDF.Writing.Formatting;
+
+public class FormattingTriplesExample
+{
+  public static void Main(String[] args)
+  {
+    IGraph g = new Graph();
+
+    //Assume we fill our graph with data from somewhere...
+
+    //Create a formatter
+    ITripleFormatter formatter = new TurtleFormatter(g);
+
+    //Print triples with this formatter
+    foreach (Triple t in g.Triples)
+    {
+      Console.WriteLine(t.ToString(formatter));
+    }
+  }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/formatting_api.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

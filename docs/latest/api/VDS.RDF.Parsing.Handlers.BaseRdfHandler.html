@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseRdfHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,19 +69,18 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler">
-  <h1 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler">Class BaseRdfHandler
+  
+  
+  <h1 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler" class="text-break">Class BaseRdfHandler
   </h1>
   <div class="markdown level0 summary"><p>Abstract Base Class for RDF Handlers.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html">BaseHandler</a></div>
     <div class="level2"><span class="xref">BaseRdfHandler</span></div>
-  </div>
-  
       <div class="level3"><a class="xref" href="VDS.RDF.Data.DataTables.DataTableHandler.html">DataTableHandler</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.AnyHandler.html">AnyHandler</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.CancellableHandler.html">CancellableHandler</a></div>
@@ -98,11 +97,31 @@
       <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.UniqueBlankNodesHandler.html">UniqueBlankNodesHandler</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.WriteThroughHandler.html">WriteThroughHandler</a></div>
       <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Handlers.WriteToStoreHandler.html">WriteToStoreHandler</a></div>
-  
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -129,7 +148,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -156,674 +184,649 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Handlers.html">VDS.RDF.Parsing.Handlers</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class BaseRdfHandler : BaseHandler, IRdfHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L187" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L244">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor" class="expander" data-toggle="collapse">BaseRdfHandler()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor">BaseRdfHandler()</h4>
   <div class="markdown level1 summary"><p>Creates a new RDF Handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseRdfHandler()</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseRdfHandler()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.%23ctor(VDS.RDF.INodeFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.%23ctor(VDS.RDF.INodeFactory)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L194" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L251">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor(VDS.RDF.INodeFactory)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_" class="expander" data-toggle="collapse">BaseRdfHandler(INodeFactory)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler__ctor_VDS_RDF_INodeFactory_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.#ctor(VDS.RDF.INodeFactory)">BaseRdfHandler(INodeFactory)</h4>
   <div class="markdown level1 summary"><p>Creates a new RDF Handler using the given Node Factory.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseRdfHandler(INodeFactory factory)</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseRdfHandler(INodeFactory factory)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></span>
-        <span class="parametername">factory</span>
-        <p><p>Node Factory.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></td>
+        <td><span class="parametername">factory</span></td>
+        <td><p>Node Factory.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.AcceptsAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L301" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L384">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.AcceptsAll*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.AcceptsAll"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll" class="expander" data-toggle="collapse">AcceptsAll</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.AcceptsAll">AcceptsAll</h4>
   <div class="markdown level1 summary"><p>Gets whether the Handler will accept all Triples i.e. it will never abort handling early.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract bool AcceptsAll { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_AcceptsAll">IRdfHandler.AcceptsAll</a></div>
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdf(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdf(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L219" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L276">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdf*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdf(System.Boolean)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_" class="expander" data-toggle="collapse">EndRdf(Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdf_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdf(System.Boolean)">EndRdf(Boolean)</h4>
   <div class="markdown level1 summary"><p>Ends the Handling of RDF.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void EndRdf(bool ok)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">ok</span>
-        <p><p>Whether the parsing completed without error.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ok</span></td>
+        <td><p>Whether the parsing completed without error.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_EndRdf_System_Boolean_">IRdfHandler.EndRdf(Boolean)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdfInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdfInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L230" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L287">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdfInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdfInternal(System.Boolean)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_" class="expander" data-toggle="collapse">EndRdfInternal(Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_EndRdfInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.EndRdfInternal(System.Boolean)">EndRdfInternal(Boolean)</h4>
   <div class="markdown level1 summary"><p>Optionally used by derived Handlers to do additional actions on ending RDF handling.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void EndRdfInternal(bool ok)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">ok</span>
-        <p><p>Whether the parsing completed without error.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ok</span></td>
+        <td><p>Whether the parsing completed without error.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUri(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUri(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L262" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L319">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUri*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUri(System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_" class="expander" data-toggle="collapse">HandleBaseUri(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUri_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUri(System.Uri)">HandleBaseUri(Uri)</h4>
   <div class="markdown level1 summary"><p>Handles Base URI declarations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HandleBaseUri(Uri baseUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">baseUri</span>
-        <p><p>Base URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_HandleBaseUri_System_Uri_">IRdfHandler.HandleBaseUri(Uri)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUriInternal(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUriInternal(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L274" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L331">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUriInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUriInternal(System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_" class="expander" data-toggle="collapse">HandleBaseUriInternal(Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleBaseUriInternal_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleBaseUriInternal(System.Uri)">HandleBaseUriInternal(Uri)</h4>
   <div class="markdown level1 summary"><p>Optionally used by derived Handlers to do additional actions on handling Base URI declarations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool HandleBaseUriInternal(Uri baseUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">baseUri</span>
-        <p><p>Base URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespace(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespace(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L239" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L296">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespace*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespace(System.String,System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_" class="expander" data-toggle="collapse">HandleNamespace(String, Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespace_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespace(System.String,System.Uri)">HandleNamespace(String, Uri)</h4>
   <div class="markdown level1 summary"><p>Handles Namespace declarations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HandleNamespace(string prefix, Uri namespaceUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">prefix</span>
-        <p><p>Prefix.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">namespaceUri</span>
-        <p><p>Namespace URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">prefix</span></td>
+        <td><p>Prefix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">namespaceUri</span></td>
+        <td><p>Namespace URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_HandleNamespace_System_String_System_Uri_">IRdfHandler.HandleNamespace(String, Uri)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespaceInternal(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespaceInternal(System.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L252" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L309">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespaceInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespaceInternal(System.String,System.Uri)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_" class="expander" data-toggle="collapse">HandleNamespaceInternal(String, Uri)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleNamespaceInternal_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleNamespaceInternal(System.String,System.Uri)">HandleNamespaceInternal(String, Uri)</h4>
   <div class="markdown level1 summary"><p>Optionally used by derived Handlers to do additional actions on handling namespace declarations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual bool HandleNamespaceInternal(string prefix, Uri namespaceUri)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">prefix</span>
-        <p><p>Prefix.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
-        <span class="parametername">namespaceUri</span>
-        <p><p>Namespace URI.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">prefix</span></td>
+        <td><p>Prefix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">namespaceUri</span></td>
+        <td><p>Namespace URI.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuad(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L355">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuad*"></a>
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuad(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuad(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Handles Quads.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HandleQuad(Triple t, IRefNode graph)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple to handle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The name of the graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a></td>
+        <td><p>Raised if the handler is not currently in a state to handle quads.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTriple(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuadInternal(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L284" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L379">View Source</a>
   </span>
-  
+  <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuadInternal*"></a>
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleQuadInternal(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuadInternal(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Must be overridden by derived handlers to take appropriate Quad handling action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool HandleQuadInternal(Triple t, IRefNode graph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>Name of the graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleQuadInternal_VDS_RDF_Triple_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implementations that expect to only handle triples in the un-named graph SHOULD
+provide an implementation for this method that checks if <code data-dev-comment-type="paramref" class="paramref">graph</code>
+is null and if so perform their standard triple handling processing.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTriple(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L341">View Source</a>
+  </span>
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTriple*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTriple(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_" class="expander" data-toggle="collapse">HandleTriple(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTriple(VDS.RDF.Triple)">HandleTriple(Triple)</h4>
   <div class="markdown level1 summary"><p>Handles Triples.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HandleTriple(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_HandleTriple_VDS_RDF_Triple_">IRdfHandler.HandleTriple(Triple)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L296" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L366">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTripleInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTripleInternal(VDS.RDF.Triple)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_" class="expander" data-toggle="collapse">HandleTripleInternal(Triple)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_HandleTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.HandleTripleInternal(VDS.RDF.Triple)">HandleTripleInternal(Triple)</h4>
   <div class="markdown level1 summary"><p>Must be overridden by derived handlers to take appropriate Triple handling action.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected abstract bool HandleTripleInternal(Triple t)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Triple.html">Triple</a></span>
-        <span class="parametername">t</span>
-        <p><p>Triple.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L202" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L259">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdf*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdf"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf" class="expander" data-toggle="collapse">StartRdf()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdf" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdf">StartRdf()</h4>
   <div class="markdown level1 summary"><p>Starts the Handling of RDF.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void StartRdf()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.IRdfHandler.html#VDS_RDF_IRdfHandler_StartRdf">IRdfHandler.StartRdf()</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdfInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L212" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L269">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal_" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdfInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdfInternal"><a href="#collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal" class="expander" data-toggle="collapse">StartRdfInternal()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_BaseRdfHandler_StartRdfInternal" data-uid="VDS.RDF.Parsing.Handlers.BaseRdfHandler.StartRdfInternal">StartRdfInternal()</h4>
   <div class="markdown level1 summary"><p>Optionally used by derived Handlers to do additional actions on starting RDF handling.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void StartRdfInternal()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_VDS_RDF_IGraph_">HandlerExtensions.Apply(IRdfHandler, IGraph)</a>
@@ -831,17 +834,24 @@
   <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">HandlerExtensions.Apply(IRdfHandler, IEnumerable&lt;Triple&gt;)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/BaseHandler.cs/#L179" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_BaseRdfHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.BaseRdfHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/BaseHandler.cs/#L236" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

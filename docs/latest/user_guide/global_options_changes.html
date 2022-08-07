@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Global Options Changes | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Global Options Changes | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="global-options-changes">Global Options Changes</h1>
+
+<p>One of the architectural changes we have made is to try to move away from using a lot of global static settings in favour of specifying options more closely to where they are moved (e.g. via constructor injection or method arguments). 
+In line with the deprecation policy, we have (where possible) retained the global static as a way of configuring a global default, but marked the property as deprecated. 
+In a small number of cases this has not been possible and the static property has been removed.
+To aid migration, this document goes through each of the static <code>Options</code> class properties in the dotNetRDF 2.7 API and documents how to migrate code making use of that option.</p>
+<h2 id="algebraoptimisation">AlgebraOptimisation</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html"><code>LeviathanQueryProcessor</code></a> constructors.
+See <a href="querying_with_sparql.html#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a> for an example.</p>
+<h2 id="allowmultithreadwriting">AllowMultiThreadWriting</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Writers that support multi-threaded writing now provide a property and a constructor parameter to control the use of this feature.</p>
+<h2 id="defaultcomparisonoptions">DefaultComparisonOptions</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>The desired culture and comparison options for node collation should be set explicitly when creating an <a class="xref" href="../api/VDS.RDF.Query.ISparqlNodeComparer.html">ISparqlNodeComparer</a> instance (such as <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html">SparqlNodeComparer</a>.
+The node comparer to be used in SPARQL queries can be specified as an option when creating a <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a> using the new optional <code>options</code> callback parameter on its constructor.
+The default settings result in ordering that conforms to the SPARQL 1.1 specification.</p>
+<div class="NOTE"><h5>Note</h5><p>The default comparison option for a <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html">SparqlNodeComparer</a> is <code>Ordinal</code>, so to get culture-specific ordering you must both specify the desired culture <em>and</em> set the <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Options">Options</a> property to a value such as <code>CompareOptions.None</code> or <code>CompareOptions.IgnoreCase</code> depending on how you want strings to be compared.</p>
+</div>
+<h2 id="defaultcompressionlevel">DefaultCompressionLevel</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Instead set the compression level to use using the <code>CompressionLevel</code> property of the <code>ICompressingWriter</code>(xref:VDS.RDF.ICompressingWriter) interface.</p>
+<h2 id="defaultculture">DefaultCulture</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>The desired culture and comparison options for node collation should be set explicitly when creating an <a class="xref" href="../api/VDS.RDF.Query.ISparqlNodeComparer.html">ISparqlNodeComparer</a> instance (such as <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html">SparqlNodeComparer</a>.
+The node comparer to be used in SPARQL queries can be specified as an option when creating a <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a> using the new optional <code>options</code> callback parameter on its constructor.
+The default settings result in ordering that conforms to the SPARQL 1.1 specification.</p>
+<div class="NOTE"><h5>Note</h5><p>The default comparison option for a <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html">SparqlNodeComparer</a> is <code>Ordinal</code>, so to get culture-specific ordering you must both specify the desired culture <em>and</em> set the <a class="xref" href="../api/VDS.RDF.Query.SparqlNodeComparer.html#VDS_RDF_Query_SparqlNodeComparer_Options">Options</a> property to a value such as <code>CompareOptions.None</code> or <code>CompareOptions.IgnoreCase</code> depending on how you want strings to be compared.</p>
+</div>
+<h2 id="defaulttokenqueuemode">DefaultTokenQueueMode</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Use the <a class="xref" href="../api/VDS.RDF.Parsing.ITokenisingParser.html#VDS_RDF_Parsing_ITokenisingParser_TokenQueueMode">TokenQueueMode</a> property instead, or pass the desired TokenQueueMode to the constructor of those parsers that support this option.</p>
+<h2 id="forceblockingio">ForceBlockingIO</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>To force use of blocking IO you must now explicitly wrap the source stream/text reader by calling <a class="xref" href="../api/VDS.RDF.Parsing.ParsingTextReader.html#VDS_RDF_Parsing_ParsingTextReader_CreateBlocking_System_IO_TextReader_">CreateBlocking(TextReader)</a> or &lt;xref:VDS.RDF.Parsing.ParsingTextReader.CreateBlocking(System.IO.TextReader, int)&gt;.
+By default all parsers will wrap streams other than memory or file streams in a blocking text reader, so this step should only be necessary in rare circumstances of unexpected latency in file or memory IO.</p>
+<div class="WARNING"><h5>Warning</h5><p>This static property no longer has any affect on the use of blocking IO. To force the use of blocking IO you <em>MUST</em> follow the procedure outlined above.</p>
+</div>
+<h2 id="forcehttpbasicauth">ForceHttpBasicAuth</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>There is currently no replacement for this option.</p>
+<h2 id="fulltripleindexing">FullTripleIndexing</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option can now be set as a constructor parameter on those classes that support full-triple indexing.</p>
+<h2 id="httpdebugging">HttpDebugging</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option has been deprecated. The standard .NET HttpClient library provides a logging facility which clients should use instead.</p>
+<h2 id="httpfulldebugging">HttpFullDebugging</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option has been deprecated. The standard .NET HttpClient library provides a logging facility which clients should use instead.</p>
+<h2 id="internuris">InternUris</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option can now be set on individual <a class="xref" href="../api/VDS.RDF.IUriFactory.html">IUriFactory</a> instances via the <a class="xref" href="../api/VDS.RDF.IUriFactory.html#VDS_RDF_IUriFactory_InternUris">InternUris</a> property.
+To control the interning of URIs in the default factory used by the <a class="xref" href="../api/VDS.RDF.UriFactory.html">UriFactory</a> static class, you can use the <a class="xref" href="../api/VDS.RDF.UriFactory.html#VDS_RDF_UriFactory_InternUris">InternUris</a> property.</p>
+<h2 id="literalequalitymode">LiteralEqualityMode</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property has been moved to <a class="xref" href="../api/VDS.RDF.EqualityHelper.html#VDS_RDF_EqualityHelper_LiteralEqualityMode"><code>EqualityHelper.LiteralEqualityMode</code></a></p>
+<h2 id="literalvaluenormalization">LiteralValueNormalization</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property is now configured on an <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> instance via the <a class="xref" href="../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NormalizeLiteralValues"><code>NormalizeLiteralValues</code></a> property.</p>
+<h2 id="queryallowunknownfunctions">QueryAllowUnknownFunctions</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property is now configured using the <code>AllowUnknownFunctions</code> of <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html#VDS_RDF_Parsing_SparqlQueryParser_AllowUnknownFunctions"><code>SparqlQueryParser</code></a> or <a class="xref" href="../api/VDS.RDF.Parsing.SparqlUpdateParser.html#VDS_RDF_Parsing_SparqlUpdateParser_AllowUnknownFunctions"><code>SparqlUpdateParser</code></a></p>
+<h2 id="querydefaultsyntax">QueryDefaultSyntax</h2>
+<p><strong>REMOVED</strong></p>
+<div class="WARNING"><h5>Warning</h5><p>This property has been removed from the API. </p>
+</div>
+<p>You can specify the syntax to use when parsing a SPARQL query by passing it in as a constructor parameter to the <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html"><code>SparqlQueryParser</code></a>.</p>
+<h2 id="queryexecutiontimeout">QueryExecutionTimeout</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html"><code>LeviathanQueryProcessor</code></a> constructors.
+See <a href="querying_with_sparql.html#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a> for an example.</p>
+<h2 id="queryoptimisation">QueryOptimisation</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Instead set the <code>QueryOptimisation</code> property of <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html#VDS_RDF_Parsing_SparqlQueryParser_QueryOptimisation"><code>SparqlQueryParser</code></a> or <a class="xref" href="../api/VDS.RDF.Parsing.SparqlUpdateParser.html#VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimisation"><code>SparqlUpdateParser</code></a>.</p>
+<h2 id="rigorousevaluation">RigorousEvaluation</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html"><code>LeviathanQueryProcessor</code></a> constructors.
+See <a href="querying_with_sparql.html#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a> for an example.</p>
+<h2 id="strictoperators">StrictOperators</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html"><code>LeviathanQueryProcessor</code></a> constructors.
+See <a href="querying_with_sparql.html#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a> for an example.</p>
+<h2 id="unsafeoptimisation">UnsafeOptimisation</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option applies only to a subset of algebra optimisers and can be enabled by setting the <a class="xref" href="../api/VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_UnsafeOptimisation"><code>UnsafeOptimisation</code></a> property of those <a class="xref" href="../api/VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a> instances that support it.</p>
+<div class="WARNING"><h5>Warning</h5><p>This global setting no longer affects whether any optimisers will apply unsafe optimisations.
+If you want to use unsafe optimisations, you now <em>MUST</em> set that option explicitly on the optimiser.</p>
+</div>
+<h2 id="updateexecutiontimeout">UpdateExecutionTimeout</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Update.LeviathanUpdateProcessor.html"><code>LeviathanUpdateProcessor</code></a> constructors.
+See <a href="updating_with_sparql.html#in-memory-updates">In-Memory Updates</a> for an example.</p>
+<h2 id="uriloadercaching">UriLoaderCaching</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Use <a class="xref" href="../api/VDS.RDF.Parsing.UriLoader.html#VDS_RDF_Parsing_UriLoader_CacheEnabled"><code>UriLoader.CacheEnabled</code></a> instead.</p>
+<h2 id="uriloadertimeout">UriLoaderTimeout</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>Use<a class="xref" href="../api/VDS.RDF.Parsing.UriLoader.html#VDS_RDF_Parsing_UriLoader_Timeout"><code>UriLoader.Timeout</code></a> instead.</p>
+<h2 id="usebomforutf8">UseBomForUtf8</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>To control the use of the UTF-8 BOM, set the appropriate encoding in the writer constructor.</p>
+<h2 id="usedtd">UseDtd</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option can now be set on those readers that supporting parsing an XML DTD via a property and a constructor argument.</p>
+<h2 id="useplinqevaluation">UsePLinqEvaluation</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This property can now be set in the <code>options</code> callback of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html"><code>LeviathanQueryProcessor</code></a> constructors.
+See <a href="querying_with_sparql.html#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a> for an example.</p>
+<h2 id="validateiris">ValidateIris</h2>
+<p><strong>DEPRECATED</strong></p>
+<p>This option to force validation of parsed IRIs was only used in the Turtle parsers and can now be specified in the constructor of those parsers.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/global_options_changes.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

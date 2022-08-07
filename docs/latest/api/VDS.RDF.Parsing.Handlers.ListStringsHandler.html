@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ListStringsHandler
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,12 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler">
-  <h1 id="VDS_RDF_Parsing_Handlers_ListStringsHandler" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler">Class ListStringsHandler
+  
+  
+  <h1 id="VDS_RDF_Parsing_Handlers_ListStringsHandler" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler" class="text-break">Class ListStringsHandler
   </h1>
   <div class="markdown level0 summary"><p>A Results Handler which extracts Literals from one/more variables in a Result Set.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -82,8 +83,11 @@
     <div class="level2"><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html">BaseResultsHandler</a></div>
     <div class="level3"><span class="xref">ListStringsHandler</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -102,10 +106,25 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleVariable_System_String_">BaseResultsHandler.HandleVariable(String)</a>
     </div>
     <div>
-      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResult_VDS_RDF_Query_SparqlResult_">BaseResultsHandler.HandleResult(SparqlResult)</a>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResult_VDS_RDF_Query_ISparqlResult_">BaseResultsHandler.HandleResult(ISparqlResult)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NodeFactory">BaseHandler.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NormalizeLiteralValues">BaseHandler.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_ResolveQName_System_String_">BaseHandler.ResolveQName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_BaseUri">BaseHandler.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_NamespaceMap">BaseHandler.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_UriFactory">BaseHandler.UriFactory</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateBlankNode">BaseHandler.CreateBlankNode()</a>
@@ -132,7 +151,16 @@
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_Uri_">BaseHandler.CreateUriNode(Uri)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode_System_String_">BaseHandler.CreateUriNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateUriNode">BaseHandler.CreateUriNode()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateVariableNode_System_String_">BaseHandler.CreateVariableNode(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_CreateTripleNode_VDS_RDF_Triple_">BaseHandler.CreateTripleNode(Triple)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.BaseHandler.html#VDS_RDF_Parsing_Handlers_BaseHandler_GetNextBlankNodeID">BaseHandler.GetNextBlankNodeID()</a>
@@ -159,379 +187,308 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Parsing.Handlers.html">VDS.RDF.Parsing.Handlers</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class ListStringsHandler : BaseResultsHandler, ISparqlResultsHandler, INodeFactory</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.%23ctor(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.%23ctor(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L146" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L146">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor(System.Collections.Generic.IEnumerable{System.String})"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__" class="expander" data-toggle="collapse">ListStringsHandler(IEnumerable&lt;String&gt;)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_Collections_Generic_IEnumerable_System_String__" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor(System.Collections.Generic.IEnumerable{System.String})">ListStringsHandler(IEnumerable&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Creates a new List Strings handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ListStringsHandler(IEnumerable&lt;string&gt; vars)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</span>
-        <span class="parametername">vars</span>
-        <p><p>Variables to build the list from.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to build the list from.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L137" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L137">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor(System.String)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_" class="expander" data-toggle="collapse">ListStringsHandler(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler__ctor_System_String_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.#ctor(System.String)">ListStringsHandler(String)</h4>
   <div class="markdown level1 summary"><p>Creates a new List Strings handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ListStringsHandler(string var)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">var</span>
-        <p><p>Variable to build the list from.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">var</span></td>
+        <td><p>Variable to build the list from.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.Strings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.Strings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L157" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L157">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.Strings*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.Strings"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings" class="expander" data-toggle="collapse">Strings</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_Strings" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.Strings">Strings</h4>
   <div class="markdown level1 summary"><p>Gets the Strings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Strings { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleBooleanResultInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleBooleanResultInternal(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L177" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L177">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleBooleanResultInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleBooleanResultInternal(System.Boolean)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_" class="expander" data-toggle="collapse">HandleBooleanResultInternal(Boolean)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleBooleanResultInternal_System_Boolean_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleBooleanResultInternal(System.Boolean)">HandleBooleanResultInternal(Boolean)</h4>
   <div class="markdown level1 summary"><p>Handles boolean results.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void HandleBooleanResultInternal(bool result)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">result</span>
-        <p><p>Result.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">result</span></td>
+        <td><p>Result.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleBooleanResultInternal_System_Boolean_">BaseResultsHandler.HandleBooleanResultInternal(Boolean)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleResultInternal(VDS.RDF.Query.SparqlResult)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_ISparqlResult_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleResultInternal(VDS.RDF.Query.ISparqlResult)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L198" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L198">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleResultInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleResultInternal(VDS.RDF.Query.SparqlResult)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_" class="expander" data-toggle="collapse">HandleResultInternal(SparqlResult)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleResultInternal_VDS_RDF_Query_ISparqlResult_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleResultInternal(VDS.RDF.Query.ISparqlResult)">HandleResultInternal(ISparqlResult)</h4>
   <div class="markdown level1 summary"><p>Handles results by extracting strings from relevant variables.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override bool HandleResultInternal(SparqlResult result)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override bool HandleResultInternal(ISparqlResult result)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlResult.html">SparqlResult</a></span>
-        <span class="parametername">result</span>
-        <p><p>Result.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.ISparqlResult.html">ISparqlResult</a></td>
+        <td><span class="parametername">result</span></td>
+        <td><p>Result.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResultInternal_VDS_RDF_Query_SparqlResult_">BaseResultsHandler.HandleResultInternal(SparqlResult)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
+  <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleResultInternal_VDS_RDF_Query_ISparqlResult_">BaseResultsHandler.HandleResultInternal(ISparqlResult)</a></div>
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleVariableInternal(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleVariableInternal(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L187" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L187">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleVariableInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleVariableInternal(System.String)"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_" class="expander" data-toggle="collapse">HandleVariableInternal(String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_HandleVariableInternal_System_String_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.HandleVariableInternal(System.String)">HandleVariableInternal(String)</h4>
   <div class="markdown level1 summary"><p>Handles variable declarations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override bool HandleVariableInternal(string var)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">var</span>
-        <p><p>Variable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">var</span></td>
+        <td><p>Variable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_HandleVariableInternal_System_String_">BaseResultsHandler.HandleVariableInternal(String)</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.StartResultsInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler.StartResultsInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L168" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L168">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal_" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.StartResultsInternal*"></a>
-  
-  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.StartResultsInternal"><a href="#collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal" class="expander" data-toggle="collapse">StartResultsInternal()</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal" class="collapse in">
+  <h4 id="VDS_RDF_Parsing_Handlers_ListStringsHandler_StartResultsInternal" data-uid="VDS.RDF.Parsing.Handlers.ListStringsHandler.StartResultsInternal">StartResultsInternal()</h4>
   <div class="markdown level1 summary"><p>Starts handling results.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void StartResultsInternal()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Parsing.Handlers.BaseResultsHandler.html#VDS_RDF_Parsing_Handlers_BaseResultsHandler_StartResultsInternal">BaseResultsHandler.StartResultsInternal()</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+  <div>
       <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlResultSet_">HandlerExtensions.Apply(ISparqlResultsHandler, SparqlResultSet)</a>
   </div>
-  
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Parsing/Handlers/ListUrisHandler.cs/#L127" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Parsing_Handlers_ListStringsHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Handlers.ListStringsHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Parsing/Handlers/ListUrisHandler.cs/#L127" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

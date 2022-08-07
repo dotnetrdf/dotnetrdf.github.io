@@ -1,0 +1,874 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class VirtuosoConnector
+   | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class VirtuosoConnector
+   | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.VirtuosoConnector">
+  
+  
+  <h1 id="VDS_RDF_Storage_VirtuosoConnector" data-uid="VDS.RDF.Storage.VirtuosoConnector" class="text-break">Class VirtuosoConnector
+  </h1>
+  <div class="markdown level0 summary"><p>A connector for accessing the native Virtuoso Quad Store.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html">BaseAsyncSafeConnector</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html">VirtuosoConnectorBase</a></div>
+    <div class="level3"><span class="xref">VirtuosoConnector</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.ITransactionalStorage.html">ITransactionalStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DefaultPort">VirtuosoConnectorBase.DefaultPort</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DefaultDB">VirtuosoConnectorBase.DefaultDB</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_IsReady">VirtuosoConnectorBase.IsReady</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_IsReadOnly">VirtuosoConnectorBase.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_IOBehaviour">VirtuosoConnectorBase.IOBehaviour</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UpdateSupported">VirtuosoConnectorBase.UpdateSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DeleteSupported">VirtuosoConnectorBase.DeleteSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_ListGraphsSupported">VirtuosoConnectorBase.ListGraphsSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_HasOpenConnection">VirtuosoConnectorBase.HasOpenConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_HasActiveTransaction">VirtuosoConnectorBase.HasActiveTransaction</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbServer">VirtuosoConnectorBase._dbServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbName">VirtuosoConnectorBase._dbName</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbUser">VirtuosoConnectorBase._dbUser</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbPassword">VirtuosoConnectorBase._dbPassword</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbPort">VirtuosoConnectorBase._dbPort</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbTimeout">VirtuosoConnectorBase._dbTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__db">VirtuosoConnectorBase._db</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__dbTransaction">VirtuosoConnectorBase._dbTransaction</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__keepOpen">VirtuosoConnectorBase._keepOpen</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__customConnectionString">VirtuosoConnectorBase._customConnectionString</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase__formatter">VirtuosoConnectorBase._formatter</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_LoadGraph_VDS_RDF_IRdfHandler_Uri_">VirtuosoConnectorBase.LoadGraph(IRdfHandler, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_Open_System_Boolean_IsolationLevel_">VirtuosoConnectorBase.Open(Boolean, IsolationLevel)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_Close_System_Boolean_System_Boolean_">VirtuosoConnectorBase.Close(Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_SaveGraphInternal_VDS_RDF_IGraph_">VirtuosoConnectorBase.SaveGraphInternal(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_ExecuteNonQuery_System_String_">VirtuosoConnectorBase.ExecuteNonQuery(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UpdateGraph_Uri_IEnumerable_VDS_RDF_Triple__IEnumerable_VDS_RDF_Triple__">VirtuosoConnectorBase.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UpdateGraph_System_String_IEnumerable_VDS_RDF_Triple__IEnumerable_VDS_RDF_Triple__">VirtuosoConnectorBase.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UpdateGraph_VDS_RDF_IRefNode_IEnumerable_VDS_RDF_Triple__IEnumerable_VDS_RDF_Triple__">VirtuosoConnectorBase.UpdateGraph(IRefNode, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DeleteGraph_Uri_">VirtuosoConnectorBase.DeleteGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DeleteGraph_System_String_">VirtuosoConnectorBase.DeleteGraph(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_ListGraphs">VirtuosoConnectorBase.ListGraphs()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_ListGraphNames">VirtuosoConnectorBase.ListGraphNames()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_SerializeConfiguration_VDS_RDF_Configuration_ConfigurationSerializationContext_">VirtuosoConnectorBase.SerializeConfiguration(ConfigurationSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_Query_System_String_">VirtuosoConnectorBase.Query(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">VirtuosoConnectorBase.Query(IRdfHandler, ISparqlResultsHandler, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_LoadNode_VDS_RDF_INodeFactory_System_Object_">VirtuosoConnectorBase.LoadNode(INodeFactory, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UnmarshalName_VDS_RDF_IRefNode_">VirtuosoConnectorBase.UnmarshalName(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UnmarshalUri_Uri_">VirtuosoConnectorBase.UnmarshalUri(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_ParentServer">BaseAsyncSafeConnector.ParentServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_AsyncParentServer">BaseAsyncSafeConnector.AsyncParentServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UriFactory">BaseAsyncSafeConnector.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_">BaseAsyncSafeConnector.LoadGraph(IGraph, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_">BaseAsyncSafeConnector.LoadGraph(IRdfHandler, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_VDS_RDF_IRefNode_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">BaseAsyncSafeConnector.UpdateGraph(IRefNode, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">BaseAsyncSafeConnector.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">BaseAsyncSafeConnector.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_">BaseAsyncSafeConnector.DeleteGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.LoadGraph(IGraph, Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.LoadGraph(IGraph, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.LoadGraph(IRdfHandler, Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.LoadGraph(IRdfHandler, String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraphAsync_VDS_RDF_IGraph_System_String_System_Threading_CancellationToken_">BaseAsyncSafeConnector.LoadGraphAsync(IGraph, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken_">BaseAsyncSafeConnector.LoadGraphAsync(IRdfHandler, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.SaveGraph(IGraph, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraphAsync_VDS_RDF_IGraph_System_Threading_CancellationToken_">BaseAsyncSafeConnector.SaveGraphAsync(IGraph, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_UpdateGraphAsync_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_">BaseAsyncSafeConnector.UpdateGraphAsync(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.DeleteGraph(Uri, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.DeleteGraph(String, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_DeleteGraphAsync_System_String_System_Threading_CancellationToken_">BaseAsyncSafeConnector.DeleteGraphAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">BaseAsyncSafeConnector.ListGraphs(AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_ListGraphsAsync_System_Threading_CancellationToken_">BaseAsyncSafeConnector.ListGraphsAsync(CancellationToken)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.html">VDS.RDF.Storage</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.Data.Virtuoso.dll</h6>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class VirtuosoConnector : VirtuosoConnectorBase, IAsyncStorageProvider, ITransactionalStorage, IUpdateableStorage, IQueryableStorage, IStorageProvider, IStorageCapabilities, IConfigurationSerializable</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+This class implements <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> allowing it to be used with any of
+the general classes that support this interface as well as the Virtuoso specific classes.
+</p>
+<p>
+This class supports user-controlled transactions via to <a class="xref" href="VDS.RDF.Storage.ITransactionalStorage.html">ITransactionalStorage</a> interface.
+Calls to methods outside of a user-controlled transaction will take place in their own transaction which will
+be auto-committed on success if required.
+</p>
+<p>
+Although this class takes a Database Name to ensure compatibility with any Virtuoso installation
+(i.e. this allows for the Native Quad Store to be in a non-standard database) generally you should always
+specify <strong>DB</strong> as the Database Name parameter.
+</p>
+<p>
+Virtuoso automatically assigns IDs to Blank Nodes input into it, these IDs are <strong>not</strong> based on
+the actual Blank Node ID so inputting a Blank Node with the same ID multiple times will result in multiple
+Nodes being created in Virtuoso.  This means that data containing Blank Nodes which is stored to Virtuoso and
+then retrieved will have different Blank Node IDs to those input.  In addition there is no guarantee that when
+you save a Graph containing Blank Nodes into Virtuoso that retrieving it will give the same Blank Node IDs
+even if the Graph being saved was originally retrieved from Virtuoso.  Finally please see the remarks on the
+<a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_UpdateGraph_Uri_IEnumerable_VDS_RDF_Triple__IEnumerable_VDS_RDF_Triple__">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;)</a>
+method which deal with how insertion and deletion of triples containing blank nodes into existing graphs operates.
+</p>
+<p>
+You can use a null Uri or an empty String as a Uri to indicate that operations should affect the Default Graph.  Where the argument is only a Graph a null <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Name">Name</a> property indicates that the Graph affects the Default Graph.
+</p>
+<p>
+The bulk update operations on a graph: <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_SaveGraph_VDS_RDF_IGraph_">SaveGraph(IGraph)</a>, <see cref="!:VirtuosoConnectorBase.DeleteGraph(String)"></see>
+and <a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_DeleteGraph_Uri_">DeleteGraph(Uri)</a> will autocommit their updates regardless of the use of
+<a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Begin">Begin()</a>, <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Commit">Commit()</a> or <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Rollback">Rollback()</a>. This is default Virtuoso behaviour which enables
+these methods to handle updates on large graphs.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L119">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector__ctor_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor(System.String)">VirtuosoConnector(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a Manager for a Virtuoso Native Quad Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VirtuosoConnector(string connectionString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">connectionString</span></td>
+        <td><p>Connection String.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector__ctor_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Allows the end user to specify a customized connection string.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.%23ctor(System.String%2CSystem.Int32%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L90">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector__ctor_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Int32)">VirtuosoConnector(String, Int32, String, String, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a Manager for a Virtuoso Native Quad Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VirtuosoConnector(string server, int port, string db, string user, string password, int timeout = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">server</span></td>
+        <td><p>Server.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">port</span></td>
+        <td><p>Port.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">db</span></td>
+        <td><p>Database Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>Username.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>Connection Timeout in Seconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_System_Int32_System_String_System_String_System_String_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Timeouts less than equal to zero are ignored and treated as using the default timeout which is dictated by the underlying Virtuoso ADO.Net provider.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_System_String_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L107">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector__ctor_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector__ctor_System_String_System_String_System_String_System_Int32_" data-uid="VDS.RDF.Storage.VirtuosoConnector.#ctor(System.String,System.String,System.String,System.Int32)">VirtuosoConnector(String, String, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a Manager for a Virtuoso Native Quad Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VirtuosoConnector(string db, string user, string password, int timeout = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">db</span></td>
+        <td><p>Database Name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>Username.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>Connection Timeout in Seconds.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_Begin.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.Begin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L222">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_Begin_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Begin*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_Begin" data-uid="VDS.RDF.Storage.VirtuosoConnector.Begin">Begin()</h4>
+  <div class="markdown level1 summary"><p>Begins a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Begin()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_Commit.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.Commit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L228">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_Commit_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Commit*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_Commit" data-uid="VDS.RDF.Storage.VirtuosoConnector.Commit">Commit()</h4>
+  <div class="markdown level1 summary"><p>Commits a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Commit()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L244">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_Dispose_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Dispose*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_Dispose" data-uid="VDS.RDF.Storage.VirtuosoConnector.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes of the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_Dispose">BaseAsyncSafeConnector.Dispose()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IGraph_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L130">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IGraph_System_String_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IGraph,System.String)">LoadGraph(IGraph, String)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadGraph(IGraph g, string graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IGraph_System_String_">BaseAsyncSafeConnector.LoadGraph(IGraph, String)</a></div>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IGraph_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If the Graph being loaded into is Empty then it&apos;s Base Uri should become the Uri of the Graph being loaded, otherwise it should be merged into the existing non-empty Graph whose Base Uri should be unaffected.
+</p>
+<p>
+Behaviour of this method with regards to non-existent Graphs is up to the implementor, an empty Graph may be returned or an error thrown.  Implementors <strong>should</strong> state in the XML comments for their implementation what behaviour is implemented.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IGraph_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IGraph%2CUri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L124">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IGraph_Uri_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IGraph,Uri)">LoadGraph(IGraph, Uri)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadGraph(IGraph g, Uri graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L136">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_" data-uid="VDS.RDF.Storage.VirtuosoConnector.LoadGraph(VDS.RDF.IRdfHandler,System.String)">LoadGraph(IRdfHandler, String)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadGraph(IRdfHandler handler, string graphUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_">BaseAsyncSafeConnector.LoadGraph(IRdfHandler, String)</a></div>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Behaviour of this method with regards to non-existent Graphs is up to the implementor, an empty Graph may be returned or an error thrown.  Implementors <strong>should</strong> state in the XML comments for their implementation what behaviour is implemented.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_Rollback.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.Rollback%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L234">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_Rollback_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Rollback*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_Rollback" data-uid="VDS.RDF.Storage.VirtuosoConnector.Rollback">Rollback()</h4>
+  <div class="markdown level1 summary"><p>Rolls back a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Rollback()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_SaveGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.SaveGraph(VDS.RDF.IGraph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L149">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_SaveGraph_" data-uid="VDS.RDF.Storage.VirtuosoConnector.SaveGraph*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_SaveGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Storage.VirtuosoConnector.SaveGraph(VDS.RDF.IGraph)">SaveGraph(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Saves a Graph to the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SaveGraph(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.BaseAsyncSafeConnector.html#VDS_RDF_Storage_BaseAsyncSafeConnector_SaveGraph_VDS_RDF_IGraph_">BaseAsyncSafeConnector.SaveGraph(IGraph)</a></div>
+  <h5 id="VDS_RDF_Storage_VirtuosoConnector_SaveGraph_VDS_RDF_IGraph__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This implementation of this method uses Virtuoso&apos;s row auto-commit feature to allow loading large graphs. This means
+that the graph will be committed to the Virtuoso server, regardless of the use of <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Begin">Begin()</a> and <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Commit">Commit()</a> or <a class="xref" href="VDS.RDF.Storage.VirtuosoConnector.html#VDS_RDF_Storage_VirtuosoConnector_Rollback">Rollback()</a>
+to control the transaction.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_ToString.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L250">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_ToString_" data-uid="VDS.RDF.Storage.VirtuosoConnector.ToString*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_ToString" data-uid="VDS.RDF.Storage.VirtuosoConnector.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector_Update_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector.Update(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L165">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_VirtuosoConnector_Update_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Update*"></a>
+  <h4 id="VDS_RDF_Storage_VirtuosoConnector_Update_System_String_" data-uid="VDS.RDF.Storage.VirtuosoConnector.Update(System.String)">Update(String)</h4>
+  <div class="markdown level1 summary"><p>Processes a SPARQL Update command against the underlying Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update(string sparqlUpdate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlUpdate</span></td>
+        <td><p>SPARQL Update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Storage.VirtuosoConnectorBase.html#VDS_RDF_Storage_VirtuosoConnectorBase_Update_System_String_">VirtuosoConnectorBase.Update(String)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.ITransactionalStorage.html">ITransactionalStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IUpdateableStorage.html">IUpdateableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Configuration.IConfigurationSerializable.html">IConfigurationSerializable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_VirtuosoConnector.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.VirtuosoConnector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf.Data.Virtuoso/VirtuosoConnector.cs/#L75" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

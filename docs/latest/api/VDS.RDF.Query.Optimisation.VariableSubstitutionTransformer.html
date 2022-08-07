@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class VariableSubstitutionTransformer
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,20 +69,24 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer">
-  <h1 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer">Class VariableSubstitutionTransformer
+  
+  
+  <h1 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer" class="text-break">Class VariableSubstitutionTransformer
   </h1>
   <div class="markdown level0 summary"><p>An optimiser for walking algebra and expression trees and replacing a Variable with another Variable or a Constant.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="VDS.RDF.Query.Expressions.PrimaryExpressionSubstituter.html">PrimaryExpressionSubstituter</a></div>
     <div class="level2"><span class="xref">VariableSubstitutionTransformer</span></div>
   </div>
-  
-  
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Expressions.IExpressionTransformer.html">IExpressionTransformer</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -110,426 +114,395 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Query.Optimisation.html">VDS.RDF.Query.Optimisation</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class VariableSubstitutionTransformer : PrimaryExpressionSubstituter, IExpressionTransformer, IAlgebraOptimiser</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="constructors">Constructors
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L61">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor(System.String,System.String)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_" class="expander" data-toggle="collapse">VariableSubstitutionTransformer(String, String)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_System_String_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor(System.String,System.String)">VariableSubstitutionTransformer(String, String)</h4>
   <div class="markdown level1 summary"><p>Create a transform that replaces one variable with another.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public VariableSubstitutionTransformer(string findVar, string replaceVar)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">findVar</span>
-        <p><p>Find Variable.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">replaceVar</span>
-        <p><p>Replace Variable.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">findVar</span></td>
+        <td><p>Find Variable.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">replaceVar</span></td>
+        <td><p>Replace Variable.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.%23ctor(System.String%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.%23ctor(System.String%2CVDS.RDF.INode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L72" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L75">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor(System.String,VDS.RDF.INode)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_" class="expander" data-toggle="collapse">VariableSubstitutionTransformer(String, INode)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer__ctor_System_String_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.#ctor(System.String,VDS.RDF.INode)">VariableSubstitutionTransformer(String, INode)</h4>
   <div class="markdown level1 summary"><p>Create a transform that replaces a variable with a constant.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public VariableSubstitutionTransformer(string findVar, INode replaceTerm)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">findVar</span>
-        <p><p>Find Variable.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.INode.html">INode</a></span>
-        <span class="parametername">replaceTerm</span>
-        <p><p>Replace Constant.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">findVar</span></td>
+        <td><p>Find Variable.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">replaceTerm</span></td>
+        <td><p>Replace Constant.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.CanReplaceObjects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.CanReplaceObjects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L92" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L95">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.CanReplaceObjects*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.CanReplaceObjects"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects" class="expander" data-toggle="collapse">CanReplaceObjects</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.CanReplaceObjects">CanReplaceObjects</h4>
   <div class="markdown level1 summary"><p>Gets/Sets whethe the Transformer is allowed to replace objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CanReplaceObjects { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
   <h5 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_CanReplaceObjects_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 The transformer will intelligently select this depending on whether it is replacing with a constant (defaults to true) or a variable (defaults to false),  when replacing a variable the behaviour changes automatically.  If you set it explicitly the transformer will respect your setting regardless.
 </p>
 </div>
-  
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_UnsafeOptimisation.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.UnsafeOptimisation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L54">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_UnsafeOptimisation_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.UnsafeOptimisation*"></a>
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_UnsafeOptimisation" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.UnsafeOptimisation">UnsafeOptimisation</h4>
+  <div class="markdown level1 summary"><p>Determines whether an Optimiser will perform algebra optimizations that are potentially unsafe at execution time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UnsafeOptimisation { get; set; }</code></pre>
   </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L216" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L235">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Query.SparqlQuery)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_" class="expander" data-toggle="collapse">IsApplicable(SparqlQuery)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Query.SparqlQuery)">IsApplicable(SparqlQuery)</h4>
   <div class="markdown level1 summary"><p>Returns false because this optimiser is never globally applicable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlQuery q)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></span>
-        <span class="parametername">q</span>
-        <p><p>Query.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></td>
+        <td><span class="parametername">q</span></td>
+        <td><p>Query.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_">IAlgebraOptimiser.IsApplicable(SparqlQuery)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L226" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L245">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" class="expander" data-toggle="collapse">IsApplicable(SparqlUpdateCommandSet)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)">IsApplicable(SparqlUpdateCommandSet)</h4>
   <div class="markdown level1 summary"><p>Returns false because this optimiser is never globally applicable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlUpdateCommandSet cmds)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></span>
-        <span class="parametername">cmds</span>
-        <p><p>Update Commands.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td><span class="parametername">cmds</span></td>
+        <td><p>Update Commands.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_">IAlgebraOptimiser.IsApplicable(SparqlUpdateCommandSet)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L113">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.Optimise*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="expander" data-toggle="collapse">Optimise(ISparqlAlgebra)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)">Optimise(ISparqlAlgebra)</h4>
   <div class="markdown level1 summary"><p>Attempts to do variable substitution within the given algebra.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISparqlAlgebra Optimise(ISparqlAlgebra algebra)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></span>
-        <span class="parametername">algebra</span>
-        <p><p>Algebra.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td><span class="parametername">algebra</span></td>
+        <td><p>Algebra.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Algebra.ISparqlAlgebra.html">ISparqlAlgebra</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html#VDS_RDF_Query_Optimisation_IAlgebraOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_">IAlgebraOptimiser.Optimise(ISparqlAlgebra)</a></div>
-  
-  
-  
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.SubstitutePrimaryExpression(VDS.RDF.Query.Expressions.ISparqlExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.SubstitutePrimaryExpression(VDS.RDF.Query.Expressions.ISparqlExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L236" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L255">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.SubstitutePrimaryExpression*"></a>
-  
-  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.SubstitutePrimaryExpression(VDS.RDF.Query.Expressions.ISparqlExpression)"><a href="#collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" class="expander" data-toggle="collapse">SubstitutePrimaryExpression(ISparqlExpression)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" class="collapse in">
+  <h4 id="VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_" data-uid="VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer.SubstitutePrimaryExpression(VDS.RDF.Query.Expressions.ISparqlExpression)">SubstitutePrimaryExpression(ISparqlExpression)</h4>
   <div class="markdown level1 summary"><p>Tries to substitute variables within primary expressions.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override ISparqlExpression SubstitutePrimaryExpression(ISparqlExpression expr)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a></span>
-        <span class="parametername">expr</span>
-        <p><p>Expression.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a></td>
+        <td><span class="parametername">expr</span></td>
+        <td><p>Expression.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
   <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a>
-        <p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Expressions.ISparqlExpression.html">ISparqlExpression</a></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="VDS.RDF.Query.Expressions.PrimaryExpressionSubstituter.html#VDS_RDF_Query_Expressions_PrimaryExpressionSubstituter_SubstitutePrimaryExpression_VDS_RDF_Query_Expressions_ISparqlExpression_">PrimaryExpressionSubstituter.SubstitutePrimaryExpression(ISparqlExpression)</a></div>
-  
-  
-  
-  
-  
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Expressions.IExpressionTransformer.html">IExpressionTransformer</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Query/Optimisation/VariableSubstitutionTransformer.cs/#L43" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Query_Optimisation_VariableSubstitutionTransformer.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.VariableSubstitutionTransformer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Query/Optimisation/VariableSubstitutionTransformer.cs/#L43" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

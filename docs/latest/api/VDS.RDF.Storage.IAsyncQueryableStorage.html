@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAsyncQueryableStorage
    | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -69,14 +69,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage">
-  <h1 id="VDS_RDF_Storage_IAsyncQueryableStorage" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage">Interface IAsyncQueryableStorage
+  
+  
+  <h1 id="VDS_RDF_Storage_IAsyncQueryableStorage" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage" class="text-break">Interface IAsyncQueryableStorage
   </h1>
   <div class="markdown level0 summary"><p>Interface for storage providers which allow SPARQL Queries to be made against them asynchronously.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
-  
-  
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -95,7 +94,16 @@
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.LoadGraph(IRdfHandler, String, AsyncStorageCallback, Object)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_LoadGraphAsync_VDS_RDF_IGraph_System_String_System_Threading_CancellationToken_">IAsyncStorageProvider.LoadGraphAsync(IGraph, String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken_">IAsyncStorageProvider.LoadGraphAsync(IRdfHandler, String, CancellationToken)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.SaveGraph(IGraph, AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_SaveGraphAsync_VDS_RDF_IGraph_System_Threading_CancellationToken_">IAsyncStorageProvider.SaveGraphAsync(IGraph, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
@@ -104,13 +112,22 @@
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.UpdateGraph(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, Object)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_UpdateGraphAsync_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_">IAsyncStorageProvider.UpdateGraphAsync(String, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, CancellationToken)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.DeleteGraph(Uri, AsyncStorageCallback, Object)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.DeleteGraph(String, AsyncStorageCallback, Object)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_DeleteGraphAsync_System_String_System_Threading_CancellationToken_">IAsyncStorageProvider.DeleteGraphAsync(String, CancellationToken)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">IAsyncStorageProvider.ListGraphs(AsyncStorageCallback, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html#VDS_RDF_Storage_IAsyncStorageProvider_ListGraphsAsync_System_Threading_CancellationToken_">IAsyncStorageProvider.ListGraphsAsync(CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReady">IStorageCapabilities.IsReady</a>
@@ -134,239 +151,327 @@
       <span class="xref">System.IDisposable.Dispose()</span>
     </div>
   </div>
-  
   <h6><strong>Namespace</strong>: <a class="xref" href="VDS.RDF.Storage.html">VDS.RDF.Storage</a></h6>
-  <h6><strong>Assembly</strong>: dotNetRDF.dll</h6>
-  
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Storage_IAsyncQueryableStorage_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IAsyncQueryableStorage : IAsyncStorageProvider, IStorageCapabilities, IDisposable</code></pre>
   </div>
-  
-  
-  
-  
-  
   <h3 id="methods">Methods
   </h3>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.Query(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.Query(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/IStorageProvider.cs/#L469" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/IAsyncQueryableStorage.cs/#L50">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query*"></a>
-  
-  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">Query(String, AsyncStorageCallback, Object)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">Query(String, AsyncStorageCallback, Object)</h4>
   <div class="markdown level1 summary"><p>Queries the store asynchronously.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Query(string sparqlQuery, AsyncStorageCallback callback, object state)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method is obsolete and will be removed in a future version. Replaced by QueryAsync(string, CancellationToken)&quot;)]
+void Query(string sparqlQuery, AsyncStorageCallback callback, object state)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sparqlQuery</span>
-        <p><p>SPARQL Query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
-        <span class="parametername">callback</span>
-        <p><p>Callback.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Object</span></span>
-        <span class="parametername">state</span>
-        <p><p>State to pass to the callback.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a>
-        <p><p>Thrown if an error occurs performing the query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Storage.RdfStorageException.html">RdfStorageException</a>
-        <p><p>Thrown if an error occurs performing the query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a>
-        <p><p>Thrown if the query is invalid when validated by dotNetRDF prior to passing the query request to the store or if the request succeeds but the store returns malformed results.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.RdfParserSelectionException.html">RdfParserSelectionException</a>
-        <p><p>Thrown if the store returns results in a format dotNetRDF does not understand.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown if an error occurs performing the query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.RdfStorageException.html">RdfStorageException</a></td>
+        <td><p>Thrown if an error occurs performing the query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a></td>
+        <td><p>Thrown if the query is invalid when validated by dotNetRDF prior to passing the query request to the store or if the request succeeds but the store returns malformed results.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParserSelectionException.html">RdfParserSelectionException</a></td>
+        <td><p>Thrown if the store returns results in a format dotNetRDF does not understand.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  </div>
-  
   <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.Query(VDS.RDF.IRdfHandler%2CVDS.RDF.ISparqlResultsHandler%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.Query(VDS.RDF.IRdfHandler%2CVDS.RDF.ISparqlResultsHandler%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/IStorageProvider.cs/#L483" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/IAsyncQueryableStorage.cs/#L65">View Source</a>
   </span>
-  
   <a id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query*"></a>
-  
-  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query(VDS.RDF.IRdfHandler,VDS.RDF.ISparqlResultsHandler,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)"><a href="#collapsible-VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="expander" data-toggle="collapse">Query(IRdfHandler, ISparqlResultsHandler, String, AsyncStorageCallback, Object)</a></h4>
-  
-  <div id="collapsible-VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" class="collapse in">
+  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_Query_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.Query(VDS.RDF.IRdfHandler,VDS.RDF.ISparqlResultsHandler,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">Query(IRdfHandler, ISparqlResultsHandler, String, AsyncStorageCallback, Object)</h4>
   <div class="markdown level1 summary"><p>Queries the store asynchronously.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Query(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, string sparqlQuery, AsyncStorageCallback callback, object state)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Replaced by QueryAsync(IRdfHandler, ISparqlResultsHandler, string&quot;)]
+void Query(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, string sparqlQuery, AsyncStorageCallback callback, object state)</code></pre>
   </div>
-  
   <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></span>
-        <span class="parametername">rdfHandler</span>
-        <p><p>RDF Handler.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></span>
-        <span class="parametername">resultsHandler</span>
-        <p><p>Results Handler.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sparqlQuery</span>
-        <p><p>SPARQL Query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></span>
-        <span class="parametername">callback</span>
-        <p><p>Callback.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Object</span></span>
-        <span class="parametername">state</span>
-        <p><p>State to pass to the callback.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">rdfHandler</span></td>
+        <td><p>RDF Handler.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></td>
+        <td><span class="parametername">resultsHandler</span></td>
+        <td><p>Results Handler.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <h5 class="exceptions">Exceptions</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a>
-        <p><p>Thrown if an error occurs performing the query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Storage.RdfStorageException.html">RdfStorageException</a>
-        <p><p>Thrown if an error occurs performing the query.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a>
-        <p><p>Thrown if the query is invalid when validated by dotNetRDF prior to passing the query request to the store or if the request succeeds but the store returns malformed results.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a class="xref" href="VDS.RDF.Parsing.RdfParserSelectionException.html">RdfParserSelectionException</a>
-        <p><p>Thrown if the store returns results in a format dotNetRDF does not understand.</p>
-</p>
-      </td>
-    </tr>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td><p>Thrown if an error occurs performing the query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.RdfStorageException.html">RdfStorageException</a></td>
+        <td><p>Thrown if an error occurs performing the query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a></td>
+        <td><p>Thrown if the query is invalid when validated by dotNetRDF prior to passing the query request to the store or if the request succeeds but the store returns malformed results.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParserSelectionException.html">RdfParserSelectionException</a></td>
+        <td><p>Thrown if the store returns results in a format dotNetRDF does not understand.</p>
+</td>
+      </tr>
+    </tbody>
   </table>
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync(System.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/IAsyncQueryableStorage.cs/#L73">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync*"></a>
+  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_System_String_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync(System.String,System.Threading.CancellationToken)">QueryAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Queries the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;object&gt; QueryAsync(string sparqlQuery, CancellationToken cancellationToken)</code></pre>
   </div>
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync(VDS.RDF.IRdfHandler%2CVDS.RDF.ISparqlResultsHandler%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/IAsyncQueryableStorage.cs/#L83">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync*"></a>
+  <h4 id="VDS_RDF_Storage_IAsyncQueryableStorage_QueryAsync_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.IAsyncQueryableStorage.QueryAsync(VDS.RDF.IRdfHandler,VDS.RDF.ISparqlResultsHandler,System.String,System.Threading.CancellationToken)">QueryAsync(IRdfHandler, ISparqlResultsHandler, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Queries the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task QueryAsync(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, string sparqlQuery, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">rdfHandler</span></td>
+        <td><p>RDF Handler that will receive graph results from CONSTRUCT or DESCRIBE queries.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a></td>
+        <td><span class="parametername">resultsHandler</span></td>
+        <td><p>SPARQL Results set handler that will receive results from ASK or SELECT queries.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>The SPARQL query to execute.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
-  
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(Object)</a>
+  </div>
 </article>
-          </div>
-          <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/dotnetrdf/dotnetrdf/new/master/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/dotnetrdf/dotnetrdf/blob/master/Libraries/dotNetRDF/Storage/IStorageProvider.cs/#L456" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/release/3.0.0/apiSpec/new?filename=VDS_RDF_Storage_IAsyncQueryableStorage.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.IAsyncQueryableStorage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/Libraries/dotNetRdf/Storage/IAsyncQueryableStorage.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

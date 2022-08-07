@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Minimize Memory Usage | DotNetRDF Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Minimize Memory Usage | DotNetRDF Documentation ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="minimize-memory-usage">Minimize Memory Usage</h1>
+
+<p>Depending on how it is used and the data you are working with dotNetRDF can be very memory hungry resulting in large memory footprints for relatively small volumes of data or a memory footprint that grows ever larger over time.</p>
+<p>This is not down to memory leaks but rather down to internal features of the API that are designed to make things faster for the average user.  If you are reading this page then you are not an average user and are looking to tailor your usage of dotNetRDF to better manage the memory footprint.  dotNetRDF has you covered here and there are a number of features you can disable/configure and alternative ways of working that will reduce your memory usage.</p>
+<h1 id="uri-interning">URI Interning</h1>
+<p>Our <a href="../developer_guide/URI-Interning.md">URI Interning</a> feature is used to improve the speed of URI comparisons however if the data you are working with has a lot of unique URIs or you work with data for short periods before throwing it away then this can use a lot of memory over time.</p>
+<p>You can disable this feature completely like so:</p>
+<pre><code class="lang-csharp">Options.InternUris = false;
+</code></pre><p>Or you can choose to periodically clean up the memory used:</p>
+<pre><code class="lang-csharp">UriFactory.Clear();
+</code></pre><h1 id="triple-indexing">Triple Indexing</h1>
+<p>By default the standard <a class="xref" href="../../../api/VDS.RDF.Graph.html">Graph</a> implementation builds a number of triple indexes behind the scenes.  This help make the <code>GetTriplesWithX()</code> methods and SPARQL queries run very fast on in-memory data.  However depending on what you are doing with the graph you may either not need indexes at all or only need certain indexes.</p>
+<p>By default indexed graphs in dotNetRDF will incorporate 6 indices:</p>
+<ul>
+<li>Subject</li>
+<li>Predicate</li>
+<li>Object</li>
+<li>Subject-Predicate</li>
+<li>Subject-Object</li>
+<li>Predicate-Object</li>
+</ul>
+<p>The first three are considered simple indices and the last three compound indices.</p>
+<h2 id="use-no-indices">Use No Indices</h2>
+<p>If you don&#39;t need the indices you can avoid using indices completely by always using the <a class="xref" href="../../../api/VDS.RDF.NonIndexedGraph.html">NonIndexedGraph</a> in place of the standard <code>Graph</code></p>
+<h2 id="use-only-simple-indexes">Use Only Simple Indexes</h2>
+<p>If you can live with only simple indices and don&#39;t need compound indices you can disable the compound indices like so:</p>
+<pre><code class="lang-csharp">Options.FullTripleIndexing = false;
+</code></pre><p><strong>Note:</strong> Indexed graph implementations inspect this setting only when a graph is first creating so you must set this prior to creating your graph.</p>
+<p>With full triple indexing set to off only simple indices will be created for newly instantiated graphs.</p>
+<h2 id="use-specific-indexes">Use Specific Indexes</h2>
+<p>The standard graph allows you to configure the underlying <a class="xref" href="../../../api/VDS.RDF.BaseTripleCollection.html">BaseTripleCollection</a> used so you can create a graph that only uses the indexes you want:</p>
+<pre><code class="lang-csharp">// Create a Triple Collection with only a subject index
+BaseTripleCollection tripleCollection = new TreeIndexedTripleCollection(true, false, false, false, false, false, MultiDictionaryMode.AVL);
+
+// Create a Graph using the customized triple collection
+Graph g = new Graph(tripleCollection);
+</code></pre><h1 id="stream-processing">Stream Processing</h1>
+<p>If you can work with RDF/SPARQL Results in a stream then you can leverage the <a href="../user_guide/Handlers-API.md">Handlers API</a> as an alternative to loading your data fully into memory, this API gives you complete control over what happens to triples/results as they are generated.</p>
+<h1 id="token-queue-mode">Token Queue Mode</h1>
+<p>Token based parsers accept a <a class="xref" href="../../../api/VDS.RDF.Parsing.Tokens.TokenQueueMode.html">TokenQueueMode</a> which is defines how it tokenizes the input data, the choice of this can have a significant affect on memory usage.  The global default for this can be controlled via the <code>Options.DefaultTokenQueueMode</code> property.</p>
+<table>
+<thead>
+<tr>
+<th>Queue Mode</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>QueueAllBeforeParsing</code></td>
+<td>As the name suggests in this mode input data is completely tokenized before any parsing takes place.  This is the most expensive memory wise but may be more performant for very small data</td>
+</tr>
+<tr>
+<td><code>SynchronousBufferDuringParsing</code></td>
+<td>This is the default, during parsing the tokenizer will buffer some number of tokens ahead in the input data.  It will stop buffering when the buffer is full and start buffering again once the parser starts reading tokens.  This makes it the most stable and memory efficient mode.</td>
+</tr>
+<tr>
+<td><code>AsynchronousBufferDuringParsing</code></td>
+<td>In this mode the tokenizer will buffer as many tokens as it can asynchronous with the parser, so it can consume very large amounts of memory.  However if the parser is very fast this may be the fastest way to parse.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/howto/minimize_memory_usage.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
