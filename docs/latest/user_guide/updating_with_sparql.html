@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Updating with SPARQL | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Updating with SPARQL | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Updating with SPARQL | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Updating with SPARQL | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -86,23 +85,24 @@ using VDS.RDF.Update;
 
 public class SparqlUpdateParsingExample
 {
-    public static void Main(String[] args)
-    {
-        //Get an Update Parser
-        SparqlUpdateParser parser = new SparqlUpdateParser();
+	public static void Main(String[] args)
+	{
+		//Get an Update Parser
+		SparqlUpdateParser parser = new SparqlUpdateParser();
 
-        //Generate a Command
-        SparqlParameterizedString cmdString = new SparqlParameterizedString();
-        cmdString.CommandText = &quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO &lt;http://example.org/Soton&gt;&quot;;
+		//Generate a Command
+		SparqlParameterizedString cmdString = new SparqlParameterizedString();
+		cmdString.CommandText = &quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO &lt;http://example.org/Soton&gt;&quot;;
 
-        //Parse the command into a SparqlUpdateCommandSet
-        SparqlUpdateCommandSet cmds = parser.ParseFromString(cmdString);
+		//Parse the command into a SparqlUpdateCommandSet
+		SparqlUpdateCommandSet cmds = parser.ParseFromString(cmdString);
 
-        //Now go ahead and do what you want with the Updates...
-    }
+		//Now go ahead and do what you want with the Updates...
+	}
 }
-</code></pre><h1 id="applying-sparql-updates">Applying SPARQL Updates</h1>
-<p>There are multiple ways to apply SPARQL Updates which we&#39;ll cover here but the most commonly used way which we recommend is to use an instance of <code>ISparqlUpdateProcessor</code>. It provides methods for processing an entire command set or specific commands.</p>
+</code></pre>
+<h1 id="applying-sparql-updates">Applying SPARQL Updates</h1>
+<p>There are multiple ways to apply SPARQL Updates which we'll cover here but the most commonly used way which we recommend is to use an instance of <code>ISparqlUpdateProcessor</code>. It provides methods for processing an entire command set or specific commands.</p>
 <h2 id="in-memory-updates">In-Memory Updates</h2>
 <p>If your data is purely in-memory then you will want to use the LeviathanUpdateProcessor like so:</p>
 <pre><code class="lang-csharp">using System;
@@ -144,7 +144,7 @@ public class LeviathanUpdateProcessorExample
         processor.ProcessCommandSet(cmds);
 
         //We should now have a Graph in our dataset as a result of the LOAD update
-        //So we&#39;ll retrieve this and print it to the Console
+        //So we'll retrieve this and print it to the Console
         IGraph g = store.Graphs[new Uri(&quot;http://example.org/Soton&quot;)];
         NTriplesFormatter formatter = new NTriplesFormatter();
         foreach (Triple t in g.Triples)
@@ -153,12 +153,15 @@ public class LeviathanUpdateProcessorExample
         }
     }
 }
-</code></pre><p>A key thing to notice here is that we create a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> instance which wraps our <code>IInMemoryQueryableStore</code> instance. This dataset allows us to control which graph is used as the default graph for updates or even to use the union of all graphs as the default graph.</p>
+</code></pre>
+<p>A key thing to notice here is that we create a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> instance which wraps our <code>IInMemoryQueryableStore</code> instance. This dataset allows us to control which graph is used as the default graph for updates or even to use the union of all graphs as the default graph.</p>
 <p>A common error with making updates is that updates by default typically operate only over the unnamed default graph in the store (depending on your query processor). Therefore executing updates may yield no changes depending on what graphs your data is in and whether you configured your dataset correctly. Please see the <a href="sparql_datasets.html">SPARQL Datasets</a> page for discussions of configuring different kinds of dataset.  If your update has no effect it is always worth running an equivalent <code>SELECT</code> or <code>CONSTRUCT</code> query to see if that yields any results to make sure you are actually matching some data.</p>
 <h2 id="generic-updates">Generic Updates</h2>
 <p>The other really useful processor is the <a class="xref" href="../api/VDS.RDF.Update.GenericUpdateProcessor.html">GenericUpdateProcessor</a> which allows you to apply updates to an underlying <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> instance.</p>
 <p>The neat feature of this processor is that it is capable of applying SPARQL Updates even if the underlying store does not support them itself. If the underlying store does support SPARQL Update then the processor delegates the processing to the underlying store.</p>
-<div class="NOTE"><h5>Note</h5><p>This is almost certainly less efficient than using a stores own implementation and depending on the exact capabilities of the underlying store not all Updates can be applied.
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is almost certainly less efficient than using a stores own implementation and depending on the exact capabilities of the underlying store not all Updates can be applied.
 If the underlying store provides its own implementation we always prefer this over our own when using the <code>GenericUpdateProcessor</code></p>
 </div>
 <pre><code class="lang-csharp">
@@ -172,36 +175,37 @@ using VDS.RDF.Writing.Formatting;
 
 public class GenericUpdateProcessorExample
 {
-    public static void Main(String[] args)
-    {
-        //Get an Update Parser
-        SparqlUpdateParser parser = new SparqlUpdateParser();
+	public static void Main(String[] args)
+	{
+		//Get an Update Parser
+		SparqlUpdateParser parser = new SparqlUpdateParser();
 
-        //Generate a Command
-        SparqlParameterizedString cmdString = new SparqlParameterizedString();
-        cmdString.CommandText = &quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO &lt;http://example.org/Soton&gt;&quot;;
+		//Generate a Command
+		SparqlParameterizedString cmdString = new SparqlParameterizedString();
+		cmdString.CommandText = &quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO &lt;http://example.org/Soton&gt;&quot;;
 
-        //Parse the command into a SparqlUpdateCommandSet
-        SparqlUpdateCommandSet cmds = parser.ParseFromString(cmdString);
+		//Parse the command into a SparqlUpdateCommandSet
+		SparqlUpdateCommandSet cmds = parser.ParseFromString(cmdString);
 
-        //Connect to Sesame (which does not support SPARQL Update itself)
-        //and create a GenericUpdateProcessor to apply the update
-        SesameHttpProtocolConnector sesame = new SesameHttpProtocolConnector(&quot;http://localhost:8080/openrdf-sesame&quot;, &quot;repository&quot;);
-        GenericUpdateProcessor processor = new GenericUpdateProcessor(sesame);
-        processor.ProcessCommandSet(cmds);
+		//Connect to Sesame (which does not support SPARQL Update itself)
+		//and create a GenericUpdateProcessor to apply the update
+		SesameHttpProtocolConnector sesame = new SesameHttpProtocolConnector(&quot;http://localhost:8080/openrdf-sesame&quot;, &quot;repository&quot;);
+		GenericUpdateProcessor processor = new GenericUpdateProcessor(sesame);
+		processor.ProcessCommandSet(cmds);
 
-        //We should now have a Graph in our dataset as a result of the LOAD update
-        //So we&#39;ll retrieve this and print it to the Console
-        IGraph g = new Graph();
-        sesame.LoadGraph(g, &quot;http://example.org/Soton&quot;);
-        NTriplesFormatter formatter = new NTriplesFormatter();
-        foreach (Triple t in g.Triples)
-        {
-            Console.WriteLine(t.ToString(formatter));
-        }
-    }
+		//We should now have a Graph in our dataset as a result of the LOAD update
+		//So we'll retrieve this and print it to the Console
+		IGraph g = new Graph();
+		sesame.LoadGraph(g, &quot;http://example.org/Soton&quot;);
+		NTriplesFormatter formatter = new NTriplesFormatter();
+		foreach (Triple t in g.Triples)
+		{
+			Console.WriteLine(t.ToString(formatter));
+		}
+	}
 }
-</code></pre><h2 id="remote-updates">Remote Updates</h2>
+</code></pre>
+<h2 id="remote-updates">Remote Updates</h2>
 <p>We also provide a <a class="xref" href="../api/VDS.RDF.Update.RemoteUpdateProcessor.html">RemoteUpdateProcessor</a> which is a wrapper around a <a class="xref" href="../api/VDS.RDF.Update.SparqlRemoteUpdateEndpoint.html">SparqlRemoteUpdateEndpoint</a> instance.  This allows for updates to be processed by a remote SPARQL Update endpoint.</p>
 <h3 id="sending-updates-to-remote-endpoints">Sending Updates to Remote Endpoints</h3>
 <p>Just like SPARQL Queries you may wish to send SPARQL Updates to remote servers. To do this we provide the <code>SparqlRemoteUpdateEndpoint</code> class, it provides an <code>Update(String sparqlUpdate)</code> method which is used to send an update to the remote endpoint plus various methods and properties associated with configuring credentials and proxies for the request.</p>
@@ -213,32 +217,33 @@ using VDS.RDF.Update;
 
 public class RemoteSparqlUpdateExample
 {
-    public static void Main(String[] args)
-    {
-        //First build the update we want to send
-        //In this example we are making a copy of a Graph then deleting the rdf:type triples
-        //from our copy
-        SparqlParameterizesString update = new SparqlParameterizedString();
-        update.CommandText = &quot;COPY GRAPH &lt;http://example.org/source&gt; TO GRAPH &lt;http://example.org/copy&gt;;&quot;;
-        update.CommandText += &quot;WITH &lt;http://example.org/copy&gt; DELETE WHERE { ?s a ?type }&quot;;
+	public static void Main(String[] args)
+	{
+		//First build the update we want to send
+		//In this example we are making a copy of a Graph then deleting the rdf:type triples
+		//from our copy
+		SparqlParameterizesString update = new SparqlParameterizedString();
+		update.CommandText = &quot;COPY GRAPH &lt;http://example.org/source&gt; TO GRAPH &lt;http://example.org/copy&gt;;&quot;;
+		update.CommandText += &quot;WITH &lt;http://example.org/copy&gt; DELETE WHERE { ?s a ?type }&quot;;
 
-        //Then create our Endpoint instance
-        SparqlRemoteUpdateEndpoint endpoint = new SparqlRemoteUpdateEndpoint(&quot;http://example.org/update&quot;);
+		//Then create our Endpoint instance
+		SparqlRemoteUpdateEndpoint endpoint = new SparqlRemoteUpdateEndpoint(&quot;http://example.org/update&quot;);
 
-        //And finally send the update request
-        endpoint.Update(update.ToString());
-    }
+		//And finally send the update request
+		endpoint.Update(update.ToString());
+	}
 }
-</code></pre><p>The above example creates a SPARQL Update containing two commands (a COPY then a DELETE) which is sent to a Remote Endpoint. Invoking the <code>Update(String update)</code> method may throw an error if the remote endpoint refuses to process your update request for whatever reason (lack of permissions, malformed update etc).</p>
+</code></pre>
+<p>The above example creates a SPARQL Update containing two commands (a COPY then a DELETE) which is sent to a Remote Endpoint. Invoking the <code>Update(String update)</code> method may throw an error if the remote endpoint refuses to process your update request for whatever reason (lack of permissions, malformed update etc).</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/updating_with_sparql.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/updating_with_sparql.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -250,7 +255,7 @@ public class RemoteSparqlUpdateExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -258,13 +263,13 @@ public class RemoteSparqlUpdateExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

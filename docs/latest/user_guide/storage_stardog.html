@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Stardog | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Stardog | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stardog | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stardog | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -71,11 +70,12 @@
 
 <p><a href="http://stardog.com">Stardog</a> the RDF database from Clark &amp; Parsia can be connected to via the <a class="xref" href="../api/VDS.RDF.Storage.StardogConnector.html">StardogConnector</a>.  This connector uses the Stardog HTTP interface so requires a running Stardog HTTP server.</p>
 <p>The <code>StardogConnector</code> assumes the latest version of Stardog is being used, currently these are the 3.x releases.  A <a class="xref" href="../api/VDS.RDF.Storage.StardogV1Connector.html">StardogV1Connector</a>, <a class="xref" href="../api/VDS.RDF.Storage.StardogV2Connector.html">StardogV2Connector</a> and <a class="xref" href="../api/VDS.RDF.Storage.StardogV3Connector.html">StardogV3Connector</a> are provided if you wish to be explicit about the version of Stardog you are connecting to.</p>
-<p>In terms of backwards compatibility the newer connectors may be able to talk to an older server but we can&#39;t guarantee this will work correctly, also newer connectors have support for newer Stardog features which will not work if used against an older server.</p>
+<p>In terms of backwards compatibility the newer connectors may be able to talk to an older server but we can't guarantee this will work correctly, also newer connectors have support for newer Stardog features which will not work if used against an older server.</p>
 <h2 id="supported-capabilities">Supported Capabilities</h2>
 <ul>
 <li>Load, Save, Delete, Update and List Graphs</li>
-<li>SPARQL Query<ul>
+<li>SPARQL Query
+<ul>
 <li>Configurable query reasoning levels (for Stardog 1.x and 2.x)</li>
 </ul>
 </li>
@@ -86,7 +86,8 @@
 <p>Connecting to a Stardog database requires knowing the Base URI for the server, a database ID and user credentials if security is enabled e.g.</p>
 <pre><code class="lang-csharp">
 StardogConnector stardog = new StardogConnector(&quot;http://localhost:5820&quot;, &quot;example&quot;, &quot;username&quot;, &quot;password&quot;);
-</code></pre><h2 id="configurable-query-reasoning">Configurable Query Reasoning</h2>
+</code></pre>
+<h2 id="configurable-query-reasoning">Configurable Query Reasoning</h2>
 <p>Stardog 1.x and 2.x supports configurable reasoning levels on a per-query basis.  The current reasoning level is controlled by the <a class="xref" href="../api/VDS.RDF.Storage.BaseStardogConnector.html#VDS_RDF_Storage_BaseStardogConnector_Reasoning"><code>Reasoning</code></a> property and takes a value from the <a class="xref" href="../api/VDS.RDF.Storage.StardogReasoningMode.html">StardogReasoningMode</a> enum.</p>
 <p>Note that from Stardog 3.x the reasoning level is controlled at the database level and cannot be changed at the connection level.</p>
 <p>This may be changed any time you like and affects any subsequent queries made via the <code>Query()</code> method.</p>
@@ -100,7 +101,8 @@ StardogConnector stardog = new StardogConnector(&quot;http://localhost:5820&quot
 <p>You can also connect directly to a server by creating an instance of the <a class="xref" href="../api/VDS.RDF.Storage.Management.StardogServer.html">StardogServer</a> class.  This requires you to know the Base URI of the server:</p>
 <pre><code class="lang-csharp">
 StardogServer server = new StardogServer(&quot;http://localhost:5822&quot;, &quot;username&quot;, &quot;password&quot;);
-</code></pre><h2 id="creating-stores">Creating Stores</h2>
+</code></pre>
+<h2 id="creating-stores">Creating Stores</h2>
 <p>When creating a store the <code>StardogServer</code> will provide templates from the following selection:</p>
 <table>
 <thead>
@@ -123,13 +125,13 @@ StardogServer server = new StardogServer(&quot;http://localhost:5822&quot;, &quo
 <p>Both of these derive from the <a class="xref" href="../api/VDS.RDF.Storage.Management.Provisioning.Stardog.BaseStardogTemplate.html">BaseStardogTemplate</a> which provides a large range of properties that can be used to configure Stardog database options.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/storage_stardog.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/storage_stardog.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -141,7 +143,7 @@ StardogServer server = new StardogServer(&quot;http://localhost:5822&quot;, &quo
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -149,13 +151,13 @@ StardogServer server = new StardogServer(&quot;http://localhost:5822&quot;, &quo
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

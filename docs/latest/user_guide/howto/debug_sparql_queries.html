@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Debugging SPARQL Queries | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Debugging SPARQL Queries | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Debugging SPARQL Queries | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Debugging SPARQL Queries | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -75,10 +74,13 @@
 <p>You can create this like so:</p>
 <pre><code class="lang-csharp">//Assuming you already have a dataset you wish to use in the variable ds
 ISparqlQueryProcessor processor = new ExplainQueryProcessor(ds, ExplanationLevel.Full);
-</code></pre><p>Once you have the processor you run your query like you would normally with a query processor i.e.</p>
+
+</code></pre>
+<p>Once you have the processor you run your query like you would normally with a query processor i.e.</p>
 <pre><code class="lang-csharp">//Assuming you have a query ready to run in variable q
 Object results = processor.ProcessQuery(q);
-</code></pre><p>This will result in your query being evaluated but also explanations of the query level being printed to Console Standard Output and Debug Output.  These explanations will include useful information like how many results were found at each stage of the query and can help you see why you have no results</p>
+</code></pre>
+<p>This will result in your query being evaluated but also explanations of the query level being printed to Console Standard Output and Debug Output.  These explanations will include useful information like how many results were found at each stage of the query and can help you see why you have no results</p>
 <h2 id="remotenative-queries">Remote/Native Queries</h2>
 <p>Debugging queries against remote endpoints or native SPARQL provided by a <a class="xref" href="../../api/VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> is somewhat more difficult.</p>
 <p>For <code>IQueryableStorage</code> check the documentation of the store you are using to see if they provide any query debugging tools that you can use.</p>
@@ -94,13 +96,13 @@ Object results = processor.ProcessQuery(q);
 <p>The general idea is to verify whether the blocks of your query actually return results and identify what block(s) are preventing your query from returning a result.  Once you have done this you can start to adjust your query to produce some results.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/howto/debug_sparql_queries.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/howto/debug_sparql_queries.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -112,7 +114,7 @@ Object results = processor.ProcessQuery(q);
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -120,13 +122,13 @@ Object results = processor.ProcessQuery(q);
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Equality and Comparison in dotNetRDF | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Equality and Comparison in dotNetRDF | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Equality and Comparison in dotNetRDF | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Equality and Comparison in dotNetRDF | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -82,10 +81,13 @@ IUriNode b = g.CreateUriNode(UriFactory.Create(&quot;http://example.com:80/test&
 
 //This prints true because the URIs are equal according to URI equality rules
 Console.WriteLine(a.Equals(b));
-</code></pre><p>Comparison on URIs is a lexicographical ordering by Unicode code point taking into account URI components.  So they are ordered first by scheme, then by authentication details, then by host and so on.  This means the ordering will group similar URIs together which is typically the desired behavior.</p>
+</code></pre>
+<p>Comparison on URIs is a lexicographical ordering by Unicode code point taking into account URI components.  So they are ordered first by scheme, then by authentication details, then by host and so on.  This means the ordering will group similar URIs together which is typically the desired behavior.</p>
 <h3 id="iblanknode">IBlankNode</h3>
 <p>Blank Nodes are scoped specifically to a Graph, Blank Nodes are only considered equal if they have identical IDs.</p>
-<div class="WARNING"><h5>Warning</h5><p>In versions of dotNetRDF prior to 3.0, Blank Nodes were considered equal only if they had identical IDs <strong>and</strong> where created by the same <code>IGraph</code> instance. In dotNetRDF 3.0, nodes are no longer scoped to a graph and so only ID comparison is used.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>In versions of dotNetRDF prior to 3.0, Blank Nodes were considered equal only if they had identical IDs <strong>and</strong> where created by the same <code>IGraph</code> instance. In dotNetRDF 3.0, nodes are no longer scoped to a graph and so only ID comparison is used.</p>
 </div>
 <pre><code class="lang-csharp">IGraph g = new Graph();
 IGraph h = new Graph();
@@ -96,7 +98,8 @@ IBlankNode b = h.CreateBlankNode(&quot;test&quot;);
 // Under dotNetRDF 1.x and 2.x this prints false since although they have the same ID they come from different graphs
 // Under dotNetRDF 3.x this prints true since the nodes are no longer scoped to a graph.
 Console.WriteLine(a.Equals(b));
-</code></pre><p>Comparison on blank nodes is a simple lexicographical ordering by Unicode code point on the assigned label, it does not take into account source graph so blank nodes which are non-equal may be considered equal for the purposes of ordering.</p>
+</code></pre>
+<p>Comparison on blank nodes is a simple lexicographical ordering by Unicode code point on the assigned label, it does not take into account source graph so blank nodes which are non-equal may be considered equal for the purposes of ordering.</p>
 <h3 id="iliteralnode">ILiteralNode</h3>
 <p>Literal Node equality is somewhat more complex but basically follows the following rules:</p>
 <ol>
@@ -109,7 +112,7 @@ Console.WriteLine(a.Equals(b));
 IGraph g = new Graph();
 
 //Create two Literal Nodes which both represent the Integer 1
-//You&#39;ll need to be using the VDS.RDF.Parsing namespace to reference the constants used here
+//You'll need to be using the VDS.RDF.Parsing namespace to reference the constants used here
 ILiteralNode one1 = g.CreateLiteralNode(&quot;1&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeInteger));
 ILiteralNode one2 = g.CreateLiteralNode(&quot;0001&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeInteger));
 
@@ -118,7 +121,8 @@ bool equal = one1.Equals(one2);
 
 //Prints false since the string values are not equal
 Console.WriteLine(equal.ToString());
-</code></pre><p>If you want to compare Literals based on typed Value rather than literal Value then you can change the (static) <a class="xref" href="../api/VDS.RDF.EqualityHelper.html#VDS_RDF_EqualityHelper_LiteralEqualityMode"><code>LiteralEqualityMode</code></a> setting of the <a class="xref" href="../api/VDS.RDF.EqualityHelper.html"><code>EqualityHelper</code></a> static class. above code as follows:</p>
+</code></pre>
+<p>If you want to compare Literals based on typed Value rather than literal Value then you can change the (static) <a class="xref" href="../api/VDS.RDF.EqualityHelper.html#VDS_RDF_EqualityHelper_LiteralEqualityMode"><code>LiteralEqualityMode</code></a> setting of the <a class="xref" href="../api/VDS.RDF.EqualityHelper.html"><code>EqualityHelper</code></a> static class. above code as follows:</p>
 <pre><code class="lang-csharp">//Use Loose Literal Equality Mode
 EqualityHelper.LiteralEqualityMode = LiteralEqualityMode.Loose;
 
@@ -127,7 +131,8 @@ bool equal = one1.Equals(one2);
 
 //Prints true since the typed values are equal
 Console.WriteLine(equal.ToString());
-</code></pre><p>Be careful when using this since <a class="xref" href="../api/VDS.RDF.EqualityHelper.html#VDS_RDF_EqualityHelper_LiteralEqualityMode">EqualityHelper.LiteralEqualityMode</a> is a global static option which affects all Node equality calculations involving Literal Nodes and adds performance overheads.
+</code></pre>
+<p>Be careful when using this since <a class="xref" href="../api/VDS.RDF.EqualityHelper.html#VDS_RDF_EqualityHelper_LiteralEqualityMode">EqualityHelper.LiteralEqualityMode</a> is a global static option which affects all Node equality calculations involving Literal Nodes and adds performance overheads.
 Reset this to the default value of <code>LiteralEqualityMode.Strict</code> as soon as you no longer need it.
 Note also that this only works for a limited range of standard data types.</p>
 <p>The alternative to changing the literal equality mode is to call <code>CompareTo()</code> method instead and check that the value returned equals zero since literal node comparison is akin to loose equality.</p>
@@ -199,13 +204,13 @@ The library provides a small set of alternate triple comparison classes and a ba
 <p>There is no comparison operators defined for graphs currently.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/equality_and_comparison.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/equality_and_comparison.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -217,7 +222,7 @@ The library provides a small set of alternate triple comparison classes and a ba
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -225,13 +230,13 @@ The library provides a small set of alternate triple comparison classes and a ba
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

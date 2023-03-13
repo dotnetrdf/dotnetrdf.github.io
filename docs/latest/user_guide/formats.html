@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Formats Supported By dotNetRDF | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Formats Supported By dotNetRDF | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="formats-supported-by-dotnetrdf">Formats Supported By dotNetRDF</h1>
+
+<p>The following table summarizes all of the formats that are supported by dotNetRDF for parsing and/or writing.</p>
+<p>Where multiple dialects are listed, the selection of the dialect is generally controlled through a constructor argument when making a new instance of the relevant parser or writer.
+The dialect shown in <strong>bold-face</strong> is the default dialect used when loading from an HTTP response / local file without explicitly specifying the parser to be used.</p>
+<p>The <strong>Form</strong> column shows what format the output of the reader is (or the input of the writer is expected to be).</p>
+<p>The <strong>Reader Class</strong> and <strong>Writer Class</strong> link to the class documentation for the class that implements parsing and writing for the specified format.
+Where multiple classes are listed, the first one in the list is the class that is used by default when loading from an HTTP response / local file without explicitly specifying the parser to be used.</p>
+<p>The <strong>Media Types</strong> column shows the IANA media type strings that are recognized for the format when loading RDF from a URL.
+The GZipped versions of parsers map to the same IANA media type strings as their non-gzipped counterpart and are used when an HTTP respnose indicates that the response body is compressed.</p>
+<p>The <strong>File Extensions</strong> column shows the file extensions that are recognized for the format when loading RDF from a local file.</p>
+<p>Note, for some formats parsing or writing is not supported. This is shown by the value <code>N/A</code> in the <strong>Reader Class</strong> or <strong>Writer Class</strong> column where the format is not supported for reading/writing.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Dialects</th>
+<th>Form</th>
+<th>Reader Class</th>
+<th>Writer Class</th>
+<th>Media Types</th>
+<th>File Extenions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N-Triples</td>
+<td>Original W3C Specification<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.NTriplesParser.html">NTriplesParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.NTriplesWriter.html">NTriplesWriter</a></td>
+<td>application/n-triples<br> text/plain<br> text/ntriples<br> text/ntriples+turtle<br> application/rdf-triples<br> application/x-ntriples<br> application/ntriples</td>
+<td>.nt</td>
+</tr>
+<tr>
+<td>GZipped N-Triples</td>
+<td>Original W3C Specification<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedNTriplesParser.html">GZippedNTriplesParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedNTriplesWriter.html">GZippedNTriplesWriter</a></td>
+<td></td>
+<td>.nt.gz</td>
+</tr>
+<tr>
+<td>Turtle</td>
+<td>Original<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.TurtleParser.html">TurtleParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.CompressingTurtleWriter.html">CompressingTurtleWriter</a></td>
+<td>text/turtle<br> application/x-turtle<br> application/turtle</td>
+<td>.ttl</td>
+</tr>
+<tr>
+<td>GZipped Turtle</td>
+<td>Original<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedTurtleParser.html">GzippedTurtleParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedTurtleWriter.html">GZippedTurtleWriter</a></td>
+<td></td>
+<td>.ttl.gz</td>
+</tr>
+<tr>
+<td>N3 (Notation 3)</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.Notation3Parser.html">Notation3Parser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.Notation3Writer.html">Notation3Writer</a></td>
+<td>text/n3<br> text/rdf+n3</td>
+<td>.n3</td>
+</tr>
+<tr>
+<td>GZipped N3</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedNotation3Parser.html">GZippedNotation3Parser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedNotation3Writer.html">GZippedNotation3Writer</a></td>
+<td></td>
+<td>.n3.gz</td>
+</tr>
+<tr>
+<td>NQuads</td>
+<td>Original DERI Specification<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.NQuadsParser.html">NQuadsParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.NQuadsWriter.html">NQuadsWriter</a></td>
+<td>application/n-quads<br> text/x-nquads</td>
+<td>.nq</td>
+</tr>
+<tr>
+<td>GZipped NQuads</td>
+<td>Original DERI Specification<br> RDF 1.1<br> <strong>RDF-Star</strong></td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedNQuadsParser.html">GZippedNQuadsParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedNQuadsWriter.html">GZippedNQuadsWriter</a></td>
+<td></td>
+<td>.nq.gz</td>
+</tr>
+<tr>
+<td>TriG</td>
+<td>Original<br> <strong>Member Submission</strong><br> RDF 1.1<br> RDF-Star</td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.TriGParser.html">TriGParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.TriGWriter.html">TriGWriter</a></td>
+<td>application/x-trig</td>
+<td>.trig</td>
+</tr>
+<tr>
+<td>GZipped Trig</td>
+<td>Original<br> <strong>Member Submission</strong><br> RDF 1.1<br> RDF-Star</td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedTriGParser.html">GZippedTriGParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedTriGWriter.html">GZippedTriGWriter</a></td>
+<td></td>
+<td>.trig.gz</td>
+</tr>
+<tr>
+<td>TriX</td>
+<td></td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.TriXParser.html">TriXParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.TriXWriter.html">TriXWriter</a></td>
+<td>application/trix</td>
+<td>.xml</td>
+</tr>
+<tr>
+<td>GZipped TriX</td>
+<td></td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedTriXParser.html">GZippedTriXParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedTriXWriter.html">GZippedTriXWriter</a></td>
+<td></td>
+<td>.xml.gz</td>
+</tr>
+<tr>
+<td>RDF/XML</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.RdfXmlParser.html">RdfXmlParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.RdfXmlWriter.html">RdfXmlWriter</a><br> <a class="xref" href="../api/VDS.RDF.Writing.PrettyRdfXmlWriter.html">PrettyRdfXmlWriter</a></td>
+<td>application/rdf+xml<br> text/xml<br> application/xml</td>
+<td>.rdf<br>.owl</td>
+</tr>
+<tr>
+<td>GZipped RDF/XML</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedRdfXmlParser.html">GZippedRdfXmlParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedRdfXmlWriter.html">GZippedRdfXmlWriter</a></td>
+<td></td>
+<td>.rdf.gz</td>
+</tr>
+<tr>
+<td>RDF/JSON</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.RdfJsonParser.html">RdfJsonParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.RdfJsonWriter.html">RdfJsonWriter</a></td>
+<td>application/json<br> text/json<br> application/rdf+json</td>
+<td>.rj<br>.json</td>
+</tr>
+<tr>
+<td>GZipped RDF/JSON</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedRdfJsonParser.html">GZippedRdfJsonParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedRdfJsonWriter.html">GZippedRdfJsonWriter</a></td>
+<td></td>
+<td>.rj.gz<br>.json.gz</td>
+</tr>
+<tr>
+<td>JSON-LD</td>
+<td>JSON-LD 1.0<br> JSON-LD 1.1</td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.JsonLdParser.html">JsonLdParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.JsonLdWriter.html">JsonLdWriter</a></td>
+<td>application/ld+json</td>
+<td>.jsonld<br>.json</td>
+</tr>
+<tr>
+<td>GZipped JSON-LD</td>
+<td>JSON-LD 1.0<br> JSON-LD 1.1</td>
+<td>Store</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedJsonLdParser.html">GZippedJsonLdParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedJsonLdWriter.html">GZippedJsonLdWriter</a></td>
+<td></td>
+<td>.jsonld.gz<br>.json.gz</td>
+</tr>
+<tr>
+<td>HTML + RDFa</td>
+<td>RDFa 1.0<br> RDFa 1.1<br> <strong>Auto-detect</strong> (see notes)</td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.RdfAParser.html">RdfAParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.HtmlWriter.html">HtmlWriter</a></td>
+<td>text/html<br> application/xhtml+xml</td>
+<td>.html<br>.xhtml</td>
+</tr>
+<tr>
+<td>GZipped HTML + RDFa</td>
+<td></td>
+<td>Graph</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedRdfAParser.html">GZippedRdfAParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedRdfAWriter.html">GZippedRdfAWriter</a></td>
+<td></td>
+<td>.html.gz<br>.xhtml.gz</td>
+</tr>
+<tr>
+<td>CSV (Triples)</td>
+<td></td>
+<td>Graph</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.CsvWriter.html">CsvWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CSV (Quads)</td>
+<td></td>
+<td>Store</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.CsvStoreWriter.html">CsvStoreWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TSV (Triples)</td>
+<td></td>
+<td>Graph</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.TsvWriter.html">TsvWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TSV (Quads)</td>
+<td></td>
+<td>Store</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.TsvStoreWriter.html">TsvStoreWriter</a></td>
+<td>text/html<br> application/xhtml+xml</td>
+<td></td>
+</tr>
+<tr>
+<td>SPARQL Results XML</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlXmlParser.html">SparqlXmlParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.SparqlXmlWriter.html">SparqlXmlWriter</a></td>
+<td>application/sparql-results+xml</td>
+<td>.srx</td>
+</tr>
+<tr>
+<td>GZipped SPARQL Results XML</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedSparqlXmlParser.html">GZippedSparqlXmlParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedSparqlXmlWriter.html">GZippedSparqlXmlWriter</a></td>
+<td></td>
+<td>.srx.gz</td>
+</tr>
+<tr>
+<td>SPARQL Results JSON</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlJsonParser.html">SparqlJsonParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.SparqlJsonWriter.html">SparqlJsonWriter</a></td>
+<td>application/sparql-results+json</td>
+<td>.srj<br>.json</td>
+</tr>
+<tr>
+<td>GZipped SPARQL Results JSON</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedSparqlJsonParser.html">GZippedSparqlJsonParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedSparqlJsonWriter.html">GZippedSparqlJsonWriter</a></td>
+<td></td>
+<td>.srj.gz<br>.json.gz</td>
+</tr>
+<tr>
+<td>SPARQL Results Boolean</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlBooleanParser.html">SparqlBooleanParser</a></td>
+<td>N/A</td>
+<td>text/boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>SPARQL Results CSV</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlCsvParser.html">SparqlCsvParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.SparqlCsvWriter.html">SparqlCsvWriter</a></td>
+<td>text/csv<br> text/comma-separated-values</td>
+<td>.csv</td>
+</tr>
+<tr>
+<td>GZipped SPARQL Results CSV</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedSparqlCsvParser.html">GZippedSparqlCsvParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedSparqlCsvWriter.html">GZippedSparqlCsvWriter</a></td>
+<td></td>
+<td>.csv.gz</td>
+</tr>
+<tr>
+<td>SPARQL Results TSV</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlTsvParser.html">SparqlTsvParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.SparqlTsvWriter.html">SparqlTsvWriter</a></td>
+<td>text/tab-separated-values</td>
+<td>.tsv</td>
+</tr>
+<tr>
+<td>GZipped SPARQL Results TSV</td>
+<td></td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.GZippedSparqlTsvParser.html">GZippedSparqlTsvParser</a></td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GZippedSparqlTsvWriter.html">GZippedSparqlTsvWriter</a></td>
+<td></td>
+<td>.tsv.gz</td>
+</tr>
+<tr>
+<td>SPARQL Results RDF</td>
+<td>See Notes</td>
+<td>SPARQL Results</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlRdfParser.html">SparqlRdfParser</a></td>
+<td>N/A</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SPARQL Results HTML</td>
+<td></td>
+<td>SPARQL Results</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.SparqlHtmlWriter.html">SparqlHtmlWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SPARQL Query</td>
+<td>SPARQL 1.0<br> <strong>SPARQL 1.1</strong><br> SPARQL 1.1 plus dotNetRDF Extensions<br> SPARQL-Star</td>
+<td>SPARQL Query</td>
+<td><a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html">SparqlQueryParser</a></td>
+<td>N/A</td>
+<td>application/sparql-query</td>
+<td>.rq</td>
+</tr>
+<tr>
+<td>SPARQL Update</td>
+<td>SPARQL 1.0<br> <strong>SPARQL 1.1</strong><br> SPARQL 1.1 plus dotNetRDF Extensions<br> SPARQL-Star</td>
+<td>SPARQL Update</td>
+<td><a href="xerf:VDS.RDF.Parsing.SparqlUpdateParser">SparqlUpdateParser</a></td>
+<td>N/A</td>
+<td>application/sparql-update</td>
+<td>.ru</td>
+</tr>
+<tr>
+<td>GraphViz DOT</td>
+<td></td>
+<td>Graph</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GraphVizWriter.html">GraphVizWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GraphML</td>
+<td></td>
+<td>Graph</td>
+<td>N/A</td>
+<td><a class="xref" href="../api/VDS.RDF.Writing.GraphMLWriter.html">GraphMLWriter</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
+<p>The HTML+RDFa parser supports auto-detection modes that default to either RDFa 1.1 or RDFa 1.0. The default mode used defaults to RDFa 1.1.</p>
+<p>The SPARQL Results RDF parser will support any of the RDF syntaxes for graphs.
+It expects the results set to be expressed using the <a href="http://www.w3.org/2001/sw/DataAccess/tests/result-set#">DAWG SPARQL Results vocabulary</a>.
+It defaults to an attempt to auto-detect the format from the input stream (which will fall back to N-Triples if another format is not successfully detected).</p>
+<h2 id="convenience-writers">Convenience Writers</h2>
+<p>The class <a class="xref" href="../api/VDS.RDF.Writing.SingleGraphWriter.html">SingleGraphWriter</a> allows a Store writer to be used to write out a single <a class="xref" href="../api/VDS.RDF.IGraph.html">IGraph</a> instance by treating it as the default graph of a Store.</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/formats.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

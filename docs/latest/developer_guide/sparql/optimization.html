@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SPARQL Optimization | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="SPARQL Optimization | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SPARQL Optimization | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="SPARQL Optimization | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -100,7 +99,8 @@
 <p><strong>Note:</strong> The above represents the ranking implemented in the current release, this has changed in the past and may change in the future based on internal testing and benchmarking.  Sometimes you may be able to get better performance by using the statistics based <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.WeightedOptimiser.html">WeightedOptimiser</a>.</p>
 <p>The name of a pattern refers to the the parts of the pattern that are not variables, i.e. an example Subject-Predicate pattern would be the following:</p>
 <pre><code>&lt;http://example.org/subject&gt; &lt;http://example.org/predicate&gt; ?obj .
-</code></pre><p>For example given the following input query:</p>
+</code></pre>
+<p>For example given the following input query:</p>
 <pre><code class="lang-sparql">PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
 SELECT * WHERE
@@ -108,7 +108,8 @@ SELECT * WHERE
   ?s ?p ?o .
   ?s rdfs:label ?label .
 }
-</code></pre><p>The optimiser would reorder it to the following:</p>
+</code></pre>
+<p>The optimiser would reorder it to the following:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
@@ -117,7 +118,8 @@ SELECT * WHERE
   ?s rdfs:label ?label .
   ?s ?p ?o .
 }
-</code></pre><p>Hopefully it should be easy fairly easy to see that the 2nd form is more optimal to evaluate since the more selective pattern will be evaluated first.</p>
+</code></pre>
+<p>Hopefully it should be easy fairly easy to see that the 2nd form is more optimal to evaluate since the more selective pattern will be evaluated first.</p>
 <p>Where two patterns are equally selective the optimiser will order by the names of the variables. The effect of this is to cause variables to be grouped with other patterns that have the same variables. This ordering is not perfect and so requires some adjustment in the second pass optimisation that occurs after the Filter and Assignment placement. The second pass optimisation is discussed in the Join Complexity Minimisation section.</p>
 <h2 id="filter-placement">Filter Placement</h2>
 <p>Filter Placement refers to the notion expressed in the SPARQL specification here that a <code>FILTER</code> has the same meaning wherever it occurs within a group graph pattern. Since the evaluation model for Leviathan engine is block based (i.e. each operator is evaluated in full) it is desirable to evaluate a <code>FILTER</code> as soon as is possible in order to minimize the intermediate results that need to be considered. In essence this means we evaluate if at the first point after which all mentioned variables have occurred.</p>
@@ -130,7 +132,8 @@ SELECT * WHERE
   ?s a ?type .
   FILTER (LANGMATCHES(LANG(?label), &quot;en&quot;))
 }
-</code></pre><p>The optimiser will optimise it to the following:</p>
+</code></pre>
+<p>The optimiser will optimise it to the following:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
@@ -141,7 +144,8 @@ WHERE
   FILTER(LANGMATCHES(LANG(?label), &quot;en&quot;))
   ?s a ?type .
 }
-</code></pre><h2 id="assignment-placement">Assignment Placement</h2>
+</code></pre>
+<h2 id="assignment-placement">Assignment Placement</h2>
 <p>Assignment placement is exactly the same as Filter Placement. It just places <code>BIND</code> clauses at the first point after which all mentioned variables occur. For example given:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
@@ -152,7 +156,8 @@ SELECT * WHERE
   ?s a ?type .
   BIND(LANG(?label) AS ?lang)
 }
-</code></pre><p>The optimiser would produce:</p>
+</code></pre>
+<p>The optimiser would produce:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
@@ -162,7 +167,8 @@ SELECT * WHERE
   BIND(LANG(?label) AS ?lang)
   ?s a ?type .
 }
-</code></pre><h2 id="join-complexity-minimisation">Join Complexity Minimisation</h2>
+</code></pre>
+<h2 id="join-complexity-minimisation">Join Complexity Minimisation</h2>
 <p>Join Complexity Minimisation is a 2nd pass optimisation which attempts to further reorder the triple patterns to minimise complex joins. In particular it looks to avoid cross products (joins when the two sides are disjoint) since these are particularly expensive to compute.</p>
 <p>As an example consider the following query:</p>
 <pre><code class="lang-sparql">
@@ -174,7 +180,8 @@ SELECT * WHERE
   ?s &lt;http://example.org/predicate&gt; ?value .
   ?value rdfs:label ?label .
 }
-</code></pre><p>The first pass only optimisation of this would produce the following:</p>
+</code></pre>
+<p>The first pass only optimisation of this would produce the following:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
@@ -184,7 +191,8 @@ SELECT * WHERE
   ?s a ?type .
   ?s &lt;http://example.org/predicate&gt; ?value .
 }
-</code></pre><p>This is a poor optimisation as it requires computation of a cross product between the results of the first two patterns which makes the evaluation engine work much harder than necessary.</p>
+</code></pre>
+<p>This is a poor optimisation as it requires computation of a cross product between the results of the first two patterns which makes the evaluation engine work much harder than necessary.</p>
 <p>So the second pass optimisation is designed to look specifically for these cases and reorder the patterns further to eliminate or reduce the complexity of the products. The example query actually optimises to the following:</p>
 <pre><code class="lang-sparql">
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
@@ -195,7 +203,8 @@ SELECT * WHERE
   ?s &lt;http://example.org/predicate&gt; ?value .
   ?s a ?type .
 }
-</code></pre><p>In this version there are no cross products because at each join there is at least one variable that has been previously mentioned so the results of the two patterns are never disjoint.</p>
+</code></pre>
+<p>In this version there are no cross products because at each join there is at least one variable that has been previously mentioned so the results of the two patterns are never disjoint.</p>
 <h1 id="algebra-optimisation">Algebra Optimisation</h1>
 <p>The 2nd stage of optimisation occurs each time you evaluate a query. In order to evaluate a query it must be first transformed into its SPARQL Algebra form. Once the Query has been transformed the algebra can then be modified to use specialised algebra operators which are optimised for certain forms of query.</p>
 <p>For example consider the following query from earlier:</p>
@@ -207,11 +216,14 @@ SELECT * WHERE
   ?s rdfs:label ?label .
   ?s ?p ?o .
 }
-</code></pre><p>This query translates into the following algebra:</p>
+</code></pre>
+<p>This query translates into the following algebra:</p>
 <pre><code>Select(Bgp({ ?s rdfs:label ?label . ?s ?p ?o }))
-</code></pre><p>In a case like this there is absolutely nothing we can do other than evaluate the algebra as-is. But if we were to modify the query so it instead has a <code>LIMIT</code> clause then we could optimise the algebra like so:</p>
+</code></pre>
+<p>In a case like this there is absolutely nothing we can do other than evaluate the algebra as-is. But if we were to modify the query so it instead has a <code>LIMIT</code> clause then we could optimise the algebra like so:</p>
 <pre><code>Slice(Select(LazyBgp({ ?s rdfs:label ?label . ?s ?p ?o })), LIMIT 10, OFFSET 0)
-</code></pre><p><a class="xref" href="../../api/VDS.RDF.Query.Algebra.LazyBgp.html">LazyBgp</a> is a specialised implementation of <a class="xref" href="../../api/VDS.RDF.Query.Algebra.IBgp.html">IBgp</a> which does the minimum amount of work necessary to answer a query. In this case it needs only find the first 10 solutions that satisfy the pattern. Since a query may operate over millions of triples if we can stop processing earlier then we can get better performance. If we process the same query without this optimisation we have to find every possible solutions that satisfies the pattern and then discard all but 10.</p>
+</code></pre>
+<p><a class="xref" href="../../api/VDS.RDF.Query.Algebra.LazyBgp.html">LazyBgp</a> is a specialised implementation of <a class="xref" href="../../api/VDS.RDF.Query.Algebra.IBgp.html">IBgp</a> which does the minimum amount of work necessary to answer a query. In this case it needs only find the first 10 solutions that satisfy the pattern. Since a query may operate over millions of triples if we can stop processing earlier then we can get better performance. If we process the same query without this optimisation we have to find every possible solutions that satisfies the pattern and then discard all but 10.</p>
 <p>The algebra optimiser uses a variety of these kinds of optimisations depending on the query. Obviously they are not applicable in every case (e.g. if there is an <code>ORDER BY</code> clause you need all the solutions in order to do the ordering before you can apply the <code>LIMIT</code>) but they can be used to significantly improve performance in various cases.</p>
 <p>There are a similar set of optimisations that are used for <code>ASK</code> queries since they aim to do the minimal amount of work possible as they only need to find one result satisfying the query. For a fuller list of available optimisers see the <a href="/user_guide/advanced_sparql_operations.md">Advanced SPARQL Operations</a> page.</p>
 <h1 id="evaluation-optimisation">Evaluation Optimisation</h1>
@@ -232,13 +244,13 @@ SELECT * WHERE
 </ul>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/developer_guide/sparql/optimization.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/developer_guide/sparql/optimization.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -250,7 +262,7 @@ SELECT * WHERE
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -258,13 +270,13 @@ SELECT * WHERE
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Leviathan Engine | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Leviathan Engine | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Leviathan Engine | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Leviathan Engine | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -81,8 +80,8 @@
 <h2 id="sparql-optimization">SPARQL Optimization</h2>
 <p>SPARQL Optimization is discussed on the <a href="optimization.html">SPARQL Optimization</a> page.</p>
 <h2 id="sparql-algebra">SPARQL Algebra</h2>
-<p>Leviathan follows the SPARQL Algebra relatively closely with a couple of minor differences. We model the solution modifiers differently and order them slightly differently to the SPARQL specification. </p>
-<p>All algebra representations are based on the <code>VDS.RDF.Query.Algebra.ISparqlAlgebra</code> interface which provides a single method Evaluate(). You can obtain the algebra representation of a <code>VDS.RDF.Query.SparqlQuery</code> object by using it&#39;s <code>ToAlgebra()</code> method. <code>VDS.RDF.Patterns.GraphPattern</code> objects also have a <code>ToAlgebra()</code> method that you can use to get the algebra just for that pattern.</p>
+<p>Leviathan follows the SPARQL Algebra relatively closely with a couple of minor differences. We model the solution modifiers differently and order them slightly differently to the SPARQL specification.</p>
+<p>All algebra representations are based on the <code>VDS.RDF.Query.Algebra.ISparqlAlgebra</code> interface which provides a single method Evaluate(). You can obtain the algebra representation of a <code>VDS.RDF.Query.SparqlQuery</code> object by using it's <code>ToAlgebra()</code> method. <code>VDS.RDF.Patterns.GraphPattern</code> objects also have a <code>ToAlgebra()</code> method that you can use to get the algebra just for that pattern.</p>
 <p>Given an <code>ISparqlAlgebra</code> instance you can use either the <code>ToGraphPattern()</code> or the <code>ToQuery()</code> methods to attempt to convert it back into a <code>GraphPattern</code> or <code>SparqlQuery</code> but note that not all algebras can be successfully converted back into these.</p>
 <p>Developers can if they wish use the classes from the <code>VDS.RDF.Query.Algebra</code> namespace to manually compose queries.</p>
 <p>If you do compose an algebra expression you can evaluate it by creating an instance of <code>VDS.RDF.Query.LeviathanQueryProcessor</code> and then invoking the <code>ProcessAlgebra()</code> method on the algebra expression you created e.g.</p>
@@ -97,43 +96,44 @@ using VDS.RDF.Query.Patterns;
 
 public class AlgebraEvaluationExample
 {
-    public static void Main(String[] args)
-    {
-        TripleStore store = new TripleStore();
+	public static void Main(String[] args)
+	{
+		TripleStore store = new TripleStore();
 
-        //Assume we fill the Triple Store with data from somewhere...
+		//Assume we fill the Triple Store with data from somewhere...
 
-        //Build up an Algebra Expression
-        TriplePattern tp = new TriplePattern(new VariablePattern(&quot;?s&quot;), new VariablePattern(&quot;?p&quot;), new VariablePattern(&quot;?o&quot;));
-        BGP selectAll = new BGP(tp);
-        UnaryExpressionFilter filter = new UnaryExpressionFilter(new IsLiteralFunction(new VariableExpressionTerm(&quot;o&quot;)));
-        Filter requireObjectLiteral = new Filter(selectAll, filter);
+		//Build up an Algebra Expression
+		TriplePattern tp = new TriplePattern(new VariablePattern(&quot;?s&quot;), new VariablePattern(&quot;?p&quot;), new VariablePattern(&quot;?o&quot;));
+		BGP selectAll = new BGP(tp);
+		UnaryExpressionFilter filter = new UnaryExpressionFilter(new IsLiteralFunction(new VariableExpressionTerm(&quot;o&quot;)));
+		Filter requireObjectLiteral = new Filter(selectAll, filter);
 
-        //Evaluate the Query to get the resulting Multiset
-        LeviathanQueryProcessor processor = new LeviathanQueryProcessor(store);
-        BaseMultiset result = processor.ProcessAlgebra(requireObjectLiteral, null);
+		//Evaluate the Query to get the resulting Multiset
+		LeviathanQueryProcessor processor = new LeviathanQueryProcessor(store);
+		BaseMultiset result = processor.ProcessAlgebra(requireObjectLiteral, null);
 
-        //Display the Results
-        foreach (Set s in result.Sets)
-        {
-            Console.WriteLine(s.ToString());
-        }
-    }
+		//Display the Results
+		foreach (Set s in result.Sets)
+		{
+			Console.WriteLine(s.ToString());
+		}
+	}
 }
-</code></pre><h2 id="further-reading">Further Reading</h2>
+</code></pre>
+<h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="extensions.html">SPARQL Extensions</a></li>
 <li><a href="leviathan_functions.html">Leviathan Function Library</a></li>
 </ul>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/developer_guide/sparql/leviathan_engine.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/developer_guide/sparql/leviathan_engine.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -145,7 +145,7 @@ public class AlgebraEvaluationExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -153,13 +153,13 @@ public class AlgebraEvaluationExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

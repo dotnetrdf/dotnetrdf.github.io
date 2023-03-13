@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Configuration Triple Stores | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Configuration Triple Stores | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configuration Triple Stores | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configuration Triple Stores | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -74,7 +73,8 @@
 <ol>
 <li>Create an instance of the relevant ITripleStore implementation based on the dnr:type property</li>
 <li>Any automated loading that the implementation does starts occurring now</li>
-<li>Read in any data sources in the following order<ol>
+<li>Read in any data sources in the following order
+<ol>
 <li>Graphs</li>
 <li>Dataset Files</li>
 </ol>
@@ -82,13 +82,14 @@
 <li>Apply reasoners</li>
 </ol>
 <h1 id="basic-configuration">Basic Configuration</h1>
-<p>At it&#39;s most basic a Triple Store is configured as follows:</p>
+<p>At it's most basic a Triple Store is configured as follows:</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
 
 _:store a dnr:TripleStore ;
   dnr:type &quot;VDS.RDF.TripleStore&quot; .
-</code></pre><h2 id="data-source-configuration">Data Source Configuration</h2>
+</code></pre>
+<h2 id="data-source-configuration">Data Source Configuration</h2>
 <p>There are only 2 ways to specify Graphs to be loaded into a Triple Store but since 1 of these is from other Graphs specified in the configuration file you can actually use any of the data sources supported by Graphs as described in <a href="graphs.html">Configuration API - Graphs</a>.</p>
 <h3 id="other-graphs">Other Graphs</h3>
 <p>Using the <code>dnr:usingGraph</code> property any number of Graphs can be loaded into a Triple Store. Note that each graph must have a unique Base URI or the Triple Store will throw an error, as described in <a href="graphs.html">Configuration API - Graphs</a> you can use the <code>dnr:assignUri</code> property to ensure this.</p>
@@ -108,7 +109,8 @@ _:a a dnr:Graph ;
 _:b a dnr:Graph ;
   dnr:type &quot;VDS.RDF.Graph&quot; ;
   dnr:fromUri &lt;http://dbpedia.org/resource/Southampton&gt; .
-</code></pre><h3 id="dataset-files">Dataset Files</h3>
+</code></pre>
+<h3 id="dataset-files">Dataset Files</h3>
 <p>You can populate a Triple Store using a RDF dataset file which is in one of the dataset formats dotNetRDF understands (NQuads, TriG or TriX) which you specify with the <code>dnr:fromFile</code> property. File paths can either be absolute or may be relative. In the case of relative paths the resolution of the path can be controlled by introducing an <a class="xref" href="../../api/VDS.RDF.Configuration.IPathResolver.html"><code>IPathResolver</code></a> implementation by setting the <code>PathResolver</code> property of the <code>ConfigurationLoader</code>.</p>
 <p>The following example loads a dataset from a file:</p>
 <pre><code class="lang-turtle">
@@ -117,7 +119,8 @@ _:b a dnr:Graph ;
 _:store a dnr:TripleStore ;
   dnr:type &quot;VDS.RDF.TripleStore&quot; ;
   dnr:fromFile &quot;example.trig&quot; .
-</code></pre><h2 id="applying-reasoners">Applying Reasoners</h2>
+</code></pre>
+<h2 id="applying-reasoners">Applying Reasoners</h2>
 <p>You can also apply reasoners to Triple Stores loaded in this way with the triples that the reasoner produces being materialised into a special Graph in the Triple Store. To learn how to configure a reasoner see <a href="reasoners.html">Configuration API - Reasoners</a>.</p>
 <p>Linking a reasoner to a Triple Store is as easy as using the dnr:reasoner property as the following example in which an RDF Schema reasoner is applied to the Triple Store.</p>
 <pre><code class="lang-turtle">
@@ -129,7 +132,8 @@ _:store a dnr:TripleStore ;
 
 _:rdfs a dnr:Reasoner ;
   dnr:type &quot;VDS.RDF.Query.Inference.RdfsReasoner&quot; .
-</code></pre><p>When you apply a reasoner to a Store then that reasoner gets applied over all existing Graphs in the Store and then if any additional Graphs are added to the Store the reasoner gets applied to newly added Graphs.</p>
+</code></pre>
+<p>When you apply a reasoner to a Store then that reasoner gets applied over all existing Graphs in the Store and then if any additional Graphs are added to the Store the reasoner gets applied to newly added Graphs.</p>
 <h1 id="configuring-complex-triple-stores">Configuring Complex Triple Stores</h1>
 <p>It is possible to configure a number of more complex <a class="xref" href="../../api/VDS.RDF.ITripleStore.html"><code>ITripleStore</code></a> instances beyond the basic <code>TripleStore</code> demonstrated so far. This section of the document describes additional types of Triple Store that can be configured.</p>
 <h2 id="web-demand-triple-store">Web Demand Triple Store</h2>
@@ -139,7 +143,8 @@ _:rdfs a dnr:Reasoner ;
 
 _:store a dnr:TripleStore ;
   dnr:type &quot;VDS.RDF.WebDemandTripleStore&quot; .
-</code></pre><h2 id="persistent-triple-store">Persistent Triple Store</h2>
+</code></pre>
+<h2 id="persistent-triple-store">Persistent Triple Store</h2>
 <p>The <a class="xref" href="../../api/VDS.RDF.PersistentTripleStore.html"><code>PersistentTripleStore</code></a> provides a view of an arbitrary store for which there is an <a class="xref" href="../../api/VDS.RDF.Storage.IStorageProvider.html"><code>IStorageProvider</code></a> provided. The Triple Store can then be used for query and update operations on the underlying store. This is configured by setting the <code>dnr:type</code> property appropriately and then using the <code>dnr:storageProvider</code> property to point to a storage provider to be used e.g.</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
@@ -153,15 +158,16 @@ _:agraph a dnr:StorageProvider ;
   dnr:server &quot;http://localhost:9875&quot; ;
   dnr:catalogID &quot;catalog&quot; ;
   dnr:storeID &quot;repository&quot; .
-</code></pre></article>
+</code></pre>
+</article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/triple_stores.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/configuration/triple_stores.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -173,7 +179,7 @@ _:agraph a dnr:StorageProvider ;
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -181,13 +187,13 @@ _:agraph a dnr:StorageProvider ;
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

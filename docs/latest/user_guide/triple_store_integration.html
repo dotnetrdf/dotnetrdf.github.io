@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>3rd Party Triple Store Integration | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="3rd Party Triple Store Integration | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>3rd Party Triple Store Integration | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="3rd Party Triple Store Integration | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -73,17 +72,43 @@
 <p>Some implementations may implement additional interfaces which provide extra features. See the async operations section for more detail on the asynchronous version of the API.</p>
 <p>Take a look at the <a href="storage_providers.html">Storage Providers</a> page for available implementations.</p>
 <h1 id="general-usage">General Usage</h1>
-<p>These interfaces provides a standard mechanism for using an external Triple Store in your applications and allows you to easily drop in and out different stores as required. So let&#39;s start by looking at what the interface provides:</p>
+<p>These interfaces provides a standard mechanism for using an external Triple Store in your applications and allows you to easily drop in and out different stores as required. So let's start by looking at what the interface provides:</p>
 <h2 id="informative-properties">Informative Properties</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html"><code>IStorageCapabilities</code></a> interface has a set of properties which are used to indicate certain capabilities of the Store:</p>
-<p>| Property | Description |
-|<strong><strong>__</strong></strong>|<strong><strong><strong>_</strong></strong></strong>|
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_DeleteSupported"><code>DeleteSupported</code></a> | Indicates whether the deletion of Graphs is supported via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_DeleteGraph_System_String_"><code>DeleteGraph()</code></a> method |
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IOBehaviour"><code>IOBehaviour</code></a> | Indicates detailed information about the <a class="xref" href="../api/VDS.RDF.Storage.IOBehaviour.html"><code>VDS.RDF.Storage.IOBehaviour</code></a> that a store provides |
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReadOnly"><code>IsReadOnly</code></a> | Indicates whether the Store is read_only |
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReady"><code>IsReady</code></a> | Indicates whether the Store is ready for use |
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_ListGraphsSupported"><code>ListGraphsSupported</code></a> | Indicates whether the store supports listing of Graphs via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphs"><code>ListGraphs()</code></a> method
-| <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_UpdateSupported"><code>UpdateSupported</code></a> | Indicates whether triple level updates to Graphs is supported via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__"><code>UpdateGraph()</code></a> method |</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_DeleteSupported"><code>DeleteSupported</code></a></td>
+<td>Indicates whether the deletion of Graphs is supported via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_DeleteGraph_System_String_"><code>DeleteGraph()</code></a> method</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IOBehaviour"><code>IOBehaviour</code></a></td>
+<td>Indicates detailed information about the <a class="xref" href="../api/VDS.RDF.Storage.IOBehaviour.html"><code>VDS.RDF.Storage.IOBehaviour</code></a> that a store provides</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReadOnly"><code>IsReadOnly</code></a></td>
+<td>Indicates whether the Store is read_only</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReady"><code>IsReady</code></a></td>
+<td>Indicates whether the Store is ready for use</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_ListGraphsSupported"><code>ListGraphsSupported</code></a></td>
+<td>Indicates whether the store supports listing of Graphs via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphs"><code>ListGraphs()</code></a> method</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_UpdateSupported"><code>UpdateSupported</code></a></td>
+<td>Indicates whether triple level updates to Graphs is supported via the <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__"><code>UpdateGraph()</code></a> method</td>
+</tr>
+</tbody>
+</table>
 <h2 id="accessing-the-default-graph">Accessing the Default Graph</h2>
 <p>Many triple stores support a notion of a default graph and typically this graph may have no explicit name. Therefore dotNetRDF allows you to access the default graph of a store by passing either a <code>null</code> URI or an empty String for the Graph URI parameter of relevant methods.</p>
 <p>If you wish to save a graph to the default graph you should ensure the graph is created without specifying a value for its <a class="xref" href="../api/VDS.RDF.IGraph.html#VDS_RDF_IGraph_Name"><code>Name</code></a> property.</p>
@@ -98,24 +123,25 @@ using VDS.RDF.Storage;
 
 public class DeleteGraphExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use AllegroGraph
-        AllegroGraphConnector agraph = new AllegroGraphConnector(&quot;http://your_server.com:9875&quot;,&quot;catalog&quot;,&quot;store&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use AllegroGraph
+		AllegroGraphConnector agraph = new AllegroGraphConnector(&quot;http://your_server.com:9875&quot;,&quot;catalog&quot;,&quot;store&quot;);
 
-        //Then Delete a Graph
-        //Making sure that we check this feature is supported first
-        if (agraph.DeleteSupported)
-        {
-            agraph.DeleteGraph(&quot;http://example.org/graph&quot;);
-        }
-        else
-        {
-            throw new Exception(&quot;Store does not support deleting graphs&quot;);
-        }
-    }
+		//Then Delete a Graph
+		//Making sure that we check this feature is supported first
+		if (agraph.DeleteSupported)
+		{
+			agraph.DeleteGraph(&quot;http://example.org/graph&quot;);
+		}
+		else
+		{
+			throw new Exception(&quot;Store does not support deleting graphs&quot;);
+		}
+	}
 }
-</code></pre><p>An overload of this method is also defined that accepts a URI as the name of the graph to be deleted.</p>
+</code></pre>
+<p>An overload of this method is also defined that accepts a URI as the name of the graph to be deleted.</p>
 <h3 id="listgraphnames">ListGraphNames()</h3>
 <p>The <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphNames"><code>ListGraphNames()</code></a> method is used to retrieve the list of Graph names from the Store. This assumes of course that the store supports the notion of named graphs/quads and that it supports this feature as indicated by the <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_ListGraphsSupported"><code>ListGraphsSupported</code></a> property e.g.</p>
 <pre><code class="lang-csharp">
@@ -125,28 +151,31 @@ using VDS.RDF.Storage;
 
 public class ListGraphExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use 4store
-        FourStoreConnector fourstore = new FourStoreConnector(&quot;http://your_server.com:8080&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use 4store
+		FourStoreConnector fourstore = new FourStoreConnector(&quot;http://your_server.com:8080&quot;);
 
-        //Then List the Graphs
-        //Making sure that we check this feature is supported first
-        if (fourstore.ListGraphsSupported)
-        {
-            //Iterate over the Graph URIs and print them
-            foreach (string name in fourstore.ListGraphNamess())
-            {
-                Console.WriteLine(name);
-            }
-        }
-        else
-        {
-            throw new Exception(&quot;Store does not support listing graphs&quot;);
-        }
-    }
+		//Then List the Graphs
+		//Making sure that we check this feature is supported first
+		if (fourstore.ListGraphsSupported)
+		{
+			//Iterate over the Graph URIs and print them
+			foreach (string name in fourstore.ListGraphNamess())
+			{
+				Console.WriteLine(name);
+			}
+		}
+		else
+		{
+			throw new Exception(&quot;Store does not support listing graphs&quot;);
+		}
+	}
 }
-</code></pre><div class="WARNING"><h5>Warning</h5><p><a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphNames"><code>ListGraphNames()</code></a> replaces the now obsolete <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphs"><code>ListGraphs()</code></a> method provided under dotNetRDF 2.x.</p>
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphNames"><code>ListGraphNames()</code></a> replaces the now obsolete <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_ListGraphs"><code>ListGraphs()</code></a> method provided under dotNetRDF 2.x.</p>
 </div>
 <h3 id="loadgraph">LoadGraph()</h3>
 <p>The <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_LoadGraph_VDS_RDF_IGraph_System_String_"><code>LoadGraph()</code></a> method is used to load a Graph from the Store into an <a class="xref" href="../api/VDS.RDF.IGraph.html"><code>IGraph</code></a> instance. This is the one method that must be supported by all implementations e.g.</p>
@@ -157,26 +186,31 @@ using VDS.RDF.Storage;
 
 public class LoadGraphExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use Fuseki
-        FusekiConnector fuseki = new FusekiConnector(&quot;http://your_server.com:3030/dataset/data&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use Fuseki
+		FusekiConnector fuseki = new FusekiConnector(&quot;http://your_server.com:3030/dataset/data&quot;);
 
-        //Create a Graph and then load it with data from the store
-        Graph g = new Graph(new UriNode(UriFactory.Create(&quot;http://example.org/graph&quot;)));
-        fuseki.LoadGraph(g, &quot;http://example.org/graph&quot;);
+		//Create a Graph and then load it with data from the store
+		Graph g = new Graph(new UriNode(UriFactory.Create(&quot;http://example.org/graph&quot;)));
+		fuseki.LoadGraph(g, &quot;http://example.org/graph&quot;);
 
-        //Now do whatever you want with the loaded data...
-    }
+		//Now do whatever you want with the loaded data...
+	}
 }
-</code></pre><div class="WARNING"><h5>Warning</h5><p>From dotNetRDF 3.0, the LoadGraph() method no longer sets the name of the local <code>IGraph</code> instance as graph names are now considered immutable.
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>From dotNetRDF 3.0, the LoadGraph() method no longer sets the name of the local <code>IGraph</code> instance as graph names are now considered immutable.
 If you want the graph name to match the name of the graph loaded from the server, you must explicitly set the name when constructing the local graph as shown in the code above.</p>
 </div>
 <h3 id="savegraph">SaveGraph()</h3>
 <p>The <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_SaveGraph_VDS_RDF_IGraph_"><code>SaveGraph()</code></a> method saves a Graph to a Store.
 The Graph is saved under the name set by its <a class="xref" href="../api/VDS.RDF.IGraph.html#VDS_RDF_IGraph_Name"><code>Name</code></a> property.
 This method cannot be used if the store is read_only as indicated by its <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_IsReadOnly"><code>IsReadOnly</code></a> property.</p>
-<div class="IMPORTANT"><h5>Important</h5><p>Different stores have different behaviours with regards to whether saving a Graph overwrites existing data in the same graph or is merged with it. 
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Different stores have different behaviours with regards to whether saving a Graph overwrites existing data in the same graph or is merged with it.
 Please check the documentation for the <code>IStorageProvider</code> implementation for your store to see what the behaviour is for that specific store.</p>
 </div>
 <pre><code class="lang-csharp">using System;
@@ -185,29 +219,32 @@ using VDS.RDF.Storage;
 
 public class SaveGraphExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use Sesame
-        SesameHttpProtocolConnector sesame = new SesameHttpProtocolConnector(&quot;http://your_server.com:8080&quot;,&quot;repository&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use Sesame
+		SesameHttpProtocolConnector sesame = new SesameHttpProtocolConnector(&quot;http://your_server.com:8080&quot;,&quot;repository&quot;);
 
-        //Create a Graph and fill it with data we want to save, setting its name to the URI we want to save it as.
-        Graph g = new Graph(new UriNode(UriFactory.Create(&quot;http://example.org/graph&quot;)));
-        g.LoadFromFile(&quot;example.rdf&quot;);
+		//Create a Graph and fill it with data we want to save, setting its name to the URI we want to save it as.
+		Graph g = new Graph(new UriNode(UriFactory.Create(&quot;http://example.org/graph&quot;)));
+		g.LoadFromFile(&quot;example.rdf&quot;);
 
-        //Now save it to the store
-        if (!sesame.IsReadOnly)
-        {
-            sesame.SaveGraph(g);
-        }
-        else
-        {
-            throw new Exception(&quot;Store is read_only&quot;);
-        }
-    }
+		//Now save it to the store
+		if (!sesame.IsReadOnly)
+		{
+			sesame.SaveGraph(g);
+		}
+		else
+		{
+			throw new Exception(&quot;Store is read_only&quot;);
+		}
+	}
 }
-</code></pre><h3 id="updategraph">UpdateGraph()</h3>
+</code></pre>
+<h3 id="updategraph">UpdateGraph()</h3>
 <p>The <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html#VDS_RDF_Storage_IStorageProvider_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__"><code>UpdateGraph()</code></a> method is used to add and/remove Triples from a Graph in the Store. Whether this method is supported is indicated by the <a class="xref" href="../api/VDS.RDF.Storage.IStorageCapabilities.html#VDS_RDF_Storage_IStorageCapabilities_UpdateSupported"><code>UpdateSupported</code></a> property.</p>
-<div class="IMPORTANT"><h5>Important</h5><p>Different stores have different behaviours regarding how they apply additions/removals.
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Different stores have different behaviours regarding how they apply additions/removals.
 Please check the documentation for the <code>IStorageProvider</code> implementation for your store to see what the behaviour is for that specific store.</p>
 </div>
 <pre><code class="lang-csharp">using System;
@@ -217,32 +254,33 @@ using VDS.RDF.Storage;
 
 public class UpdateGraphExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use Virtuoso
-        VirtuosoManager manager = new VirtuosoManager(&quot;localhost&quot;, VirtuosoManager.DefaultPort, VirtuosoManager.DefaultDB, &quot;user&quot;, &quot;password&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use Virtuoso
+		VirtuosoManager manager = new VirtuosoManager(&quot;localhost&quot;, VirtuosoManager.DefaultPort, VirtuosoManager.DefaultDB, &quot;user&quot;, &quot;password&quot;);
 
-        //Construct the Triple we wish to add
-        Graph g = new Graph();
-        INode s = g.CreateBlankNode();
-        INode p = g.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
-        INode o = g.CreateUriNode(new Uri(&quot;http://example.org/Example&quot;));
-        Triple t = new Triple(s, p, o);
+		//Construct the Triple we wish to add
+		Graph g = new Graph();
+		INode s = g.CreateBlankNode();
+		INode p = g.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
+		INode o = g.CreateUriNode(new Uri(&quot;http://example.org/Example&quot;));
+		Triple t = new Triple(s, p, o);
 
-        //Now delete the Triple from a Graph in the Store
-        if (virtuoso.UpdateSupported)
-        {
-            //UpdateGraph takes enumerables of Triples to add/remove or null to indicate none
-            //Hence why we create a Triple array to pass in the Triple to be deleted
-            virtuoso.UpdateGraph(&quot;http://example.org/graph&quot;, null, new Triple[] { t });
-        }
-        else
-        {
-            throw new Exception(&quot;Store does not support triple level updates&quot;);
-        }
-    }
+		//Now delete the Triple from a Graph in the Store
+		if (virtuoso.UpdateSupported)
+		{
+			//UpdateGraph takes enumerables of Triples to add/remove or null to indicate none
+			//Hence why we create a Triple array to pass in the Triple to be deleted
+			virtuoso.UpdateGraph(&quot;http://example.org/graph&quot;, null, new Triple[] { t });
+		}
+		else
+		{
+			throw new Exception(&quot;Store does not support triple level updates&quot;);
+		}
+	}
 }
-</code></pre><h2 id="additional-interfaces">Additional Interfaces</h2>
+</code></pre>
+<h2 id="additional-interfaces">Additional Interfaces</h2>
 <p>Some Stores provide SPARQL Query and/or Update support and this support is indicated by the <code>IStorageProvider</code> implementation also implementing the <a class="xref" href="../api/VDS.RDF.Storage.IQueryableStorage.html"><code>VDS.RDF.Storage.IQueryableStorage</code></a> and <a class="xref" href="../api/VDS.RDF.Storage.IUpdateableStorage.html"><code>VDS.RDF.IUpdateableStorage</code></a> interfaces. In addition those stores that support query_time reasoning may implement the <a class="xref" href="../api/VDS.RDF.Storage.IReasoningQueryableStorage.html"><code>VDS.RDF.Storage.IReasoningQueryableStorage</code></a> interface.</p>
 <p>There are also <a class="xref" href="../api/VDS.RDF.Storage.IAsyncQueryableStorage.html"><code>VDS.RDF.Storage.IAsyncQueryableStorage</code></a> and <a class="xref" href="../api/VDS.RDF.Storage.IAsyncUpdateableStorage.html"><code>VDS.RDF.Storage.IAsyncUpdateableStorage</code></a> interfaces which are the async equivalents of the aforementioned interfaces.</p>
 <h3 id="query">Query()</h3>
@@ -254,29 +292,30 @@ using VDS.RDF.Storage;
 
 public class SparqlQueryExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use a generic SPARQL connector
-        SparqlConnector store = new SparqlConnector(new Uri(&quot;http://dbpedia.org/sparql&quot;));
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use a generic SPARQL connector
+		SparqlConnector store = new SparqlConnector(new Uri(&quot;http://dbpedia.org/sparql&quot;));
 
-        //Make a SPARQL Query against the store
-        Object results = store.Query(&quot;SELECT DISTINCT ?type WHERE { ?s a ?type } LIMIT 100&quot;);
-        if (results is SparqlResultSet)
-        {
-            //Print the results
-            SparqlResultSet rset = (SparqlResultSet)results;
-            foreach (SparqlResult r in rset)
-            {
-                Console.WriteLine(r.ToString());
-            }
-        }
-        else
-        {
-            throw new Exception(&quot;Did not get a SPARQL Result Set as expected&quot;);
-        }
-    }
+		//Make a SPARQL Query against the store
+		Object results = store.Query(&quot;SELECT DISTINCT ?type WHERE { ?s a ?type } LIMIT 100&quot;);
+		if (results is SparqlResultSet)
+		{
+			//Print the results
+			SparqlResultSet rset = (SparqlResultSet)results;
+			foreach (SparqlResult r in rset)
+			{
+				Console.WriteLine(r.ToString());
+			}
+		}
+		else
+		{
+			throw new Exception(&quot;Did not get a SPARQL Result Set as expected&quot;);
+		}
+	}
 }
-</code></pre><p>Stores which implement the <a class="xref" href="../api/VDS.RDF.Storage.IReasoningQueryableStorage.html"><code>IReasoningQueryableStorage</code></a> interface have an overload of the <code>Query</code> method which accepts a boolean parameter used to enable or disable query_time reasoning for the SPARQL query.</p>
+</code></pre>
+<p>Stores which implement the <a class="xref" href="../api/VDS.RDF.Storage.IReasoningQueryableStorage.html"><code>IReasoningQueryableStorage</code></a> interface have an overload of the <code>Query</code> method which accepts a boolean parameter used to enable or disable query_time reasoning for the SPARQL query.</p>
 <h3 id="update">Update()</h3>
 <p>Stores which support SPARQL Update by implementing the <a class="xref" href="../api/VDS.RDF.Storage.IUpdateableStorage.html"><code>IUpdateableStorage</code></a> interface provide an additional <a class="xref" href="../api/VDS.RDF.Storage.IUpdateableStorage.html#VDS_RDF_Storage_IUpdateableStorage_Update_System_String_"><code>Update()</code></a> method.</p>
 <pre><code class="lang-csharp">using System;
@@ -285,28 +324,29 @@ using VDS.RDF.Storage;
 
 public class SparqlUpdateExample
 {
-    public static void Main(String[] args)
-    {
-        //First connect to a store, in this example we use 4store
-        FourStoreConnector fourstore = new FourStoreConnector(&quot;http://your_server.com:8080&quot;);
+	public static void Main(String[] args)
+	{
+		//First connect to a store, in this example we use 4store
+		FourStoreConnector fourstore = new FourStoreConnector(&quot;http://your_server.com:8080&quot;);
 
-        //Apply a SPARQL Update to the Store
-        fourstore.Update(&quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO GRAPH &lt;http://example.org/soton&gt;&quot;);
-    }
+		//Apply a SPARQL Update to the Store
+		fourstore.Update(&quot;LOAD &lt;http://dbpedia.org/resource/Southampton&gt; INTO GRAPH &lt;http://example.org/soton&gt;&quot;);
+	}
 }
-</code></pre><h2 id="async-api">Async API</h2>
+</code></pre>
+<h2 id="async-api">Async API</h2>
 <p>The Async API essentially mirrors the synchronous API except that every method signature requires two additional parameters which are a <a class="xref" href="../api/VDS.RDF.Storage.AsyncStorageCallback.html"><code>VDS.RDF.Storage.ASyncStorageCallback</code></a> and Object which can be used to pass some state information to the callback.</p>
 <p>The callback signature simply returns a reference to the <a class="xref" href="../api/VDS.RDF.Storage.IAsyncStorageProvider.html"><code>IAsyncStorageProvider</code></a> that is invoking the callback, a set of <a class="xref" href="../api/VDS.RDF.Storage.AsyncStorageCallbackArgs.html"><code>VDS.RDF.Storage.AsyncStorageCallbackArgs</code></a> and the state information passed when the method was originally invoked.</p>
 <p>The advantage of the async API is that it means that HTTP based stores can be used on platforms where synchronous HTTP is not permitted (e.g. Windows Phone 7). Most of our <code>IStorageProvider</code> implementations also implement <code>IAsyncStorageProvider</code> as well.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/triple_store_integration.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/triple_store_integration.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -318,7 +358,7 @@ public class SparqlUpdateExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -326,13 +366,13 @@ public class SparqlUpdateExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

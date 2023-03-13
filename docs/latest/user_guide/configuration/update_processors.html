@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Configuring Update Processors | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Configuring Update Processors | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configuring Update Processors | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configuring Update Processors | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -77,8 +76,9 @@
 
 _:proc a dnr:SparqlUpdateProcessor .
   dnr:type &quot;VDS.RDF.Update.LeviathanUpdateProcessor&quot; .
-</code></pre><h2 id="leviathan-update-processor">Leviathan Update Processor</h2>
-<p>The Leviathan Update Processor is used to process updates on in-memory stores using the library&#39;s Leviathan SPARQL Engine. It is configured quite simply by adding a dnr:usingStore property to the basic configuration, the object pointed to by this property must be a Triple Store which implements the <a class="xref" href="../../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a> interface e.g.</p>
+</code></pre>
+<h2 id="leviathan-update-processor">Leviathan Update Processor</h2>
+<p>The Leviathan Update Processor is used to process updates on in-memory stores using the library's Leviathan SPARQL Engine. It is configured quite simply by adding a dnr:usingStore property to the basic configuration, the object pointed to by this property must be a Triple Store which implements the <a class="xref" href="../../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a> interface e.g.</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
 
@@ -88,10 +88,11 @@ _:proc a dnr:SparqlUpdateProcessor .
 
 _:store a dnr:TripleStore ;
   dnr:type &quot;VDS.RDF.TripleStore&quot; .
-</code></pre><p>For information on how to configure Triple Stores see <a href="triple_stores.html">Configuration API - Triple Stores</a>.</p>
+</code></pre>
+<p>For information on how to configure Triple Stores see <a href="triple_stores.html">Configuration API - Triple Stores</a>.</p>
 <p>Alternatively you may use the <code>dnr:usingDataset</code> property to connect it to a Dataset instead. See <a href="sparql_datasets.html">Configuration API - Datasets</a> for details. If both <code>dnr:usingDataset</code> and <code>dnr:usingStore</code> are present then <code>dnr:usingDataset</code> has priority and the value for <code>dnr:usingStore</code> is ignored.</p>
 <h2 id="generic-update-processor">Generic Update Processor</h2>
-<p>The Generic Update Processor is used to process updates against some arbitrary store&#39;s SPARQL engine where the store you wish to connect to has an implementation of <a class="xref" href="../../api/VDS.RDF.Storage.IStorageProvider.html"><code>IStorageProvider</code></a>.</p>
+<p>The Generic Update Processor is used to process updates against some arbitrary store's SPARQL engine where the store you wish to connect to has an implementation of <a class="xref" href="../../api/VDS.RDF.Storage.IStorageProvider.html"><code>IStorageProvider</code></a>.</p>
 <p>How updates are actually processed depends on the exact concrete implementation of <code>IStorageProvider</code> being used, if the implementation also implements <a class="xref" href="../../api/VDS.RDF.Storage.IUpdateableStorage.html"><code>IUpdateableStorage</code></a> then the managers own SPARQL Update implementation is used. If this interface is not implemented then dotNetRDF will approximate SPARQL update implementation - in this case not all of SPARQL update may be supported or behave correctly depending on the capabilities of the <code>IStorageProvider</code> provided</p>
 <p>To configure these handlers simply add a <code>dnr:storageProvider</code> property to the basic configuration like so:</p>
 <pre><code class="lang-turtle">
@@ -106,7 +107,8 @@ _:manager a dnr:GenericIOManager ;
   dnr:server &quot;http://agraph.example.com&quot; ;
   dnr:catalogID &quot;catalog&quot; ;
   dnr:storeID &quot;store&quot; .
-</code></pre><p>The above specifies a Update Processor which applies the updates to the AllegroGraph repository store in the catalog catalog on the server <code>http://agraph.example.com</code>. See <a href="storage_providers.html">Configuration API - Storage Providers</a> for more detail on configuring storage providers.</p>
+</code></pre>
+<p>The above specifies a Update Processor which applies the updates to the AllegroGraph repository store in the catalog catalog on the server <code>http://agraph.example.com</code>. See <a href="storage_providers.html">Configuration API - Storage Providers</a> for more detail on configuring storage providers.</p>
 <h2 id="simple-update-processor">Simple Update Processor</h2>
 <p>Similar to the Generic Update Processor the Simple Update Processor passes updates to the <code>ExecuteUpdate()</code> method of a Triple Store that implements the <a class="xref" href="../../api/VDS.RDF.IUpdateableTripleStore.html"><code>IUpdateableTripleStore</code></a> interface. To configure this add a using Store property that points to a Triple Store that implements the relevant interface e.g.</p>
 <pre><code class="lang-turtle">
@@ -118,16 +120,17 @@ _:proc a dnr:SparqlUpdateProcessor .
 
 _:store a dnr:TripleStore ;
   dnr:type &quot;VDS.RDF.TripleStore&quot; .
-</code></pre><p>The above specifies a simple query processor that operates on an in-memory store. Note that both native and in-memory stores can be configured for use with this processor.</p>
+</code></pre>
+<p>The above specifies a simple query processor that operates on an in-memory store. Note that both native and in-memory stores can be configured for use with this processor.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/update_processors.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/configuration/update_processors.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -139,7 +142,7 @@ _:store a dnr:TripleStore ;
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -147,13 +150,13 @@ _:store a dnr:TripleStore ;
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

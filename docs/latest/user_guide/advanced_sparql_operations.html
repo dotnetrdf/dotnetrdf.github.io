@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Advanced SPARQL Operations | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Advanced SPARQL Operations | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Advanced SPARQL Operations | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Advanced SPARQL Operations | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -76,7 +75,9 @@
 <li>Thread-Safety</li>
 <li>Transactions</li>
 </ul>
-<div class="WARNING"><h5>Warning</h5><p>The functionality described here is implementation specific to dotNetRDF i.e. there are no guarantees that other implementations will support these features or handle the features detailed here in the same way.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The functionality described here is implementation specific to dotNetRDF i.e. there are no guarantees that other implementations will support these features or handle the features detailed here in the same way.</p>
 </div>
 <h1 id="custom-optimisers">Custom Optimisers</h1>
 <p>As discussed on the SPARQL Optimisation page our Leviathan SPARQL Engine has a fairly powerful optimiser built into it which aims to optimise queries as far as possible.
@@ -101,7 +102,7 @@ The optimiser that is applied can be changed globally or locally.</p>
 </tr>
 <tr>
 <td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.NoReorderOptimiser.html"><code>NoReorderOptimiser</code></a></td>
-<td>An optimiser which doesn&#39;t reorder triple patterns but still places <code>FILTER</code> and assignments</td>
+<td>An optimiser which doesn't reorder triple patterns but still places <code>FILTER</code> and assignments</td>
 </tr>
 <tr>
 <td><a class="xref" href="../api/VDS.RDF.Query.Optimisation.WeightedOptimiser.html"><code>WeightedOptimiser</code></a></td>
@@ -115,9 +116,6 @@ This optimiser is used by all <a class="xref" href="../api/VDS.RDF.Parsing.Sparq
 <h3 id="local-query-optimiser">Local Query Optimiser</h3>
 <p>The local optimiser setting is controlled by setting the <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html#VDS_RDF_Parsing_SparqlQueryParser_QueryOptimiser"><code>QueryOptimiser</code></a> property of a <a class="xref" href="../api/VDS.RDF.Parsing.SparqlQueryParser.html"><code>SparqlQueryParser</code></a> instance.
 The local setting always overrides the global setting.</p>
-<h3 id="http-handler-configuration">HTTP Handler Configuration</h3>
-<p>If you are configuring a SPARQL endpoint via our <a href="configuration/index.html">Configuration API</a> you can configure the Query Optimiser to use via the <code>dnr:queryOptimiser</code> property.
-See <a href="configuration/http_handlers.html">HTTP Handlers</a> and <a href="configuration/sparql_optimisers.html">Configuration API - Optimizers</a> for details on how to do this.</p>
 <h2 id="algebra-optimisers">Algebra Optimisers</h2>
 <p>Algebra Optimisers are applied to queries when they are transformed into SPARQL Algebra and aim to replace the standard operators with optimised forms where possible.
 Multiple optimisers may be applied to the initial Algebra transformation of a query.
@@ -163,8 +161,6 @@ These optimisers are used when transforming any query into its Algebra form for 
 <h3 id="local-algebra-optimisers">Local Algebra Optimisers</h3>
 <p>The local optimisers are changed by setting the <code>AlgebraOptimisers</code> property on a <code>SparqlQuery</code> instance.
 These optimisers are used when transforming the query into the Algebra form and apply ahead of any global optimisers.</p>
-<h3 id="http-handler-configuration-1">HTTP Handler Configuration</h3>
-<p>If you are configuring a SPARQL endpoint via our <a href="configuration/index.html">Configuration API</a> you can configure the Algebra Optimisers to use via the <code>dnr:algebraOptimiser</code> property. See <a href="configuration/http_handlers.html">Configuration API - HTTP Handlers</a> and <a href="configuration/sparql_optimisers.html">Configuration API - Optimizers</a> for details on how to do this.</p>
 <h1 id="thread-safety">Thread-Safety</h1>
 <p>Firstly our Leviathan SPARQL Engine which is used for all in-memory queries within the library ensures that Queries and Updates are thread-safe operations as far as possible.
 This thread-safety is MRSW (Multiple Reader Single Writer) so you can have either many queries running at one time or a single update running.
@@ -184,18 +180,19 @@ Calling the <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.h
 <p>For example if you tried to process the following commands an error would be thrown and any temporary changes made to the state of the dataset would be rolled back:</p>
 <pre><code>CREATE GRAPH &lt;http://example.org/graph&gt;;
 CREATE GRAPH &lt;http://example.org/graph&gt;
-</code></pre><h2 id="when-transactions-apply">When Transactions apply</h2>
+</code></pre>
+<h2 id="when-transactions-apply">When Transactions apply</h2>
 <p>Transactions apply when using a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html"><code>ISparqlDataset</code></a> implementation which derives from <a class="xref" href="../api/VDS.RDF.Query.Datasets.BaseTransactionalDataset.html"><code>BaseTransactionalDataset</code></a> or <a class="xref" href="../api/VDS.RDF.Query.Datasets.BaseTransactionalQuadDataset.html"><code>BaseTranscationalQuadDataset</code></a>.
 Note that 3rd party implementations may implement transactions without using this base class.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/advanced_sparql_operations.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/advanced_sparql_operations.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -207,7 +204,7 @@ Note that 3rd party implementations may implement transactions without using thi
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -215,13 +212,13 @@ Note that 3rd party implementations may implement transactions without using thi
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

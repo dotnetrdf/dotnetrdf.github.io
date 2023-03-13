@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace Mapper | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace Mapper | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace Mapper | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace Mapper | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -77,21 +76,27 @@
 <li>The Namespace Prefix appears before the colon and may be empty.</li>
 <li>The Local Name appears after the colon and may be empty.</li>
 </ul>
-<div class="NOTE"><h5>Note</h5><p>Exact definitions of what is and isn&#39;t a valid Prefixed Name vary depending on the serialization syntax being used.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Exact definitions of what is and isn't a valid Prefixed Name vary depending on the serialization syntax being used.</p>
 </div>
 <p>A prefixed name is resolved into a URI by concatenating the Namespace URI with the Local Name. A Namespace Prefix is used to refer to a Namespace URI, prefixes must be associated with URIs before they can be used. The following example shows a fragment of Turtle which defines some namespaces and then uses them to define a Triple.</p>
 <pre><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
 @prefix ex: &lt;http://example.org/&gt;.
 
 ex:this rdf:type ex:Example.
-</code></pre><p>The above represents the following Triple:</p>
+</code></pre>
+<p>The above represents the following Triple:</p>
 <pre><code>&lt;http://example.org/this&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://example.org/Example&gt;
-</code></pre><h2 id="empty-namespace-prefix">Empty Namespace Prefix</h2>
+</code></pre>
+<h2 id="empty-namespace-prefix">Empty Namespace Prefix</h2>
 <p>The empty namespace prefix has a special meaning, it either refers to the default Namespace (a Namespace defined with an empty prefix) or if no default Namespace is defined it <strong>may</strong> refer to the Base URI of the Graph.  The usage of the empty namespace prefix does vary between different serialization syntaxes.</p>
 <h2 id="the-namespace-mapper">The Namespace Mapper</h2>
 <p>In order that prefixed names can be resolved into URIs various parts of the library must maintain a table of associations of Namespace Prefixes and their corresponding Namespace URIs. This function is provided by the <code>VDS.RDF.INamespaceMapper</code> interface.</p>
 <p>The most common place to encounter this interface is when working with graphs, any implementation of the <a class="xref" href="../api/VDS.RDF.IGraph.html"><code>VDS.RDF.IGraph</code></a> interface provides a property called <a class="xref" href="../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NamespaceMap"><code>NamespaceMap</code></a> which returns the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html"><code>INamespaceMapper</code></a> associated with the graph.</p>
-<div class="NOTE"><h5>Note</h5><p>This property is actually inherited from the <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> interface which is described in more detail on the <a href="node_factory.html">Node Factory</a> page .</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This property is actually inherited from the <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> interface which is described in more detail on the <a href="node_factory.html">Node Factory</a> page .</p>
 </div>
 <p>The <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html"><code>INamespaceMapper</code></a> can be used to introduce new Namespaces into the graph to allow you to more easily define URI Nodes by using QNames e.g.</p>
 <pre><code class="lang-csharp">IGraph g = new Graph();
@@ -105,19 +110,20 @@ UriNode exThis = g.CreateUriNode(&quot;ex:this&quot;);
 UriNode rdfType = g.CreateUriNode(&quot;rdf:type&quot;);
 UriNode exExample = g.CreateUriNode(&quot;ex:Example&quot;);
 g.Assert(new Triple(exThis, rdfType, exExample));
-</code></pre><p>You can also use the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_GetNamespaceUri_System_String_"><code>GetNamespaceUri(String prefix)</code></a> and <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_GetPrefix_System_Uri_"><code>GetPrefix(Uri uri)</code></a>) methods to retrieve Namespace URIs based on a Prefix and vice versa.</p>
-<p>Another important feature of the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html"><code>INamespaceMapper</code></a> is it&#39;s ability to reduce URIs to prefixed names via it&#39;s <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_ReduceToQName_System_String_System_String__"><code>ReduceToQName(String uri, out String qname)</code></a> function. This function allows you to take a URI and attempts to turn it into a prefixed name returning true if this succeeds and setting the out variable <code>qname</code> to be the prefixed name. All of the writer classes provided in the library make use of this function to help them generate prefixed names for output.</p>
+</code></pre>
+<p>You can also use the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_GetNamespaceUri_System_String_"><code>GetNamespaceUri(String prefix)</code></a> and <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_GetPrefix_System_Uri_"><code>GetPrefix(Uri uri)</code></a>) methods to retrieve Namespace URIs based on a Prefix and vice versa.</p>
+<p>Another important feature of the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html"><code>INamespaceMapper</code></a> is its ability to reduce URIs to prefixed names via the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_ReduceToQName_System_String_System_String__System_Func_System_String_System_Boolean__"><code>ReduceToQName</code></a> function. This function allows you to take a URI and attempts to turn it into a prefixed name returning true if this succeeds and setting the out variable <code>qname</code> to be the prefixed name. All of the writer classes provided in the library make use of this function to help them generate prefixed names for output. The function also optionally takes a validation function as input, if provided the validation function will be called to validate any generated QName (returning true if the QName is valid and false if it is not). By default QName validation rejects any QNames that contain '/' or '#' characters (to ensure compatibility with XML).</p>
 <h2 id="merging-namespace-maps">Merging Namespace Maps</h2>
 <p>If you wish to combine two namespaces maps then you may wish to use the <a class="xref" href="../api/VDS.RDF.INamespaceMapper.html#VDS_RDF_INamespaceMapper_Import_VDS_RDF_INamespaceMapper_"><code>Import(INamespaceMapper nsmap)</code></a> method which imports namespaces from one map into another.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/namespace_mapper.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/namespace_mapper.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -129,7 +135,7 @@ g.Assert(new Triple(exThis, rdfType, exExample));
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -137,13 +143,13 @@ g.Assert(new Triple(exThis, rdfType, exExample));
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

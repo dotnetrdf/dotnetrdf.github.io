@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Configuring Storage Providers | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Configuring Storage Providers | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configuring Storage Providers | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configuring Storage Providers | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -82,9 +81,12 @@ _:agraph a dnr:StorageProvider ;
   dnr:storeID &quot;repository&quot; ;
   dnr:user &quot;username&quot; ;
   dnr:password &quot;password&quot; .
-</code></pre><p>For this configuration the <code>dnr:catalogID</code> property is used to specify the catalog on the Allegro Graph server you wish to use, the <code>dnr:storeID</code> property specifies a repository in that catalog. </p>
+</code></pre>
+<p>For this configuration the <code>dnr:catalogID</code> property is used to specify the catalog on the Allegro Graph server you wish to use, the <code>dnr:storeID</code> property specifies a repository in that catalog.</p>
 <p>The username and password are optional for Allegro Graph.</p>
-<div class="NOTE"><h5>Note</h5><p>If using AllegroGraph 4.x and higher and you wish to connect to the root catalog you can simply ommit the <code>dnr:catalogID</code> property.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If using AllegroGraph 4.x and higher and you wish to connect to the root catalog you can simply ommit the <code>dnr:catalogID</code> property.</p>
 </div>
 <h2 id="dataset-files">Dataset Files</h2>
 <p>You can specify a read-only connection to an RDF dataset file like so:</p>
@@ -95,7 +97,8 @@ _:datasetFile a dnr:StorageProvider ;
   dnr:type &quot;VDS.RDF.Storage.DatasetFileManager&quot; ;
   dnr:fromFile &quot;example.trig&quot; ;
   dnr:async false .
-</code></pre><p>The <code>dnr:fromFile</code> property is used to specify the dataset file to connect to and the <code>dnr:async</code> property controls whether parsing of that file is done asynchronously.</p>
+</code></pre>
+<p>The <code>dnr:fromFile</code> property is used to specify the dataset file to connect to and the <code>dnr:async</code> property controls whether parsing of that file is done asynchronously.</p>
 <h2 id="4store">4store</h2>
 <p>4store servers can be connected to as shown below:</p>
 <pre><code class="lang-turtle">
@@ -105,7 +108,8 @@ _:fourStore a dnr:StorageProvider ;
   dnr:type &quot;VDS.RDF.Storage.FourStoreConnector&quot; ;
   dnr:server &quot;http://4store.example.com&quot; ;
   dnr:enableUpdates false .
-</code></pre><p>For 4store connections it is sufficient to just specify the <code>dnr:server</code> property to indicate the server you wish to connect to.</p>
+</code></pre>
+<p>For 4store connections it is sufficient to just specify the <code>dnr:server</code> property to indicate the server you wish to connect to.</p>
 <p>The <code>dnr:enableUpdates</code> property controls whether the 4store instance you are connecting to is a version which has support for triple level updates. Since most recent versions of 4store now support this feature triple level updates are automatically enabled so this property is generally unnecessary unless you want to disable the feature.</p>
 <h2 id="fuseki">Fuseki</h2>
 <p>You can connect to any store which is exposed via a Fuseki server using the following configuration:</p>
@@ -115,7 +119,8 @@ _:fourStore a dnr:StorageProvider ;
 _:fuseki a dnr:StorageProvider ;
   dnr:type &quot;VDS.RDF.Storage.FusekiConnector&quot; ;
   dnr:server &quot;http://fuseki.example.com/dataset/data&quot; .
-</code></pre><p><strong>Note:</strong> The server URI must be for the <code>/data</code> endpoint of a dataset of the Fuseki server.</p>
+</code></pre>
+<p><strong>Note:</strong> The server URI must be for the <code>/data</code> endpoint of a dataset of the Fuseki server.</p>
 <h2 id="sesame-http-protocol">Sesame HTTP Protocol</h2>
 <p>Any server which supports the Sesame HTTP Protocol can be connected to as follows:</p>
 <pre><code class="lang-turtle">
@@ -127,7 +132,8 @@ _:sesame a dnr:StorageProvider ;
   dnr:storeID &quot;repository&quot; ;
   dnr:user &quot;username&quot; ;
   dnr:password &quot;password&quot; .
-</code></pre><p>When connecting to Sesame HTTP Protocol conforming stores the <code>dnr:server</code> property specifies the Base URI of the server and the <code>dnr:storeID</code> property the repository on the server you are connecting to.</p>
+</code></pre>
+<p>When connecting to Sesame HTTP Protocol conforming stores the <code>dnr:server</code> property specifies the Base URI of the server and the <code>dnr:storeID</code> property the repository on the server you are connecting to.</p>
 <p>The username and password are optional and may be omitted.</p>
 <h2 id="sparql-query-endpoints">SPARQL Query Endpoints</h2>
 <p>It is possible to create read-only connections to SPARQL Query endpoints in two ways, either by specifying the endpoint details directly or by separately specifying an endpoint.</p>
@@ -141,7 +147,8 @@ _:sparqlQuery a dnr:StorageProvider ;
   dnr:defaultGraphUri &quot;http://example.org/defaultGraph&quot; ;
   dnr:namedGraphUri &quot;http://example.org/namedGraph&quot; ;
   dnr:loadMode &quot;Describe&quot; .
-</code></pre><p>The above specifies that the connection be made to the SPARQL Query endpoint with URI <code>http://example.org/sparql</code> using the <code>dnr:queryEndpointUri</code> property.</p>
+</code></pre>
+<p>The above specifies that the connection be made to the SPARQL Query endpoint with URI <code>http://example.org/sparql</code> using the <code>dnr:queryEndpointUri</code> property.</p>
 <p>The <code>dnr:defaultGraphUri</code> and <code>dnr:namedGraphUri</code> properties are used to define Default and Named Graph URIs for use with the endpoint, these properties are optional.</p>
 <p>The <code>dnr:loadMode</code> property takes a value of either <code>Describe</code> or <code>Construct</code> and states how the connector should attempt to load graphs, either by doing a <code>DESCRIBE</code> or <code>CONSTRUCT</code> query. If omitted then the default mode is <code>Construct</code></p>
 <h3 id="separate-specification">Separate Specification</h3>
@@ -158,7 +165,8 @@ _:endpoint a dnr:SparqlQueryEndpoint ;
   dnr:queryEndpointUri &lt;http://example.org/sparql&gt; ;
   dnr:defaultGraphUri &quot;http://example.org/defaultGraph&quot; ;
   dnr:namedGraphUri &quot;http://example.org/namedGraph&quot; .
-</code></pre><p>This defines the same connection as in the previous example but has the advantage that more complex endpoints can be specified in this way as described in <a href="sparql_endpoints.html">Configuration API - SPARQL Endpoints</a>.</p>
+</code></pre>
+<p>This defines the same connection as in the previous example but has the advantage that more complex endpoints can be specified in this way as described in <a href="sparql_endpoints.html">Configuration API - SPARQL Endpoints</a>.</p>
 <h2 id="sparql-query-and-update-endpoints">SPARQL Query and Update Endpoints</h2>
 <p>Where a store provides both a query and update endpoint you may specify a connection to the store by specifying the relevant endpoints, as with the SPARQL Query connection you can use either the direct or separate specification modes.  For simplicitly our example here shows just the separate specification mode:</p>
 <pre><code class="lang-turtle">
@@ -175,11 +183,12 @@ _:queryEndpoint a dnr:SparqlQueryEndpoint ;
   dnr:queryEndpointUri &lt;http://example.org/query&gt; ;
   dnr:defaultGraphUri &quot;http://example.org/defaultGraph&quot; ;
   dnr:namedGraphUri &quot;http://example.org/namedGraph&quot; .
-
+  
 _:updateEndpoint a dnr:SparqlUpdateEndpoint ;
   dnr:type &quot;VDS.RDF.Update.SparqlRemoteUpdateEndpoint&quot; ;
   dnr:updateEndpointUri &lt;http://example.org/update&gt;&quot; .
-</code></pre><h2 id="sparql-graph-store-http-protocol">SPARQL Graph Store HTTP Protocol</h2>
+</code></pre>
+<h2 id="sparql-graph-store-http-protocol">SPARQL Graph Store HTTP Protocol</h2>
 <p>SPARQL 1.1 introduces a new RESTful HTTP Protocol for Graph Stores and you can create connections to stores that support this protocol as shown below:</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
@@ -187,7 +196,8 @@ _:updateEndpoint a dnr:SparqlUpdateEndpoint ;
 _:sparqlHttp a dnr:StorageProvider ;
   dnr:type &quot;VDS.RDF.Storage.SparqlHttpProtocolConnector&quot; ;
   dnr:server &quot;http://example.org/server&quot; .
-</code></pre><p>Defining a connection is simply a case of stating the server used with the <code>dnr:server</code> property.</p>
+</code></pre>
+<p>Defining a connection is simply a case of stating the server used with the <code>dnr:server</code> property.</p>
 <h2 id="stardog">Stardog</h2>
 <p>You can specify a connection to an Stardog server as follows:</p>
 <pre><code class="lang-turtle">
@@ -199,10 +209,11 @@ _:stardog a dnr:StorageProvider ;
   dnr:storeID &quot;db&quot; ;
   dnr:user &quot;username&quot; ;
   dnr:password &quot;password&quot; .
-</code></pre><p>The <code>dnr:server</code> property sets the Base URI for the server and the <code>dnr:storeID</code> property sets the Database ID. The user credentials are optional, currently only HTTP based authentication is supported.</p>
+</code></pre>
+<p>The <code>dnr:server</code> property sets the Base URI for the server and the <code>dnr:storeID</code> property sets the Database ID. The user credentials are optional, currently only HTTP based authentication is supported.</p>
 <p>You may optionally add the <code>dnr:loadMode</code> property to specify what reasoning mode to use for queries. Supported modes will depend on the exact version of Stardog used but we support DL, EL, RL, QL and RDFS modes which any recent version of Stardog will support.</p>
 <h2 id="virtuoso">Virtuoso</h2>
-<p>Connections to Virtuoso&#39;s native quad store can be defined as follows:</p>
+<p>Connections to Virtuoso's native quad store can be defined as follows:</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
 
@@ -218,18 +229,19 @@ _:virtuoso a dnr:StorageProvider ;
   dnr:database &quot;DB&quot; ;
   dnr:user &quot;username&quot; ;
   dnr:password &quot;password&quot; .
-</code></pre><p>For Virtuoso connections the <code>dnr:server</code> and <code>dnr:port</code> properties specify the server being connected to, omitting <code>dnr:port</code> causes the default port of <code>1111</code> to be used. The <code>dnr:database</code> is an optional property which default to the default quad store database <code>DB</code> if not specified.</p>
+</code></pre>
+<p>For Virtuoso connections the <code>dnr:server</code> and <code>dnr:port</code> properties specify the server being connected to, omitting <code>dnr:port</code> causes the default port of <code>1111</code> to be used. The <code>dnr:database</code> is an optional property which default to the default quad store database <code>DB</code> if not specified.</p>
 <p>Username and password are mandatory for connections to Virtuoso.</p>
 <p>Note: Since Virtuoso support is in the separate <strong>dotNetRDF.Data.Virtuoso.dll</strong> library any configuration for objects from that library must include the assembly name.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/storage_providers.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/configuration/storage_providers.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -241,7 +253,7 @@ _:virtuoso a dnr:StorageProvider ;
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -249,13 +261,13 @@ _:virtuoso a dnr:StorageProvider ;
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
