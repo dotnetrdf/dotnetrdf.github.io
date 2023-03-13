@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Configuration API | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Configuration API | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configuration API | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configuration API | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../../index.html">
                 <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -82,7 +81,8 @@
 # Encodes a Graph
 &lt;http://example.org/graph&gt; a dnr:Graph ;
   dnr:type &quot;VDS.RDF.Graph&quot; .
-</code></pre><p>We use the <code>rdf:type</code> (specified here by the Turtle/N3 keyword <code>a</code>) predicate to specify that some Node has a type of <code>dnr:Graph</code> which is the class of Graphs in the Configuration Vocabulary. Then the <code>dnr:type</code> property is used to specify the .Net type of this object, for dotNetRDF types it is sufficient to specify the full namespace qualified name of the class. For any other class you will need to specify the Assembly Qualified Name of the class.</p>
+</code></pre>
+<p>We use the <code>rdf:type</code> (specified here by the Turtle/N3 keyword <code>a</code>) predicate to specify that some Node has a type of <code>dnr:Graph</code> which is the class of Graphs in the Configuration Vocabulary. Then the <code>dnr:type</code> property is used to specify the .Net type of this object, for dotNetRDF types it is sufficient to specify the full namespace qualified name of the class. For any other class you will need to specify the Assembly Qualified Name of the class.</p>
 <p>If you fail to specify a <code>dnr:type</code> property then the object may be unloadable though some classes in the Configuration Vocabulary have default types. In the case of the <code>dnr:Graph</code> class the default type is <a class="xref" href="../../api/VDS.RDF.Graph.html"><code>Graph</code></a>.</p>
 <h2 id="imports">Imports</h2>
 <p>Since configuration graph for larger applications can grow to be quite complex you can use our imports mechanism to split your configuration over several files.  Importing is as simple as the following:</p>
@@ -94,7 +94,8 @@
 
 # Import from another URI
 &lt;&gt; dnr:imports &lt;http://example.org/other-config.ttl&gt; .
-</code></pre><p>If you are using imports then you should always use the <a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_LoadConfiguration_System_String_"><code>LoadConfiguration()</code></a> method to load your Configuration Graph as this will automatically resolve imports for you.</p>
+</code></pre>
+<p>If you are using imports then you should always use the <a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_LoadConfiguration_System_String_"><code>LoadConfiguration()</code></a> method to load your Configuration Graph as this will automatically resolve imports for you.</p>
 <h2 id="auto-configuration">Auto-Configuration</h2>
 <p>The API supports the notion of auto-configuration, some types of object that should be globally registered can be auto-configured either when your Configuration is loaded or on demand via one of the auto-configuration methods e.g. <a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_AutoConfigureObjectFactories_VDS_RDF_IGraph_"><code>AutoConfigureObjectFactories(IGraph g)</code></a></p>
 <p>When you use the <a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_LoadConfiguration_System_String_"><code>LoadConfiguration()</code></a> method the auto-configuration will be automatically done for you unless you explicitly opt out using one of the overloads.</p>
@@ -114,7 +115,7 @@
 <p><a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_LoadConfiguration_System_String_"><code>LoadConfiguration()</code></a> is a helper function that can be used to load in a configuration graph, it invokes the standard RDF loading mechanisms but also handles some special features of the Configuration API such as imports, auto-configuration etc.</p>
 <h2 id="loadobject">LoadObject()</h2>
 <p>The main function that you will want to use is the <a class="xref" href="../../api/VDS.RDF.Configuration.ConfigurationLoader.html#VDS_RDF_Configuration_ConfigurationLoader_LoadObject_System_String_"><code>LoadObject()</code></a> function which attempts to load objects dynamically based on the information in a provided graph. The function is invoked by passing in a Configuration Graph containing the configuration and a Node representing the Object to be loaded.</p>
-<p>For example consider the following configuration file which we&#39;ll refer to as <code>config.ttl</code>:</p>
+<p>For example consider the following configuration file which we'll refer to as <code>config.ttl</code>:</p>
 <pre><code class="lang-turtle">
 @prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
 
@@ -122,7 +123,8 @@
 &lt;http://example.org/graph&gt; a dnr:Graph ;
   dnr:type &quot;VDS.RDF.Graph&quot; ;
   dnr:fromFile &quot;example.rdf&quot; .
-</code></pre><p>To load the Graph specified in the Configuration file you would use the following code:</p>
+</code></pre>
+<p>To load the Graph specified in the Configuration file you would use the following code:</p>
 <pre><code class="lang-csharp">using System;
 using VDS.RDF;
 using VDS.RDF.Configuration;
@@ -130,43 +132,44 @@ using VDS.RDF.Parsing;
 
 public class LoadObjectExample
 {
-    public static void Main(String[] args)
-    {
-        //First need to load in the Configuration Graph
-        IGraph config = ConfigurationLoader.LoadConfiguration(&quot;config.ttl&quot;);
+	public static void Main(String[] args)
+	{
+		//First need to load in the Configuration Graph
+		IGraph config = ConfigurationLoader.LoadConfiguration(&quot;config.ttl&quot;);
 
-        //Then get a Node referencing the object we want to load
-        INode graphNode = config.CreateUriNode(new Uri(&quot;http://example.org/graph&quot;));
+		//Then get a Node referencing the object we want to load
+		INode graphNode = config.CreateUriNode(new Uri(&quot;http://example.org/graph&quot;));
 
-        try
-        {
-            //Now we&#39;ll try and load the object
-            Object temp = ConfigurationLoader.LoadObject(config, graphNode);
+		try
+		{
+			//Now we'll try and load the object
+			Object temp = ConfigurationLoader.LoadObject(config, graphNode);
 
-            //Test it got loaded as a Graph as we expected
-            if (temp is IGraph)
-            {
-                Console.WriteLine(&quot;Loaded Graph successfully from Configuration&quot;);
-                //You can now cast this object to IGraph and use it as you would any other Graph
-            }
-            else
-            {
-                Console.WriteLine(&quot;Failed to load Graph from Configuration&quot;);
-                //If loading gives an object of different type from the expected this suggests your configuration file is malformed in some way
-                //Typically an exception would be thrown in such a case with an error message
-                //informing you of the particular issue with your configuration
-                //You can force an exception to be thrown in this case by using the three argument
-                //form of LoadObject() which takes in the desired type
-            }
-        }
-        catch (DotNetRdfConfigurationException configEx)
-        {
-            //This exception may be thrown if the object is unloadable e.g due to malformed
-            //configuration
-        }
-    }
+			//Test it got loaded as a Graph as we expected
+			if (temp is IGraph)
+			{
+				Console.WriteLine(&quot;Loaded Graph successfully from Configuration&quot;);
+				//You can now cast this object to IGraph and use it as you would any other Graph
+			}
+			else
+			{
+				Console.WriteLine(&quot;Failed to load Graph from Configuration&quot;);
+				//If loading gives an object of different type from the expected this suggests your configuration file is malformed in some way
+				//Typically an exception would be thrown in such a case with an error message
+				//informing you of the particular issue with your configuration
+				//You can force an exception to be thrown in this case by using the three argument
+				//form of LoadObject() which takes in the desired type
+			}
+		}
+		catch (DotNetRdfConfigurationException configEx)
+		{
+			//This exception may be thrown if the object is unloadable e.g due to malformed
+			//configuration
+		}
+	}
 }
-</code></pre><h1 id="configurable-objects">Configurable Objects</h1>
+</code></pre>
+<h1 id="configurable-objects">Configurable Objects</h1>
 <p>As of the most recent release all of the following objects can be loaded from Configuration files, follow the links by each one to see detailed descriptions of the possible configuration for these objects:</p>
 <h2 id="core-objects">Core Objects</h2>
 <ul>
@@ -180,7 +183,6 @@ public class LoadObjectExample
 <li><a href="sparql_endpoints.html">SPARQL Endpoints</a></li>
 <li><a href="query_processors.html">Query Processors</a></li>
 <li><a href="update_processors.html">Update Processors</a></li>
-<li><a href="protocol_processors.html">Protocol Processors</a></li>
 <li><a href="sparql_datasets.html">SPARQL Datasets</a></li>
 <li><a href="sparql_expression_factories.html">SPARQL Expression Factories</a></li>
 <li><a href="sparql_operators.html">SPARQL Operators</a></li>
@@ -192,13 +194,6 @@ public class LoadObjectExample
 <ul>
 <li><a href="storage_providers.html">Storage Providers</a></li>
 </ul>
-<h2 id="aspnet-integration">ASP.Net Integration</h2>
-<ul>
-<li><a href="http_handlers.html">HTTP Handlers</a></li>
-<li><a href="user_groups.html">User Groups</a></li>
-<li><a href="permissions.html">Permissions</a></li>
-<li><a href="users.html">Users</a></li>
-</ul>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <ul>
 <li><a href="options.html">Static Options</a></li>
@@ -206,13 +201,13 @@ public class LoadObjectExample
 </ul>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/configuration/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/configuration/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -224,7 +219,7 @@ public class LoadObjectExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -232,13 +227,13 @@ public class LoadObjectExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>

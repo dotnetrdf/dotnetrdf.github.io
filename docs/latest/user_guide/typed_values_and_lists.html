@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Typed Valued and Lists | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Typed Valued and Lists | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Typed Valued and Lists | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Typed Valued and Lists | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -69,16 +68,18 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="typed-valued-and-lists">Typed Valued and Lists</h1>
 
-<p>While RDF is a powerful data model capable of representing any data you care to encode in it the RDF serialization of some typed values and lists can be somewhat arcane. They can also be unwieldly to access and manipulate using just the APIs we&#39;ve showed you so far in this User Guide. This document covers some helpful ways the library helps you work with these things in a more user friendly way.</p>
+<p>While RDF is a powerful data model capable of representing any data you care to encode in it the RDF serialization of some typed values and lists can be somewhat arcane. They can also be unwieldly to access and manipulate using just the APIs we've showed you so far in this User Guide. This document covers some helpful ways the library helps you work with these things in a more user friendly way.</p>
 <h2 id="encoding-values-into-rdf">Encoding Values into RDF</h2>
 <p>For common types values e.g. integers, booleans, date times etc. RDF uses the XML schema datatypes, these can be directly created by a user using explicit code like the following:</p>
 <pre><code class="lang-csharp">//Assuming we have a Graph in variable g already
 ILiteralNode value = g.CreateLiteralNode(&quot;12345&quot;, new Uri(XmlSpecsHelper.XmlSchemaDataTypeInteger));
-</code></pre><p>While this is relatively simple it&#39;s a pain to type out particularly if you have a lot of typed values you want to represent. To make the encoding of typed values into RDF the library offers a number of extension methods in the <a class="xref" href="../api/VDS.RDF.LiteralExtensions.html"><code>VDS.RDF.LiteralExtensions</code></a> class which provide <code>ToLiteral()</code> methods which you can apply on a variety of .Net types to get the equivalent RDF encoding of them e.g.</p>
+</code></pre>
+<p>While this is relatively simple it's a pain to type out particularly if you have a lot of typed values you want to represent. To make the encoding of typed values into RDF the library offers a number of extension methods in the <a class="xref" href="../api/VDS.RDF.LiteralExtensions.html"><code>VDS.RDF.LiteralExtensions</code></a> class which provide <code>ToLiteral()</code> methods which you can apply on a variety of .Net types to get the equivalent RDF encoding of them e.g.</p>
 <pre><code class="lang-csharp">//Assuming we have a Graph in variable g already
 INode intNode = (12345).ToLiteral(g);
 INode dateNode = DateTime.Now.ToLiteral(g);
-</code></pre><p>This yields code that is much more readable and in the case of types like <code>DateTime</code> and <code>TimeSpan</code> where the RDF encodings have to be in a precise format remove any possibility of user error in encoding the values as appropriate literals.</p>
+</code></pre>
+<p>This yields code that is much more readable and in the case of types like <code>DateTime</code> and <code>TimeSpan</code> where the RDF encodings have to be in a precise format remove any possibility of user error in encoding the values as appropriate literals.</p>
 <h2 id="decoding-values-from-rdf">Decoding Values from RDF</h2>
 <p>To decode values from RDF you can make use of the <a class="xref" href="../api/VDS.RDF.Nodes.html"><code>VDS.RDF.Nodes</code></a> namespace, while this is primarily used internally in our SPARQL engine it is also very useful to the end user.
 This namespace primarily provides a <a class="xref" href="../api/VDS.RDF.Nodes.ValuedNodeExtensions.html#VDS_RDF_Nodes_ValuedNodeExtensions_AsValuedNode_VDS_RDF_INode_"><code>AsValuedNode()</code></a> extension method which will give you back a <a class="xref" href="../api/VDS.RDF.Nodes.IValuedNode.html"><code>VDS.RDF.Nodes.IValuedNode</code></a> instance.
@@ -88,12 +89,14 @@ IValuedNode value = n.AsValuedNode();
 
 //Get the integer value
 long i = value.AsInteger();
-</code></pre><h2 id="manipulating-rdf-lists">Manipulating RDF Lists</h2>
+</code></pre>
+<h2 id="manipulating-rdf-lists">Manipulating RDF Lists</h2>
 <p>RDF Lists of Collections are a way of expressing lists in RDF but the serialization into triples is somewhat cumbersome. For example the following Turtle snippet expresses a simple list:</p>
 <pre><code>@prefix ex: &lt;http://example.org/ns#&gt; .
 
 ex:subj ex:pred ( 1 2 3 ) .
-</code></pre><p>But this is just syntactic sugar for the following triples:</p>
+</code></pre>
+<p>But this is just syntactic sugar for the following triples:</p>
 <pre><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix ex: &lt;http://example.org/ns#&gt; .
 
@@ -104,7 +107,8 @@ _:b2 rdf:first 2 .
 _:b2 rdf:rest _:b3 .
 _:b3 rdf:first 3 .
 _:b3 rdf:rest rdf:nil .
-</code></pre><p>As you can probably appreciate accessing that purely through the triple-centric APIs we showed you in the User Guide so far is going to be very ugly.</p>
+</code></pre>
+<p>As you can probably appreciate accessing that purely through the triple-centric APIs we showed you in the User Guide so far is going to be very ugly.</p>
 <p>To ameliorate this problem we provide a number of methods in the <a class="xref" href="../api/VDS.RDF.Extensions.html"><code>VDS.RDF.Extensions</code></a> class that allow you to manipulate RDF lists in a user friendly manner.</p>
 <p>Accessing a list requires a reference to the graph and the list root, i.e. the Node in the graph that represents the first item in the list.
 All the subsequent examples will assume the RDF graph given above is the data being used and is available in a variable <code>g</code> and that the list root is in the variable <code>root</code>.</p>
@@ -112,34 +116,41 @@ All the subsequent examples will assume the RDF graph given above is the data be
 <p>You can retrieve a list in several ways, the most common of which is used to retrieve the items of your collection e.g.</p>
 <pre><code class="lang-csharp">//This will give us the Nodes for 1, 2 and 3
 IEnumerable&lt;INode&gt; ns = g.GetListItems(root);
-</code></pre><p>In some cases you may want to retrieve the intermediate nodes of the list rather than the items themselves e.g.</p>
+</code></pre>
+<p>In some cases you may want to retrieve the intermediate nodes of the list rather than the items themselves e.g.</p>
 <pre><code class="lang-csharp">//This will give us the Nodes _:b1, _:b2 and _:b3
 IEnumerable&lt;INode&gt; ns = g.GetListNodes(root);
-</code></pre><p>Or you may wish to get all the triples that compose the list:</p>
+</code></pre>
+<p>Or you may wish to get all the triples that compose the list:</p>
 <pre><code class="lang-csharp">//This will give us all the rdf:first and rdf:rest triples associated with the list
 IEnumerable&lt;Triple&gt; ts = g.GetListTriples(root);
-</code></pre><h3 id="asserting-and-retracting-lists">Asserting and Retracting Lists</h3>
+</code></pre>
+<h3 id="asserting-and-retracting-lists">Asserting and Retracting Lists</h3>
 <p>We also provide methods that allow you to easily assert/retract a list. Asserting a list requires an enumeration of nodes to act as the item of the lists, you can either use an existing Node as the list root or have a new list root generated for you e.g.</p>
 <pre><code class="lang-csharp">INode newRoot = g.AssertList(new List&lt;INode&gt;() { (true).ToLiteral(g), (false).ToLiteral(g) });
 //Now we can use newRoot as we wish in our graph
-</code></pre><p>Retracting a list is much simpler provide we know the list root:</p>
+</code></pre>
+<p>Retracting a list is much simpler provide we know the list root:</p>
 <pre><code class="lang-csharp">//Retracts all the triples associated with the list
 g.RetractList(root);
-</code></pre><h3 id="adding-and-removing-items-from-lists">Adding and Removing Items from Lists</h3>
+</code></pre>
+<h3 id="adding-and-removing-items-from-lists">Adding and Removing Items from Lists</h3>
 <p>You can add and remove items from lists using convenience methods also. To add new items to the end of a list you can do the following:</p>
 <pre><code class="lang-csharp">g.AddToList(root, new List&lt;INode&gt;() { (true).ToLiteral(g), (false).ToLiteral(g) });
-</code></pre><p>To remove items from a list regardless of where in the list they occur do the following:</p>
+</code></pre>
+<p>To remove items from a list regardless of where in the list they occur do the following:</p>
 <pre><code class="lang-csharp">g.RemoveFromList(root, new List&lt;INode&gt;() { (true).ToLiteral(g), (false).ToLiteral(g) });
-</code></pre><p>Note that if an item exists in the list multiple times all occurrences of it are removed by this method.</p>
+</code></pre>
+<p>Note that if an item exists in the list multiple times all occurrences of it are removed by this method.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/typed_values_and_lists.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/typed_values_and_lists.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -151,7 +162,7 @@ g.RetractList(root);
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -159,13 +170,13 @@ g.RetractList(root);
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Extension Methods | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Extension Methods | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Extension Methods | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Extension Methods | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -70,13 +69,15 @@
 <h1 id="extension-methods">Extension Methods</h1>
 
 <p>The library provides a number of extension methods that can be used to simplify some common tasks and marginally decrease the amount of code you have to write. These extension methods are located in several static class called <a class="xref" href="../api/VDS.RDF.Extensions.html">Extensions</a>, <a class="xref" href="../api/VDS.RDF.LiteralExtensions.html">LiteralExtensions</a>, <a class="xref" href="../api/VDS.RDF.GraphExtensions.html">GraphExtensions</a> and <a class="xref" href="../api/VDS.RDF.TripleStoreExtensions.html">TripleStoreExtensions</a> in the <code>VDS.RDF</code> namespace so anywhere you reference <code>VDS.RDF</code> you have the option of using these methods.</p>
-<div class="NOTE"><h5>Note</h5><p>To avoid being over-long and dull, this document does not cover all of the extension methods available in these classes. 
+<div class="NOTE">
+<h5>Note</h5>
+<p>To avoid being over-long and dull, this document does not cover all of the extension methods available in these classes.
 Interested readers are encouraged to follow the links above to the class API docs.</p>
 </div>
 <h2 id="assert">Assert</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_Assert_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Assert(this IGraph g, INode subj, INode pred, INode obj)</a> method is a shorthand way of asserting a single Triple in a Graph without having to instantiate a Triple object yourself e.g.</p>
 <pre><code class="lang-csharp">
-//Create a Graph and set it&#39;s Base URI
+//Create a Graph and set it's Base URI
 IGraph g = new Graph();
 g.BaseUri = new Uri(&quot;http://example.org&quot;);
 
@@ -85,15 +86,16 @@ IUriNode thisGraph = g.CreateUriNode();
 IUriNode rdfType = g.CreateUriNode(&quot;rdf:type&quot;);
 IUriNode example = g.CreateUriNode(&quot;http://example.org/Example&quot;);
 
-//Assert a Triple using the Graph&#39;s Assert method
+//Assert a Triple using the Graph's Assert method
 g.Assert(new Triple(thisGraph, rdfType, example));
 
 //Assert a Triple using the extension method
 g.Assert(thisGraph, rdfType, example);
-</code></pre><p>Note that these methods of asserting are semantically identical, they both assert the same Triple in the Graph.</p>
+</code></pre>
+<p>Note that these methods of asserting are semantically identical, they both assert the same Triple in the Graph.</p>
 <h2 id="getenhancedhashcode">GetEnhancedHashCode</h2>
-<p>The <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetEnhancedHashCode_System_Uri_"><code>GetEnhancedHashCode(this Uri u)</code></a> method is used to generate Hash Codes for Uri objects. This method is used internally in favour of the Uri classes own <code>GetHashCode()</code> method since the .Net implementation doesn&#39;t account for fragement identifiers in computing hash codes.</p>
-<p>In most applications this wouldn&#39;t matter since the fragment identifier is usually insignificant but in the case of the Semantic Web fragment identifiers are an important part of URIs. Therefore we provide our own hash code function which does use the fragment identifier in computing hash codes.</p>
+<p>The <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetEnhancedHashCode_System_Uri_"><code>GetEnhancedHashCode(this Uri u)</code></a> method is used to generate Hash Codes for Uri objects. This method is used internally in favour of the Uri classes own <code>GetHashCode()</code> method since the .Net implementation doesn't account for fragement identifiers in computing hash codes.</p>
+<p>In most applications this wouldn't matter since the fragment identifier is usually insignificant but in the case of the Semantic Web fragment identifiers are an important part of URIs. Therefore we provide our own hash code function which does use the fragment identifier in computing hash codes.</p>
 <h2 id="loadfromfile-loadfromuri-loadfromembeddedresource-and-loadfromstring">LoadFromFile, LoadFromUri, LoadFromEmbeddedResource and LoadFromString</h2>
 <p>These extension methods for <a class="xref" href="../api/VDS.RDF.IGraph.html"><code>IGraph</code></a> instances all provide shortcuts for invoking the various static loader classes that can be used to load RDF from various common sources as detailed in the [Reading RDF]reading_rdf.md#reading-rdf-from-common-sources) documentation.</p>
 <h2 id="retract">Retract</h2>
@@ -105,12 +107,13 @@ IUriNode thisGraph = g.CreateUriNode();
 IUriNode rdfType = g.CreateUriNode(&quot;rdf:type&quot;);
 IUriNode example = g.CreateUriNode(&quot;http://example.org/Example&quot;);
 
-//Retract a Triple using the Graph&#39;s Retract method
+//Retract a Triple using the Graph's Retract method
 g.Retract(new Triple(thisGraph, rdfType, example));
 
 //Retract a Triple using the extension method
 g.Retract(thisGraph, rdfType, example);
-</code></pre><p>Again both methods of retracting are semantically identical.</p>
+</code></pre>
+<p>Again both methods of retracting are semantically identical.</p>
 <h2 id="toliteral">ToLiteral</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.LiteralExtensions.html"><code>ToLiteral(...)</code></a> methods are a whole family of methods which can be used to turn common .Net types into their equivalent <a class="xref" href="../api/VDS.RDF.ILiteralNode.html"><code>ILiteralNode</code></a> representations.  Methods are provided for <code>boolean</code>, <code>int</code>, <code>long</code>, <code>byte</code>, <code>sbyte</code>, <code>decimal</code>, <code>float</code>, <code>double</code>, <code>DateTime</code>, <code>DateTimeOffset</code>, <code>TimeSpan</code>.</p>
 <p>Some overloads may allow for control over the exact literal generated, for example the <code>DateTime</code> has an overload which allows specifying whether to preserve precisely i.e. include fractional seconds</p>
@@ -118,13 +121,13 @@ g.Retract(thisGraph, rdfType, example);
 <p>The <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithSubject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_"><code>WithSubject(this IEnumerable&lt;Triple&gt;, INode Subject)</code></a>, <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithPredicate_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_"><code>WithPredicate(IEnumerable&lt;Triple&gt;, INode Predicate)</code></a>, <a class="xref" href="../api/VDS.RDF.Extensions.html#VDS_RDF_Extensions_WithObject_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_INode_"><code>WithObject(this IEnumerable&lt;Triple&gt;, INode Object)</code></a> methods are used to filter any <code>IEnumerable&lt;Triple&gt;</code> to find only the Triples that have the matching Subject, Predicate or Object.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/extension_methods.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/extension_methods.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -136,7 +139,7 @@ g.Retract(thisGraph, rdfType, example);
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -144,13 +147,13 @@ g.Retract(thisGraph, rdfType, example);
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

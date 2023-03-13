@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Handlers API | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Handlers API | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Handlers API | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Handlers API | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -71,15 +70,17 @@
 
 <p>The Handlers API is a powerful API that permits the stream processing of RDF and SPARQL Results.  It can be used in virtually any part of the API that works with RDF or SPARQL results.</p>
 <p>The API is designed to facilitate stream processing of the data, that is that handlers get the data as soon as it is available and they control whether processing continues or terminates. Handlers implement either the <a class="xref" href="../api/VDS.RDF.IRdfHandler.html"><code>IRdfHandler</code></a> or the <a class="xref" href="../api/VDS.RDF.ISparqlResultsHandler.html"><code>ISparqlResultsHandler</code></a> interface in order to do this, please note that there is no reason a custom implementation cannot implement both but for ease of implementation and abstraction purposes our implementations do one or the other.</p>
-<p>One thing to note is that both handler interfaces descend from the <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> interface which is a large interface that if implemented incorrectly may lead to serious issues. Therefore we&#39;d typically recommend extending either of <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseRdfHandler.html"><code>BaseRdfHandler</code></a> or <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseResultsHandler.html"><code>BaseResultsHandler</code></a>. If you are an advanced developer you may wish to extend their parent class <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseHandler.html"><code>BaseHandler</code></a> instead which will allow you complete control over how you implement the rest of the handler interface while still giving you the <code>INodeFactory</code> implementation.</p>
-<div class="NOTE"><h5>Note</h5><p>While the handlers API allows you to read RDF in a fully streaming fashion this does not mean that memory usage won&#39;t steadily increase over time due to various internal state that a parser has to keep during the parsing process. 
+<p>One thing to note is that both handler interfaces descend from the <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> interface which is a large interface that if implemented incorrectly may lead to serious issues. Therefore we'd typically recommend extending either of <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseRdfHandler.html"><code>BaseRdfHandler</code></a> or <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseResultsHandler.html"><code>BaseResultsHandler</code></a>. If you are an advanced developer you may wish to extend their parent class <a class="xref" href="../api/VDS.RDF.Parsing.Handlers.BaseHandler.html"><code>BaseHandler</code></a> instead which will allow you complete control over how you implement the rest of the handler interface while still giving you the <code>INodeFactory</code> implementation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While the handlers API allows you to read RDF in a fully streaming fashion this does not mean that memory usage won't steadily increase over time due to various internal state that a parser has to keep during the parsing process.
 You may also need to either disable the URI Interning feature of the default <a href="node_factory.html">Node Factory</a>, or create a separate scoped Node Factory for each separate parsing run if you wish to stream parse very large data files.</p>
 </div>
 <h1 id="the-irdfhandler-interface">The IRdfHandler Interface</h1>
-<p>So let&#39;s start by looking at the methods of the <a class="xref" href="../api/VDS.RDF.IRdfHandler.html"><code>IRdfHandler</code></a> interface:</p>
+<p>So let's start by looking at the methods of the <a class="xref" href="../api/VDS.RDF.IRdfHandler.html"><code>IRdfHandler</code></a> interface:</p>
 <h2 id="startrdf">StartRdf()</h2>
 <p>This is called when processing starts, this is typically used to take any initialisation actions and should be used to ensure that a handler is not being used in multiple places at once.</p>
-<p>Again please note that there is no reason why you cannot write a handler that can be used in multiple places simultaneously it&#39;s just that for most of our own implementations this would lead to unexpected results.</p>
+<p>Again please note that there is no reason why you cannot write a handler that can be used in multiple places simultaneously it's just that for most of our own implementations this would lead to unexpected results.</p>
 <h2 id="handlebaseuriuri-baseuri">HandleBaseUri(Uri baseUri)</h2>
 <p>This is called whenever the Base URI is altered by the data being processed, in most cases there is no need to do anything in this method other than return <code>true</code> to indicate that parsing should continue.</p>
 <h2 id="handlenamespacestring-prefix-uri-namespaceuri">HandleNamespace(String prefix, Uri namespaceUri)</h2>
@@ -88,7 +89,7 @@ You may also need to either disable the URI Interning feature of the default <a 
 <p>This is the method which is probably of interest to most people as this is where you actually receive the RDF triples for processing. If the data source from which you are handling triples is actually providing quads then the <code>GraphUri</code> property of the triples will be non-null.</p>
 <p>In this method you can implement whatever logic you wish regarding triples and then either return <code>true</code> to indicate that processing should continue or <code>false</code> to indicate processing should terminate.</p>
 <h2 id="endrdfbool-ok">EndRdf(bool ok)</h2>
-<p>This is the method that is called when processing completes, either because the end of the data was reached or because one of your handlers methods indicated that processing should terminate. The boolean parameter indicates whether the parsing completed/terminated without error or whether an error was encountered. </p>
+<p>This is the method that is called when processing completes, either because the end of the data was reached or because one of your handlers methods indicated that processing should terminate. The boolean parameter indicates whether the parsing completed/terminated without error or whether an error was encountered.</p>
 <p>Depending on your implementation you may wish to take different clean up actions if an error occurred as opposed to normal parsing completion.</p>
 <h1 id="the-isparqlresultshandler-interface">The ISparqlResultsHandler Interface</h1>
 <p>This interface functions very similarily to the <code>IRdfHandler</code> interface just the methods are named differently.</p>
@@ -116,30 +117,31 @@ using VDS.RDF.Writing.Formatting;
 
 public class WriteThroughHandlerExample
 {
-    public static void Main(String[] args)
-    {
-        //First create out Handler Instance
-        //We recommend always using the variant that takes a Type as this allows
-        //the Handler to instantiate the formatter itself and echo Namespaces from the
-        //input data to the output data
-        //The false specifies that the TextWriter being used should not be closed when
-        //handling finishes
-        WriteThroughHandler handler = new WriteThroughHandler(typeof(NTriplesFormatter), Console.Out, false);
+	public static void Main(String[] args)
+	{
+		//First create out Handler Instance
+		//We recommend always using the variant that takes a Type as this allows
+		//the Handler to instantiate the formatter itself and echo Namespaces from the
+		//input data to the output data
+		//The false specifies that the TextWriter being used should not be closed when
+		//handling finishes
+		WriteThroughHandler handler = new WriteThroughHandler(typeof(NTriplesFormatter), Console.Out, false);
 
-        //Load in the data handling it with our handler
-        //We&#39;re loading in example.rdf which will get output as NTriples to the Console
-        FileLoader.Load(handler, &quot;example.rdf&quot;);
-    }
+		//Load in the data handling it with our handler
+		//We're loading in example.rdf which will get output as NTriples to the Console
+		FileLoader.Load(handler, &quot;example.rdf&quot;);
+	}
 }
-</code></pre></article>
+</code></pre>
+</article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/handlers.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/handlers.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -151,7 +153,7 @@ public class WriteThroughHandlerExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -159,13 +161,13 @@ public class WriteThroughHandlerExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>

@@ -1,21 +1,20 @@
 ﻿<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Working with Triple Stores | DotNetRDF Documentation </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Working with Triple Stores | DotNetRDF Documentation ">
-    <meta name="generator" content="docfx 2.59.0.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Working with Triple Stores | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Working with Triple Stores | DotNetRDF Documentation ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -23,7 +22,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
               </a>
@@ -47,7 +46,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,7 +56,7 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -70,7 +69,9 @@
 <h1 id="working-with-triple-stores">Working with Triple Stores</h1>
 
 <p>Triples Stores in dotNetRDF are used to represent collections of graphs and to allow you to work with larger quantities of RDF easily. As stated in the <a href="core_concepts.html">Core Concepts</a> our triple stores are designed to be less tangible than graphs since a triple store does not necessarily have to be in-memory and may simply represent an interface to or a partial view on some actual underlying store.</p>
-<div class="NOTE"><h5>Note</h5><p>This document primarily discusses Triple Stores in terms of their representation in-memory within the library. For details of working with external Triple Stores please see <a href="triple_store_integration.html">Triple Store Integration</a></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This document primarily discusses Triple Stores in terms of their representation in-memory within the library. For details of working with external Triple Stores please see <a href="triple_store_integration.html">Triple Store Integration</a></p>
 </div>
 <h1 id="basic-properties">Basic Properties</h1>
 <p>Triple Stores are based on the <a class="xref" href="../api/VDS.RDF.ITripleStore.html"><code>ITripleStore</code></a> interface which defines the basic properties of a triple store as follows:</p>
@@ -86,21 +87,23 @@
 <pre><code class="lang-csharp">
 //Assuming we have a store already
 IGraph g = store[new Uri(&quot;http://example.org/graph&quot;)];
-</code></pre><h1 id="basic-methods">Basic Methods</h1>
+</code></pre>
+<h1 id="basic-methods">Basic Methods</h1>
 <p>The <a class="xref" href="../api/VDS.RDF.ITripleStore.html"><code>ITripleStore</code></a> interface defines the following methods for Triple Stores:</p>
 <h2 id="hasgraph">HasGraph</h2>
 <p>Checks whether a Graph with the given URI exists in the Triple Store e.g.</p>
 <pre><code class="lang-csharp">
 if (store.HasGraph(new Uri(&quot;http://example.org/&quot;)) 
 {
-    Console.WriteLine(&quot;Graph exists&quot;);
+	Console.WriteLine(&quot;Graph exists&quot;);
 }
 else
 {
-    Console.WriteLine(&quot;Graph doesn&#39;t exist&quot;);
+	Console.WriteLine(&quot;Graph doesn't exist&quot;);
 }
-</code></pre><h2 id="add-and-addfromuri">Add and AddFromUri</h2>
-<p>Used to add graphs into the triple store, graphs can either by added by use of classes that implement <code>IGraph</code> or by specifying the URI of a graph. If you use the latter method then the triple store will attempt to retrieve the RDF located at that URI and then insert the resulting graph into the triple store. </p>
+</code></pre>
+<h2 id="add-and-addfromuri">Add and AddFromUri</h2>
+<p>Used to add graphs into the triple store, graphs can either by added by use of classes that implement <code>IGraph</code> or by specifying the URI of a graph. If you use the latter method then the triple store will attempt to retrieve the RDF located at that URI and then insert the resulting graph into the triple store.</p>
 <p>Using the IGraph versions of the methods allows you to insert any type of graph you want into the triple store.</p>
 <pre><code class="lang-csharp">
 using System;
@@ -109,61 +112,64 @@ using VDS.RDF.Parsing;
 
 public class TripleStoreLoadExample
 {
-    public static void Main(String[] args)
-    {
-        // Create a Triple Store
-        TripleStore store = new TripleStore();
+	public static void Main(String[] args)
+	{
+		// Create a Triple Store
+		TripleStore store = new TripleStore();
 
-        // Load data from a file into a named graph and add it to the Store
-        Graph g = new Graph(new UriNode(new Uri(&quot;http://example.org/graph&quot;)));
-        TurtleParser ttlparser = new TurtleParser();
-        ttlparser.Load(g, &quot;Example.ttl&quot;);
-        store.Add(g);
+		// Load data from a file into a named graph and add it to the Store
+		Graph g = new Graph(new UriNode(new Uri(&quot;http://example.org/graph&quot;)));
+		TurtleParser ttlparser = new TurtleParser();
+		ttlparser.Load(g, &quot;Example.ttl&quot;);
+		store.Add(g);
 
-        // Load a Graph from a URI into the Store.
+		// Load a Graph from a URI into the Store.
         // This will create a graph whose name is the same as the URI of the loaded resource.
-        store.AddFromUri(new Uri(&quot;http://dbpedia.org/resource/Barack_Obama&quot;));
+		store.AddFromUri(new Uri(&quot;http://dbpedia.org/resource/Barack_Obama&quot;));
 
-        // Attempt to add another graph with the same name
-        // This will cause an error since you can&#39;t insert duplicate Graphs in a Triple Store
-        Graph h = new Graph(new UriNode(new Uri(&quot;http://example.org/graph&quot;)));
-        ttlparser.Load(h, &quot;Example.ttl&quot;);
-        try {
-            store.Add(h);
-        } catch {
-            //We get an error
-        }
+		// Attempt to add another graph with the same name
+		// This will cause an error since you can't insert duplicate Graphs in a Triple Store
+		Graph h = new Graph(new UriNode(new Uri(&quot;http://example.org/graph&quot;)));
+		ttlparser.Load(h, &quot;Example.ttl&quot;);
+		try {
+			store.Add(h);
+		} catch {
+			//We get an error
+		}
 
-        // You can avoid this by using the second optional boolean parameter to specify behaviour 
-        // when a Graph already exists
-        // Load the same Graph again but with a merge if it exists in the store
-        store.Add(h, true);
+		// You can avoid this by using the second optional boolean parameter to specify behaviour 
+		// when a Graph already exists
+		// Load the same Graph again but with a merge if it exists in the store
+		store.Add(h, true);
 
-        // Try and load an empty Graph that has no name
-        // This Graph is then treated as being the default unnamed Graph of the store
-        Graph i = new Graph();
-        store.Add(i);
-    }
+		// Try and load an empty Graph that has no name
+		// This Graph is then treated as being the default unnamed Graph of the store
+		Graph i = new Graph();
+		store.Add(i);
+	}
 }
-</code></pre><p>As you&#39;ll see from the above example there are a couple of important things to remember when using an <code>ITripleStore</code>.
-Firstly that if you insert a graph that doesn&#39;t have a name then it is treated as the default unnamed graph of the store.
+</code></pre>
+<p>As you'll see from the above example there are a couple of important things to remember when using an <code>ITripleStore</code>.
+Firstly that if you insert a graph that doesn't have a name then it is treated as the default unnamed graph of the store.
 Secondly that you will encounter an error if you try and insert a graph that already exists unless you set the second parameter to true to indicate that the existing graph should be merged with the graph being loaded in.</p>
 <h2 id="remove">Remove</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Remove_System_Uri_"><code>Remove(Uri graphUri)</code></a> method is used to remove a graph that is in the triple store.
-Removing a graph that doesn&#39;t exist has no effect and does not cause an error.</p>
+Removing a graph that doesn't exist has no effect and does not cause an error.</p>
 <h1 id="in-memory-triple-stores">In-Memory Triple Stores</h1>
 <p>As you have seen the basic triple store interface simply allows you to enumerate over a triple store and to add and remove graphs from it.
-While this is useful in itself you&#39;ll often want to make queries over the entire store and for this you&#39;ll need to use one of the classes that implement <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a>.
+While this is useful in itself you'll often want to make queries over the entire store and for this you'll need to use one of the classes that implement <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a>.
 One of the main things the <code>IInMemoryQueryableStore</code> does is to define equivalents of all the various <code>GetTriples()</code> methods from the <code>IGraph</code> interface for triple stores.
 It has two versions of each method, one which operates over all the triples in the triple Store and one which operates over a subset of the triples where the subset is defined by a list of graph names.</p>
-<div class="WARNING"><h5>Warning</h5><p>From dotNetRDF version 3.0 the <code>ExecuteQuery</code> methods on this interface has been withdrawn. 
+<div class="WARNING">
+<h5>Warning</h5>
+<p>From dotNetRDF version 3.0 the <code>ExecuteQuery</code> methods on this interface has been withdrawn.
 In-memory triple stores can be queried using an <a class="xref" href="../api/VDS.RDF.Query.ISparqlQueryProcessor.html"><code>ISparqlQueryProcessor</code></a> implementation instead as desrcribed in <a href="querying_with_sparql.html">Querying with SPARQL</a></p>
 </div>
 <h1 id="natively-queryable-stores">Natively Queryable Stores</h1>
 <p>The <a class="xref" href="../api/VDS.RDF.INativelyQueryableStore.html"><code>INativelyQueryableStore</code></a> interface is another extension to the <code>ITripleStore</code> interface which is disjoint from the <a class="xref" href="../api/VDS.RDF.IInMemoryQueryableStore.html"><code>IInMemoryQueryableStore</code></a> interface i.e. a Store cannot be both In-Memory and Natively Queryable.
 Natively Queryable Stores represents Stores which provide their own SPARQL implementations and so can be queried directly.</p>
 <p>An <code>INativelyQueryableStore</code> defines two <code>ExecuteQuery</code> methods which take a SPARQL query as a string and executes it against the underlying SPARQL implemetnation. The <a class="xref" href="../api/VDS.RDF.INativelyQueryableStore.html#VDS_RDF_INativelyQueryableStore_ExecuteQuery_System_String_"><code>ExecuteQuery(string)</code></a> variant returns an object containing the query results.
-The <a class="xref" href="../api/VDS.RDF.INativelyQueryableStore.html#VDS_RDF_INativelyQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_"><code>ExecuteQuery(IRdfHandler, ISparqlResultsHandler, string)</code></a> variant also takes two handler objects which will be invoked to process the query results instead. For more information on handling SPARQL query results, please refer <a href="querying_with_sparql.html">Querying with SPARQL</a>. 
+The <a class="xref" href="../api/VDS.RDF.INativelyQueryableStore.html#VDS_RDF_INativelyQueryableStore_ExecuteQuery_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_"><code>ExecuteQuery(IRdfHandler, ISparqlResultsHandler, string)</code></a> variant also takes two handler objects which will be invoked to process the query results instead. For more information on handling SPARQL query results, please refer <a href="querying_with_sparql.html">Querying with SPARQL</a>.
 Note that these stores may only be queryable read-only wrappers around an underlying store.</p>
 <p>We provide a <a class="xref" href="../api/VDS.RDF.PersistentTripleStore.html"><code>PersistentTripleStore</code></a> class which is an implementation of the <code>INativelyQueryableStore</code> that can be used with any of the backing stores we support with <a class="xref" href="../api/VDS.RDF.Storage.IQueryableStorage.html"><code>IQueryableStorage</code></a> implementations.
 This class provides an in-memory view of an underlying store where changes to the in-memory view can be persisted to the underlying store (or discarded) as you desire.</p>
@@ -174,50 +180,51 @@ using VDS.RDF.Storage;
 
 public class PersistentTripleStoreExample
 {
-    public static void Main(String[] args)
-    {
-        //Create a connection to 4store in this example
-        FourStoreConnector 4store = new FourStoreConnector(&quot;http://example.com:8080/&quot;);
-        PersistentTripleStore store = new PersistentTripleStore(4store);
+	public static void Main(String[] args)
+	{
+		//Create a connection to 4store in this example
+		FourStoreConnector 4store = new FourStoreConnector(&quot;http://example.com:8080/&quot;);
+		PersistentTripleStore store = new PersistentTripleStore(4store);
 
-        //See whether a Graph exists in the store
-        //If the Graph exists in the underlying store this will cause it to be loaded into memory
-        if (store.HasGraph(new Uri(&quot;http://example.org/someGraph&quot;)))
-        {
-            //Get the graph out of the in-memory view (note that if it changes in the underlying store in the meantime you will not see those changes)
-            Graph g = store.Graph(new Uri(&quot;http://example.org/someGraph&quot;));
+		//See whether a Graph exists in the store
+		//If the Graph exists in the underlying store this will cause it to be loaded into memory
+		if (store.HasGraph(new Uri(&quot;http://example.org/someGraph&quot;)))
+		{
+			//Get the graph out of the in-memory view (note that if it changes in the underlying store in the meantime you will not see those changes)
+			Graph g = store.Graph(new Uri(&quot;http://example.org/someGraph&quot;));
 
-            //Do something with the Graph...
-        }
+			//Do something with the Graph...
+		}
 
-        //If you were to add a Graph to the store this would be added to the in-memory state only initially
-        Graph toAdd = new Graph();
-        toAdd.LoadFromUri(new Uri(&quot;http://example.org/newGraph&quot;));
-        store.Add(toAdd);
+		//If you were to add a Graph to the store this would be added to the in-memory state only initially
+		Graph toAdd = new Graph();
+		toAdd.LoadFromUri(new Uri(&quot;http://example.org/newGraph&quot;));
+		store.Add(toAdd);
 
-        //To ensure that the new graph is saved call Flush()
-        store.Flush();
+		//To ensure that the new graph is saved call Flush()
+		store.Flush();
 
-        //You can also use this class to make queries/updates against the underlying store
-        //Note - If you&#39;ve made changes to the in-memory state of the store making a query/update will throw an error unless you&#39;ve
-        //          persisted those changes
-        //          Use Flush() or Discard() to ensure the state of the store is consistent for querying
+		//You can also use this class to make queries/updates against the underlying store
+		//Note - If you've made changes to the in-memory state of the store making a query/update will throw an error unless you've
+		//          persisted those changes
+		//          Use Flush() or Discard() to ensure the state of the store is consistent for querying
 
-        //Make a Query against the Store
-        //Should get a SparqlResultSet back from a SELECT query
-        Object results = store.ExecuteQuery(&quot;SELECT * WHERE {?s ?p ?o}&quot;);
-        if (results is SparqlResultSet)
-        {
-            //Print out the Results
-            SparqlResultSet rset = (SparqlResultSet)results;
-            foreach (SparqlResult result in rset)
-            {
-                Console.WriteLine(result.ToString());
-            }
-        }
-    }
+		//Make a Query against the Store
+		//Should get a SparqlResultSet back from a SELECT query
+		Object results = store.ExecuteQuery(&quot;SELECT * WHERE {?s ?p ?o}&quot;);
+		if (results is SparqlResultSet)
+		{
+			//Print out the Results
+			SparqlResultSet rset = (SparqlResultSet)results;
+			foreach (SparqlResult result in rset)
+			{
+				Console.WriteLine(result.ToString());
+			}
+		}
+	}
 }
-</code></pre><h1 id="loading-and-saving-triple-stores">Loading and Saving Triple Stores</h1>
+</code></pre>
+<h1 id="loading-and-saving-triple-stores">Loading and Saving Triple Stores</h1>
 <p>Often you want the information you place into an in-memory Triple Store to be persisted over time and be able to load/save that triple store as required. Currently we provide the means to save/load a Triple Store in the following ways:</p>
 <ul>
 <li>As a file in a RDF dataset format - TriG, TriX or NQuads</li>
@@ -235,19 +242,20 @@ using VDS.RDF.Writing;
 
 public class TriGExample
 {
-    public static void Main(String[] args)
-    {
-        //Read a Store from the TriG file
-        TripleStore store = new TripleStore();
-        TriGParser trigparser = new TriGParser();
-        trigparser.Load(store, &quot;input.trig&quot;);
+	public static void Main(String[] args)
+	{
+		//Read a Store from the TriG file
+		TripleStore store = new TripleStore();
+		TriGParser trigparser = new TriGParser();
+		trigparser.Load(store, &quot;input.trig&quot;);
 
-        //Now we want to save to another TriG file
-        TriGWriter trigwriter = new TriGWriter();
-        trigwriter.Save(store, &quot;output.trig&quot;);
-    }
+		//Now we want to save to another TriG file
+		TriGWriter trigwriter = new TriGWriter();
+		trigwriter.Save(store, &quot;output.trig&quot;);
+	}
 }
-</code></pre><h1 id="standard-itriplestore-implementations">Standard ITripleStore Implementations</h1>
+</code></pre>
+<h1 id="standard-itriplestore-implementations">Standard ITripleStore Implementations</h1>
 <p>The Library contains the following standard <code>ITripleStore</code> implementations:</p>
 <table>
 <thead>
@@ -277,58 +285,25 @@ public class TriGExample
 </table>
 <h1 id="standard-rdf-dataset-parsers--writers">Standard RDF Dataset Parsers &amp; Writers</h1>
 <p>The Library contains the following standard <a class="xref" href="../api/VDS.RDF.IStoreReader.html"><code>IStoreReader</code></a> and <a class="xref" href="../api/VDS.RDF.IStoreWriter.html"><code>IStoreWriter</code></a> implementations for RDF dataset formats:</p>
-<table>
-<thead>
-<tr>
-<th>Implementation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Parsing.JsonLdParser.html">`JsonLdParser</a></td>
-<td>Parsers JSON-LD</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Writing.JsonLdWriter.html">`JsonLdWriter</a></td>
-<td>Writes JSON-LD</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Parsing.NQuadsParser.html"><code>NQuadsParser</code></a></td>
-<td>Parses NQuads</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Writing.NQuadsWriter.html"><code>NQuadsWriter</code></a></td>
-<td>Writes NQuads</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Parsing.TriGParser.html"><code>TriGParser</code></a></td>
-<td>Parses TriG</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Writing.TriGWriter.html"><code>TriGWriter</code></a></td>
-<td>Writes TriG</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Parsing.TriXParser.html"><code>TriXParser</code></a></td>
-<td>Parses TriX</td>
-</tr>
-<tr>
-<td><a class="xref" href="../api/VDS.RDF.Writing.TriXWriter.html"><code>TriXWriter</code></a></td>
-<td>Writes TriX</td>
-</tr>
-</tbody>
-</table>
+<p>| Implementation | Description |
+| --- | --- |
+| <a class="xref" href="../api/VDS.RDF.Writing.JsonLdWriter.html"><code>JsonLdParser](xref:VDS.RDF.Parsing.JsonLdParser)  | Parsers JSON-LD | | [</code>JsonLdWriter</a>  | Writes JSON-LD |
+| <a class="xref" href="../api/VDS.RDF.Parsing.NQuadsParser.html"><code>NQuadsParser</code></a> | Parses NQuads |
+| <a class="xref" href="../api/VDS.RDF.Writing.NQuadsWriter.html"><code>NQuadsWriter</code></a> | Writes NQuads |
+| <a class="xref" href="../api/VDS.RDF.Parsing.TriGParser.html"><code>TriGParser</code></a> | Parses TriG |
+| <a class="xref" href="../api/VDS.RDF.Writing.TriGWriter.html"><code>TriGWriter</code></a> | Writes TriG |
+| <a class="xref" href="../api/VDS.RDF.Parsing.TriXParser.html"><code>TriXParser</code></a> | Parses TriX |
+| <a class="xref" href="../api/VDS.RDF.Writing.TriXWriter.html"><code>TriXWriter</code></a> | Writes TriX |</p>
 <p>In addition we also provide a <a class="xref" href="../api/VDS.RDF.Writing.GraphMLWriter.html"><code>GraphMLWriter</code></a> class. This writer does not output RDF, but instead <a href="http://graphml.graphdrawing.org/">GraphML</a> and XML representation of the graphs structure of the store. This file can be loaded into suitable tools for graph visualization.</p>
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/feature/new_docs/docs/user_guide/working_with_triple_stores.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/working_with_triple_stores.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -340,7 +315,7 @@ public class TriGExample
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -348,13 +323,13 @@ public class TriGExample
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
