@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Deploying with rdfWebDeploy | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Deploying with rdfWebDeploy | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="deploying-with-rdfwebdeploy">Deploying with rdfWebDeploy</h1>
+
+<p>Integration of dotNetRDF into ASP.Net applications is configured using the <a href="configuration/index.html">Configuration API</a> and can be deployed using <a href="/tools/rdfwebdeploy.md">rdfWebDeploy</a>. This guide teaches you how to deploy configuration using rdfWebDeploy.</p>
+<h1 id="problem">Problem</h1>
+<p>In this example we want to create a SPARQL Query endpoint which has a base Graph as it's initial dataset but which users can introduce additional graphs into using <code>FROM/FROM NAMED</code> clauses and using Default/Named Graph URIs in the requests. We want this endpoint to be available at our website under the URI <code>/sparql</code></p>
+<h2 id="step-1---define-configuration">Step 1 - Define Configuration</h2>
+<p>To start with we need to create a configuration file which defines this information - see the <a href="configuration/index.html">Configuration API</a> documentation for guidance on this, this will look like the following:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+# Firstly note that our Handler must have a subject which is a special dotNetRDF URI as discussed in Configuration API - HTTP Handlers
+&lt;dotnetrdf:/sparql&gt; a dnr:HttpHandler ;
+  dnr:type &quot;VDS.RDF.Web.QueryHandler&quot; ; # States that we're using the QueryHandler
+  dnr:queryProcessor _:proc .
+
+# Now we must define our query processor, we want to use the in-memory Leviathan SPARQL Engine
+_:proc a dnr:SparqlQueryProcessor ;
+  dnr:type &quot;VDS.RDF.Query.LeviathanQueryProcessor&quot; ;
+  dnr:usingStore _:store .
+
+# Now we define the initial dataset
+_:store a dnr:TripleStore ;
+  dnr:type &quot;VDS.RDF.WebDemandTripleStore&quot; ; # The WebDemandTripleStore can dynamically load Graphs from the web as required
+  dnr:usingGraph _:initGraph .
+
+# This defines out initial Graph which comes from a file in our App_Data directory
+_:initGraph a dnr:Graph ;
+  dnr:type &quot;VDS.RDF.Graph&quot; ;
+  dnr:fromFile &quot;~/App_Data/example.rdf&quot; .
+</code></pre>
+<p>Here we've defined out configuration file in Turtle but any RDF serialization which dotNetRDF understands can be used, we'll refer to this file as <code>config.ttl</code> for the rest of the document but you can name this file whatever you want. Please ensure you use an appropriate file extension for the RDF serialization used to ensure correct behaviour.</p>
+<p>We recommend that you create your configuration file in your applications <code>App_Data/</code> directory</p>
+<h2 id="step-2---test-configuration">Step 2 - Test Configuration</h2>
+<p>Next step is to test your Configuration for errors and mistakes by issuing the following command at the command line (assumes you have the Tools package installed and on your path):</p>
+<pre><code class="lang-dos">X:\example.com\www&gt;rdfWebDeploy -test App_Data\config.ttl
+</code></pre>
+<p>This will test your configuration file and produce output like the following:</p>
+<pre><code class="lang-dos">rdfWebDeploy: Opened the configuration file successfully
+rdfWebDeploy: Loaded the configuration vocabulary successfully
+
+rdfWebDeploy: Tests Started...
+
+rdfWebDeploy: Testing for URIs in the vocabulary namespace which are unknown
+
+rdfWebDeploy: Testing for missing dnr:type properties
+
+rdfWebDeploy: Testing that values given for dnr:type property are literals
+
+rdfWebDeploy: Testing that no object has multiple dnr:type values
+
+rdfWebDeploy: Testing that values given for dnr:type property in the VDS.RDF namespace are valid
+
+rdfWebDeploy: Testing for bad URIs given the rdf:type of dnr:HttpHandler
+
+rdfWebDeploy: Testing for missing dnr:type for dnr:HttpHandler objects
+
+rdfWebDeploy: Testing that values given for dnr:type for dnr:HttpHandler objects in the VDS.RDF namespace are valid IHttpHandlers
+
+rdfWebDeploy: Testing for bad ranges for properties
+
+rdfWebDeploy: Testing for bad domains for properties
+
+rdfWedDeploy: Tests Completed - 0 Warning(s) - 0 Error(s)
+</code></pre>
+<p>If you see any error messages at this stage you should correct this errors now.</p>
+<h2 id="step-3---deploying-to-webconfig">Step 3 - Deploying to Web.config</h2>
+<p>You now need to deploy this configuration to your <code>Web.config</code> file, don't worry if your application doesn't have one as this step will create one if necessary. The command to be issued at the command line now varies depending on whether the application you are deploying to is on a local IIS server instance or whether it is a local copy of an application you plan to upload to your web hosting.</p>
+<p>Both of these methods will create/update your <code>Web.config</code> file so that all the relevant Handlers are registered at the appropriate paths and the <code>&lt;appSettings&gt;</code> setting which points to your configuration file is set. They will also copy all required DLLs into the <code>bin/</code> directory of your application (creating it if necessary).</p>
+<p>With either of these methods you can add the options <code>-nointreg</code> to not register handlers in the integrated mode section of your <code>Web.config</code> file or <code>-noclassicreg</code> to not register handlers in the classic mode section of your <code>Web.config</code> file.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This tool was originally designed for .Net 3.5 but dotNetRDF now also supports .Net 4.0, as the <code>Web.config</code> format has some differences between ASP.Net 3.5 and ASP.Net 4.0 we strongly recommend you ensure that you have a pre-existing <code>Web.config</code> before running this step as we cannot guarantee that a created <code>Web.config</code> will be compatible with your environment whereas updating an existing <code>Web.config</code> file should work fine.</p>
+</div>
+<h3 id="local-iis-method">Local IIS Method</h3>
+<p>If your application is configured on a local IIS server instance then you can issue the following command:</p>
+<pre><code class="lang-dos">X:\example.com\www&gt;rdfWebDeploy -deploy /appVirtualPath config.ttl
+</code></pre>
+<p>With this method you specify the virtual path to your application and then the name of the configuration file. If this configuration file is located in the current directory it is copied to the <code>App_Data/</code> directory, otherwise it is checked for in the <code>App_Data/</code> directory.</p>
+<p>If your application is not on the default site of your IIS instance then you would use the <code>-site</code> option like so:</p>
+<pre><code class="lang-dos">X:\example.com\www&gt;rdfWebDeploy -deploy /appVirtualPath config.ttl -site &quot;www.example.com&quot;
+</code></pre>
+<h3 id="no-iis-method">No IIS Method</h3>
+<p>If you intend to upload your application to web hosting and it is not configured on a local IIS server instance then you should issue the following command:</p>
+<pre><code>X:\example.com\www&gt;rdfWebDeploy -xmldeploy &quot;X:\example.com\www\Web.Config&quot; config.ttl
+</code></pre>
+<p>With this method you specify the path to the <code>Web.Config</code> file (or the root folder) of your application and the name of the configuration file. If this configuration file is located in the current directory it is copied to the <code>App_Data/</code> directory, otherwise it is checked for in the <code>App_Data/</code> directory.</p>
+<h3 id="additional-features">Additional Features</h3>
+<p>For either of the above methods you can add the <code>-negotiate</code> option to install the Negotiate by File Extension module. This module allows all our HTTP Handlers to transparently negotiate based on the file extension in the URL. So for our example here if the <code>-negotiate</code> option is used you'd be able to browse to <code>/sparql.srj?query=SELECT * WHERE { ?s ?p ?o}</code> to force the results to be returned as SPARQL Results JSON.</p>
+<h2 id="step-4---upload">Step 4 - Upload</h2>
+<p>If your application is being used on remote web hosting now upload your application to your web hosting provider. Your provider must support ASP.Net 3.5 for this to function correctly, IIS 7+ based hosting is recommended for best support.</p>
+<h2 id="step-5---testing">Step 5 - Testing</h2>
+<p>Navigate to the URL <code>/sparql</code> at your site and you should now have a working SPARQL Endpoint.</p>
+<h1 id="common-errors">Common Errors</h1>
+<p>There are two common error conditions you may run into:</p>
+<p>You get a <a class="xref" href="../api/VDS.RDF.Configuration.DotNetRdfConfigurationException.html">DotNetRdfConfigurationException</a> - this generally indicates that your Configuration file is invalid (note that <code>rdfWebDeploy -test</code> can only ensure general syntactic correctness and not validity). If you have debugging turned on you should normally see an informative message detailed what is wrong with your configuration. Correct the errors and retry - you may need to restart the IIS site to force the updated file to be read in some cases.</p>
+<p>You get an <code>Unable to load type VDS.RDF.Web.QueryHandler</code> or similar error. This is usually due to a failure to upload the required DLLs into the <code>bin/</code> directory of your site. If you have done this ensure that you are running as an IIS Application rather than a virtual directory. If you are running as a virtual directory (and cannot change to running as an IIS application) then move the DLLs from the <code>bin/</code> directory in your virtual folder to the <code>bin/</code> directory of the application root</p>
+<p>Depending on your version of ASP.Net you may also need to make some manual tweaks to the <code>Web.config</code> - see <a href="asp_creating_sparql_endpoints.html">Creating SPARQL Endpoints</a> for more details.</p>
+<h1 id="further-reading">Further Reading</h1>
+<p>For more information on setting up SPARQL endpoints you may wish to look at the following topics:</p>
+<ul>
+<li><a href="configuration/index.html">Configuration API</a></li>
+<li><a href="configuration/http_handlers.md">Configuration API - HTTP Handlers</a></li>
+<li><a href="http://www.dotnetrdf.org/configuration#">Configuration Vocabulary</a></li>
+<li><a href="/tools/rdfwebdeploy.md">rdfWebDeploy</a></li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.0.0/docs/user_guide/asp_deploying_with_rdfwebdeploy.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
