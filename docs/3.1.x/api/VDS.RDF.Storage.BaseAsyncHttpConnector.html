@@ -1,0 +1,2375 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BaseAsyncHttpConnector
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BaseAsyncHttpConnector
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector">
+
+
+  <h1 id="VDS_RDF_Storage_BaseAsyncHttpConnector" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector" class="text-break">Class BaseAsyncHttpConnector
+</h1>
+  <div class="markdown level0 summary"><p>Abstract Base Class for HTTP Based <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a> implementations.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html">BaseHttpConnector</a></div>
+    <div class="level2"><span class="xref">BaseAsyncHttpConnector</span></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Storage.BaseSesameHttpProtocolConnector.html">BaseSesameHttpProtocolConnector</a></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Storage.BaseStardogConnector.html">BaseStardogConnector</a></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Storage.FourStoreConnector.html">FourStoreConnector</a></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Storage.SparqlHttpProtocolConnector.html">SparqlHttpProtocolConnector</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a></div>
+    <div><a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_HttpClient">BaseHttpConnector.HttpClient</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_HttpClientHandler">BaseHttpConnector.HttpClientHandler</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_String_">BaseHttpConnector.SetProxy(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxy_System_Uri_">BaseHttpConnector.SetProxy(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Proxy">BaseHttpConnector.Proxy</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxy">BaseHttpConnector.ClearProxy()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetProxyCredentials_System_String_System_String_System_String_">BaseHttpConnector.SetProxyCredentials(string, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ProxyCredentials">BaseHttpConnector.ProxyCredentials</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_ClearProxyCredentials">BaseHttpConnector.ClearProxyCredentials()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Timeout">BaseHttpConnector.Timeout</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SerializeStandardConfig_VDS_RDF_INode_VDS_RDF_Configuration_ConfigurationSerializationContext_">BaseHttpConnector.SerializeStandardConfig(INode, ConfigurationSerializationContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_SetCredentials_System_String_System_String_">BaseHttpConnector.SetCredentials(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Dispose">BaseHttpConnector.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Storage.BaseHttpConnector.html#VDS_RDF_Storage_BaseHttpConnector_Dispose_System_Boolean_">BaseHttpConnector.Dispose(bool)</a>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Storage.html">Storage</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseAsyncHttpConnector : BaseHttpConnector, IAsyncStorageProvider, IStorageCapabilities, IDisposable</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L70">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.#ctor">BaseAsyncHttpConnector()</h4>
+  <div class="markdown level1 summary"><p>Create a new connector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseAsyncHttpConnector()</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_System_Net_Http_HttpClientHandler_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.%23ctor(System.Net.Http.HttpClientHandler)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L65">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.#ctor*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_System_Net_Http_HttpClientHandler_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.#ctor(System.Net.Http.HttpClientHandler)">BaseAsyncHttpConnector(HttpClientHandler)</h4>
+  <div class="markdown level1 summary"><p>Create a new connector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseAsyncHttpConnector(HttpClientHandler httpClientHandler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpClientHandler</span></td>
+        <td><span class="parametername">httpClientHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector__ctor_System_Net_Http_HttpClientHandler__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_AsyncParentServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.AsyncParentServer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L59">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_AsyncParentServer_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.AsyncParentServer*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_AsyncParentServer" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.AsyncParentServer">AsyncParentServer</h4>
+  <div class="markdown level1 summary"><p>Gets the parent server (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IAsyncStorageServer AsyncParentServer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.Management.IAsyncStorageServer.html">IAsyncStorageServer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_AsyncParentServer_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteSupported%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L742">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteSupported_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteSupported" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteSupported">DeleteSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports Graph deletion via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">DeleteGraph()</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool DeleteSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteSupported_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_IOBehaviour.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.IOBehaviour%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L726">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_IOBehaviour_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IOBehaviour*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IOBehaviour" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IOBehaviour">IOBehaviour</h4>
+  <div class="markdown level1 summary"><p>Gets the IO Behaviour of the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IOBehaviour IOBehaviour { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.IOBehaviour.html">IOBehaviour</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IOBehaviour_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_IsReadOnly.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L718">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReadOnly_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IsReadOnly*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReadOnly" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store is read only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReadOnly_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_IsReady.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.IsReady%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L710">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReady_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IsReady*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReady" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.IsReady">IsReady</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the Store is ready to accept requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsReady { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_IsReady_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsSupported%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L750">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsSupported_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsSupported" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsSupported">ListGraphsSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports listing graphs via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_">ListGraphs()</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool ListGraphsSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsSupported_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_ParentServer.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.ParentServer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L54">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_ParentServer_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ParentServer*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ParentServer" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ParentServer">ParentServer</h4>
+  <div class="markdown level1 summary"><p>Gets the parent server (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IStorageServer ParentServer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.Management.IStorageServer.html">IStorageServer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ParentServer_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateSupported.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateSupported%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L734">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateSupported_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateSupported*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateSupported" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateSupported">UpdateSupported</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Store supports Triple level updates via the <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_">UpdateGraph()</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool UpdateSupported { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateSupported_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UriFactory.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UriFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L758">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UriFactory_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UriFactory*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UriFactory" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UriFactory">UriFactory</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the URI factory for the connector to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IUriFactory UriFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UriFactory_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph(System.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L546">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph(System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraph(string, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void DeleteGraph(string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph(System.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L535">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraph(System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraph(Uri, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Deletes a Graph from the Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteGraph(Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.Http.HttpRequestMessage%2CSystem.Boolean%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L603">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.Http.HttpRequestMessage,System.Boolean,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraphAsync(HttpRequestMessage, bool, string, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async delete operations, callers just need to provide an appropriately prepared HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void DeleteGraphAsync(HttpRequestMessage request, bool allow404, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">allow404</span></td>
+        <td><p>Whether a 404 response counts as success.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.Http.HttpRequestMessage%2CSystem.Boolean%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L646">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.Http.HttpRequestMessage,System.Boolean,System.Threading.CancellationToken)">DeleteGraphAsync(HttpRequestMessage, bool, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Helper method for deleting a graph from a store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task DeleteGraphAsync(HttpRequestMessage request, bool allow404, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The delete request to send.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">allow404</span></td>
+        <td><p>True if the client should ignore a 404 returned as the result of trying to delete a non-existent graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A <span class="xref">System.Threading.Tasks.Task</span> representing the result of the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_Http_HttpRequestMessage_System_Boolean_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_HttpWebRequest_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.HttpWebRequest%2CSystem.Boolean%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L559">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_HttpWebRequest_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.Net.HttpWebRequest,System.Boolean,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">DeleteGraphAsync(HttpWebRequest, bool, string, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async delete operations, callers just need to provide an appropriately prepared HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void DeleteGraphAsync(HttpWebRequest request, bool allow404, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">allow404</span></td>
+        <td><p>Whether a 404 response counts as success.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_Net_HttpWebRequest_System_Boolean_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L549">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_String_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.DeleteGraphAsync(System.String,System.Threading.CancellationToken)">DeleteGraphAsync(string, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Deletes a graph from the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task DeleteGraphAsync(string graphName, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Name of the graph to delete.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_DeleteGraphAsync_System_String_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphs(VDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L661">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphs*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphs(VDS.RDF.Storage.AsyncStorageCallback,System.Object)">ListGraphs(AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Lists the Graphs in the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Replaced with ListGraphsAsync(CancellationToken)&quot;)]
+public virtual void ListGraphs(AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphs_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L694">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsAsync_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.ListGraphsAsync(System.Threading.CancellationToken)">ListGraphsAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>List the names of the graph on the remote server asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IEnumerable&lt;string&gt;&gt; ListGraphsAsync(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task&lt;TResult&gt;</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">string</span>&gt;&gt;</td>
+        <td><p>Task that returns the list of graph names.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_ListGraphsAsync_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This implementation uses a SPARQL query to list the names of the graphs in the store. Many stores support more efficient means of listing graphs and so this method SHOULD be overridden.
+If the store does not implement the <a class="xref" href="VDS.RDF.Storage.IAsyncQueryableStorage.html">IAsyncQueryableStorage</a> interface, then this method MUST be overridden.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.RdfStorageException.html">RdfStorageException</a></td>
+        <td><p>Raised if the store does not support the asynchronous SPARQL query required to retrieve a list of graph names.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L91">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IGraph,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IGraph, string, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadGraph(IGraph g, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IGraph%2CSystem.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L79">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IGraph,System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IGraph, Uri, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadGraph(IGraph g, Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to load into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IGraph_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.String%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L115">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IRdfHandler,System.String,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IRdfHandler, string, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void LoadGraph(IRdfHandler handler, string graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_String_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IRdfHandler%2CSystem.Uri%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L103">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraph(VDS.RDF.IRdfHandler,System.Uri,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraph(IRdfHandler, Uri, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Loads a Graph from the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadGraph(IRdfHandler handler, Uri graphUri, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraph_VDS_RDF_IRdfHandler_System_Uri_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IRdfHandler%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L217">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IRdfHandler,System.Threading.CancellationToken)">LoadGraphAsync(HttpRequestMessage, IRdfHandler, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async load operations, callers just need to provide an appropriately prepared HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task LoadGraphAsync(HttpRequestMessage request, IRdfHandler handler, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP Request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IRdfHandler%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L140">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IRdfHandler,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">LoadGraphAsync(HttpRequestMessage, IRdfHandler, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async load operations, callers just need to provide an appropriately prepared HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void LoadGraphAsync(HttpRequestMessage request, IRdfHandler handler, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP Request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>Handler to load with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfHandler_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IGraph_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(VDS.RDF.IGraph%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L125">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IGraph_System_String_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(VDS.RDF.IGraph,System.String,System.Threading.CancellationToken)">LoadGraphAsync(IGraph, string, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Loads a graph from the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task LoadGraphAsync(IGraph g, string graphName, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>The graph to load data into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>The name of the graph to retrieve from the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IGraph_System_String_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This implementation delegates to the <a class="xref" href="VDS.RDF.Storage.BaseAsyncHttpConnector.html#VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken_">LoadGraphAsync(IRdfHandler, string, CancellationToken)</a> method by wrapping <code data-dev-comment-type="paramref" class="paramref">g</code> in a <a class="xref" href="VDS.RDF.Parsing.Handlers.GraphHandler.html">GraphHandler</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(VDS.RDF.IRdfHandler%2CSystem.String%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L131">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.LoadGraphAsync(VDS.RDF.IRdfHandler,System.String,System.Threading.CancellationToken)">LoadGraphAsync(IRdfHandler, string, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Loads a graph from the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task LoadGraphAsync(IRdfHandler handler, string graphName, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The handler to receive the loaded triples.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Name of the graph to load.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_LoadGraphAsync_VDS_RDF_IRdfHandler_System_String_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_MakeRequestSequence_System_Collections_Generic_IEnumerable_System_Net_Http_HttpRequestMessage__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.MakeRequestSequence(System.Collections.Generic.IEnumerable%7BSystem.Net.Http.HttpRequestMessage%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L766">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_MakeRequestSequence_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.MakeRequestSequence*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_MakeRequestSequence_System_Collections_Generic_IEnumerable_System_Net_Http_HttpRequestMessage__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.MakeRequestSequence(System.Collections.Generic.IEnumerable{System.Net.Http.HttpRequestMessage},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">MakeRequestSequence(IEnumerable&lt;HttpRequestMessage&gt;, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async operations where a sequence of HTTP requests must be run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void MakeRequestSequence(IEnumerable&lt;HttpRequestMessage&gt; requests, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Net.Http.HttpRequestMessage</span>&gt;</td>
+        <td><span class="parametername">requests</span></td>
+        <td><p>HTTP requests.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_MakeRequestSequence_System_Collections_Generic_IEnumerable_System_Net_Http_HttpRequestMessage__VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraph(VDS.RDF.IGraph%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L254">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraph(VDS.RDF.IGraph,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">SaveGraph(IGraph, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Saves a Graph to the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void SaveGraph(IGraph g, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraph_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L316">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">SaveGraphAsync(HttpRequestMessage, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async save operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task SaveGraphAsync(HttpRequestMessage request, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A request message with the request content already set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IGraph%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L281">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IGraph,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">SaveGraphAsync(HttpRequestMessage, IGraph, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing callback-based async save operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void SaveGraphAsync(HttpRequestMessage request, IGraph g, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A request message with the request content already set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>The graph to be saved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>The callback to invoke on completion.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IRdfWriter%2CVDS.RDF.IGraph%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L267">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IRdfWriter,VDS.RDF.IGraph,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">SaveGraphAsync(HttpRequestMessage, IRdfWriter, IGraph, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing callback-based async save operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void SaveGraphAsync(HttpRequestMessage request, IRdfWriter writer, IGraph g, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A request message whose content will be set by this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>RDF writer to use to write graph content to the request stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>The graph to be saved.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>The callback to invoke on completion.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.HttpWebRequest%2CVDS.RDF.IRdfWriter%2CVDS.RDF.IGraph%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L344">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(System.Net.HttpWebRequest,VDS.RDF.IRdfWriter,VDS.RDF.IGraph,VDS.RDF.Storage.AsyncStorageCallback,System.Object)">SaveGraphAsync(HttpWebRequest, IRdfWriter, IGraph, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async save operations, callers just need to provide an appropriately prepared HTTP requests and a RDF writer which will be used to write the data to the request body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void SaveGraphAsync(HttpWebRequest request, IRdfWriter writer, IGraph g, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>RDF Writer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_VDS_RDF_IGraph_VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_VDS_RDF_IGraph_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(VDS.RDF.IGraph%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L257">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_VDS_RDF_IGraph_System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.SaveGraphAsync(VDS.RDF.IGraph,System.Threading.CancellationToken)">SaveGraphAsync(IGraph, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Saves a Graph to the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task SaveGraphAsync(IGraph g, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_SaveGraphAsync_VDS_RDF_IGraph_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph(System.String%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L404">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph(System.String,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraph(string, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void UpdateGraph(string graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph(System.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L391">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraph(System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraph(Uri, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Updates a Graph in the Store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UpdateGraph(Uri graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraph_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IRdfWriter%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L516">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IRdfWriter,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Threading.CancellationToken)">UpdateGraphAsync(HttpRequestMessage, IRdfWriter, IEnumerable&lt;Triple&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Helper method for simple updates that only add triples to a graph in the store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task UpdateGraphAsync(HttpRequestMessage request, IRdfWriter writer, IEnumerable&lt;Triple&gt; additions, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A pre-prepared request message without its content set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The RDF writer to use to create the request content.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>The triples to be added to the store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This helper method sets the content of <code data-dev-comment-type="paramref" class="paramref">request</code> to a new <a class="xref" href="VDS.RDF.Storage.GraphContent.html">GraphContent</a> instance using the provided <code data-dev-comment-type="paramref" class="paramref">writer</code>. It then sends the request to the server and provides a default handling of the response message.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.Http.HttpRequestMessage%2CVDS.RDF.IRdfWriter%2CSystem.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L471">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.Http.HttpRequestMessage,VDS.RDF.IRdfWriter,System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraphAsync(HttpRequestMessage, IRdfWriter, Uri, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async update operations, callers just need to provide an appropriately prepared HTTP request and a RDF writer which will be used to write the data to the request body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void UpdateGraphAsync(HttpRequestMessage request, IRdfWriter writer, Uri graphUri, IEnumerable&lt;Triple&gt; additions, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP Request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>RDF writer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_Http_HttpRequestMessage_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.HttpWebRequest%2CVDS.RDF.IRdfWriter%2CSystem.Uri%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CVDS.RDF.Storage.AsyncStorageCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L419">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.Net.HttpWebRequest,VDS.RDF.IRdfWriter,System.Uri,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},VDS.RDF.Storage.AsyncStorageCallback,System.Object)">UpdateGraphAsync(HttpWebRequest, IRdfWriter, Uri, IEnumerable&lt;Triple&gt;, AsyncStorageCallback, object)</h4>
+  <div class="markdown level1 summary"><p>Helper method for doing async update operations, callers just need to provide an appropriately prepared HTTP request and a RDF writer which will be used to write the data to the request body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method is obsolete and will be removed in a future release&quot;)]
+protected void UpdateGraphAsync(HttpWebRequest request, IRdfWriter writer, Uri graphUri, IEnumerable&lt;Triple&gt; ts, AsyncStorageCallback callback, object state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.HttpWebRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>HTTP Request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfWriter.html">IRdfWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>RDF writer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td><p>URI of the Graph to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">ts</span></td>
+        <td><p>Triples.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Storage.AsyncStorageCallback.html">AsyncStorageCallback</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Callback.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State to pass to the callback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_Net_HttpWebRequest_VDS_RDF_IRdfWriter_System_Uri_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__VDS_RDF_Storage_AsyncStorageCallback_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.String%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L407">View Source</a>
+  </span>
+  <a id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync*"></a>
+  <h4 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken_" data-uid="VDS.RDF.Storage.BaseAsyncHttpConnector.UpdateGraphAsync(System.String,System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Collections.Generic.IEnumerable{VDS.RDF.Triple},System.Threading.CancellationToken)">UpdateGraphAsync(string, IEnumerable&lt;Triple&gt;, IEnumerable&lt;Triple&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Updates a graph in the store asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task UpdateGraphAsync(string graphUri, IEnumerable&lt;Triple&gt; additions, IEnumerable&lt;Triple&gt; removals, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">graphUri</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">additions</span></td>
+        <td><p>Triples to be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">removals</span></td>
+        <td><p>Triples to be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Storage_BaseAsyncHttpConnector_UpdateGraphAsync_System_String_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Collections_Generic_IEnumerable_VDS_RDF_Triple__System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+It is expected that most classes extending from this will also then implement <a class="xref" href="VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> separately for their synchronous communication, this class purely provides partial helper implementations for the asynchronous communication.
+</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IAsyncStorageProvider.html">IAsyncStorageProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Storage.IStorageCapabilities.html">IStorageCapabilities</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Storage_BaseAsyncHttpConnector.md&amp;value=---%0Auid%3A%20VDS.RDF.Storage.BaseAsyncHttpConnector%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Storage/BaseAsyncHttpConnector.cs/#L48" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

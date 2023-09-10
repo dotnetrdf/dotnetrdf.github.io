@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>dotNetRDF Assembly Signing | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="dotNetRDF Assembly Signing | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dotnetrdf-assembly-signing">dotNetRDF Assembly Signing</h1>
+
+<p>Prior to the 3.0 release, all of the dotNetRDF assemblies were fully signed using a key which is kept in the dotNetRDF source repository.
+Although this can be convenient for using NuGet packages directly in contexts where full trust is required, it is also a potential security risk because the private key that we use for the signing is available to anyone, including bad actors.
+To that end we decided in the 3.0 release to completely cease signing the assemblies that we distribute.
+However following feedback from our users and following guidance from both the NuGet and from the MS documentation, in 3.0.1 we reinstated assembly signing, but opted to use the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/security#publicsign"><code>PublicSign</code></a> option for signing the assemblies.</p>
+<p>The <code>PublicSign</code> option means that our public key is included in the assembly and a flag is set on the assembly indicating that it is &quot;signed&quot;, but it does not actually cryptographically sign the assembly.
+This approach addresses the primary concern that was raised by users when we stopped signing assemblies - a <code>PublicSign</code> signed assembly is still considered to be &quot;strong-named&quot; and so can be referenced by code that is building a strong-named assembly output.
+However there are some limitations to this approach (as documented <a href="https://github.com/dotnet/runtime/blob/main/docs/project/public-signing.md">here</a>):</p>
+<blockquote>
+<ul>
+<li>You will not be able to install the assembly to the Global Assembly Cache (GAC)</li>
+<li>You will not be able to load the assembly in an AppDomain where shadow copying is turned on.</li>
+<li>You will not be able to load the assembly in a partially trusted AppDomain</li>
+<li>You will not be able to pre-compile ASP.NET applications</li>
+</ul>
+</blockquote>
+<p>In all of these cases we believe that rather than trust an assembly that has been signed with a (deliberately!) compromised key the safest approach would be to use the source code to rebuild the assembly for yourself and sign with your own key.
+If you want to trust the binaries from NuGet you can also choose to just directly sign the assembly yourself:</p>
+<pre><code>sn -R dotNetRdf.dll c:\path\to\your\key.snk
+</code></pre>
+<p>If you are building applications that require our assemblies to be deployed to your (or your users') Global Assembly Cache we <em>strongly</em> recommend that you follow the approach of building dotNetRDF from source and signing the assemblies with your own key.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Precompilation in ASP.NET MVC can be disabled with the build property <code> &lt;MvcBuildViews&gt;false&lt;/MvcBuildViews&gt;</code>.
+Shadow-copying in ASP.NET applications can be disabled by adding <code>&lt;hostingEnvironment shadowCopyBinAssemblies=&quot;false&quot; /&gt;</code> under the <code>system.web</code> tag in the application's <code>Web.config</code> file</p>
+</div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/assembly_signing.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

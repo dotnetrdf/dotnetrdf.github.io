@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface ITransactionalGraph
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface ITransactionalGraph
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.ITransactionalGraph">
+
+
+  <h1 id="VDS_RDF_ITransactionalGraph" data-uid="VDS.RDF.ITransactionalGraph" class="text-break">Interface ITransactionalGraph
+</h1>
+  <div class="markdown level0 summary"><p>Interface for RDF Graphs which provide Transactions i.e. changes to them can be Flushed (committed) or Discard (rolled back) as desired.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Name">IGraph.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_IsEmpty">IGraph.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Nodes">IGraph.Nodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_AllNodes">IGraph.AllNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Triples">IGraph.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_QuotedTriples">IGraph.QuotedTriples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_QuotedNodes">IGraph.QuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_AllQuotedNodes">IGraph.AllQuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Assert_VDS_RDF_Triple_">IGraph.Assert(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">IGraph.Assert(IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Retract_VDS_RDF_Triple_">IGraph.Retract(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">IGraph.Retract(IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Clear">IGraph.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetBlankNode_System_String_">IGraph.GetBlankNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetLiteralNode_System_String_System_String_">IGraph.GetLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetLiteralNode_System_String_">IGraph.GetLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetLiteralNode_System_String_System_Uri_">IGraph.GetLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetUriNode_System_String_">IGraph.GetUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetUriNode_System_Uri_">IGraph.GetUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_GetTripleNode_VDS_RDF_Triple_">IGraph.GetTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_ContainsTriple_VDS_RDF_Triple_">IGraph.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_ContainsQuotedTriple_VDS_RDF_Triple_">IGraph.ContainsQuotedTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Merge_VDS_RDF_IGraph_">IGraph.Merge(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Merge_VDS_RDF_IGraph_System_Boolean_">IGraph.Merge(IGraph, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">IGraph.Equals(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_IsSubGraphOf_VDS_RDF_IGraph_">IGraph.IsSubGraphOf(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_IsSubGraphOf_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">IGraph.IsSubGraphOf(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_HasSubGraph_VDS_RDF_IGraph_">IGraph.HasSubGraph(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_HasSubGraph_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">IGraph.HasSubGraph(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Difference_VDS_RDF_IGraph_">IGraph.Difference(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Unstar">IGraph.Unstar()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_TripleAsserted">IGraph.TripleAsserted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_TripleRetracted">IGraph.TripleRetracted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Changed">IGraph.Changed</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_ClearRequested">IGraph.ClearRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Cleared">IGraph.Cleared</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_MergeRequested">IGraph.MergeRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.IGraph.html#VDS_RDF_IGraph_Merged">IGraph.Merged</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_BaseUri">INodeFactory.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NamespaceMap">INodeFactory.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_UriFactory">INodeFactory.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateBlankNode">INodeFactory.CreateBlankNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateBlankNode_System_String_">INodeFactory.CreateBlankNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateGraphLiteralNode">INodeFactory.CreateGraphLiteralNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateGraphLiteralNode_VDS_RDF_IGraph_">INodeFactory.CreateGraphLiteralNode(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateLiteralNode_System_String_System_Uri_">INodeFactory.CreateLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateLiteralNode_System_String_">INodeFactory.CreateLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateLiteralNode_System_String_System_String_">INodeFactory.CreateLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateUriNode_System_Uri_">INodeFactory.CreateUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateUriNode_System_String_">INodeFactory.CreateUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateUriNode">INodeFactory.CreateUriNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateVariableNode_System_String_">INodeFactory.CreateVariableNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_CreateTripleNode_VDS_RDF_Triple_">INodeFactory.CreateTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_GetNextBlankNodeID">INodeFactory.GetNextBlankNodeID()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NormalizeLiteralValues">INodeFactory.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_ResolveQName_System_String_">INodeFactory.ResolveQName(string)</a>
+    </div>
+    <div>
+      <span class="xref">System.IDisposable.Dispose()</span>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriples_System_Uri_">ITripleIndex.GetTriples(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriples_VDS_RDF_INode_">ITripleIndex.GetTriples(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithObject_System_Uri_">ITripleIndex.GetTriplesWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithObject_VDS_RDF_INode_">ITripleIndex.GetTriplesWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithPredicate_VDS_RDF_INode_">ITripleIndex.GetTriplesWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithPredicate_System_Uri_">ITripleIndex.GetTriplesWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithSubject_VDS_RDF_INode_">ITripleIndex.GetTriplesWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithSubject_System_Uri_">ITripleIndex.GetTriplesWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetTriplesWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetTriplesWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetTriplesWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuoted_System_Uri_">ITripleIndex.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuoted_VDS_RDF_INode_">ITripleIndex.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithObject_System_Uri_">ITripleIndex.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithObject_VDS_RDF_INode_">ITripleIndex.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithPredicate_VDS_RDF_INode_">ITripleIndex.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithPredicate_System_Uri_">ITripleIndex.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithSubject_VDS_RDF_INode_">ITripleIndex.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithSubject_System_Uri_">ITripleIndex.GetQuotedWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetQuotedWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <span class="xref">System.IEquatable&lt;VDS.RDF.IGraph&gt;.Equals(VDS.RDF.IGraph)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_ITransactionalGraph_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ITransactionalGraph : IGraph, INodeFactory, IDisposable, ITripleIndex, IEquatable&lt;IGraph&gt;</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ITransactionalGraph_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalGraph.Discard%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ITransactionalGraph.cs/#L43">View Source</a>
+  </span>
+  <a id="VDS_RDF_ITransactionalGraph_Discard_" data-uid="VDS.RDF.ITransactionalGraph.Discard*"></a>
+  <h4 id="VDS_RDF_ITransactionalGraph_Discard" data-uid="VDS.RDF.ITransactionalGraph.Discard">Discard()</h4>
+  <div class="markdown level1 summary"><p>Discards any changes to the Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Discard()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ITransactionalGraph_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalGraph.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ITransactionalGraph.cs/#L38">View Source</a>
+  </span>
+  <a id="VDS_RDF_ITransactionalGraph_Flush_" data-uid="VDS.RDF.ITransactionalGraph.Flush*"></a>
+  <h4 id="VDS_RDF_ITransactionalGraph_Flush" data-uid="VDS.RDF.ITransactionalGraph.Flush">Flush()</h4>
+  <div class="markdown level1 summary"><p>Flushes any changes to the Graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Flush()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Data.DataTables.GraphExtensions.html#VDS_RDF_Data_DataTables_GraphExtensions_ToDataTable_VDS_RDF_IGraph_">GraphExtensions.ToDataTable(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AddToList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AddToList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Assert_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Assert(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListAsTriples_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListAsTriples(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListItems_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListItems(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListNodes_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListNodes(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.RemoveFromList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.RemoveFromList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Retract_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Retract(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RetractList_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.RetractList(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_GetETag_VDS_RDF_IGraph_">GraphExtensions.GetETag(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromFile(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromString(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromString(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToFile(IGraph, string, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToFile(IGraph, string, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_">GraphExtensions.SaveToFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_String_System_IO_TextWriter_">GraphExtensions.SaveToStream(IGraph, string, TextWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ITransactionalGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.ITransactionalGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ITransactionalGraph.cs/#L32" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

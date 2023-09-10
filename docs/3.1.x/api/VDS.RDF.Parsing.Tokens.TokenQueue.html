@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class TokenQueue
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class TokenQueue
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue">
+
+
+  <h1 id="VDS_RDF_Parsing_Tokens_TokenQueue" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue" class="text-break">Class TokenQueue
+</h1>
+  <div class="markdown level0 summary"><p>Basic Token Queue which provides no Buffering except in the sense that it queues all possible Tokens when the InitialiseBuffer method is called.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html">BaseTokenQueue</a></div>
+    <div class="level2"><span class="xref">TokenQueue</span></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Tokens.BufferedTokenQueue.html">BufferedTokenQueue</a></div>
+      <div class="level3"><a class="xref" href="VDS.RDF.Parsing.Tokens.NonTokenisedTokenQueue.html">NonTokenisedTokenQueue</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Parsing.Tokens.ITokenQueue.html">ITokenQueue</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue__tokeniser">BaseTokenQueue._tokeniser</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue__tracing">BaseTokenQueue._tracing</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue__lasttokentype">BaseTokenQueue._lasttokentype</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Tokeniser">BaseTokenQueue.Tokeniser</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Tracing">BaseTokenQueue.Tracing</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_LastTokenType">BaseTokenQueue.LastTokenType</a>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Parsing.html">Parsing</a>.<a class="xref" href="VDS.RDF.Parsing.Tokens.html">Tokens</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Parsing_Tokens_TokenQueue_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TokenQueue : BaseTokenQueue, ITokenQueue</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L47">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue__ctor_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue__ctor" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.#ctor">TokenQueue()</h4>
+  <div class="markdown level1 summary"><p>Creates a new Token Queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TokenQueue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue__ctor_VDS_RDF_Parsing_Tokens_ITokeniser_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.%23ctor(VDS.RDF.Parsing.Tokens.ITokeniser)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L56">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue__ctor_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue__ctor_VDS_RDF_Parsing_Tokens_ITokeniser_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.#ctor(VDS.RDF.Parsing.Tokens.ITokeniser)">TokenQueue(ITokeniser)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Token Queue with the given Tokeniser.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TokenQueue(ITokeniser tokeniser)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Tokens.ITokeniser.html">ITokeniser</a></td>
+        <td><span class="parametername">tokeniser</span></td>
+        <td><p>Tokeniser.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue__tokens.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue._tokens%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L42">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue__tokens" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue._tokens">_tokens</h4>
+  <div class="markdown level1 summary"><p>Internal Queue object which this class is a wrapper around.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Queue&lt;IToken&gt; _tokens</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Queue&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L100">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Count_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Count*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Count" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of Tokens in the Queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Count">BaseTokenQueue.Count</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Tokens.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Tokens%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L144">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Tokens_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Tokens*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Tokens" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Tokens">Tokens</h4>
+  <div class="markdown level1 summary"><p>Gets the underlying Queue of Tokens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Queue&lt;IToken&gt; Tokens { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Queue&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Tokens">BaseTokenQueue.Tokens</a></div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Clear.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L92">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Clear_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Clear*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Clear" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Empties the Token Queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Clear()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Clear">BaseTokenQueue.Clear()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Dequeue.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Dequeue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L65">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Dequeue_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Dequeue*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Dequeue" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Dequeue">Dequeue()</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the first Token from the Queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IToken Dequeue()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a></td>
+        <td><p>First Token in the Queue.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Dequeue">BaseTokenQueue.Dequeue()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Enqueue_VDS_RDF_Parsing_Tokens_IToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Enqueue(VDS.RDF.Parsing.Tokens.IToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L75">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Enqueue_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Enqueue*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Enqueue_VDS_RDF_Parsing_Tokens_IToken_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Enqueue(VDS.RDF.Parsing.Tokens.IToken)">Enqueue(IToken)</h4>
+  <div class="markdown level1 summary"><p>Adds a Token to the end of the Queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Enqueue(IToken t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Token to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Enqueue_VDS_RDF_Parsing_Tokens_IToken_">BaseTokenQueue.Enqueue(IToken)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L111">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer">InitialiseBuffer()</h4>
+  <div class="markdown level1 summary"><p>Initialises the Token Queue Buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitialiseBuffer()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_InitialiseBuffer">BaseTokenQueue.InitialiseBuffer()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer_System_Int32_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L135">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_InitialiseBuffer_System_Int32_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.InitialiseBuffer(System.Int32)">InitialiseBuffer(int)</h4>
+  <div class="markdown level1 summary"><p>Initialises the Token Queue Buffer to the set Buffer Amount.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitialiseBuffer(int amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>Amount of Tokens to Buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_InitialiseBuffer_System_Int32_">BaseTokenQueue.InitialiseBuffer(int)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_Peek.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.Peek%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L84">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_Peek_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Peek*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_Peek" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.Peek">Peek()</h4>
+  <div class="markdown level1 summary"><p>Gets the first Token from the Queue without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IToken Peek()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a></td>
+        <td><p>First Token in the Queue.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Parsing.Tokens.BaseTokenQueue.html#VDS_RDF_Parsing_Tokens_BaseTokenQueue_Peek">BaseTokenQueue.Peek()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue_PrintTrace_VDS_RDF_Parsing_Tokens_IToken_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue.PrintTrace(VDS.RDF.Parsing.Tokens.IToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L156">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_Tokens_TokenQueue_PrintTrace_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.PrintTrace*"></a>
+  <h4 id="VDS_RDF_Parsing_Tokens_TokenQueue_PrintTrace_VDS_RDF_Parsing_Tokens_IToken_" data-uid="VDS.RDF.Parsing.Tokens.TokenQueue.PrintTrace(VDS.RDF.Parsing.Tokens.IToken)">PrintTrace(IToken)</h4>
+  <div class="markdown level1 summary"><p>Internal Helper Method for Tokeniser Tracing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void PrintTrace(IToken t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Tokens.IToken.html">IToken</a></td>
+        <td><span class="parametername">t</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Parsing.Tokens.ITokenQueue.html">ITokenQueue</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_Tokens_TokenQueue.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.Tokens.TokenQueue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/Tokens/BufferedTokenQueue.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

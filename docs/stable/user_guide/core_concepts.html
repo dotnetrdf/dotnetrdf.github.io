@@ -233,7 +233,10 @@ IBlankNode named = g.CreateBlankNode(&quot;ID&quot;);
 <p>Be careful of the above proviso about ID collisions between automatically assigned Blank Node IDs (those created with <code>CreateBlankNode()</code>) and those created with an explicit ID. If you try and create a Blank Node with the same explicit ID as an automatically assigned ID you will get back a different Blank Node ID. If you create an anonymous Blank Node you need to hold onto the reference to it as long as you want to use that Blank Node. You can get around this by using <code>GetBlankNode(String id)</code> to return the Blank Node with the given ID provided it exists in the Graph</p>
 </div>
 <h3 id="literal-nodes">Literal Nodes</h3>
-<p>Literal Nodes are used to refer to actual data values. Values may be plain, language specific or typed. A plain literal is simply textual content while a language specific literal is textual content with a language specified in the form of a country code eg. en-GB, en-US, fr. Finally a typed literal is textual content associated with a Data Type URI which indicates the type of the data represented by the literal. Note that a typed literals Data Type does not guarantee that the content of that literal will be of that type.</p>
+<p>Literal Nodes are used to refer to actual data values.
+Values may be plain, language specific or typed. A plain literal is simply textual content while a language specific literal is textual content with a language specified in the form of a country code eg. en-GB, en-US, fr.
+Finally a typed literal is textual content associated with a Data Type URI which indicates the type of the data represented by the literal.
+Note that a typed literal's Data Type does not guarantee that the content of that literal will be of that type.</p>
 <p>A <a class="xref" href="../api/VDS.RDF.ILiteralNode.html">ILiteralNode</a> is constructed as follows:</p>
 <pre><code class="lang-csharp">// Standalone plain literal
 ILiteralNode simple = new LiteralNode(&quot;simple&quot;);
@@ -261,6 +264,12 @@ ILiteralNode aurevoir = g.CreateLiteralNode(&quot;au revior&quot;,&quot;fr&quot;
 ILiteralNode two = g.CreateLiteralNode(&quot;2&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeInteger));
 ILiteralNode f = g.CreateLiteralNode(&quot;false&quot;, UriFactory.Create(XmlSpecsHelper.XmlSchemaDataTypeBoolean));
 </code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you create a literal node using a <code>Graph</code> or <code>NodeFactory</code>'s <code>CreateLiteralNode</code> method, any langauge tag you provide will be validated according to that factory's langauge tag validation mode.
+Creating a <code>LiteralNode</code> using its public constructor does not provide this additional layer of validation.
+For more information about the langauge tag validation please refer to <a href="node_factory.html">Node Factory</a>.</p>
+</div>
 <h3 id="triple-nodes">Triple Nodes</h3>
 <p>Triple Nodes are used in RDF-Star graphs to refer to an RDF statement.
 The value of a Triple Node is a triple (see below for more guidance on creating triples).</p>
@@ -317,7 +326,7 @@ The property has been removed in 3.0 and code making use of this property should
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/docs/user_guide/core_concepts.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/core_concepts.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class GraphMatcher
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class GraphMatcher
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.GraphMatcher">
+
+
+  <h1 id="VDS_RDF_GraphMatcher" data-uid="VDS.RDF.GraphMatcher" class="text-break">Class GraphMatcher
+</h1>
+  <div class="markdown level0 summary"><p>Implements a Graph Isomorphism Algorithm.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">GraphMatcher</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_GraphMatcher_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GraphMatcher</code></pre>
+  </div>
+  <h5 id="VDS_RDF_GraphMatcher_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+The algorithm used to determine Graph equality is based in part on a Iterative Vertex Classification Algorithm described in a Technical Report from HP by Jeremy J Carroll - <a href="http://www.hpl.hp.com/techreports/2001/HPL-2001-293.html">Matching RDF Graphs</a> but has been expanded upon significantly to use a variety of techniques.
+</p>
+<p>
+Graph Equality is determined according to the following algorithm, we refer to the first graph as the <em>Source Graph</em> and the second graph as the <em>Target Graph</em>:.
+</p>
+<ol>
+<li>If both graphs are null they are considered equal</li>
+<li>If only one of the given graph is null then they are not equal</li>
+<li>If the given graphs are reference equal then they are equal</li>
+<li>If the given graphs have a different number of Triples they are not equal</li>
+<li>If the given graphs have a different number of quoted triples, they are not equal</li>
+<li>Declare a list of triples which are the asserted triples of the second graph called <em>TargetTriples</em></li>
+<li>Declare a set of triples which are the quoted triples of the second graph called <em>TargetQuoted</em></li>
+<li>Declare two dictionaries of Nodes to Integers which are called <em>SourceClassification</em> and <em>TargetClassification</em></li>
+<li>For Each Triple asserted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetTriples</em> then graphs are not equal since the triple does not exist in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>For Each Triple quoted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetQuoted</em> then graphs are not equal since the triple is not quoted in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>If there are any triples remaining in <em>TargetTriples</em> which are ground triples then graphs are not equal since the Source Graph does not contain them</li>
+<li>If there are any triples remaining in <em>TargetQuoted</em> which are ground triples then graphs are not equal since the Source Graph does not quote them</li>
+<li>If all the triples from both graphs were ground triples (i.e. there were no blank nodes) then the graphs are equal</li>
+<li>Iterate over the remaining triples in <em>TargetTriples</em> and <em>TargetQuoted</em> and populate the <em>TargetClassification</em></li>
+<li>If the count of the two classifications is different the graphs are not equal since there are differing numbers of blank nodes in the Graph</li>
+<li>Now build two additional dictionaries of Integers to Integers which are called <em>SourceDegreeClassification</em> and <em>TargetDegreeClassification</em>.  Iterate over <em>SourceClassification</em> and <em>TargetClassification</em> such that the corresponding degree classifications contain a mapping of the number of blank nodes with a given degree</li>
+<li>If the count of the two degree classifications is different the graphs are not equal since there are not the same range of blank node degrees in both graphs</li>
+<li>For All classifications in <em>SourceDegreeClassification</em> there must be a matching classification in <em>TargetDegreeClassification</em> else the graphs are not equal</li>
+<li>From this point in the algorithm, we can merge the remaining quoted and asserted triples to be matched into a single set for source and target triples.</li>
+<li>Then build a possible mapping using the following rules:
+<ol>
+<li>Any blank bode used only once (single-use) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node with a unique degree in the Source Graph should be mapped to an equivalent blank node in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node used with unique constants (two other ground terms in a triple) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal.</li>
+<li>Build up lists of dependent pairs of blank Nodes for both graphs</li>
+<li>Use these lists to determine if there are any independent nodes not yet mapped in the Source Graph.  These should be mapped to equivalent blank nodes in the Target Graph, if this is not possible the graphs are not equal</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a fallback in later steps</li>
+<li>Use the dependency information and existing mappings to generate a possible mapping</li>
+<li>If a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test this mapping.  If it succeeds then the graphs are equal</li>
+</ol>
+</li>
+<li>If we don&apos;t yet have a mapping take a divide and conquer approach:
+<ol>
+<li>Take the not yet mapped blank nodes for each graph and sub-divide them into their isolated sub-graphs</li>
+<li>If there are at least 2 isolated sub-graphs proceed to divide and conquer</li>
+<li>For Each Isolated Sub-Graph from the Source Graph
+<ol>
+<li>Consider each possible isolated sub-graph of the same size from the target graph, if there are none then graphs are not equal.  If there is a single possible equal isolated sub-graph add the mappings for all involved blank nodes.</li>
+</ol>
+</li>
+<li>If we now have a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test the mapping.  Return success/failure depending on whether the mapping is valid.</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a base for the brute force step</li>
+</ol> 
+</li>
+<li>If we still don&apos;t have a complete mapping we now fallback to the <em>Base Mapping</em> and use it as a basis for brute forcing the possible solution space and testing every possibility until either a mapping works or we find the graphs to be non-equal</li>
+</ol>
+</div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_GraphMatcher_Mapping.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphMatcher.Mapping%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/GraphMatcher.cs/#L1112">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphMatcher_Mapping_" data-uid="VDS.RDF.GraphMatcher.Mapping*"></a>
+  <h4 id="VDS_RDF_GraphMatcher_Mapping" data-uid="VDS.RDF.GraphMatcher.Mapping">Mapping</h4>
+  <div class="markdown level1 summary"><p>Gets the Blank Node Mapping found between the Graphs (if one was found).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;INode, INode&gt; Mapping { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>, <a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_GraphMatcher_Mapping_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+The algorithm used to determine Graph equality is based in part on a Iterative Vertex Classification Algorithm described in a Technical Report from HP by Jeremy J Carroll - <a href="http://www.hpl.hp.com/techreports/2001/HPL-2001-293.html">Matching RDF Graphs</a> but has been expanded upon significantly to use a variety of techniques.
+</p>
+<p>
+Graph Equality is determined according to the following algorithm, we refer to the first graph as the <em>Source Graph</em> and the second graph as the <em>Target Graph</em>:.
+</p>
+<ol>
+<li>If both graphs are null they are considered equal</li>
+<li>If only one of the given graph is null then they are not equal</li>
+<li>If the given graphs are reference equal then they are equal</li>
+<li>If the given graphs have a different number of Triples they are not equal</li>
+<li>If the given graphs have a different number of quoted triples, they are not equal</li>
+<li>Declare a list of triples which are the asserted triples of the second graph called <em>TargetTriples</em></li>
+<li>Declare a set of triples which are the quoted triples of the second graph called <em>TargetQuoted</em></li>
+<li>Declare two dictionaries of Nodes to Integers which are called <em>SourceClassification</em> and <em>TargetClassification</em></li>
+<li>For Each Triple asserted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetTriples</em> then graphs are not equal since the triple does not exist in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>For Each Triple quoted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetQuoted</em> then graphs are not equal since the triple is not quoted in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>If there are any triples remaining in <em>TargetTriples</em> which are ground triples then graphs are not equal since the Source Graph does not contain them</li>
+<li>If there are any triples remaining in <em>TargetQuoted</em> which are ground triples then graphs are not equal since the Source Graph does not quote them</li>
+<li>If all the triples from both graphs were ground triples (i.e. there were no blank nodes) then the graphs are equal</li>
+<li>Iterate over the remaining triples in <em>TargetTriples</em> and <em>TargetQuoted</em> and populate the <em>TargetClassification</em></li>
+<li>If the count of the two classifications is different the graphs are not equal since there are differing numbers of blank nodes in the Graph</li>
+<li>Now build two additional dictionaries of Integers to Integers which are called <em>SourceDegreeClassification</em> and <em>TargetDegreeClassification</em>.  Iterate over <em>SourceClassification</em> and <em>TargetClassification</em> such that the corresponding degree classifications contain a mapping of the number of blank nodes with a given degree</li>
+<li>If the count of the two degree classifications is different the graphs are not equal since there are not the same range of blank node degrees in both graphs</li>
+<li>For All classifications in <em>SourceDegreeClassification</em> there must be a matching classification in <em>TargetDegreeClassification</em> else the graphs are not equal</li>
+<li>From this point in the algorithm, we can merge the remaining quoted and asserted triples to be matched into a single set for source and target triples.</li>
+<li>Then build a possible mapping using the following rules:
+<ol>
+<li>Any blank bode used only once (single-use) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node with a unique degree in the Source Graph should be mapped to an equivalent blank node in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node used with unique constants (two other ground terms in a triple) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal.</li>
+<li>Build up lists of dependent pairs of blank Nodes for both graphs</li>
+<li>Use these lists to determine if there are any independent nodes not yet mapped in the Source Graph.  These should be mapped to equivalent blank nodes in the Target Graph, if this is not possible the graphs are not equal</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a fallback in later steps</li>
+<li>Use the dependency information and existing mappings to generate a possible mapping</li>
+<li>If a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test this mapping.  If it succeeds then the graphs are equal</li>
+</ol>
+</li>
+<li>If we don&apos;t yet have a mapping take a divide and conquer approach:
+<ol>
+<li>Take the not yet mapped blank nodes for each graph and sub-divide them into their isolated sub-graphs</li>
+<li>If there are at least 2 isolated sub-graphs proceed to divide and conquer</li>
+<li>For Each Isolated Sub-Graph from the Source Graph
+<ol>
+<li>Consider each possible isolated sub-graph of the same size from the target graph, if there are none then graphs are not equal.  If there is a single possible equal isolated sub-graph add the mappings for all involved blank nodes.</li>
+</ol>
+</li>
+<li>If we now have a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test the mapping.  Return success/failure depending on whether the mapping is valid.</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a base for the brute force step</li>
+</ol> 
+</li>
+<li>If we still don&apos;t have a complete mapping we now fallback to the <em>Base Mapping</em> and use it as a basis for brute forcing the possible solution space and testing every possibility until either a mapping works or we find the graphs to be non-equal</li>
+</ol>
+</div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_GraphMatcher_Equals_VDS_RDF_IGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphMatcher.Equals(VDS.RDF.IGraph%2CVDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/GraphMatcher.cs/#L119">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphMatcher_Equals_" data-uid="VDS.RDF.GraphMatcher.Equals*"></a>
+  <h4 id="VDS_RDF_GraphMatcher_Equals_VDS_RDF_IGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.GraphMatcher.Equals(VDS.RDF.IGraph,VDS.RDF.IGraph)">Equals(IGraph, IGraph)</h4>
+  <div class="markdown level1 summary"><p>Compares two Graphs for equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(IGraph g, IGraph h)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">h</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_GraphMatcher_Equals_VDS_RDF_IGraph_VDS_RDF_IGraph__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+The algorithm used to determine Graph equality is based in part on a Iterative Vertex Classification Algorithm described in a Technical Report from HP by Jeremy J Carroll - <a href="http://www.hpl.hp.com/techreports/2001/HPL-2001-293.html">Matching RDF Graphs</a> but has been expanded upon significantly to use a variety of techniques.
+</p>
+<p>
+Graph Equality is determined according to the following algorithm, we refer to the first graph as the <em>Source Graph</em> and the second graph as the <em>Target Graph</em>:.
+</p>
+<ol>
+<li>If both graphs are null they are considered equal</li>
+<li>If only one of the given graph is null then they are not equal</li>
+<li>If the given graphs are reference equal then they are equal</li>
+<li>If the given graphs have a different number of Triples they are not equal</li>
+<li>If the given graphs have a different number of quoted triples, they are not equal</li>
+<li>Declare a list of triples which are the asserted triples of the second graph called <em>TargetTriples</em></li>
+<li>Declare a set of triples which are the quoted triples of the second graph called <em>TargetQuoted</em></li>
+<li>Declare two dictionaries of Nodes to Integers which are called <em>SourceClassification</em> and <em>TargetClassification</em></li>
+<li>For Each Triple asserted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetTriples</em> then graphs are not equal since the triple does not exist in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>For Each Triple quoted in the Source Graph
+<ol>
+<li>If it is a ground triple and cannot be found and removed from <em>TargetQuoted</em> then graphs are not equal since the triple is not quoted in both graphs</li>
+<li>If it contains blank nodes track the number of usages of this blank node in <em>SourceClassification</em></li>
+</ol>
+</li>
+<li>If there are any triples remaining in <em>TargetTriples</em> which are ground triples then graphs are not equal since the Source Graph does not contain them</li>
+<li>If there are any triples remaining in <em>TargetQuoted</em> which are ground triples then graphs are not equal since the Source Graph does not quote them</li>
+<li>If all the triples from both graphs were ground triples (i.e. there were no blank nodes) then the graphs are equal</li>
+<li>Iterate over the remaining triples in <em>TargetTriples</em> and <em>TargetQuoted</em> and populate the <em>TargetClassification</em></li>
+<li>If the count of the two classifications is different the graphs are not equal since there are differing numbers of blank nodes in the Graph</li>
+<li>Now build two additional dictionaries of Integers to Integers which are called <em>SourceDegreeClassification</em> and <em>TargetDegreeClassification</em>.  Iterate over <em>SourceClassification</em> and <em>TargetClassification</em> such that the corresponding degree classifications contain a mapping of the number of blank nodes with a given degree</li>
+<li>If the count of the two degree classifications is different the graphs are not equal since there are not the same range of blank node degrees in both graphs</li>
+<li>For All classifications in <em>SourceDegreeClassification</em> there must be a matching classification in <em>TargetDegreeClassification</em> else the graphs are not equal</li>
+<li>From this point in the algorithm, we can merge the remaining quoted and asserted triples to be matched into a single set for source and target triples.</li>
+<li>Then build a possible mapping using the following rules:
+<ol>
+<li>Any blank bode used only once (single-use) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node with a unique degree in the Source Graph should be mapped to an equivalent blank node in the Target Graph.  If this is not possible then the graphs are not equal</li>
+<li>Any blank node used with unique constants (two other ground terms in a triple) in the Source Graph should be mapped to an equivalent blank bode in the Target Graph.  If this is not possible then the graphs are not equal.</li>
+<li>Build up lists of dependent pairs of blank Nodes for both graphs</li>
+<li>Use these lists to determine if there are any independent nodes not yet mapped in the Source Graph.  These should be mapped to equivalent blank nodes in the Target Graph, if this is not possible the graphs are not equal</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a fallback in later steps</li>
+<li>Use the dependency information and existing mappings to generate a possible mapping</li>
+<li>If a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test this mapping.  If it succeeds then the graphs are equal</li>
+</ol>
+</li>
+<li>If we don&apos;t yet have a mapping take a divide and conquer approach:
+<ol>
+<li>Take the not yet mapped blank nodes for each graph and sub-divide them into their isolated sub-graphs</li>
+<li>If there are at least 2 isolated sub-graphs proceed to divide and conquer</li>
+<li>For Each Isolated Sub-Graph from the Source Graph
+<ol>
+<li>Consider each possible isolated sub-graph of the same size from the target graph, if there are none then graphs are not equal.  If there is a single possible equal isolated sub-graph add the mappings for all involved blank nodes.</li>
+</ol>
+</li>
+<li>If we now have a complete possible mapping (there is a mapping for each blank node from the Source Graph to the Target Graph) then test the mapping.  Return success/failure depending on whether the mapping is valid.</li>
+<li><strong>Important:</strong> Keep a copy of the mapping up to this point as a <em>Base Mapping</em> for use as a base for the brute force step</li>
+</ol> 
+</li>
+<li>If we still don&apos;t have a complete mapping we now fallback to the <em>Base Mapping</em> and use it as a basis for brute forcing the possible solution space and testing every possibility until either a mapping works or we find the graphs to be non-equal</li>
+</ol>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_GraphMatcher_GenerateMappings_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode__System_Collections_Generic_Dictionary_VDS_RDF_INode_System_Collections_Generic_List_VDS_RDF_INode___.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphMatcher.GenerateMappings(System.Collections.Generic.Dictionary%7BVDS.RDF.INode%2CVDS.RDF.INode%7D%2CSystem.Collections.Generic.Dictionary%7BVDS.RDF.INode%2CSystem.Collections.Generic.List%7BVDS.RDF.INode%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/GraphMatcher.cs/#L1051">View Source</a>
+  </span>
+  <a id="VDS_RDF_GraphMatcher_GenerateMappings_" data-uid="VDS.RDF.GraphMatcher.GenerateMappings*"></a>
+  <h4 id="VDS_RDF_GraphMatcher_GenerateMappings_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode__System_Collections_Generic_Dictionary_VDS_RDF_INode_System_Collections_Generic_List_VDS_RDF_INode___" data-uid="VDS.RDF.GraphMatcher.GenerateMappings(System.Collections.Generic.Dictionary{VDS.RDF.INode,VDS.RDF.INode},System.Collections.Generic.Dictionary{VDS.RDF.INode,System.Collections.Generic.List{VDS.RDF.INode}})">GenerateMappings(Dictionary&lt;INode, INode&gt;, Dictionary&lt;INode, List&lt;INode&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Helper method for brute forcing the possible mappings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Dictionary&lt;INode, INode&gt;&gt; GenerateMappings(Dictionary&lt;INode, INode&gt; baseMapping, Dictionary&lt;INode, List&lt;INode&gt;&gt; possibleMappings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>, <a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td><span class="parametername">baseMapping</span></td>
+        <td><p>Base Mapping.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>, <span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;&gt;</td>
+        <td><span class="parametername">possibleMappings</span></td>
+        <td><p>Possible Mappings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;</span>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>, <a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_GraphMatcher_GenerateMappings_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode__System_Collections_Generic_Dictionary_VDS_RDF_INode_System_Collections_Generic_List_VDS_RDF_INode____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The base mapping at the time of the initial call should contain known good mappings.</p>
+</div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_GraphMatcher.md&amp;value=---%0Auid%3A%20VDS.RDF.GraphMatcher%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/GraphMatcher.cs/#L101" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

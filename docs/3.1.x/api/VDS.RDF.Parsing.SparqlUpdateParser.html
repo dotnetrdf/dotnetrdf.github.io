@@ -1,0 +1,803 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class SparqlUpdateParser
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class SparqlUpdateParser
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.SparqlUpdateParser">
+
+
+  <h1 id="VDS_RDF_Parsing_SparqlUpdateParser" data-uid="VDS.RDF.Parsing.SparqlUpdateParser" class="text-break">Class SparqlUpdateParser
+</h1>
+  <div class="markdown level0 summary"><p>Class for parsing SPARQL Update commands into <a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a> objects that can be used to modify a Triple Store.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SparqlUpdateParser</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Parsing.ITraceableTokeniser.html">ITraceableTokeniser</a></div>
+    <div><a class="xref" href="VDS.RDF.IObjectParser-1.html">IObjectParser</a>&lt;<a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Parsing.html">Parsing</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Parsing_SparqlUpdateParser_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SparqlUpdateParser : ITraceableTokeniser, IObjectParser&lt;SparqlUpdateCommandSet&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L54">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser__ctor_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser__ctor" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor">SparqlUpdateParser()</h4>
+  <div class="markdown level1 summary"><p>Creates a new parser instance that parses SPARQL 1.1 syntax and uses the default (root) URI Factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateParser()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser__ctor_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.%23ctor(VDS.RDF.IUriFactory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L60">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser__ctor_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser__ctor_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor(VDS.RDF.IUriFactory)">SparqlUpdateParser(IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a new parser instance that uses the specified URI factory to create URIs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateParser(IUriFactory uriFactory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating URIs while parsing the update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser__ctor_VDS_RDF_Parsing_SparqlQuerySyntax_VDS_RDF_IUriFactory_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.%23ctor(VDS.RDF.Parsing.SparqlQuerySyntax%2CVDS.RDF.IUriFactory)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L67">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser__ctor_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser__ctor_VDS_RDF_Parsing_SparqlQuerySyntax_VDS_RDF_IUriFactory_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.#ctor(VDS.RDF.Parsing.SparqlQuerySyntax,VDS.RDF.IUriFactory)">SparqlUpdateParser(SparqlQuerySyntax, IUriFactory)</h4>
+  <div class="markdown level1 summary"><p>Creates a new parser instance that uses the specified query syntax and URI factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateParser(SparqlQuerySyntax syntax = SparqlQuerySyntax.Sparql_1_1, IUriFactory uriFactory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.SparqlQuerySyntax.html">SparqlQuerySyntax</a></td>
+        <td><span class="parametername">syntax</span></td>
+        <td><p>The syntax mode to support when parsing the update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td><span class="parametername">uriFactory</span></td>
+        <td><p>The factory to use when creating URIs while parsing the update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_AllowUnknownFunctions.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.AllowUnknownFunctions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L129">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_AllowUnknownFunctions_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.AllowUnknownFunctions*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_AllowUnknownFunctions" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.AllowUnknownFunctions">AllowUnknownFunctions</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether functions that can't be parsed into Expressions should be represented by the <a class="xref" href="VDS.RDF.Query.Expressions.Functions.UnknownFunction.html">UnknownFunction</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowUnknownFunctions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_DefaultBaseUri.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.DefaultBaseUri%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L108">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_DefaultBaseUri_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.DefaultBaseUri*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_DefaultBaseUri" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.DefaultBaseUri">DefaultBaseUri</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the Default Base URI used for Updated Commands parsed by this parser instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri DefaultBaseUri { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_ExpressionFactories.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.ExpressionFactories%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L90">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_ExpressionFactories_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ExpressionFactories*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_ExpressionFactories" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ExpressionFactories">ExpressionFactories</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the locally scoped custom expression factories.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ISparqlCustomExpressionFactory&gt; ExpressionFactories { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Query.Expressions.ISparqlCustomExpressionFactory.html">ISparqlCustomExpressionFactory</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimisation.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimisation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L138">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimisation_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimisation*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimisation" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimisation">QueryOptimisation</h4>
+  <div class="markdown level1 summary"><p>Get / set whether the update commands should be optimized at the end of the parsing process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool QueryOptimisation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimisation_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Defaults to true.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimiser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L118">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimiser_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimiser*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimiser" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.QueryOptimiser">QueryOptimiser</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets the locally scoped Query Optimiser applied to graph patterns in update commands at the end of the parsing process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IQueryOptimiser QueryOptimiser { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.Optimisation.IQueryOptimiser.html">IQueryOptimiser</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Parsing_SparqlUpdateParser_QueryOptimiser_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+May be null if no locally scoped optimiser is set in which case the globally scoped optimiser will be used.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_Syntax.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.Syntax%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L76">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_Syntax_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Syntax*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_Syntax" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Syntax">Syntax</h4>
+  <div class="markdown level1 summary"><p>Get or set the syntax mode to support when parsing the update.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlQuerySyntax Syntax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.SparqlQuerySyntax.html">SparqlQuerySyntax</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_TraceTokeniser.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.TraceTokeniser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L85">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_TraceTokeniser_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.TraceTokeniser*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_TraceTokeniser" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.TraceTokeniser">TraceTokeniser</h4>
+  <div class="markdown level1 summary"><p>Gets/Sets whether Tokeniser Tracing is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TraceTokeniser { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_UriFactory.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.UriFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L123">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_UriFactory_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.UriFactory*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_UriFactory" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.UriFactory">UriFactory</h4>
+  <div class="markdown level1 summary"><p>Get or set the factory to use when creating URIs in this parser.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUriFactory UriFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_Parse_System_IO_StreamReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.Parse(System.IO.StreamReader)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L170">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_Parse_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Parse*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_Parse_System_IO_StreamReader_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Parse(System.IO.StreamReader)">Parse(StreamReader)</h4>
+  <div class="markdown level1 summary"><p>Parses a SPARQL Update Command Set from the input stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateCommandSet Parse(StreamReader input)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.StreamReader</span></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>Input Stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_Parse_System_IO_TextReader_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.Parse(System.IO.TextReader)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L187">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_Parse_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Parse*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_Parse_System_IO_TextReader_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Parse(System.IO.TextReader)">Parse(TextReader)</h4>
+  <div class="markdown level1 summary"><p>Parses a SPARQL Update Command Set from the input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateCommandSet Parse(TextReader input)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextReader</span></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>Input.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_ParseFromFile_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.ParseFromFile(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L219">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromFile_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromFile*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromFile_System_String_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromFile(System.String)">ParseFromFile(string)</h4>
+  <div class="markdown level1 summary"><p>Parses a SPARQL Update Command Set from the given file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateCommandSet ParseFromFile(string file)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">file</span></td>
+        <td><p>File.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L230">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_System_String_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString(System.String)">ParseFromString(string)</h4>
+  <div class="markdown level1 summary"><p>Parses a SPARQL Update Command Set from the given String.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateCommandSet ParseFromString(string updates)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">updates</span></td>
+        <td><p>SPARQL Update Commands.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_VDS_RDF_Query_SparqlParameterizedString_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString(VDS.RDF.Query.SparqlParameterizedString)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L241">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString*"></a>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_ParseFromString_VDS_RDF_Query_SparqlParameterizedString_" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.ParseFromString(VDS.RDF.Query.SparqlParameterizedString)">ParseFromString(SparqlParameterizedString)</h4>
+  <div class="markdown level1 summary"><p>Parses a SPARQL Update Command Set from the given String.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SparqlUpdateCommandSet ParseFromString(SparqlParameterizedString updates)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlParameterizedString.html">SparqlParameterizedString</a></td>
+        <td><span class="parametername">updates</span></td>
+        <td><p>SPARQL Update Commands.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Update.SparqlUpdateCommandSet.html">SparqlUpdateCommandSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser_Warning.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser.Warning%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L159">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Parsing_SparqlUpdateParser_Warning" data-uid="VDS.RDF.Parsing.SparqlUpdateParser.Warning">Warning</h4>
+  <div class="markdown level1 summary"><p>Event raised when a non-fatal issue with the SPARQL Update Commands being parsed is detected</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SparqlWarning Warning</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.SparqlWarning.html">SparqlWarning</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Parsing.ITraceableTokeniser.html">ITraceableTokeniser</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.IObjectParser-1.html">IObjectParser&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Parsing_SparqlUpdateParser.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.SparqlUpdateParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Parsing/SparqlUpdateParser.cs/#L46" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

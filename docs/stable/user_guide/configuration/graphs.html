@@ -71,7 +71,7 @@
 <p>Graphs can be specified using the <a href="http://www.dotnetrdf.org/configuration#">Configuration Vocabulary</a> in a variety of ways. Graphs can be specified as empty or they can be specified as the merge of multiple data sources.</p>
 <p>Graphs are loaded from Configuration in the following way:</p>
 <ol>
-<li>Instantiate a Graph of the correct type as specified by the <code>dnr:type</code> property</li>
+<li>Instantiate a Graph of the correct type as specified by the <code>dnr:type</code> property, optionally setting the graph name, node factory and/or URI factory.</li>
 <li>Fill Graph with data from specified sources in the following order:
 <ol>
 <li>Other Graphs</li>
@@ -91,13 +91,57 @@
 </div>
 <h1 id="basic-configuration">Basic Configuration</h1>
 <p>At it's most basic a Graph is specified as follows:</p>
-<pre><code class="lang-turtle">
-@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
 
 _:graph a dnr:Graph ;
   dnr:type &quot;VDS.RDF.Graph&quot; .
 </code></pre>
-<p>With the built in loader you can specify any type which implements the <code>IGraph</code> interface and has a public unparameterized constructor.</p>
+<p>With the built in loader you can specify any type which implements the <code>IGraph</code> interface and has a public constructor with the following signature:</p>
+<pre><code class="lang-c#">public {Type}(IRefNode name, 
+            INodeFactory nodeFactory,
+            IUriFactory uriFactory, 
+            BaseTripleCollection tripleCollection, 
+            bool emptyNamespaceMap)
+</code></pre>
+<h2 id="specifying-a-graph-name">Specifying a graph name</h2>
+<p>A graph can be configured with a name as follows:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:graph a dnr:Graph ;
+  dnr:type &quot;VDS.RDF.Graph&quot; ;
+  dnr:withName &lt;http://example.org/my/graph/name&gt; .
+</code></pre>
+<p>The value of the <code>dnr:withName</code> property can be either a URI or a blank node.</p>
+<h2 id="specifying-the-nodefactory-to-use">Specifying the NodeFactory to use</h2>
+<p>You can configure a graph to use a specific NodeFactory instance for instantiating its nodes.
+This factory will be used when loading data into the graph.</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; .
+
+_:graph a dnr:Graph ;
+  dnr:type &quot;VDS.RDF.Graph&quot; ;
+  dnr:withName &lt;http://example.org/my/graph/name&gt; ;
+  dnr:usingNodeFactory _:nodeFactory .
+</code></pre>
+<p>The NodeFactory options can also be configured.
+See <a href="node_factory.html">Configuring Node Factories</a>) for more information.</p>
+<h2 id="specifying-the-urifactory-to-use">Specifying the UriFactory to use</h2>
+<p>You can configure a graph to use a specific NodeFactory instance for instantiating its nodes.
+This factory will be used when loading data into the graph.</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:uriFactory a dnr:UriFactory ;
+   dnr:type &quot;VDS.RDF.CachingUriFactory&quot; .
+
+_:graph a dnr:Graph ;
+  dnr:type &quot;VDS.RDF.Graph&quot; ;
+  dnr:withName &lt;http://example.org/my/graph/name&gt; ;
+  dnr:usingUriFactory _:uriFactory .
+</code></pre>
+<p>The UriFactory options can also be configured.
+See <a href="uri_factory.html">Configuring URI Factories</a>) for more information.</p>
 <h2 id="data-source-configuration">Data Source Configuration</h2>
 <p>As already detailed there are multiple types of data source which you can fill a Graph with data from. Any combination of these may be used for a Graph and the resulting Graph will be the merge of all the data sources with the sources being loaded in the order specified earlier.</p>
 <h3 id="other-graphs">Other Graphs</h3>
@@ -193,7 +237,7 @@ _:rdfs a dnr:Reasoner ;
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/docs/user_guide/configuration/graphs.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/configuration/graphs.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

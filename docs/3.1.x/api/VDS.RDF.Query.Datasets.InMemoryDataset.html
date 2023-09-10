@@ -1,0 +1,1756 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class InMemoryDataset
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class InMemoryDataset
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset">
+
+
+  <h1 id="VDS_RDF_Query_Datasets_InMemoryDataset" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset" class="text-break">Class InMemoryDataset
+</h1>
+  <div class="markdown level0 summary"><p>Represents an in-memory dataset (i.e. a <a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">InMemoryQueryableStore</a>) for querying and updating using SPARQL.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html">BaseDataset</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html">BaseTransactionalDataset</a></div>
+    <div class="level3"><span class="xref">InMemoryDataset</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a></div>
+    <div><a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_AddGraph_VDS_RDF_IGraph_">BaseTransactionalDataset.AddGraph(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_RemoveGraph_System_Uri_">BaseTransactionalDataset.RemoveGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_RemoveGraph_VDS_RDF_IRefNode_">BaseTransactionalDataset.RemoveGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_Item_System_Uri_">BaseTransactionalDataset.this[Uri]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_Item_VDS_RDF_IRefNode_">BaseTransactionalDataset.this[IRefNode]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_GetModifiableGraph_VDS_RDF_IRefNode_">BaseTransactionalDataset.GetModifiableGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_Flush">BaseTransactionalDataset.Flush()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_Discard">BaseTransactionalDataset.Discard()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_DiscardInternal">BaseTransactionalDataset.DiscardInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_InternalDefaultGraph">BaseDataset.InternalDefaultGraph</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetDefaultGraph_System_Uri_">BaseDataset.SetDefaultGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetDefaultGraph_VDS_RDF_IRefNode_">BaseDataset.SetDefaultGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__">BaseDataset.SetDefaultGraph(IEnumerable&lt;Uri&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__">BaseDataset.SetDefaultGraph(IList&lt;IRefNode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetActiveGraph_System_Uri_">BaseDataset.SetActiveGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetActiveGraph_VDS_RDF_IRefNode_">BaseDataset.SetActiveGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__">BaseDataset.SetActiveGraph(IEnumerable&lt;Uri&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__">BaseDataset.SetActiveGraph(IList&lt;IRefNode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ResetActiveGraph">BaseDataset.ResetActiveGraph()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ResetDefaultGraph">BaseDataset.ResetDefaultGraph()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_DefaultGraphUris">BaseDataset.DefaultGraphUris</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_DefaultGraphNames">BaseDataset.DefaultGraphNames</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ActiveGraphUris">BaseDataset.ActiveGraphUris</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ActiveGraphNames">BaseDataset.ActiveGraphNames</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_UsesUnionDefaultGraph">BaseDataset.UsesUnionDefaultGraph</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_HasGraph_System_Uri_">BaseDataset.HasGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_HasGraph_VDS_RDF_IRefNode_">BaseDataset.HasGraph(IRefNode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetModifiableGraph_System_Uri_">BaseDataset.GetModifiableGraph(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_HasTriples">BaseDataset.HasTriples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ContainsTriple_VDS_RDF_Triple_">BaseDataset.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ContainsQuotedTriple_VDS_RDF_Triple_">BaseDataset.ContainsQuotedTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_Triples">BaseDataset.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_QuotedTriples">BaseDataset.QuotedTriples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithPredicate_System_Uri_">BaseDataset.GetTriplesWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubject_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubject_System_Uri_">BaseDataset.GetTriplesWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubject_System_Uri_">BaseDataset.GetQuotedWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubject_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithPredicate_VDS_RDF_INode_">BaseDataset.GetTriplesWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithPredicate_System_Uri_">BaseDataset.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithPredicate_VDS_RDF_INode_">BaseDataset.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriples_System_Uri_">BaseDataset.GetTriples(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriples_VDS_RDF_INode_">BaseDataset.GetTriples(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuoted_System_Uri_">BaseDataset.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuoted_VDS_RDF_INode_">BaseDataset.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithObject_System_Uri_">BaseDataset.GetTriplesWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithObject_VDS_RDF_INode_">BaseDataset.GetTriplesWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithObject_System_Uri_">BaseDataset.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithObject_VDS_RDF_INode_">BaseDataset.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a>.<a class="xref" href="VDS.RDF.Query.Datasets.html">Datasets</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Query_Datasets_InMemoryDataset_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class InMemoryDataset : BaseTransactionalDataset, IThreadSafeDataset, ISparqlDataset, ITripleIndex</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L46">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor">InMemoryDataset()</h4>
+  <div class="markdown level1 summary"><p>Creates a new in-memory dataset using the default in-memory <a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a> as the underlying storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L53">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_System_Boolean_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor(System.Boolean)">InMemoryDataset(bool)</h4>
+  <div class="markdown level1 summary"><p>Creates a new in-memory dataset using the default in-memory <a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a> as the underlying storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset(bool unionDefaultGraph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">unionDefaultGraph</span></td>
+        <td><p>Whether the Default Graph when no Active/Default Graph is explicitly set should be the union of all Graphs in the Dataset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L60">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor(VDS.RDF.IGraph)">InMemoryDataset(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Creates a new in-memory dataset containing initially just the given graph and treating the given graph as the default graph of the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor(VDS.RDF.IInMemoryQueryableStore%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L75">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_System_Boolean_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor(VDS.RDF.IInMemoryQueryableStore,System.Boolean)">InMemoryDataset(IInMemoryQueryableStore, bool)</h4>
+  <div class="markdown level1 summary"><p>Creates a new In-Memory dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset(IInMemoryQueryableStore store, bool unionDefaultGraph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>In-Memory queryable store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">unionDefaultGraph</span></td>
+        <td><p>Whether the Default Graph when no Active/Default Graph is explicitly set should be the union of all Graphs in the Dataset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor(VDS.RDF.IInMemoryQueryableStore%2CVDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L91">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor(VDS.RDF.IInMemoryQueryableStore,VDS.RDF.IRefNode)">InMemoryDataset(IInMemoryQueryableStore, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Creates a new In-Memory dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset(IInMemoryQueryableStore store, IRefNode defaultGraphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>In-Memory queryable store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">defaultGraphName</span></td>
+        <td><p>Default Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.%23ctor(VDS.RDF.IInMemoryQueryableStore)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L67">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset__ctor_VDS_RDF_IInMemoryQueryableStore_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.#ctor(VDS.RDF.IInMemoryQueryableStore)">InMemoryDataset(IInMemoryQueryableStore)</h4>
+  <div class="markdown level1 summary"><p>Creates a new In-Memory dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InMemoryDataset(IInMemoryQueryableStore store)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>In-Memory queryable store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L185">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GraphNames_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GraphNames*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GraphNames" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GraphNames">GraphNames</h4>
+  <div class="markdown level1 summary"><p>Gets an enumeration of the names of all graphs in the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;IRefNode&gt; GraphNames { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GraphNames">BaseDataset.GraphNames</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.Graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L151">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_Graphs_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.Graphs*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_Graphs" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.Graphs">Graphs</h4>
+  <div class="markdown level1 summary"><p>Gets all the Graphs in the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;IGraph&gt; Graphs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_Graphs">BaseDataset.Graphs</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L162">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GraphUris_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GraphUris*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GraphUris" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GraphUris">GraphUris</h4>
+  <div class="markdown level1 summary"><p>Gets all the URIs of Graphs in the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Replaced by GraphNames&quot;)]
+public override IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GraphUris">BaseDataset.GraphUris</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_Lock.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.Lock%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L106">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_Lock_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.Lock*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_Lock" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.Lock">Lock</h4>
+  <div class="markdown level1 summary"><p>Gets the Lock used to ensure MRSW concurrency on the dataset when available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReaderWriterLockSlim Lock { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_AddGraphInternal_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.AddGraphInternal(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L114">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_AddGraphInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.AddGraphInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_AddGraphInternal_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.AddGraphInternal(VDS.RDF.IGraph)">AddGraphInternal(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Adds a Graph to the Dataset merging it with any existing Graph with the same URI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool AddGraphInternal(IGraph g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">g</span></td>
+        <td><p>Graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_AddGraphInternal_VDS_RDF_IGraph_">BaseTransactionalDataset.AddGraphInternal(IGraph)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_ContainsQuotedTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.ContainsQuotedTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L226">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_ContainsQuotedTripleInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.ContainsQuotedTripleInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_ContainsQuotedTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.ContainsQuotedTripleInternal(VDS.RDF.Triple)">ContainsQuotedTripleInternal(Triple)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool ContainsQuotedTripleInternal(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ContainsQuotedTripleInternal_VDS_RDF_Triple_">BaseDataset.ContainsQuotedTripleInternal(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_ContainsTripleInternal_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.ContainsTripleInternal(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L221">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_ContainsTripleInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.ContainsTripleInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_ContainsTripleInternal_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.ContainsTripleInternal(VDS.RDF.Triple)">ContainsTripleInternal(Triple)</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Dataset contains a specific Triple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool ContainsTripleInternal(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_ContainsTripleInternal_VDS_RDF_Triple_">BaseDataset.ContainsTripleInternal(Triple)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_FlushInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.FlushInternal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L355">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_FlushInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.FlushInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_FlushInternal" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.FlushInternal">FlushInternal()</h4>
+  <div class="markdown level1 summary"><p>If there have been changes made to the Dataset and the underlying in-memory store is a <a class="xref" href="VDS.RDF.ITransactionalStore.html">ITransactionalStore</a> ensures the underlying store is notified to flush those changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void FlushInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_FlushInternal">BaseTransactionalDataset.FlushInternal()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetAllQuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetAllQuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L240">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetAllQuotedTriples_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetAllQuotedTriples*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetAllQuotedTriples" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetAllQuotedTriples">GetAllQuotedTriples()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetAllQuotedTriples()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetAllQuotedTriples">BaseDataset.GetAllQuotedTriples()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetAllTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetAllTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L235">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetAllTriples_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetAllTriples*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetAllTriples" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetAllTriples">GetAllTriples()</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the underlying in-memory store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetAllTriples()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetAllTriples">BaseDataset.GetAllTriples()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetGraphInternal_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetGraphInternal(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L197">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetGraphInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetGraphInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetGraphInternal_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetGraphInternal(VDS.RDF.IRefNode)">GetGraphInternal(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Gets the Graph with the given URI from the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IGraph GetGraphInternal(IRefNode graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetGraphInternal_VDS_RDF_IRefNode_">BaseDataset.GetGraphInternal(IRefNode)</a></div>
+  <h5 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetGraphInternal_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+For In-Memory datasets the Graph returned from this property is no different from the Graph returned by the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html#VDS_RDF_Query_Datasets_InMemoryDataset_GetModifiableGraphInternal_VDS_RDF_IRefNode_">GetModifiableGraphInternal()</a> method.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetModifiableGraphInternal_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetModifiableGraphInternal(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L207">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetModifiableGraphInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetModifiableGraphInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetModifiableGraphInternal_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetModifiableGraphInternal(VDS.RDF.IRefNode)">GetModifiableGraphInternal(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Gets a Modifiable wrapper around a Graph in the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ITransactionalGraph GetModifiableGraphInternal(IRefNode graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Graph URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITransactionalGraph.html">ITransactionalGraph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseTransactionalDataset.html#VDS_RDF_Query_Datasets_BaseTransactionalDataset_GetModifiableGraphInternal_VDS_RDF_IRefNode_">BaseTransactionalDataset.GetModifiableGraphInternal(IRefNode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithObjectInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithObjectInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L291">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithObjectInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithObjectInternal(VDS.RDF.INode)">GetQuotedWithObjectInternal(INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithObjectInternal(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithObjectInternal_VDS_RDF_INode_">BaseDataset.GetQuotedWithObjectInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L274">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateInternal(VDS.RDF.INode)">GetQuotedWithPredicateInternal(INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithPredicateInternal(INode predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithPredicateInternal_VDS_RDF_INode_">BaseDataset.GetQuotedWithPredicateInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateObjectInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L345">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithPredicateObjectInternal(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithPredicateObjectInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithPredicateObjectInternal(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithPredicateObjectInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L257">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectInternal(VDS.RDF.INode)">GetQuotedWithSubjectInternal(INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithSubjectInternal(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubjectInternal_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubjectInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectObjectInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L327">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectObjectInternal(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithSubjectObjectInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithSubjectObjectInternal(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubjectObjectInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectPredicateInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L309">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectPredicateInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectPredicateInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetQuotedWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetQuotedWithSubjectPredicateInternal(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithSubjectPredicateInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetQuotedWithSubjectPredicateInternal(INode subj, INode predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetQuotedWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetQuotedWithSubjectPredicateInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithObjectInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithObjectInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L284">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithObjectInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithObjectInternal(VDS.RDF.INode)">GetTriplesWithObjectInternal(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithObjectInternal(INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithObjectInternal_VDS_RDF_INode_">BaseDataset.GetTriplesWithObjectInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L267">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateInternal(VDS.RDF.INode)">GetTriplesWithPredicateInternal(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithPredicateInternal(INode predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithPredicateInternal_VDS_RDF_INode_">BaseDataset.GetTriplesWithPredicateInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateObjectInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L338">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithPredicateObjectInternal(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithPredicateObjectInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Predicate and Object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithPredicateObjectInternal(INode pred, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">pred</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithPredicateObjectInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithPredicateObjectInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectInternal_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectInternal(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L250">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectInternal_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectInternal(VDS.RDF.INode)">GetTriplesWithSubjectInternal(INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithSubjectInternal(INode subj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubjectInternal_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubjectInternal(INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectObjectInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L320">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectObjectInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectObjectInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectObjectInternal(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectObjectInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Subject and Object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithSubjectObjectInternal(INode subj, INode obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubjectObjectInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubjectObjectInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectPredicateInternal(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L302">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectPredicateInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectPredicateInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_GetTriplesWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.GetTriplesWithSubjectPredicateInternal(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectPredicateInternal(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>Gets all the Triples in the Dataset with the given Subject and Predicate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Triple&gt; GetTriplesWithSubjectPredicateInternal(INode subj, INode predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">subj</span></td>
+        <td><p>Subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>Predicate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_GetTriplesWithSubjectPredicateInternal_VDS_RDF_INode_VDS_RDF_INode_">BaseDataset.GetTriplesWithSubjectPredicateInternal(INode, INode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_HasGraphInternal_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.HasGraphInternal(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L143">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_HasGraphInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.HasGraphInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_HasGraphInternal_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.HasGraphInternal(VDS.RDF.IRefNode)">HasGraphInternal(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Gets whether a Graph with the given URI is the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool HasGraphInternal(IRefNode graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Graph name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_HasGraphInternal_VDS_RDF_IRefNode_">BaseDataset.HasGraphInternal(IRefNode)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset_RemoveGraphInternal_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset.RemoveGraphInternal(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L123">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_InMemoryDataset_RemoveGraphInternal_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.RemoveGraphInternal*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_InMemoryDataset_RemoveGraphInternal_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.InMemoryDataset.RemoveGraphInternal(VDS.RDF.IRefNode)">RemoveGraphInternal(IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Removes a Graph from the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool RemoveGraphInternal(IRefNode graphName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graphName</span></td>
+        <td><p>Graph name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Query.Datasets.BaseDataset.html#VDS_RDF_Query_Datasets_BaseDataset_RemoveGraphInternal_VDS_RDF_IRefNode_">BaseDataset.RemoveGraphInternal(IRefNode)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.IThreadSafeDataset.html">IThreadSafeDataset</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_InMemoryDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.InMemoryDataset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/InMemoryDataset.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

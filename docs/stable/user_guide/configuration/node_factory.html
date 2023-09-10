@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configuring Node Factories | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configuring Node Factories | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configuring-node-factories">Configuring Node Factories</h1>
+
+<p><a href="../node_factory.html">Node Factories</a> can be specified using the Configuration Vocabulary.
+The configuration loader can use this configuration to instantiate any class which implements the <code>INodeFactory</code> interface and has a public no-args constructor.</p>
+<h2 id="basic-configuration">Basic Configuration</h2>
+<p>A vanilla Node Factory can be specified as follows:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; .
+</code></pre>
+<h2 id="configuring-node-factory-options">Configuring Node Factory Options</h2>
+<p>A number of additional configuration vocabulary properties are available for setting the options on a Node Factory instance.</p>
+<h3 id="setting-the-baseuri">Setting the BaseURI</h3>
+<p>The <a class="xref" href="../../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_BaseUri"><code>BaseUri</code></a> property can be configured as follows:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; ;
+  dnr:assignUri &lt;http://example.org/&gt; .
+</code></pre>
+<h3 id="configuring-language-tag-validation">Configuring Language Tag Validation</h3>
+<p>The <a href="xref:VDS.RDF.INodeFactory.LanguageTagValidation"><code>LanguageTagValidation</code></a> property can be configured using on of the following string values:</p>
+<ul>
+<li><code>false</code> or <code>none</code> for no validation.</li>
+<li><code>true</code> or <code>turtle</code> for validation against the Turtle 1.1 production for language tags.</li>
+<li><code>bcp47</code> or <code>wellformed</code> for validation against the BCP47 specification's definition of a well-formed langauge tag.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>true</code> and <code>false</code> values must be quoted strings, not boolean literals.</p>
+</div>
+<p>e.g. to disable language tag validation on a node factory:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; ;
+  dnr:withLanguageTagValidation &quot;false&quot; .
+</code></pre>
+<h3 id="configuring-literal-normalization">Configuring Literal Normalization</h3>
+<p>The <a href="xref:VDS.RDF.INodeFactory.NormalizeLiterals"><code>NormalizeLiterals</code></a> property can be configured using boolean value as follows:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; ;
+  dnr:normalizeLiterals true .
+</code></pre>
+<h3 id="configuring-uri-factory">Configuring URI Factory</h3>
+<p>The <a class="xref" href="../../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_UriFactory"><code>UriFactory</code></a> property can be configured using a <code>dnr:NodeFactory</code> node as follows:</p>
+<pre><code class="lang-turtle">@prefix dnr: &lt;http://www.dotnetrdf.org/configuration#&gt; .
+
+_:nodeFactory a dnr:NodeFactory ;
+  dnr:type &quot;VDS.RDF.NodeFactory&quot; ;
+  dnr:usingUriFactory _:uriFactory .
+
+_uriFactory a dnr:UriFactory ;
+  dnr:type &quot;VDS.RDF.CachingUriFactory&quot; .
+</code></pre>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/configuration/node_factory.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

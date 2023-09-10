@@ -1,0 +1,951 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BaseSparqlView
+ | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BaseSparqlView
+ | DotNetRDF Documentation ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.BaseSparqlView">
+
+
+  <h1 id="VDS_RDF_Query_BaseSparqlView" data-uid="VDS.RDF.Query.BaseSparqlView" class="text-break">Class BaseSparqlView
+</h1>
+  <div class="markdown level0 summary"><p>Abstract Base class for SPARQL Views which are Graphs which are generated from SPARQL Queries and get automatically updated when the Store they are attached to changes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseGraph.html">BaseGraph</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Graph.html">Graph</a></div>
+    <div class="level3"><span class="xref">BaseSparqlView</span></div>
+      <div class="level4"><a class="xref" href="VDS.RDF.Query.NativeSparqlView.html">NativeSparqlView</a></div>
+      <div class="level4"><a class="xref" href="VDS.RDF.Query.SparqlView.html">SparqlView</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+    <div><span class="xref">System.IEquatable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</div>
+    <div><span class="xref">System.IEquatable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Graph.html">Graph</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Equals_VDS_RDF_Graph_">Graph.Equals(Graph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_VDS_RDF_Triple_">Graph.Assert(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Assert(IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_VDS_RDF_Triple_">Graph.Retract(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Retract(IEnumerable&lt;Triple&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_Uri_">Graph.GetUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_String_">Graph.GetUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_">Graph.GetLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_String_">Graph.GetLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_Uri_">Graph.GetLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetBlankNode_System_String_">Graph.GetBlankNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTripleNode_VDS_RDF_Triple_">Graph.GetTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_VDS_RDF_INode_">Graph.GetTriples(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_System_Uri_">Graph.GetTriples(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_VDS_RDF_INode_">Graph.GetTriplesWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_System_Uri_">Graph.GetTriplesWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_VDS_RDF_INode_">Graph.GetTriplesWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_System_Uri_">Graph.GetTriplesWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_VDS_RDF_INode_">Graph.GetTriplesWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_System_Uri_">Graph.GetTriplesWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuoted_VDS_RDF_INode_">Graph.GetQuoted(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithObject_VDS_RDF_INode_">Graph.GetQuotedWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicate_VDS_RDF_INode_">Graph.GetQuotedWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubject_VDS_RDF_INode_">Graph.GetQuotedWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__triples">BaseGraph._triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NodeFactory">BaseGraph.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_UriFactory">BaseGraph.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__name">BaseGraph._name</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__bnodemapper">BaseGraph._bnodemapper</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Triples">BaseGraph.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedTriples">BaseGraph.QuotedTriples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Nodes">BaseGraph.Nodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllNodes">BaseGraph.AllNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedNodes">BaseGraph.QuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllQuotedNodes">BaseGraph.AllQuotedNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NamespaceMap">BaseGraph.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_BaseUri">BaseGraph.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Name">BaseGraph.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsEmpty">BaseGraph.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NormalizeLiteralValues">BaseGraph.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Clear">BaseGraph.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateBlankNode">BaseGraph.CreateBlankNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateBlankNode_System_String_">BaseGraph.CreateBlankNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode">BaseGraph.CreateGraphLiteralNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode_VDS_RDF_IGraph_">BaseGraph.CreateGraphLiteralNode(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_Uri_">BaseGraph.CreateLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_">BaseGraph.CreateLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_String_">BaseGraph.CreateLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_Uri_">BaseGraph.CreateUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_String_">BaseGraph.CreateUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode">BaseGraph.CreateUriNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateVariableNode_System_String_">BaseGraph.CreateVariableNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateTripleNode_VDS_RDF_Triple_">BaseGraph.CreateTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsTriple_VDS_RDF_Triple_">BaseGraph.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsQuotedTriple_VDS_RDF_Triple_">BaseGraph.ContainsQuotedTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuoted_System_Uri_">BaseGraph.GetQuoted(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithObject_System_Uri_">BaseGraph.GetQuotedWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithPredicate_System_Uri_">BaseGraph.GetQuotedWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithSubject_System_Uri_">BaseGraph.GetQuotedWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_">BaseGraph.Merge(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_System_Boolean_">BaseGraph.Merge(IGraph, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Unstar">BaseGraph.Unstar()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_">BaseGraph.Equals(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.Equals(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsSubGraphOf_VDS_RDF_IGraph_">BaseGraph.IsSubGraphOf(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsSubGraphOf_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.IsSubGraphOf(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_HasSubGraph_VDS_RDF_IGraph_">BaseGraph.HasSubGraph(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_HasSubGraph_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.HasSubGraph(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Difference_VDS_RDF_IGraph_">BaseGraph.Difference(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ResolveQName_System_String_">BaseGraph.ResolveQName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetNextBlankNodeID">BaseGraph.GetNextBlankNodeID()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_TripleAsserted">BaseGraph.TripleAsserted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_TripleRetracted">BaseGraph.TripleRetracted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Changed">BaseGraph.Changed</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ClearRequested">BaseGraph.ClearRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Cleared">BaseGraph.Cleared</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_MergeRequested">BaseGraph.MergeRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merged">BaseGraph.Merged</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_OnTripleAsserted_System_Object_VDS_RDF_TripleEventArgs_">BaseGraph.OnTripleAsserted(object, TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleAsserted_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseTripleAsserted(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleAsserted_VDS_RDF_Triple_">BaseGraph.RaiseTripleAsserted(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_OnTripleRetracted_System_Object_VDS_RDF_TripleEventArgs_">BaseGraph.OnTripleRetracted(object, TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleRetracted_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseTripleRetracted(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleRetracted_VDS_RDF_Triple_">BaseGraph.RaiseTripleRetracted(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseGraphChanged_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseGraphChanged(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseGraphChanged">BaseGraph.RaiseGraphChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseClearRequested">BaseGraph.RaiseClearRequested()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseCleared">BaseGraph.RaiseCleared()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseMergeRequested">BaseGraph.RaiseMergeRequested()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseMerged">BaseGraph.RaiseMerged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AttachEventHandlers_VDS_RDF_BaseTripleCollection_">BaseGraph.AttachEventHandlers(BaseTripleCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_DetachEventHandlers_VDS_RDF_BaseTripleCollection_">BaseGraph.DetachEventHandlers(BaseTripleCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Dispose">BaseGraph.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object)</span>
+    </div>
+    <div>
+      <span class="xref">object.Equals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">object.ReferenceEquals(object, object)</span>
+    </div>
+    <div>
+      <span class="xref">object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Query_BaseSparqlView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseSparqlView : Graph, IGraph, INodeFactory, IDisposable, ITripleIndex, IEquatable&lt;IGraph&gt;, IEquatable&lt;Graph&gt;</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Query_BaseSparqlView_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__ctor_System_String_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.%23ctor(System.String%2CVDS.RDF.ITripleStore%2CVDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L67">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView__ctor_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__ctor_System_String_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor(System.String,VDS.RDF.ITripleStore,VDS.RDF.IRefNode)">BaseSparqlView(string, ITripleStore, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Creates a new SPARQL View.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseSparqlView(string sparqlQuery, ITripleStore store, IRefNode name = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Triple Store to query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name to assign to the view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__ctor_System_String_VDS_RDF_ITripleStore_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlParameterizedString_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.%23ctor(VDS.RDF.Query.SparqlParameterizedString%2CVDS.RDF.ITripleStore%2CVDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L82">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView__ctor_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlParameterizedString_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor(VDS.RDF.Query.SparqlParameterizedString,VDS.RDF.ITripleStore,VDS.RDF.IRefNode)">BaseSparqlView(SparqlParameterizedString, ITripleStore, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Creates a new SPARQL View.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseSparqlView(SparqlParameterizedString sparqlQuery, ITripleStore store, IRefNode name = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlParameterizedString.html">SparqlParameterizedString</a></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Triple Store to query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name to assign to the view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlParameterizedString_VDS_RDF_ITripleStore_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlQuery_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.%23ctor(VDS.RDF.Query.SparqlQuery%2CVDS.RDF.ITripleStore%2CVDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L91">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView__ctor_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlQuery_VDS_RDF_ITripleStore_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.BaseSparqlView.#ctor(VDS.RDF.Query.SparqlQuery,VDS.RDF.ITripleStore,VDS.RDF.IRefNode)">BaseSparqlView(SparqlQuery, ITripleStore, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Creates a new SPARQL View.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseSparqlView(SparqlQuery sparqlQuery, ITripleStore store, IRefNode name = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></td>
+        <td><span class="parametername">sparqlQuery</span></td>
+        <td><p>SPARQL Query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>Triple Store to query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The graph name to assign to the view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__ctor_VDS_RDF_Query_SparqlQuery_VDS_RDF_ITripleStore_VDS_RDF_IRefNode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView._graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L52">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__graphs" data-uid="VDS.RDF.Query.BaseSparqlView._graphs">_graphs</h4>
+  <div class="markdown level1 summary"><p>Graphs that are mentioned in the Query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HashSet&lt;string&gt; _graphs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.HashSet&lt;T&gt;</span>&lt;<span class="xref">string</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__graphs_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__q.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView._q%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L48">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__q" data-uid="VDS.RDF.Query.BaseSparqlView._q">_q</h4>
+  <div class="markdown level1 summary"><p>SPARQL Query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SparqlQuery _q</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__q_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView__store.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView._store%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L56">View Source</a>
+  </span>
+  <h4 id="VDS_RDF_Query_BaseSparqlView__store" data-uid="VDS.RDF.Query.BaseSparqlView._store">_store</h4>
+  <div class="markdown level1 summary"><p>Triple Store the query operates over.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ITripleStore _store</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView__store_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView_LastError.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.LastError%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L177">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView_LastError_" data-uid="VDS.RDF.Query.BaseSparqlView.LastError*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView_LastError" data-uid="VDS.RDF.Query.BaseSparqlView.LastError">LastError</h4>
+  <div class="markdown level1 summary"><p>Gets the error that occurred during the last update (if any).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RdfQueryException LastError { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Query.RdfQueryException.html">RdfQueryException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_Query_BaseSparqlView_LastError_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView_UpdateView.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.UpdateView%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L160">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView_UpdateView_" data-uid="VDS.RDF.Query.BaseSparqlView.UpdateView*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView_UpdateView" data-uid="VDS.RDF.Query.BaseSparqlView.UpdateView">UpdateView()</h4>
+  <div class="markdown level1 summary"><p>Forces the view to be updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateView()</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Query_BaseSparqlView_UpdateView_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView_UpdateViewInternal.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView.UpdateViewInternal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L172">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_BaseSparqlView_UpdateViewInternal_" data-uid="VDS.RDF.Query.BaseSparqlView.UpdateViewInternal*"></a>
+  <h4 id="VDS_RDF_Query_BaseSparqlView_UpdateViewInternal" data-uid="VDS.RDF.Query.BaseSparqlView.UpdateViewInternal">UpdateViewInternal()</h4>
+  <div class="markdown level1 summary"><p>Abstract method that derived classes should implement to update the view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void UpdateViewInternal()</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Query_BaseSparqlView_UpdateViewInternal_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+CONSTRUCT, DESCRIBE or SELECT queries can be used to generate a Graph.  If you use a SELECT query the returned variables must contain ?s, ?p and ?o in order to generate a view correctly.
+</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Data.DataTables.GraphExtensions.html#VDS_RDF_Data_DataTables_GraphExtensions_ToDataTable_VDS_RDF_IGraph_">GraphExtensions.ToDataTable(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AddToList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AddToList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Assert_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Assert(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListAsTriples_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListAsTriples(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListItems_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListItems(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListNodes_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListNodes(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.RemoveFromList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.RemoveFromList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Retract_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Retract(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RetractList_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.RetractList(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_GetETag_VDS_RDF_IGraph_">GraphExtensions.GetETag(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromFile(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromString(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromString(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToFile(IGraph, string, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToFile(IGraph, string, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_">GraphExtensions.SaveToFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_String_System_IO_TextWriter_">GraphExtensions.SaveToStream(IGraph, string, TextWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_BaseSparqlView.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.BaseSparqlView%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/BaseSparqlView.cs/#L42" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
