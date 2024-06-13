@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface IInMemoryQueryableStore
- | DotNetRDF Documentation </title>
+      <title>Interface IInMemoryQueryableStore | DotNetRDF Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface IInMemoryQueryableStore
- | DotNetRDF Documentation ">
+      <meta name="title" content="Interface IInMemoryQueryableStore | DotNetRDF Documentation ">
     
+    <meta name="description" content="Interface for Triple Stores which can be queried in memory using method calls or the SPARQL implementation contained in this library.">
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -70,8 +69,8 @@
             <article class="content wrap" id="_content" data-uid="VDS.RDF.IInMemoryQueryableStore">
 
 
-  <h1 id="VDS_RDF_IInMemoryQueryableStore" data-uid="VDS.RDF.IInMemoryQueryableStore" class="text-break">Interface IInMemoryQueryableStore
-</h1>
+
+  <h1 id="VDS_RDF_IInMemoryQueryableStore" data-uid="VDS.RDF.IInMemoryQueryableStore" class="text-break">Interface IInMemoryQueryableStore</h1>
   <div class="markdown level0 summary"><p>Interface for Triple Stores which can be queried in memory using method calls or the SPARQL implementation contained in this library.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -87,7 +86,19 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Triples">ITripleStore.Triples</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Quads">ITripleStore.Quads</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_UriFactory">ITripleStore.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Assert_VDS_RDF_Quad_">ITripleStore.Assert(Quad)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Retract_VDS_RDF_Quad_">ITripleStore.Retract(Quad)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IRefNode_">ITripleStore.Add(IRefNode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Add_VDS_RDF_IGraph_">ITripleStore.Add(IGraph)</a>
@@ -123,6 +134,9 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_Item_VDS_RDF_IRefNode_">ITripleStore.this[IRefNode]</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GetQuads_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_IRefNode_System_Boolean_">ITripleStore.GetQuads(INode, INode, INode, IRefNode, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphAdded">ITripleStore.GraphAdded</a>
     </div>
     <div>
@@ -138,10 +152,10 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html#VDS_RDF_ITripleStore_GraphMerged">ITripleStore.GraphMerged</a>
     </div>
     <div>
-      <span class="xref">System.IDisposable.Dispose()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
   <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_IInMemoryQueryableStore_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -149,7 +163,7 @@
   </div>
   <h5 id="VDS_RDF_IInMemoryQueryableStore_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
+An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can't provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
 </p>
 <p>
 All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
@@ -159,10 +173,10 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.Contains(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.Contains(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L51">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L51">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_Contains_" data-uid="VDS.RDF.IInMemoryQueryableStore.Contains*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple_" data-uid="VDS.RDF.IInMemoryQueryableStore.Contains(VDS.RDF.Triple)">Contains(Triple)</h4>
@@ -174,7 +188,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">bool Contains(Triple t)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -192,7 +206,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -201,25 +215,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_Contains_VDS_RDF_Triple__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L145">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L145">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{System.Uri},System.Uri)">GetTriples(List&lt;Uri&gt;, Uri)</h4>
@@ -232,7 +238,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, Uri uri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -242,13 +248,13 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, Uri uri)</code><
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
         <td><p>Uri.</p>
 </td>
@@ -256,7 +262,7 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, Uri uri)</code><
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -265,25 +271,17 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, Uri uri)</code><
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L154">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L154">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)">GetTriples(List&lt;Uri&gt;, INode)</h4>
@@ -296,7 +294,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -306,7 +304,7 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, INode n)</code><
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
@@ -320,7 +318,7 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, INode n)</code><
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -329,25 +327,17 @@ IEnumerable&lt;Triple&gt; GetTriples(List&lt;Uri&gt; graphUris, INode n)</code><
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_System_Uri__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L218">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L218">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{VDS.RDF.IRefNode},System.Uri)">GetTriples(List&lt;IRefNode&gt;, Uri)</h4>
@@ -359,7 +349,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(List&lt;IRefNode&gt; graphNames, Uri uri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -369,13 +359,13 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
         <td><p>Uri.</p>
 </td>
@@ -383,7 +373,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -392,25 +382,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L226">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L226">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Collections.Generic.List{VDS.RDF.IRefNode},VDS.RDF.INode)">GetTriples(List&lt;IRefNode&gt;, INode)</h4>
@@ -422,7 +404,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(List&lt;IRefNode&gt; graphNames, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -432,7 +414,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
@@ -446,7 +428,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -455,25 +437,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L60">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L60">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(System.Uri)">GetTriples(Uri)</h4>
@@ -485,7 +459,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(Uri uri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -495,7 +469,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">uri</span></td>
         <td><p>Uri.</p>
 </td>
@@ -503,7 +477,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -512,25 +486,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriples(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L67">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L67">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriples_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriples(VDS.RDF.INode)">GetTriples(INode)</h4>
@@ -542,7 +508,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriples(INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -560,7 +526,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -569,25 +535,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriples_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L163">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L163">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{System.Uri},System.Uri)">GetTriplesWithObject(List&lt;Uri&gt;, Uri)</h4>
@@ -600,7 +558,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -610,13 +568,13 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, Uri u)
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -624,7 +582,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, Uri u)
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -633,25 +591,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, Uri u)
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L172">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L172">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)">GetTriplesWithObject(List&lt;Uri&gt;, INode)</h4>
@@ -664,7 +614,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -674,7 +624,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, INode 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
@@ -688,7 +638,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, INode 
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -697,25 +647,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;Uri&gt; graphUris, INode 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L234">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L234">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{VDS.RDF.IRefNode},System.Uri)">GetTriplesWithObject(List&lt;IRefNode&gt;, Uri)</h4>
@@ -727,7 +669,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;IRefNode&gt; graphNames, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -737,13 +679,13 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -751,7 +693,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -760,25 +702,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L242">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L242">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Collections.Generic.List{VDS.RDF.IRefNode},VDS.RDF.INode)">GetTriplesWithObject(List&lt;IRefNode&gt;, INode)</h4>
@@ -790,7 +724,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(List&lt;IRefNode&gt; graphNames, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -800,7 +734,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
@@ -814,7 +748,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -823,25 +757,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L74">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L74">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(System.Uri)">GetTriplesWithObject(Uri)</h4>
@@ -853,7 +779,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -863,7 +789,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -871,7 +797,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -880,25 +806,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L81">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L81">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithObject(VDS.RDF.INode)">GetTriplesWithObject(INode)</h4>
@@ -910,7 +828,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithObject(INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -928,7 +846,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -937,25 +855,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithObject_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L190">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L190">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{System.Uri},System.Uri)">GetTriplesWithPredicate(List&lt;Uri&gt;, Uri)</h4>
@@ -968,7 +878,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -978,13 +888,13 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, Uri
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -992,7 +902,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, Uri
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1001,25 +911,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, Uri
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L181">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L181">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)">GetTriplesWithPredicate(List&lt;Uri&gt;, INode)</h4>
@@ -1032,7 +934,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1042,7 +944,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, INo
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
@@ -1056,7 +958,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, INo
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1065,25 +967,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;Uri&gt; graphUris, INo
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_System_Uri__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L258">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L258">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{VDS.RDF.IRefNode},System.Uri)">GetTriplesWithPredicate(List&lt;IRefNode&gt;, Uri)</h4>
@@ -1095,7 +989,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;IRefNode&gt; graphNames, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1105,13 +999,13 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -1119,7 +1013,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1128,25 +1022,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L250">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L250">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Collections.Generic.List{VDS.RDF.IRefNode},VDS.RDF.INode)">GetTriplesWithPredicate(List&lt;IRefNode&gt;, INode)</h4>
@@ -1158,7 +1044,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(List&lt;IRefNode&gt; graphNames, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1168,7 +1054,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
@@ -1182,7 +1068,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1191,25 +1077,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L95">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L95">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(System.Uri)">GetTriplesWithPredicate(Uri)</h4>
@@ -1221,7 +1099,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1231,7 +1109,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -1239,7 +1117,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1248,25 +1126,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L88">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L88">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicate(VDS.RDF.INode)">GetTriplesWithPredicate(INode)</h4>
@@ -1278,7 +1148,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicate(INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1296,7 +1166,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1305,25 +1175,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicate_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L125">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L125">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithPredicateObject(INode, INode)</h4>
@@ -1335,7 +1197,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithPredicateObject(INode predicate, INode obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1359,7 +1221,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1368,25 +1230,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L208">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L208">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{System.Uri},System.Uri)">GetTriplesWithSubject(List&lt;Uri&gt;, Uri)</h4>
@@ -1399,7 +1253,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1409,13 +1263,13 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, Uri u
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -1423,7 +1277,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, Uri u
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1432,25 +1286,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, Uri u
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BSystem.Uri%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L199">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L199">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{System.Uri},VDS.RDF.INode)">GetTriplesWithSubject(List&lt;Uri&gt;, INode)</h4>
@@ -1463,7 +1309,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
 IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1473,7 +1319,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, INode
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>List of the Graph URIs of Graphs you want to select over.</p>
 </td>
@@ -1487,7 +1333,7 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, INode
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1496,25 +1342,17 @@ IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;Uri&gt; graphUris, INode
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_System_Uri__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L274">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L274">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{VDS.RDF.IRefNode},System.Uri)">GetTriplesWithSubject(List&lt;IRefNode&gt;, Uri)</h4>
@@ -1526,7 +1364,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;IRefNode&gt; graphNames, Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1536,13 +1374,13 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -1550,7 +1388,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1559,25 +1397,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List%7BVDS.RDF.IRefNode%7D%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L266">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L266">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Collections.Generic.List{VDS.RDF.IRefNode},VDS.RDF.INode)">GetTriplesWithSubject(List&lt;IRefNode&gt;, INode)</h4>
@@ -1589,7 +1419,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(List&lt;IRefNode&gt; graphNames, INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1599,7 +1429,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>List of the names of Graphs you want to select over.</p>
 </td>
@@ -1613,7 +1443,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1622,25 +1452,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Collections_Generic_List_VDS_RDF_IRefNode__VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L109">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L109">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(System.Uri)">GetTriplesWithSubject(Uri)</h4>
@@ -1652,7 +1474,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(Uri u)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1662,7 +1484,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">u</span></td>
         <td><p>Uri.</p>
 </td>
@@ -1670,7 +1492,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1679,25 +1501,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L102">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L102">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubject(VDS.RDF.INode)">GetTriplesWithSubject(INode)</h4>
@@ -1709,7 +1523,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubject(INode n)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1727,7 +1541,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1736,25 +1550,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubject_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L133">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L133">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectObject(INode, INode)</h4>
@@ -1766,7 +1572,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubjectObject(INode subj, INode obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1790,7 +1596,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1799,25 +1605,17 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L117">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L117">View Source</a>
   </span>
   <a id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate*"></a>
   <h4 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.IInMemoryQueryableStore.GetTriplesWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">GetTriplesWithSubjectPredicate(INode, INode)</h4>
@@ -1829,7 +1627,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; GetTriplesWithSubjectPredicate(INode subj, INode predicate)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1853,7 +1651,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1862,19 +1660,11 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_IInMemoryQueryableStore_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-An in memory Triple Store will typically load most of the Graphs and consequently Triples contained within it into Memory as the in memory SPARQL implementation only operates over the part of the Triple Store loaded in memory.  This being said there is no reason why an in memory store can&apos;t provide a Snapshot view of an underlying store to allow only the relevant parts of Store to be loaded and queried.
-</p>
-<p>
-All the Selection Methods which do not specify a subset of Graphs on such a Triple Store <strong>should</strong> operate over the entire store.
-</p>
-</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
@@ -1883,38 +1673,39 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string, IStoreReader)</a>
-  </div>
-  <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, string, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromFile(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, string, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromString(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, string, IStoreWriter)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, string)</a>
   </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, string, IStoreWriter)</a>
+  </div>
+
 </article>
           </div>
 
@@ -1923,15 +1714,15 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_IInMemoryQueryableStore.md&amp;value=---%0Auid%3A%20VDS.RDF.IInMemoryQueryableStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L43" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/IInMemoryQueryableStore.cs/#L43" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -1953,7 +1744,7 @@ All the Selection Methods which do not specify a subset of Graphs on such a Trip
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

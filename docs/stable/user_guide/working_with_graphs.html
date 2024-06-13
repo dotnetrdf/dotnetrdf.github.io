@@ -9,8 +9,9 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Working with Graphs | DotNetRDF Documentation ">
     
+    
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -106,11 +107,11 @@ foreach (IUriNode u in g.Nodes.UriNodes())
 <h3 id="triples">Triples</h3>
 <p>The <code>Triples</code> property returns a <code>BaseTripleCollection</code> object which is a collection of the Triples contained in the Graph and is probably the most important and most used property of a Graph. This allows you to enumerate over the Triples in the Graph in various ways but is most commonly used as previously seen for simple enumerating the Triples in the Graph and performing some action with each of them.</p>
 <h2 id="asserting-and-retracting-triples">Asserting and Retracting Triples</h2>
-<p>As already seen in the [[Library Overview|Library-Overview]] and [[Hello World|Hello-World]] one of the key functions of the Graph is to allow Triples to be asserted and retracted. For this the <code>Assert(…)</code> and <code>Retract(…)</code> methods are provided. Both of these methods can take either a single Triple or an enumerable of Triples.</p>
+<p>As already seen in the <a href="core_concepts.html">Core Concepts</a> and <a href="hello_world.html">Hello World</a> one of the key functions of the Graph is to allow Triples to be asserted and retracted. For this the <code>Assert(…)</code> and <code>Retract(…)</code> methods are provided. Both of these methods can take either a single Triple or an enumerable of Triples.</p>
 <p>Asserting a triple causes it to be added to the triple collection of the graph, retracting a triple causes the reverse to occur. Depending on the <code>IGraph</code> implementation being used additional actions may also be taken as part of the assertion and retraction process.</p>
 <p><em>Note:</em> When using the <code>Assert(IEnumerable&lt;Triple&gt; ts)</code> or <code>Retract(IEnumerable&lt;Triple&gt; ts)</code> methods be mindful of where those triples are coming from.  A graph like most collection classes in the .Net world does not allow itself to be modified while it is being enumerated over.  Therefore you may need to call <code>ToList()</code> on an enumerable before attempting to assert/retract it.</p>
 <h2 id="creating-nodes">Creating Nodes</h2>
-<p>As also seen in [[Library Overview|Library-Overview]] all Nodes must be created by an <code>INodeFactory</code> which all <code>IGraph</code> implementations must also implement. Therefore a graph provides <code>CreateBlankNode(…)</code>, <code>CreateLiteralNode(…)</code> and <code>CreateURINode(…)</code>, see the earlier [[Library Overview|Library-Overview]] for usage examples.</p>
+<p>As also seen in <a href="core_concepts.html">Core Concepts</a> all Nodes must be created by an <code>INodeFactory</code> which all <code>IGraph</code> implementations must also implement. Therefore a graph provides <code>CreateBlankNode(…)</code>, <code>CreateLiteralNode(…)</code> and <code>CreateURINode(…)</code>, see the earlier <a href="core_concepts.html">Core Concepts</a> for usage examples.</p>
 <h2 id="selecting-nodes">Selecting Nodes</h2>
 <p>To select Nodes there are methods which can be used to find a Node from a Graph (if it exists) which are the <code>GetXNode()</code> methods where <code>X</code> is the type of the node to be retrieved. Note that this method only returns a value if the given value exists as a node in the Graph i.e. it occurs in the Subject/Object position of a triple in this graph.</p>
 <p><em>Note:</em> If you just want to get a Node instance for other usages regardless of whether it already exists in the Graph you should use the <code>CreateXNode()</code> methods instead.</p>
@@ -186,13 +187,13 @@ ts = g.Triples[(null, rdfType, person)];
 <p>The <code>Merge(…)</code> method allows for Graphs to be merged together. The method takes an IGraph as an argument and then has an optional second argument which is a Boolean indicating whether to preserve the original Graph URIs associated with Nodes.</p>
 <p><code>Merge(…)</code> implements Graph merging as described in the RDF specification: Triples contained no Blank Nodes are copied from the input Graph if they don't exist in the Graph on which <code>Merge()</code> is called, Triples containing Blank Nodes have their Blank Node IDs rewritten so that they don't collide with Blank Nodes already in the Graph.</p>
 <h2 id="graph-equality">Graph Equality</h2>
-<p>Graph Equality (aka Isomorphism) is supported through use of the standard <code>Equals(Object obj)</code> method. We also provide an additional overload <code>Equals(IGraph g, out Dictionary mapping)</code> which determines equality and if the Graphs are equivalent returns the mapping of Blank Nodes between the two graphs.  See [[Equality and Comparison|Equality-And-Comparison]] for more discussion of this.</p>
+<p>Graph Equality (aka Isomorphism) is supported through use of the standard <code>Equals(Object obj)</code> method. We also provide an additional overload <code>Equals(IGraph g, out Dictionary mapping)</code> which determines equality and if the Graphs are equivalent returns the mapping of Blank Nodes between the two graphs.  See <a href="equality_and_comparison.html">Equality and Comparison</a> for more discussion of this.</p>
 <h2 id="graph-difference">Graph Difference</h2>
 <p>If you know two Graphs are different it may be useful to know how they are different. The <code>Difference(IGraph g)</code> method determines the differences between two graphs returning a <code>GraphDiffReport</code> which details the differences.</p>
 <h2 id="loading-graphs">Loading Graphs</h2>
-<p>The most common way of loading a Graph is to read RDF from a file/URI as described in [[Reading RDF|Reading-RDF]] but there are other ways to read graphs, for example from persistent storage.</p>
+<p>The most common way of loading a Graph is to read RDF from a file/URI as described in <a href="reading_rdf.html">Reading RDF</a> but there are other ways to read graphs, for example from persistent storage.</p>
 <h3 id="triple-store-backed-graphs">Triple Store Backed Graphs</h3>
-<p>Graphs can also be loaded from native Triple Stores which are accessible through the dotNetRDF API. To use a native Triple Store you'll need to use one of the <code>IStorageProvider</code> implementations located in the <code>VDS.RDF.Storage</code> namespace. Graphs can be loaded using an appropriate overload of the <code>LoadGraph()</code> method, see [[Triple Store Integration|Triple-Store-Integration]] for more details.</p>
+<p>Graphs can also be loaded from native Triple Stores which are accessible through the dotNetRDF API. To use a native Triple Store you'll need to use one of the <code>IStorageProvider</code> implementations located in the <code>VDS.RDF.Storage</code> namespace. Graphs can be loaded using an appropriate overload of the <code>LoadGraph()</code> method, see <a href="triple_store_integration.html">Triple Store Integration</a> for more details.</p>
 <h3 id="using-the-storegraphpersistencewrapper">Using the StoreGraphPersistenceWrapper</h3>
 <p>Alternatively the <code>StoreGraphPersistenceWrapper</code> is a wrapper class that can be placed around any <code>IGraph</code> instance and will persist any changes made when it is disposed of unless you discard them using it's <code>Discard()</code> method.</p>
 <pre><code class="lang-csharp">using VDS.RDF;
@@ -241,9 +242,9 @@ public class SparqlLoadExample
 }
 </code></pre>
 <h2 id="saving-graphs">Saving Graphs</h2>
-<p>The most common way of saving a Graph is to save it to a file as described in [[Writing RDF|Writing-RDF]] but you can also save it to other forms of persistent storage.</p>
+<p>The most common way of saving a Graph is to save it to a file as described in <a href="writing_rdf.html">Writing RDF</a> but you can also save it to other forms of persistent storage.</p>
 <h3 id="triple-store-backed-graphs-1">Triple Store Backed Graphs</h3>
-<p>The easiest way to save a Graph to a Triple Store is to use the <code>SaveGraph()</code> method of an <code>IStorageProvider</code> implementation, see [[Triple Store Integration|Triple-Store-Integration]] for more details.</p>
+<p>The easiest way to save a Graph to a Triple Store is to use the <code>SaveGraph()</code> method of an <code>IStorageProvider</code> implementation, see <a href="triple_store_integration.html">Triple Store Integration</a> for more details.</p>
 <p>Alternatively you can use the <code>StoreGraphPersistenceWrapper</code> class described earlier since any changes made to it are automatically saved to the Store (if your store supports this).</p>
 <h1 id="standard-igraph-implementations">Standard IGraph Implementations</h1>
 <p>The following is a partial list of concrete <code>IGraph</code> implementations provided in the library:</p>
@@ -275,12 +276,13 @@ public class SparqlLoadExample
 </table>
 <hr>
 <h1 id="tutorial-navigation">Tutorial Navigation</h1>
-<p>The next topic is [[Typed Values and Lists|Typed-Values-And-Lists]], the previous topic was [[Writing RDF|Writing-RDF]].</p>
+<p>The next topic is <a href="typed_values_and_lists.html">Typed Values and Lists</a>, the previous topic was <a href="writing_rdf.html">Writing RDF</a>.</p>
 <p>User interesting in learning more may want to jump to the following topics:</p>
 <ul>
-<li>[[Using the Namespace Mapper|Using-The-Namespace-Mapper]]</li>
-<li>[[Triple Store Integration|Triple-Store-Integration]]</li>
+<li><a href="namespace_mapper.html">Namespace Mapper</a></li>
+<li><a href="triple_store_integration.html">Triple Store Integration</a></li>
 </ul>
+
 </article>
           </div>
 
@@ -289,12 +291,12 @@ public class SparqlLoadExample
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/working_with_graphs.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/user_guide/working_with_graphs.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -316,7 +318,7 @@ public class SparqlLoadExample
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

@@ -1,0 +1,1346 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class RdfAPatternCopyingHandler | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class RdfAPatternCopyingHandler | DotNetRDF Documentation ">
+    
+    <meta name="description" content="A handler which captures RDFa Pattern resources and rdfa:copy properties during processing and emits pattern copies at the end of processing.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler">
+
+
+
+  <h1 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler" class="text-break">Class RdfAPatternCopyingHandler</h1>
+  <div class="markdown level0 summary"><p>A handler which captures RDFa Pattern resources and rdfa:copy properties during processing and emits pattern copies at the end of processing.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">RdfAPatternCopyingHandler</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IWrappingRdfHandler.html">IWrappingRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Parsing.html">Parsing</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
+  <h5 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RdfAPatternCopyingHandler : IWrappingRdfHandler, IRdfHandler, INodeFactory</code></pre>
+  </div>
+  <h5 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This streaming implementation will only capture pattern triples that are emitted after declaration of the rdfa:Pattern type for the pattern resource is encountered <em>or</em> after an rdfa:copy triple with the pattern as its object is encountered.</p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler__ctor_VDS_RDF_IRdfHandler_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.%23ctor(VDS.RDF.IRdfHandler)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L48">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler__ctor_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.#ctor*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler__ctor_VDS_RDF_IRdfHandler_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.#ctor(VDS.RDF.IRdfHandler)">RdfAPatternCopyingHandler(IRdfHandler)</h4>
+  <div class="markdown level1 summary"><p>Create a new RDFa Pattern Copying handler that wraps the specified inner handler.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RdfAPatternCopyingHandler(IRdfHandler inner)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a></td>
+        <td><span class="parametername">inner</span></td>
+        <td><p>The inner handler to receive all events emitted by this handler.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_AcceptsAll.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.AcceptsAll%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L259">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_AcceptsAll_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.AcceptsAll*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_AcceptsAll" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.AcceptsAll">AcceptsAll</h4>
+  <div class="markdown level1 summary"><p>Gets whether the Handler will always handle all data (i.e. won't terminate parsing early).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AcceptsAll { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_BaseUri.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.BaseUri%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L60">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_BaseUri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.BaseUri*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_BaseUri" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.BaseUri">BaseUri</h4>
+  <div class="markdown level1 summary"><p>Get or set the base URI used to resolve relative URI references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri BaseUri { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_InnerHandlers.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.InnerHandlers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L314">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_InnerHandlers_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.InnerHandlers*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_InnerHandlers" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.InnerHandlers">InnerHandlers</h4>
+  <div class="markdown level1 summary"><p>Gets the Inner Handlers used by this Handler.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IRdfHandler&gt; InnerHandlers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_LanguageTagValidation.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.LanguageTagValidation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L162">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_LanguageTagValidation_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.LanguageTagValidation*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_LanguageTagValidation" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.LanguageTagValidation">LanguageTagValidation</h4>
+  <div class="markdown level1 summary"><p>Get or set the type of validation to apply to language tags when creating language-tagged literal nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LanguageTagValidationMode LanguageTagValidation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LanguageTagValidationMode.html">LanguageTagValidationMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_NamespaceMap.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.NamespaceMap%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L67">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_NamespaceMap_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.NamespaceMap*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_NamespaceMap" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.NamespaceMap">NamespaceMap</h4>
+  <div class="markdown level1 summary"><p>Get the namespace map for this node factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public INamespaceMapper NamespaceMap { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INamespaceMapper.html">INamespaceMapper</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_NormalizeLiteralValues.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.NormalizeLiteralValues%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L155">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_NormalizeLiteralValues_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.NormalizeLiteralValues*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_NormalizeLiteralValues" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.NormalizeLiteralValues">NormalizeLiteralValues</h4>
+  <div class="markdown level1 summary"><p>Get or set the flag that controls whether the value strings of literal nodes should be normalized on creation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NormalizeLiteralValues { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_UriFactory.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.UriFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L70">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_UriFactory_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.UriFactory*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_UriFactory" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.UriFactory">UriFactory</h4>
+  <div class="markdown level1 summary"><p>Get or set the factory to use when creating URIs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUriFactory UriFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriFactory.html">IUriFactory</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L77">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode">CreateBlankNode()</h4>
+  <div class="markdown level1 summary"><p>Creates a Blank Node with a new automatically generated ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBlankNode CreateBlankNode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L83">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateBlankNode_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateBlankNode(System.String)">CreateBlankNode(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a Blank Node with the given Node ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBlankNode CreateBlankNode(string nodeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">nodeId</span></td>
+        <td><p>Node ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L89">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode">CreateGraphLiteralNode()</h4>
+  <div class="markdown level1 summary"><p>Creates a Graph Literal Node which represents the empty Subgraph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGraphLiteralNode CreateGraphLiteralNode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L95">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateGraphLiteralNode_VDS_RDF_IGraph_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateGraphLiteralNode(VDS.RDF.IGraph)">CreateGraphLiteralNode(IGraph)</h4>
+  <div class="markdown level1 summary"><p>Creates a Graph Literal Node which represents the given Subgraph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGraphLiteralNode CreateGraphLiteralNode(IGraph subgraph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">subgraph</span></td>
+        <td><p>Subgraph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L107">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String)">CreateLiteralNode(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a Literal Node with the given Value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILiteralNode CreateLiteralNode(string literal)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>Value of the Literal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L113">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String,System.String)">CreateLiteralNode(string, string)</h4>
+  <div class="markdown level1 summary"><p>Creates a Literal Node with the given Value and Language.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILiteralNode CreateLiteralNode(string literal, string langSpec)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>Value of the Literal.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">langSpec</span></td>
+        <td><p>Language Specifier for the Literal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L101">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateLiteralNode_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateLiteralNode(System.String,System.Uri)">CreateLiteralNode(string, Uri)</h4>
+  <div class="markdown level1 summary"><p>Creates a Literal Node with the given Value and Data Type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILiteralNode CreateLiteralNode(string literal, Uri datatype)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">literal</span></td>
+        <td><p>Value of the Literal.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">datatype</span></td>
+        <td><p>Data Type URI of the Literal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateTripleNode_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateTripleNode(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L143">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateTripleNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateTripleNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateTripleNode_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateTripleNode(VDS.RDF.Triple)">CreateTripleNode(Triple)</h4>
+  <div class="markdown level1 summary"><p>Creates a node that quotes the given triple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITripleNode CreateTripleNode(Triple triple)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">triple</span></td>
+        <td><p>The triple to be the quoted value of the created node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.ITripleNode.html">ITripleNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L131">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode">CreateUriNode()</h4>
+  <div class="markdown level1 summary"><p>Creates a URI Node that corresponds to the current Base URI of the node factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUriNode CreateUriNode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L125">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode(System.String)">CreateUriNode(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a URI Node for the given QName using the Graphs NamespaceMap to resolve the QName.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUriNode CreateUriNode(string qName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">qName</span></td>
+        <td><p>QName.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L119">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateUriNode_System_Uri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateUriNode(System.Uri)">CreateUriNode(Uri)</h4>
+  <div class="markdown level1 summary"><p>Creates a URI Node for the given URI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUriNode CreateUriNode(Uri uri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">uri</span></td>
+        <td><p>URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IUriNode.html">IUriNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateVariableNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateVariableNode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L137">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateVariableNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateVariableNode*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_CreateVariableNode_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.CreateVariableNode(System.String)">CreateVariableNode(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a Variable Node for the given Variable Name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IVariableNode CreateVariableNode(string varName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">varName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IVariableNode.html">IVariableNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_EndRdf_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.EndRdf(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L181">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_EndRdf_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.EndRdf*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_EndRdf_System_Boolean_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.EndRdf(System.Boolean)">EndRdf(bool)</h4>
+  <div class="markdown level1 summary"><p>End the Handling of RDF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EndRdf(bool ok)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">ok</span></td>
+        <td><p>Whether parsing finished without error.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_GetNextBlankNodeID.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.GetNextBlankNodeID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L149">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_GetNextBlankNodeID_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.GetNextBlankNodeID*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_GetNextBlankNodeID" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.GetNextBlankNodeID">GetNextBlankNodeID()</h4>
+  <div class="markdown level1 summary"><p>Creates a new unused Blank Node ID and returns it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetNextBlankNodeID()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleBaseUri_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleBaseUri(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L197">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleBaseUri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleBaseUri*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleBaseUri_System_Uri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleBaseUri(System.Uri)">HandleBaseUri(Uri)</h4>
+  <div class="markdown level1 summary"><p>Handles a Base URI Definition.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HandleBaseUri(Uri baseUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>Base URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Should return <strong>true</strong> if parsing should continue or <strong>false</strong> if it should be aborted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleNamespace_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleNamespace(System.String%2CSystem.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L191">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleNamespace_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleNamespace*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleNamespace_System_String_System_Uri_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleNamespace(System.String,System.Uri)">HandleNamespace(string, Uri)</h4>
+  <div class="markdown level1 summary"><p>Handles a Namespace Definition.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HandleNamespace(string prefix, Uri namespaceUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">prefix</span></td>
+        <td><p>Namespace Prefix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">namespaceUri</span></td>
+        <td><p>Namespace URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Should return <strong>true</strong> if parsing should continue or <strong>false</strong> if it should be aborted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleQuad(VDS.RDF.Triple%2CVDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L253">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleQuad_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleQuad*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleQuad_VDS_RDF_Triple_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleQuad(VDS.RDF.Triple,VDS.RDF.IRefNode)">HandleQuad(Triple, IRefNode)</h4>
+  <div class="markdown level1 summary"><p>Handles a Quad (Triple + Graph).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HandleQuad(Triple t, IRefNode graph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a></td>
+        <td><span class="parametername">graph</span></td>
+        <td><p>The name of the graph containing the triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Should return <strong>true</strong> if parsing should continue or <strong>false</strong> if it should be aborted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L203">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleTriple_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleTriple*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_HandleTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.HandleTriple(VDS.RDF.Triple)">HandleTriple(Triple)</h4>
+  <div class="markdown level1 summary"><p>Handles a Triple.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HandleTriple(Triple t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>Triple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Should return <strong>true</strong> if parsing should continue or <strong>false</strong> if it should be aborted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_ResolveQName_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.ResolveQName(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L169">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_ResolveQName_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.ResolveQName*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_ResolveQName_System_String_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.ResolveQName(System.String)">ResolveQName(string)</h4>
+  <div class="markdown level1 summary"><p>Resolve a QName to a URI using this factory's <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NamespaceMap">NamespaceMap</a> and <a class="xref" href="VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_BaseUri">BaseUri</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri ResolveQName(string qName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">qName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler_StartRdf.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler.StartRdf%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L175">View Source</a>
+  </span>
+  <a id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_StartRdf_" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.StartRdf*"></a>
+  <h4 id="VDS_RDF_Parsing_RdfAPatternCopyingHandler_StartRdf" data-uid="VDS.RDF.Parsing.RdfAPatternCopyingHandler.StartRdf">StartRdf()</h4>
+  <div class="markdown level1 summary"><p>Start the Handling of RDF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartRdf()</code></pre>
+  </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.RdfParseException.html">RdfParseException</a></td>
+        <td><p>May be thrown if the Handler is already in use and the implementation is not thread-safe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IWrappingRdfHandler.html">IWrappingRdfHandler</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.IRdfHandler.html">IRdfHandler</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">HandlerExtensions.Apply(IRdfHandler, IEnumerable&lt;Triple&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Parsing.Handlers.HandlerExtensions.html#VDS_RDF_Parsing_Handlers_HandlerExtensions_Apply_VDS_RDF_IRdfHandler_VDS_RDF_IGraph_">HandlerExtensions.Apply(IRdfHandler, IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Parsing_RdfAPatternCopyingHandler.md&amp;value=---%0Auid%3A%20VDS.RDF.Parsing.RdfAPatternCopyingHandler%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Parsing/RdfAPatternCopyingHandler.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class TpfLiveGraph | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class TpfLiveGraph | DotNetRDF Documentation ">
+    
+    <meta name="description" content="A  that dispatches all operations to a Triple Pattern Fragments (TPF) endpoint.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph">
+
+
+
+  <h1 id="VDS_RDF_LDF_Client_TpfLiveGraph" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph" class="text-break">Class TpfLiveGraph</h1>
+  <div class="markdown level0 summary"><p>A <a class="xref" href="VDS.RDF.IGraph.html">graph</a> that dispatches all operations to a Triple Pattern Fragments (TPF) endpoint.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="VDS.RDF.BaseGraph.html">BaseGraph</a></div>
+    <div class="level2"><a class="xref" href="VDS.RDF.Graph.html">Graph</a></div>
+    <div class="level3"><span class="xref">TpfLiveGraph</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></div>
+    <div><a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="VDS.RDF.Graph.html">Graph</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Equals_VDS_RDF_Graph_">Graph.Equals(Graph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_Uri_">Graph.GetUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetUriNode_System_String_">Graph.GetUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_">Graph.GetLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_String_">Graph.GetLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetLiteralNode_System_String_System_Uri_">Graph.GetLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTripleNode_VDS_RDF_Triple_">Graph.GetTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_VDS_RDF_INode_">Graph.GetTriples(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriples_System_Uri_">Graph.GetTriples(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_VDS_RDF_INode_">Graph.GetTriplesWithSubject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubject_System_Uri_">Graph.GetTriplesWithSubject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_VDS_RDF_INode_">Graph.GetTriplesWithPredicate(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicate_System_Uri_">Graph.GetTriplesWithPredicate(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_VDS_RDF_INode_">Graph.GetTriplesWithObject(INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithObject_System_Uri_">Graph.GetTriplesWithObject(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithSubjectPredicate(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithSubjectObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetTriplesWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetTriplesWithPredicateObject(INode, INode)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__triples">BaseGraph._triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NodeFactory">BaseGraph.NodeFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_UriFactory">BaseGraph.UriFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__name">BaseGraph._name</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph__bnodemapper">BaseGraph._bnodemapper</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Triples">BaseGraph.Triples</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Nodes">BaseGraph.Nodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllNodes">BaseGraph.AllNodes</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NamespaceMap">BaseGraph.NamespaceMap</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_BaseUri">BaseGraph.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Name">BaseGraph.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsEmpty">BaseGraph.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_NormalizeLiteralValues">BaseGraph.NormalizeLiteralValues</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_LanguageTagValidation">BaseGraph.LanguageTagValidation</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateBlankNode">BaseGraph.CreateBlankNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateBlankNode_System_String_">BaseGraph.CreateBlankNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode">BaseGraph.CreateGraphLiteralNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateGraphLiteralNode_VDS_RDF_IGraph_">BaseGraph.CreateGraphLiteralNode(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_Uri_">BaseGraph.CreateLiteralNode(string, Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_">BaseGraph.CreateLiteralNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateLiteralNode_System_String_System_String_">BaseGraph.CreateLiteralNode(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_Uri_">BaseGraph.CreateUriNode(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode_System_String_">BaseGraph.CreateUriNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateUriNode">BaseGraph.CreateUriNode()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateVariableNode_System_String_">BaseGraph.CreateVariableNode(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_CreateTripleNode_VDS_RDF_Triple_">BaseGraph.CreateTripleNode(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsTriple_VDS_RDF_Triple_">BaseGraph.ContainsTriple(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Unstar">BaseGraph.Unstar()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_">BaseGraph.Equals(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsSubGraphOf_VDS_RDF_IGraph_">BaseGraph.IsSubGraphOf(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_IsSubGraphOf_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.IsSubGraphOf(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_HasSubGraph_VDS_RDF_IGraph_">BaseGraph.HasSubGraph(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_HasSubGraph_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.HasSubGraph(IGraph, out Dictionary&lt;INode, INode&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Difference_VDS_RDF_IGraph_">BaseGraph.Difference(IGraph)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ResolveQName_System_String_">BaseGraph.ResolveQName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetNextBlankNodeID">BaseGraph.GetNextBlankNodeID()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_TripleAsserted">BaseGraph.TripleAsserted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_TripleRetracted">BaseGraph.TripleRetracted</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Changed">BaseGraph.Changed</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ClearRequested">BaseGraph.ClearRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Cleared">BaseGraph.Cleared</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_MergeRequested">BaseGraph.MergeRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merged">BaseGraph.Merged</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_OnTripleAsserted_System_Object_VDS_RDF_TripleEventArgs_">BaseGraph.OnTripleAsserted(object, TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleAsserted_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseTripleAsserted(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleAsserted_VDS_RDF_Triple_">BaseGraph.RaiseTripleAsserted(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_OnTripleRetracted_System_Object_VDS_RDF_TripleEventArgs_">BaseGraph.OnTripleRetracted(object, TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleRetracted_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseTripleRetracted(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseTripleRetracted_VDS_RDF_Triple_">BaseGraph.RaiseTripleRetracted(Triple)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseGraphChanged_VDS_RDF_TripleEventArgs_">BaseGraph.RaiseGraphChanged(TripleEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseGraphChanged">BaseGraph.RaiseGraphChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseClearRequested">BaseGraph.RaiseClearRequested()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseCleared">BaseGraph.RaiseCleared()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseMergeRequested">BaseGraph.RaiseMergeRequested()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_RaiseMerged">BaseGraph.RaiseMerged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AttachEventHandlers_VDS_RDF_BaseTripleCollection_">BaseGraph.AttachEventHandlers(BaseTripleCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_DetachEventHandlers_VDS_RDF_BaseTripleCollection_">BaseGraph.DetachEventHandlers(BaseTripleCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Dispose">BaseGraph.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.LDF.html">LDF</a>.<a class="xref" href="VDS.RDF.LDF.Client.html">Client</a></h6>
+  <h6><strong>Assembly</strong>: dotNetRdf.Ldf.dll</h6>
+  <h5 id="VDS_RDF_LDF_Client_TpfLiveGraph_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TpfLiveGraph : Graph, IGraph, INodeFactory, IDisposable, ITripleIndex, IEquatable&lt;IGraph&gt;, IEquatable&lt;Graph&gt;</code></pre>
+  </div>
+  <h5 id="VDS_RDF_LDF_Client_TpfLiveGraph_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Caution: All operations on this graph lead to (potentially numerous) network requests. This presents complexity characteristics that are very different from those you might expect from in-memory implementations of the <a class="xref" href="VDS.RDF.IGraph.html">interface</a>.</p>
+<p>
+This graph, like LDF itself, does not support
+<ul><li>blank nodes,</li><li>quoted triples or</li><li>mutation.</li></ul>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph__ctor_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.%23ctor(System.Uri%2CVDS.RDF.IRdfReader%2CVDS.RDF.Parsing.Loader)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L62">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph__ctor_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.#ctor*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph__ctor_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.#ctor(System.Uri,VDS.RDF.IRdfReader,VDS.RDF.Parsing.Loader)">TpfLiveGraph(Uri, IRdfReader, Loader)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="VDS.RDF.LDF.Client.TpfLiveGraph.html">TpfLiveGraph</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TpfLiveGraph(Uri baseUri, IRdfReader reader = null, Loader loader = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">baseUri</span></td>
+        <td><p>The URI of the TPF endpoint used to obtain triples.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IRdfReader.html">IRdfReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>(Optional) The reader to be used for parsing LDF responses (Turtle by default).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Parsing.Loader.html">Loader</a></td>
+        <td><span class="parametername">loader</span></td>
+        <td><p>(Optional) The loader to be used when sending LDF requests (<a class="xref" href="VDS.RDF.Parsing.Loader.html">Loader</a> by default).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VDS_RDF_LDF_Client_TpfLiveGraph__ctor_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this constructor is called then a network request will be sent to gather the LDF metadata.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code class="paramref">baseUri</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_AllQuotedNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.AllQuotedNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L153">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_AllQuotedNodes_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.AllQuotedNodes*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_AllQuotedNodes" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.AllQuotedNodes">AllQuotedNodes</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted nodes because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; AllQuotedNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_AllQuotedNodes">BaseGraph.AllQuotedNodes</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_QuotedNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.QuotedNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L252">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_QuotedNodes_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.QuotedNodes*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_QuotedNodes" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.QuotedNodes">QuotedNodes</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted nodes because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;INode&gt; QuotedNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedNodes">BaseGraph.QuotedNodes</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_QuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.QuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L257">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_QuotedTriples_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.QuotedTriples*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_QuotedTriples" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.QuotedTriples">QuotedTriples</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; QuotedTriples { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_QuotedTriples">BaseGraph.QuotedTriples</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Assert(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L107">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Assert_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Assert*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Assert(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">Assert(IEnumerable&lt;Triple&gt;)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot assert triples because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Assert(IEnumerable&lt;Triple&gt; _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Nothing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Assert(IEnumerable&lt;Triple&gt;)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Assert_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Assert(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L99">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Assert_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Assert*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Assert_VDS_RDF_Triple_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Assert(VDS.RDF.Triple)">Assert(Triple)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot assert a triple because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Assert(Triple _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Nothing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Assert_VDS_RDF_Triple_">Graph.Assert(Triple)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Clear.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L113">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Clear_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Clear*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Clear" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>This graph cannot be cleared because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Clear()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Clear">BaseGraph.Clear()</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_ContainsQuotedTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.ContainsQuotedTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L160">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_ContainsQuotedTriple_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.ContainsQuotedTriple*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_ContainsQuotedTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.ContainsQuotedTriple(VDS.RDF.Triple)">ContainsQuotedTriple(Triple)</h4>
+  <div class="markdown level1 summary"><p>This graph does not contain any quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ContainsQuotedTriple(Triple _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>False.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_ContainsQuotedTriple_VDS_RDF_Triple_">BaseGraph.ContainsQuotedTriple(Triple)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Equals(VDS.RDF.IGraph%2CSystem.Collections.Generic.Dictionary%7BVDS.RDF.INode%2CVDS.RDF.INode%7D%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L80">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Equals_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Equals*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Equals(VDS.RDF.IGraph,System.Collections.Generic.Dictionary{VDS.RDF.INode,VDS.RDF.INode}@)">Equals(IGraph, out Dictionary&lt;INode, INode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this graph is equal to the <code class="paramref">other</code> graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(IGraph other, out Dictionary&lt;INode, INode&gt; mapping)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Graph to test for equality.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="VDS.RDF.INode.html">INode</a>, <a class="xref" href="VDS.RDF.INode.html">INode</a>&gt;</td>
+        <td><span class="parametername">mapping</span></td>
+        <td><p>Always <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> because Linked Data Fragments does not support blank nodes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Whether this graph is equal to the <code class="paramref">other</code> graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode___">BaseGraph.Equals(IGraph, out Dictionary&lt;INode, INode&gt;)</a></div>
+  <h5 id="VDS_RDF_LDF_Client_TpfLiveGraph_Equals_VDS_RDF_IGraph_System_Collections_Generic_Dictionary_VDS_RDF_INode_VDS_RDF_INode____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>LDF graphs are equal to each other if their search templates are the same.</p>
+<p>An LDF graph might be equal to other graph types if they contain the same triples.</p>
+<p>Caution: Comparing LDF graphs to other types of graphs requires enumerating all statements in the LDF graph, which potentially involves numerous network requests.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetBlankNode_System_String_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetBlankNode(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L167">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetBlankNode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetBlankNode*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetBlankNode_System_String_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetBlankNode(System.String)">GetBlankNode(string)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no blank nodes because Linked Data Fragments does not support blank nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IBlankNode GetBlankNode(string _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></td>
+        <td><p>Null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetBlankNode_System_String_">Graph.GetBlankNode(string)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L181">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_System_Uri_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(System.Uri)">GetQuoted(Uri)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuoted(Uri _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuoted_System_Uri_">BaseGraph.GetQuoted(Uri)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L174">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuoted_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(VDS.RDF.INode)">GetQuoted(INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuoted(INode _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuoted_VDS_RDF_INode_">Graph.GetQuoted(INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L188">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_System_Uri_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(System.Uri)">GetQuotedWithObject(Uri)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithObject(Uri _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithObject_System_Uri_">BaseGraph.GetQuotedWithObject(Uri)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L195">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithObject_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(VDS.RDF.INode)">GetQuotedWithObject(INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithObject(INode _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithObject_VDS_RDF_INode_">Graph.GetQuotedWithObject(INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L202">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_System_Uri_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(System.Uri)">GetQuotedWithPredicate(Uri)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithPredicate(Uri _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithPredicate_System_Uri_">BaseGraph.GetQuotedWithPredicate(Uri)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L209">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(VDS.RDF.INode)">GetQuotedWithPredicate(INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithPredicate(INode _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicate_VDS_RDF_INode_">Graph.GetQuotedWithPredicate(INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L247">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicateObject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicateObject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithPredicateObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithPredicateObject(INode _, INode __)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">__</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithPredicateObject(INode, INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L216">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_System_Uri_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(System.Uri)">GetQuotedWithSubject(Uri)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithSubject(Uri _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_GetQuotedWithSubject_System_Uri_">BaseGraph.GetQuotedWithSubject(Uri)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L223">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(VDS.RDF.INode)">GetQuotedWithSubject(INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithSubject(INode _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubject_VDS_RDF_INode_">Graph.GetQuotedWithSubject(INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L239">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectObject_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectObject*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithSubjectObject(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithSubjectObject(INode _, INode __)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">__</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectObject(INode, INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L231">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectPredicate_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectPredicate*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">GetQuotedWithSubjectPredicate(INode, INode)</h4>
+  <div class="markdown level1 summary"><p>This graph returns no quoted triples because Linked Data Fragments does not support RDF*.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Triple&gt; GetQuotedWithSubjectPredicate(INode _, INode __)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.INode.html">INode</a></td>
+        <td><span class="parametername">__</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><p>Empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_GetQuotedWithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_">Graph.GetQuotedWithSubjectPredicate(INode, INode)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.LDF.LdfException.html">LdfException</a></td>
+        <td><p>Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Merge_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L120">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Merge_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Merge*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Merge_VDS_RDF_IGraph_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph)">Merge(IGraph)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot merge another because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Merge(IGraph _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_">BaseGraph.Merge(IGraph)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Merge_VDS_RDF_IGraph_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L128">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Merge_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Merge*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Merge_VDS_RDF_IGraph_System_Boolean_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph,System.Boolean)">Merge(IGraph, bool)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot merge another because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Merge(IGraph _, bool __)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">__</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.BaseGraph.html#VDS_RDF_BaseGraph_Merge_VDS_RDF_IGraph_System_Boolean_">BaseGraph.Merge(IGraph, bool)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Retract(System.Collections.Generic.IEnumerable%7BVDS.RDF.Triple%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L144">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Retract_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Retract*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Retract(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">Retract(IEnumerable&lt;Triple&gt;)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot retract triples because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Retract(IEnumerable&lt;Triple&gt; _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Nothing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_System_Collections_Generic_IEnumerable_VDS_RDF_Triple__">Graph.Retract(IEnumerable&lt;Triple&gt;)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph_Retract_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph.Retract(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L136">View Source</a>
+  </span>
+  <a id="VDS_RDF_LDF_Client_TpfLiveGraph_Retract_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Retract*"></a>
+  <h4 id="VDS_RDF_LDF_Client_TpfLiveGraph_Retract_VDS_RDF_Triple_" data-uid="VDS.RDF.LDF.Client.TpfLiveGraph.Retract(VDS.RDF.Triple)">Retract(Triple)</h4>
+  <div class="markdown level1 summary"><p>This graph cannot retract a triple because Linked Data Fragments does not support mutation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Retract(Triple _)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="VDS.RDF.Triple.html">Triple</a></td>
+        <td><span class="parametername">_</span></td>
+        <td><p>Ignored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Nothing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="VDS.RDF.Graph.html#VDS_RDF_Graph_Retract_VDS_RDF_Triple_">Graph.Retract(Triple)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Always.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.INodeFactory.html">INodeFactory</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.ITripleIndex.html">ITripleIndex</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Data.DataTables.GraphExtensions.html#VDS_RDF_Data_DataTables_GraphExtensions_ToDataTable_VDS_RDF_IGraph_">GraphExtensions.ToDataTable(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Dynamic.DynamicExtensions.html#VDS_RDF_Dynamic_DynamicExtensions_AsDynamic_VDS_RDF_IGraph_System_Uri_System_Uri_">DynamicExtensions.AsDynamic(IGraph, Uri, Uri)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AddToList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AddToList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AddToList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Assert_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Assert(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.AssertList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AssertList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.AssertList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListAsTriples_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListAsTriples(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListItems_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListItems(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_GetListNodes_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.GetListNodes(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable_VDS_RDF_INode__">Extensions.RemoveFromList(IGraph, INode, IEnumerable&lt;INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RemoveFromList__1_VDS_RDF_IGraph_VDS_RDF_INode_System_Collections_Generic_IEnumerable___0__System_Func___0_VDS_RDF_INode__">Extensions.RemoveFromList&lt;T&gt;(IGraph, INode, IEnumerable&lt;T&gt;, Func&lt;T, INode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_Retract_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">Extensions.Retract(IGraph, INode, INode, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_RetractList_VDS_RDF_IGraph_VDS_RDF_INode_">Extensions.RetractList(IGraph, INode)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_GetETag_VDS_RDF_IGraph_">GraphExtensions.GetETag(IGraph)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromEmbeddedResource_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromEmbeddedResource(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromFile(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_">GraphExtensions.LoadFromString(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromString_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfReader_">GraphExtensions.LoadFromString(IGraph, string, IRdfReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_IRdfReader_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, IRdfReader, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_LoadFromUri_VDS_RDF_IGraph_System_Uri_VDS_RDF_Parsing_Loader_">GraphExtensions.LoadFromUri(IGraph, Uri, Loader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_">GraphExtensions.SaveToFile(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToFile(IGraph, string, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToFile_VDS_RDF_IGraph_System_String_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToFile(IGraph, string, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IRdfWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IRdfWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_IO_TextWriter_VDS_RDF_IStoreWriter_">GraphExtensions.SaveToStream(IGraph, TextWriter, IStoreWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.GraphExtensions.html#VDS_RDF_GraphExtensions_SaveToStream_VDS_RDF_IGraph_System_String_System_IO_TextWriter_">GraphExtensions.SaveToStream(IGraph, string, TextWriter)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_System_String_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_IRdfHandler_VDS_RDF_ISparqlResultsHandler_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, IRdfHandler, ISparqlResultsHandler, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlParameterizedString_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlParameterizedString)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.InMemoryExtensions.html#VDS_RDF_InMemoryExtensions_ExecuteQuery_VDS_RDF_IGraph_VDS_RDF_Query_SparqlQuery_">InMemoryExtensions.ExecuteQuery(IGraph, SparqlQuery)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_LDF_Client_TpfLiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.LDF.Client.TpfLiveGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Ldf/Client/TpfLiveGraph.cs/#L50" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

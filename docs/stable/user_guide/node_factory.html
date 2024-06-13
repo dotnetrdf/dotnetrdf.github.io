@@ -9,8 +9,9 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Node Factory | DotNetRDF Documentation ">
     
+    
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -86,16 +87,17 @@ When you do provide an identifier, it will be used as the identifier of the retu
 <p>The <a class="xref" href="../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_UriFactory"><code>UriFactory</code></a> property can be used to get or set the <a href="uri_factory.html"><code>IUriFactory</code></a> used to generate any new URIs needed for nodes created by the factory.</p>
 <p>The <a class="xref" href="../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_NormalizeLiteralValues"><code>NormalizeLiteralValues</code></a> property is a flag that can be set to control whether or not the factory applies Unicode normalization to string literals when creating new literal nodes.
 Unicode normalization can aid in more meaningful string comparison when dealing with strings with composing characters.</p>
-<p>The <a href="xref:VDS.RDF.INodeFactory.LanguageTagValidation"><code>LanguageTagValidation</code></a> property specifies what sort of validation to apply to the language specifier of a literal node. The property currently supports three values:</p>
+<p>The <a class="xref" href="../api/VDS.RDF.INodeFactory.html#VDS_RDF_INodeFactory_LanguageTagValidation"><code>LanguageTagValidation</code></a> property specifies what sort of validation to apply to the language specifier of a literal node. The property currently supports three values:</p>
 <ul>
-<li><a href="xref:VDS.RDF.LangaugeTagValidationMode.None"><code>LangaugeTagValidationMode.None</code></a> - no validation is performed</li>
-<li><a href="xref:VDS.RDF.LangaugeTagValidationMode.Turtle"><code>LangaugeTagValidationMode.Turtle</code></a> - langauge tags are validated to be conformant with the Turtle 1.1 specification. This allows a language tag to match the regular expression [a-zA-Z]+(-[a-zA-Z0-9]+])*. This is less restrictive than the WellFormed mode which imposes some length constraints and other constraints on individual sub-tags. This is the default mode and is restrictive enough to ensure that other RDF processing tools will handle the langauge tags in your data.</li>
-<li><a href="xref:VDS.RDF.LangaugeTagValidationMode.WellFormed">`LangaugeTagValidationMode.WellFormed</a> - language tags are validated to be well-formed according to the productions of the BCP-47 specification. This includes allowing the grandfathered regular and irregular tags. Use this mode if you are expecting to process or parse the langauge tags in your data with tools that expect to be dealing with BCP-47 language tags.</li>
+<li><a class="xref" href="../api/VDS.RDF.LanguageTagValidationMode.html#VDS_RDF_LanguageTagValidationMode_None"><code>LangaugeTagValidationMode.None</code></a> - no validation is performed</li>
+<li><a class="xref" href="../api/VDS.RDF.LanguageTagValidationMode.html#VDS_RDF_LanguageTagValidationMode_Turtle"><code>LangaugeTagValidationMode.Turtle</code></a> - langauge tags are validated to be conformant with the Turtle 1.1 specification. This allows a language tag to match the regular expression [a-zA-Z]+(-[a-zA-Z0-9]+])*. This is less restrictive than the WellFormed mode which imposes some length constraints and other constraints on individual sub-tags. This is the default mode and is restrictive enough to ensure that other RDF processing tools will handle the langauge tags in your data.</li>
+<li><a class="xref" href="../api/VDS.RDF.LanguageTagValidationMode.html#VDS_RDF_LanguageTagValidationMode_WellFormed"><code>LangaugeTagValidationMode.WellFormed</code></a> - language tags are validated to be well-formed according to the productions of the BCP-47 specification. This includes allowing the grandfathered regular and irregular tags. Use this mode if you are expecting to process or parse the langauge tags in your data with tools that expect to be dealing with BCP-47 language tags.</li>
 </ul>
 <h2 id="nodefactory-class">NodeFactory class</h2>
 <p>The <a class="xref" href="../api/VDS.RDF.NodeFactory.html"><code>NodeFactory</code></a> class provides the default library implementation of the <a class="xref" href="../api/VDS.RDF.INodeFactory.html"><code>INodeFactory</code></a> interface.
 It provides a constructor that allows you to configure the options for the factory as well as to provide the specific <a href="namespace_mapper.html"><code>INamespaceMapper</code></a> and <a href="uri_factory.html"><code>IUriFactory</code></a> instances that the factory should use.
 These default to a new empty namespace map, and the <a class="xref" href="../api/VDS.RDF.UriFactory.html#VDS_RDF_UriFactory_Root"><code>UriFactory.Root</code></a> URI factory respectively.</p>
+
 </article>
           </div>
 
@@ -104,12 +106,12 @@ These default to a new empty namespace map, and the <a class="xref" href="../api
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/user_guide/node_factory.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/user_guide/node_factory.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -131,7 +133,7 @@ These default to a new empty namespace map, and the <a class="xref" href="../api
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface ISparqlDataset
- | DotNetRDF Documentation </title>
+      <title>Interface ISparqlDataset | DotNetRDF Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface ISparqlDataset
- | DotNetRDF Documentation ">
+      <meta name="title" content="Interface ISparqlDataset | DotNetRDF Documentation ">
     
+    <meta name="description" content="Interfaces for Datasets that SPARQL Queries and Updates can be applied to.">
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -70,8 +69,8 @@
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset">
 
 
-  <h1 id="VDS_RDF_Query_Datasets_ISparqlDataset" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset" class="text-break">Interface ISparqlDataset
-</h1>
+
+  <h1 id="VDS_RDF_Query_Datasets_ISparqlDataset" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset" class="text-break">Interface ISparqlDataset</h1>
   <div class="markdown level0 summary"><p>Interfaces for Datasets that SPARQL Queries and Updates can be applied to.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -144,7 +143,7 @@
       <a class="xref" href="VDS.RDF.ITripleIndex.html#VDS_RDF_ITripleIndex_GetQuotedWithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">ITripleIndex.GetQuotedWithPredicateObject(INode, INode)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a>.<a class="xref" href="VDS.RDF.Query.Datasets.html">Datasets</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a>.<a class="xref" href="VDS.RDF.Query.Datasets.html">Datasets</a></h6>
   <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -152,33 +151,29 @@
   </div>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
+  <strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
 </p>
 <h3>Default and Active Graph</h3>
 <p>
 Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
+<ol><li>If an Active Graph is set then Queries operate over that</li><li>Otherwise if a Default Graph is set then Queries operate over that</li><li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li></ol>
 Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
 
 <p>
 You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
 </p>
 <p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
+  <strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
 </p>
 </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L148">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L148">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames">ActiveGraphNames</h4>
@@ -190,7 +185,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">IEnumerable&lt;IRefNode&gt; ActiveGraphNames { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -199,38 +194,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L139">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L139">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris">ActiveGraphUris</h4>
@@ -243,7 +217,7 @@ You can limit your queries to use specific portions of your dataset by using the
 IEnumerable&lt;Uri&gt; ActiveGraphUris { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -252,38 +226,17 @@ IEnumerable&lt;Uri&gt; ActiveGraphUris { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L134">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L134">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames">DefaultGraphNames</h4>
@@ -295,7 +248,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">IEnumerable&lt;IRefNode&gt; DefaultGraphNames { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -304,38 +257,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L125">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L125">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris">DefaultGraphUris</h4>
@@ -348,7 +280,7 @@ You can limit your queries to use specific portions of your dataset by using the
 IEnumerable&lt;Uri&gt; DefaultGraphUris { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -357,38 +289,17 @@ IEnumerable&lt;Uri&gt; DefaultGraphUris { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L219">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L219">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames">GraphNames</h4>
@@ -400,7 +311,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">IEnumerable&lt;IRefNode&gt; GraphNames { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -409,90 +320,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L202">View Source</a>
-  </span>
-  <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs*"></a>
-  <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs">Graphs</h4>
-  <div class="markdown level1 summary"><p>Gets all the Graphs in the Dataset.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IEnumerable&lt;IGraph&gt; Graphs { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L210">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L210">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris">GraphUris</h4>
@@ -505,7 +343,7 @@ You can limit your queries to use specific portions of your dataset by using the
 IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -514,38 +352,48 @@ IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L284">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L202">View Source</a>
+  </span>
+  <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs*"></a>
+  <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs">Graphs</h4>
+  <div class="markdown level1 summary"><p>Gets all the Graphs in the Dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;IGraph&gt; Graphs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.IGraph.html">IGraph</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L284">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples">HasTriples</h4>
@@ -557,7 +405,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool HasTriples { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -566,38 +414,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L231">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L231">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)">this[Uri]</h4>
@@ -610,7 +437,7 @@ You can limit your queries to use specific portions of your dataset by using the
 IGraph this[Uri graphUri] { get; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -620,7 +447,7 @@ IGraph this[Uri graphUri] { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
@@ -628,7 +455,7 @@ IGraph this[Uri graphUri] { get; }</code></pre>
     </tbody>
   </table>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -649,10 +476,10 @@ This property need only return a read-only view of the Graph, code which wishes 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L247">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L247">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)">this[IRefNode]</h4>
@@ -664,7 +491,7 @@ This property need only return a read-only view of the Graph, code which wishes 
     <pre><code class="lang-csharp hljs">IGraph this[IRefNode graphName] { get; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -682,7 +509,7 @@ This property need only return a read-only view of the Graph, code which wishes 
     </tbody>
   </table>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -703,10 +530,10 @@ This property need only return a read-only view of the Graph, code which wishes 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L317">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L317">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples">QuotedTriples</h4>
@@ -718,7 +545,7 @@ This property need only return a read-only view of the Graph, code which wishes 
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; QuotedTriples { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -727,22 +554,22 @@ This property need only return a read-only view of the Graph, code which wishes 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
+  <strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Triples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Triples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L304">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L304">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Triples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Triples">Triples</h4>
@@ -754,7 +581,7 @@ This property need only return a read-only view of the Graph, code which wishes 
     <pre><code class="lang-csharp hljs">IEnumerable&lt;Triple&gt; Triples { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -763,22 +590,22 @@ This property need only return a read-only view of the Graph, code which wishes 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VDS.RDF.Triple.html">Triple</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
+  <strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L153">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L153">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph">UsesUnionDefaultGraph</h4>
@@ -790,7 +617,7 @@ This property need only return a read-only view of the Graph, code which wishes 
     <pre><code class="lang-csharp hljs">bool UsesUnionDefaultGraph { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -799,40 +626,19 @@ This property need only return a read-only view of the Graph, code which wishes 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L167">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L167">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)">AddGraph(IGraph)</h4>
@@ -844,7 +650,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool AddGraph(IGraph g)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -862,7 +668,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -871,34 +677,13 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -907,12 +692,12 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable i.e. Updates not supported.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable.</p>
 </td>
       </tr>
@@ -920,10 +705,10 @@ You can limit your queries to use specific portions of your dataset by using the
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L324">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L324">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)">ContainsQuotedTriple(Triple)</h4>
@@ -935,7 +720,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool ContainsQuotedTriple(Triple t)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -953,7 +738,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -962,39 +747,18 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the dataset contains <code data-dev-comment-type="paramref" class="paramref">t</code> as a quoted triple, false otherwise.</p>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if the dataset contains <code class="paramref">t</code> as a quoted triple, false otherwise.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L294">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L294">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)">ContainsTriple(Triple)</h4>
@@ -1006,7 +770,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool ContainsTriple(Triple t)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1024,7 +788,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1033,38 +797,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Discard%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Discard%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L345">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L345">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Discard_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Discard*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Discard" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Discard">Discard()</h4>
@@ -1082,10 +825,10 @@ Primarily intended for use in implementations which support transactions though 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L335">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L335">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Flush_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Flush*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Flush" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Flush">Flush()</h4>
@@ -1103,10 +846,10 @@ While partly intended for use in implementations which support transactions thou
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L260">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L260">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)">GetModifiableGraph(Uri)</h4>
@@ -1119,7 +862,7 @@ While partly intended for use in implementations which support transactions thou
 IGraph GetModifiableGraph(Uri graphUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1129,7 +872,7 @@ IGraph GetModifiableGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
@@ -1137,7 +880,7 @@ IGraph GetModifiableGraph(Uri graphUri)</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1153,11 +896,11 @@ IGraph GetModifiableGraph(Uri graphUri)</code></pre>
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-Graphs returned from this method must be modifiable and the Dataset must guarantee that when it is Flushed or Disposed of that any changes to the Graph are persisted.
-</p>
+    Graphs returned from this method must be modifiable and the Dataset must guarantee that when it is Flushed or Disposed of that any changes to the Graph are persisted.
+    </p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1166,12 +909,12 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable i.e. Updates not supported.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable.</p>
 </td>
       </tr>
@@ -1179,10 +922,10 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L275">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L275">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)">GetModifiableGraph(IRefNode)</h4>
@@ -1194,7 +937,7 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
     <pre><code class="lang-csharp hljs">IGraph GetModifiableGraph(IRefNode graphName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1212,7 +955,7 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1232,7 +975,7 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
 </p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1241,7 +984,7 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable i.e. Updates not supported.</p>
 </td>
       </tr>
@@ -1249,10 +992,10 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L189">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L189">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)">HasGraph(Uri)</h4>
@@ -1265,7 +1008,7 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
 bool HasGraph(Uri graphUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1275,7 +1018,7 @@ bool HasGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
@@ -1283,7 +1026,7 @@ bool HasGraph(Uri graphUri)</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1292,38 +1035,17 @@ bool HasGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L197">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L197">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)">HasGraph(IRefNode)</h4>
@@ -1335,7 +1057,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool HasGraph(IRefNode graphName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1353,7 +1075,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1362,38 +1084,17 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L174">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L174">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)">RemoveGraph(Uri)</h4>
@@ -1406,7 +1107,7 @@ You can limit your queries to use specific portions of your dataset by using the
 bool RemoveGraph(Uri graphUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1416,7 +1117,7 @@ bool RemoveGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
@@ -1424,7 +1125,7 @@ bool RemoveGraph(Uri graphUri)</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1433,34 +1134,13 @@ bool RemoveGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1469,12 +1149,12 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable i.e. Updates not supported.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable.</p>
 </td>
       </tr>
@@ -1482,10 +1162,10 @@ You can limit your queries to use specific portions of your dataset by using the
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L182">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L182">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)">RemoveGraph(IRefNode)</h4>
@@ -1497,7 +1177,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">bool RemoveGraph(IRefNode graphName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1515,7 +1195,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1524,34 +1204,13 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1560,7 +1219,7 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
         <td><p>May be thrown if the Dataset is immutable i.e. Updates not supported.</p>
 </td>
       </tr>
@@ -1568,10 +1227,10 @@ You can limit your queries to use specific portions of your dataset by using the
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L115">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L115">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph">ResetActiveGraph()</h4>
@@ -1582,33 +1241,12 @@ You can limit your queries to use specific portions of your dataset by using the
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ResetActiveGraph()</code></pre>
   </div>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L120">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L120">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph">ResetDefaultGraph()</h4>
@@ -1619,33 +1257,12 @@ You can limit your queries to use specific portions of your dataset by using the
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ResetDefaultGraph()</code></pre>
   </div>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L64">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L64">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetActiveGraph(IEnumerable&lt;Uri&gt;)</h4>
@@ -1658,7 +1275,7 @@ You can limit your queries to use specific portions of your dataset by using the
 void SetActiveGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1668,40 +1285,19 @@ void SetActiveGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>Graph URIs.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L71">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L71">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList{VDS.RDF.IRefNode})">SetActiveGraph(IList&lt;IRefNode&gt;)</h4>
@@ -1713,7 +1309,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">void SetActiveGraph(IList&lt;IRefNode&gt; graphNames)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1723,39 +1319,18 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IList&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L77">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L77">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)">SetActiveGraph(Uri)</h4>
@@ -1768,7 +1343,7 @@ You can limit your queries to use specific portions of your dataset by using the
 void SetActiveGraph(Uri graphUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1778,40 +1353,19 @@ void SetActiveGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L84">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L84">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)">SetActiveGraph(IRefNode)</h4>
@@ -1823,7 +1377,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">void SetActiveGraph(IRefNode graphName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1840,33 +1394,12 @@ You can limit your queries to use specific portions of your dataset by using the
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L103">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L103">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetDefaultGraph(IEnumerable&lt;Uri&gt;)</h4>
@@ -1879,7 +1412,7 @@ You can limit your queries to use specific portions of your dataset by using the
 void SetDefaultGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1889,40 +1422,19 @@ void SetDefaultGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>&lt;<span class="xref">System.Uri</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a>&gt;</td>
         <td><span class="parametername">graphUris</span></td>
         <td><p>Graph URIs.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L110">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L110">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList{VDS.RDF.IRefNode})">SetDefaultGraph(IList&lt;IRefNode&gt;)</h4>
@@ -1934,7 +1446,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">void SetDefaultGraph(IList&lt;IRefNode&gt; graphNames)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1944,40 +1456,19 @@ You can limit your queries to use specific portions of your dataset by using the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IList&lt;T&gt;</span>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="VDS.RDF.IRefNode.html">IRefNode</a>&gt;</td>
         <td><span class="parametername">graphNames</span></td>
         <td><p>Graph names.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L90">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L90">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)">SetDefaultGraph(Uri)</h4>
@@ -1990,7 +1481,7 @@ You can limit your queries to use specific portions of your dataset by using the
 void SetDefaultGraph(Uri graphUri)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -2000,40 +1491,19 @@ void SetDefaultGraph(Uri graphUri)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td><span class="parametername">graphUri</span></td>
         <td><p>Graph URI.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L97">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L97">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)">SetDefaultGraph(IRefNode)</h4>
@@ -2045,7 +1515,7 @@ You can limit your queries to use specific portions of your dataset by using the
     <pre><code class="lang-csharp hljs">void SetDefaultGraph(IRefNode graphName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -2061,27 +1531,6 @@ You can limit your queries to use specific portions of your dataset by using the
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
-</p>
-<h3>Default and Active Graph</h3>
-<p>
-Leviathan expects that a Query operates over the Dataset in the following order:
-<ol>
-<li>If an Active Graph is set then Queries operate over that</li>
-<li>Otherwise if a Default Graph is set then Queries operate over that</li>
-<li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
-</ol>
-Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
-
-<p>
-You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
-</p>
-<p>
-<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
-</p>
-</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
@@ -2089,6 +1538,7 @@ You can limit your queries to use specific portions of your dataset by using the
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
+
 </article>
           </div>
 
@@ -2097,15 +1547,15 @@ You can limit your queries to use specific portions of your dataset by using the
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L56" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L56" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -2127,7 +1577,7 @@ You can limit your queries to use specific portions of your dataset by using the
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>
