@@ -9,8 +9,9 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Implementing Custom Optimizers | DotNetRDF Documentation ">
     
+    
       <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../../styles/docfx.css">
       <link rel="stylesheet" href="../../styles/main.css">
       <meta property="docfx:navrel" content="../../toc.html">
@@ -68,7 +69,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="implementing-custom-optimizers">Implementing Custom Optimizers</h1>
 
-<p>As discussed on the <a href="optimization.html">SPARQL Optimization</a> and <a href="/user_guide/advanced_sparql_operations.md">Advanced SPARQL Operations</a> pages our <a href="leviathan_engine.html">Leviathan SPARQL Engine</a> supports two kinds of optimisers which can be customised if desired.</p>
+<p>As discussed on the <a href="optimization.html">SPARQL Optimization</a> and <a href="../../user_guide/advanced_sparql_operations.html">Advanced SPARQL Operations</a> pages our <a href="leviathan_engine.html">Leviathan SPARQL Engine</a> supports two kinds of optimisers which can be customised if desired.</p>
 <h1 id="implementing-query-optimizers">Implementing Query Optimizers</h1>
 <p>Query Optimizers implement the <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.IQueryOptimiser.html">VDS.RDF.Query.Optimisation.IQueryOptimiser</a> interface which has a single <code>Optimise()</code>method which takes in a Graph Pattern to optimise and an enumeration of variables that have occurred prior to that Graph Pattern.</p>
 <p>A Query Optimiser should do three things:</p>
@@ -77,7 +78,7 @@
 <li>Place FILTERs appropriately</li>
 <li>Place assignments (i.e. <code>BIND</code>) appropriately</li>
 </ul>
-<p>Typically implementations will only want to alter how triple patterns are reordered and this can be done fairly easily be deriving your implementation from <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.BaseQueryOptimiser.html">BaseQueryOptimiser</a>. This class provides the outline for a Query Optimiser and you implement/override various methods and properties in order to customise it.</p>
+<p>Typically, implementations will only want to alter how triple patterns are reordered and this can be done fairly easily be deriving your implementation from <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.BaseQueryOptimiser.html">BaseQueryOptimiser</a>. This class provides the outline for a Query Optimiser and you implement/override various methods and properties in order to customise it.</p>
 <p>For example if you wanted to change how the triple patterns are ordered you'd derive from this class and them implement the <code>GetRankingComparer()</code> method. This method returns a <code>IComparer&lt;ITriplePattern&gt;</code> which is used to order the set of <a class="xref" href="../../api/VDS.RDF.Query.Patterns.ITriplePattern.html">ITriplePattern</a> instances found in the Graph Pattern.</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
@@ -92,7 +93,8 @@
 </ul>
 <h1 id="implementing-algebra-optimizers">Implementing Algebra Optimizers</h1>
 <p>Algebra Optimisers implement the <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a> interface which has an <code>Optimise()</code> method and an <code>IsApplicable()</code> method. The latter is used to determine whether an algebra optimisation can be applied to a query while the former actually applies the Optimiser.</p>
-<p>Algebra Optimisers are typically used to transform the algebra to use special operators which help evaluate certain forms of query faster e.g. the built in <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.AskBgpOptimiser.html">AskBgpOptimiser</a> which transforms the algebra of <code>ASK</code> queries so they evaluate much faster.  The <a href="/user_guide/advanced_sparql_operations.md">Advanced SPARQL Operations</a> page details some of the default optimizers used.</p>
+<p>Algebra Optimisers are typically used to transform the algebra to use special operators which help evaluate certain forms of query faster e.g. the built-in <a class="xref" href="../../api/VDS.RDF.Query.Optimisation.AskBgpOptimiser.html">AskBgpOptimiser</a> which transforms the algebra of <code>ASK</code> queries, so they evaluate much faster.  The <a href="/user_guide/advanced_sparql_operations.md">Advanced SPARQL Operations</a> page details some of the default optimizers used.</p>
+
 </article>
           </div>
 
@@ -101,12 +103,12 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/developer_guide/sparql/implementing_custom_optimizers.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/developer_guide/sparql/implementing_custom_optimizers.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -128,7 +130,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

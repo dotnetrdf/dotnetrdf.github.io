@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class OrderByDistinctOptimiser
- | DotNetRDF Documentation </title>
+      <title>Class OrderByDistinctOptimiser | DotNetRDF Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class OrderByDistinctOptimiser
- | DotNetRDF Documentation ">
+      <meta name="title" content="Class OrderByDistinctOptimiser | DotNetRDF Documentation ">
     
+    <meta name="description" content="An optimizer that handles a special case for ORDER BY + DISTINCT combinations which can significantly improve performance by eliminating duplicates prior to sorting when the default SPARQL behaviour is to do a potentially costly sort over many duplicates and then eliminate distincts.">
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -70,14 +69,14 @@
             <article class="content wrap" id="_content" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser">
 
 
-  <h1 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser" class="text-break">Class OrderByDistinctOptimiser
-</h1>
+
+  <h1 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser" class="text-break">Class OrderByDistinctOptimiser</h1>
   <div class="markdown level0 summary"><p>An optimizer that handles a special case for ORDER BY + DISTINCT combinations which can significantly improve performance by eliminating duplicates prior to sorting when the default SPARQL behaviour is to do a potentially costly sort over many duplicates and then eliminate distincts.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">OrderByDistinctOptimiser</span></div>
   </div>
   <div class="implements">
@@ -87,28 +86,28 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">object.Equals(object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <span class="xref">object.Equals(object, object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <span class="xref">object.GetHashCode()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <span class="xref">object.GetType()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <span class="xref">object.MemberwiseClone()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <span class="xref">object.ReferenceEquals(object, object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <span class="xref">object.ToString()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a>.<a class="xref" href="VDS.RDF.Query.Optimisation.html">Optimisation</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a>.<a class="xref" href="VDS.RDF.Query.html">Query</a>.<a class="xref" href="VDS.RDF.Query.Optimisation.html">Optimisation</a></h6>
   <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -116,20 +115,16 @@
   </div>
   <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Only applies to queries which meet the following criteria:.</p>
-<ul>
-<li>Has an ORDER BY and a DISTNCT on the same level of the query</li>
-<li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li>
-<li>All variables used in the ORDER BY expressions also occur in the project list</li>
-</ul>
+<ul><li>Has an ORDER BY and a DISTNCT on the same level of the query</li><li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li><li>All variables used in the ORDER BY expressions also occur in the project list</li></ul>
 </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_UnsafeOptimisation.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.UnsafeOptimisation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_UnsafeOptimisation.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.UnsafeOptimisation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L48">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L48">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_UnsafeOptimisation_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.UnsafeOptimisation*"></a>
   <h4 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_UnsafeOptimisation" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.UnsafeOptimisation">UnsafeOptimisation</h4>
@@ -141,7 +136,7 @@
     <pre><code class="lang-csharp hljs">public bool UnsafeOptimisation { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -150,27 +145,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_UnsafeOptimisation_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Only applies to queries which meet the following criteria:.</p>
-<ul>
-<li>Has an ORDER BY and a DISTNCT on the same level of the query</li>
-<li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li>
-<li>All variables used in the ORDER BY expressions also occur in the project list</li>
-</ul>
-</div>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L154">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L154">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable*"></a>
   <h4 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Query.SparqlQuery)">IsApplicable(SparqlQuery)</h4>
@@ -182,7 +169,7 @@
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlQuery q)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -200,7 +187,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -209,25 +196,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Query_SparqlQuery__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Only applies to queries which meet the following criteria:.</p>
-<ul>
-<li>Has an ORDER BY and a DISTNCT on the same level of the query</li>
-<li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li>
-<li>All variables used in the ORDER BY expressions also occur in the project list</li>
-</ul>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L171">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L171">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable*"></a>
   <h4 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.IsApplicable(VDS.RDF.Update.SparqlUpdateCommandSet)">IsApplicable(SparqlUpdateCommandSet)</h4>
@@ -239,7 +218,7 @@
     <pre><code class="lang-csharp hljs">public bool IsApplicable(SparqlUpdateCommandSet cmds)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -257,7 +236,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -266,25 +245,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_IsApplicable_VDS_RDF_Update_SparqlUpdateCommandSet__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Only applies to queries which meet the following criteria:.</p>
-<ul>
-<li>Has an ORDER BY and a DISTNCT on the same level of the query</li>
-<li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li>
-<li>All variables used in the ORDER BY expressions also occur in the project list</li>
-</ul>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L55">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L55">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_Optimise_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.Optimise*"></a>
   <h4 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra_" data-uid="VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser.Optimise(VDS.RDF.Query.Algebra.ISparqlAlgebra)">Optimise(ISparqlAlgebra)</h4>
@@ -296,7 +267,7 @@
     <pre><code class="lang-csharp hljs">public ISparqlAlgebra Optimise(ISparqlAlgebra algebra)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -314,7 +285,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -329,14 +300,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser_Optimise_VDS_RDF_Query_Algebra_ISparqlAlgebra__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Only applies to queries which meet the following criteria:.</p>
-<ul>
-<li>Has an ORDER BY and a DISTNCT on the same level of the query</li>
-<li>Selects a fixed list of variables i.e. not a SELECT DISTINCT *</li>
-<li>All variables used in the ORDER BY expressions also occur in the project list</li>
-</ul>
-</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="VDS.RDF.Query.Optimisation.IAlgebraOptimiser.html">IAlgebraOptimiser</a>
@@ -348,6 +311,7 @@
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
+
 </article>
           </div>
 
@@ -356,15 +320,15 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Optimisation_OrderByDistinctOptimiser.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Optimisation.OrderByDistinctOptimiser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L44" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Optimisation/OrderByDistinctOptimiser.cs/#L44" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -386,7 +350,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

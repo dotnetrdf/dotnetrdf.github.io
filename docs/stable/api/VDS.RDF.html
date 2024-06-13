@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace VDS.RDF
- | DotNetRDF Documentation </title>
+      <title>Namespace VDS.RDF | DotNetRDF Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace VDS.RDF
- | DotNetRDF Documentation ">
+      <meta name="title" content="Namespace VDS.RDF | DotNetRDF Documentation ">
+    
     
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -69,12 +68,12 @@
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="VDS.RDF">
 
-  <h1 id="VDS_RDF" data-uid="VDS.RDF" class="text-break">Namespace VDS.RDF
-</h1>
+  <h1 id="VDS_RDF" data-uid="VDS.RDF" class="text-break">Namespace VDS.RDF</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+    <h3 id="classes">
+Classes
 </h3>
       <h4><a class="xref" href="VDS.RDF.AbstractIndexedTripleCollection.html">AbstractIndexedTripleCollection</a></h4>
       <section><p>An abstract base class for triple collections with a lookup index.</p>
@@ -212,10 +211,12 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.GraphWrapperNode.html">GraphWrapperNode</a></h4>
       <section><p>A node wrapper that preserves a reference to a graph along with the node itself.</p>
 </section>
-      <h4><a class="xref" href="VDS.RDF.InferencingTripleStore.html">InferencingTripleStore</a></h4>
-      <section></section>
       <h4><a class="xref" href="VDS.RDF.InMemoryExtensions.html">InMemoryExtensions</a></h4>
-      <section></section>
+      <section><p>Extension methods for working with a <a class="xref" href="VDS.RDF.IGraph.html">IGraph</a> instance as an in-memory queryable SPARQL dataset.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.InferencingTripleStore.html">InferencingTripleStore</a></h4>
+      <section><p>An implementation of the <a class="xref" href="VDS.RDF.IInferencingTripleStore.html">IInferencingTripleStore</a> interface over an in-memory <a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a>.</p>
+</section>
       <h4><a class="xref" href="VDS.RDF.LiteralExtensions.html">LiteralExtensions</a></h4>
       <section><p>Provides extension methods for converting primitive types into appropriately typed Literal Nodes.</p>
 </section>
@@ -273,8 +274,17 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.QNameOutputMapper.html">QNameOutputMapper</a></h4>
       <section><p>Class for representing Mappings from URIs to QNames.</p>
 </section>
+      <h4><a class="xref" href="VDS.RDF.Quad.html">Quad</a></h4>
+      <section></section>
       <h4><a class="xref" href="VDS.RDF.QueryableGraph.html">QueryableGraph</a></h4>
       <section><p>Class for representing Graphs which can be directly queried using SPARQL.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.RdfCanonicalizer.html">RdfCanonicalizer</a></h4>
+      <section><p>Implementation of the RDFC-1.0 algorithm. Transforms a RDF graph into its canonical form.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.RdfCanonicalizer.CanonicalizedRdfDataset.html">RdfCanonicalizer.CanonicalizedRdfDataset</a></h4>
+      <section><p>A canonicalized RDF dataset, as per <a href="https://www.w3.org/TR/rdf-canon/#dfn-canonicalized-dataset">https://www.w3.org/TR/rdf-canon/#dfn-canonicalized-dataset</a>.
+It does not contain the input blank node identifier map, as n-quads inputs are not currently supported.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.RdfException.html">RdfException</a></h4>
       <section><p>Class for representing errors with RDF.</p>
@@ -288,6 +298,9 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.StringExtensions.html">StringExtensions</a></h4>
       <section><p>A collection of cross-target extensions to the string class.</p>
 </section>
+      <h4><a class="xref" href="VDS.RDF.SubTreeIndexedTripleCollection.html">SubTreeIndexedTripleCollection</a></h4>
+      <section><p>An indexed triple collection that uses our <span class="xref">VDS.Common.Collections.MultiDictionary&lt;TKey, TValue&gt;</span> and <span class="xref">VDS.Common.Trees.BinaryTree&lt;TKey, TValue&gt;</span> implementations under the hood for the index structures.</p>
+</section>
       <h4><a class="xref" href="VDS.RDF.SubjectComparer.html">SubjectComparer</a></h4>
       <section><p>Triple comparer which compares only on subjects.</p>
 </section>
@@ -296,9 +309,6 @@ and it compares virtual nodes on their VirtualID where possible.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.SubjectPredicateComparer.html">SubjectPredicateComparer</a></h4>
       <section><p>Triple comparer which compares on subjects and then predicates.</p>
-</section>
-      <h4><a class="xref" href="VDS.RDF.SubTreeIndexedTripleCollection.html">SubTreeIndexedTripleCollection</a></h4>
-      <section><p>An indexed triple collection that uses our <span class="xref">VDS.Common.Collections.MultiDictionary&lt;TKey, TValue&gt;</span> and <span class="xref">VDS.Common.Trees.BinaryTree`2</span> implementations under the hood for the index structures.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.ThreadSafeGraph.html">ThreadSafeGraph</a></h4>
       <section><p>A Thread Safe version of the <a class="xref" href="VDS.RDF.Graph.html">Graph</a> class.</p>
@@ -319,7 +329,7 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <section><p>Tools class which contains a number of utility methods which are declared as static methods.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.TreeIndexedTripleCollection.html">TreeIndexedTripleCollection</a></h4>
-      <section><p>An indexed triple collection that uses our <span class="xref">VDS.Common.Collections.MultiDictionary&lt;TKey, TValue&gt;</span> and <span class="xref">VDS.Common.Trees.BinaryTree`2</span> implementations under the hood for the index structures.</p>
+      <section><p>An indexed triple collection that uses our <span class="xref">VDS.Common.Collections.MultiDictionary&lt;TKey, TValue&gt;</span> and <span class="xref">VDS.Common.Trees.BinaryTree&lt;TKey, TValue&gt;</span> implementations under the hood for the index structures.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.Triple.html">Triple</a></h4>
       <section><p>Class for representing RDF Triples in memory.</p>
@@ -399,10 +409,14 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.WrapperTripleStore.html">WrapperTripleStore</a></h4>
       <section><p>Abstract decorator for Triple Stores to make it easier to add new functionality on top of existing implementations.</p>
 </section>
-    <h3 id="interfaces">Interfaces
+    <h3 id="interfaces">
+Interfaces
 </h3>
       <h4><a class="xref" href="VDS.RDF.IBlankNode.html">IBlankNode</a></h4>
       <section><p>Interface for Blank Nodes.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.ICommentRdfHandler.html">ICommentRdfHandler</a></h4>
+      <section><p>Interface for Handlers which are able to accept comments.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.IGraph.html">IGraph</a></h4>
       <section><p>Interface for RDF Graphs.</p>
@@ -410,11 +424,11 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.IGraphLiteralNode.html">IGraphLiteralNode</a></h4>
       <section><p>Interface for Graph Literal Nodes.</p>
 </section>
-      <h4><a class="xref" href="VDS.RDF.IInferencingTripleStore.html">IInferencingTripleStore</a></h4>
-      <section><p>Interface for Triple Stores which can have a <a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a> attached to them.</p>
-</section>
       <h4><a class="xref" href="VDS.RDF.IInMemoryQueryableStore.html">IInMemoryQueryableStore</a></h4>
       <section><p>Interface for Triple Stores which can be queried in memory using method calls or the SPARQL implementation contained in this library.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.IInferencingTripleStore.html">IInferencingTripleStore</a></h4>
+      <section><p>Interface for Triple Stores which can have a <a class="xref" href="VDS.RDF.Query.Inference.IInferenceEngine.html">IInferenceEngine</a> attached to them.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.ILiteralNode.html">ILiteralNode</a></h4>
       <section><p>Interface for Literal Nodes.</p>
@@ -500,13 +514,17 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.IWrappingRdfHandler.html">IWrappingRdfHandler</a></h4>
       <section><p>Interface for Handlers which wrap other Handlers.</p>
 </section>
-    <h3 id="enums">Enums
+    <h3 id="enums">
+Enums
 </h3>
       <h4><a class="xref" href="VDS.RDF.GraphPersistenceActionType.html">GraphPersistenceActionType</a></h4>
       <section><p>Possible Types of Graph Persistence Actions.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.HttpMode.html">HttpMode</a></h4>
       <section><p>An enumeration of the remote access modes supported by the <a class="xref" href="VDS.RDF.Query.SparqlQueryClient.html">SparqlQueryClient</a> class.</p>
+</section>
+      <h4><a class="xref" href="VDS.RDF.LanguageTagValidationMode.html">LanguageTagValidationMode</a></h4>
+      <section><p>Enumeration of the forms of language tag validation supported by the library.</p>
 </section>
       <h4><a class="xref" href="VDS.RDF.LiteralEqualityMode.html">LiteralEqualityMode</a></h4>
       <section><p>Possible Literal Equality Mode Settings.</p>
@@ -520,7 +538,8 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.VariableContextType.html">VariableContextType</a></h4>
       <section><p>Possible Variable Context Types.</p>
 </section>
-    <h3 id="delegates">Delegates
+    <h3 id="delegates">
+Delegates
 </h3>
       <h4><a class="xref" href="VDS.RDF.CancellableGraphEventHandler.html">CancellableGraphEventHandler</a></h4>
       <section><p>Delegate Type for Graph events raised by Graphs where event handlers may set a Cancel flag to cancel the subsequent operation.</p>
@@ -579,6 +598,8 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       <h4><a class="xref" href="VDS.RDF.UpdateCallback.html">UpdateCallback</a></h4>
       <section><p>Callbacks for methods that perform SPARQL Updates.</p>
 </section>
+
+
 </article>
           </div>
 
@@ -589,7 +610,7 @@ and it compares virtual nodes on their VirtualID where possible.</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -611,7 +632,7 @@ and it compares virtual nodes on their VirtualID where possible.</p>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>

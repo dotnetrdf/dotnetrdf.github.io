@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Linked Data Fragments API | DotNetRDF Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Linked Data Fragments API | DotNetRDF Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/rdf_flyer.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="linked-data-fragments-api">Linked Data Fragments API</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p><a href="https://linkeddatafragments.org/">Linked Data Fragments</a> presents &quot;new ways of publishing Linked Data, in which the query workload is distributed between clients and servers&quot;, an alternative to SPARQL endpoints and data dumps.</p>
+<p>dotNetRDF features a client for Triple Pattern Fragments, a flavor of Linked Data Fragments.</p>
+<h2 id="basic-example">Basic Example</h2>
+<p>The following example prints the first one thousand triples from the <a href="https://fragments.dbpedia.org/2014/en">DBpedia LDF endpoint</a>:</p>
+<pre><code class="lang-csharp">using var dbpedia = new TpfLiveGraph(new(&quot;https://fragments.dbpedia.org/2014/en&quot;));
+foreach (var t in dbpedia.Triples.Take(1000))
+	Console.WriteLine(&quot;{0}&quot;, t);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The example above results in 11 network calls:</p>
+<ul>
+<li>One to obtain the TPF metadata from the endpoint.</li>
+<li>Ten more to retrieve ten pages of data, a hundred items each.</li>
+</ul>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Repeating the code above (i.e. two subsequent iteration of the same first 1000 items) results in twice the network calls because there is no caching. You can use a custom <a class="xref" href="../api/VDS.RDF.Parsing.Loader.html"><code>Loader</code></a> to implement caching.</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>An unrestricted iteration over <em>all</em> triples of the DBpedia TPF graph above (e.g. <code>foreach (var t in dbpedia.Triples)</code>) would result in <strong>thousands</strong> of network calls.</p>
+</div>
+<h2 id="programmatic-triple-patterns">Programmatic <em>triple patterns</em></h2>
+<p>The following example retrieves the first 1000 subjects that are instances of the <code>Character</code> class from the <a href="https://betweenourworlds.org/">Between Our Worlds</a> TPF endpoint:</p>
+<pre><code class="lang-csharp">using var betweenOurWorlds = new TpfLiveGraph(new(&quot;https://data.betweenourworlds.org/latest&quot;));
+
+var a = betweenOurWorlds.CreateUriNode(UriFactory.Create(RdfSpecsHelper.RdfType));
+var character = betweenOurWorlds.CreateUriNode(UriFactory.Create(&quot;https://betweenourworlds.org/ontology/Character&quot;));
+
+var characters = betweenOurWorlds.GetTriplesWithPredicateObject(a, character)
+    .Select(c =&gt; c.Subject)
+    .Take(1000);
+
+foreach (var c in characters)
+	Console.WriteLine(&quot;{0}&quot;, c);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Observe the similarity between the invocation of <code>GetTriplesWithPredicateObject</code> method above and the resulting TPF query:</p>
+<pre><code class="lang-HTTP">GET /2014/en?predicate=http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type&amp;object=http%3A%2F%2Fdbpedia.org%2Fclass%2Fyago%2FWorldWideWebConsortiumStandards
+Host: fragments.dbpedia.org
+</code></pre>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>See <a href="working_with_graphs.html#selecting-triples">Selecting Triples</a> for more details on programmatically working with graphs.</p>
+</div>
+<h2 id="sparql-querying">SPARQL querying</h2>
+<p>The following example uses SPARQL against the DBpedia TPF endpoint to find the English labels of W3C standards:</p>
+<pre><code class="lang-csharp">const string sparql = &quot;&quot;&quot;
+    PREFIX yago: &lt;http://dbpedia.org/class/yago/&gt;
+    PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+    SELECT ?label
+    WHERE {
+        ?standard
+            a yago:WorldWideWebConsortiumStandards ;
+            rdfs:label ?label .
+
+        FILTER (LANG(?label) = 'en')
+    }
+    &quot;&quot;&quot;;
+
+using var betweenOurWorlds = new TpfLiveGraph(new(&quot;https://fragments.dbpedia.org/2014/en&quot;));
+foreach (var r in betweenOurWorlds.ExecuteQuery(sparql) as SparqlResultSet)
+	Console.WriteLine(&quot;{0}&quot;, r);
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Due to implementation details of dotNetRDF's query engine, <code>LIMIT</code> statements in SPARQL queries are executed only once all relevant triples have been obtained from the TPF endpoint, so they cannot be used for restricting the number of network requests. In some circumstances you can achieve the desired effect by using limited inline selects.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>See <a href="querying_with_sparql.html">Querying with SPARQL</a> for more details.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/user_guide/linked_data_fragments_api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

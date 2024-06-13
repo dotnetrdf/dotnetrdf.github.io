@@ -9,8 +9,9 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="SPARQL Performance | DotNetRDF Documentation ">
     
+    
       <link rel="shortcut icon" href="../../favicon.ico">
-      <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../../styles/docfx.css">
       <link rel="stylesheet" href="../../styles/main.css">
       <meta property="docfx:navrel" content="../../toc.html">
@@ -71,11 +72,12 @@
 <p>This page provides information on the performance of our SPARQL engine.</p>
 <h2 id="performance-limitations">Performance Limitations</h2>
 <h3 id="memory-usage">Memory Usage</h3>
-<p>Our in-memory <a href="leviathan_engine.html">Leviathan engine</a> is designed to scale to a few million triples in-memory.  However scalability will vary heavily with your data and queries e.g. data with lots of large literals will require more memory and queries that generate large intermediate results will also require lots of memory.</p>
-<p>Memory usage may be affected by how you load your data, see <a href="/user_guide/howto/minimize_memory_usage.md">How To: Minimize Memory Usage</a> for some discussion of configuring indexes to reduce memory usage.</p>
-<p>We recommend that if you have more than a million triples you switch to using one of the many supported third party triple stores, see <a href="/user_guide/storage_providers.md">Storage Providers</a> for the available implementations.</p>
+<p>Our in-memory <a href="leviathan_engine.html">Leviathan engine</a> is designed to scale to a few million triples in-memory.  However, scalability will vary heavily with your data and queries e.g. data with lots of large literals will require more memory and queries that generate large intermediate results will also require lots of memory.</p>
+<p>Memory usage may be affected by how you load your data, see <a href="../../user_guide/howto/minimize_memory_usage.html">How To: Minimize Memory Usage</a> for some discussion of configuring indexes to reduce memory usage.</p>
+<p>We recommend that if you have more than a million triples you switch to using one of the many supported third party triple stores, see <a href="../../user_guide/configuration/storage_providers.html">Storage Providers</a> for the available implementations.</p>
 <h3 id="multi-core-systems">Multi-Core Systems</h3>
-<p>dotNetRDF leverages the .Net PLINQ feature to parallelize some aspects of query evaluation that may significantly improve performance over running in single core mode.  However not all queries can be safely parallelized so you may see varying results.</p>
+<p>dotNetRDF leverages the .Net PLINQ feature to parallelize some aspects of query evaluation that may significantly improve performance over running in single core mode.  However not all queries can be safely parallelized, so you may see varying results.</p>
+
 </article>
           </div>
 
@@ -84,12 +86,12 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/release/3.1/docs/developer_guide/sparql/performance.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/developer_guide/sparql/performance.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -111,7 +113,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

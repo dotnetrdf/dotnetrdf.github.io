@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class ThreadSafeTripleStore
- | DotNetRDF Documentation </title>
+      <title>Class ThreadSafeTripleStore | DotNetRDF Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class ThreadSafeTripleStore
- | DotNetRDF Documentation ">
+      <meta name="title" content="Class ThreadSafeTripleStore | DotNetRDF Documentation ">
     
+    <meta name="description" content="A thread safe variant of , simply a  instance with a  decorator around it&#39;s underlying .">
       <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
       <meta property="docfx:navrel" content="../toc.html">
@@ -70,14 +69,14 @@
             <article class="content wrap" id="_content" data-uid="VDS.RDF.ThreadSafeTripleStore">
 
 
-  <h1 id="VDS_RDF_ThreadSafeTripleStore" data-uid="VDS.RDF.ThreadSafeTripleStore" class="text-break">Class ThreadSafeTripleStore
-</h1>
+
+  <h1 id="VDS_RDF_ThreadSafeTripleStore" data-uid="VDS.RDF.ThreadSafeTripleStore" class="text-break">Class ThreadSafeTripleStore</h1>
   <div class="markdown level0 summary"><p>A thread safe variant of <a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a>, simply a <a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a> instance with a <a class="xref" href="VDS.RDF.ThreadSafeGraphCollection.html">ThreadSafeGraphCollection</a> decorator around it's underlying <a class="xref" href="VDS.RDF.BaseGraphCollection.html">BaseGraphCollection</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="VDS.RDF.BaseTripleStore.html">BaseTripleStore</a></div>
     <div class="level2"><a class="xref" href="VDS.RDF.TripleStore.html">TripleStore</a></div>
     <div class="level3"><span class="xref">ThreadSafeTripleStore</span></div>
@@ -88,7 +87,7 @@
     <div><a class="xref" href="VDS.RDF.ISparqlUpdateTripleStore.html">ISparqlUpdateTripleStore</a></div>
     <div><a class="xref" href="VDS.RDF.IUpdateableTripleStore.html">IUpdateableTripleStore</a></div>
     <div><a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a></div>
-    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -210,6 +209,18 @@
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Triples">BaseTripleStore.Triples</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Quads">BaseTripleStore.Quads</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Assert_VDS_RDF_Quad_">BaseTripleStore.Assert(Quad)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Retract_VDS_RDF_Quad_">BaseTripleStore.Retract(Quad)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Add_VDS_RDF_IRefNode_">BaseTripleStore.Add(IRefNode)</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Add_VDS_RDF_IGraph_">BaseTripleStore.Add(IGraph)</a>
     </div>
     <div>
@@ -241,6 +252,12 @@
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_Item_VDS_RDF_IRefNode_">BaseTripleStore.this[IRefNode]</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_GetQuads_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_IRefNode_System_Boolean_">BaseTripleStore.GetQuads(INode, INode, INode, IRefNode, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_GetTriplesFromGraph_VDS_RDF_IGraph_VDS_RDF_INode_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleStore.GetTriplesFromGraph(IGraph, INode, INode, INode)</a>
     </div>
     <div>
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_GraphAdded">BaseTripleStore.GraphAdded</a>
@@ -303,28 +320,28 @@
       <a class="xref" href="VDS.RDF.BaseTripleStore.html#VDS_RDF_BaseTripleStore_DetachEventHandlers_VDS_RDF_IGraph_">BaseTripleStore.DetachEventHandlers(IGraph)</a>
     </div>
     <div>
-      <span class="xref">object.Equals(object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <span class="xref">object.Equals(object, object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <span class="xref">object.GetHashCode()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <span class="xref">object.GetType()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <span class="xref">object.MemberwiseClone()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <span class="xref">object.ReferenceEquals(object, object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <span class="xref">object.ToString()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">VDS</span>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VDS.html">VDS</a>.<a class="xref" href="VDS.RDF.html">RDF</a></h6>
   <h6><strong>Assembly</strong>: dotNetRdf.dll</h6>
   <h5 id="VDS_RDF_ThreadSafeTripleStore_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -334,10 +351,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L38">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L38">View Source</a>
   </span>
   <a id="VDS_RDF_ThreadSafeTripleStore__ctor_" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor*"></a>
   <h4 id="VDS_RDF_ThreadSafeTripleStore__ctor" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor">ThreadSafeTripleStore()</h4>
@@ -350,10 +367,10 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_BaseGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor(VDS.RDF.BaseGraphCollection)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_BaseGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor(VDS.RDF.BaseGraphCollection)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L52">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L52">View Source</a>
   </span>
   <a id="VDS_RDF_ThreadSafeTripleStore__ctor_" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor*"></a>
   <h4 id="VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_BaseGraphCollection_" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor(VDS.RDF.BaseGraphCollection)">ThreadSafeTripleStore(BaseGraphCollection)</h4>
@@ -365,7 +382,7 @@
     <pre><code class="lang-csharp hljs">public ThreadSafeTripleStore(BaseGraphCollection collection)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -384,10 +401,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_ThreadSafeGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor(VDS.RDF.ThreadSafeGraphCollection)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_ThreadSafeGraphCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore.%23ctor(VDS.RDF.ThreadSafeGraphCollection)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L45">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L45">View Source</a>
   </span>
   <a id="VDS_RDF_ThreadSafeTripleStore__ctor_" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor*"></a>
   <h4 id="VDS_RDF_ThreadSafeTripleStore__ctor_VDS_RDF_ThreadSafeGraphCollection_" data-uid="VDS.RDF.ThreadSafeTripleStore.#ctor(VDS.RDF.ThreadSafeGraphCollection)">ThreadSafeTripleStore(ThreadSafeGraphCollection)</h4>
@@ -399,7 +416,7 @@
     <pre><code class="lang-csharp hljs">public ThreadSafeTripleStore(ThreadSafeGraphCollection collection)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -430,48 +447,49 @@
       <a class="xref" href="VDS.RDF.ITripleStore.html">ITripleStore</a>
   </div>
   <div>
-      <span class="xref">System.IDisposable</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_ToSafeString_System_Object_">Extensions.ToSafeString(object)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string, IStoreReader)</a>
-  </div>
-  <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, string, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromEmbeddedResource_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromEmbeddedResource(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromFile(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, string, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromFile(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.LoadFromString(ITripleStore, string)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
-  </div>
-  <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromString_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromString(ITripleStore, string, IStoreReader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri)</a>
   </div>
   <div>
-      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, string, IStoreWriter)</a>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader)</a>
+  </div>
+  <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_LoadFromUri_VDS_RDF_ITripleStore_System_Uri_VDS_RDF_IStoreReader_VDS_RDF_Parsing_Loader_">TripleStoreExtensions.LoadFromUri(ITripleStore, Uri, IStoreReader, Loader)</a>
   </div>
   <div>
       <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_">TripleStoreExtensions.SaveToFile(ITripleStore, string)</a>
   </div>
   <div>
+      <a class="xref" href="VDS.RDF.TripleStoreExtensions.html#VDS_RDF_TripleStoreExtensions_SaveToFile_VDS_RDF_ITripleStore_System_String_VDS_RDF_IStoreWriter_">TripleStoreExtensions.SaveToFile(ITripleStore, string, IStoreWriter)</a>
+  </div>
+  <div>
       <a class="xref" href="VDS.RDF.Extensions.html#VDS_RDF_Extensions_AsEnumerable__1___0_">Extensions.AsEnumerable&lt;T&gt;(T)</a>
   </div>
+
 </article>
           </div>
 
@@ -480,15 +498,15 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_ThreadSafeTripleStore.md&amp;value=---%0Auid%3A%20VDS.RDF.ThreadSafeTripleStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L32" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/ThreadSafeTripleStore.cs/#L32" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -510,7 +528,7 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
   </body>
