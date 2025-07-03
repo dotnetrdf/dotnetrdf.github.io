@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -126,6 +126,9 @@
       <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_QuotedWithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.QuotedWithSubjectObject(INode, INode)</a>
     </div>
     <div>
+      <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Dispose">BaseTripleCollection.Dispose()</a>
+    </div>
+    <div>
       <a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Asserted">BaseTripleCollection.Asserted</a>
     </div>
     <div>
@@ -175,10 +178,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__ctor.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L46">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L48">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection__ctor_" data-uid="VDS.RDF.WrapperTripleCollection.#ctor*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection__ctor" data-uid="VDS.RDF.WrapperTripleCollection.#ctor">WrapperTripleCollection()</h4>
@@ -191,19 +194,19 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__ctor_VDS_RDF_BaseTripleCollection_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.%23ctor(VDS.RDF.BaseTripleCollection)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__ctor_VDS_RDF_BaseTripleCollection_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.%23ctor(VDS.RDF.BaseTripleCollection%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L53">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L56">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection__ctor_" data-uid="VDS.RDF.WrapperTripleCollection.#ctor*"></a>
-  <h4 id="VDS_RDF_WrapperTripleCollection__ctor_VDS_RDF_BaseTripleCollection_" data-uid="VDS.RDF.WrapperTripleCollection.#ctor(VDS.RDF.BaseTripleCollection)">WrapperTripleCollection(BaseTripleCollection)</h4>
+  <h4 id="VDS_RDF_WrapperTripleCollection__ctor_VDS_RDF_BaseTripleCollection_System_Boolean_" data-uid="VDS.RDF.WrapperTripleCollection.#ctor(VDS.RDF.BaseTripleCollection,System.Boolean)">WrapperTripleCollection(BaseTripleCollection, bool)</h4>
   <div class="markdown level1 summary"><p>Creates a new decorator around the given triple collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WrapperTripleCollection(BaseTripleCollection tripleCollection)</code></pre>
+    <pre><code class="lang-csharp hljs">public WrapperTripleCollection(BaseTripleCollection tripleCollection, bool disposeTriples = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -221,16 +224,22 @@
         <td><p>Triple Collection.</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">disposeTriples</span></td>
+        <td><p>Whether to invoke the Dispose method of <code class="paramref">tripleCollection</code> when this wrapper collection is disposed.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__triples.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection._triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection__triples.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection._triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L41">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L41">View Source</a>
   </span>
   <h4 id="VDS_RDF_WrapperTripleCollection__triples" data-uid="VDS.RDF.WrapperTripleCollection._triples">_triples</h4>
   <div class="markdown level1 summary"><p>Underlying Triple Collection.</p>
@@ -259,10 +268,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Count.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L93">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L97">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Count_" data-uid="VDS.RDF.WrapperTripleCollection.Count*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_Count" data-uid="VDS.RDF.WrapperTripleCollection.Count">Count</h4>
@@ -292,10 +301,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Count">BaseTripleCollection.Count</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Item_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Item(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Item_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Item(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L116">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L120">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Item_" data-uid="VDS.RDF.WrapperTripleCollection.Item*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_Item_VDS_RDF_Triple_" data-uid="VDS.RDF.WrapperTripleCollection.Item(VDS.RDF.Triple)">this[Triple]</h4>
@@ -343,10 +352,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Item_VDS_RDF_Triple_">BaseTripleCollection.this[Triple]</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_ObjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.ObjectNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_ObjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.ObjectNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L127">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L131">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_ObjectNodes_" data-uid="VDS.RDF.WrapperTripleCollection.ObjectNodes*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_ObjectNodes" data-uid="VDS.RDF.WrapperTripleCollection.ObjectNodes">ObjectNodes</h4>
@@ -376,10 +385,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_ObjectNodes">BaseTripleCollection.ObjectNodes</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_PredicateNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.PredicateNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_PredicateNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.PredicateNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L138">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L142">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_PredicateNodes_" data-uid="VDS.RDF.WrapperTripleCollection.PredicateNodes*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_PredicateNodes" data-uid="VDS.RDF.WrapperTripleCollection.PredicateNodes">PredicateNodes</h4>
@@ -409,10 +418,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_PredicateNodes">BaseTripleCollection.PredicateNodes</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_SubjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.SubjectNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_SubjectNodes.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.SubjectNodes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L149">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L153">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_SubjectNodes_" data-uid="VDS.RDF.WrapperTripleCollection.SubjectNodes*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_SubjectNodes" data-uid="VDS.RDF.WrapperTripleCollection.SubjectNodes">SubjectNodes</h4>
@@ -444,10 +453,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Add_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Add(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Add_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Add(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L75">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L79">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Add_" data-uid="VDS.RDF.WrapperTripleCollection.Add*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_Add_VDS_RDF_Triple_" data-uid="VDS.RDF.WrapperTripleCollection.Add(VDS.RDF.Triple)">Add(Triple)</h4>
@@ -495,10 +504,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Add_VDS_RDF_Triple_">BaseTripleCollection.Add(Triple)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Contains(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Contains_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Contains(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L85">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L89">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Contains_" data-uid="VDS.RDF.WrapperTripleCollection.Contains*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_Contains_VDS_RDF_Triple_" data-uid="VDS.RDF.WrapperTripleCollection.Contains(VDS.RDF.Triple)">Contains(Triple)</h4>
@@ -546,10 +555,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Contains_VDS_RDF_Triple_">BaseTripleCollection.Contains(Triple)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Delete_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Delete(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Delete_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Delete(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L106">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L110">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Delete_" data-uid="VDS.RDF.WrapperTripleCollection.Delete*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_Delete_VDS_RDF_Triple_" data-uid="VDS.RDF.WrapperTripleCollection.Delete(VDS.RDF.Triple)">Delete(Triple)</h4>
@@ -597,28 +606,45 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Delete_VDS_RDF_Triple_">BaseTripleCollection.Delete(Triple)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Dispose.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.Dispose(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L160">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L238">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_Dispose_" data-uid="VDS.RDF.WrapperTripleCollection.Dispose*"></a>
-  <h4 id="VDS_RDF_WrapperTripleCollection_Dispose" data-uid="VDS.RDF.WrapperTripleCollection.Dispose">Dispose()</h4>
+  <h4 id="VDS_RDF_WrapperTripleCollection_Dispose_System_Boolean_" data-uid="VDS.RDF.WrapperTripleCollection.Dispose(System.Boolean)">Dispose(bool)</h4>
   <div class="markdown level1 summary"><p>Disposes of the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Dispose">BaseTripleCollection.Dispose()</a></div>
+  <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_Dispose_System_Boolean_">BaseTripleCollection.Dispose(bool)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_GetEnumerator.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_GetEnumerator.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L169">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L165">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_GetEnumerator_" data-uid="VDS.RDF.WrapperTripleCollection.GetEnumerator*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_GetEnumerator" data-uid="VDS.RDF.WrapperTripleCollection.GetEnumerator">GetEnumerator()</h4>
@@ -648,10 +674,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_GetEnumerator">BaseTripleCollection.GetEnumerator()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithObject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithObject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithObject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L179">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L175">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithObject_" data-uid="VDS.RDF.WrapperTripleCollection.WithObject*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithObject_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithObject(VDS.RDF.INode)">WithObject(INode)</h4>
@@ -699,10 +725,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithObject_VDS_RDF_INode_">BaseTripleCollection.WithObject(INode)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithPredicate(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithPredicate_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithPredicate(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L189">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L185">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithPredicate_" data-uid="VDS.RDF.WrapperTripleCollection.WithPredicate*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithPredicate_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithPredicate(VDS.RDF.INode)">WithPredicate(INode)</h4>
@@ -750,10 +776,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithPredicate_VDS_RDF_INode_">BaseTripleCollection.WithPredicate(INode)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithPredicateObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L200">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L196">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithPredicateObject_" data-uid="VDS.RDF.WrapperTripleCollection.WithPredicateObject*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">WithPredicateObject(INode, INode)</h4>
@@ -807,10 +833,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithPredicateObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.WithPredicateObject(INode, INode)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubject_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubject(VDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L210">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L206">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithSubject_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubject*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithSubject_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubject(VDS.RDF.INode)">WithSubject(INode)</h4>
@@ -858,10 +884,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithSubject_VDS_RDF_INode_">BaseTripleCollection.WithSubject(INode)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubjectObject(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L221">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L217">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithSubjectObject_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubjectObject*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectObject(INode, INode)</h4>
@@ -915,10 +941,10 @@
   <div><a class="xref" href="VDS.RDF.BaseTripleCollection.html#VDS_RDF_BaseTripleCollection_WithSubjectObject_VDS_RDF_INode_VDS_RDF_INode_">BaseTripleCollection.WithSubjectObject(INode, INode)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection.WithSubjectPredicate(VDS.RDF.INode%2CVDS.RDF.INode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L232">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L228">View Source</a>
   </span>
   <a id="VDS_RDF_WrapperTripleCollection_WithSubjectPredicate_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubjectPredicate*"></a>
   <h4 id="VDS_RDF_WrapperTripleCollection_WithSubjectPredicate_VDS_RDF_INode_VDS_RDF_INode_" data-uid="VDS.RDF.WrapperTripleCollection.WithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">WithSubjectPredicate(INode, INode)</h4>
@@ -1014,10 +1040,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_WrapperTripleCollection.md&amp;value=---%0Auid%3A%20VDS.RDF.WrapperTripleCollection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L35" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Core/WrapperTripleCollection.cs/#L35" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

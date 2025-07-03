@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -69,16 +69,16 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="querying-with-sparql">Querying with SPARQL</h1>
 
-<p>SPARQL is the standard query language for the Semantic Web and can be used to query over large volumes of RDF data. dotNetRDF provides support for querying both over local in-memory data using it's own SPARQL implementation and for querying remote data using SPARQL endpoints or through other stores SPARQL implementations.</p>
-<p>If you want to learn about SPARQL you should take a look at the <a href="http://www.w3.org/TR/sparql11-query/">SPARQL Query Language Specification</a> which provides examples of all the various query forms as well as the full formal specifcation.</p>
+<p>SPARQL is the standard query language for the Semantic Web and can be used to query over large volumes of RDF data. dotNetRDF provides support for querying both over local in-memory data using its own SPARQL implementation and for querying remote data using SPARQL endpoints or through other stores SPARQL implementations.</p>
+<p>If you want to learn about SPARQL, you should take a look at the <a href="http://www.w3.org/TR/sparql11-query/">SPARQL Query Language Specification</a> which provides examples of all the various query forms as well as the full formal specification.</p>
 <p>Advanced Users may want to take a look at the <a href="advanced_sparql.html">Advanced SPARQL</a> and <a href="../developer_guide/sparql/optimization.html">SPARQL Optimization</a> pages for more details about how our in-memory SPARQL engine functions.</p>
-<p>When using SPARQL you'll want to import the <a class="xref" href="../api/VDS.RDF.Query.html"><code>VDS.RDF.Query</code></a> namespace using the following statement at the start of your code files:</p>
+<p>When using SPARQL, you'll want to import the <a class="xref" href="../api/VDS.RDF.Query.html"><code>VDS.RDF.Query</code></a> namespace using the following statement at the start of your code files:</p>
 <pre><code class="lang-csharp">
 using VDS.RDF.Query;
 </code></pre>
-<p>If you are going to parse SPARQL queries yourself you will also need to use the <a class="xref" href="../api/VDS.RDF.Parsing.html"><code>VDS.RDF.Parsing</code></a> namespace.</p>
+<p>If you are going to parse SPARQL queries yourself, you will also need to use the <a class="xref" href="../api/VDS.RDF.Parsing.html"><code>VDS.RDF.Parsing</code></a> namespace.</p>
 <h1 id="representing-queries">Representing Queries</h1>
-<p>While some parts of the library will allow you to pass a raw SPARQL query as a string often you will need to parse a <a class="xref" href="../api/VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a> object around. A <code>SparqlQuery</code> can be created in a couple of ways, firstly you can simply parse a raw SPARQL string into a query like so:</p>
+<p>While some parts of the library will allow you to pass a raw SPARQL query as a string, often you will need to parse a <a class="xref" href="../api/VDS.RDF.Query.SparqlQuery.html">SparqlQuery</a> object around. A <code>SparqlQuery</code> can be created in a couple of ways. Firstly, you can parse a raw SPARQL string into a query like so:</p>
 <pre><code class="lang-csharp">
 using System;
 using VDS.RDF.Parsing;
@@ -131,7 +131,7 @@ public class SparqlParameterizedStringExample
 }
 </code></pre>
 <h1 id="accessing-results">Accessing Results</h1>
-<p>The key classes for accessing results when using SPARQL are the <a class="xref" href="../api/VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a> and <a class="xref" href="../api/VDS.RDF.Query.SparqlResult.html">SparqlResult</a> class, these represent a Result Set and an individual Result respectively. When you make any kind of SPARQL query through any of the methods described in this article you will always get a <code>SparqlResultSet</code> or an <code>IGraph</code> in return (unless an error occurs).</p>
+<p>The key classes for accessing results when using SPARQL are the <a class="xref" href="../api/VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a> and <a class="xref" href="../api/VDS.RDF.Query.SparqlResult.html">SparqlResult</a> class, these represent a Result Set and an individual Result respectively. When you make any kind of SPARQL query through any of the methods described in this article, you will always get a <code>SparqlResultSet</code> or an <code>IGraph</code> in return (unless an error occurs).</p>
 <h2 id="result-sets">Result Sets</h2>
 <p>The <code>SparqlResultSet</code> class is used to represent the results of SELECT and ASK queries. A Result Set either contains a table of <code>SparqlResult</code> items in the case of a SELECT query or a single boolean value in the case of an ASK query. The following are the key properties of the <code>SparqlResultSet</code>:</p>
 <h3 id="resultstype">ResultsType</h3>
@@ -175,16 +175,16 @@ foreach (SparqlResult result in rset)
 	Console.WriteLine(result.ToString());
 }
 </code></pre>
-<p>Generally it is best to use the second form since this means you can do LINQ operations more efficiently on the Result Set.</p>
+<p>Generally, it is best to use the second form since this means you can do LINQ operations more efficiently on the Result Set.</p>
 <h3 id="variables">Variables</h3>
 <p>The <code>Variables</code> property gives an <code>IEnumerable&lt;String&gt;</code> which lists all the variables that are bound in the Result Set. A variable which is listed in this enumeration does not necessarily appear in every result.
 Result</p>
-<h2 id="result-rows">Result Rows</h2>
+<h3 id="result-rows">Result Rows</h3>
 <p>A <code>SparqlResultSet</code> is composed of a table of results which are enumerated via the <code>Results</code> property as seen above. Each row in this table is an instance of the <code>SparqlResult</code> class which has a number of methods and properties to allow you to access the variables and values for that result row.</p>
 <h3 id="count">Count</h3>
 <p>The <code>Count</code> property tells you how many variable/value pairs are present in the result row</p>
 <h3 id="variables-1">Variables</h3>
-<p>The <code>Variables</code> property enumerates the variables actually present in the result row. Note that this may differ from the Variables property of the containing SparqlResultSet since not every result necessarily has every variable in it e.g. empty rows, rows from different sides of a UNION etc.</p>
+<p>The <code>Variables</code> property enumerates the variables actually present in the result row. Note that this may differ from the Variables property of the containing SparqlResultSet since not every result necessarily has every variable in it, e.g. empty rows, rows from different sides of a UNION, etc.</p>
 <h3 id="accessing-values">Accessing Values</h3>
 <p>Values from a row may be accessed in three ways:</p>
 <pre><code class="lang-csharp">
@@ -204,6 +204,16 @@ INode value = r.Value(&quot;var&quot;);
 <p><strong>Warning:</strong> All of the above return a value/null if the variable is present (but possibly unbound) in the result or throw an error if the variable is not present.
 Consider using the <code>HasValue()</code> method to check whether a given variable is present in a result before attempting to retrieve it.</p>
 </div>
+<h2 id="sparql-result-handlers">SPARQL Result Handlers</h2>
+<p>When processing a SPARQL query, results may either be returned as a result of the function called (or in the case of the async methods, as a result of the Task) or by providing an object which implements one of the two callback interfaces <a class="xref" href="../api/VDS.RDF.IRdfHandler.html">IRdfHandler</a> or <a class="xref" href="../api/VDS.RDF.ISparqlResultsHandler.html">ISparqlResultsHandler</a>.
+The former approach is often simpler to use as all the results are available to your code immediately on function return or on task completion, but the latter approach has the advantage of allowing you to handle results as they are generated in a more &quot;streaming&quot; style of processing.</p>
+<p>Which callback interface is required by the processor depends on the type of query being processed.
+A <code>CONSTRUCT</code> or <code>DESCRIBE</code> query requires the use of the <a class="xref" href="../api/VDS.RDF.IRdfHandler.html"><code>IRdfHandler</code></a> callback interface.
+A <code>SELECT</code> or <code>ASK</code> query requires the use of the <a class="xref" href="../api/VDS.RDF.ISparqlResultsHandler.html"><code>ISparqlResultHandler</code></a> callback interface.
+These instances are passed to the method <code>ProcessQuery(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code> (or <code>ProcessQueryAsync(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code>) of <a class="xref" href="../api/VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a>.</p>
+<p>When using the experimental <code>PullQueryProcessor</code>, these handlers are invoked as soon as the results start to stream, which can lead to initial results being available much more quickly.
+However, it should be noted that &quot;blocking&quot; clauses such as ORDER BY in the query may mean that all results need to be handled internally (e.g., to arrange them into the proper order) before any results can start to stream to the handler.</p>
+<p>The handler interfaces are described in more detail in <a href="handlers.html">Handlers API</a>.</p>
 <h1 id="making-a-query">Making a Query</h1>
 <p>Now we'll look at the different ways in which you can actually make a query, there are several ways depending on what you are querying.</p>
 <table>
@@ -229,9 +239,16 @@ Consider using the <code>HasValue()</code> method to check whether a given varia
 </tbody>
 </table>
 <h2 id="query-processors">Query Processors</h2>
-<p>Query Processors are classes use to evaluate queries which abstract away from whatever the underlying query engine is. The <a class="xref" href="../api/VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> interface defines two methods for evaluating queries both called <code>ProcessQuery()</code>.  Query processors are the preferred means of evaluating queries in dotNetRDF and should used in preference to other methods wherever possible.</p>
-<p>The first <code>ProcessQuery(SparqlQuery query)</code> takes in a <code>SparqlQuery</code> and returns either a <code>SparqlResultSet</code> or an <code>IGraph</code> instance. The second <code>ProcessQuery(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code> is for advanced users and gives much more detailed control over the processing of results.</p>
-<p>For example you can use the standard <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a> to evaluate queries in-memory e.g.</p>
+<p>Query Processors are classes use to evaluate queries which abstract away from whatever the underlying query engine is.
+The <a class="xref" href="../api/VDS.RDF.Query.ISparqlQueryProcessor.html">ISparqlQueryProcessor</a> interface defines two methods for evaluating queries both called <code>ProcessQuery()</code>, and two asynchronous equivalents called <code>ProcessQueryAsync()</code>.
+Query processors are the preferred means of evaluating queries in dotNetRDF and should be used in preference to other methods wherever possible.</p>
+<p><code>ProcessQuery(SparqlQuery query)</code> takes in a <code>SparqlQuery</code> and returns either a <code>SparqlResultSet</code> or an <code>IGraph</code> instance.
+<code>ProcessQuery(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code> is for advanced users and gives much more detailed control over the processing of results.</p>
+<p><code>ProcessQueryAsync(SparqlQuery)</code> returns a <code>Task&lt;object&gt;</code> whose result must be inspected and cast to either a <code>SparqlResultSet</code> or an <code>IGraph</code> instance.
+<code>ProcessQueryAsync(IRdfHandler rdfHandler, ISparqlResultsHandler resultsHandler, SparqlQuery query)</code> returns a <code>Task</code> as the results themselves are notified through the handlers passed to the function.</p>
+<p>See the section <a href="#accessing-results">Accessing Results</a> above for more details.</p>
+<h3 id="using-the-leviathanqueryprocessor">Using The LeviathanQueryProcessor</h3>
+<p>You can use the standard <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a> to evaluate queries in-memory e.g.</p>
 <pre><code class="lang-csharp">
 using System;
 using VDS.RDF;
@@ -260,7 +277,7 @@ public class LeviathanQueryProcessorExample
 		//Should get a Graph back from a CONSTRUCT query
 		SparqlQueryParser sparqlparser = new SparqlQueryParser();
 		SparqlQuery query = sparqlparser.ParseFromString(&quot;CONSTRUCT { ?s ?p ?o } WHERE {?s ?p ?o}&quot;);
-		results = processor.ProcessQuery(query);
+		var results = processor.ProcessQuery(query);
 		if (results is IGraph)
 		{
 			//Print out the Results
@@ -270,13 +287,52 @@ public class LeviathanQueryProcessorExample
 			{
 				Console.WriteLine(t.ToString(formatter));
 			}
-			Console.WriteLine(&quot;Query took &quot; + query.QueryTime + &quot; milliseconds&quot;);
 		}
 	}
 }
 </code></pre>
 <p>A key thing to notice here is that we create a <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> instance which wraps our <code>IInMemoryQueryableStore</code> instance. This dataset allows us to control which graph is used as the default graph for queries or even to use the union of all graphs as the default graph.</p>
 <p>In this example we have only printed results in full to the Console, to learn more about how to format results for display see <a href="result_formatting.html">Result Formatting</a>.</p>
+<p>Once created, an instance of <code>LeviathanQueryProcessor</code> is thread-safe for the execution of SPARQL queries and will wrap any accesses to the underlying dataset in its own read/write lock primitives if no locking is provided by the dataset implementation itself.
+This functionality makes it possible to reuse a single instance of <code>LeviathanQueryProcessor</code> to process multiple queries against the same dataset (including queries made in parallel).</p>
+<h3 id="using-the-pullqueryprocessor">Using the PullQueryProcessor</h3>
+<p>The PullQueryProcessor was introduced in version 3.3 of dotNetRDF.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>Warning:</strong> The PullQueryProcessor is currently considered EXPERIMENTAL and may be significantly modified or even withdrawn in a future release of dotNetRDF.</p>
+</div>
+<p>This processor is provided in a separate package (<code>dotNetRdf.Query.Pull</code> on NuGet) as it makes use of features not present in .NET Standard 2.0 and is only supported on .NET 6.0 or later.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Note:</strong> Due to an issue with our documentation tool (docfx) it is currently not possible to include the API documentation for the PullQueryProcessor in the full documentation for the library. We hope to be able to address this issue at a later date. For now it is recommended that users of this library should refer to the documentation comments in the source code for this library.</p>
+</div>
+<p>The processor is built to make more use of asynchronous parallel processing, and this means that it cannot use the <a class="xref" href="../api/VDS.RDF.Query.Datasets.ISparqlDataset.html">ISparqlDataset</a> interface for wrapping the source data to be queried.
+Instead, you can initialise the processor with any class that implements the <a class="xref" href="../api/VDS.RDF.ITripleStore.html">ITripleStore</a> interface, and then use options to configure the initial default graph for the processor (see <a href="#customizing-query-processor-behaviour">Customizing Query Processor Behaviour</a>, below).
+For more information about configuring the default graph, please refer to the <a href="sparql_datasets.html">SPARQL Datasets</a> page.</p>
+<p>The following simple example uses the form of <code>ProcessQueryAsync</code> where the Task returns an object which is either a <a class="xref" href="../api/VDS.RDF.Query.SparqlResultSet.html">SparqlResultSet</a> or a <a class="xref" href="../api/VDS.RDF.IGraph.html">IGraph</a>. It is an async equivalent to the synchronous code shown for the LeviathanQueryProcessor above.</p>
+<pre><code class="lang-csharp">    var store = new TripleStore();
+    
+    // Assume that we fill our store with data from somewhere
+
+    // Get the query processor
+    ISparqlQueryProcessor processor = new PullQueryProcessor(store);
+    
+    // Parse a SPARQL query
+    var sparqlParser = new SparqlQueryParser();
+    SparqlQuery query = sparqlParser.ParseFromString(&quot;CONSTRUCT { ?s ?p ?o } WHERE {?s ?p ?o}&quot;);
+    var results = await processor.ProcessQueryAsync(query);
+    if (results is IGraph graph)
+    {
+        //Print out the Results
+        var formatter = new NTriplesFormatter();
+        foreach (Triple t in graph.Triples)
+        {
+            Console.WriteLine(t.ToString(formatter));
+        }
+    }
+</code></pre>
+<p>The <code>PullQueryProcessor</code> implementation can be used to process multiple queries against the same store in parallel.
+Queries against a store that is also being updated in parallel are safe only if the underlying store implementation provides its own read/write locks to protect against dirty reads.</p>
 <h3 id="common-errors">Common Errors</h3>
 <h4 id="default-graph">Default Graph</h4>
 <p>A common error with making queries is that queries by default typically operate only over the unnamed default graph in the store (depending on your query processor). Therefore executing queries may yield no results depending on what graphs your data is in and whether you configured your dataset correctly. Please see the <a href="sparql_datasets.html">SPARQL Datasets</a> page for discussions of configuring different kinds of dataset.  You can also look at <a href="/user_guide/howto/debug-sparql-queries.md">Debugging SPARQL Queries</a> for a method to debug what is happening with your query when using the in-memory SPARQL engine.</p>
@@ -298,6 +354,10 @@ public class LeviathanQueryProcessorExample
 <tr>
 <td><a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a></td>
 <td>Standard in-memory query processor</td>
+</tr>
+<tr>
+<td>PullQueryProcessor</td>
+<td>An in-memory query processor which tries to minimize memory overhead by processing queries in a streaming fashion as much as possible.</td>
 </tr>
 <tr>
 <td><a class="xref" href="../api/VDS.RDF.Query.ExplainQueryProcessor.html">ExplainQueryProcessor</a></td>
@@ -324,10 +384,14 @@ ISparqlQueryProcessor processor = new LeviathanQueryProcessor(ds, (options) =&gt
   options.QueryExecutionTimeout = 360*1000 
 });
 </code></pre>
-<p>Refer to the API documentation of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryOptions.html"><code>LeviathanQueryOptions</code></a> class for a list of all of the configuration options that can be set in this way.</p>
+<p>The <code>VDS.RDF.Query.Pull.PullQueryProcessor</code> uses a similar optional constructor argument of type <code>Action&lt;PullProcessorOptions&gt;</code> for its configuration, which can be used in the same manner.
+To set the default graph for the <code>PullQueryProcesor</code> to a specific named graph (or named graphs) or to the union of all graphs, you need to configure the <code>PullProcessorOptions</code>.</p>
+<p>Refer to the API documentation of the <a class="xref" href="../api/VDS.RDF.Query.LeviathanQueryOptions.html"><code>LeviathanQueryOptions</code></a> class and the <code>VDS.RDF.Query.Pull.PullQueryOptions</code> class for a list of the configuration options that can be set in this way.</p>
 <h3 id="customizing-query-behaviour">Customizing Query Behaviour</h3>
-<p>When you use the <code>ProcessQuery()</code> overload that takes a <code>SparqlQuery</code> object you have the option of setting some properties on it which control its behaviour with regards to execution timeout. Since some queries can take a very long time to run it is often sensible to limit how long queries can run for, the <code>Timeout</code> property of the <code>SparqlQuery</code> allows you to specify the timeout. If you wish to get results back even when a timeout occurs then you can set the <code>PartialResultsOnTimeout</code> property to ensure you get some results even if a timeout occurs.</p>
-<p><strong>However</strong> there is no guarantee that a query processor implementation will respect these properties.</p>
+<p>When you use the <code>ProcessQuery()</code> overload that takes a <code>SparqlQuery</code> object you have the option of setting some properties on it which control its behaviour with regard to execution timeout.
+Since some queries can take a very long time to run it is often sensible to limit how long queries can run for, the <code>Timeout</code> property of the <code>SparqlQuery</code> allows you to specify the timeout.
+If you wish to get results back, even when a timeout occurs then you can set the <code>PartialResultsOnTimeout</code> property to ensure you get some results even if a timeout occurs.</p>
+<p><strong>However</strong>, there is no guarantee that a query processor implementation will respect these properties.</p>
 <h1 id="remote-query">Remote Query</h1>
 <p>Remote SPARQL endpoints can be queried using the <a class="xref" href="../api/VDS.RDF.Query.SparqlRemoteEndpoint.html">SparqlRemoteEndpoint</a> class. This class is a wrapper around a remote endpoint which sends queries to the endpoint and then turns the response into a <code>SparqlResultSet</code> or <code>IGraph</code> as appropriate.</p>
 <p>A remote endpoint is a combination of an endpoint URI and an optional default Graph URI. A <code>SparqlRemoteEndpoint</code> provides specific strongly typed methods for making queries meaning that you don't need to type check and cast the result. The <code>QueryWithResultGraph(String sparqlQuery)</code> method can be used to make a CONSTRUCT or DESCRIBE query while the <code>QueryWithResultSet(String sparqlQuery)</code> method can be used to make SELECT and ASK queries. You can also use the <code>QueryRaw(String sparqlQuery, out String ctype)</code> method if you wish to get the raw response stream from the endpoint and process it yourself.</p>
@@ -362,8 +426,8 @@ public class SparqlRemoteEndpointExample
 }
 </code></pre>
 <h2 id="native-query">Native Query</h2>
-<p>We use the term native query to refer to queries where you utilise the SPARQL implementation of other Triple Stores directly. This feature is provided by classes which implement the <code>INativelyQueryableStore</code> interface, we now provide support for doing this with any of the supported backing Stores. If you take a look at the <a href="working_with_triple_stores.html">Working with Triple Stores</a> page you'll see an example of using the <code>PersistentTripleStore</code> class to query any of our supported stores.</p>
-<p>Alternatively you can make a query direct to a store without using any abstractions simply by using an instance of the <a class="xref" href="../api/VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> interface  which most of our available <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> implementations also support, please see the <a href="triple_store_integration.html">Triple Store Integration</a> page for an example of this.</p>
+<p>We use the term native query to refer to queries where you utilise the SPARQL implementation of other Triple Stores directly. This feature is provided by classes which implement the <code>INativelyQueryableStore</code> interface, we now provide support for doing this with any of the supported backing Stores. If you take a look at the <a href="working_with_triple_stores.html">Working with Triple Stores</a> page, you'll see an example of using the <code>PersistentTripleStore</code> class to query any of our supported stores.</p>
+<p>Alternatively, you can make a query direct to a store without using any abstractions simply by using an instance of the <a class="xref" href="../api/VDS.RDF.Storage.IQueryableStorage.html">IQueryableStorage</a> interface which most of our available <a class="xref" href="../api/VDS.RDF.Storage.IStorageProvider.html">IStorageProvider</a> implementations also support, please see the <a href="triple_store_integration.html">Triple Store Integration</a> page for an example of this.</p>
 <h1 id="loadingsaving-results">Loading/Saving Results</h1>
 <p>A <code>SparqlResultSet</code> may be loaded/saved using the <a class="xref" href="../api/VDS.RDF.ISparqlResultsReader.html">ISparqlResultsReader</a> and <a class="xref" href="../api/VDS.RDF.ISparqlResultsWriter.html">ISparqlResultsWriter</a> interfaces respectively. These are functionally very similar to the <code>IRdfReader</code> and <code>IRdfWriter</code> interfaces described on the <a href="reading_rdf.html">Reading RDF</a> and <a href="writing_rdf.html">Writing RDF</a> pages.</p>
 <p>A quick example is as follows:</p>
@@ -391,7 +455,7 @@ public class SaveLoadResultsExample
 	}
 }
 </code></pre>
-<p>Note that one important difference between reading SPARQL results versus reading RDF is that you cannot read SPARQL results into a non-empty result set - doing so results in an exception.</p>
+<p>Note that one important difference between reading SPARQL results versus reading RDF is that you cannot read SPARQL results into a non-empty result set. Doing so results in an exception.</p>
 
 </article>
           </div>
@@ -401,7 +465,7 @@ public class SaveLoadResultsExample
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/docs/user_guide/querying_with_sparql.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/update-docfx-config/docs/user_guide/querying_with_sparql.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
