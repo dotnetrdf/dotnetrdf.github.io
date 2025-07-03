@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -151,29 +151,33 @@
   </div>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
-  <strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
+<strong>Note:</strong> For all operations that take a Graph URI a <em>null</em> Uri should be considered to refer to the Default Graph of the dataset.
 </p>
 <h3>Default and Active Graph</h3>
 <p>
 Leviathan expects that a Query operates over the Dataset in the following order:
-<ol><li>If an Active Graph is set then Queries operate over that</li><li>Otherwise if a Default Graph is set then Queries operate over that</li><li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li></ol>
+<ol>
+    <li>If an Active Graph is set then Queries operate over that</li>
+    <li>Otherwise if a Default Graph is set then Queries operate over that</li>
+    <li>Finally the Queries operate over the all triples, the notion of all triples may be dataset implementation specific i.e. may be union of all graphs, the default unnamed graph only or something else entirely</li>
+</ol>
 Please note that the Query may change the Active and Default Graph over the course of the query depending on the Query e.g. FROM, FROM NAMED and GRAPH all can potentially change these.
 
 <p>
 You can limit your queries to use specific portions of your dataset by using the SetActiveGraph() and SetDefaultGraph() methods on your dataset instance before then passing it to the <a class="xref" href="VDS.RDF.Query.LeviathanQueryProcessor.html">LeviathanQueryProcessor</a>.
 </p>
 <p>
-  <strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
+<strong>Note: </strong> By default the <a class="xref" href="VDS.RDF.Query.Datasets.InMemoryDataset.html">InMemoryDataset</a> uses the Union of all Graphs in the Dataset if no Active/Default Graph is otherwise specified.  Use the <a class="xref" href="VDS.RDF.Query.Datasets.ISparqlDataset.html#VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph">UsesUnionDefaultGraph</a> property to see whether a Dataset implementation behaves in this way.
 </p>
 </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L148">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L148">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphNames">ActiveGraphNames</h4>
@@ -201,10 +205,10 @@ You can limit your queries to use specific portions of your dataset by using the
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L139">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L139">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ActiveGraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ActiveGraphUris">ActiveGraphUris</h4>
@@ -233,10 +237,10 @@ IEnumerable&lt;Uri&gt; ActiveGraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L134">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L134">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphNames">DefaultGraphNames</h4>
@@ -264,10 +268,10 @@ IEnumerable&lt;Uri&gt; ActiveGraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L125">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L125">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_DefaultGraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.DefaultGraphUris">DefaultGraphUris</h4>
@@ -296,10 +300,10 @@ IEnumerable&lt;Uri&gt; DefaultGraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L219">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L219">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphNames" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphNames">GraphNames</h4>
@@ -327,10 +331,10 @@ IEnumerable&lt;Uri&gt; DefaultGraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L210">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L210">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GraphUris" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GraphUris">GraphUris</h4>
@@ -359,10 +363,10 @@ IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Graphs.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Graphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L202">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L202">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Graphs" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Graphs">Graphs</h4>
@@ -390,10 +394,10 @@ IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L284">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L284">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasTriples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasTriples">HasTriples</h4>
@@ -421,10 +425,10 @@ IEnumerable&lt;Uri&gt; GraphUris { get; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L231">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L231">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item(System.Uri)">this[Uri]</h4>
@@ -476,10 +480,10 @@ This property need only return a read-only view of the Graph, code which wishes 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L247">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L247">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Item_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Item(VDS.RDF.IRefNode)">this[IRefNode]</h4>
@@ -530,10 +534,10 @@ This property need only return a read-only view of the Graph, code which wishes 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L317">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L317">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.QuotedTriples">QuotedTriples</h4>
@@ -561,15 +565,15 @@ This property need only return a read-only view of the Graph, code which wishes 
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_QuotedTriples_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-  <strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
+<strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Triples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Triples.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Triples%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L304">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L304">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Triples*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Triples">Triples</h4>
@@ -597,15 +601,15 @@ This property need only return a read-only view of the Graph, code which wishes 
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_Triples_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-  <strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
+<strong>Note:</strong> The Triples returned from the method should be limited to those in the current Active Graph if present, otherwise those in the current Default Graph if present and finally the entire Dataset.
 </p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L153">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L153">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_UsesUnionDefaultGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.UsesUnionDefaultGraph">UsesUnionDefaultGraph</h4>
@@ -635,10 +639,10 @@ This property need only return a read-only view of the Graph, code which wishes 
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L167">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L167">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_AddGraph_VDS_RDF_IGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.AddGraph(VDS.RDF.IGraph)">AddGraph(IGraph)</h4>
@@ -705,10 +709,10 @@ This property need only return a read-only view of the Graph, code which wishes 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L324">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L324">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsQuotedTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsQuotedTriple(VDS.RDF.Triple)">ContainsQuotedTriple(Triple)</h4>
@@ -755,10 +759,10 @@ This property need only return a read-only view of the Graph, code which wishes 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L294">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L294">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ContainsTriple_VDS_RDF_Triple_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ContainsTriple(VDS.RDF.Triple)">ContainsTriple(Triple)</h4>
@@ -804,10 +808,10 @@ This property need only return a read-only view of the Graph, code which wishes 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Discard%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Discard.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Discard%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L345">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L345">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Discard_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Discard*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Discard" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Discard">Discard()</h4>
@@ -825,10 +829,10 @@ Primarily intended for use in implementations which support transactions though 
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_Flush.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L335">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L335">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_Flush_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Flush*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_Flush" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.Flush">Flush()</h4>
@@ -846,10 +850,10 @@ While partly intended for use in implementations which support transactions thou
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L260">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L260">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(System.Uri)">GetModifiableGraph(Uri)</h4>
@@ -896,8 +900,8 @@ IGraph GetModifiableGraph(Uri graphUri)</code></pre>
   </table>
   <h5 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_System_Uri__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-    Graphs returned from this method must be modifiable and the Dataset must guarantee that when it is Flushed or Disposed of that any changes to the Graph are persisted.
-    </p>
+Graphs returned from this method must be modifiable and the Dataset must guarantee that when it is Flushed or Disposed of that any changes to the Graph are persisted.
+</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-condensed">
@@ -922,10 +926,10 @@ IGraph GetModifiableGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L275">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L275">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_GetModifiableGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.GetModifiableGraph(VDS.RDF.IRefNode)">GetModifiableGraph(IRefNode)</h4>
@@ -992,10 +996,10 @@ Graphs returned from this method must be modifiable and the Dataset must guarant
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L189">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L189">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(System.Uri)">HasGraph(Uri)</h4>
@@ -1042,10 +1046,10 @@ bool HasGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L197">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L197">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_HasGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.HasGraph(VDS.RDF.IRefNode)">HasGraph(IRefNode)</h4>
@@ -1091,10 +1095,10 @@ bool HasGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L174">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L174">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(System.Uri)">RemoveGraph(Uri)</h4>
@@ -1162,10 +1166,10 @@ bool RemoveGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L182">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L182">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_RemoveGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.RemoveGraph(VDS.RDF.IRefNode)">RemoveGraph(IRefNode)</h4>
@@ -1227,10 +1231,10 @@ bool RemoveGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L115">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L115">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetActiveGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetActiveGraph">ResetActiveGraph()</h4>
@@ -1243,10 +1247,10 @@ bool RemoveGraph(Uri graphUri)</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L120">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L120">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_ResetDefaultGraph" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.ResetDefaultGraph">ResetDefaultGraph()</h4>
@@ -1259,10 +1263,10 @@ bool RemoveGraph(Uri graphUri)</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L64">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L64">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetActiveGraph(IEnumerable&lt;Uri&gt;)</h4>
@@ -1294,10 +1298,10 @@ void SetActiveGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L71">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L71">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Collections.Generic.IList{VDS.RDF.IRefNode})">SetActiveGraph(IList&lt;IRefNode&gt;)</h4>
@@ -1327,10 +1331,10 @@ void SetActiveGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L77">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L77">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(System.Uri)">SetActiveGraph(Uri)</h4>
@@ -1362,10 +1366,10 @@ void SetActiveGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L84">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L84">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetActiveGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetActiveGraph(VDS.RDF.IRefNode)">SetActiveGraph(IRefNode)</h4>
@@ -1396,10 +1400,10 @@ void SetActiveGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable%7BSystem.Uri%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L103">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L103">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IEnumerable_System_Uri__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IEnumerable{System.Uri})">SetDefaultGraph(IEnumerable&lt;Uri&gt;)</h4>
@@ -1431,10 +1435,10 @@ void SetDefaultGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList%7BVDS.RDF.IRefNode%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L110">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L110">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Collections_Generic_IList_VDS_RDF_IRefNode__" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Collections.Generic.IList{VDS.RDF.IRefNode})">SetDefaultGraph(IList&lt;IRefNode&gt;)</h4>
@@ -1465,10 +1469,10 @@ void SetDefaultGraph(IEnumerable&lt;Uri&gt; graphUris)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L90">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L90">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_System_Uri_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(System.Uri)">SetDefaultGraph(Uri)</h4>
@@ -1500,10 +1504,10 @@ void SetDefaultGraph(Uri graphUri)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L97">View Source</a>
+    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L97">View Source</a>
   </span>
   <a id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph*"></a>
   <h4 id="VDS_RDF_Query_Datasets_ISparqlDataset_SetDefaultGraph_VDS_RDF_IRefNode_" data-uid="VDS.RDF.Query.Datasets.ISparqlDataset.SetDefaultGraph(VDS.RDF.IRefNode)">SetDefaultGraph(IRefNode)</h4>
@@ -1547,10 +1551,10 @@ void SetDefaultGraph(Uri graphUri)</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/bug/630-fix-doc-links/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/new/main/apiSpec/new?filename=VDS_RDF_Query_Datasets_ISparqlDataset.md&amp;value=---%0Auid%3A%20VDS.RDF.Query.Datasets.ISparqlDataset%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/bug/630-fix-doc-links/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L56" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dotnetrdf/dotnetrdf/blob/main/Libraries/dotNetRdf.Core/Query/Datasets/ISparqlDataset.cs/#L56" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
